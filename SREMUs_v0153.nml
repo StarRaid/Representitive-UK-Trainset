@@ -1,0 +1,1707 @@
+grf {
+    grfid: "TG\11\17";
+    /* GRF name and description strings are defined in the lang files */
+    name: string(STR_GRF_NAME);
+    desc: string(STR_GRF_DESC);
+    /* This is the first version, start numbering at 0. */
+    version: 012;
+    min_compatible_version: 0;
+}
+
+/* Define a rail type table,
+ * this allows referring to railtypes
+ * irrespective of the grfs loaded.
+ */
+railtypetable {
+    RAIL, SAA3
+}
+
+//Sounds
+
+
+switch(FEAT_TRAINS, SELF, sw_slow_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_RUNNING_16: sound("sound/DCSlow.wav");
+}
+
+switch(FEAT_TRAINS, SELF, sw_fast_sound, getbits(extra_callback_info1, 0, 8)) {
+    SOUND_EVENT_RUNNING_16: sound("sound/DCFast.wav");
+}
+
+switch(FEAT_TRAINS, SELF, sw_sound, current_speed){
+	1 .. 69: sw_slow_sound;
+	70 .. 150: sw_fast_sound;
+}
+
+//4-CEP/CLASS 410-412 CODE STARTS HERE!!!
+
+
+
+switch(FEAT_TRAINS, SELF, sw_CEP_cargo_subtype_text, cargo_subtype) {
+    0: return string(STR_411_SUBTYPE_BRG);
+    1: return string(STR_411_SUBTYPE_BRGY);
+    2: return string(STR_411_SUBTYPE_BRBG);
+    3: return string(STR_411_SUBTYPE_LSE);
+    4: return string(STR_411_SUBTYPE_NSE);
+    5: return string(STR_411_SUBTYPE_NS3);
+    6: return string(STR_411_SUBTYPE_SWT);
+    7: return string(STR_411_SUBTYPE_ESW);
+    8: return string(STR_411_SUBTYPE_CNX);
+    9: return string(STR_411_SUBTYPE_CN3);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_BEP_cargo_subtype_text, cargo_subtype) {
+    0: return string(STR_BEP_SUBTYPE_BRG);
+    1: return string(STR_BEP_SUBTYPE_BRGY);
+    2: return string(STR_BEP_SUBTYPE_BRBG);
+    3: return string(STR_BEP_SUBTYPE_LSE);
+    4: return string(STR_BEP_SUBTYPE_NSE);
+    5: return string(STR_BEP_SUBTYPE_SWT);
+    6: return string(STR_BEP_SUBTYPE_ESW);
+    return CB_RESULT_NO_TEXT;
+}
+
+
+/* Basic template for 4 vehicle views */
+template tmpl_vehicle_basic(x, y) {
+    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
+    [x,         y,           8,        24,           -3,         -11]
+    [x+9,       y,          21,        18,          -14,          -9]
+    [x+31,      y,          32,        12,          -18,          -8]
+    [x+64,      y,          21,        18,           -7,         -10]
+    [x+86,      y,           8,        24,           -3,         -11]
+    [x+95,      y,          21,        18,          -14,          -9]
+    [x+117,     y,          32,        12,          -18,          -8]
+    [x+150,     y,          21,        18,           -7,         -10]
+}
+
+template tmpl_vehicle_basic3(x, y) {
+    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
+    [x,         y,           8,        24,           -3,         -13]
+    [x+9,       y,          21,        18,          -12,         -10]
+    [x+31,      y,          32,        12,          -14,          -8]
+    [x+64,      y,          21,        18,           -5,          -9]
+    [x+86,      y,           8,        24,           -3,          -9]
+    [x+95,      y,          21,        18,          -16,          -8]
+    [x+117,     y,          32,        12,          -22,          -8]
+    [x+150,     y,          21,        18,           -9,         -11]
+}
+
+/* Basic template for 4 vehicle views */
+template tmpl_vehicle_basicii(x, y) {
+    //[left_x,  upper_y,    width,     height,     offset_x,     offset_y]
+    [x,         y,           8,        24,           -3,         -11]
+    [x+9,       y,          21,        18,          -14,          -9]
+    [x+31,      y,          32,        12,          -18,          -8]
+    [x+64,      y,          21,        18,           -7,         -10]
+}
+/* Template for a vehicle with only 4 views (symmetric) */
+template tmpl_vehicle_4_views(num) {
+    // argument num: Index in the graphics file, assuming vertical ordering of vehicles
+    tmpl_vehicle_basic(1, 1 + 32 * num)
+}
+
+template tmpl_vehicle_single(num, xsize, ysize, xoff, yoff) {
+    [1, 0, num, xsize, ysize, xoff, yoff]
+}
+template tmpl_vehicle_single2(num, xsize, ysize, xoff, yoff) {
+    [52, 0, num, xsize, ysize, xoff, yoff]
+}
+
+//411 Sprites
+
+spriteset(set_4_cep_brg_front_dmbs,     "gfx/Class 411.png"){tmpl_vehicle_basic(0,13)}
+spriteset(set_4_cep_brg_rear_dmbs,      "gfx/Class 411.png"){tmpl_vehicle_basic(0,38)}
+spriteset(set_4_cep_brg_ts,             "gfx/Class 411.png"){tmpl_vehicle_basic(0,63)}
+spriteset(set_4_cep_brg_tc,             "gfx/Class 411.png"){tmpl_vehicle_basic(0,88)}
+spriteset(set_4_cep_brgy_front_dmbs,    "gfx/Class 411.png"){tmpl_vehicle_basic(0,138)}
+spriteset(set_4_cep_brgy_rear_dmbs,     "gfx/Class 411.png"){tmpl_vehicle_basic(0,163)}
+spriteset(set_4_cep_brbg_front_dmso,    "gfx/Class 411.png"){tmpl_vehicle_basic(0,263)}
+spriteset(set_4_cep_brbg_rear_dmso,     "gfx/Class 411.png"){tmpl_vehicle_basic(0,288)}
+spriteset(set_4_cep_brbg_tsol,          "gfx/Class 411.png"){tmpl_vehicle_basic(0,313)}
+spriteset(set_4_cep_brbg_tbc,           "gfx/Class 411.png"){tmpl_vehicle_basic(0,338)}
+spriteset(set_4_cep_lse_front_dmso,     "gfx/Class 411.png"){tmpl_vehicle_basic(0,388)}
+spriteset(set_4_cep_lse_rear_dmso,      "gfx/Class 411.png"){tmpl_vehicle_basic(0,413)}
+spriteset(set_4_cep_lse_tsol,           "gfx/Class 411.png"){tmpl_vehicle_basic(0,438)}
+spriteset(set_4_cep_lse_tbc,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,463)}
+spriteset(set_4_cep_nse_front_dmso,     "gfx/Class 411.png"){tmpl_vehicle_basic(0,513)}
+spriteset(set_4_cep_nse_rear_dmso,      "gfx/Class 411.png"){tmpl_vehicle_basic(0,538)}
+spriteset(set_4_cep_nse_tsol,           "gfx/Class 411.png"){tmpl_vehicle_basic(0,563)}
+spriteset(set_4_cep_nse_tbc,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,588)}
+spriteset(set_3_cep_nse_tbc,            "gfx/Class 411.png"){tmpl_vehicle_basic3(0,588)}
+spriteset(set_4_cep_swt_front_dmso,     "gfx/Class 411.png"){tmpl_vehicle_basic(0,638)}
+spriteset(set_4_cep_swt_rear_dmso,      "gfx/Class 411.png"){tmpl_vehicle_basic(0,663)}
+spriteset(set_4_cep_swt_tsol,           "gfx/Class 411.png"){tmpl_vehicle_basic(0,688)}
+spriteset(set_4_cep_swt_tbc,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,713)}
+spriteset(set_4_cep_esw_front_dmso,     "gfx/Class 411.png"){tmpl_vehicle_basic(0,763)}
+spriteset(set_4_cep_esw_rear_dmso,      "gfx/Class 411.png"){tmpl_vehicle_basic(0,788)}
+spriteset(set_4_cep_esw_tsol,           "gfx/Class 411.png"){tmpl_vehicle_basic(0,813)}
+spriteset(set_4_cep_esw_tbc,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,838)}
+spriteset(set_4_cep_cnx_front_dmso,     "gfx/Class 411.png"){tmpl_vehicle_basic(0,888)}
+spriteset(set_4_cep_cnx_rear_dmso,      "gfx/Class 411.png"){tmpl_vehicle_basic(0,913)}
+spriteset(set_4_cep_cnx_tsol,           "gfx/Class 411.png"){tmpl_vehicle_basic(0,938)}
+spriteset(set_4_cep_cnx_tbc,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,963)}
+spriteset(set_3_cep_cnx_tbc,            "gfx/Class 411.png"){tmpl_vehicle_basic3(0,963)}
+spriteset(set_invisible,                "gfx/Class 411.png"){tmpl_vehicle_basic(0,988)}
+
+//BEP Sprites
+
+spriteset(set_4_bep_brg_trb,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,113)}
+spriteset(set_4_bep_brbg_trb,           "gfx/Class 411.png"){tmpl_vehicle_basic(0,363)}
+spriteset(set_4_bep_lse_trb,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,488)}
+spriteset(set_4_bep_nse_trb,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,613)}
+spriteset(set_4_bep_swt_trb,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,738)}
+spriteset(set_4_bep_esw_trb,            "gfx/Class 411.png"){tmpl_vehicle_basic(0,863)}
+
+//Purchase Sprite
+
+spriteset (set_CEP_purchase,               "gfx/Class 411.png") { tmpl_vehicle_single(50, 11, -25, -5, 5) }
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, sw_CEP_articulated_part, extra_callback_info1) {
+    /* Add three articulated parts, for a total of four */
+    1 .. 3: return item_CEP;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, sw_BEP_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_BEP;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+/* --- Graphics callback (sw=switch, cep/bep=Class 411/Class 412, sc=subcargo) --- */
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc0, position_in_consist % 4){
+    0:set_4_cep_brg_front_dmbs;
+    1:set_4_cep_brg_ts;
+    2:set_4_cep_brg_tc;
+    3:set_4_cep_brg_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc1, position_in_consist % 4){
+    0:set_4_cep_brgy_front_dmbs;
+    1:set_4_cep_brg_ts;
+    2:set_4_cep_brg_tc;
+    3:set_4_cep_brgy_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc2, position_in_consist % 4){
+    0:set_4_cep_brbg_front_dmso;
+    1:set_4_cep_brbg_tsol;
+    2:set_4_cep_brbg_tbc;
+    3:set_4_cep_brbg_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc3, position_in_consist % 4){
+    0:set_4_cep_lse_front_dmso;
+    1:set_4_cep_lse_tsol;
+    2:set_4_cep_lse_tbc;
+    3:set_4_cep_lse_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc4, position_in_consist % 4){
+    0:set_4_cep_nse_front_dmso;
+    1:set_4_cep_nse_tsol;
+    2:set_4_cep_nse_tbc;
+    3:set_4_cep_nse_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc5, position_in_consist % 4){
+    0:set_4_cep_nse_front_dmso;
+    1:set_invisible;
+    2:set_3_cep_nse_tbc;
+    3:set_4_cep_nse_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc6, position_in_consist % 4){
+    0:set_4_cep_swt_front_dmso;
+    1:set_4_cep_swt_tsol;
+    2:set_4_cep_swt_tbc;
+    3:set_4_cep_swt_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc7, position_in_consist % 4){
+    0:set_4_cep_esw_front_dmso;
+    1:set_4_cep_esw_tsol;
+    2:set_4_cep_esw_tbc;
+    3:set_4_cep_esw_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc8, position_in_consist % 4){
+    0:set_4_cep_cnx_front_dmso;
+    1:set_4_cep_cnx_tsol;
+    2:set_4_cep_cnx_tbc;
+    3:set_4_cep_cnx_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cep_sc9, position_in_consist % 4){
+    0:set_4_cep_cnx_front_dmso;
+    1:set_invisible;
+    2:set_3_cep_cnx_tbc;
+    3:set_4_cep_cnx_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_bep_sc0, position_in_consist % 4){
+    0:set_4_cep_brg_front_dmbs;
+    1:set_4_cep_brg_ts;
+    2:set_4_bep_brg_trb;
+    3:set_4_cep_brg_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_bep_sc1, position_in_consist % 4){
+    0:set_4_cep_brgy_front_dmbs;
+    1:set_4_cep_brg_ts;
+    2:set_4_bep_brg_trb;
+    3:set_4_cep_brgy_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_bep_sc2, position_in_consist % 4){
+    0:set_4_cep_brbg_front_dmso;
+    1:set_4_cep_brbg_tsol;
+    2:set_4_bep_brbg_trb;
+    3:set_4_cep_brbg_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_bep_sc3, position_in_consist % 4){
+    0:set_4_cep_lse_front_dmso;
+    1:set_4_cep_lse_tsol;
+    2:set_4_bep_lse_trb;
+    3:set_4_cep_lse_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_bep_sc4, position_in_consist % 4){
+    0:set_4_cep_nse_front_dmso;
+    1:set_4_cep_nse_tsol;
+    2:set_4_bep_nse_trb;
+    3:set_4_cep_nse_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_bep_sc5, position_in_consist % 4){
+    0:set_4_cep_swt_front_dmso;
+    1:set_4_cep_swt_tsol;
+    2:set_4_bep_swt_trb;
+    3:set_4_cep_swt_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_bep_sc6, position_in_consist % 4){
+    0:set_4_cep_esw_front_dmso;
+    1:set_4_cep_esw_tsol;
+    2:set_4_bep_esw_trb;
+    3:set_4_cep_esw_rear_dmso;
+}
+
+switch(FEAT_TRAINS, SELF, sw_CEP_graphics, cargo_subtype){
+    0:sw_cep_sc0;
+    1:sw_cep_sc1;
+    2:sw_cep_sc2;
+    3:sw_cep_sc3;
+    4:sw_cep_sc4;
+    5:sw_cep_sc5;
+    6:sw_cep_sc6;
+    7:sw_cep_sc7;
+    8:sw_cep_sc8;
+    9:sw_cep_sc9;
+}	
+
+switch(FEAT_TRAINS, SELF, sw_BEP_graphics, cargo_subtype){
+    0:sw_bep_sc0;
+    1:sw_bep_sc1;
+    2:sw_bep_sc2;
+    3:sw_bep_sc3;
+    4:sw_bep_sc4;
+    5:sw_bep_sc5;
+    6:sw_bep_sc6;
+}	
+
+switch(FEAT_TRAINS, SELF, sw_CEP_start_stop, num_vehs_in_consist) {
+    1 .. 12: return CB_RESULT_NO_TEXT;
+    return string(STR_CEP_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_CEP_can_attach_wagon, vehicle_type_id) {
+    item_CEP: return CB_RESULT_ATTACH_ALLOW;
+    item_BEP: return CB_RESULT_ATTACH_ALLOW;
+    item_4CAREPB: return CB_RESULT_ATTACH_ALLOW;
+    item_2CAREPB: return CB_RESULT_ATTACH_ALLOW;
+    item_HDEMU: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_CEP_CANNOT_ATTACH_OTHER);
+}
+
+switch(FEAT_TRAINS, SELF, sw_CEP_weight, cargo_subtype) {
+    5: return 124;
+    9: return 124;
+    return 150;
+}
+
+/* --- Shorten vehicle callback  --- */
+switch(FEAT_TRAINS, SELF, sw_CEP_length, position_in_consist % 4) {
+    1: return 1;
+    2: return 7;
+    return 8;
+}
+
+switch(FEAT_TRAINS, SELF, sw_CEP_3_car, cargo_subtype) {
+    5: sw_CEP_length;
+    9: sw_CEP_length;
+    return 8;
+}
+
+switch(FEAT_TRAINS, SELF, sw_CEP_cargo_cap, cargo_subtype){
+    5: ((position_in_consist % 4) == 2) ? 0 : 56;
+    9: ((position_in_consist % 4) == 2) ? 0 : 56;
+    return 56;
+	}
+
+item(FEAT_TRAINS, item_CEP, 10003) {
+		property {
+			name:                         string(STR_CEP_NAME);
+			// not available in toyland:
+			climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+			introduction_date:            date(1956, 1, 1);
+			model_life:                   VEHICLE_NEVER_EXPIRES;
+			vehicle_life:                 50;
+			reliability_decay:            20;
+			refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+			non_refittable_cargo_classes: bitmask();
+			loading_speed:                25; 
+			cost_factor:                  40;
+			running_cost_factor:          150;
+			sprite_id:                    SPRITE_ID_NEW_TRAIN;
+			speed:                        144 km/h;
+			misc_flags:                   bitmask(TRAIN_FLAG_MU);
+			refit_cost:                   0;
+			track_type:                   SAA3;
+			ai_special_flag:              AI_FLAG_PASSENGER;
+			power:                        746 kW;
+			running_cost_base:            RUNNING_COST_ELECTRIC;
+			dual_headed:                  0;
+			cargo_capacity:               56;
+			weight:                       150 ton;
+			ai_engine_rank:               0;
+			engine_class:                 ENGINE_CLASS_ELECTRIC;
+			extra_power_per_wagon:        0 kW;
+			tractive_effort_coefficient:  0.3 / 3; // changed by callback
+			air_drag_coefficient:         0.08;
+			visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+			extra_weight_per_wagon:       0 ton;
+			bitmask_vehicle_info:         0;       
+		}
+
+
+			graphics {
+			default:                      sw_CEP_graphics;
+			cargo_capacity:               sw_CEP_cargo_cap;
+			purchase:                     set_CEP_purchase;
+			additional_text:              return string(STR_CEP_ADDITIONAL_TEXT);
+			cargo_subtype_text:           sw_CEP_cargo_subtype_text;
+			start_stop:                   sw_CEP_start_stop;
+			articulated_part:             sw_CEP_articulated_part;
+			can_attach_wagon:             sw_CEP_can_attach_wagon;
+			weight:                       sw_CEP_weight;
+			length:                       sw_CEP_3_car;
+			sound_effect:                 sw_sound;
+		}
+}
+
+item(FEAT_TRAINS, item_BEP, 10004) {
+    property {
+        name:                         string(STR_BEP_NAME);
+        // not available in toyland:
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1957, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                25; 
+        cost_factor:                  41;
+        running_cost_factor:          145;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        144 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   SAA3;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        746 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               48;
+        weight:                       155 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3; // changed by callback
+        air_drag_coefficient:         0.08;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+
+
+    graphics {
+        default:                      sw_BEP_graphics;
+        purchase:                     set_CEP_purchase;
+        additional_text:              return string(STR_BEP_ADDITIONAL_TEXT);
+        cargo_subtype_text:           sw_BEP_cargo_subtype_text;
+        start_stop:                   sw_CEP_start_stop;
+        articulated_part:             sw_BEP_articulated_part;
+        can_attach_wagon:             sw_CEP_can_attach_wagon;
+	sound_effect:                 sw_sound;
+}
+}
+
+//2/4-EPB/CLASS 413-8 CODE STARTS HERE!!!
+
+
+
+switch(FEAT_TRAINS, SELF, sw_4CAREPB_cargo_subtype_text, cargo_subtype) {
+    0: return string(STR_415_SUBTYPE_BRG);
+    1: return string(STR_415_SUBTYPE_BRGY);
+    2: return string(STR_415_SUBTYPE_BRB);
+    3: return string(STR_413_SUBTYPE_BRB);
+    4: return string(STR_415_SUBTYPE_BRBG);
+    5: return string(STR_413_SUBTYPE_BRBG);
+    6: return string(STR_415_SUBTYPE_NSE);
+    7: return string(STR_413_SUBTYPE_NSE);
+    return CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2CAREPB_cargo_subtype_text, cargo_subtype) {
+    0:   return string(STR_416_SUBTYPE_BRG);
+    1:   return string(STR_414_SUBTYPE_BRG);
+    2:  return string(STR_416_SUBTYPE_BRGY);
+    3:  return string(STR_414_SUBTYPE_BRGY);
+    4:   return string(STR_416_SUBTYPE_BRB);
+    5:   return string(STR_418_SUBTYPE_BRB);
+    6:   return string(STR_414_SUBTYPE_BRB);
+    7:  return string(STR_416_SUBTYPE_BRBG);
+    8:  return string(STR_418_SUBTYPE_BRBG);
+    9:  return string(STR_414_SUBTYPE_BRBG);
+    10:  return string(STR_416_SUBTYPE_NSE);
+    11:  return string(STR_418_SUBTYPE_NSE);
+    12:  return string(STR_414_SUBTYPE_NSE);
+    return CB_RESULT_NO_TEXT;
+}
+
+//Class 415/4-EPB
+
+spriteset (set_415_BRG_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 1213)   }
+spriteset (set_415_BRG_trailer,            "gfx/EPB.png") { tmpl_vehicle_basicii (0, 1313) }
+spriteset (set_415_BRG_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 1238)   }
+spriteset (set_415_BRGY_front_DMBSO,       "gfx/EPB.png") { tmpl_vehicle_basic (0, 938)    }
+spriteset (set_415_BRGY_trailer,           "gfx/EPB.png") { tmpl_vehicle_basicii (0, 1038) }
+spriteset (set_415_BRGY_rear_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 963)    }
+spriteset (set_415_BRB_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 663)    }
+spriteset (set_415_BRB_trailer,            "gfx/EPB.png") { tmpl_vehicle_basicii (0, 763)  }
+spriteset (set_415_BRB_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 688)    }
+spriteset (set_415_BRBG_front_DMBSO,       "gfx/EPB.png") { tmpl_vehicle_basic (0, 388)    }
+spriteset (set_415_BRBG_trailer,           "gfx/EPB.png") { tmpl_vehicle_basicii (0, 488)  }
+spriteset (set_415_BRBG_rear_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 413)    }
+spriteset (set_415_NSE_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (1, 13)     }
+spriteset (set_415_NSE_trailer,            "gfx/EPB.png") { tmpl_vehicle_basicii (1, 113)  }
+spriteset (set_415_NSE_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (1, 38)     }
+
+//Class 416/2-EPB
+
+spriteset (set_416_BRG_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 1263) }
+spriteset (set_416_BRG_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 1288) }
+spriteset (set_416_BRG_front_TS,           "gfx/EPB.png") { tmpl_vehicle_basic (0, 1338) }
+spriteset (set_416_BRG_rear_TS,            "gfx/EPB.png") { tmpl_vehicle_basic (0, 1363) }
+spriteset (set_416_BRGY_front_DMBSO,       "gfx/EPB.png") { tmpl_vehicle_basic (0, 988)  }
+spriteset (set_416_BRGY_rear_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 1013) }
+spriteset (set_416_BRGY_front_TS,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 1063) }
+spriteset (set_416_BRGY_rear_TS,           "gfx/EPB.png") { tmpl_vehicle_basic (0, 1088) }
+spriteset (set_416_BRB_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 713)  }
+spriteset (set_416_BRB_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 738)  }
+spriteset (set_416_BRB_front_TS,           "gfx/EPB.png") { tmpl_vehicle_basic (0, 788)  }
+spriteset (set_416_BRB_rear_TS,            "gfx/EPB.png") { tmpl_vehicle_basic (0, 713)  }
+spriteset (set_416_BRBG_front_DMBSO,       "gfx/EPB.png") { tmpl_vehicle_basic (0, 438)  }
+spriteset (set_416_BRBG_rear_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 463)  }
+spriteset (set_416_BRBG_front_TS,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 513)  }
+spriteset (set_416_BRBG_rear_TS,           "gfx/EPB.png") { tmpl_vehicle_basic (0, 538)  }
+spriteset (set_416_NSE_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (1, 63)   }
+spriteset (set_416_NSE_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (1, 88)   }
+spriteset (set_416_NSE_front_TS,           "gfx/EPB.png") { tmpl_vehicle_basic (1, 138)  }
+spriteset (set_416_NSE_rear_TS,            "gfx/EPB.png") { tmpl_vehicle_basic (1, 163)  }
+
+//Class 413/4-CAP
+
+spriteset (set_413_BRB_front_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 888) }
+spriteset (set_413_BRB_rear_DTC,           "gfx/EPB.png") { tmpl_vehicle_basic (0, 913) }
+spriteset (set_413_BRB_front_MBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 663) }
+spriteset (set_413_BRB_rear_MBSO,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 688) }
+spriteset (set_413_BRBG_front_DTC,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 613) }
+spriteset (set_413_BRBG_rear_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 638) }
+spriteset (set_413_BRBG_front_MBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 438) }
+spriteset (set_413_BRBG_rear_MBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 413) }
+spriteset (set_413_NSE_front_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (1, 238) }
+spriteset (set_413_NSE_rear_DTC,           "gfx/EPB.png") { tmpl_vehicle_basic (1, 263) }
+spriteset (set_413_NSE_front_MBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (1, 288) }
+spriteset (set_413_NSE_rear_MBSO,          "gfx/EPB.png") { tmpl_vehicle_basic (1, 313) }
+
+//Class 414/2-HAP
+
+spriteset (set_414_BRG_front_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 1438) }
+spriteset (set_414_BRG_rear_DTC,           "gfx/EPB.png") { tmpl_vehicle_basic (0, 1463) }
+spriteset (set_414_BRG_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 1263) }
+spriteset (set_414_BRG_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 1288) }
+spriteset (set_414_BRGY_front_DTC,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 1163) }
+spriteset (set_414_BRGY_rear_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 1188) }
+spriteset (set_414_BRGY_front_DMBSO,       "gfx/EPB.png") { tmpl_vehicle_basic (0, 988)  }
+spriteset (set_414_BRGY_rear_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 1013) }
+spriteset (set_414_BRB_front_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 888)  }
+spriteset (set_414_BRB_rear_DTC,           "gfx/EPB.png") { tmpl_vehicle_basic (0, 913)  }
+spriteset (set_414_BRB_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 713)  }
+spriteset (set_414_BRB_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 738)  }
+spriteset (set_414_BRBG_front_DTC,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 613)  }
+spriteset (set_414_BRBG_rear_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 638)  }
+spriteset (set_414_BRBG_front_DMBSO,       "gfx/EPB.png") { tmpl_vehicle_basic (0, 438)  }
+spriteset (set_414_BRBG_rear_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 463)  }
+spriteset (set_414_NSE_front_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (1, 238)  }
+spriteset (set_414_NSE_rear_DTC,           "gfx/EPB.png") { tmpl_vehicle_basic (1, 263)  }
+spriteset (set_414_NSE_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (1, 63)   }
+spriteset (set_414_NSE_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (1, 88)   }
+
+//Class 418/2-SAP
+
+spriteset (set_418_BRB_front_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 838)  }
+spriteset (set_418_BRB_rear_DTC,           "gfx/EPB.png") { tmpl_vehicle_basic (0, 863)  }
+spriteset (set_418_BRB_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 713)  }
+spriteset (set_418_BRB_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 738)  }
+spriteset (set_418_BRBG_front_DTC,         "gfx/EPB.png") { tmpl_vehicle_basic (0, 563)  }
+spriteset (set_418_BRBG_rear_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (0, 588)  }
+spriteset (set_418_BRBG_front_DMBSO,       "gfx/EPB.png") { tmpl_vehicle_basic (0, 438)  }
+spriteset (set_418_BRBG_rear_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (0, 463)  }
+spriteset (set_418_NSE_front_DTC,          "gfx/EPB.png") { tmpl_vehicle_basic (1, 188)  }
+spriteset (set_418_NSE_rear_DTC,           "gfx/EPB.png") { tmpl_vehicle_basic (1, 213)  }
+spriteset (set_418_NSE_front_DMBSO,        "gfx/EPB.png") { tmpl_vehicle_basic (1, 63)   }
+spriteset (set_418_NSE_rear_DMBSO,         "gfx/EPB.png") { tmpl_vehicle_basic (1, 88)   }
+
+//Purchase Sprite
+
+spriteset (set_EPB_purchase,               "gfx/EPB.png") { tmpl_vehicle_single(50, 11, -25, -5, 5) }
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, sw_4CAREPB_articulated_part, extra_callback_info1) {
+    /* Add three articulated parts, for a total of four */
+    1 .. 3: return item_4CAREPB;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+/* --- Articulated part callback  --- */
+switch(FEAT_TRAINS, SELF, sw_2CAREPB_articulated_part, extra_callback_info1) {
+    /* Add three articulated parts, for a total of four */
+    1: return item_2CAREPB;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+/* --- Graphics callback (sw=switch, ce=car epb, sc=subcargo) --- */
+
+switch(FEAT_TRAINS, SELF, sw_4ce_sc0, position_in_consist % 4){
+    0:set_415_BRG_front_DMBSO;
+    1:set_415_BRG_trailer;
+    2:set_415_BRG_trailer;
+    3:set_415_BRG_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_4ce_sc1, position_in_consist % 4){
+    0:set_415_BRGY_front_DMBSO;
+    1:set_415_BRGY_trailer;
+    2:set_415_BRGY_trailer;
+    3:set_415_BRGY_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_4ce_sc2, position_in_consist % 4){
+    0:set_415_BRB_front_DMBSO;
+    1:set_415_BRB_trailer;
+    2:set_415_BRB_trailer;
+    3:set_415_BRB_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_4ce_sc3, position_in_consist % 4){
+    0:set_413_BRB_front_DTC;
+    1:set_413_BRB_rear_MBSO;
+    2:set_413_BRB_front_MBSO;
+    3:set_413_BRB_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_4ce_sc4, position_in_consist % 4){
+    0:set_415_BRBG_front_DMBSO;
+    1:set_415_BRBG_trailer;
+    2:set_415_BRBG_trailer;
+    3:set_415_BRBG_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_4ce_sc5, position_in_consist % 4){
+    0:set_413_BRBG_front_DTC;
+    1:set_413_BRBG_rear_MBSO;
+    2:set_413_BRBG_front_MBSO;
+    3:set_413_BRBG_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_4ce_sc6, position_in_consist % 4){
+    0:set_415_NSE_front_DMBSO;
+    1:set_415_NSE_trailer;
+    2:set_415_NSE_trailer;
+    3:set_415_NSE_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_4ce_sc7, position_in_consist % 4){
+    0:set_413_NSE_front_DTC;
+    1:set_413_NSE_rear_MBSO;
+    2:set_413_NSE_front_MBSO;
+    3:set_413_NSE_rear_DTC;
+}
+
+//Two car EPBs
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc0f, position_in_consist % 2){
+    0:set_416_BRG_front_DMBSO;
+    1:set_416_BRG_rear_TS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc0r, position_in_consist % 2){
+    0:set_416_BRG_front_TS;
+    1:set_416_BRG_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc1f, position_in_consist % 2){
+    0:set_414_BRG_front_DMBSO;
+    1:set_414_BRG_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc1r, position_in_consist % 2){
+    0:set_414_BRG_front_DTC;
+    1:set_414_BRG_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc2f, position_in_consist % 2){
+    0:set_416_BRGY_front_DMBSO;
+    1:set_416_BRGY_rear_TS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc2r, position_in_consist % 2){
+    0:set_416_BRGY_front_TS;
+    1:set_416_BRGY_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc3f, position_in_consist % 2){
+    0:set_414_BRGY_front_DMBSO;
+    1:set_414_BRGY_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc3r, position_in_consist % 2){
+    0:set_414_BRGY_front_DTC;
+    1:set_414_BRGY_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc4f, position_in_consist % 2){
+    0:set_416_BRB_front_DMBSO;
+    1:set_416_BRB_rear_TS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc4r, position_in_consist % 2){
+    0:set_416_BRB_front_TS;
+    1:set_416_BRB_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc6f, position_in_consist % 2){
+    0:set_414_BRB_front_DMBSO;
+    1:set_414_BRB_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc6r, position_in_consist % 2){
+    0:set_414_BRB_front_DTC;
+    1:set_414_BRB_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc5f, position_in_consist % 2){
+    0:set_418_BRB_front_DMBSO;
+    1:set_418_BRB_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc5r, position_in_consist % 2){
+    0:set_418_BRB_front_DTC;
+    1:set_418_BRB_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc7f, position_in_consist % 2){
+    0:set_416_BRBG_front_DMBSO;
+    1:set_416_BRBG_rear_TS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc7r, position_in_consist % 2){
+    0:set_416_BRBG_front_TS;
+    1:set_416_BRBG_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc9f, position_in_consist % 2){
+    0:set_414_BRBG_front_DMBSO;
+    1:set_414_BRBG_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc9r, position_in_consist % 2){
+    0:set_414_BRBG_front_DTC;
+    1:set_414_BRBG_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc8f, position_in_consist % 2){
+    0:set_418_BRBG_front_DMBSO;
+    1:set_418_BRBG_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc8r, position_in_consist % 2){
+    0:set_418_BRBG_front_DTC;
+    1:set_418_BRBG_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc10f, position_in_consist % 2){
+    0:set_416_NSE_front_DMBSO;
+    1:set_416_NSE_rear_TS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc10r, position_in_consist % 2){
+    0:set_416_NSE_front_TS;
+    1:set_416_NSE_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc12f, position_in_consist % 2){
+    0:set_414_NSE_front_DMBSO;
+    1:set_414_NSE_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc12r, position_in_consist % 2){
+    0:set_414_NSE_front_DTC;
+    1:set_414_NSE_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc11f, position_in_consist % 2){
+    0:set_418_NSE_front_DMBSO;
+    1:set_418_NSE_rear_DTC;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2ce_sc11r, position_in_consist % 2){
+    0:set_418_NSE_front_DTC;
+    1:set_418_NSE_rear_DMBSO;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc0, vehicle_is_reversed){
+ 1: sw_2ce_sc0r;
+ default: sw_2ce_sc0f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc1, vehicle_is_reversed){
+ 1: sw_2ce_sc1r;
+ default: sw_2ce_sc1f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc2, vehicle_is_reversed){
+ 1: sw_2ce_sc2r;
+ default: sw_2ce_sc2f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc3, vehicle_is_reversed){
+ 1: sw_2ce_sc3r;
+ default: sw_2ce_sc3f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc4, vehicle_is_reversed){
+ 1: sw_2ce_sc4r;
+ default: sw_2ce_sc4f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc5, vehicle_is_reversed){
+ 1: sw_2ce_sc5r;
+ default: sw_2ce_sc5f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc6, vehicle_is_reversed){
+ 1: sw_2ce_sc6r;
+ default: sw_2ce_sc6f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc7, vehicle_is_reversed){
+ 1: sw_2ce_sc7r;
+ default: sw_2ce_sc7f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc8, vehicle_is_reversed){
+ 1: sw_2ce_sc8r;
+ default: sw_2ce_sc8f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc9, vehicle_is_reversed){
+ 1: sw_2ce_sc9r;
+ default: sw_2ce_sc9f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc10, vehicle_is_reversed){
+ 1: sw_2ce_sc10r;
+ default: sw_2ce_sc10f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc11, vehicle_is_reversed){
+ 1: sw_2ce_sc11r;
+ default: sw_2ce_sc11f;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_2ce_sc12, vehicle_is_reversed){
+ 1: sw_2ce_sc12r;
+ default: sw_2ce_sc12f;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_4CAREPB_graphics, cargo_subtype){
+    0:sw_4ce_sc0;
+    1:sw_4ce_sc1;
+    2:sw_4ce_sc2;
+    3:sw_4ce_sc3;
+    4:sw_4ce_sc4;
+    5:sw_4ce_sc5;
+    6:sw_4ce_sc6;
+    7:sw_4ce_sc7;
+}	
+
+switch(FEAT_TRAINS, SELF, sw_2CAREPB_graphics, cargo_subtype){
+    0:sw_2ce_sc0;
+    1:sw_2ce_sc1;
+    2:sw_2ce_sc2;
+    3:sw_2ce_sc3;
+    4:sw_2ce_sc4;
+    5:sw_2ce_sc5;
+    6:sw_2ce_sc6;
+    7:sw_2ce_sc7;
+    8:sw_2ce_sc8;
+    9:sw_2ce_sc9;
+    10:sw_2ce_sc10;
+    11:sw_2ce_sc11;
+    12:sw_2ce_sc12;
+}	
+
+switch(FEAT_TRAINS, SELF, sw_4CAREPB_start_stop, num_vehs_in_consist) {
+    1 .. 12: return CB_RESULT_NO_TEXT;
+    return string(STR_EPB_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_4CAREPB_can_attach_wagon, vehicle_type_id) {
+    item_4CAREPB: return CB_RESULT_ATTACH_ALLOW;
+    item_2CAREPB: return CB_RESULT_ATTACH_ALLOW;
+    item_CEP: return CB_RESULT_ATTACH_ALLOW;
+    item_BEP: return CB_RESULT_ATTACH_ALLOW;
+    item_HDEMU: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_EPB_CANNOT_ATTACH_OTHER);
+}
+
+switch(FEAT_TRAINS, SELF, sw_3rd_arc, [
+	STORE_TEMP(create_effect(VISUAL_EFFECT_DIESEL, 4, 4, 4), 0x100)
+	]){
+	return 1;
+}
+
+item(FEAT_TRAINS, item_4CAREPB, 10005) {
+    property {
+        name:                         string(STR_4CAREPB_NAME);
+        // not available in toyland:
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1951, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                30; 
+        cost_factor:                  34;
+        running_cost_factor:          110;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   SAA3;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        746 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               96;
+        weight:                       135 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3; // changed by callback
+        air_drag_coefficient:         0.08;
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+
+
+    graphics {
+        default:                      sw_4CAREPB_graphics;
+        purchase:                     set_EPB_purchase;
+        additional_text:              return string(STR_4CAREPB_ADDITIONAL_TEXT);
+        cargo_subtype_text:           sw_4CAREPB_cargo_subtype_text;
+        start_stop:                   sw_4CAREPB_start_stop;
+        articulated_part:             sw_4CAREPB_articulated_part;
+        can_attach_wagon:			    sw_4CAREPB_can_attach_wagon;
+	sound_effect:             		    sw_sound;
+		create_effect:					sw_3rd_arc;
+    }
+}
+
+item(FEAT_TRAINS, item_2CAREPB, 10006) {
+    property {
+        name:                         string(STR_2CAREPB_NAME);
+        // not available in toyland:
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1953, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                30; 
+        cost_factor:                  17;
+        running_cost_factor:          65;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   SAA3;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        373 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               91;
+        weight:                       70 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3; // changed by callback
+        air_drag_coefficient:         0.08;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+
+
+    graphics {
+        default:                      sw_2CAREPB_graphics;
+        purchase:                     set_EPB_purchase;
+        additional_text:              return string(STR_2CAREPB_ADDITIONAL_TEXT);
+        cargo_subtype_text:           sw_2CAREPB_cargo_subtype_text;
+        start_stop:                   sw_4CAREPB_start_stop;
+        articulated_part:             sw_2CAREPB_articulated_part;
+        can_attach_wagon:             sw_4CAREPB_can_attach_wagon;
+	sound_effect:                 sw_sound;
+        /* Capacity is per part */
+        /* In the purchase menu, we want to show the capacity for the three-part version,
+         * i.e. divide the capacity of three cars across four */
+    }
+}
+
+//4-COR/CLASS 404 CODE FROM HERE!!!
+
+
+switch(FEAT_TRAINS, SELF, sw_4cor_cargo_subtype_text, cargo_subtype) {
+    0:  return string(STR_COR_SUBTYPE_BRG);
+    1:  return string(STR_BUF_SUBTYPE_BRG);
+    2:  return string(STR_RES_SUBTYPE_BRG);
+    3:  return string(STR_GRI_SUBTYPE_BRG);
+    4: return string(STR_COR_SUBTYPE_BRGY);
+    5: return string(STR_BUF_SUBTYPE_BRGY);
+    6: return string(STR_RES_SUBTYPE_BRGY);
+    7: return string(STR_GRI_SUBTYPE_BRGY);
+	8:  return string(STR_COR_SUBTYPE_BRB);
+	9: return string(STR_BUF_SUBTYPE_BRB);
+	10: return string(STR_RES_SUBTYPE_BRB);
+	11: return string(STR_GRI_SUBTYPE_BRB);
+    return CB_RESULT_NO_TEXT;
+}
+
+//Class 404 Sprites
+
+spriteset (set_404_BRG_front_DMBSO,        "gfx/404.png") { tmpl_vehicle_basic (0, 13)    }
+spriteset (set_404_BRG_TTK,                "gfx/404.png") { tmpl_vehicle_basic (0, 38)    }
+spriteset (set_404_BRG_TCK,                "gfx/404.png") { tmpl_vehicle_basic (0, 63)    }
+spriteset (set_404_BRG_TRxx,               "gfx/404.png") { tmpl_vehicle_basicii (0, 88)  }
+spriteset (set_404_BRG_rear_DMBSO,         "gfx/404.png") { tmpl_vehicle_basic (0, 113)   }
+spriteset (set_404_BRGY_front_DMBSO,       "gfx/404.png") { tmpl_vehicle_basic (0, 138)   }
+spriteset (set_404_BRGY_rear_DMBSO,        "gfx/404.png") { tmpl_vehicle_basic (0, 238)   }
+spriteset (set_404_BRB_front_DMBSO,        "gfx/404.png") { tmpl_vehicle_basic (0, 264)   }
+spriteset (set_404_BRB_TSK,                "gfx/404.png") { tmpl_vehicle_basic (0, 289)   }
+spriteset (set_404_BRB_TCK,                "gfx/404.png") { tmpl_vehicle_basic (0, 314)   }
+spriteset (set_404_BRB_TRxx,               "gfx/404.png") { tmpl_vehicle_basicii (0, 339) }
+spriteset (set_404_BRB_rear_DMBSO,         "gfx/404.png") { tmpl_vehicle_basic (0, 364)   }
+spriteset (set_404_purchase,               "gfx/404.png") { tmpl_vehicle_single(50, 11, -25, -5, 5) }
+
+switch(FEAT_TRAINS, SELF, sw_4cor_brg, position_in_consist % 4){
+		0: return set_404_BRG_front_DMBSO;
+		1: return set_404_BRG_TTK;
+		2: return set_404_BRG_TCK;
+		3: return set_404_BRG_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4buf_brg, position_in_consist % 4){
+		0: return set_404_BRG_front_DMBSO;
+		1: return set_404_BRG_TRxx;
+		2: return set_404_BRG_TCK;
+		3: return set_404_BRG_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4res_brg, position_in_consist % 4){
+		0: return set_404_BRG_front_DMBSO;
+		1: return set_404_BRG_TRxx;
+		2: return set_404_BRG_TCK;
+		3: return set_404_BRG_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4gri_brg, position_in_consist % 4){
+		0: return set_404_BRG_front_DMBSO;
+		1: return set_404_BRG_TRxx;
+		2: return set_404_BRG_TCK;
+		3: return set_404_BRG_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4cor_brgy, position_in_consist % 4){
+		0: return set_404_BRGY_front_DMBSO;
+		1: return set_404_BRG_TTK;
+		2: return set_404_BRG_TCK;
+		3: return set_404_BRGY_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4buf_brgy, position_in_consist % 4){
+		0: return set_404_BRGY_front_DMBSO;
+		1: return set_404_BRG_TRxx;
+		2: return set_404_BRG_TCK;
+		3: return set_404_BRGY_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4res_brgy, position_in_consist % 4){
+		0: return set_404_BRGY_front_DMBSO;
+		1: return set_404_BRG_TRxx;
+		2: return set_404_BRG_TCK;
+		3: return set_404_BRGY_rear_DMBSO;
+	}	
+
+switch(FEAT_TRAINS, SELF, sw_4gri_brgy, position_in_consist % 4){
+		0: return set_404_BRGY_front_DMBSO;
+		1: return set_404_BRG_TRxx;
+		2: return set_404_BRG_TCK;
+		3: return set_404_BRGY_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4cor_brb, position_in_consist % 4){
+		0: return set_404_BRB_front_DMBSO;
+		1: return set_404_BRB_TSK;
+		2: return set_404_BRB_TCK;
+		3: return set_404_BRB_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4buf_brb, position_in_consist % 4){
+		0: return set_404_BRB_front_DMBSO;
+		1: return set_404_BRB_TRxx;
+		2: return set_404_BRB_TCK;
+		3: return set_404_BRB_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4res_brb, position_in_consist % 4){
+		0: return set_404_BRB_front_DMBSO;
+		1: return set_404_BRB_TRxx;
+		2: return set_404_BRB_TCK;
+		3: return set_404_BRB_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4gri_brb, position_in_consist % 4){
+		0: return set_404_BRB_front_DMBSO;
+		1: return set_404_BRB_TRxx;
+		2: return set_404_BRB_TCK;
+		3: return set_404_BRB_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_4cor_graphics, cargo_subtype){
+		0: sw_4cor_brg;
+		1: sw_4buf_brg;
+		2: sw_4res_brg;
+		3: sw_4gri_brg;
+		4: sw_4cor_brgy;
+		5: sw_4buf_brgy;
+		6: sw_4res_brgy;
+		7: sw_4gri_brgy;
+		8: sw_4cor_brb;
+		9: sw_4buf_brb;
+		10: sw_4res_brb;
+		11: sw_4gri_brb;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_cor_start_stop, num_vehs_in_consist) {
+		1 .. 12: return CB_RESULT_NO_TEXT;
+		return string(STR_COR_CANNOT_START);
+	}
+
+switch(FEAT_TRAINS, SELF, sw_COR_can_attach_wagon, vehicle_type_id) {
+		item_COR4: return CB_RESULT_ATTACH_ALLOW;
+		return string(STR_CEP_CANNOT_ATTACH_OTHER);
+	}
+
+switch(FEAT_TRAINS, SELF, sw_cor_weight, cargo_subtype) {
+		0: return 143;
+		4: return 143;
+		8: return 143;
+		1: return 162;
+		5: return 162;
+		9: return 162;
+		2: return 161;
+		6: return 161;
+		10: return 161;
+		3: return 160;
+		7: return 160;
+		11: return 160;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_cor_cargo_cap, cargo_subtype){
+		0: return 57;
+		1: return 46;
+		2: return 45;
+		3: return 45;
+		4: return 57;
+		5: return 46;
+		6: return 45;
+		7: return 45;
+		8: return 57;
+		9: return 46;
+		10: return 45;
+		11: return 45;
+	}
+	
+switch(FEAT_TRAINS, SELF, sw_4COR_articulated_part, extra_callback_info1) {
+    1 .. 3: return item_COR4;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+	
+item(FEAT_TRAINS, item_COR4, 10007){
+    property {
+        name:                         string(STR_4COR_NAME);
+        // not available in toyland:
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1937, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                20; 
+        cost_factor:                  38;
+        running_cost_factor:          130;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   SAA3;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        671 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               91;
+        weight:                       70 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3; // changed by callback
+        air_drag_coefficient:         0.08;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+
+
+    graphics {
+        default:                      sw_4cor_graphics;
+        purchase:                     set_404_purchase;
+        additional_text:              return string(STR_4COR_ADDITIONAL_TEXT);
+        cargo_subtype_text:           sw_4cor_cargo_subtype_text;
+        start_stop:                   sw_cor_start_stop;
+        articulated_part:             sw_4COR_articulated_part;
+        can_attach_wagon:             sw_COR_can_attach_wagon;
+	weight:                       sw_cor_weight;
+	cargo_capacity:               sw_cor_cargo_cap;
+	sound_effect:                 sw_sound;
+    }
+}
+
+//6-COR/CLASS 404 CODE FROM HERE!!!
+
+	
+//Class 404 Sprites
+
+spriteset (set_4046_BRB_front_DMBSO,        "gfx/404.png") { tmpl_vehicle_basic (0, 264)   }
+spriteset (set_404_BRB_TSK_6,              "gfx/404.png") { tmpl_vehicle_basic  (0, 289)  }
+spriteset (set_404_BRB_TCK_6,              "gfx/404.png") { tmpl_vehicle_basic  (0, 314)  }
+spriteset (set_4046_BRB_rear_DMBSO,         "gfx/404.png") { tmpl_vehicle_basic (0, 364)   }
+spriteset (set_4046_purchase,              "gfx/404.png") { tmpl_vehicle_single2(50, 11, -25, -5, 5) }
+
+switch(FEAT_TRAINS, SELF, sw_6cor_graphics, position_in_consist % 6){
+		0: set_4046_BRB_front_DMBSO;
+		1: set_404_BRB_TSK_6;
+		2: set_404_BRB_TSK_6;
+		3: set_404_BRB_TSK_6;
+		4: set_404_BRB_TSK_6;
+		5: set_4046_BRB_rear_DMBSO;
+	}
+
+switch(FEAT_TRAINS, SELF, sw_6COR_articulated_part, extra_callback_info1) {
+    1 .. 5: return item_COR6;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+	}
+	
+switch(FEAT_TRAINS, SELF, sw_COR6_can_attach_wagon, vehicle_type_id) {
+	item_COR6: return CB_RESULT_ATTACH_ALLOW;
+	return string(STR_CEP_CANNOT_ATTACH_OTHER);
+}
+	
+item(FEAT_TRAINS, item_COR6, 10008){
+    property {
+        name:                         string(STR_6COR_NAME);
+        // not available in toyland:
+        climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+        introduction_date:            date(1965, 1, 1);
+        model_life:                   VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                 50;
+        reliability_decay:            20;
+        refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes: bitmask();
+        loading_speed:                20; 
+        cost_factor:                  38;
+        running_cost_factor:          130;
+        sprite_id:                    SPRITE_ID_NEW_TRAIN;
+        speed:                        120 km/h;
+        misc_flags:                   bitmask(TRAIN_FLAG_MU);
+        refit_cost:                   0;
+        track_type:                   SAA3;
+        ai_special_flag:              AI_FLAG_PASSENGER;
+        power:                        671 kW;
+        running_cost_base:            RUNNING_COST_ELECTRIC;
+        dual_headed:                  0;
+        cargo_capacity:               56;
+        weight:                       254 ton;
+        ai_engine_rank:               0;
+        engine_class:                 ENGINE_CLASS_ELECTRIC;
+        extra_power_per_wagon:        0 kW;
+        tractive_effort_coefficient:  0.3 / 3; // changed by callback
+        air_drag_coefficient:         0.08;
+        visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_ELECTRIC, 2, DISABLE_WAGON_POWER);
+        extra_weight_per_wagon:       0 ton;
+        bitmask_vehicle_info:         0;
+    }
+
+
+    graphics {
+        default:                      sw_6cor_graphics;
+        purchase:                     set_4046_purchase;
+        additional_text:              return string(STR_6COR_ADDITIONAL_TEXT);
+        start_stop:                   sw_cor_start_stop;
+        articulated_part:             sw_6COR_articulated_part;
+        can_attach_wagon:             sw_COR6_can_attach_wagon;
+	sound_effect:                 sw_sound;
+    }
+}
+
+//2/3H CODE STARTS HERE!!!
+
+
+
+switch(FEAT_TRAINS, SELF, sw_23h_cargo_subtype_text, cargo_subtype) {
+     0: return string(STR_205_SUBTYPE_BRG);
+     1: return string(STR_204_SUBTYPE_BRG);
+    2: return string(STR_205_SUBTYPE_BRGY);
+    3: return string(STR_204_SUBTYPE_BRGY);
+     4: return string(STR_205_SUBTYPE_BRB);
+     5: return string(STR_204_SUBTYPE_BRB);
+    6: return string(STR_205_SUBTYPE_BRBG);
+    7: return string(STR_204_SUBTYPE_BRBG);
+     8: return string(STR_205_SUBTYPE_NSE);
+     9: return string(STR_204_SUBTYPE_NSE);
+    10: return string(STR_205_SUBTYPE_CNX);
+    11: return string(STR_204_SUBTYPE_CNX);
+    return CB_RESULT_NO_TEXT;
+}
+
+//205 Sprites
+
+spriteset(set_23h_brg_front_dmbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,513)}
+spriteset(set_23h_brg_rear_dmbs,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,538)}
+spriteset(set_23h_brg_ts,               "gfx/HampshireDEMU.png"){tmpl_vehicle_basicii(0,563)}
+spriteset(set_23h_brg_front_dtbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,588)}
+spriteset(set_23h_brg_rear_dtbs,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,613)}
+spriteset(set_23h_brgy_front_dmbs,      "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,388)}
+spriteset(set_23h_brgy_rear_dmbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,413)}
+spriteset(set_23h_brgy_ts,              "gfx/HampshireDEMU.png"){tmpl_vehicle_basicii(0,438)}
+spriteset(set_23h_brgy_front_dtbs,      "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,463)}
+spriteset(set_23h_brgy_rear_dtbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,488)}
+spriteset(set_23h_brb_front_dmbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,263)}
+spriteset(set_23h_brb_rear_dmbs,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,288)}
+spriteset(set_23h_brb_ts,               "gfx/HampshireDEMU.png"){tmpl_vehicle_basicii(0,313)}
+spriteset(set_23h_brb_front_dtbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,338)}
+spriteset(set_23h_brb_rear_dtbs,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,363)}
+spriteset(set_23h_brbg_front_dmbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,138)}
+spriteset(set_23h_brbg_rear_dmbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,163)}
+spriteset(set_23h_brbg_ts,              "gfx/HampshireDEMU.png"){tmpl_vehicle_basicii(0,188)}
+spriteset(set_23h_brbg_front_dtbs,      "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,213)}
+spriteset(set_23h_brbg_rear_dtbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,238)}
+spriteset(set_23h_nse_front_dmbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,13)}
+spriteset(set_23h_nse_rear_dmbs,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,38)}
+spriteset(set_23h_nse_ts,               "gfx/HampshireDEMU.png"){tmpl_vehicle_basicii(0,63)}
+spriteset(set_23h_nse_front_dtbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,88)}
+spriteset(set_23h_nse_rear_dtbs,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,113)}
+spriteset(set_23h_cnx_front_dmbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,639)}
+spriteset(set_23h_cnx_rear_dmbs,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,664)}
+spriteset(set_23h_cnx_ts,               "gfx/HampshireDEMU.png"){tmpl_vehicle_basicii(0,689)}
+spriteset(set_23h_cnx_front_dtbs,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,714)}
+spriteset(set_23h_cnx_rear_dtbs,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic(0,739)}
+//"set_invisible" is already defined
+
+//204 Sprites
+spriteset(set_23h_brg_rear_dmbs3,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,538)}
+spriteset(set_23h_brg_rear_dtbs3,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,613)}
+spriteset(set_23h_brgy_rear_dmbs3,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,413)}
+spriteset(set_23h_brgy_rear_dtbs3,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,488)}
+spriteset(set_23h_brb_rear_dmbs3,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,288)}
+spriteset(set_23h_brb_rear_dtbs3,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,363)}
+spriteset(set_23h_brbg_rear_dmbs3,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,163)}
+spriteset(set_23h_brbg_rear_dtbs3,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,238)}
+spriteset(set_23h_nse_rear_dmbs3,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,38)}
+spriteset(set_23h_nse_rear_dtbs3,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,113)}
+spriteset(set_23h_cnx_rear_dmbs3,        "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,664)}
+spriteset(set_23h_cnx_rear_dtbs3,       "gfx/HampshireDEMU.png"){tmpl_vehicle_basic3(0,714)}
+
+//Purchase Sprite
+
+spriteset (set_23h_purchase,               "gfx/HampshireDEMU.png") { tmpl_vehicle_single(50, 12, -25, -5, 5) }
+
+switch(FEAT_TRAINS, SELF, sw_HDEMU_articulated_part, extra_callback_info1) {
+    1 .. 2: return item_HDEMU;
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+/* --- Graphics callback (sw=switch, sc=subcargo) --- */
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc0f, position_in_consist % 3){
+    0:set_23h_brg_front_dmbs;
+    1:set_23h_brg_ts;
+    2:set_23h_brg_rear_dtbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc0r, position_in_consist % 3){
+    0:set_23h_brg_front_dtbs;
+    1:set_23h_brg_ts;
+    2:set_23h_brg_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc0, vehicle_is_reversed){
+ 1: sw_23h_sc0r;
+ default: sw_23h_sc0f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc1f, position_in_consist % 3){
+    0:set_23h_brg_front_dmbs;
+    1:set_invisible;
+    2:set_23h_brg_rear_dtbs3;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc1r, position_in_consist % 3){
+    0:set_23h_brg_front_dtbs;
+    1:set_invisible;
+    2:set_23h_brg_rear_dmbs3;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc1, vehicle_is_reversed){
+ 1: sw_23h_sc1r;
+ default: sw_23h_sc1f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc2f, position_in_consist % 3){
+    0:set_23h_brgy_front_dmbs;
+    1:set_23h_brgy_ts;
+    2:set_23h_brgy_rear_dtbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc2r, position_in_consist % 3){
+    0:set_23h_brgy_front_dtbs;
+    1:set_23h_brgy_ts;
+    2:set_23h_brgy_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc2, vehicle_is_reversed){
+ 1: sw_23h_sc2r;
+ default: sw_23h_sc2f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc3f, position_in_consist % 3){
+    0:set_23h_brgy_front_dmbs;
+    1:set_invisible;
+    2:set_23h_brgy_rear_dtbs3;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc3r, position_in_consist % 3){
+    0:set_23h_brgy_front_dtbs;
+    1:set_invisible;
+    2:set_23h_brgy_rear_dmbs3;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc3, vehicle_is_reversed){
+ 1: sw_23h_sc3r;
+ default: sw_23h_sc3f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc4f, position_in_consist % 3){
+    0:set_23h_brb_front_dmbs;
+    1:set_23h_brb_ts;
+    2:set_23h_brb_rear_dtbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc4r, position_in_consist % 3){
+    0:set_23h_brb_front_dtbs;
+    1:set_23h_brb_ts;
+    2:set_23h_brb_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc4, vehicle_is_reversed){
+ 1: sw_23h_sc4r;
+ default: sw_23h_sc4f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc5f, position_in_consist % 3){
+    0:set_23h_brb_front_dmbs;
+    1:set_invisible;
+    2:set_23h_brb_rear_dtbs3;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc5r, position_in_consist % 3){
+    0:set_23h_brb_front_dtbs;
+    1:set_invisible;
+    2:set_23h_brb_rear_dmbs3;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc5, vehicle_is_reversed){
+ 1: sw_23h_sc5r;
+ default: sw_23h_sc5f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc6f, position_in_consist % 3){
+    0:set_23h_brbg_front_dmbs;
+    1:set_23h_brbg_ts;
+    2:set_23h_brbg_rear_dtbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc6r, position_in_consist % 3){
+    0:set_23h_brbg_front_dtbs;
+    1:set_23h_brbg_ts;
+    2:set_23h_brbg_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc6, vehicle_is_reversed){
+ 1: sw_23h_sc6r;
+ default: sw_23h_sc6f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc7f, position_in_consist % 3){
+    0:set_23h_brbg_front_dmbs;
+    1:set_invisible;
+    2:set_23h_brbg_rear_dtbs3;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc7r, position_in_consist % 3){
+    0:set_23h_brbg_front_dtbs;
+    1:set_invisible;
+    2:set_23h_brbg_rear_dmbs3;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc7, vehicle_is_reversed){
+ 1: sw_23h_sc7r;
+ default: sw_23h_sc7f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc8f, position_in_consist % 3){
+    0:set_23h_nse_front_dmbs;
+    1:set_23h_nse_ts;
+    2:set_23h_nse_rear_dtbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc8r, position_in_consist % 3){
+    0:set_23h_nse_front_dtbs;
+    1:set_23h_nse_ts;
+    2:set_23h_nse_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc8, vehicle_is_reversed){
+ 1: sw_23h_sc8r;
+ default: sw_23h_sc8f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc9f, position_in_consist % 3){
+    0:set_23h_nse_front_dmbs;
+    1:set_invisible;
+    2:set_23h_nse_rear_dtbs3;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc9r, position_in_consist % 3){
+    0:set_23h_nse_front_dtbs;
+    1:set_invisible;
+    2:set_23h_nse_rear_dmbs3;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc9, vehicle_is_reversed){
+ 1: sw_23h_sc9r;
+ default: sw_23h_sc9f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc10f, position_in_consist % 3){
+    0:set_23h_cnx_front_dmbs;
+    1:set_23h_cnx_ts;
+    2:set_23h_cnx_rear_dtbs;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc10r, position_in_consist % 3){
+    0:set_23h_cnx_front_dtbs;
+    1:set_23h_cnx_ts;
+    2:set_23h_cnx_rear_dmbs;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc10, vehicle_is_reversed){
+ 1: sw_23h_sc10r;
+ default: sw_23h_sc10f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc11f, position_in_consist % 3){
+    0:set_23h_cnx_front_dmbs;
+    1:set_invisible;
+    2:set_23h_cnx_rear_dtbs3;
+}
+
+switch(FEAT_TRAINS, SELF, sw_23h_sc11r, position_in_consist % 3){
+    0:set_23h_cnx_front_dtbs;
+    1:set_invisible;
+    2:set_23h_cnx_rear_dmbs3;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_23h_sc11, vehicle_is_reversed){
+ 1: sw_23h_sc11r;
+ default: sw_23h_sc11f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_HDEMU_graphics, cargo_subtype){
+    0:sw_23h_sc0;
+    1:sw_23h_sc1;
+    2:sw_23h_sc2;
+    3:sw_23h_sc3;
+    4:sw_23h_sc4;
+    5:sw_23h_sc5;
+    6:sw_23h_sc6;
+    7:sw_23h_sc7;
+    8:sw_23h_sc8;
+    9:sw_23h_sc9;
+    10:sw_23h_sc10;
+    11:sw_23h_sc11;
+
+}	
+
+switch(FEAT_TRAINS, SELF, sw_HDEMU_start_stop, num_vehs_in_consist) {
+    1 .. 12: return CB_RESULT_NO_TEXT;
+    return string(STR_CEP_CANNOT_START);
+}
+
+switch(FEAT_TRAINS, SELF, sw_HDEMU_can_attach_wagon, vehicle_type_id) {
+    item_CEP: return CB_RESULT_ATTACH_ALLOW;
+    item_BEP: return CB_RESULT_ATTACH_ALLOW;
+    item_4CAREPB: return CB_RESULT_ATTACH_ALLOW;
+    item_2CAREPB: return CB_RESULT_ATTACH_ALLOW;
+    item_HDEMU: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_CEP_CANNOT_ATTACH_OTHER);
+}
+
+switch(FEAT_TRAINS, SELF, sw_HDEMU_weight, cargo_subtype) {
+    1: return 87;
+    3: return 87;
+    5: return 87;
+    7: return 87;
+    9: return 87;
+    11: return 87;
+    return 119;
+}
+
+/* --- Shorten vehicle callback  --- */
+switch(FEAT_TRAINS, SELF, sw_HDEMU_length, position_in_consist % 3) {
+    2: return 1;
+    3: return 7;
+    return 8;
+}
+
+switch(FEAT_TRAINS, SELF, sw_2H_car, cargo_subtype) {
+    1: sw_HDEMU_length;
+    3: sw_HDEMU_length;
+    5: sw_HDEMU_length;
+    7: sw_HDEMU_length;
+    9: sw_CEP_length;
+    11: sw_HDEMU_length;
+    return 8;
+}
+
+switch(FEAT_TRAINS, SELF, sw_HDEMU_cargo_cap, cargo_subtype){
+    1: ((position_in_consist % 3) == 2) ? 0 : 77;
+    3: ((position_in_consist % 3) == 2) ? 0 : 77;
+    5: ((position_in_consist % 3) == 2) ? 0 : 77;
+    7: ((position_in_consist % 3) == 2) ? 0 : 77;
+    9: ((position_in_consist % 3) == 2) ? 0 : 77;
+    11: ((position_in_consist % 3) == 2) ? 0 : 77;
+    return 77;
+	}
+
+item(FEAT_TRAINS, item_HDEMU, 10009) {
+		property {
+			name:                         string(STR_HDEMU_NAME);
+			// not available in toyland:
+			climates_available:           bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL); 
+			introduction_date:            date(1958, 1, 1);
+			model_life:                   VEHICLE_NEVER_EXPIRES;
+			vehicle_life:                 50;
+			reliability_decay:            20;
+			refittable_cargo_classes:     bitmask(CC_PASSENGERS);
+			non_refittable_cargo_classes: bitmask();
+			loading_speed:                25; 
+			cost_factor:                  22;
+			running_cost_factor:          150;
+			sprite_id:                    SPRITE_ID_NEW_TRAIN;
+			speed:                        120 km/h;
+			misc_flags:                   bitmask(TRAIN_FLAG_MU);
+			refit_cost:                   0;
+			track_type:                   RAIL;
+			ai_special_flag:              AI_FLAG_PASSENGER;
+			power:                        373 kW;
+			running_cost_base:            RUNNING_COST_DIESEL;
+			dual_headed:                  0;
+			cargo_capacity:               77;
+			weight:                       150 ton;
+			ai_engine_rank:               0;
+			engine_class:                 ENGINE_CLASS_DIESEL;
+			extra_power_per_wagon:        0 kW;
+			tractive_effort_coefficient:  0.3 / 3; // changed by callback
+			air_drag_coefficient:         0.08;
+			visual_effect_and_powered:    visual_effect_and_powered(VISUAL_EFFECT_DIESEL, 2, DISABLE_WAGON_POWER);
+			extra_weight_per_wagon:       0 ton;
+			bitmask_vehicle_info:         0;       
+		}
+
+
+			graphics {
+			default:                      sw_HDEMU_graphics;
+			cargo_capacity:               sw_HDEMU_cargo_cap;
+			purchase:                     set_23h_purchase;
+			additional_text:              return string(STR_HDEMU_ADDITIONAL_TEXT);
+			cargo_subtype_text:           sw_23h_cargo_subtype_text;
+			start_stop:                   sw_HDEMU_start_stop;
+			articulated_part:             sw_HDEMU_articulated_part;
+			can_attach_wagon:             sw_HDEMU_can_attach_wagon;
+			weight:                       sw_HDEMU_weight;
+			length:                       sw_2H_car;
+		}
+}
+
