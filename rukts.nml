@@ -1,9 +1,9 @@
 grf{
 	grfid: "RUKT";
-    name: string(STR_GRF_NAME);
-    desc: string(STR_GRF_DESC);
-    version: 0;
-    min_compatible_version: 0;
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESC);
+	version: 0;
+	min_compatible_version: 0;
 	param 0{
 		colour_scheme_1{
 			type: bool;
@@ -13,3 +13,5 @@ grf{
 		}
 	}
 }
+
+// Tractive Effort Coefficient = Actual Tractive effort / Weight / 10
