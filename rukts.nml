@@ -16,3 +16,24 @@ grf{
 
 // Tractive Effort Coefficient = Actual Tractive effort / Weight / 10
 
+
+//Cargotable
+
+cargotable {
+	//Default cargos
+	PASS, MAIL, COAL, FOOD, GOLD, GOOD, GRAI, IORE, LVST, OIL_, PAPR, STEL, VALU, WHEA, WOOD,
+	
+	//Tropical cargos
+	CORE, DIAM, FRUT, MAIZ, RUBR, WATR,
+	
+	//ECS
+	AORE, BDMT, BRCK, CERA, CERE, CMNT, DYES, FERT, FICR, FISH, GLAS, LIME, OLSD, PETR, PLAS, POTA, RFPR, SAND, SULP, TOUR, VEHI, WDPR, WOOL,
+	
+	//FIRS
+	BEER, CLAY, ENSP, FMSP, FRVG, GRVL, MILK, MNSP, PHOS, PORE, RCYC, SCMT, SGBT, SGCN, JAVA, COPR, SUGR,
+	
+	//BRIndustry
+	ALCO, MEOX, BMAT, CHEM, MACH, PROD, MEOR, ELEC, METL, COTT, WSTE, NUCF, NUCW, AGGR, TIMB
+}
+
+
