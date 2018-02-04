@@ -1,0 +1,7 @@
+railtypetable {
+    RAIL, 
+	ELRL,
+	SAA3: [ELRL],
+	SAAZ: [ELRL],
+	SAA4: [SAA3, ELRL],
+}
