@@ -1,103 +1,103 @@
 //Sprites
 
-spriteset(spriteset_PEP_A_early, "gfx/class_313.png") {
-	template_train32px(0, 0)
+spriteset(spriteset_PEP_A_early, "gfx/EMU/class_313.png") {
+	template_8_8(0, 0)
 }
 
-spriteset(spriteset_PEP_B_early, "gfx/class_313.png") {
-	template_train32px(0, 25)
+spriteset(spriteset_PEP_B_early, "gfx/EMU/class_313.png") {
+	template_8_8(0, 25)
 }
 
-spriteset(spriteset_PEP_x_early, "gfx/class_313.png") {
-	template_train32px(0, 50)
+spriteset(spriteset_PEP_x_early, "gfx/EMU/class_313.png") {
+	template_8_8(0, 50)
 }
 
-spriteset(spriteset_PEP_A_med, "gfx/class_313.png") {
-	template_train32px(0, 125)
+spriteset(spriteset_PEP_A_med, "gfx/EMU/class_313.png") {
+	template_8_8(0, 125)
 }
 
-spriteset(spriteset_PEP_B_med, "gfx/class_313.png") {
-	template_train32px(0, 150)
+spriteset(spriteset_PEP_B_med, "gfx/EMU/class_313.png") {
+	template_8_8(0, 150)
 }
 
-spriteset(spriteset_PEP_x_med, "gfx/class_313.png") {
-	template_train32px(0, 175)
+spriteset(spriteset_PEP_x_med, "gfx/EMU/class_313.png") {
+	template_8_8(0, 175)
 }
 
-spriteset(spriteset_PEP_A_late, "gfx/class_313.png") {
-	template_train32px(0, 250)
+spriteset(spriteset_PEP_A_late, "gfx/EMU/class_313.png") {
+	template_8_8(0, 250)
 }
 
-spriteset(spriteset_PEP_B_late, "gfx/class_313.png") {
-	template_train32px(0, 275)
+spriteset(spriteset_PEP_B_late, "gfx/EMU/class_313.png") {
+	template_8_8(0, 275)
 }
 
-spriteset(spriteset_PEP_x_late, "gfx/class_313.png") {
-	template_train32px(0, 300)
+spriteset(spriteset_PEP_x_late, "gfx/EMU/class_313.png") {
+	template_8_8(0, 300)
 }
 
-spriteset(spriteset_PEP_proto_A_early, "gfx/class_445.png") {
-	template_train32px(0, 0)
+spriteset(spriteset_PEP_proto_A_early, "gfx/EMU/class_445.png") {
+	template_8_8(0, 0)
 }
 
-spriteset(spriteset_PEP_proto_B_early, "gfx/class_445.png") {
-	template_train32px(0, 25)
+spriteset(spriteset_PEP_proto_B_early, "gfx/EMU/class_445.png") {
+	template_8_8(0, 25)
 }
 
-spriteset(spriteset_PEP_proto_x_early, "gfx/class_445.png") {
-	template_train32px(0, 50)
+spriteset(spriteset_PEP_proto_x_early, "gfx/EMU/class_445.png") {
+	template_8_8(0, 50)
 }
 
-spriteset(spriteset_PEP_proto_A_med, "gfx/class_445.png") {
-	template_train32px(0, 125)
+spriteset(spriteset_PEP_proto_A_med, "gfx/EMU/class_445.png") {
+	template_8_8(0, 125)
 }
 
-spriteset(spriteset_PEP_proto_B_med, "gfx/class_445.png") {
-	template_train32px(0, 150)
+spriteset(spriteset_PEP_proto_B_med, "gfx/EMU/class_445.png") {
+	template_8_8(0, 150)
 }
 
-spriteset(spriteset_PEP_proto_x_med, "gfx/class_445.png") {
-	template_train32px(0, 175)
+spriteset(spriteset_PEP_proto_x_med, "gfx/EMU/class_445.png") {
+	template_8_8(0, 175)
 }
 
-spriteset(spriteset_PEP_T_early, "gfx/class_313.png") {
-	template_train32px(0, 75)
+spriteset(spriteset_PEP_T_early, "gfx/EMU/class_313.png") {
+	template_8_8(0, 75)
 }
 
-spriteset(spriteset_PEP_T_med, "gfx/class_313.png") {
-	template_train32px(0, 200)
+spriteset(spriteset_PEP_T_med, "gfx/EMU/class_313.png") {
+	template_8_8(0, 200)
 }
 
-spriteset(spriteset_PEP_T_late, "gfx/class_313.png") {
-	template_train32px(0, 325)
+spriteset(spriteset_PEP_T_late, "gfx/EMU/class_313.png") {
+	template_8_8(0, 325)
 }
 
-spriteset(spriteset_PEP_P_early, "gfx/class_313.png") {
-	template_train32px(0, 100)
+spriteset(spriteset_PEP_P_early, "gfx/EMU/class_313.png") {
+	template_8_8(0, 100)
 }
 
-spriteset(spriteset_PEP_P_med, "gfx/class_313.png") {
-	template_train32px(0, 225)
+spriteset(spriteset_PEP_P_med, "gfx/EMU/class_313.png") {
+	template_8_8(0, 225)
 }
 
-spriteset(spriteset_PEP_P_late, "gfx/class_313.png") {
-	template_train32px(0, 350)
+spriteset(spriteset_PEP_P_late, "gfx/EMU/class_313.png") {
+	template_8_8(0, 350)
 }
 
-spriteset(spriteset_PEP_proto_T_early, "gfx/class_445.png") {
-	template_train32px(0, 75)
+spriteset(spriteset_PEP_proto_T_early, "gfx/EMU/class_445.png") {
+	template_8_8(0, 75)
 }
 
-spriteset(spriteset_PEP_proto_T_med, "gfx/class_445.png") {
-	template_train32px(0, 200)
+spriteset(spriteset_PEP_proto_T_med, "gfx/EMU/class_445.png") {
+	template_8_8(0, 200)
 }
 
-spriteset(spriteset_PEP_proto_P_early, "gfx/class_445.png") {
-	template_train32px(0, 100)
+spriteset(spriteset_PEP_proto_P_early, "gfx/EMU/class_445.png") {
+	template_8_8(0, 100)
 }
 
-spriteset(spriteset_PEP_proto_P_med, "gfx/class_445.png") {
-	template_train32px(0, 225)
+spriteset(spriteset_PEP_proto_P_med, "gfx/EMU/class_445.png") {
+	template_8_8(0, 225)
 }
 
 //Switches
@@ -115,7 +115,8 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_A, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_PEP_year_A, build_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_A;
-	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_A;
+	ERA_SECTORISATION: sw_PEP_livery_A;
+	ERA_PRIVATISATION: sw_PEP_livery_A;
 }
 
 switch(FEAT_TRAINS, SELF, sw_PEP_livery_B, current_year){
@@ -131,7 +132,8 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_B, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_PEP_year_B, build_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_B;
-	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_B;
+	ERA_SECTORISATION: sw_PEP_livery_B;
+	ERA_PRIVATISATION: sw_PEP_livery_B;
 }
 
 switch(FEAT_TRAINS, SELF, sw_PEP_livery_x, current_year){
@@ -147,7 +149,8 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_x, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_PEP_year_x, build_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_x;
-	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_x;
+	ERA_SECTORISATION: sw_PEP_livery_x;
+	ERA_PRIVATISATION: sw_PEP_livery_x;
 }
 
 
@@ -164,7 +167,8 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_T, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_PEP_year_T, build_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_T;
-	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_T;
+	ERA_SECTORISATION: sw_PEP_livery_T;
+	ERA_PRIVATISATION: sw_PEP_livery_T;
 }
 
 switch(FEAT_TRAINS, SELF, sw_PEP_livery_P, current_year){
@@ -180,7 +184,8 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_P, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_PEP_year_P, build_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_P;
-	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_P;
+	ERA_SECTORISATION: sw_PEP_livery_P;
+	ERA_PRIVATISATION: sw_PEP_livery_P;
 }
 
 switch(FEAT_TRAINS, SELF, sw_PEP_front, position_in_consist){
@@ -211,7 +216,7 @@ item (FEAT_TRAINS, item_PEP) {
 		speed:							75 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
-		track_type:						BR_3RDC;
+		track_type:						SAAZ;
 		ai_special_flag:				AI_FLAG_CARGO;
 		power:							880 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
@@ -233,8 +238,8 @@ item (FEAT_TRAINS, item_PEP) {
 	purchase:							sw_PEP_year_A;
 	create_effect:						vfx_dual_voltage;
 }
-	livery_override (item_Intermediate) {
+/*	livery_override (item_Intermediate) {
 		cargo_capacity: 80;
 		default: sw_PEP_year_T;
-}
+}*/
 }

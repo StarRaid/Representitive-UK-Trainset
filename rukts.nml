@@ -1,45 +1,345 @@
+# 1 "rukts.pnml"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "rukts.pnml"
+# 1 "src/CODE/header.pnml" 1
 grf{
-	grfid: "RUKT";
-	name: string(STR_GRF_NAME);
-	desc: string(STR_GRF_DESC);
-	version: 0;
-	min_compatible_version: 0;
-	param 0{
-		colour_scheme_1{
-			type: bool;
-			name: string(STR_PARAM_COLOURSCHEME_NAME);
-			desc: string(STR_PARAM_COLOURSCHEME_DESC);
-			bit: 1;
-		}
-		coaches_take_mail{
-			type: bool;
-			name: string(STR_PARAM_COACHMAIL_NAME);
-			desc: string(STR_PARAM_COACHMAIL_DESC);
-			bit: 2;
-		}
-	}
+ grfid: "RUKT";
+ name: string(STR_GRF_NAME);
+ desc: string(STR_GRF_DESC);
+ version: 0;
+ min_compatible_version: 0;
+ param 0{
+  colour_scheme_1{
+   type: bool;
+   name: string(STR_PARAM_COLOURSCHEME_NAME);
+   desc: string(STR_PARAM_COLOURSCHEME_DESC);
+   bit: 1;
+  }
+  coaches_take_mail{
+   type: bool;
+   name: string(STR_PARAM_COACHMAIL_NAME);
+   desc: string(STR_PARAM_COACHMAIL_DESC);
+   bit: 2;
+  }
+ }
 }
 
 // Tractive Effort Coefficient = Actual Tractive effort / Weight / 10
-
-
-//Cargotable
-
+# 2 "rukts.pnml" 2
+# 1 "src/CODE/cargo_table.pnml" 1
 cargotable {
-	//Default cargos
-	PASS, MAIL, COAL, FOOD, GOLD, GOOD, GRAI, IORE, LVST, OIL_, PAPR, STEL, VALU, WHEA, WOOD,
-	
-	//Tropical cargos
-	CORE, DIAM, FRUT, MAIZ, RUBR, WATR,
-	
-	//ECS
-	AORE, BDMT, BRCK, CERA, CERE, CMNT, DYES, FERT, FICR, FISH, GLAS, LIME, OLSD, PETR, PLAS, POTA, RFPR, SAND, SULP, TOUR, VEHI, WDPR, WOOL,
-	
-	//FIRS
-	BEER, CLAY, ENSP, FMSP, FRVG, GRVL, MILK, MNSP, PHOS, PORE, RCYC, SCMT, SGBT, SGCN, JAVA, COPR, SUGR,
-	
-	//BRIndustry
-	ALCO, MEOX, BMAT, CHEM, MACH, PROD, MEOR, ELEC, METL, COTT, WSTE, NUCF, NUCW, AGGR, TIMB
+//Default cargos
+   PASS, MAIL, COAL, FOOD, GOLD, GOOD, GRAI, IORE, LVST, OIL_, PAPR, STEL, VALU, WHEA, WOOD,
+
+//Tropical cargos
+   CORE, DIAM, FRUT, MAIZ, RUBR, WATR,
+
+//ECS
+   AORE, BDMT, BRCK, CERA, CERE, CMNT, DYES, FERT, FICR, FISH, GLAS, LIME, OLSD, PETR, PLAS, POTA, RFPR, SAND, SULP, TOUR, VEHI, WDPR, WOOL,
+
+//FIRS
+   BEER, CLAY, ENSP, FMSP, FRVG, GRVL, MILK, MNSP, PHOS, PORE, RCYC, SCMT, SGBT, SGCN, JAVA, COPR, SUGR,
+   }
+# 3 "rukts.pnml" 2
+# 1 "src/CODE/railtype_table.pnml" 1
+railtypetable {
+    RAIL,
+ ELRL,
+ SAA3: [ELRL],
+ SAAZ: [ELRL],
+ SAA4: [SAA3, ELRL],
+}
+# 4 "rukts.pnml" 2
+# 1 "src/CODE/alignments.pnml" 1
+//template_x_y where x is length and y is no. views
+
+template template_8_8(x,y){
+    [ x, y, 8, 24, -3, -12]
+    [ x+10, y, 21, 17, -12, -10]
+    [ x+33, y, 32, 12, -16, -8]
+    [ x+67, y, 21, 17, -5, -10]
+    [ x+90, y, 8, 24, -3, -12]
+    [ x+100, y, 21, 17, -12, -10]
+    [ x+123, y, 32, 12, -16, -8]
+    [ x+157, y, 21, 17, -5, -10]
+}
+
+template template_8_4(x,y){
+    [ x, y, 8, 24, -3, -12]
+    [ x+10, y, 21, 17, -12, -10]
+    [ x+33, y, 32, 12, -16, -8]
+    [ x+67, y, 21, 17, -5, -10]
+}
+# 5 "rukts.pnml" 2
+# 1 "src/CODE/era_definitions.pnml" 1
+# 6 "rukts.pnml" 2
+# 1 "src/CODE/visual_effects.pnml" 1
+switch (FEAT_TRAINS, SELF, vfx_ohle, [STORE_TEMP(create_effect(EFFECT_SPRITE_ELECTRIC, 0, 0, 10), 0x100)]) {
+    return 1;
+}
+
+switch (FEAT_TRAINS, SELF, vfx_3rd, [STORE_TEMP(create_effect(EFFECT_SPRITE_ELECTRIC, 0, 0, -7), 0x100)]) {
+    return 1;
+}
+
+switch (FEAT_TRAINS, SELF, vfx_diesel_default, [STORE_TEMP(create_effect(EFFECT_SPRITE_DIESEL, 0, 0, 10), 0x100)]) {
+    return 1;
+}
+
+switch(FEAT_TRAINS, SELF, vfx_dual_voltage, current_railtype){
+ SAA3: vfx_3rd;
+ vfx_ohle;
+}
+# 7 "rukts.pnml" 2
+# 1 "src/EMU/PEP.pnml" 1
+//Sprites
+
+spriteset(spriteset_PEP_A_early, "gfx/EMU/class_313.png") {
+ template_8_8(0, 0)
+}
+
+spriteset(spriteset_PEP_B_early, "gfx/EMU/class_313.png") {
+ template_8_8(0, 25)
+}
+
+spriteset(spriteset_PEP_x_early, "gfx/EMU/class_313.png") {
+ template_8_8(0, 50)
+}
+
+spriteset(spriteset_PEP_A_med, "gfx/EMU/class_313.png") {
+ template_8_8(0, 125)
+}
+
+spriteset(spriteset_PEP_B_med, "gfx/EMU/class_313.png") {
+ template_8_8(0, 150)
+}
+
+spriteset(spriteset_PEP_x_med, "gfx/EMU/class_313.png") {
+ template_8_8(0, 175)
+}
+
+spriteset(spriteset_PEP_A_late, "gfx/EMU/class_313.png") {
+ template_8_8(0, 250)
+}
+
+spriteset(spriteset_PEP_B_late, "gfx/EMU/class_313.png") {
+ template_8_8(0, 275)
+}
+
+spriteset(spriteset_PEP_x_late, "gfx/EMU/class_313.png") {
+ template_8_8(0, 300)
+}
+
+spriteset(spriteset_PEP_proto_A_early, "gfx/EMU/class_445.png") {
+ template_8_8(0, 0)
+}
+
+spriteset(spriteset_PEP_proto_B_early, "gfx/EMU/class_445.png") {
+ template_8_8(0, 25)
+}
+
+spriteset(spriteset_PEP_proto_x_early, "gfx/EMU/class_445.png") {
+ template_8_8(0, 50)
+}
+
+spriteset(spriteset_PEP_proto_A_med, "gfx/EMU/class_445.png") {
+ template_8_8(0, 125)
+}
+
+spriteset(spriteset_PEP_proto_B_med, "gfx/EMU/class_445.png") {
+ template_8_8(0, 150)
+}
+
+spriteset(spriteset_PEP_proto_x_med, "gfx/EMU/class_445.png") {
+ template_8_8(0, 175)
+}
+
+spriteset(spriteset_PEP_T_early, "gfx/EMU/class_313.png") {
+ template_8_8(0, 75)
+}
+
+spriteset(spriteset_PEP_T_med, "gfx/EMU/class_313.png") {
+ template_8_8(0, 200)
+}
+
+spriteset(spriteset_PEP_T_late, "gfx/EMU/class_313.png") {
+ template_8_8(0, 325)
+}
+
+spriteset(spriteset_PEP_P_early, "gfx/EMU/class_313.png") {
+ template_8_8(0, 100)
+}
+
+spriteset(spriteset_PEP_P_med, "gfx/EMU/class_313.png") {
+ template_8_8(0, 225)
+}
+
+spriteset(spriteset_PEP_P_late, "gfx/EMU/class_313.png") {
+ template_8_8(0, 350)
+}
+
+spriteset(spriteset_PEP_proto_T_early, "gfx/EMU/class_445.png") {
+ template_8_8(0, 75)
+}
+
+spriteset(spriteset_PEP_proto_T_med, "gfx/EMU/class_445.png") {
+ template_8_8(0, 200)
+}
+
+spriteset(spriteset_PEP_proto_P_early, "gfx/EMU/class_445.png") {
+ template_8_8(0, 100)
+}
+
+spriteset(spriteset_PEP_proto_P_med, "gfx/EMU/class_445.png") {
+ template_8_8(0, 225)
+}
+
+//Switches
+
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_A, current_year){
+ 1971 .. 1982: spriteset_PEP_A_early;
+ 1983 .. 1995: spriteset_PEP_A_med;
+ 1996 .. 4096: spriteset_PEP_A_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_A, current_year){
+ 1971 .. 1982: spriteset_PEP_proto_A_early;
+ 1983 .. 1995: spriteset_PEP_proto_A_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_A, build_year){
+ 1971 .. 1982: sw_PEP_proto_livery_A;
+ 1983 .. 1995: sw_PEP_livery_A;
+ 1996 .. 4096: sw_PEP_livery_A;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_B, current_year){
+ 1971 .. 1982: spriteset_PEP_B_early;
+ 1983 .. 1995: spriteset_PEP_B_med;
+ 1996 .. 4096: spriteset_PEP_B_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_B, current_year){
+ 1971 .. 1982: spriteset_PEP_proto_B_early;
+ 1983 .. 1995: spriteset_PEP_proto_B_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_B, build_year){
+ 1971 .. 1982: sw_PEP_proto_livery_B;
+ 1983 .. 1995: sw_PEP_livery_B;
+ 1996 .. 4096: sw_PEP_livery_B;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_x, current_year){
+ 1971 .. 1982: spriteset_PEP_x_early;
+ 1983 .. 1995: spriteset_PEP_x_med;
+ 1996 .. 4096: spriteset_PEP_x_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_x, current_year){
+ 1971 .. 1982: spriteset_PEP_proto_x_early;
+ 1983 .. 1995: spriteset_PEP_proto_x_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_x, build_year){
+ 1971 .. 1982: sw_PEP_proto_livery_x;
+ 1983 .. 1995: sw_PEP_livery_x;
+ 1996 .. 4096: sw_PEP_livery_x;
 }
 
 
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_T, current_year){
+ 1971 .. 1982: spriteset_PEP_T_early;
+ 1983 .. 1995: spriteset_PEP_T_med;
+ 1996 .. 4096: spriteset_PEP_T_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_T, current_year){
+ 1971 .. 1982: spriteset_PEP_proto_T_early;
+ 1983 .. 1995: spriteset_PEP_proto_T_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_T, build_year){
+ 1971 .. 1982: sw_PEP_proto_livery_T;
+ 1983 .. 1995: sw_PEP_livery_T;
+ 1996 .. 4096: sw_PEP_livery_T;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_P, current_year){
+ 1971 .. 1982: spriteset_PEP_P_early;
+ 1983 .. 1995: spriteset_PEP_P_med;
+ 1996 .. 4096: spriteset_PEP_P_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_P, current_year){
+ 1971 .. 1982: spriteset_PEP_proto_P_early;
+ 1983 .. 1995: spriteset_PEP_proto_P_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_P, build_year){
+ 1971 .. 1982: sw_PEP_proto_livery_P;
+ 1983 .. 1995: sw_PEP_livery_P;
+ 1996 .. 4096: sw_PEP_livery_P;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_front, position_in_consist){
+ 0: return sw_PEP_year_A;
+ return sw_PEP_year_x;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_default, position_in_consist_from_end){
+ 0: return sw_PEP_year_B;
+ return sw_PEP_front;
+}
+
+item (FEAT_TRAINS, item_PEP) {
+ property {
+  name: string(STR_NAME_PEP);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1975, 1, 1);
+  model_life: 15;
+  retire_early: 1;
+  vehicle_life: 50;
+  reliability_decay: 7;
+  refittable_cargo_classes: CC_PASSENGERS;
+  cargo_allow_refit: [PASS, TOUR];
+  loading_speed: 29;
+  cost_factor: 38;
+  running_cost_factor: 34;
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  speed: 75 mph;
+  misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+  refit_cost: 0;
+  track_type: SAAZ;
+  ai_special_flag: AI_FLAG_CARGO;
+  power: 880 hp;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  dual_headed: 1;
+  default_cargo_type: PASS;
+  cargo_capacity: 80;
+  weight: 35 ton;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  tractive_effort_coefficient: 0.07;
+  air_drag_coefficient: 0.08;
+  length: 8;
+  effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_ELECTRIC;
+  bitmask_vehicle_info: 0;
+  cargo_age_period: 185;
+ }
+ graphics {
+ can_attach_wagon: CB_RESULT_ATTACH_ALLOW;
+ default: sw_PEP_default;
+ purchase: sw_PEP_year_A;
+ create_effect: vfx_dual_voltage;
+}
+/*	livery_override (item_Intermediate) {
+
+		cargo_capacity: 80;
+
+		default: sw_PEP_year_T;
+
+}*/
+# 245 "src/EMU/PEP.pnml"
+}
+# 7 "rukts.pnml" 2
