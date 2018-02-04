@@ -1,0 +1,240 @@
+//Sprites
+
+spriteset(spriteset_PEP_A_early, "gfx/class_313.png") {
+	template_train32px(0, 0)
+}
+
+spriteset(spriteset_PEP_B_early, "gfx/class_313.png") {
+	template_train32px(0, 25)
+}
+
+spriteset(spriteset_PEP_x_early, "gfx/class_313.png") {
+	template_train32px(0, 50)
+}
+
+spriteset(spriteset_PEP_A_med, "gfx/class_313.png") {
+	template_train32px(0, 125)
+}
+
+spriteset(spriteset_PEP_B_med, "gfx/class_313.png") {
+	template_train32px(0, 150)
+}
+
+spriteset(spriteset_PEP_x_med, "gfx/class_313.png") {
+	template_train32px(0, 175)
+}
+
+spriteset(spriteset_PEP_A_late, "gfx/class_313.png") {
+	template_train32px(0, 250)
+}
+
+spriteset(spriteset_PEP_B_late, "gfx/class_313.png") {
+	template_train32px(0, 275)
+}
+
+spriteset(spriteset_PEP_x_late, "gfx/class_313.png") {
+	template_train32px(0, 300)
+}
+
+spriteset(spriteset_PEP_proto_A_early, "gfx/class_445.png") {
+	template_train32px(0, 0)
+}
+
+spriteset(spriteset_PEP_proto_B_early, "gfx/class_445.png") {
+	template_train32px(0, 25)
+}
+
+spriteset(spriteset_PEP_proto_x_early, "gfx/class_445.png") {
+	template_train32px(0, 50)
+}
+
+spriteset(spriteset_PEP_proto_A_med, "gfx/class_445.png") {
+	template_train32px(0, 125)
+}
+
+spriteset(spriteset_PEP_proto_B_med, "gfx/class_445.png") {
+	template_train32px(0, 150)
+}
+
+spriteset(spriteset_PEP_proto_x_med, "gfx/class_445.png") {
+	template_train32px(0, 175)
+}
+
+spriteset(spriteset_PEP_T_early, "gfx/class_313.png") {
+	template_train32px(0, 75)
+}
+
+spriteset(spriteset_PEP_T_med, "gfx/class_313.png") {
+	template_train32px(0, 200)
+}
+
+spriteset(spriteset_PEP_T_late, "gfx/class_313.png") {
+	template_train32px(0, 325)
+}
+
+spriteset(spriteset_PEP_P_early, "gfx/class_313.png") {
+	template_train32px(0, 100)
+}
+
+spriteset(spriteset_PEP_P_med, "gfx/class_313.png") {
+	template_train32px(0, 225)
+}
+
+spriteset(spriteset_PEP_P_late, "gfx/class_313.png") {
+	template_train32px(0, 350)
+}
+
+spriteset(spriteset_PEP_proto_T_early, "gfx/class_445.png") {
+	template_train32px(0, 75)
+}
+
+spriteset(spriteset_PEP_proto_T_med, "gfx/class_445.png") {
+	template_train32px(0, 200)
+}
+
+spriteset(spriteset_PEP_proto_P_early, "gfx/class_445.png") {
+	template_train32px(0, 100)
+}
+
+spriteset(spriteset_PEP_proto_P_med, "gfx/class_445.png") {
+	template_train32px(0, 225)
+}
+
+//Switches
+
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_A, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_A_early;
+	ERA_SECTORISATION: spriteset_PEP_A_med;
+	ERA_PRIVATISATION: spriteset_PEP_A_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_A, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_proto_A_early;
+	ERA_SECTORISATION: spriteset_PEP_proto_A_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_A, build_year){
+	ERA_BRBLUETOPS: sw_PEP_proto_livery_A;
+	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_A;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_B, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_B_early;
+	ERA_SECTORISATION: spriteset_PEP_B_med;
+	ERA_PRIVATISATION: spriteset_PEP_B_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_B, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_proto_B_early;
+	ERA_SECTORISATION: spriteset_PEP_proto_B_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_B, build_year){
+	ERA_BRBLUETOPS: sw_PEP_proto_livery_B;
+	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_B;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_x, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_x_early;
+	ERA_SECTORISATION: spriteset_PEP_x_med;
+	ERA_PRIVATISATION: spriteset_PEP_x_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_x, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_proto_x_early;
+	ERA_SECTORISATION: spriteset_PEP_proto_x_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_x, build_year){
+	ERA_BRBLUETOPS: sw_PEP_proto_livery_x;
+	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_x;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_T, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_T_early;
+	ERA_SECTORISATION: spriteset_PEP_T_med;
+	ERA_PRIVATISATION: spriteset_PEP_T_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_T, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_proto_T_early;
+	ERA_SECTORISATION: spriteset_PEP_proto_T_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_T, build_year){
+	ERA_BRBLUETOPS: sw_PEP_proto_livery_T;
+	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_T;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_livery_P, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_P_early;
+	ERA_SECTORISATION: spriteset_PEP_P_med;
+	ERA_PRIVATISATION: spriteset_PEP_P_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_P, current_year){
+	ERA_BRBLUETOPS: spriteset_PEP_proto_P_early;
+	ERA_SECTORISATION: spriteset_PEP_proto_P_med;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_year_P, build_year){
+	ERA_BRBLUETOPS: sw_PEP_proto_livery_P;
+	ERA_SECTORISATION, ERA_PRIVATISATION: sw_PEP_livery_P;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_front, position_in_consist){
+	0: return sw_PEP_year_A;
+	return sw_PEP_year_x;
+}
+
+switch(FEAT_TRAINS, SELF, sw_PEP_default, position_in_consist_from_end){
+	0: return sw_PEP_year_B;
+	return sw_PEP_front;
+}
+
+item (FEAT_TRAINS, item_PEP) {
+	property {
+		name: 							string(STR_NAME_PEP);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1975, 1, 1);
+		model_life:						15;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					29;
+		cost_factor:					38;
+		running_cost_factor:			34;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							75 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						BR_3RDC;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							880 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					80;
+		weight:							35 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+	}
+	graphics {
+	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	default: 							sw_PEP_default;
+	purchase:							sw_PEP_year_A;
+	create_effect:						vfx_dual_voltage;
+}
+	livery_override (item_Intermediate) {
+		cargo_capacity: 80;
+		default: sw_PEP_year_T;
+}
+}

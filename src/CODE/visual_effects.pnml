@@ -1,0 +1,16 @@
+switch (FEAT_TRAINS, SELF, vfx_ohle, [STORE_TEMP(create_effect(EFFECT_SPRITE_ELECTRIC, 0, 0, 10), 0x100)]) {
+    return 1;
+}
+
+switch (FEAT_TRAINS, SELF, vfx_3rd, [STORE_TEMP(create_effect(EFFECT_SPRITE_ELECTRIC, 0, 0, -7), 0x100)]) {
+    return 1;
+}
+
+switch (FEAT_TRAINS, SELF, vfx_diesel_default, [STORE_TEMP(create_effect(EFFECT_SPRITE_DIESEL, 0, 0, 10), 0x100)]) {
+    return 1;
+}
+
+switch(FEAT_TRAINS, SELF, vfx_dual_voltage, current_railtype){
+	SAA3: vfx_3rd;
+	vfx_ohle;
+}
