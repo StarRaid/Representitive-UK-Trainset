@@ -11,6 +11,12 @@ grf{
 			desc: string(STR_PARAM_COLOURSCHEME_DESC);
 			bit: 1;
 		}
+		coaches_take_mail{
+			type: bool;
+			name: string(STR_PARAM_COACHMAIL_NAME);
+			desc: string(STR_PARAM_COACHMAIL_DESC);
+			bit: 2;
+		}
 	}
 }
 
