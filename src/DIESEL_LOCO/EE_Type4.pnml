@@ -106,29 +106,31 @@ switch (FEAT_TRAINS, SELF, sw_eetype4_colour_mapping, colour_scheme_1){
 
 item (FEAT_TRAINS, item_eetype4){
 	property{
-		name                         : string(STR_NAME_EETYPE4);  
-		climates_available           : ALL_CLIMATES;
-		introduction_date            : date(1958,1,1);
-		model_life                   : 27;
-		vehicle_life                 : 35;
-		reliability_decay            : 9;
-		cost_factor                  : 60;
-		running_cost_base            : RUNNING_COST_DIESEL;
-		running_cost_factor          : 200;
-		speed                        : 90 mph;
-		power                        : 2000 hp;
-		weight                       : 134 ton;
-		engine_class                 : ENGINE_CLASS_DIESEL;
-		tractive_effort_coefficient  : 0.1723880597014925;
-		air_drag_coefficient         : 0.2;
-		length                       : 8;
-		misc_flags                   : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
-		sprite_id                    : SPRITE_ID_NEW_TRAIN;
+		name                           : string(STR_NAME_EETYPE4);  
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1958,1,1);
+		model_life                     : 27;
+		vehicle_life                   : 35;
+		reliability_decay              : 9;
+		cost_factor                    : 60;
+		running_cost_base              : RUNNING_COST_DIESEL;
+		running_cost_factor            : 200;
+		speed                          : 90 mph;
+		power                          : 2000 hp;
+		weight                         : 134 ton;
+		engine_class                   : ENGINE_CLASS_DIESEL;
+		tractive_effort_coefficient    : 0.1723880597014925;
+		air_drag_coefficient           : 0.2;
+		length                         : 8;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
 	}
 	graphics{
 		default        : sw_eetype4_default;
 		colour_mapping : sw_eetype4_colour_mapping;
 		purchase       : eetype4_br_blue;
 		sound_effect   : sw_eetype4_sfx;
+		create_effect  : vfx_diesel_default;
 	}
 }
