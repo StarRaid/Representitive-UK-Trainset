@@ -1,0 +1,41 @@
+spriteset(spriteset_Mk3_DVT_intercity, "gfx/WAGON/mk3.png") {
+	template_8_8(0, 0)
+}
+
+item (FEAT_TRAINS, item_Mk3) {
+	property {
+		name: 							string(STR_NAME_Mk3);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1975, 1, 1);
+		model_life:						15;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					29;
+		cost_factor:					38;
+		running_cost_factor:			34;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							125 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					80;
+		weight:							5 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+	}
+	graphics {
+	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	default: 							spriteset_Mk3_DVT_intercity;
+	purchase:							spriteset_Mk3_DVT_intercity;
+}

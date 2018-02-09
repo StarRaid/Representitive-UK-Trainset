@@ -238,8 +238,8 @@ item (FEAT_TRAINS, item_PEP) {
 	purchase:							sw_PEP_year_A;
 	create_effect:						vfx_dual_voltage;
 }
-/*	livery_override (item_Intermediate) {
+		livery_override (item_Mk3) {
 		cargo_capacity: 80;
 		default: sw_PEP_year_T;
-}*/
+}
 }
