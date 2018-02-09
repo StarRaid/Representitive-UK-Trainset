@@ -1,3 +1,4 @@
+disable_item(FEAT_TRAINS);
 #include "src/CODE/header.pnml"
 #include "src/CODE/cargo_table.pnml"
 #include "src/CODE/railtype_table.pnml"

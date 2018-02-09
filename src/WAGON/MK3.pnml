@@ -1,5 +1,5 @@
 spriteset(spriteset_Mk3_DVT_intercity, "gfx/WAGON/mk3.png") {
-	template_8_8(0, 0)
+	template_7_8(0, 219)
 }
 
 item (FEAT_TRAINS, item_Mk3) {
@@ -24,13 +24,13 @@ item (FEAT_TRAINS, item_Mk3) {
 		ai_special_flag:				AI_FLAG_CARGO;
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
-		dual_headed:					1;
+		dual_headed:					0;
 		default_cargo_type:				PASS;
 		cargo_capacity:					80;
 		weight:							5 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
-		length:							8;
+		length:							7;
 		bitmask_vehicle_info:			0;
 		cargo_age_period:				185;
 	}
@@ -38,4 +38,5 @@ item (FEAT_TRAINS, item_Mk3) {
 	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
 	default: 							spriteset_Mk3_DVT_intercity;
 	purchase:							spriteset_Mk3_DVT_intercity;
+}
 }

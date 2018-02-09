@@ -2,6 +2,7 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "rukts.pnml"
+disable_item(FEAT_TRAINS);
 # 1 "src/CODE/header.pnml" 1
 grf{
  grfid: "RUKT";
@@ -26,7 +27,7 @@ grf{
 }
 
 // Tractive Effort Coefficient = Actual Tractive effort / Weight / 10
-# 2 "rukts.pnml" 2
+# 3 "rukts.pnml" 2
 # 1 "src/CODE/cargo_table.pnml" 1
 cargotable {
 //Default cargos
@@ -41,7 +42,7 @@ cargotable {
 //FIRS
    BEER, CLAY, ENSP, FMSP, FRVG, GRVL, MILK, MNSP, PHOS, PORE, RCYC, SCMT, SGBT, SGCN, JAVA, COPR, SUGR,
    }
-# 3 "rukts.pnml" 2
+# 4 "rukts.pnml" 2
 # 1 "src/CODE/railtype_table.pnml" 1
 railtypetable {
     RAIL,
@@ -50,7 +51,7 @@ railtypetable {
  SAAZ: [ELRL],
  SAA4: [SAA3, ELRL],
 }
-# 4 "rukts.pnml" 2
+# 5 "rukts.pnml" 2
 # 1 "src/CODE/alignments.pnml" 1
 //template_x_y where x is length and y is no. views
 
@@ -71,9 +72,20 @@ template template_8_4(x,y){
     [ x+33, y, 32, 12, -16, -8]
     [ x+67, y, 21, 17, -5, -10]
 }
-# 5 "rukts.pnml" 2
-# 1 "src/CODE/era_definitions.pnml" 1
+
+template template_7_8(x,y){
+    [ x, y, 8, 22, -3, -11]
+    [ x+10, y, 19, 17, -13, -8]
+    [ x+31, y, 28, 12, -13, -8]
+    [ x+61, y, 19, 17, -5, -8]
+    [ x+82, y, 8, 22, -3, -11]
+    [ x+92, y, 19, 17, -13, -8]
+    [ x+113, y, 28, 12, -13, -8]
+    [ x+143, y, 19, 17, -5, -8]
+}
 # 6 "rukts.pnml" 2
+# 1 "src/CODE/era_definitions.pnml" 1
+# 7 "rukts.pnml" 2
 # 1 "src/CODE/visual_effects.pnml" 1
 switch (FEAT_TRAINS, SELF, vfx_ohle, [STORE_TEMP(create_effect(EFFECT_SPRITE_ELECTRIC, 0, 0, 10), 0x100)]) {
     return 1;
@@ -91,7 +103,7 @@ switch(FEAT_TRAINS, SELF, vfx_dual_voltage, current_railtype){
  SAA3: vfx_3rd;
  vfx_ohle;
 }
-# 7 "rukts.pnml" 2
+# 8 "rukts.pnml" 2
 # 1 "src/EMU/PEP.pnml" 1
 //Sprites
 
@@ -333,16 +345,12 @@ item (FEAT_TRAINS, item_PEP) {
  purchase: sw_PEP_year_A;
  create_effect: vfx_dual_voltage;
 }
-/*	livery_override (item_Intermediate) {
-
-		cargo_capacity: 80;
-
-		default: sw_PEP_year_T;
-
-}*/
-# 245 "src/EMU/PEP.pnml"
+  livery_override (item_Mk3) {
+  cargo_capacity: 80;
+  default: sw_PEP_year_T;
 }
-# 8 "rukts.pnml" 2
+}
+# 9 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/EE_Type4.pnml" 1
 //Defining EE Type 4 specific template
 
@@ -462,6 +470,7 @@ item (FEAT_TRAINS, item_eetype4){
   running_cost_base : RUNNING_COST_DIESEL;
   running_cost_factor : 200;
   speed : 90 mph;
+  track_type: RAIL;
   power : 2000 hp;
   weight : 134 ton;
   engine_class : ENGINE_CLASS_DIESEL;
@@ -480,4 +489,48 @@ item (FEAT_TRAINS, item_eetype4){
   create_effect : vfx_diesel_default;
  }
 }
-# 8 "rukts.pnml" 2
+# 10 "rukts.pnml" 2
+# 1 "src/WAGON/MK3.pnml" 1
+spriteset(spriteset_Mk3_DVT_intercity, "gfx/WAGON/mk3.png") {
+ template_7_8(0, 219)
+}
+
+item (FEAT_TRAINS, item_Mk3) {
+ property {
+  name: string(STR_NAME_Mk3);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1975, 1, 1);
+  model_life: 15;
+  retire_early: 1;
+  vehicle_life: 50;
+  reliability_decay: 7;
+  refittable_cargo_classes: CC_PASSENGERS;
+  cargo_allow_refit: [PASS, TOUR];
+  loading_speed: 29;
+  cost_factor: 38;
+  running_cost_factor: 34;
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  speed: 125 mph;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  refit_cost: 0;
+  track_type: RAIL;
+  ai_special_flag: AI_FLAG_CARGO;
+  power: 0 hp;
+  running_cost_base: RUNNING_COST_NONE;
+  dual_headed: 0;
+  default_cargo_type: PASS;
+  cargo_capacity: 80;
+  weight: 5 ton;
+  tractive_effort_coefficient: 0.07;
+  air_drag_coefficient: 0.08;
+  length: 7;
+  bitmask_vehicle_info: 0;
+  cargo_age_period: 185;
+ }
+ graphics {
+ can_attach_wagon: CB_RESULT_ATTACH_ALLOW;
+ default: spriteset_Mk3_DVT_intercity;
+ purchase: spriteset_Mk3_DVT_intercity;
+}
+}
+# 10 "rukts.pnml" 2
