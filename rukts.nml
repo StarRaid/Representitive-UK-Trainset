@@ -75,13 +75,13 @@ template template_8_4(x,y){
 
 template template_7_8(x,y){
     [ x, y, 8, 22, -3, -11]
-    [ x+10, y, 19, 17, -13, -8]
+    [ x+10, y, 19, 17, -10, -10]
     [ x+31, y, 28, 12, -13, -8]
     [ x+61, y, 19, 17, -5, -8]
     [ x+82, y, 8, 22, -3, -11]
     [ x+92, y, 19, 17, -13, -8]
-    [ x+113, y, 28, 12, -13, -8]
-    [ x+143, y, 19, 17, -5, -8]
+    [ x+113, y, 28, 12, -12, -8]
+    [ x+143, y, 19, 17, -5, -10]
 }
 # 6 "rukts.pnml" 2
 # 1 "src/CODE/era_definitions.pnml" 1
@@ -491,8 +491,55 @@ item (FEAT_TRAINS, item_eetype4){
 }
 # 10 "rukts.pnml" 2
 # 1 "src/WAGON/MK3.pnml" 1
-spriteset(spriteset_Mk3_DVT_intercity, "gfx/WAGON/mk3.png") {
- template_7_8(0, 219)
+spriteset(spriteset_Mk3_br, "gfx/WAGON/mk3.png") {
+ template_8_8(0, 0)
+}
+
+spriteset(spriteset_Mk3_BUF_br, "gfx/WAGON/mk3.png") {
+ template_8_8(0, 25)
+}
+
+spriteset(spriteset_Mk3_intercity, "gfx/WAGON/mk3.png") {
+ template_8_8(0, 73)
+}
+
+spriteset(spriteset_Mk3_BUF_intercity, "gfx/WAGON/mk3.png") {
+ template_8_8(0, 98)
+}
+
+spriteset(spriteset_Mk3_DVT_intercity_r, "gfx/WAGON/mk3.png") {
+ template_7_8(0, 123)
+}
+
+spriteset(spriteset_Mk3_DVT_intercity_f, "gfx/WAGON/mk3.png") {
+ template_7_8(0, 146)
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_BR, position_in_consist){
+ 4: spriteset_Mk3_BUF_br;
+ spriteset_Mk3_br;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_IC, position_in_consist_from_end){
+ 4: spriteset_Mk3_BUF_intercity;
+ 0: spriteset_Mk3_DVT_intercity_r;
+ spriteset_Mk3_intercity;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_length_dvt, position_in_consist_from_end){
+ 0: return 7;
+ return 8;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_length, current_year){
+ 1971 .. 1982: return 8;
+ return sw_Mk3_length_dvt;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_livery, current_year){
+ 1971 .. 1982: sw_Mk3_BR;
+ 1983 .. 1995: sw_Mk3_IC;
+ sw_Mk3_IC;
 }
 
 item (FEAT_TRAINS, item_Mk3) {
@@ -523,14 +570,15 @@ item (FEAT_TRAINS, item_Mk3) {
   weight: 5 ton;
   tractive_effort_coefficient: 0.07;
   air_drag_coefficient: 0.08;
-  length: 7;
+  length: 8;
   bitmask_vehicle_info: 0;
   cargo_age_period: 185;
  }
  graphics {
  can_attach_wagon: CB_RESULT_ATTACH_ALLOW;
- default: spriteset_Mk3_DVT_intercity;
- purchase: spriteset_Mk3_DVT_intercity;
+ default: sw_Mk3_livery;
+ purchase: sw_Mk3_livery;
+ length: sw_Mk3_length;
 }
 }
 # 10 "rukts.pnml" 2
