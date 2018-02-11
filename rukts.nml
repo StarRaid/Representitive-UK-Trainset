@@ -104,6 +104,98 @@ switch(FEAT_TRAINS, SELF, vfx_dual_voltage, current_railtype){
  vfx_ohle;
 }
 # 8 "rukts.pnml" 2
+# 1 "src/WAGON/MK3.pnml" 1
+spriteset(spriteset_Mk3_br, "gfx/WAGON/mk3.png") {
+ template_8_8(0, 0)
+}
+
+spriteset(spriteset_Mk3_BUF_br, "gfx/WAGON/mk3.png") {
+ template_8_8(0, 25)
+}
+
+spriteset(spriteset_Mk3_intercity, "gfx/WAGON/mk3.png") {
+ template_8_8(0, 73)
+}
+
+spriteset(spriteset_Mk3_BUF_intercity, "gfx/WAGON/mk3.png") {
+ template_8_8(0, 98)
+}
+
+spriteset(spriteset_Mk3_DVT_intercity_r, "gfx/WAGON/mk3.png") {
+ template_7_8(0, 123)
+}
+
+spriteset(spriteset_Mk3_DVT_intercity_f, "gfx/WAGON/mk3.png") {
+ template_7_8(0, 146)
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_BR, position_in_consist){
+ 4: spriteset_Mk3_BUF_br;
+ spriteset_Mk3_br;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_IC, position_in_consist_from_end){
+ 4: spriteset_Mk3_BUF_intercity;
+ 0: spriteset_Mk3_DVT_intercity_r;
+ spriteset_Mk3_intercity;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_length_dvt, position_in_consist_from_end){
+ 0: return 7;
+ return 8;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_length, current_year){
+ 1971 .. 1982: return 8;
+ return sw_Mk3_length_dvt;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk3_livery, current_year){
+ 1971 .. 1982: sw_Mk3_BR;
+ 1983 .. 1995: sw_Mk3_IC;
+ sw_Mk3_IC;
+}
+
+item (FEAT_TRAINS, item_Mk3) {
+ property {
+  name: string(STR_NAME_Mk3);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1975, 1, 1);
+  model_life: 15;
+  retire_early: 1;
+  vehicle_life: 50;
+  reliability_decay: 7;
+  refittable_cargo_classes: CC_PASSENGERS;
+  cargo_allow_refit: [PASS, TOUR];
+  loading_speed: 29;
+  cost_factor: 38;
+  running_cost_factor: 34;
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  speed: 125 mph;
+  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  refit_cost: 0;
+  track_type: RAIL;
+  ai_special_flag: AI_FLAG_CARGO;
+  power: 0 hp;
+  running_cost_base: RUNNING_COST_NONE;
+  dual_headed: 0;
+  default_cargo_type: PASS;
+  cargo_capacity: 80;
+  weight: 5 ton;
+  tractive_effort_coefficient: 0.07;
+  air_drag_coefficient: 0.08;
+  length: 8;
+  bitmask_vehicle_info: 0;
+  cargo_age_period: 185;
+ }
+ graphics {
+ can_attach_wagon: CB_RESULT_ATTACH_ALLOW;
+ default: sw_Mk3_livery;
+ purchase: sw_Mk3_livery;
+ length: sw_Mk3_length;
+}
+}
+# 9 "rukts.pnml" 2
 # 1 "src/EMU/PEP.pnml" 1
 //Sprites
 
@@ -350,7 +442,288 @@ item (FEAT_TRAINS, item_PEP) {
   default: sw_PEP_year_T;
 }
 }
-# 9 "rukts.pnml" 2
+# 10 "rukts.pnml" 2
+# 1 "src/EMU/class_317.pnml" 1
+spriteset(spriteset_317_old_br, "gfx/EMU/class_317.png") {
+ template_8_8(0, 0)
+}
+
+spriteset(spriteset_317_new_br, "gfx/EMU/class_317.png") {
+ template_8_8(0, 25)
+}
+
+spriteset(spriteset_317_old_br_r, "gfx/EMU/class_317.png") {
+ template_8_8(0, 50)
+}
+
+spriteset(spriteset_317_new_br_r, "gfx/EMU/class_317.png") {
+ template_8_8(0, 75)
+}
+
+spriteset(spriteset_317_old_br_o, "gfx/EMU/class_317.png") {
+ template_8_8(0, 100)
+}
+
+spriteset(spriteset_317_new_br_o, "gfx/EMU/class_317.png") {
+ template_8_8(0, 125)
+}
+
+spriteset(spriteset_317_t_br, "gfx/EMU/class_317.png") {
+ template_8_8(0, 150)
+}
+
+spriteset(spriteset_317_p_br, "gfx/EMU/class_317.png") {
+ template_8_8(0, 175)
+}
+
+spriteset(spriteset_317_old_nse, "gfx/EMU/class_317.png") {
+ template_8_8(0, 200)
+}
+
+spriteset(spriteset_317_new_nse, "gfx/EMU/class_317.png") {
+ template_8_8(0, 225)
+}
+
+spriteset(spriteset_317_old_nse_r, "gfx/EMU/class_317.png") {
+ template_8_8(0, 250)
+}
+
+spriteset(spriteset_317_new_nse_r, "gfx/EMU/class_317.png") {
+ template_8_8(0, 275)
+}
+
+spriteset(spriteset_317_old_nse_o, "gfx/EMU/class_317.png") {
+ template_8_8(0, 300)
+}
+
+spriteset(spriteset_317_new_nse_o, "gfx/EMU/class_317.png") {
+ template_8_8(0, 325)
+}
+
+spriteset(spriteset_317_t_nse, "gfx/EMU/class_317.png") {
+ template_8_8(0, 350)
+}
+
+spriteset(spriteset_317_p_nse, "gfx/EMU/class_317.png") {
+ template_8_8(0, 375)
+}
+
+spriteset(spriteset_317_old_wagn, "gfx/EMU/class_317.png") {
+ template_8_8(0, 400)
+}
+
+spriteset(spriteset_317_new_wagn, "gfx/EMU/class_317.png") {
+ template_8_8(0, 425)
+}
+
+spriteset(spriteset_317_old_wagn_r, "gfx/EMU/class_317.png") {
+ template_8_8(0, 450)
+}
+
+spriteset(spriteset_317_new_wagn_r, "gfx/EMU/class_317.png") {
+ template_8_8(0, 475)
+}
+
+spriteset(spriteset_317_old_wagn_o, "gfx/EMU/class_317.png") {
+ template_8_8(0, 500)
+}
+
+spriteset(spriteset_317_new_wagn_o, "gfx/EMU/class_317.png") {
+ template_8_8(0, 525)
+}
+
+spriteset(spriteset_317_t_wagn, "gfx/EMU/class_317.png") {
+ template_8_8(0, 550)
+}
+
+spriteset(spriteset_317_p_wagn, "gfx/EMU/class_317.png") {
+ template_8_8(0, 575)
+}
+
+spriteset(spriteset_317_old_one, "gfx/EMU/class_317.png") {
+ template_8_8(0, 600)
+}
+
+spriteset(spriteset_317_new_one, "gfx/EMU/class_317.png") {
+ template_8_8(0, 625)
+}
+
+spriteset(spriteset_317_old_one_r, "gfx/EMU/class_317.png") {
+ template_8_8(0, 650)
+}
+
+spriteset(spriteset_317_new_one_r, "gfx/EMU/class_317.png") {
+ template_8_8(0, 675)
+}
+
+spriteset(spriteset_317_old_one_o, "gfx/EMU/class_317.png") {
+ template_8_8(0, 700)
+}
+
+spriteset(spriteset_317_new_one_o, "gfx/EMU/class_317.png") {
+ template_8_8(0, 725)
+}
+
+spriteset(spriteset_317_t_one, "gfx/EMU/class_317.png") {
+ template_8_8(0, 750)
+}
+
+spriteset(spriteset_317_p_one, "gfx/EMU/class_317.png") {
+ template_8_8(0, 775)
+}
+
+//Switches
+
+switch(FEAT_TRAINS, SELF, sw_317_old_livery_A, current_year){
+ 1971 .. 1982: spriteset_317_old_br;
+ 1983 .. 1995: spriteset_317_old_nse;
+ 1996 .. 2004: spriteset_317_old_wagn;
+ 2005 .. 4096: spriteset_317_old_one;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_new_livery_A, current_year){
+ 1971 .. 1982: spriteset_317_new_br;
+ 1983 .. 1995: spriteset_317_new_nse;
+ 1996 .. 2004: spriteset_317_new_wagn;
+ 2005 .. 4096: spriteset_317_new_one;
+}
+
+random_switch (FEAT_TRAINS, SELF, sw_317_late){
+ 1: return sw_317_old_livery_A;
+ 1: return sw_317_new_livery_A;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_year_A, build_year){
+ 1970..1983: sw_317_old_livery_A;
+ 1984..1986: sw_317_new_livery_A;
+ sw_317_late;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_old_livery_B, current_year){
+ 1971 .. 1982: spriteset_317_old_br_r;
+ 1983 .. 1995: spriteset_317_old_nse_r;
+ 1996 .. 2004: spriteset_317_old_wagn_r;
+ 2005 .. 4096: spriteset_317_old_one_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_new_livery_B, current_year){
+ 1971 .. 1982: spriteset_317_new_br_r;
+ 1983 .. 1995: spriteset_317_new_nse_r;
+ 1996 .. 2004: spriteset_317_new_wagn_r;
+ 2005 .. 4096: spriteset_317_new_one_r;
+}
+
+random_switch (FEAT_TRAINS, SELF, sw_317_late_b){
+ 1: return sw_317_old_livery_B;
+ 1: return sw_317_new_livery_B;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_year_B, build_year){
+ 1970..1983: sw_317_old_livery_B;
+ 1984..1986: sw_317_new_livery_B;
+ sw_317_late_b;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_old_livery_O, current_year){
+ 1971 .. 1982: spriteset_317_old_br_o;
+ 1983 .. 1995: spriteset_317_old_nse_o;
+ 1996 .. 2004: spriteset_317_old_wagn_o;
+ 2005 .. 4096: spriteset_317_old_one_o;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_new_livery_O, current_year){
+ 1971 .. 1982: spriteset_317_new_br_o;
+ 1983 .. 1995: spriteset_317_new_nse_o;
+ 1996 .. 2004: spriteset_317_new_wagn_o;
+ 2005 .. 4096: spriteset_317_new_one_o;
+}
+
+random_switch (FEAT_TRAINS, SELF, sw_317_late_o){
+ 1: return sw_317_old_livery_O;
+ 1: return sw_317_new_livery_O;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_year_O, build_year){
+ 1970..1983: sw_317_old_livery_O;
+ 1984..1986: sw_317_new_livery_O;
+ sw_317_late_o;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_front, position_in_consist){
+ 0: return sw_317_year_A;
+ return sw_317_year_O;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_default, position_in_consist_from_end){
+ 0: return sw_317_year_B;
+ return sw_317_front;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_t_year, current_year){
+ 1971 .. 1982: spriteset_317_t_br;
+ 1983 .. 1995: spriteset_317_t_nse;
+ 1996 .. 2004: spriteset_317_t_wagn;
+ 2005 .. 4096: spriteset_317_t_one;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_p_year, current_year){
+ 1971 .. 1982: spriteset_317_p_br;
+ 1983 .. 1995: spriteset_317_p_nse;
+ 1996 .. 2004: spriteset_317_p_wagn;
+ 2005 .. 4096: spriteset_317_p_one;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_trailer, position_in_vehid_chain){
+ 0: sw_317_p_year;
+ sw_317_t_year;
+}
+
+item (FEAT_TRAINS, item_317) {
+ property {
+  name: string(STR_NAME_317);
+  climates_available: ALL_CLIMATES;
+  introduction_date: date(1981, 1, 1);
+  model_life: 15;
+  retire_early: 1;
+  vehicle_life: 50;
+  reliability_decay: 7;
+  refittable_cargo_classes: CC_PASSENGERS;
+  cargo_allow_refit: [PASS, TOUR];
+  loading_speed: 29;
+  cost_factor: 38;
+  running_cost_factor: 34;
+  sprite_id: SPRITE_ID_NEW_TRAIN;
+  speed: 100 mph;
+  misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+  refit_cost: 0;
+  track_type: ELRL;
+  ai_special_flag: AI_FLAG_CARGO;
+  power: 1328 hp;
+  running_cost_base: RUNNING_COST_ELECTRIC;
+  dual_headed: 1;
+  default_cargo_type: PASS;
+  cargo_capacity: 80;
+  weight: 35 ton;
+  engine_class: ENGINE_CLASS_ELECTRIC;
+  tractive_effort_coefficient: 0.07;
+  air_drag_coefficient: 0.08;
+  length: 8;
+  effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_ELECTRIC;
+  bitmask_vehicle_info: 0;
+  cargo_age_period: 185;
+ }
+ graphics {
+ can_attach_wagon: CB_RESULT_ATTACH_ALLOW;
+ default: sw_317_default;
+ purchase: sw_317_year_A;
+ create_effect: vfx_dual_voltage;
+}
+  livery_override (item_Mk3) {
+  cargo_capacity: 80;
+  default: sw_317_trailer;
+}
+}
+# 11 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/EE_Type4.pnml" 1
 //Defining EE Type 4 specific template
 
@@ -489,96 +862,4 @@ item (FEAT_TRAINS, item_eetype4){
   create_effect : vfx_diesel_default;
  }
 }
-# 10 "rukts.pnml" 2
-# 1 "src/WAGON/MK3.pnml" 1
-spriteset(spriteset_Mk3_br, "gfx/WAGON/mk3.png") {
- template_8_8(0, 0)
-}
-
-spriteset(spriteset_Mk3_BUF_br, "gfx/WAGON/mk3.png") {
- template_8_8(0, 25)
-}
-
-spriteset(spriteset_Mk3_intercity, "gfx/WAGON/mk3.png") {
- template_8_8(0, 73)
-}
-
-spriteset(spriteset_Mk3_BUF_intercity, "gfx/WAGON/mk3.png") {
- template_8_8(0, 98)
-}
-
-spriteset(spriteset_Mk3_DVT_intercity_r, "gfx/WAGON/mk3.png") {
- template_7_8(0, 123)
-}
-
-spriteset(spriteset_Mk3_DVT_intercity_f, "gfx/WAGON/mk3.png") {
- template_7_8(0, 146)
-}
-
-switch(FEAT_TRAINS, SELF, sw_Mk3_BR, position_in_consist){
- 4: spriteset_Mk3_BUF_br;
- spriteset_Mk3_br;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Mk3_IC, position_in_consist_from_end){
- 4: spriteset_Mk3_BUF_intercity;
- 0: spriteset_Mk3_DVT_intercity_r;
- spriteset_Mk3_intercity;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Mk3_length_dvt, position_in_consist_from_end){
- 0: return 7;
- return 8;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Mk3_length, current_year){
- 1971 .. 1982: return 8;
- return sw_Mk3_length_dvt;
-}
-
-switch(FEAT_TRAINS, SELF, sw_Mk3_livery, current_year){
- 1971 .. 1982: sw_Mk3_BR;
- 1983 .. 1995: sw_Mk3_IC;
- sw_Mk3_IC;
-}
-
-item (FEAT_TRAINS, item_Mk3) {
- property {
-  name: string(STR_NAME_Mk3);
-  climates_available: ALL_CLIMATES;
-  introduction_date: date(1975, 1, 1);
-  model_life: 15;
-  retire_early: 1;
-  vehicle_life: 50;
-  reliability_decay: 7;
-  refittable_cargo_classes: CC_PASSENGERS;
-  cargo_allow_refit: [PASS, TOUR];
-  loading_speed: 29;
-  cost_factor: 38;
-  running_cost_factor: 34;
-  sprite_id: SPRITE_ID_NEW_TRAIN;
-  speed: 125 mph;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
-  refit_cost: 0;
-  track_type: RAIL;
-  ai_special_flag: AI_FLAG_CARGO;
-  power: 0 hp;
-  running_cost_base: RUNNING_COST_NONE;
-  dual_headed: 0;
-  default_cargo_type: PASS;
-  cargo_capacity: 80;
-  weight: 5 ton;
-  tractive_effort_coefficient: 0.07;
-  air_drag_coefficient: 0.08;
-  length: 8;
-  bitmask_vehicle_info: 0;
-  cargo_age_period: 185;
- }
- graphics {
- can_attach_wagon: CB_RESULT_ATTACH_ALLOW;
- default: sw_Mk3_livery;
- purchase: sw_Mk3_livery;
- length: sw_Mk3_length;
-}
-}
-# 10 "rukts.pnml" 2
+# 11 "rukts.pnml" 2
