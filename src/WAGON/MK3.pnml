@@ -49,7 +49,7 @@ switch(FEAT_TRAINS, SELF, sw_Mk3_livery, current_year){
 	sw_Mk3_IC;
 }
 
-item (FEAT_TRAINS, item_Mk3) {
+item (FEAT_TRAINS, item_Mk3, 0) {
 	property {
 		name: 							string(STR_NAME_Mk3);
 		climates_available: 			ALL_CLIMATES;

@@ -1,0 +1,131 @@
+spriteset(spriteset_700_tl_f, "gfx/EMU/class_700.png") {
+	template_8_8(0, 0)
+}
+
+spriteset(spriteset_700_tl_r, "gfx/EMU/class_700.png") {
+	template_8_8(0, 25)
+}
+
+spriteset(spriteset_700_tl_o, "gfx/EMU/class_700.png") {
+	template_8_8(0, 50)
+}
+
+spriteset(spriteset_700_tl_t, "gfx/EMU/class_700.png") {
+	template_8_8(0, 75)
+}
+
+spriteset(spriteset_700_tl_p, "gfx/EMU/class_700.png") {
+	template_8_8(0, 100)
+}
+
+spriteset(spriteset_700_swt_f, "gfx/EMU/class_700.png") {
+	template_8_8(0, 125)
+}
+
+spriteset(spriteset_700_swt_r, "gfx/EMU/class_700.png") {
+	template_8_8(0, 150)
+}
+
+spriteset(spriteset_700_swt_o, "gfx/EMU/class_700.png") {
+	template_8_8(0, 175)
+}
+
+spriteset(spriteset_700_swt_t, "gfx/EMU/class_700.png") {
+	template_8_8(0, 200)
+}
+
+//Switches
+
+switch(FEAT_TRAINS, SELF, sw_700_livery_A, count_veh_id(0)){
+	0..3: spriteset_700_swt_f;
+	4..255: spriteset_700_tl_f;
+}
+
+switch(FEAT_TRAINS, SELF, sw_700_livery_B, count_veh_id(0)){
+	0..3: spriteset_700_swt_r;
+	4..255: spriteset_700_tl_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_700_livery_O, count_veh_id(0)){
+	0..3: spriteset_700_swt_o;
+	4..255: spriteset_700_tl_o;
+}
+
+switch(FEAT_TRAINS, SELF, sw_700_front, position_in_consist){
+	0: return sw_700_livery_A;
+	return sw_700_livery_O;
+}
+
+switch(FEAT_TRAINS, SELF, sw_700_default, position_in_consist_from_end){
+	0: return sw_700_livery_B;
+	return sw_700_front;
+}
+
+switch(FEAT_TRAINS, SELF, sw_700_t_livery, num_vehs_in_vehid_chain){
+	1..3: spriteset_700_swt_t;
+	4..256: spriteset_700_tl_t;
+}
+
+switch(FEAT_TRAINS, SELF, sw_700_p_livery, num_vehs_in_vehid_chain){
+	1..3: spriteset_700_swt_t;
+	4..256: spriteset_700_tl_p;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_700_p_rear, ((position_in_vehid_chain)-(num_vehs_in_vehid_chain))){
+	0: sw_700_p_livery;
+	sw_700_t_livery;
+}
+
+switch(FEAT_TRAINS, SELF, sw_700_trailer, position_in_vehid_chain){
+	0: sw_700_p_livery;
+	sw_700_p_rear;
+}
+
+
+
+item (FEAT_TRAINS, item_700) {
+	property {
+		name: 							string(STR_NAME_700);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(2015, 1, 1);
+		model_life:						15;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					35;
+		cost_factor:					45;
+		running_cost_factor:			45;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							100 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						SAAZ;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							4500 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					80;
+		weight:							35 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+	}
+	graphics {
+	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	default: 							sw_700_default;
+	purchase:							sw_700_livery_A;
+	create_effect:						vfx_dual_voltage;
+}
+		livery_override (item_Mk3) {
+		cargo_capacity: 80;
+		default: sw_700_trailer;
+}
+}
