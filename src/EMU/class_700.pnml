@@ -37,17 +37,17 @@ spriteset(spriteset_700_swt_t, "gfx/EMU/class_700.png") {
 //Switches
 
 switch(FEAT_TRAINS, SELF, sw_700_livery_A, (count_veh_id(0)/count_veh_id(1))){
-	0..2: spriteset_700_swt_f;
+	0..1: spriteset_700_swt_f;
 	 spriteset_700_tl_f;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_700_livery_B, (count_veh_id(0)/count_veh_id(1))){
-	0..2: spriteset_700_swt_r;
+	0..1: spriteset_700_swt_r;
 	 spriteset_700_tl_r;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_700_livery_O, (count_veh_id(0)/count_veh_id(1))){
-	0..2: spriteset_700_swt_o;
+	0..1: spriteset_700_swt_o;
 	 spriteset_700_tl_o;
 }
 
@@ -62,12 +62,12 @@ switch(FEAT_TRAINS, SELF, sw_700_default, position_in_consist_from_end){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_700_t_livery, (count_veh_id(0)/count_veh_id(1))){
-	0..2: spriteset_700_swt_t;
+	0..1: spriteset_700_swt_t;
 	 spriteset_700_tl_t;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_700_p_livery, (count_veh_id(0)/count_veh_id(1))){
-	0..2: spriteset_700_swt_t;
+	0..1: spriteset_700_swt_t;
 	 spriteset_700_tl_p;
 }
 
