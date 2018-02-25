@@ -1,0 +1,178 @@
+//TURBOSTAR
+
+template template_turbo_single(x,y){
+	[x+0,y,8,23,-3,-10] //North
+	[x+10,y,20,15,-14,-7] //North East
+	[x+33,y,33,11,-17,-7] //East
+	[x+69,y,20,15,-5,-7] //South East
+ }
+ 
+template template_turbo_double(x,y){
+	[template_turbo_single(x,y),template_turbo_single(x+92,y)]
+}
+
+template template_turbo_rev(x,y){
+	[template_turbo_single(x+92,y),template_turbo_single(x,y)]
+}
+
+spriteset (turbo_168_front_cm, "gfx/turbostar.png"){template_turbo_double(0,0)}
+spriteset (turbo_168_back_cm,  "gfx/turbostar.png"){template_turbo_rev(214 ,0)}
+spriteset (turbo_168_mid_cm,   "gfx/turbostar.png"){template_turbo_single(0,52)}
+spriteset (turbo_172_front_lm, "gfx/turbostar.png"){template_turbo_double(0,26)}
+spriteset (turbo_172_back_lm,  "gfx/turbostar.png"){template_turbo_rev(214 ,26)}
+spriteset (turbo_172_mid_lm,   "gfx/turbostar.png"){template_turbo_single(92,52)}
+
+/*
+switch(FEAT_TRAINS, SELF, sw_turbo_threecoach_front, build_year){
+	1998..2009: turbo_168_front_cm;
+	turbo_172_front_lm;
+}
+
+switch(FEAT_TRAINS, SELF, sw_turbo_front, count_veh_id(2)/count_veh_id(3)){
+	0..1: return sw_turbo_threecoach_front;
+	turbo_168_front_cm;
+}
+
+switch(FEAT_TRAINS, SELF, sw_turbo_threecoach_back, build_year){
+	1998..2009: turbo_168_back_cm;
+	turbo_172_front_lm;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_turbo_back, count_veh_id(2)/count_veh_id(3)){
+	0..1: return sw_turbo_threecoach_back;
+	turbo_168_back_cm;
+}
+
+switch(FEAT_TRAINS, SELF, sw_turbo_default, position_in_consist_from_end){
+	0: return sw_turbo_back;
+	return sw_turbo_front;
+}
+
+switch(FEAT_TRAINS, SELF, sw_turbo_threecoach_mid, build_year){
+	1998..2009: turbo_168_mid_cm;
+	turbo_172_mid_lm;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_turbo_mid_default, count_veh_id(2)/count_veh_id(3)){
+	0..1: return sw_turbo_threecoach_mid;
+	turbo_168_mid_cm;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_turbo_length, (count_veh_id(2)/count_veh_id(3))){
+	0..1: return 1;//172
+	return 0;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_turbo_build_year, build_year){
+	2010..4096: return 1;//172
+	return 0;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_turbo_decider,((sw_turbo_length)+(build_year))){
+	2: return 172;
+	return 168;
+}
+
+switch(FEAT_TRAINS, SELF, sw_turbo_power, sw_turbo_decider){
+	172: return 361; //Class 172
+	168: return 315; //Class 168
+}
+
+switch(FEAT_TRAINS, SELF, sw_turbo_capacity, sw_turbo_decider){
+	172: return 90;
+	168: return 85;
+}
+
+switch(FEAT_TRAINS, SELF, sw_turbo_weight, sw_turbo_decider){
+	172: return 42;
+	168: return 44;
+}
+
+switch(FEAT_TRAINS, SELF, sw_turbo_te, sw_turbo_decider){
+	172: return 0.41;
+	168: return 0.39;
+}
+
+*/
+
+item (FEAT_TRAINS, item_turbo_mid, 2){
+	property{
+		name:string(STR_TURBO_MID_NAME);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1997, 1, 1);
+		model_life: 14;
+		retire_early: 1;
+		vehicle_life: 40;
+		reliability_decay: 7;
+		refittable_cargo_classes: CC_PASSENGERS;
+		cargo_allow_refit: [PASS, TOUR];
+		loading_speed: 20;
+		cost_factor: 45;
+		running_cost_factor: 50;
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		speed: 100 mph;
+		misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		refit_cost: 0;
+		track_type: RAIL;
+		engine_class: ENGINE_CLASS_DIESEL;
+		air_drag_coefficient: 0.08;
+		length: 8;
+		effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_DIESEL;
+		default_cargo_type: PASS;
+	}
+	graphics{
+		default: sw_turbo_mid_default;
+		tractive_effort_coefficient: return (sw_turbo_te);
+		weight: return (sw_turbo_weight); 
+		cargo_capacity: return (sw_turbo_capacity);
+		create_effect: vfx_diesel_default;
+	}
+}
+
+item (FEAT_TRAINS, item_turbo, 3){
+	property{
+		name:string(STR_TURBO_FRONT_NAME);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1997, 1, 1);
+		model_life: 14;
+		retire_early: 1;
+		vehicle_life: 40;
+		reliability_decay: 7;
+		refittable_cargo_classes: CC_PASSENGERS;
+		cargo_allow_refit: [PASS, TOUR];
+		loading_speed: 20;
+		cost_factor: 45;
+		running_cost_factor: 50;
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		speed: 100 mph;
+		misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		refit_cost: 0;
+		track_type: RAIL;
+		engine_class: ENGINE_CLASS_DIESEL;
+		air_drag_coefficient:0.08;
+		length: 8;
+		effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_DIESEL;
+		default_cargo_type: PASS;
+		dual_headed:					1;
+	}
+	graphics{
+		default: sw_turbo_default;
+		power: return (sw_turbo_power);
+		tractive_effort_coefficient: return (sw_turbo_te);
+		weight: return (sw_turbo_weight); 
+		cargo_capacity: return (sw_turbo_capacity);
+		create_effect: vfx_diesel_default;
+	}
+	livery_override (item_turbo_mid){
+		power: return (sw_turbo_power);
+	}
+}
+
+/*
+		power: return (sw_turbo_length) && (sw_turbo_build_year) ? 361: 315;
+		tractive_effort_coefficient: return (sw_turbo_length) && (sw_turbo_build_year) ? 0.41 : 0.39;
+		weight: return (sw_turbo_length) && (sw_turbo_build_year) ? 42 : 44; 
+		cargo_capacity: return (sw_turbo_length) && (sw_turbo_build_year) ? 90: 85;
+		create_effect: vfx_diesel_default;
+*/
+
