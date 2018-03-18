@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
-STR_GRF_NAME   :Representative UK Train Set - RUKTS
-STR_GRF_DESC   :{GOLD}A representative collection of various UK trains! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
+STR_GRF_NAME                :Representative UK Train Set - RUKTS
+STR_GRF_DESC                :{GOLD}A representative collection of various UK trains! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
 
 STR_PARAM_COLOURSCHEME_NAME :Real liveries
 STR_PARAM_COLOURSCHEME_DESC :Use real life colours instead of company colours
@@ -12,6 +12,10 @@ STR_PARAM_COACHMAIL_DESC    :Coaches that have brake compartments can load mail 
 
 STR_NAME_POWERHAUL			:GE Powerhaul (Diesel Electric)
 STR_NAME_EETYPE4			:EE Type 4 "Whistler" (Diesel Electric)
+STR_NAME_UKLIGHT            :Vossloh UK Light (Diesel Electric)
+STR_NAME_EURODUAL           :Stadler Euro Dual (Electro Diesel)
+
+STR_NAME_TURBOSTAR          :Bombardier Turbostar (Diesel)
 STR_NAME_PEP				:PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_317				:AC Express "Bed Pan"
 STR_NAME_700				:Desiro City
