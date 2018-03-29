@@ -71,7 +71,7 @@ switch(FEAT_TRAINS, PARENT, sw_325_t_colour_mapping_auto_pass, current_year){
 	sw_325_t_south_eastern_colour_mapping;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_325_t_colour_mapping_auto, most_common_refit){
+switch(FEAT_TRAINS, PARENT, sw_325_t_colour_mapping_auto, cargo_classes){
 	PASS : sw_325_t_colour_mapping_auto_pass ;
 	MAIL : sw_325_t_mail_colour_mapping ;
 }
@@ -82,7 +82,7 @@ switch(FEAT_TRAINS, PARENT, sw_325_t_colour_mapping_manual_pass, cargo_subtype){
 	2..3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);
 }
 
-switch(FEAT_TRAINS, PARENT, sw_325_t_colour_mapping_manual, most_common_refit){
+switch(FEAT_TRAINS, PARENT, sw_325_t_colour_mapping_manual, cargo_classes){
 	PASS : sw_325_t_colour_mapping_manual_pass;
 	MAIL : sw_325_t_mail_colour_mapping ;
 }
@@ -100,6 +100,12 @@ switch(FEAT_TRAINS, PARENT, sw_325_t_colour_mapping_decider, colour_scheme_1){
 switch(FEAT_TRAINS, PARENT, sw_Mk3_colour_mapping_decider, vehicle_type_id){
 	325 : sw_325_t_colour_mapping_decider ;
 	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_t, current_year){
+	ERA_SECTORISATION : sw_325_t_nse_colour_mapping ;
+	1996 .. 2005 : sw_325_t_cnx_colour_mapping ;
+	sw_325_t_south_eastern_colour_mapping;
 }
 
 item (FEAT_TRAINS, item_Mk3, 0) {
@@ -139,6 +145,6 @@ item (FEAT_TRAINS, item_Mk3, 0) {
 	default: 							sw_Mk3_livery;
 	purchase:							sw_Mk3_livery;
 	length:								sw_Mk3_length;
-	colour_mapping:						sw_Mk3_colour_mapping_decider ;
+	colour_mapping:						sw_325_colour_mapping_t ;
 }
 }

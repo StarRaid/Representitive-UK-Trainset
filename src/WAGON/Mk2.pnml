@@ -12,31 +12,31 @@
 
 template template_Mk2_single(x,y){
 	[x+0,y,8,23,-3,-10] //North
-	[x+10,y,20,16,-14,-9] //North East
+	[x+10,y,20,16,-14,-8] //North East
 	[x+32,y,33,13,-17,-9] //East
-	[x+67,y,20,16,-5,-9] //South East
+	[x+67,y,20,16,-5,-8] //South East
 }
 
 template template_Mk2_double(x,y){
 	[x+0,y,8,23,-3,-10] //North
-	[x+10,y,20,16,-14,-9] //North East
+	[x+10,y,20,16,-14,-8] //North East
 	[x+32,y,33,13,-17,-9] //East
-	[x+67,y,20,16,-5,-9] //South East
+	[x+67,y,20,16,-5,-8] //South East){
 	[x+89,y,8,23,-3,-10] //South
-	[x+99,y,20,16,-12,-9] //South West
+	[x+99,y,20,16,-12,-8] //South West
 	[x+121,y,33,13,-17,-9] //West
-	[x+156,y,20,16,-5,-9] //North West
+	[x+156,y,20,16,-5,-8] //North West
 }
 
 template template_Mk2_double_reverse(x,y){
 	[x+89,y,8,23,-3,-10] //South
-	[x+99,y,20,16,-12,-9] //South West
+	[x+99,y,20,16,-12,-8] //South West
 	[x+121,y,33,13,-17,-9] //West
-	[x+156,y,20,16,-5,-9] //North West
+	[x+156,y,20,16,-5,-8] //North West
 	[x+0,y,8,23,-3,-10] //North
-	[x+10,y,20,16,-14,-9] //North East
+	[x+10,y,20,16,-14,-8] //North East
 	[x+32,y,33,13,-17,-9] //East
-	[x+67,y,20,16,-5,-9] //South East
+	[x+67,y,20,16,-5,-8] //South East
 }
 
 //Spritesets
