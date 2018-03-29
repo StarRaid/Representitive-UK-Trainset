@@ -219,36 +219,47 @@ item (FEAT_TRAINS, item_Mk3, 0) {
 # 1 "src/WAGON/Mk2.pnml" 1
 //Mark 2
 
+/*
 
+	[x+85,y,8,23,-3,-10] //South
+
+	[x+95,y,18,15,-12,-8] //South West
+
+	[x+115,y,33,13,-17,-9] //West
+
+	[x+150,y,18,15,-3,-8] //North West
+
+*/
+# 11 "src/WAGON/Mk2.pnml"
 //Templates
 
 template template_Mk2_single(x,y){
  [x+0,y,8,23,-3,-10] //North
- [x+10,y,18,15,-12,-8] //North East
- [x+30,y,33,13,-17,-9] //East
- [x+65,y,18,15,-3,-8] //South East
+ [x+10,y,20,17,-14,-10] //North East
+ [x+32,y,33,13,-17,-9] //East
+ [x+67,y,20,15,-5,-10] //South East
 }
 
 template template_Mk2_double(x,y){
  [x+0,y,8,23,-3,-10] //North
- [x+10,y,18,15,-12,-8] //North East
- [x+30,y,33,13,-17,-9] //East
- [x+65,y,18,15,-3,-8] //South East
- [x+85,y,8,23,-3,-10] //South
- [x+95,y,18,15,-12,-8] //South West
- [x+115,y,33,13,-17,-9] //West
- [x+150,y,18,15,-3,-8] //North West
+ [x+10,y,20,17,-14,-10] //North East
+ [x+32,y,33,13,-17,-9] //East
+ [x+67,y,20,15,-5,-10] //South East
+ [x+89,y,8,23,-3,-10] //South
+ [x+99,y,20,17,-12,-10] //South West
+ [x+121,y,33,13,-17,-9] //West
+ [x+156,y,20,17,-5,-10] //North West
 }
 
 template template_Mk2_double_reverse(x,y){
- [x+85,y,8,23,-3,-10] //South
- [x+95,y,18,15,-12,-8] //South West
- [x+115,y,33,13,-17,-9] //West
- [x+150,y,18,15,-3,-8] //North West
+ [x+89,y,8,23,-3,-10] //South
+ [x+99,y,20,17,-12,-10] //South West
+ [x+121,y,33,13,-17,-9] //West
+ [x+156,y,20,17,-5,-10] //North West
  [x+0,y,8,23,-3,-10] //North
- [x+10,y,18,15,-12,-8] //North East
- [x+30,y,33,13,-17,-9] //East
- [x+65,y,18,15,-3,-8] //South East
+ [x+10,y,20,17,-14,-10] //North East
+ [x+32,y,33,13,-17,-9] //East
+ [x+67,y,20,15,-5,-10] //South East
 }
 
 //Spritesets
@@ -1044,14 +1055,14 @@ switch(FEAT_TRAINS, SELF, sw_325_sey_t, position_in_vehid_chain){
 
 switch(FEAT_TRAINS, SELF, sw_325_passenger_livery_decider, current_year){
  1983 .. 1995: sw_325_nse;
- 1997 .. 2005: sw_325_cnx;
+ 1996 .. 2005: sw_325_cnx;
  2006 .. 2012: sw_325_sey;
  sw_325_seb;
 }
 
 switch(FEAT_TRAINS, SELF, sw_325_passenger_livery_decider_t, current_year){
  1983 .. 1995: sw_325_nse_t;
- 1997 .. 2005: sw_325_cnx_t;
+ 1996 .. 2005: sw_325_cnx_t;
  2006 .. 2012: sw_325_sey_t;
  sw_325_seb_t;
 }
@@ -1138,7 +1149,7 @@ switch(FEAT_TRAINS, SELF, sw_325_refit_text_decider, livery_choice){
 //Purchase sprite decider
 switch(FEAT_TRAINS, SELF, sw_325_purchase, current_year){
  1983 .. 1995: spriteset_325_nse_purchase;
- 1997 .. 2005: spriteset_325_cnx_purchase;
+ 1996 .. 2005: spriteset_325_cnx_purchase;
  2006 .. 2012: spriteset_325_sey_purchase;
  spriteset_325_seb_purchase;
 }
@@ -1171,7 +1182,7 @@ random_switch(FEAT_TRAINS, SELF, sw_325_mail_colour_mapping){
 
 switch(FEAT_TRAINS, SELF, sw_325_colour_mapping_auto_pass, current_year){
  1983 .. 1995 : sw_325_nse_colour_mapping ;
- 1997 .. 2005 : sw_325_cnx_colour_mapping ;
+ 1996 .. 2005 : sw_325_cnx_colour_mapping ;
  sw_325_south_eastern_colour_mapping;
 }
 
