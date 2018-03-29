@@ -266,7 +266,7 @@ item (FEAT_TRAINS, item_Mk2, 1){
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 80 ;
 		track_type                     : RAIL ;
-		speed                          : 100 ;
+		speed                          : 100 mph ;
 		power                          : 0 hp ;
 		weight                         : 34 ton ;
 	}
