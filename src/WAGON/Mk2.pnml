@@ -63,10 +63,10 @@ spriteset(gfx_mk2_directrail_f_tso         , "gfx/WAGON/mark_2.png"){template_Mk
 spriteset(gfx_mk2_directrail_f_bso         , "gfx/WAGON/mark_2.png"){template_Mk2_double(0,325)}
 spriteset(gfx_mk2_directrail_f_bso_reverse , "gfx/WAGON/mark_2.png"){template_Mk2_double_reverse(0,325)}
 
-spriteset(gfx_mk2_purchase_brblue          , "gfx/WAGON/mark_2.png"){template_purchase(85,50)}
-spriteset(gfx_mk2_purchase_regional        , "gfx/WAGON/mark_2.png"){template_purchase(85,150)}
-spriteset(gfx_mk2_purchase_virgin          , "gfx/WAGON/mark_2.png"){template_purchase(85,200)}
-spriteset(gfx_mk2_purchase_directrail      , "gfx/WAGON/mark_2.png"){template_purchase(85,300)}
+spriteset(gfx_mk2_purchase_brblue          , "gfx/WAGON/mark_2.png"){template_purchase(89,50)}
+spriteset(gfx_mk2_purchase_regional        , "gfx/WAGON/mark_2.png"){template_purchase(89,150)}
+spriteset(gfx_mk2_purchase_virgin          , "gfx/WAGON/mark_2.png"){template_purchase(89,200)}
+spriteset(gfx_mk2_purchase_directrail      , "gfx/WAGON/mark_2.png"){template_purchase(89,300)}
 
 
 //Switches
