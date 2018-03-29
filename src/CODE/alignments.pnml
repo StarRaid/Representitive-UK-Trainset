@@ -1,5 +1,9 @@
 //template_x_y where x is length and y is no. views
 
+template template_purchase(x,y){
+	[ x, y, 78, 12, -39, -6]
+}
+
 template template_8_8(x,y){
     [ x, y, 8, 24, -3, -12]
     [ x+10, y, 21, 17, -12, -10]
