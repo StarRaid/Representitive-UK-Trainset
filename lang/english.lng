@@ -12,12 +12,13 @@ STR_PARAM_COACHMAIL_DESC     :Coaches that have brake compartments can load mail
 STR_PARAM_LIVERY_CHOICE_NAME :Choose liveries manually
 STR_PARAM_LIVERY_CHOICE_DESC :Liveries are chosen through the cargo refit menu instead of them changing depending on year
 
-STR_LIVERY_BRBLUE            : British Railways Blue 
-STR_LIVERY_INTERCITY         : Intercity
-STR_LIVERY_REG_RAILWAYS      : Regional Railways
-STR_LIVERY_NSE               : Network South East
-STR_LIVERY_VIRGIN_TRAINS     : Virgin Trains
-STR_LIVERY_DRS               : Direct Rail Services
+STR_LIVERY_BRBLUE				: British Railways Blue 
+STR_LIVERY_BRBLUE_SUBTYPE		: British Railways Blue {STRING}
+STR_LIVERY_INTERCITY			: Intercity
+STR_LIVERY_REG_RAILWAYS			: Regional Railways
+STR_LIVERY_NSE					: Network South East
+STR_LIVERY_VIRGIN_TRAINS		: Virgin Trains
+STR_LIVERY_DRS					: Direct Rail Services
 STR_LIVERY_TPE_NEW           : Trans Pennine Express
 STR_LIVERY_CAL_SLEEPER       : Caledonian Sleeper
 STR_LIVERY_GBRF              : First GBRf

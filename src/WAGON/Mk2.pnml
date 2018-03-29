@@ -70,14 +70,14 @@ spriteset(gfx_mk2_purchase_directrail      , "gfx/WAGON/mark_2.png"){template_pu
 //Mark 2a
 
 
-switch(FEAT_TRAINS, SELF, sw_mk2a_brblue_front, position_in_vehid_chain){ 0 : gfx_mk2_brblue_a_bso ; gfx_mk2_brblue_f_tso ;}
-switch(FEAT_TRAINS, SELF, sw_mk2a_brblue_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_brblue_a_bso_reverse ; sw_mk2f_brblue_front ;}
+switch(FEAT_TRAINS, SELF, sw_mk2a_brblue_front, position_in_vehid_chain){ 0 : gfx_mk2_brblue_a_bso ; gfx_mk2_brblue_a_tso ;}
+switch(FEAT_TRAINS, SELF, sw_mk2a_brblue_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_brblue_a_bso_reverse ; sw_mk2a_brblue_front ;}
 
-switch(FEAT_TRAINS, SELF, sw_mk2a_regional_front, position_in_vehid_chain){ 0 : gfx_mk2_regional_a_bso ; gfx_mk2_regional_f_tso ;}
-switch(FEAT_TRAINS, SELF, sw_mk2a_regional_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_regional_a_bso_reverse ; sw_mk2f_regional_front ;}
+switch(FEAT_TRAINS, SELF, sw_mk2a_regional_front, position_in_vehid_chain){ 0 : gfx_mk2_regional_a_bso ; gfx_mk2_regional_a_tso ;}
+switch(FEAT_TRAINS, SELF, sw_mk2a_regional_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_regional_a_bso_reverse ; sw_mk2a_regional_front ;}
 
-random_switch(FEAT_TRAINS, PARENT, sw_mk2a_brblue    , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2a_brblue_back ;}
-random_switch(FEAT_TRAINS, PARENT, sw_mk2a_regional  , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2a_regional_back ;}
+random_switch(FEAT_TRAINS, SELF, sw_mk2a_brblue    , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2a_brblue_back ;}
+random_switch(FEAT_TRAINS, SELF, sw_mk2a_regional  , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2a_regional_back ;}
 
 switch(FEAT_TRAINS, SELF, sw_mk2a_livery_decider, current_year){
 	ERA_BRBLUE         : sw_mk2a_brblue ;
@@ -94,7 +94,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2a_livery_decider, current_year){
 switch(FEAT_TRAINS, SELF, sw_mk2f_brblue_front, position_in_vehid_chain){ 0 : gfx_mk2_brblue_f_bso_reverse ; gfx_mk2_brblue_f_tso ;}
 switch(FEAT_TRAINS, SELF, sw_mk2f_brblue_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_brblue_f_bso ; sw_mk2f_brblue_front ;}
 
-switch(FEAT_TRAINS, SELF, sw_mk2f_intercity_front, position_in_vehid_chain){ 0 : gfx_mk2_intercity_bso_reverse ; gfx_mk2_intercity_f_tso ;}
+switch(FEAT_TRAINS, SELF, sw_mk2f_intercity_front, position_in_vehid_chain){ 0 : gfx_mk2_intercity_f_bso_reverse ; gfx_mk2_intercity_f_tso ;}
 switch(FEAT_TRAINS, SELF, sw_mk2f_intercity_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_intercity_f_bso ; sw_mk2f_intercity_front ;}
 
 switch(FEAT_TRAINS, SELF, sw_mk2f_virgin_front, position_in_vehid_chain){ 0 : gfx_mk2_virgin_f_bso_reverse ; gfx_mk2_virgin_f_tso ;}
@@ -104,10 +104,10 @@ switch(FEAT_TRAINS, SELF, sw_mk2f_directrail_front, position_in_vehid_chain){ 0 
 switch(FEAT_TRAINS, SELF, sw_mk2f_directrail_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_directrail_f_bso ; sw_mk2f_directrail_front ;}
 
 
-random_switch(FEAT_TRAINS, PARENT, sw_mk2f_brblue    , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_brblue_back ;}
-random_switch(FEAT_TRAINS, PARENT, sw_mk2f_intercity , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_intercity_back ;}
-random_switch(FEAT_TRAINS, PARENT, sw_mk2f_virgin    , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_virgin_back ;}
-random_switch(FEAT_TRAINS, PARENT, sw_mk2f_directrail, TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_directrail_back ;}
+random_switch(FEAT_TRAINS, SELF, sw_mk2f_brblue    , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_brblue_back ;}
+random_switch(FEAT_TRAINS, SELF, sw_mk2f_intercity , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_intercity_back ;}
+random_switch(FEAT_TRAINS, SELF, sw_mk2f_virgin    , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_virgin_back ;}
+random_switch(FEAT_TRAINS, SELF, sw_mk2f_directrail, TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_directrail_back ;}
 
 switch(FEAT_TRAINS, SELF, sw_mk2f_livery_decider, current_year){
 	ERA_BRBLUE         : sw_mk2f_brblue ;
@@ -157,9 +157,9 @@ switch(FEAT_TRAINS, SELF, sw_mk2_default, [STORE_TEMP((getbits(extra_callback_in
 
 
 //Cargo refit text
-switch(FEAT_TRAINS, SELF sw_mk2_refit_text, cargo_subtype){
-	0 : return(string(STR_LIVERY_BRBLUE),string(STR_NAME_MK2A)) ;
-	1 : return(string(STR_LIVERY_BRBLUE),string(STR_NAME_MK2F)) ;
+switch(FEAT_TRAINS, SELF, sw_mk2_refit_text, cargo_subtype){
+	0 : return(string(STR_LIVERY_BRBLUE_SUBTYPE,string(STR_NAME_MK2A))) ;
+	1 : return(string(STR_LIVERY_BRBLUE_SUBTYPE,string(STR_NAME_MK2F))) ;
 	2 : string(STR_LIVERY_INTERCITY) ;
 	3 : string(STR_LIVERY_REG_RAILWAYS) ;
 	4 : string(STR_LIVERY_NSE) ;
