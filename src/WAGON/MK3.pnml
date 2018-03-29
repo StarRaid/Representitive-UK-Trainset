@@ -59,7 +59,7 @@ item (FEAT_TRAINS, item_Mk3, 0) {
 		vehicle_life:					50;
 		reliability_decay:				7;
 		refittable_cargo_classes:		CC_PASSENGERS;
-		cargo_allow_refit:				[PASS, TOUR];
+		cargo_allow_refit:				[PASS, TOUR, MAIL];
 		loading_speed:					29;
 		cost_factor:					38;
 		running_cost_factor:			34;

@@ -18,13 +18,16 @@ STR_LIVERY_INTERCITY			: Intercity
 STR_LIVERY_REG_RAILWAYS			: Regional Railways
 STR_LIVERY_NSE					: Network South East
 STR_LIVERY_VIRGIN_TRAINS		: Virgin Trains
+STR_LIVERY_CONNEX				: Connex
 STR_LIVERY_DRS					: Direct Rail Services
-STR_LIVERY_TPE_NEW           : Trans Pennine Express
-STR_LIVERY_CAL_SLEEPER       : Caledonian Sleeper
-STR_LIVERY_GBRF              : First GBRf
-STR_LIVERY_LONDON_MIDLAND    : Londom Midland
-STR_LIVERY_CHILTERN          : Chiltern Railways
-STR_LIVERY_COLAS             : Colas Rail
+STR_LIVERY_TPE_NEW				: Trans Pennine Express
+STR_LIVERY_CAL_SLEEPER			: Caledonian Sleeper
+STR_LIVERY_GBRF					: First GBRf
+STR_LIVERY_LONDON_MIDLAND		: Londom Midland
+STR_LIVERY_CHILTERN				: Chiltern Railways
+STR_LIVERY_COLAS				: Colas Rail
+STR_LIVERY_SE_BLUE				: Southeastern (Blue)
+STR_LIVERY_SE_YELLOW			: Southeastern (Yellow)
 
 STR_NAME_MK2                 :BREL Mark 2 Carriage
 STR_NAME_MK2A                :{GOLD}(Mk2a)
@@ -40,4 +43,5 @@ STR_NAME_EURODUAL            :Stadler Euro Dual (Electro Diesel)
 STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_317				 :AC Express "Bed Pan"
+STR_NAME_325				 :Adtranz "Networker" (Dual Volatge)
 STR_NAME_700				 :Desiro City
