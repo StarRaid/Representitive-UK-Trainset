@@ -258,39 +258,34 @@ random_switch(FEAT_TRAINS, SELF, sw_325_mail_colour_mapping){
 	1 : palette_2cc(COLOUR_RED, COLOUR_YELLOW);
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_colour_mapping_auto_pass, current_year){
+switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_auto_pass, current_year){
 	ERA_SECTORISATION : sw_325_nse_colour_mapping ;
 	1996 .. 2005 : sw_325_cnx_colour_mapping ;
 	sw_325_south_eastern_colour_mapping;
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_colour_mapping_auto, most_common_refit){
+switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_auto, most_common_refit){
 	PASS : sw_325_colour_mapping_auto_pass ;
 	MAIL : sw_325_mail_colour_mapping ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_colour_mapping_manual_pass, cargo_subtype){
+switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_manual_pass, cargo_subtype){
 	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
 	2..3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_colour_mapping_manual, most_common_refit){
+switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_manual, most_common_refit){
 	PASS : sw_325_colour_mapping_manual_pass;
 	MAIL : sw_325_mail_colour_mapping ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_colour_mapping_manual_check, livery_choice){
+switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_manual_check, livery_choice){
 	1 : sw_325_colour_mapping_manual ;
 	sw_325_colour_mapping_auto ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_colour_mapping_decider, colour_scheme_1){
-	1 : sw_325_colour_mapping_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_325_colour_mapping_decider_t, colour_scheme_1){
+switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_decider, colour_scheme_1){
 	1 : sw_325_colour_mapping_manual_check ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
