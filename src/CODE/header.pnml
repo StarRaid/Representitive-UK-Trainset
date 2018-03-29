@@ -9,13 +9,19 @@ grf{
 			type: bool;
 			name: string(STR_PARAM_COLOURSCHEME_NAME);
 			desc: string(STR_PARAM_COLOURSCHEME_DESC);
-			bit: 1;
+			bit : 1;
 		}
 		coaches_take_mail{
 			type: bool;
 			name: string(STR_PARAM_COACHMAIL_NAME);
 			desc: string(STR_PARAM_COACHMAIL_DESC);
-			bit: 2;
+			bit : 2;
+		}
+		livery_choice{
+			type: bool;
+			name: string(STR_PARAM_LIVERY_CHOICE_NAME);
+			desc: string(STR_PARAM_LIVERY_CHOICE_DESC);
+			bit : 3;
 		}
 	}
 }
