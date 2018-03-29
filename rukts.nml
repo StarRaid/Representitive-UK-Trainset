@@ -991,7 +991,7 @@ switch(FEAT_TRAINS, SELF, sw_700_trailer, position_in_vehid_chain){
 
 
 
-item (FEAT_TRAINS, item_700, 1) {
+item (FEAT_TRAINS, item_700, 700) {
  property {
   name: string(STR_NAME_700);
   climates_available: ALL_CLIMATES;
