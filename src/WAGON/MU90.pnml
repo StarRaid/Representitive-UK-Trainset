@@ -22,7 +22,59 @@ switch(FEAT_TRAINS, SELF, sw_MU90_passenger_livery_decider_t, current_year){
 	spriteset_MU90_worker_seb_t;
 }
 
+random_switch(FEAT_TRAINS, SELF, sw_MU90_worker_nse_colour_mapping, TRIGGER_VEHICLE_SERVICE){
+	1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+ }
+ 
+random_switch(FEAT_TRAINS, SELF, sw_MU90_worker_cnx_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+}
 
+random_switch(FEAT_TRAINS, SELF, sw_MU90_worker_south_eastern_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_MU90_worker_mail_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
+	1 : palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+}
+
+switch(FEAT_TRAINS, PARENT, sw_MU90_worker_colour_mapping_auto_pass, current_year){
+	ERA_SECTORISATION : sw_MU90_worker_nse_colour_mapping ;
+	1996 .. 2005 : sw_MU90_worker_cnx_colour_mapping ;
+	sw_MU90_worker_south_eastern_colour_mapping;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_MU90_worker_colour_mapping_auto, cargo_classes){
+	PASS: sw_MU90_worker_colour_mapping_auto_pass ;
+	//MAIL: sw_MU90_worker_mail_colour_mapping ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_MU90_worker_colour_mapping_manual_pass, cargo_subtype){
+	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+	2..3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);
+}
+
+switch(FEAT_TRAINS, PARENT, sw_MU90_worker_colour_mapping_manual, cargo_classes){
+	PASS: sw_MU90_worker_colour_mapping_manual_pass;
+	//MAIL: sw_MU90_worker_mail_colour_mapping ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_MU90_worker_colour_mapping_manual_check, livery_choice){
+	1 : sw_MU90_worker_colour_mapping_manual ;
+	sw_MU90_worker_colour_mapping_auto ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_MU90_worker_colour_mapping_decider, colour_scheme_1){
+	1 : sw_MU90_worker_colour_mapping_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_MU90_worker_colour_mapping, current_year){
+	ERA_SECTORISATION : sw_MU90_worker_nse_colour_mapping ;
+	1996 .. 2005 : sw_MU90_worker_cnx_colour_mapping ;
+	sw_MU90_worker_south_eastern_colour_mapping;
+}
 
 item (FEAT_TRAINS, item_MU90, 9090) {
 	property {
@@ -58,9 +110,8 @@ item (FEAT_TRAINS, item_MU90, 9090) {
 	}
 	graphics {
 	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
-	default: 							sw_Mk3_livery;
-	purchase:							sw_Mk3_livery;
-	length:								sw_Mk3_length;
-	colour_mapping:						sw_325_colour_mapping_t ;
+	default: 							sw_MU90_passenger_livery_decider_t;
+	purchase:							sw_MU90_passenger_livery_decider_t;
+	colour_mapping:						sw_MU90_worker_colour_mapping;
 }
 }
