@@ -14,6 +14,14 @@ spriteset(spriteset_MU90_worker_sey_t, "gfx/UNUSED & MIXED/networkers.png") {tem
 
 spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(0, 475)}
 
+spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(258, 400)}
+
+spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(258, 475)}
+
+spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(258, 475)}
+
+spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(258, 475)}
+
 
 switch(FEAT_TRAINS, SELF, sw_MU90_passenger_livery_decider_t, current_year){
 	ERA_SECTORISATION: spriteset_MU90_worker_nse_t;

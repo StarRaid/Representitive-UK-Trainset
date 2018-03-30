@@ -256,7 +256,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_decider, colour_scheme_1){
 
 //Item
 
-item (FEAT_TRAINS, item_Mk2, 1){
+item (FEAT_TRAINS, item_Mk2, 9020){
 	property{
 		name						   : string(STR_NAME_MK2) ;
 		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;

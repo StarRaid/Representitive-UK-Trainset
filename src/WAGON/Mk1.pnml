@@ -1,0 +1,91 @@
+spriteset(spriteset_Mk1_br, "gfx/WAGON/mk3.png") {
+	template_8_8(0, 0)
+}
+
+spriteset(spriteset_Mk1_BUF_br, "gfx/WAGON/mk3.png") {
+	template_8_8(0, 25)
+}
+
+spriteset(spriteset_Mk1_intercity, "gfx/WAGON/mk3.png") {
+	template_8_8(0, 73)
+}
+
+spriteset(spriteset_Mk1_BUF_intercity, "gfx/WAGON/mk3.png") {
+	template_8_8(0, 98)
+}
+
+spriteset(spriteset_Mk1_DVT_intercity_r, "gfx/WAGON/mk3.png") {
+	template_7_8(0, 123)
+}
+
+spriteset(spriteset_Mk1_DVT_intercity_f, "gfx/WAGON/mk3.png") {
+	template_7_8(0, 146)
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk1_BR, position_in_consist){
+	4: spriteset_Mk1_BUF_br;
+	spriteset_Mk1_br;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk1_IC, position_in_consist_from_end){
+	4: spriteset_Mk1_BUF_intercity;
+	0: spriteset_Mk1_DVT_intercity_r;
+	spriteset_Mk1_intercity;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk1_length_dvt, position_in_consist_from_end){
+	0: return 7;
+	return 8;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk1_length, current_year){
+	ERA_BRBLUETOPS: return 8;
+	return sw_Mk1_length_dvt;
+}
+
+switch(FEAT_TRAINS, SELF, sw_Mk1_livery, current_year){
+	ERA_BRBLUETOPS: sw_Mk1_BR;
+	ERA_SECTORISATION: sw_Mk1_IC;
+	sw_Mk1_IC;
+}
+
+item (FEAT_TRAINS, item_Mk1, 9010) {
+	property {
+		name: 							string(STR_NAME_Mk1);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1953, 1, 1);
+		model_life:						15;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS, TOUR, MAIL];
+		loading_speed:					29;
+		cost_factor:					20;
+		running_cost_factor:			0;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							100 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				PASS;
+		cargo_capacity:					40;
+		weight:							5 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+	}
+	graphics {
+	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	default: 							sw_Mk1_livery;
+	purchase:							sw_Mk1_livery;
+	length:								sw_Mk1_length;
+	colour_mapping:						return 0;
+}
+}

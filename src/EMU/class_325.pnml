@@ -344,13 +344,13 @@ switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_re, cargo_subtype){
  switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_b, cargo_classes){
 	CC_PASSENGERS: sw_325_manual_livery_decider_t;
 	CC_MAIL: sw_325_manual_livery_decider_t;
-	sw_325_mail_tselect;
+	sw_325_mail_t_f_select;
 }
 
  switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_re_b, cargo_classes){
 	CC_PASSENGERS: sw_325_manual_livery_decider_t_re;
 	CC_MAIL: sw_325_manual_livery_decider_t_re;
-	sw_325_mail_tselect;
+	sw_325_mail_t_re_select;
 }
 
  switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_c, vehicle_is_reversed){
@@ -380,13 +380,14 @@ switch(FEAT_TRAINS, SELF, sw_325_refit_text, cargo_subtype){
 
 //Refit text
 
-/*switch(FEAT_TRAINS, SELF, sw_325_refit_text_b, cargo_classes){
-	PASS: sw_325_refit_text;
+switch(FEAT_TRAINS, SELF, sw_325_refit_text_b, cargo_classes){
+	CC_PASSENGERS: sw_325_refit_text;
+	CC_MAIL: sw_325_refit_text;
 	return CB_RESULT_NO_TEXT ;
-}*/
+}
 
 switch(FEAT_TRAINS, SELF, sw_325_refit_text_decider, livery_choice){
-	1 : sw_325_refit_text ;
+	1 : sw_325_refit_text_b ;
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -508,6 +509,7 @@ item (FEAT_TRAINS, item_325, 325) {
 	create_effect:						vfx_dual_voltage;
 	cargo_subtype_text:					sw_325_refit_text_decider ;
 	colour_mapping:						sw_325_colour_mapping_decider ;
+	//sound_effect:						sw_sfx_electric_loco;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 90;
