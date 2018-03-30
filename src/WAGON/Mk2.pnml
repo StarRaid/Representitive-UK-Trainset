@@ -226,7 +226,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_checker_two, build_year){
 	sw_mk2_colour_mapping_auto_a ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_checker_one, vehicle_type_id){
+switch(FEAT_TRAINS, PARENT, sw_mk2_colour_mapping_auto_checker_one, vehicle_type_id){
 	87 : sw_mk2_colour_mapping_auto_f ;
 	sw_mk2_colour_mapping_auto_checker_two ;
 }
