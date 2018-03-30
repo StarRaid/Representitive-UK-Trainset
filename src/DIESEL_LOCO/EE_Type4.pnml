@@ -72,7 +72,7 @@ switch(FEAT_TRAINS, SELF, sw_ee40_colours_manual, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee40_gfx_manual_check, livery_choice){
-	1 : sw_ee40_gfx_manual ;
+	1 : sw_ee40_colours_manual ;
 	sw_ee40_gfx_auto ;
 }
 
@@ -80,11 +80,11 @@ switch(FEAT_TRAINS, SELF, sw_ee40_gfx_manual_check, livery_choice){
 //Sprite stacking
 
 random_switch(FEAT_TRAINS, SELF, sw_ee40_random_headcode, TRIGGER_VEHICLE_SERVICE){
-	49 : ee40_headcode_4 ;
-	49 : ee40_headcode_5 ;
-	29 : ee40_headcode_1 ;
-	29 : ee40_headcode_2 ;
-	54 : ee40_headcode_3 ;
+	25 : ee40_headcode_4 ;
+	25 : ee40_headcode_5 ;
+	15 : ee40_headcode_1 ;
+	15 : ee40_headcode_2 ;
+	27 : ee40_headcode_3 ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee40_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
@@ -125,14 +125,14 @@ switch(FEAT_TRAINS, SELF, sw_ee40_colours_auto, current_year){
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_ee40_colours_manual, cargo_subtype){
+switch(FEAT_TRAINS, SELF, sw_ee40_recolours_manual, cargo_subtype){
 	0: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_ee40_colours_manual_check, livery_choice){
-	1 : sw_ee40_colours_manual ;
+	1 : sw_ee40_recolours_manual ;
 	sw_ee40_colours_auto ;
 }
 
