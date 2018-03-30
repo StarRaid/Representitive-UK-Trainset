@@ -14,13 +14,13 @@ spriteset(spriteset_MU90_worker_sey_t, "gfx/UNUSED & MIXED/networkers.png") {tem
 
 spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(0, 475)}
 
-spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(258, 400)}
+spriteset(spriteset_MU90_worker_nse_purchase, "gfx/UNUSED & MIXED/networkers.png") {template_dualhead_purchase(258, 500)}
 
-spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(258, 475)}
+spriteset(spriteset_MU90_worker_cnx_purchase, "gfx/UNUSED & MIXED/networkers.png") {template_dualhead_purchase(258, 525)}
 
-spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(258, 475)}
+spriteset(spriteset_MU90_worker_sey_purchase, "gfx/UNUSED & MIXED/networkers.png") {template_dualhead_purchase(258, 550)}
 
-spriteset(spriteset_MU90_worker_sey_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(258, 475)}
+spriteset(spriteset_MU90_worker_seb_purchase, "gfx/UNUSED & MIXED/networkers.png") {template_dualhead_purchase(258, 575)}
 
 
 switch(FEAT_TRAINS, SELF, sw_MU90_passenger_livery_decider_t, current_year){
