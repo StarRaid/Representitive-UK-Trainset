@@ -52,13 +52,13 @@ spriteset(spriteset_411_o, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_ne
 
 spriteset(spriteset_421_msb_blue_grey_r, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker_reverse(0, 25)}
 
-spriteset(spriteset_421_msb_blue_grey_r, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker_reverse(0, 250)}
+spriteset(spriteset_421_msb_lse_r, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker_reverse(0, 250)}
 
-spriteset(spriteset_411_seb_pr, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker_reverse(179, 250)}
+spriteset(spriteset_421_msb_nse_r, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker_reverse(179, 250)}
 
-spriteset(spriteset_411_sey_pr, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker_reverse(0, 475)}
+spriteset(spriteset_421_msb_swt_r, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker_reverse(0, 475)}
 
-spriteset(spriteset_411_pr, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker_reverse(179, 475)}
+spriteset(spriteset_421_msb_cnx_r, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker_reverse(179, 475)}
 
 //Purchase Sprites
 spriteset(spriteset_411_nse_purchase, "gfx/UNUSED & MIXED/networkers.png") {template_dualhead_purchase(179, 500)}
