@@ -305,62 +305,34 @@ item (FEAT_TRAINS, item_Mk3, 0) {
 //Templates
 
 template template_Mk2_single(x,y){
-<<<<<<< HEAD
- [x+0,y,8,23,-3,-10] //North
+ [x+0,y,8,23,-3,-11] //North
  [x+10,y,20,16,-14,-8] //North East
  [x+32,y,33,13,-17,-9] //East
  [x+67,y,20,16,-5,-8] //South East
 }
 
 template template_Mk2_double(x,y){
- [x+0,y,8,23,-3,-10] //North
- [x+10,y,20,16,-14,-8] //North East
- [x+32,y,33,13,-17,-9] //East
- [x+67,y,20,16,-5,-8] //South East){
- [x+89,y,8,23,-3,-10] //South
- [x+99,y,20,16,-12,-8] //South West
- [x+121,y,33,13,-17,-9] //West
- [x+156,y,20,16,-5,-8] //North West
-}
-
-template template_Mk2_double_reverse(x,y){
- [x+89,y,8,23,-3,-10] //South
- [x+99,y,20,16,-12,-8] //South West
- [x+121,y,33,13,-17,-9] //West
- [x+156,y,20,16,-5,-8] //North West
- [x+0,y,8,23,-3,-10] //North
+ [x+0,y,8,23,-3,-11] //North
  [x+10,y,20,16,-14,-8] //North East
  [x+32,y,33,13,-17,-9] //East
  [x+67,y,20,16,-5,-8] //South East
-=======
-	[x+0,y,8,23,-3,-11] //North
-	[x+10,y,20,16,-14,-8] //North East
-	[x+32,y,33,13,-17,-9] //East
-	[x+67,y,20,16,-5,-8] //South East
-}
-
-template template_Mk2_double(x,y){
-	[x+0,y,8,23,-3,-11] //North
-	[x+10,y,20,16,-14,-8] //North East
-	[x+32,y,33,13,-17,-9] //East
-	[x+67,y,20,16,-5,-8] //South East
-	[x+89,y,8,23,-3,-11] //South
-	[x+99,y,20,16,-14,-8] //South West
-	[x+121,y,33,13,-17,-9] //West
-	[x+156,y,20,16,-5,-8] //North West
+ [x+89,y,8,23,-3,-11] //South
+ [x+99,y,20,16,-14,-8] //South West
+ [x+121,y,33,13,-17,-9] //West
+ [x+156,y,20,16,-5,-8] //North West
 }
 
 template template_Mk2_double_reverse(x,y){
-	[x+89,y,8,23,-3,-11] //South
-	[x+99,y,20,16,-14,-8] //South West
-	[x+121,y,33,13,-17,-9] //West
-	[x+156,y,20,16,-5,-8] //North West
-	[x+0,y,8,23,-3,-11] //North
-	[x+10,y,20,16,-14,-8] //North East
-	[x+32,y,33,13,-17,-9] //East
-	[x+67,y,20,16,-5,-8] //South East
->>>>>>> 72d938aa9c6b4ac0854c6decf41b3f9bc56ca2c2
+ [x+89,y,8,23,-3,-11] //South
+ [x+99,y,20,16,-14,-8] //South West
+ [x+121,y,33,13,-17,-9] //West
+ [x+156,y,20,16,-5,-8] //North West
+ [x+0,y,8,23,-3,-11] //North
+ [x+10,y,20,16,-14,-8] //North East
+ [x+32,y,33,13,-17,-9] //East
+ [x+67,y,20,16,-5,-8] //South East
 }
+
 
 //Spritesets
 
@@ -517,8 +489,8 @@ switch(FEAT_TRAINS, SELF, sw_mk2_purchase, current_year){
 //Colour mapping
 
 random_switch(FEAT_TRAINS, SELF, sw_mk2_brblue_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;}
-random_switch(FEAT_TRAINS, SELF, sw_mk2_random_sectorised_colourmapping, TRIGGER_VEHICLE_SERVICE){ 4 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ; 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ; }
-random_switch(FEAT_TRAINS, SELF, sw_mk2_random_privatised_colourmapping){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ; 4 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ; }
+random_switch(FEAT_TRAINS, SELF, sw_mk2_random_sectorised_colourmapping, TRIGGER_VEHICLE_SERVICE){ 2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ; 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ; }
+random_switch(FEAT_TRAINS, SELF, sw_mk2_random_privatised_colourmapping){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ; 2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ; }
 
 switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_a, current_year){
  1967 .. 1970 : sw_mk2_brblue_colour_mapping ;
