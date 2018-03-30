@@ -1,0 +1,49 @@
+//Class 87
+
+
+
+
+
+
+
+
+
+
+//Item
+
+
+item (FEAT_TRAINS, item_class87, 87){
+	property{
+		name                           : string(STR_NAME_87) ;
+		misc_flags                     :  ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         :  ;
+		climates_available             :  ;
+		introduction_date              :  ;
+		model_life                     :  ;
+		vehicle_life                   :  ;
+		reliability_decay              :  ;
+		cost_factor                    :  ;
+		running_cost_base              :  ;
+		running_cost_factor            :  ;
+		refit_cost                     :  ;
+		refittable_cargo_classes       :  ;
+		cargo_allow_refit              :  ;
+		cargo_capacity                 :  ;
+		track_type                     :  ;
+		engine_class                   :  ;
+		speed                          :  ;
+		power                          :  ;
+		weight                         :  ;
+		tractive_effort_coefficient    :  ;
+		air_drag_coefficient           :  ;
+		effect_spawn_model_and_powered :  ;
+	}
+	graphics{
+		default            :
+		sound_effect       :
+		create_effect      :
+		colour_mapping     :
+		cargo_subtype_text :
+	}
+}
