@@ -305,6 +305,7 @@ item (FEAT_TRAINS, item_Mk3, 0) {
 //Templates
 
 template template_Mk2_single(x,y){
+<<<<<<< HEAD
  [x+0,y,8,23,-3,-10] //North
  [x+10,y,20,16,-14,-8] //North East
  [x+32,y,33,13,-17,-9] //East
@@ -331,6 +332,34 @@ template template_Mk2_double_reverse(x,y){
  [x+10,y,20,16,-14,-8] //North East
  [x+32,y,33,13,-17,-9] //East
  [x+67,y,20,16,-5,-8] //South East
+=======
+	[x+0,y,8,23,-3,-11] //North
+	[x+10,y,20,16,-14,-8] //North East
+	[x+32,y,33,13,-17,-9] //East
+	[x+67,y,20,16,-5,-8] //South East
+}
+
+template template_Mk2_double(x,y){
+	[x+0,y,8,23,-3,-11] //North
+	[x+10,y,20,16,-14,-8] //North East
+	[x+32,y,33,13,-17,-9] //East
+	[x+67,y,20,16,-5,-8] //South East
+	[x+89,y,8,23,-3,-11] //South
+	[x+99,y,20,16,-14,-8] //South West
+	[x+121,y,33,13,-17,-9] //West
+	[x+156,y,20,16,-5,-8] //North West
+}
+
+template template_Mk2_double_reverse(x,y){
+	[x+89,y,8,23,-3,-11] //South
+	[x+99,y,20,16,-14,-8] //South West
+	[x+121,y,33,13,-17,-9] //West
+	[x+156,y,20,16,-5,-8] //North West
+	[x+0,y,8,23,-3,-11] //North
+	[x+10,y,20,16,-14,-8] //North East
+	[x+32,y,33,13,-17,-9] //East
+	[x+67,y,20,16,-5,-8] //South East
+>>>>>>> 72d938aa9c6b4ac0854c6decf41b3f9bc56ca2c2
 }
 
 //Spritesets
