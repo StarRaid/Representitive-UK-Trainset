@@ -25,11 +25,11 @@ spriteset(gfx_br87_taillight     , "gfx/FIXTURES/class_87_headlights.png"){templ
 
 //Graphics
 
-switch(FEAT_TRAINS, PARENT, sw_br87_gfx_brblue_reverse_check     , vehicle_is_reversed){ 1 : gfx_br87_brblue_reverse     ; gfx_br87_livery ;}
-switch(FEAT_TRAINS, PARENT, sw_br87_gfx_intercity_reverse_check  , vehicle_is_reversed){ 1 : gfx_br87_intercity_reverse  ; gfx_br87_livery ;}
-switch(FEAT_TRAINS, PARENT, sw_br87_gfx_virgin_reverse_check     , vehicle_is_reversed){ 1 : gfx_br87_virgin_reverse     ; gfx_br87_livery ;}
-switch(FEAT_TRAINS, PARENT, sw_br87_gfx_calsleeper_reverse_check , vehicle_is_reversed){ 1 : gfx_br87_calsleeper_reverse ; gfx_br87_livery ;}
-switch(FEAT_TRAINS, PARENT, sw_br87_gfx_gbrf_reverse_check       , vehicle_is_reversed){ 1 : gfx_br87_gbrf_reverse       ; gfx_br87_livery ;}
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_brblue_reverse_check     , vehicle_is_reversed){ 1 : gfx_br87_brblue_reverse     ; gfx_br87_brblue ;}
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_intercity_reverse_check  , vehicle_is_reversed){ 1 : gfx_br87_intercity_reverse  ; gfx_br87_intercity ;}
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_virgin_reverse_check     , vehicle_is_reversed){ 1 : gfx_br87_virgin_reverse     ; gfx_br87_virgin ;}
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_calsleeper_reverse_check , vehicle_is_reversed){ 1 : gfx_br87_calsleeper_reverse ; gfx_br87_calsleeper ;}
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_gbrf_reverse_check       , vehicle_is_reversed){ 1 : gfx_br87_gbrf_reverse       ; gfx_br87_gbrf ;}
 
 random_switch(FEAT_TRAINS, SELF, sw_br87_gfx_brblue     , TRIGGER_VEHICLE_SERVICE){ 1 : sw_br87_gfx_brblue_reverse_check ;}
 random_switch(FEAT_TRAINS, SELF, sw_br87_gfx_intercity  , TRIGGER_VEHICLE_SERVICE){ 1 : sw_br87_gfx_intercity_reverse_check ;}
@@ -162,7 +162,7 @@ switch(FEAT_TRAINS, SELF, sw_br87_colours_2cc_check, colour_scheme_1){
 item (FEAT_TRAINS, item_br87, 87){
 	property{
 		name                           : string(STR_NAME_87) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC); ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;

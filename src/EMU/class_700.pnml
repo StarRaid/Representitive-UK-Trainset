@@ -118,9 +118,9 @@ item (FEAT_TRAINS, item_700, 700) {
 	purchase:							sw_700_livery_A;
 	create_effect:						vfx_dual_voltage;
 }
-		livery_override (item_Mk2) {
+/*		livery_override (item_MU90) {
 		cargo_capacity: 80;
 		default: sw_700_trailer;
 		colour_mapping:	sw_325_colour_mapping_decider;
-}
+}*/
 }
