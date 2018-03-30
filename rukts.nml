@@ -1008,7 +1008,7 @@ spriteset (ee40_br_green, "gfx/DIESEL_LOCO/class_40.png"){template_eetype4(0,0)}
 spriteset (ee40_br_green_rev, "gfx/DIESEL_LOCO/class_40.png"){template_eetype4_reverse(0,0)} //BR Green Reverse
 spriteset (ee40_br_blue, "gfx/DIESEL_LOCO/class_40.png"){template_eetype4(0,25)} //BR Blue
 spriteset (ee40_br_blue_rev, "gfx/DIESEL_LOCO/class_40.png"){template_eetype4_reverse(0,25)} //BR Blue Reverse
-spriteset (ee40_br_blue_logo, "gfx/DIESEL_LOCO/class_40.png"){template_eetype4(0,25)} //BR Large Logo
+spriteset (ee40_br_blue_logo, "gfx/DIESEL_LOCO/class_40.png"){template_eetype4(0,50)} //BR Large Logo
 spriteset (ee40_br_blue_logo_rev, "gfx/DIESEL_LOCO/class_40.png"){template_eetype4_reverse(0,50)} //BR Large Logo Reverse
 
 spriteset (ee40_purchase_brgreen, "gfx/DIESEL_LOCO/class_40.png"){template_purchase_short(184,0)} //BR Green Purchase
@@ -1096,12 +1096,12 @@ switch(FEAT_TRAINS, SELF, sw_ee40_refit_text_check, livery_choice){
 
 switch(FEAT_TRAINS, SELF, sw_ee40_colours_auto, current_year){
  1948 .. 1966 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
- palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+ palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee40_recolours_manual, cargo_subtype){
  0: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
- palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+ palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
 }
 
 
