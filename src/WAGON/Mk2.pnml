@@ -178,7 +178,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_refit_text, cargo_subtype){
 
 switch(FEAT_TRAINS, SELF, sw_mk2_refit_text_decider, livery_choice){
 	1 : sw_mk2_refit_text ;
-	return 0 ;
+	return CB_RESULT_NO_TEXT ;
 }
 
 //Purchase sprite decider
