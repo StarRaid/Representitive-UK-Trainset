@@ -78,12 +78,12 @@ switch(FEAT_TRAINS, SELF, sw_br87_taillight_decider, position_in_consist_from_en
 
 switch(FEAT_TRAINS, SELF, sw_br87_headlight_decider, position_in_consist){
 	0 : gfx_br87_headlight ;
-	sw_br87_taillight_decider ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_br87_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_br87_gfx_manual_check ;
 	1 : sw_br87_headlight_decider ;
+	2 : sw_br87_taillight_decider ;
 }
 
 
