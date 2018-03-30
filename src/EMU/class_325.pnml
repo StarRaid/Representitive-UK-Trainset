@@ -71,13 +71,6 @@ spriteset(spriteset_325_sey_purchase, "gfx/UNUSED & MIXED/networkers.png") {temp
 
 //Switches
 
-//Random Switches
-
-random_switch(FEAT_TRAINS, PARENT, sw_325_cnx_nse_random){ 
-	5 : return 1;
-	2 : return 2;
-}
-
 //Power Car
  switch(FEAT_TRAINS, SELF, sw_325_nse_f, position_in_consist){
 	0: spriteset_x65_nse_f; 
@@ -194,20 +187,20 @@ switch(FEAT_TRAINS, SELF, sw_325_t_f, position_in_vehid_chain){
 //NSE or CNX random_switch
 
 random_switch(FEAT_TRAINS, PARENT, sw_325_cnx_nse){ 
-	5 : sw_325_cnx;
-	2 : sw_325_nse;
+	8 : sw_325_cnx;
+	1 : sw_325_nse;
 }
 
 random_switch(FEAT_TRAINS, PARENT, sw_325_cnx_nse_t){ 
 	dependent : sw_325_cnx_nse;
-	5 : sw_325_cnx_t;
-	2 : sw_325_nse_t;
+	8 : sw_325_cnx_t;
+	1 : sw_325_nse_t;
 }
 
 random_switch(FEAT_TRAINS, PARENT, sw_325_cnx_nse_t_re){ 
 	dependent : sw_325_cnx_nse;
-	5 : sw_325_cnx_t_re;
-	2 : sw_325_nse_t_re;
+	8 : sw_325_cnx_t_re;
+	1 : sw_325_nse_t_re;
 }
  
 //Livery Application Switches
@@ -449,12 +442,6 @@ switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_manual_check, livery_choice){
 switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_decider, colour_scheme_1){
 	1 : sw_325_colour_mapping_manual_check ;
 	palette_2cc(company_colour1, company_colour2) ;
-}
-
-switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping, current_year){
-	ERA_SECTORISATION : sw_325_nse_colour_mapping ;
-	1996 .. 2005 : sw_325_cnx_colour_mapping ;
-	sw_325_south_eastern_colour_mapping;
 }
 
 item (FEAT_TRAINS, item_325, 325) {

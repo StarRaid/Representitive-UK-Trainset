@@ -1216,20 +1216,20 @@ switch(FEAT_TRAINS, SELF, sw_325_t_f, position_in_vehid_chain){
 //NSE or CNX random_switch
 
 random_switch(FEAT_TRAINS, PARENT, sw_325_cnx_nse){
- 5 : sw_325_cnx;
- 2 : sw_325_nse;
+ 8 : sw_325_cnx;
+ 1 : sw_325_nse;
 }
 
 random_switch(FEAT_TRAINS, PARENT, sw_325_cnx_nse_t){
  dependent : sw_325_cnx_nse;
- 5 : sw_325_cnx_t;
- 2 : sw_325_nse_t;
+ 8 : sw_325_cnx_t;
+ 1 : sw_325_nse_t;
 }
 
 random_switch(FEAT_TRAINS, PARENT, sw_325_cnx_nse_t_re){
  dependent : sw_325_cnx_nse;
- 5 : sw_325_cnx_t_re;
- 2 : sw_325_nse_t_re;
+ 8 : sw_325_cnx_t_re;
+ 1 : sw_325_nse_t_re;
 }
 
 //Livery Application Switches
