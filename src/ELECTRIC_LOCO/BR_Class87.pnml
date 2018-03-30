@@ -185,6 +185,7 @@ item (FEAT_TRAINS, item_br87, 87){
 		tractive_effort_coefficient    : 0.3108433734939759 ;
 		air_drag_coefficient           : 0.0727272727272727 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 0 ;
 	}
 	graphics{
 		default            : sw_br87_sprite_stack ;
