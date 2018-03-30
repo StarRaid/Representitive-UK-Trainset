@@ -1,0 +1,16 @@
+
+switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco, getbits(extra_callback_info1, 0, 8)){
+
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_modern, getbits(extra_callback_info1, 0, 8)){
+
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_electric_emu, getbits(extra_callback_info1, 0, 8)){
+
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_electric_dmu, getbits(extra_callback_info1, 0, 8)){
+
+}
