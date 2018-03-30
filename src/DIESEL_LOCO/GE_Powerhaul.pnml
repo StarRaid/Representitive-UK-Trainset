@@ -14,7 +14,7 @@ template temp_powerhaul(x, y){
 	[x+156,y,20,16,-5,-8]  //North West
 }
 
-template temp_loco_powerhaul(x, y){
+template temp_powerhaul_reverse(x, y){
 	//left_x, upper_y, width, height, offset_x, offset_y
 	[x+89,y,8,23,-3,-11]   //South
 	[x+99,y,20,16,-13,-8]   //South West
@@ -27,6 +27,16 @@ template temp_loco_powerhaul(x, y){
 }
 
 
+//Sritesets
+
+
+
+
+
+
+//Graphics
+
+//Automatic
 
 
 
@@ -34,9 +44,83 @@ template temp_loco_powerhaul(x, y){
 
 
 
+//Manual
 
+
+
+
+
+
+//Spritestacking
+
+
+
+
+
+//Refit text
+
+
+
+
+//Purchase
+
+
+
+//Colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, 
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_manual_check, livery_choice){
+	1 : sw_powerhaul_colours_manual ;
+	sw_powerhaul_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_2cc_check, colour_scheme_1){
+	1 : sw_powerhaul_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
 
 
 //item
 
-item(FEAT_TRAINS, item_powerhaul
+item(FEAT_TRAINS, item_powerhaul, 70){
+	property{
+		name                           : string(STR_NAME_POWERHAUL) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(2009,11,28) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 30 ;
+		reliability_decay              : 5 ;
+		cost_factor                    : 75 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 255 ;
+		refit_cost                     : 0 ; ;
+		refittable_cargo_classes       : 0 ; ;
+		cargo_allow_refit              : [GOOD] ; ;
+		cargo_capacity                 : 1 ;
+		track_type                     : RAIL ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		speed                          : 75 mph ;
+		power                          : 3690 hp ;
+		weight                         : 129 ton ;
+		tractive_effort_coefficient    : 0.4217054263565891 ;
+		air_drag_coefficient           : 0.1066666666666667 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default            : sw_powerhaul_spritestack ;
+		purchase           : sw_powerhaul_purchase ;
+		sound_effect       : sw_sfx_diesel_loco_modern ;
+		create_effect      : vfx_diesel_default ;
+		colour_mapping     : sw_powerhaul_colours_2cc_check ;
+		cargo_subtype_text : sw_powerhaul_refit_text_check ;
+		cargo_capacity     : return 0 ;
+	}
+}

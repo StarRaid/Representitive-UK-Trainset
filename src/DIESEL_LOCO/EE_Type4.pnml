@@ -120,9 +120,13 @@ switch(FEAT_TRAINS, SELF, sw_ee40_refit_text_check, livery_choice){
 
 //Colour mapping
 
+random_switch(FEAT_TRAINS, SELF, sw_ee40_brgreen_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;}
+random_switch(FEAT_TRAINS, SELF, sw_ee40_brblue, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;}
+
+
 switch(FEAT_TRAINS, SELF, sw_ee40_colours_auto, current_year){
-	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+	ERA_BRCREST : sw_ee40_brgreen_colours ;
+	sw_ee40_brblue ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee40_recolours_manual, cargo_subtype){
@@ -162,7 +166,7 @@ item (FEAT_TRAINS, item_eetype4, 40){
 		speed                          : 90 mph ;
 		track_type                     : RAIL ;
 		power                          : 2500 hp ;
-		weight                         : 134 ton ;
+		weight                         : 129 ton ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
 		tractive_effort_coefficient    : 0.1723880597014925 ;
 		air_drag_coefficient           : 0.2 ;
