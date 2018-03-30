@@ -470,7 +470,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_checker_two, build_year){
  sw_mk2_colour_mapping_auto_a ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_checker_one, vehicle_type_id){
+switch(FEAT_TRAINS, PARENT, sw_mk2_colour_mapping_auto_checker_one, vehicle_type_id){
  87 : sw_mk2_colour_mapping_auto_f ;
  sw_mk2_colour_mapping_auto_checker_two ;
 }
@@ -563,6 +563,13 @@ switch(FEAT_TRAINS, SELF, sw_MU90_passenger_livery_decider_t, current_year){
  spriteset_MU90_worker_seb_t;
 }
 
+switch(FEAT_TRAINS, SELF, sw_MU90_purchase, current_year){
+ 1983 .. 1995: spriteset_MU90_worker_nse_purchase;
+ 1996 .. 2005: spriteset_MU90_worker_cnx_purchase;
+ 2006 .. 2012: spriteset_MU90_worker_sey_purchase;
+ spriteset_MU90_worker_seb_purchase;
+}
+
 item (FEAT_TRAINS, item_MU90, 9090) {
  property {
   name: string(STR_NAME_MU90);
@@ -598,7 +605,7 @@ item (FEAT_TRAINS, item_MU90, 9090) {
  graphics {
  can_attach_wagon: CB_RESULT_ATTACH_ALLOW;
  default: sw_MU90_passenger_livery_decider_t;
- purchase: sw_MU90_passenger_livery_decider_t;
+ purchase: sw_MU90_purchase;
 }
 }
 # 13 "rukts.pnml" 2
@@ -823,12 +830,12 @@ switch(FEAT_TRAINS, SELF, sw_br87_taillight_decider, position_in_consist_from_en
 
 switch(FEAT_TRAINS, SELF, sw_br87_headlight_decider, position_in_consist){
  0 : gfx_br87_headlight ;
- sw_br87_taillight_decider ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_br87_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
  0 : sw_br87_gfx_manual_check ;
  1 : sw_br87_headlight_decider ;
+ 2 : sw_br87_taillight_decider ;
 }
 
 
@@ -921,7 +928,7 @@ item (FEAT_TRAINS, item_br87, 87){
   refit_cost : 0 ;
   refittable_cargo_classes : 0 ;
   cargo_allow_refit : [GOOD] ;
-  cargo_capacity : 0 ;
+  cargo_capacity : 1 ;
   track_type : ELRL ;
   engine_class : ENGINE_CLASS_ELECTRIC ;
   speed : 110 mph ;
@@ -939,7 +946,7 @@ item (FEAT_TRAINS, item_br87, 87){
   create_effect : vfx_ohle ;
   colour_mapping : sw_br87_colours_2cc_check ;
   cargo_subtype_text : sw_br87_refit_text_checker ;
-  cargo_capacity : return 0 ;
+  //cargo_capacity     : return 0 ;
  }
 }
 # 16 "rukts.pnml" 2
