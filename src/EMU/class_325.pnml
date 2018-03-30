@@ -312,28 +312,50 @@ switch(FEAT_TRAINS, SELF, sw_325_t_select, vehicle_is_reversed){
 	sw_325_t_select;
 }
 
+//Manual liveries
+
 switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider, cargo_subtype){
-	0: sw_325_nse;
-	1: sw_325_cnx;
-	2: sw_325_sey;
-	3: sw_325_seb;
+	0: sw_325_nse_select;
+	1: sw_325_cnx_select;
+	2: sw_325_sey_select;
+	3: sw_325_seb_select;
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_b, cargo_classes){
-	PASS: sw_325_manual_livery_decider;
-	//MAIL: sw_325;
+ switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_b, cargo_classes){
+	CC_PASSENGERS: sw_325_manual_livery_decider;
+	CC_MAIL: sw_325_manual_livery_decider;
+	sw_325_mail_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t, cargo_subtype){
-	0: sw_325_nse_t;
-	1: sw_325_cnx_t ;
-	2: sw_325_sey_t ;
-	3: sw_325_seb_t ;
+	0: sw_325_nse_t_select;
+	1: sw_325_cnx_t_select;
+	2: sw_325_sey_t_select;
+	3: sw_325_seb_t_select;
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_b, cargo_classes){
-	PASS: sw_325_manual_livery_decider_t;
-	//MAIL: sw_325;
+switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_re, cargo_subtype){
+	0: sw_325_nse_t_re_select;
+	1: sw_325_cnx_t_re_select;
+	2: sw_325_sey_t_re_select;
+	3: sw_325_seb_t_re_select;
+}
+
+ switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_b, cargo_classes){
+	CC_PASSENGERS: sw_325_manual_livery_decider_t;
+	CC_MAIL: sw_325_manual_livery_decider_t;
+	sw_325_mail_tselect;
+}
+
+ switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_re_b, cargo_classes){
+	CC_PASSENGERS: sw_325_manual_livery_decider_t_re;
+	CC_MAIL: sw_325_manual_livery_decider_t_re;
+	sw_325_mail_tselect;
+}
+
+ switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_c, vehicle_is_reversed){
+	0: sw_325_manual_livery_decider_t_b;
+	1: sw_325_manual_livery_decider_t_re_b;
 }
 
 switch(FEAT_TRAINS, SELF, sw_325_livery_choice_decider, livery_choice){
@@ -342,7 +364,7 @@ switch(FEAT_TRAINS, SELF, sw_325_livery_choice_decider, livery_choice){
 }
 
 switch(FEAT_TRAINS, SELF, sw_325_livery_choice_decider_t, livery_choice){
-	1 : sw_325_manual_livery_decider_t_b ; 
+	1 : sw_325_manual_livery_decider_t_c ; 
 	sw_325_livery_decider_t ;
 }
 
@@ -488,11 +510,6 @@ item (FEAT_TRAINS, item_325, 325) {
 	colour_mapping:						sw_325_colour_mapping_decider ;
 }
 		livery_override (item_MU90) {
-		cargo_capacity: 90;
-		default: sw_325_default_t;
-		colour_mapping:	sw_325_colour_mapping_decider;
-}
-		livery_override (item_Mk3) {
 		cargo_capacity: 90;
 		default: sw_325_default_t;
 		colour_mapping:	sw_325_colour_mapping_decider;

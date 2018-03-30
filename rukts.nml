@@ -736,289 +736,50 @@ item (FEAT_TRAINS, item_eetype4){
 }
 # 12 "rukts.pnml" 2
 //#include "src/DIESEL_LOCO/GE_Powerhaul.pnml"
-//#include "src/ELECTRIC_LOCO/BR_Class87.pnml"
-//#include "src/EMU/PEP.pnml"
-# 1 "src/EMU/class_317.pnml" 1
-spriteset(spriteset_317_old_br, "gfx/EMU/class_317.png") {
- template_8_8(0, 0)
-}
+# 1 "src/ELECTRIC_LOCO/BR_Class87.pnml" 1
+//Class 87
+# 12 "src/ELECTRIC_LOCO/BR_Class87.pnml"
+//Item
 
-spriteset(spriteset_317_new_br, "gfx/EMU/class_317.png") {
- template_8_8(0, 25)
-}
 
-spriteset(spriteset_317_old_br_r, "gfx/EMU/class_317.png") {
- template_8_8(0, 50)
-}
-
-spriteset(spriteset_317_new_br_r, "gfx/EMU/class_317.png") {
- template_8_8(0, 75)
-}
-
-spriteset(spriteset_317_old_br_o, "gfx/EMU/class_317.png") {
- template_8_8(0, 100)
-}
-
-spriteset(spriteset_317_new_br_o, "gfx/EMU/class_317.png") {
- template_8_8(0, 125)
-}
-
-spriteset(spriteset_317_t_br, "gfx/EMU/class_317.png") {
- template_8_8(0, 150)
-}
-
-spriteset(spriteset_317_p_br, "gfx/EMU/class_317.png") {
- template_8_8(0, 175)
-}
-
-spriteset(spriteset_317_old_nse, "gfx/EMU/class_317.png") {
- template_8_8(0, 200)
-}
-
-spriteset(spriteset_317_new_nse, "gfx/EMU/class_317.png") {
- template_8_8(0, 225)
-}
-
-spriteset(spriteset_317_old_nse_r, "gfx/EMU/class_317.png") {
- template_8_8(0, 250)
-}
-
-spriteset(spriteset_317_new_nse_r, "gfx/EMU/class_317.png") {
- template_8_8(0, 275)
-}
-
-spriteset(spriteset_317_old_nse_o, "gfx/EMU/class_317.png") {
- template_8_8(0, 300)
-}
-
-spriteset(spriteset_317_new_nse_o, "gfx/EMU/class_317.png") {
- template_8_8(0, 325)
-}
-
-spriteset(spriteset_317_t_nse, "gfx/EMU/class_317.png") {
- template_8_8(0, 350)
-}
-
-spriteset(spriteset_317_p_nse, "gfx/EMU/class_317.png") {
- template_8_8(0, 375)
-}
-
-spriteset(spriteset_317_old_wagn, "gfx/EMU/class_317.png") {
- template_8_8(0, 400)
-}
-
-spriteset(spriteset_317_new_wagn, "gfx/EMU/class_317.png") {
- template_8_8(0, 425)
-}
-
-spriteset(spriteset_317_old_wagn_r, "gfx/EMU/class_317.png") {
- template_8_8(0, 450)
-}
-
-spriteset(spriteset_317_new_wagn_r, "gfx/EMU/class_317.png") {
- template_8_8(0, 475)
-}
-
-spriteset(spriteset_317_old_wagn_o, "gfx/EMU/class_317.png") {
- template_8_8(0, 500)
-}
-
-spriteset(spriteset_317_new_wagn_o, "gfx/EMU/class_317.png") {
- template_8_8(0, 525)
-}
-
-spriteset(spriteset_317_t_wagn, "gfx/EMU/class_317.png") {
- template_8_8(0, 550)
-}
-
-spriteset(spriteset_317_p_wagn, "gfx/EMU/class_317.png") {
- template_8_8(0, 575)
-}
-
-spriteset(spriteset_317_old_one, "gfx/EMU/class_317.png") {
- template_8_8(0, 600)
-}
-
-spriteset(spriteset_317_new_one, "gfx/EMU/class_317.png") {
- template_8_8(0, 625)
-}
-
-spriteset(spriteset_317_old_one_r, "gfx/EMU/class_317.png") {
- template_8_8(0, 650)
-}
-
-spriteset(spriteset_317_new_one_r, "gfx/EMU/class_317.png") {
- template_8_8(0, 675)
-}
-
-spriteset(spriteset_317_old_one_o, "gfx/EMU/class_317.png") {
- template_8_8(0, 700)
-}
-
-spriteset(spriteset_317_new_one_o, "gfx/EMU/class_317.png") {
- template_8_8(0, 725)
-}
-
-spriteset(spriteset_317_t_one, "gfx/EMU/class_317.png") {
- template_8_8(0, 750)
-}
-
-spriteset(spriteset_317_p_one, "gfx/EMU/class_317.png") {
- template_8_8(0, 775)
-}
-
-//Switches
-
-switch(FEAT_TRAINS, SELF, sw_317_old_livery_A, current_year){
- 1971 .. 1982: spriteset_317_old_br;
- 1983 .. 1995: spriteset_317_old_nse;
- 1996 .. 2004: spriteset_317_old_wagn;
- 2005 .. 4096: spriteset_317_old_one;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_new_livery_A, current_year){
- 1971 .. 1982: spriteset_317_new_br;
- 1983 .. 1995: spriteset_317_new_nse;
- 1996 .. 2004: spriteset_317_new_wagn;
- 2005 .. 4096: spriteset_317_new_one;
-}
-
-random_switch (FEAT_TRAINS, SELF, sw_317_late){
- 1: return sw_317_old_livery_A;
- 1: return sw_317_new_livery_A;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_year_A, build_year){
- 1970..1983: sw_317_old_livery_A;
- 1984..1986: sw_317_new_livery_A;
- sw_317_late;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_old_livery_B, current_year){
- 1971 .. 1982: spriteset_317_old_br_r;
- 1983 .. 1995: spriteset_317_old_nse_r;
- 1996 .. 2004: spriteset_317_old_wagn_r;
- 2005 .. 4096: spriteset_317_old_one_r;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_new_livery_B, current_year){
- 1971 .. 1982: spriteset_317_new_br_r;
- 1983 .. 1995: spriteset_317_new_nse_r;
- 1996 .. 2004: spriteset_317_new_wagn_r;
- 2005 .. 4096: spriteset_317_new_one_r;
-}
-
-random_switch (FEAT_TRAINS, SELF, sw_317_late_b){
- 1: return sw_317_old_livery_B;
- 1: return sw_317_new_livery_B;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_year_B, build_year){
- 1970..1983: sw_317_old_livery_B;
- 1984..1986: sw_317_new_livery_B;
- sw_317_late_b;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_old_livery_O, current_year){
- 1971 .. 1982: spriteset_317_old_br_o;
- 1983 .. 1995: spriteset_317_old_nse_o;
- 1996 .. 2004: spriteset_317_old_wagn_o;
- 2005 .. 4096: spriteset_317_old_one_o;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_new_livery_O, current_year){
- 1971 .. 1982: spriteset_317_new_br_o;
- 1983 .. 1995: spriteset_317_new_nse_o;
- 1996 .. 2004: spriteset_317_new_wagn_o;
- 2005 .. 4096: spriteset_317_new_one_o;
-}
-
-random_switch (FEAT_TRAINS, SELF, sw_317_late_o){
- 1: return sw_317_old_livery_O;
- 1: return sw_317_new_livery_O;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_year_O, build_year){
- 1970..1983: sw_317_old_livery_O;
- 1984..1986: sw_317_new_livery_O;
- sw_317_late_o;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_front, position_in_consist){
- 0: return sw_317_year_A;
- return sw_317_year_O;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_default, position_in_consist_from_end){
- 0: return sw_317_year_B;
- return sw_317_front;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_t_year, current_year){
- 1971 .. 1982: spriteset_317_t_br;
- 1983 .. 1995: spriteset_317_t_nse;
- 1996 .. 2004: spriteset_317_t_wagn;
- 2005 .. 4096: spriteset_317_t_one;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_p_year, current_year){
- 1971 .. 1982: spriteset_317_p_br;
- 1983 .. 1995: spriteset_317_p_nse;
- 1996 .. 2004: spriteset_317_p_wagn;
- 2005 .. 4096: spriteset_317_p_one;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_trailer, position_in_vehid_chain){
- 0: sw_317_p_year;
- sw_317_t_year;
-}
-
-item (FEAT_TRAINS, item_317) {
- property {
-  name: string(STR_NAME_317);
-  climates_available: ALL_CLIMATES;
-  introduction_date: date(1981, 1, 1);
-  model_life: 15;
-  retire_early: 1;
-  vehicle_life: 50;
-  reliability_decay: 7;
-  refittable_cargo_classes: CC_PASSENGERS;
-  cargo_allow_refit: [PASS, TOUR];
-  loading_speed: 29;
-  cost_factor: 38;
-  running_cost_factor: 34;
-  sprite_id: SPRITE_ID_NEW_TRAIN;
-  speed: 100 mph;
-  misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
-  refit_cost: 0;
-  track_type: ELRL;
-  ai_special_flag: AI_FLAG_CARGO;
-  power: 1328 hp;
-  running_cost_base: RUNNING_COST_ELECTRIC;
-  dual_headed: 1;
-  default_cargo_type: PASS;
-  cargo_capacity: 80;
-  weight: 35 ton;
-  engine_class: ENGINE_CLASS_ELECTRIC;
-  tractive_effort_coefficient: 0.07;
-  air_drag_coefficient: 0.08;
-  length: 8;
-  effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_ELECTRIC;
-  bitmask_vehicle_info: 0;
-  cargo_age_period: 185;
+item (FEAT_TRAINS, item_class87, 87){
+ property{
+  name : string(STR_NAME_87) ;
+  misc_flags : ;
+  sprite_id : SPRITE_ID_NEW_TRAIN ;
+  length : ;
+  climates_available : ;
+  introduction_date : ;
+  model_life : ;
+  vehicle_life : ;
+  reliability_decay : ;
+  cost_factor : ;
+  running_cost_base : ;
+  running_cost_factor : ;
+  refit_cost : ;
+  refittable_cargo_classes : ;
+  cargo_allow_refit : ;
+  cargo_capacity : ;
+  track_type : ;
+  engine_class : ;
+  speed : ;
+  power : ;
+  weight : ;
+  tractive_effort_coefficient : ;
+  air_drag_coefficient : ;
+  effect_spawn_model_and_powered : ;
  }
- graphics {
- can_attach_wagon: CB_RESULT_ATTACH_ALLOW;
- default: sw_317_default;
- purchase: sw_317_year_A;
- create_effect: vfx_dual_voltage;
+ graphics{
+  default :
+  sound_effect :
+  create_effect :
+  colour_mapping :
+  cargo_subtype_text :
+ }
 }
-  livery_override (item_Mk3) {
-  cargo_capacity: 80;
-  default: sw_317_trailer;
-}
-}
-# 16 "rukts.pnml" 2
+# 14 "rukts.pnml" 2
+//#include "src/EMU/PEP.pnml"
+//#include "src/EMU/class_317.pnml"
 # 1 "src/EMU/class_325.pnml" 1
 spriteset(spriteset_x65_nse_t, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(0, 0)}
 
@@ -1092,13 +853,6 @@ spriteset(spriteset_325_seb_purchase, "gfx/UNUSED & MIXED/networkers.png") {temp
 spriteset(spriteset_325_sey_purchase, "gfx/UNUSED & MIXED/networkers.png") {template_dualhead_purchase(179, 575)}
 
 //Switches
-
-//Random Switches
-
-random_switch(FEAT_TRAINS, PARENT, sw_325_cnx_nse_random){
- 5 : return 1;
- 2 : return 2;
-}
 
 //Power Car
  switch(FEAT_TRAINS, SELF, sw_325_nse_f, position_in_consist){
@@ -1341,28 +1095,50 @@ switch(FEAT_TRAINS, SELF, sw_325_t_select, vehicle_is_reversed){
  sw_325_t_select;
 }
 
+//Manual liveries
+
 switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider, cargo_subtype){
- 0: sw_325_nse;
- 1: sw_325_cnx;
- 2: sw_325_sey;
- 3: sw_325_seb;
+ 0: sw_325_nse_select;
+ 1: sw_325_cnx_select;
+ 2: sw_325_sey_select;
+ 3: sw_325_seb_select;
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_b, cargo_classes){
- PASS: sw_325_manual_livery_decider;
- //MAIL: sw_325;
+ switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_b, cargo_classes){
+ CC_PASSENGERS: sw_325_manual_livery_decider;
+ CC_MAIL: sw_325_manual_livery_decider;
+ sw_325_mail_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t, cargo_subtype){
- 0: sw_325_nse_t;
- 1: sw_325_cnx_t ;
- 2: sw_325_sey_t ;
- 3: sw_325_seb_t ;
+ 0: sw_325_nse_t_select;
+ 1: sw_325_cnx_t_select;
+ 2: sw_325_sey_t_select;
+ 3: sw_325_seb_t_select;
 }
 
-switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_b, cargo_classes){
- PASS: sw_325_manual_livery_decider_t;
- //MAIL: sw_325;
+switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_re, cargo_subtype){
+ 0: sw_325_nse_t_re_select;
+ 1: sw_325_cnx_t_re_select;
+ 2: sw_325_sey_t_re_select;
+ 3: sw_325_seb_t_re_select;
+}
+
+ switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_b, cargo_classes){
+ CC_PASSENGERS: sw_325_manual_livery_decider_t;
+ CC_MAIL: sw_325_manual_livery_decider_t;
+ sw_325_mail_tselect;
+}
+
+ switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_re_b, cargo_classes){
+ CC_PASSENGERS: sw_325_manual_livery_decider_t_re;
+ CC_MAIL: sw_325_manual_livery_decider_t_re;
+ sw_325_mail_tselect;
+}
+
+ switch(FEAT_TRAINS, SELF, sw_325_manual_livery_decider_t_c, vehicle_is_reversed){
+ 0: sw_325_manual_livery_decider_t_b;
+ 1: sw_325_manual_livery_decider_t_re_b;
 }
 
 switch(FEAT_TRAINS, SELF, sw_325_livery_choice_decider, livery_choice){
@@ -1371,7 +1147,7 @@ switch(FEAT_TRAINS, SELF, sw_325_livery_choice_decider, livery_choice){
 }
 
 switch(FEAT_TRAINS, SELF, sw_325_livery_choice_decider_t, livery_choice){
- 1 : sw_325_manual_livery_decider_t_b ;
+ 1 : sw_325_manual_livery_decider_t_c ;
  sw_325_livery_decider_t ;
 }
 
@@ -1394,7 +1170,7 @@ switch(FEAT_TRAINS, SELF, sw_325_refit_text, cargo_subtype){
 	return CB_RESULT_NO_TEXT ;
 
 }*/
-# 373 "src/EMU/class_325.pnml"
+# 388 "src/EMU/class_325.pnml"
 switch(FEAT_TRAINS, SELF, sw_325_refit_text_decider, livery_choice){
  1 : sw_325_refit_text ;
  return CB_RESULT_NO_TEXT ;
@@ -1476,12 +1252,6 @@ switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_decider, colour_scheme_1){
  palette_2cc(company_colour1, company_colour2) ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping, current_year){
- 1983 .. 1995 : sw_325_nse_colour_mapping ;
- 1996 .. 2005 : sw_325_cnx_colour_mapping ;
- sw_325_south_eastern_colour_mapping;
-}
-
 item (FEAT_TRAINS, item_325, 325) {
  property {
   name: string(STR_NAME_325);
@@ -1526,11 +1296,6 @@ item (FEAT_TRAINS, item_325, 325) {
  colour_mapping: sw_325_colour_mapping_decider ;
 }
   livery_override (item_MU90) {
-  cargo_capacity: 90;
-  default: sw_325_default_t;
-  colour_mapping: sw_325_colour_mapping_decider;
-}
-  livery_override (item_Mk3) {
   cargo_capacity: 90;
   default: sw_325_default_t;
   colour_mapping: sw_325_colour_mapping_decider;
