@@ -173,10 +173,10 @@ item (FEAT_TRAINS, item_br87, 87){
 		cost_factor                    : 55 ;
 		running_cost_base              : RUNNING_COST_ELECTRIC ;
 		running_cost_factor            : 250 ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : 0 ;
+		//refit_cost                     : 0 ;
+		//refittable_cargo_classes       : 0 ;
 		cargo_allow_refit              : [GOOD] ;
-		cargo_capacity                 : 0 ;
+		//cargo_capacity                 : 1 ;
 		track_type                     : ELRL ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
 		speed                          : 110 mph ;
@@ -194,6 +194,6 @@ item (FEAT_TRAINS, item_br87, 87){
 		create_effect      : vfx_ohle ;
 		colour_mapping     : sw_br87_colours_2cc_check ;
 		cargo_subtype_text : sw_br87_refit_text_checker ;
-		cargo_capacity     : return 0 ;
+		//cargo_capacity     : return 0 ;
 	}
 }
