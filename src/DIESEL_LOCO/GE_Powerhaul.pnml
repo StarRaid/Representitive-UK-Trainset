@@ -1,0 +1,27 @@
+//GE Powerhaul
+
+//Templates
+
+template temp_powerhaul(x, y){
+	//left_x, upper_y, width, height, offset_x, offset_y
+	[x+0,y,8,23,-3,-11]    //North
+	[x+10,y,20,16,-13,-8]  //North East
+	[x+32,y,33,11,-17,-7]  //East
+	[x+67,y,20,16,-5,-8]   //South East
+	[x+89,y,8,23,-3,-11]   //South
+	[x+99,y,20,16,-13,-8]   //South West
+	[x+121,y,33,11,-17,-7] //West
+	[x+156,y,20,16,-5,-8]  //North West
+}
+
+template temp_loco_powerhaul(x, y){
+	//left_x, upper_y, width, height, offset_x, offset_y
+	[x+89,y,8,23,-3,-11]   //South
+	[x+99,y,20,16,-13,-8]   //South West
+	[x+121,y,33,11,-17,-7] //West
+	[x+156,y,20,16,-5,-8]  //North West
+	[x+0,y,8,23,-3,-11]    //North
+	[x+10,y,20,16,-13,-8]  //North East
+	[x+32,y,33,11,-17,-7]  //East
+	[x+67,y,20,16,-5,-8]   //South East
+}
