@@ -138,7 +138,7 @@ switch(FEAT_TRAINS, SELF, sw_ee40_colours_manual_check, livery_choice){
 
 switch(FEAT_TRAINS, SELF, sw_ee40_colours_2cc_check, colour_scheme_1){
 	1 : sw_ee40_colours_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	palette_2cc(company_colour1, COLOUR_YELLOW) ;
 }
 
 

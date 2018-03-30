@@ -274,6 +274,7 @@ item (FEAT_TRAINS, item_Mk2, 9020){
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 80 ;
+		loading_speed                  : 20 ;
 		track_type                     : RAIL ;
 		speed                          : 100 mph ;
 		power                          : 0 hp ;
