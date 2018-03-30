@@ -294,6 +294,7 @@ spriteset(gfx_mk2_brblue_a_bso , "gfx/WAGON/mark_2.png"){template_Mk2_double(0,7
 spriteset(gfx_mk2_brblue_a_bso_reverse , "gfx/WAGON/mark_2.png"){template_Mk2_double_reverse(0,75)}
 spriteset(gfx_mk2_intercity_f_tso , "gfx/WAGON/mark_2.png"){template_Mk2_single(0,100)}
 spriteset(gfx_mk2_intercity_f_bso , "gfx/WAGON/mark_2.png"){template_Mk2_double(0,125)}
+spriteset(gfx_mk2_intercity_f_dbso , "gfx/WAGON/mark_2_dbso.png"){template_Mk2_double(0,0)}
 spriteset(gfx_mk2_intercity_f_bso_reverse , "gfx/WAGON/mark_2.png"){template_Mk2_double_reverse(0,125)}
 spriteset(gfx_mk2_regional_a_tso , "gfx/WAGON/mark_2.png"){template_Mk2_single(0,150)}
 spriteset(gfx_mk2_regional_a_bso , "gfx/WAGON/mark_2.png"){template_Mk2_double(0,175)}
@@ -347,7 +348,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2f_brblue_front, position_in_vehid_chain){ 0 : gf
 switch(FEAT_TRAINS, SELF, sw_mk2f_brblue_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_brblue_f_bso ; sw_mk2f_brblue_front ;}
 
 switch(FEAT_TRAINS, SELF, sw_mk2f_intercity_front, position_in_vehid_chain){ 0 : gfx_mk2_intercity_f_bso_reverse ; gfx_mk2_intercity_f_tso ;}
-switch(FEAT_TRAINS, SELF, sw_mk2f_intercity_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_intercity_f_bso ; sw_mk2f_intercity_front ;}
+switch(FEAT_TRAINS, SELF, sw_mk2f_intercity_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_intercity_f_dbso ; sw_mk2f_intercity_front ;}
 
 switch(FEAT_TRAINS, SELF, sw_mk2f_virgin_front, position_in_vehid_chain){ 0 : gfx_mk2_virgin_f_bso_reverse ; gfx_mk2_virgin_f_tso ;}
 switch(FEAT_TRAINS, SELF, sw_mk2f_virgin_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_virgin_f_bso ; sw_mk2f_virgin_front ;}
@@ -1431,8 +1432,8 @@ item (FEAT_TRAINS, item_325, 325) {
   retire_early: 1;
   vehicle_life: 50;
   reliability_decay: 7;
-  refittable_cargo_classes: bitmask(CC_PASSENGERS, CC_MAIL);
-  cargo_allow_refit: [PASS, TOUR, MAIL];
+  refittable_cargo_classes: bitmask(CC_PASSENGERS, CC_MAIL, CC_ARMOURED);
+  cargo_allow_refit: [PASS, TOUR, MAIL, VALU, GOLD, DIAM];
   loading_speed: 35;
   cost_factor: 45;
   running_cost_factor: 45;

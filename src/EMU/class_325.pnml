@@ -476,8 +476,8 @@ item (FEAT_TRAINS, item_325, 325) {
 		retire_early:					1;
 		vehicle_life:					50;
 		reliability_decay:				7;
-		refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_MAIL);
-		cargo_allow_refit:				[PASS, TOUR, MAIL];
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_MAIL, CC_ARMOURED);
+		cargo_allow_refit:				[PASS, TOUR, MAIL, VALU, GOLD, DIAM];
 		loading_speed:					35;
 		cost_factor:					45;
 		running_cost_factor:			45;
