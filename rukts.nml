@@ -1246,15 +1246,11 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_rev
 //Automatic
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_refit){
- GOOD : sw_powerhaul_gfx_fliner_reverse_check ;
- GRAI : sw_powerhaul_gfx_fliner_reverse_check ;
- IORE : sw_powerhaul_gfx_fliner_reverse_check ;
- AORE : sw_powerhaul_gfx_fliner_reverse_check ;
- GLAS : sw_powerhaul_gfx_fliner_reverse_check ;
- PETR : sw_powerhaul_gfx_fliner_reverse_check ;
- OIL_ : sw_powerhaul_gfx_fliner_reverse_check ;
- SAND : sw_powerhaul_gfx_fliner_reverse_check ;
- VEHI : sw_powerhaul_gfx_fliner_reverse_check ;
+ CC_PIECE_GOODS : sw_powerhaul_gfx_fliner_reverse_check ;
+ CC_EXPRESS : sw_powerhaul_gfx_fliner_reverse_check ;
+ CC_OVERSIZED : sw_powerhaul_gfx_fliner_reverse_check ;
+ CC_PASSENGERS : sw_powerhaul_gfx_fliner_reverse_check ;
+ CC_BULK : sw_powerhaul_gfx_fliner_reverse_check ;
  sw_powerhaul_gfx_colas_reverse_check ;
 }
 
@@ -1316,15 +1312,11 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase, current_year){
 //Colour mapping
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, most_common_refit){
- GOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- GRAI : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- IORE : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- AORE : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- GLAS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- PETR : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- OIL_ : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- SAND : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- VEHI : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+ CC_PIECE_GOODS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+ CC_EXPRESS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+ CC_OVERSIZED : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+ CC_PASSENGERS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+ CC_BULK : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
@@ -2102,6 +2094,7 @@ item (FEAT_TRAINS, item_142, 142) {
  create_effect: vfx_diesel_default;
  cargo_subtype_text: sw_142_refit_text_decider ;
  colour_mapping: sw_142_colour_mapping_decider;
+ sound_effect: sw_sfx_dmu_one;
 }
   livery_override (9020) {
   cargo_capacity: 60;

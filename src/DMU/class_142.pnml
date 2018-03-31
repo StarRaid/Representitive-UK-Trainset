@@ -268,6 +268,7 @@ item (FEAT_TRAINS, item_142, 142) {
 	create_effect:						vfx_diesel_default;
 	cargo_subtype_text:					sw_142_refit_text_decider ;
 	colour_mapping:						sw_142_colour_mapping_decider;
+	sound_effect:						sw_sfx_dmu_one;
 }
 		livery_override (9020) {
 		cargo_capacity: 60;
