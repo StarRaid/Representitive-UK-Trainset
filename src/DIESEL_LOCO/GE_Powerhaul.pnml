@@ -92,8 +92,8 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_manual_check, livery_choice){
 
 //Spritestacking
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_headlights, position_in_consist){ 0 :  ) }
-switch(FEAT_TRAINS, SELF, sw_powerhaul_taillights, position_in_consist_from_end){ 0 :  ) }
+switch(FEAT_TRAINS, SELF, sw_powerhaul_headlights, position_in_consist){ 0 : gfx_powerhaul_headlights ) }
+switch(FEAT_TRAINS, SELF, sw_powerhaul_taillights, position_in_consist_from_end){ 0 : gfx_powerhaul_taillights ) }
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_powerhaul_gfx_manual_check ;
