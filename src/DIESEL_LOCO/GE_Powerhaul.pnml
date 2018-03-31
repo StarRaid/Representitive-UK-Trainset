@@ -31,8 +31,8 @@ template template_powerhaul_reverse(x, y){
 
 spriteset (gfx_powerhaul_fliner             , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,25)}
 spriteset (gfx_powerhaul_fliner_reverse     , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,25)}
-spriteset (gfx_powerhaul_colas              , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,25)}
-spriteset (gfx_powerhaul_colas_reverse      , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,25)}
+spriteset (gfx_powerhaul_colas              , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,0)}
+spriteset (gfx_powerhaul_colas_reverse      , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,0)}
 
 spriteset (gfx_powerhaul_headlights         , "gfx/FIXTURES/class_70_lights.png"){template_powerhaul(0,0)}
 spriteset (gfx_powerhaul_taillights         , "gfx/FIXTURES/class_70_lights.png"){template_powerhaul(0,25)}
@@ -48,7 +48,7 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_rev
 
 //Automatic
 
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, most_common_refit){
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_refit){
 	GOOD : sw_powerhaul_gfx_fliner_reverse_check ;
 	GRAI : sw_powerhaul_gfx_fliner_reverse_check ;
 	IORE : sw_powerhaul_gfx_fliner_reverse_check ;
@@ -118,7 +118,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase, current_year){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, most_common_refit){
+switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, most_common_refit){
 	GOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	GRAI : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	IORE : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
