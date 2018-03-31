@@ -14,7 +14,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DIESEL_LOCO/GE_Powerhaul.pnml"
 #include "src/DIESEL_LOCO/UKLight.pnml"
 #include "src/ELECTRIC_LOCO/BR_Class87.pnml"
-//#include "src/ELECTRIC_LOCO/EuroDual.pnml"
+#include "src/ELECTRIC_LOCO/EuroDual.pnml"
 //#include "src/EMU/PEP.pnml"
 //#include "src/EMU/class_317.pnml"
 #include "src/EMU/class_325.pnml"

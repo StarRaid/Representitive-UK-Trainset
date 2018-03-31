@@ -69,6 +69,13 @@ template template_7_8(x,y){
     [ x+143, y, 19, 17, -5, -10]
 }
 
+template template_7_4(x,y){
+    [ x, y, 8, 22, -3, -11]
+    [ x+10, y, 19, 17, -10, -10]
+    [ x+31, y, 28, 12, -13, -8]
+    [ x+61, y, 19, 17, -5, -8]
+}
+
 template template_8_8_networker(x,y){
     [ x, y, 8, 24, -3, -12]
     [ x+10, y, 21, 18, -13, -10]

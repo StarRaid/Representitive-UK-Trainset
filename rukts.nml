@@ -130,6 +130,13 @@ template template_7_8(x,y){
     [ x+143, y, 19, 17, -5, -10]
 }
 
+template template_7_4(x,y){
+    [ x, y, 8, 22, -3, -11]
+    [ x+10, y, 19, 17, -10, -10]
+    [ x+31, y, 28, 12, -13, -8]
+    [ x+61, y, 19, 17, -5, -8]
+}
+
 template template_8_8_networker(x,y){
     [ x, y, 8, 24, -3, -12]
     [ x+10, y, 21, 18, -13, -10]
@@ -1247,7 +1254,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_colas_2cc_decider, colour_scheme_1){
 
 //Automatic
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_refit){
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, most_common_refit){
  GOOD : sw_powerhaul_gfx_fliner_reverse_check ;
  GRAI : sw_powerhaul_gfx_fliner_reverse_check ;
  IORE : sw_powerhaul_gfx_fliner_reverse_check ;
@@ -1259,12 +1266,6 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_refit){
  VEHI : sw_powerhaul_gfx_fliner_reverse_check ;
  sw_powerhaul_gfx_colas_2cc_decider ;
 }
-
-switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, build_year){
- 2008..2014 : sw_powerhaul_gfx_fliner_reverse_check ;
- sw_powerhaul_gfx_auto_decider ;
-}
-
 
 //Manual
 
@@ -1747,7 +1748,92 @@ item (FEAT_TRAINS, item_br87, 87){
  }
 }
 # 17 "rukts.pnml" 2
-//#include "src/ELECTRIC_LOCO/EuroDual.pnml"
+# 1 "src/ELECTRIC_LOCO/EuroDual.pnml" 1
+//Class 88
+
+//Spritesets
+
+spriteset(gfx_eurodual_drs , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight(0,0)}
+spriteset(gfx_eurodual_drs_reverse , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight_reverse(0,0)}
+
+spriteset(gfx_eurodual_drs_purchase, "gfx/ELECTRIC_LOCO/class_88.png"){template_purchase_short(176,0)}
+
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_drs_reversal_check, vehicle_is_reversed){
+ 1 : gfx_eurodual_drs_reverse ;
+ gfx_eurodual_drs ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+ 0 : sw_eurodual_gfx_drs_reversal_check ;
+ 1 : sw_uklight_gfx_headlights ;
+}
+
+
+
+//Colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_colours, colour_scheme_1){
+ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+ palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Effects deciders
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_sfx_decider, current_railtype){
+ ELRL : sw_sfx_electric_loco_modern ;
+ sw_sfx_diesel_loco_modern ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_effect_decider, current_railtype){
+ ELRL : vfx_ohle ;
+ vfx_diesel_default ;
+}
+
+
+
+//Item
+
+item (FEAT_TRAINS, item_eurodual, 88){
+ property{
+  name : string(STR_NAME_EURODUAL) ;
+  misc_flags : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+  sprite_id : SPRITE_ID_NEW_TRAIN ;
+  length : 8 ;
+  climates_available : ALL_CLIMATES ;
+  introduction_date : date(2016, 7, 1) ;
+  model_life : VEHICLE_NEVER_EXPIRES ;
+  vehicle_life : 35 ;
+  reliability_decay : 9 ;
+  cost_factor : 46 ;
+  running_cost_base : RUNNING_COST_ELECTRIC ;
+  running_cost_factor : 250 ;
+  refit_cost : 0 ;
+  refittable_cargo_classes : 0 ;
+  cargo_allow_refit : [GOOD] ;
+  cargo_capacity : 1 ;
+  track_type : RAIL ;
+  engine_class : ENGINE_CLASS_DIESEL ;
+  speed : 100 mph ;
+  power : 5364 hp ;
+  weight : 86 ton ;
+  tractive_effort_coefficient : 0.3686046511627907 ;
+  air_drag_coefficient : 0.08 ;
+  effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+  dual_headed : 0 ;
+ }
+ graphics{
+  default : sw_eurodual_spritestack ;
+  purchase : gfx_eurodual_drs_purchase ;
+  colour_mapping : sw_eurodual_colours ;
+  sound_effect : sw_eurodual_sfx_decider ;
+  create_effect : sw_eurodual_effect_decider ;
+  cargo_capacity : return 0 ;
+  power: (current_railtype == ELRL) ? 5364 : 986;
+ }
+}
+# 18 "rukts.pnml" 2
 //#include "src/EMU/PEP.pnml"
 //#include "src/EMU/class_317.pnml"
 # 1 "src/EMU/class_325.pnml" 1
