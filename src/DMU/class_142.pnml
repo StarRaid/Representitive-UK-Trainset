@@ -211,7 +211,7 @@ switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_manual_a, cargo_subtype){
 	return CB_RESULT_NO_TEXT;
 }
 
-switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_manual, build_year){
+switch(FEAT_TRAINS, PARENT, sw_142_colour_mapping_manual, build_year){
 	0 .. 1985: sw_140_colour_mapping ; 
 	sw_142_colour_mapping_manual_a ;
 }

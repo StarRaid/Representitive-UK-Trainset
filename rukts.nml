@@ -121,20 +121,20 @@ template template_8_4(x,y){
 
 template template_7_8(x,y){
     [ x, y, 8, 22, -3, -11]
-    [ x+10, y, 19, 17, -10, -9]
-    [ x+31, y, 28, 12, -13, -8]
-    [ x+61, y, 19, 17, -5, -9]
+    [ x+10, y, 19, 17, -11, -10]
+    [ x+31, y, 28, 12, -14, -8]
+    [ x+61, y, 19, 17, -4, -9]
     [ x+82, y, 8, 22, -3, -11]
-    [ x+92, y, 19, 17, -13, -9]
-    [ x+113, y, 28, 12, -12, -8]
-    [ x+143, y, 19, 17, -5, -9]
+    [ x+92, y, 19, 17, -11, -10]
+    [ x+113, y, 28, 12, -14, -8]
+    [ x+143, y, 19, 17, -4, -9]
 }
 
 template template_7_4(x,y){
     [ x, y, 8, 22, -3, -11]
-    [ x+10, y, 19, 17, -10, -9]
-    [ x+31, y, 28, 12, -13, -8]
-    [ x+61, y, 19, 17, -5, -9]
+    [ x+10, y, 19, 17, -11, -10]
+    [ x+31, y, 28, 12, -14, -8]
+    [ x+61, y, 19, 17, -4, -9]
 }
 
 template template_8_8_networker(x,y){
@@ -1244,17 +1244,25 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_fliner_reverse_check, vehicle_is_re
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_colas_reverse ; gfx_powerhaul_colas ; }
 
 //Automatic
+/*
 
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, bitmask_consist_info){
- CC_PIECE_GOODS : sw_powerhaul_gfx_fliner_reverse_check ;
- CC_OVERSIZED : sw_powerhaul_gfx_fliner_reverse_check ;
- CC_PASSENGERS : sw_powerhaul_gfx_fliner_reverse_check ;
- sw_powerhaul_gfx_colas_reverse_check ;
+
+	CC_PIECE_GOODS : sw_powerhaul_gfx_fliner_reverse_check ;
+
+	CC_OVERSIZED   : sw_powerhaul_gfx_fliner_reverse_check ;
+
+	CC_PASSENGERS  : sw_powerhaul_gfx_fliner_reverse_check ;
+
+	sw_powerhaul_gfx_colas_reverse_check ;
+
 }
 
+*/
+# 58 "src/DIESEL_LOCO/GE_Powerhaul.pnml"
 switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, build_year){
  2008..2014 : sw_powerhaul_gfx_fliner_reverse_check ;
- sw_powerhaul_gfx_auto_decider ;
+ sw_powerhaul_gfx_colas_reverse_check ;
 }
 
 
@@ -1308,17 +1316,25 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase, current_year){
 
 
 //Colour mapping
+/*
 
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, bitmask_consist_info){
- CC_PIECE_GOODS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- CC_OVERSIZED : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- CC_PASSENGERS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+
+	CC_PIECE_GOODS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+
+	CC_OVERSIZED : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+
+	CC_PASSENGERS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+
+	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+
 }
 
+*/
+# 122 "src/DIESEL_LOCO/GE_Powerhaul.pnml"
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, build_year){
  2008..2014 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- sw_powerhaul_colours_auto_decider ;
+ palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_manual, cargo_subtype){
@@ -2033,7 +2049,7 @@ switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_manual_a, cargo_subtype){
  return CB_RESULT_NO_TEXT;
 }
 
-switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_manual, build_year){
+switch(FEAT_TRAINS, PARENT, sw_142_colour_mapping_manual, build_year){
  0 .. 1985: sw_140_colour_mapping ;
  sw_142_colour_mapping_manual_a ;
 }
