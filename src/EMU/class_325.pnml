@@ -71,6 +71,31 @@ spriteset(spriteset_325_sey_purchase, "gfx/UNUSED & MIXED/networkers.png") {temp
 
 //Switches
 
+//trailer vfx
+
+switch(FEAT_TRAINS, SELF, sw_325_t_vfx_f, position_in_vehid_chain){
+	0: vfx_ohle_only; 
+	return 0;
+}
+ 
+switch(FEAT_TRAINS, SELF, sw_325_t_vfx_r, position_in_vehid_chain_from_end){
+	0: vfx_ohle_only; 
+	return 0;
+}
+
+switch(FEAT_TRAINS, SELF, sw_325_t_vfx, vehicle_is_reversed){
+	0: sw_325_t_vfx_f;
+	1: sw_325_t_vfx_r;
+} 
+ 
+//Coupling
+
+switch(FEAT_TRAINS, SELF, sw_325_coupling_restrictions, vehicle_type_id) {
+    item_MU90: return CB_RESULT_ATTACH_ALLOW;
+	item_325: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_325_NO_COUPLE);
+}
+
 //Power Car
  switch(FEAT_TRAINS, SELF, sw_325_nse_f, position_in_consist){
 	0: spriteset_x65_nse_f; 
@@ -479,7 +504,7 @@ item (FEAT_TRAINS, item_325, 325) {
 		refittable_cargo_classes:		bitmask(CC_PASSENGERS, CC_MAIL, CC_ARMOURED);
 		cargo_allow_refit:				[PASS, TOUR, MAIL, VALU, GOLD, DIAM];
 		loading_speed:					35;
-		cost_factor:					45;
+		cost_factor:					55;
 		running_cost_factor:			45;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
@@ -491,11 +516,11 @@ item (FEAT_TRAINS, item_325, 325) {
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
-		cargo_capacity:					90;
+		cargo_capacity:					105;
 		weight:							40 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.5;
-		air_drag_coefficient:			0.05;
+		tractive_effort_coefficient:	0.4;
+		air_drag_coefficient:			0.1;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
 		bitmask_vehicle_info:			0;
@@ -503,17 +528,18 @@ item (FEAT_TRAINS, item_325, 325) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	can_attach_wagon:					sw_325_coupling_restrictions;
 	default: 							sw_325_default;
 	purchase:							sw_325_purchase;
-	create_effect:						vfx_dual_voltage;
+	create_effect:						vfx_3rd_only;
 	cargo_subtype_text:					sw_325_refit_text_decider ;
 	colour_mapping:						sw_325_colour_mapping_decider ;
-	//sound_effect:						sw_sfx_electric_loco;
+	sound_effect:						sw_sfx_electric_loco_modern;
 }
 		livery_override (item_MU90) {
-		cargo_capacity: 90;
+		cargo_capacity: 110;
 		default: sw_325_default_t;
 		colour_mapping:	sw_325_colour_mapping_decider;
+		create_effect: sw_325_t_vfx;
 }
 }

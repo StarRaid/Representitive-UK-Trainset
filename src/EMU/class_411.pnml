@@ -417,12 +417,6 @@ switch(FEAT_TRAINS, SELF, sw_411_colour_mapping_auto, current_year){
 	sw_411_heritage_colour_mapping;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_411_colour_mapping_manual_pass, cargo_subtype){
-	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
-	2..3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);
-}
-
 switch(FEAT_TRAINS, SELF, sw_411_colour_mapping_manual, cargo_subtype){
 	0: sw_411_green_colour_mapping;
 	1: sw_411_blue_grey_colour_mapping;

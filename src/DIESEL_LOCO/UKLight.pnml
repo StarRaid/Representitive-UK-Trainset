@@ -4,13 +4,13 @@
 
 spriteset (gfx_ulight_drs          , "gfx/DIESEL_LOCO/class_68.png"){template_uklight(0,0)}
 spriteset (gfx_ulight_drs_reverse  , "gfx/DIESEL_LOCO/class_68.png"){template_uklight_reverse(0,0)}
-spriteset (gfx_ulight_tpe          , "gfx/DIESEL_LOCO/class_68.png"){template_uklight(0,0)}
-spriteset (gfx_ulight_tpe_reverse  , "gfx/DIESEL_LOCO/class_68.png"){template_uklight_reverse(0,0)}
+spriteset (gfx_ulight_tpe          , "gfx/DIESEL_LOCO/class_68.png"){template_uklight(0,26)}
+spriteset (gfx_ulight_tpe_reverse  , "gfx/DIESEL_LOCO/class_68.png"){template_uklight_reverse(0,26)}
                                    
 spriteset (gfx_uklight_headlight   , "gfx/FIXTURES/uklight_headlight.png"){template_uklight(0,0)}
 
-spriteset (gfx_uklight_drs_purchase, "gfx/DIESEL_LOCO/class_68.png"){template_purchase(0, 176)}
-spriteset (gfx_uklight_tpe_purchase, "gfx/DIESEL_LOCO/class_68.png"){template_purchase(0, 26)}
+spriteset (gfx_uklight_drs_purchase, "gfx/DIESEL_LOCO/class_68.png"){template_purchase(176, 0)}
+spriteset (gfx_uklight_tpe_purchase, "gfx/DIESEL_LOCO/class_68.png"){template_purchase(176, 26)}
 
 //Graphics
 
@@ -93,7 +93,7 @@ switch(FEAT_TRAINS, SELF, sw_uklight_colours_auto, build_year){
 
 switch(FEAT_TRAINS, SELF, sw_uklight_colours_manual, cargo_subtype){
 	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN); ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN); 
 }
 
 
