@@ -11,14 +11,26 @@ spriteset(gfx_eurodual_drs_reverse, "gfx/ELECTRIC_LOCO/class_88.png"){template_u
 
 
 
+//Colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_colours, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
 
 
-//Sound effects decider
+//Effects deciders
 
-switch(FEAT_TRAINS, PARENT, sw_sfx_eurodual_decider, current_railtype){
+switch(FEAT_TRAINS, PARENT, sw_eurodual_sfx_decider, current_railtype){
 	ELRL : sw_sfx_electric_loco_modern ;
 	sw_sfx_diesel_loco_modern ;
 }
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_effect_decider, current_railtype){
+	ELRL : vfx_ohle ;
+	vfx_diesel_default ;
+}
+
 
 
 //Item
@@ -55,7 +67,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		default                : sw_eurodual_spritestack ;
 		purchase               : sw_eurodual_purchase ;
 		colour_mapping         : sw_eurodual_colours ;
-		sound_effect           : sw_sfx_eurodual_decider ;
+		sound_effect           : sw_eurodual_sfx_decider ;
 		create_effect          : sw_eurodual_effect_decider ;
 		cargo_capacity         : return 0 ;
 		power: (current_railtype == ELRL) ? 5364 : 986;
