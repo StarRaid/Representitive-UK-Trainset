@@ -12,10 +12,7 @@ disable_item(FEAT_TRAINS);
 #include "src/WAGON/MU90.pnml"
 #include "src/DIESEL_LOCO/EE_Type4.pnml"
 #include "src/DIESEL_LOCO/GE_Powerhaul.pnml"
-<<<<<<< HEAD
-=======
-#include "src/DIESEL_LOCO/UKLight.pnml"
->>>>>>> 1c29da3e2bf7974b96f960575d7d20088a1f3482
+//#include "src/DIESEL_LOCO/UKLight.pnml"
 #include "src/ELECTRIC_LOCO/BR_Class87.pnml"
 //#include "src/EMU/PEP.pnml"
 //#include "src/EMU/class_317.pnml"

@@ -1249,8 +1249,8 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_manual_check, livery_choice){
 
 //Spritestacking
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_headlights, position_in_consist){ 0 : ) }
-switch(FEAT_TRAINS, SELF, sw_powerhaul_taillights, position_in_consist_from_end){ 0 : ) }
+switch(FEAT_TRAINS, SELF, sw_powerhaul_headlights, position_in_consist){ 0 : gfx_powerhaul_headlights;}
+switch(FEAT_TRAINS, SELF, sw_powerhaul_taillights, position_in_consist_from_end){ 0 : gfx_powerhaul_taillights;}
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
  0 : sw_powerhaul_gfx_manual_check ;
@@ -1335,9 +1335,9 @@ item(FEAT_TRAINS, item_powerhaul, 70){
   cost_factor : 75 ;
   running_cost_base : RUNNING_COST_ELECTRIC ;
   running_cost_factor : 255 ;
-  refit_cost : 0 ; ;
-  refittable_cargo_classes : 0 ; ;
-  cargo_allow_refit : [GOOD] ; ;
+  refit_cost : 0 ;
+  refittable_cargo_classes : 0 ;
+  cargo_allow_refit : [GOOD] ;
   cargo_capacity : 1 ;
   track_type : RAIL ;
   engine_class : ENGINE_CLASS_DIESEL ;
@@ -1360,6 +1360,7 @@ item(FEAT_TRAINS, item_powerhaul, 70){
  }
 }
 # 15 "rukts.pnml" 2
+//#include "src/DIESEL_LOCO/UKLight.pnml"
 # 1 "src/ELECTRIC_LOCO/BR_Class87.pnml" 1
 //Class 87
 
@@ -1560,7 +1561,7 @@ item (FEAT_TRAINS, item_br87, 87){
   cargo_capacity : return 0 ;
  }
 }
-# 16 "rukts.pnml" 2
+# 17 "rukts.pnml" 2
 //#include "src/EMU/PEP.pnml"
 //#include "src/EMU/class_317.pnml"
 # 1 "src/EMU/class_325.pnml" 1
@@ -2083,7 +2084,7 @@ item (FEAT_TRAINS, item_325, 325) {
   colour_mapping: sw_325_colour_mapping_decider;
 }
 }
-# 19 "rukts.pnml" 2
+# 20 "rukts.pnml" 2
 # 1 "src/EMU/class_411.pnml" 1
 spriteset(spriteset_411_t_green, "gfx/EMU/class_411.png") {template_8_8_networker(0, 0)}
 
@@ -2581,7 +2582,7 @@ item (FEAT_TRAINS, item_411, 411) {
   cargo_subtype_text: sw_411_refit_text_decider ;
 }
 }
-# 20 "rukts.pnml" 2
+# 21 "rukts.pnml" 2
 # 1 "src/EMU/class_700.pnml" 1
 spriteset(spriteset_700_tl_f, "gfx/EMU/class_700.png") {
  template_8_8(0, 0)
@@ -2714,6 +2715,6 @@ item (FEAT_TRAINS, item_700, 700) {
 }*/
 # 126 "src/EMU/class_700.pnml"
 }
-# 21 "rukts.pnml" 2
+# 22 "rukts.pnml" 2
 # 1 "src/CODE/purchase_list_sort.pnml" 1
-# 21 "rukts.pnml" 2
+# 22 "rukts.pnml" 2

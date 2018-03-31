@@ -92,8 +92,8 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_manual_check, livery_choice){
 
 //Spritestacking
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_headlights, position_in_consist){ 0 : gfx_powerhaul_headlights ) }
-switch(FEAT_TRAINS, SELF, sw_powerhaul_taillights, position_in_consist_from_end){ 0 : gfx_powerhaul_taillights ) }
+switch(FEAT_TRAINS, SELF, sw_powerhaul_headlights, position_in_consist){ 0 : gfx_powerhaul_headlights;}
+switch(FEAT_TRAINS, SELF, sw_powerhaul_taillights, position_in_consist_from_end){ 0 : gfx_powerhaul_taillights;}
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_powerhaul_gfx_manual_check ;
@@ -178,9 +178,9 @@ item(FEAT_TRAINS, item_powerhaul, 70){
 		cost_factor                    : 75 ;
 		running_cost_base              : RUNNING_COST_ELECTRIC ;
 		running_cost_factor            : 255 ;
-		refit_cost                     : 0 ; ;
-		refittable_cargo_classes       : 0 ; ;
-		cargo_allow_refit              : [GOOD] ; ;
+		refit_cost                     : 0 ; 
+		refittable_cargo_classes       : 0 ; 
+		cargo_allow_refit              : [GOOD]  ;
 		cargo_capacity                 : 1 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
