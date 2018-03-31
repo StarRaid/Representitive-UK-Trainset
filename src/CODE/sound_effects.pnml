@@ -1,13 +1,13 @@
 //Sound deciding switches
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_old_running, current_speed){
-	0..30  : sound("sfx/86_coast_2.wav") ;
-	31..80 : sound("sfx/86_coast_1.wav") ;
+	0..13  : sound("sfx/86_coast_2.wav") ;
+	14..36 : sound("sfx/86_coast_1.wav") ;
 	sound("sfx/86_coast_3.wav") ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_modern_running, current_speed){
-	0..40 : sound("sfx/800_run.wav") ;
+	0..22 : sound("sfx/800_run.wav") ;
 	sound("sfx/800_coast.wav") ;
 }
 
