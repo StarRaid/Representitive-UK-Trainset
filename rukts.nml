@@ -132,9 +132,9 @@ template template_7_8(x,y){
 
 template template_7_4(x,y){
     [ x, y, 8, 22, -3, -11]
-    [ x+10, y, 19, 17, -10, -10]
+    [ x+10, y, 19, 17, -10, -9]
     [ x+31, y, 28, 12, -13, -8]
-    [ x+61, y, 19, 17, -5, -8]
+    [ x+61, y, 19, 17, -5, -9]
 }
 
 template template_8_8_networker(x,y){
@@ -1245,12 +1245,10 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_rev
 
 //Automatic
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_refit){
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, bitmask_consist_info){
  CC_PIECE_GOODS : sw_powerhaul_gfx_fliner_reverse_check ;
- CC_EXPRESS : sw_powerhaul_gfx_fliner_reverse_check ;
  CC_OVERSIZED : sw_powerhaul_gfx_fliner_reverse_check ;
  CC_PASSENGERS : sw_powerhaul_gfx_fliner_reverse_check ;
- CC_BULK : sw_powerhaul_gfx_fliner_reverse_check ;
  sw_powerhaul_gfx_colas_reverse_check ;
 }
 
@@ -1311,12 +1309,10 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase, current_year){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, most_common_refit){
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, bitmask_consist_info){
  CC_PIECE_GOODS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- CC_EXPRESS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  CC_OVERSIZED : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  CC_PASSENGERS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
- CC_BULK : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
@@ -2020,7 +2016,6 @@ random_switch(FEAT_TRAINS, SELF, sw_140_colour_mapping, TRIGGER_VEHICLE_SERVICE)
 //Recolour Switches
 
 switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_auto_a, current_year){
- 0 .. 1985: sw_140_colour_mapping;
  1983 .. 1995: sw_142_rr_colour_mapping;
  1996 .. 2004: sw_142_n_spirit_colour_mapping;
  sw_142_northern_colour_mapping;

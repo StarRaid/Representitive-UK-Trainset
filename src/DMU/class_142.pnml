@@ -194,7 +194,6 @@ random_switch(FEAT_TRAINS, SELF, sw_140_colour_mapping, TRIGGER_VEHICLE_SERVICE)
 //Recolour Switches
 
 switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_auto_a, current_year){
-	0 .. 1985: sw_140_colour_mapping;
 	ERA_SECTORISATION: sw_142_rr_colour_mapping;
 	ERA_PRIVATISATION1: sw_142_n_spirit_colour_mapping;
 	sw_142_northern_colour_mapping;
