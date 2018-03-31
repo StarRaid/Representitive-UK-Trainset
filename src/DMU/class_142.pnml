@@ -20,15 +20,9 @@ spriteset(spriteset_140_t, "gfx/DMU/class_142.png") {template_7_8(0, 264)}
 
 //Purchase Sprites
 spriteset(spriteset_140_purchase, "gfx/DMU/class_142.png") {template_dualhead_purchase(247, 195)}
-spriteset(spriteset_142_rr_purchase, "gfx/DMU/class_142.png") {template_dualhead_purchase(0, 163)}
-
-spriteset(spriteset_142_nse_purchase, "gfx/DMU/class_142.png") {template_dualhead_purchase(0, 176)}
-
-spriteset(spriteset_142_swt_purchase, "gfx/DMU/class_142.png") {template_dualhead_purchase(0, 189)}
-
-spriteset(spriteset_142_cnx_purchase, "gfx/DMU/class_142.png") {template_dualhead_purchase(0, 202)}
-
-spriteset(spriteset_142_heritage_purchase, "gfx/DMU/class_142.png") {template_dualhead_purchase(0, 215)}
+spriteset(spriteset_142_rr_purchase, "gfx/DMU/class_142.png") {template_dualhead_purchase(260, 195)}
+spriteset(spriteset_142_n_spirit_purchase, "gfx/DMU/class_142.png") {template_dualhead_purchase(273, 195)}
+spriteset(spriteset_142_northern_purchase, "gfx/DMU/class_142.png") {template_dualhead_purchase(286, 195)}
 
 //Switches
 
