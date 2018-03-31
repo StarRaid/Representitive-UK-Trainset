@@ -1,0 +1,176 @@
+//UK Light
+
+//Templates
+
+template template_uklight(x,y){
+	[x+0,y,8,24,-3,-11] //North
+	[x+10,y,20,16,-13,-8] //North East
+	[x+32,y,32,13,-16,-9] //East
+	[x+66,y,20,16,-5,-8] //South East
+	[x+88,y,8,24,-3,-11] //South
+	[x+98,y,20,16,-13,-8] //South West
+	[x+120,y,32,13,-16,-9] //West
+	[x+154,y,20,16,-5,-8] //North West
+}
+
+template template_uklight_reverse(x,y){
+	[x+88,y,8,24,-3,-11] //South
+	[x+98,y,20,16,-13,-8] //South West
+	[x+120,y,32,13,-16,-9] //West
+	[x+154,y,20,16,-5,-8] //North West
+	[x+0,y,8,24,-3,-11] //North
+	[x+10,y,20,16,-13,-8] //North East
+	[x+32,y,32,13,-16,-9] //East
+	[x+66,y,20,16,-5,-8] //South East
+}
+
+
+//Spritesets
+
+spriteset (gfx_ulight_drs          , "gfx/DIESEL_LOCO/class_68.png"){template_uklight(0,0)}
+spriteset (gfx_ulight_drs_reverse  , "gfx/DIESEL_LOCO/class_68.png"){template_uklight_reverse(0,0)}
+spriteset (gfx_ulight_tpe          , "gfx/DIESEL_LOCO/class_68.png"){template_uklight(0,0)}
+spriteset (gfx_ulight_tpe_reverse  , "gfx/DIESEL_LOCO/class_68.png"){template_uklight_reverse(0,0)}
+                                   
+spriteset (gfx_uklight_headlight   , "gfx/FIXTURES/uklight_headlight.png"){template_uklight(0,0)}
+
+spriteset (gfx_uklight_drs_purchase, "gfx/DIESEL_LOCO/class_68.png"){template_purchase(0, 176)}
+spriteset (gfx_uklight_tpe_purchase, "gfx/DIESEL_LOCO/class_68.png"){template_purchase(0, 26)}
+
+//Graphics
+
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_drs_reverse_check, vehicle_is_reversed){ 1 : gfx_ulight_drs_reverse ; gfx_ulight_drs ; }
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_tpe_reverse_check, vehicle_is_reversed){ 1 : gfx_ulight_tpe_reverse ; gfx_ulight_tpe ; }
+
+
+//Automatic
+
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_passenger_check, most_common_refit){
+	PASS : sw_uklight_gfx_tpe_reverse_check ;
+	sw_uklight_gfx_drs_reverse_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_auto, build_year){
+	2013..2018 : sw_uklight_gfx_drs_reverse_check ;
+	sw_uklight_gfx_passenger_check ;
+}
+
+
+//Manual
+
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_manual, cargo_subtype){
+	1 : sw_uklight_gfx_tpe_reverse_check ;
+	sw_uklight_gfx_drs_reverse_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_manual_check, livery_choice){
+	1 : sw_uklight_gfx_manual ;
+	sw_uklight_gfx_auto ;
+}
+
+
+//Spritestacking
+
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_headlights, position_in_consist){
+	0 : gfx_uklight_headlight ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_uklight_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_uklight_gfx_manual_check ;
+	1 : sw_uklight_gfx_headlights ;
+}
+
+
+//Purchase
+
+switch(FEAT_TRAINS, SELF, sw_uklight_purchase, current_year){
+	2013..2018 : gfx_uklight_drs_purchase ;
+	gfx_uklight_tpe_purchase ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_uklight_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_DRS) ;
+	1 : string(STR_LIVERY_TPE_NEW) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_uklight_refit_text_check, livery_choice){
+	1 : sw_uklight_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+//Colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_uklight_colours_passenger_decider, most_common_refit){
+	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_uklight_colours_auto, build_year){
+	2013..2018 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	sw_uklight_colours_passenger_decider ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_uklight_colours_manual, cargo_subtype){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN); ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_uklight_colours_manual_check, livery_choice){
+	1 : sw_uklight_colours_manual ;
+	sw_uklight_colours_auto ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_uklight_colours_2cc_check, colour_scheme_1){
+	1 : sw_uklight_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Item
+
+item (FEAT_TRAINS, item_uklight, 68){
+	property{
+		name                           : string(STR_NAME_UKLIGHT) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(2014, 1, 1) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 35 ;
+		reliability_decay              : 7 ;
+		cost_factor                    : 42 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 240 ;
+		refit_cost                     : 0 ; 
+		refittable_cargo_classes       : 0 ; 
+		cargo_allow_refit              : [GOOD]  ;
+		cargo_capacity                 : 1 ;
+		track_type                     : RAIL ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		speed                          : 100 mph ;
+		power                          : 3800 hp ;
+		weight                         : 85 ton ;
+		tractive_effort_coefficient    : 0.3729411764705882 ;
+		air_drag_coefficient           : 0.08 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                : sw_uklight_spritestack ;
+		purchase               : sw_uklight_purchase ;
+		colour_mapping         : sw_uklight_colours_2cc_check ;
+		sound_effect           : sw_sfx_diesel_loco_modern ;
+		create_effect          : vfx_diesel_default ;
+		cargo_subtype_text     : sw_uklight_refit_text_check ;
+		cargo_capacity         : return 0 ;
+	}
+}
