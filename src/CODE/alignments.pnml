@@ -18,6 +18,28 @@ template template_dualhead_purchase(x,y){
 	[ x+77, y+11, 1, 1, 0, 0]
 }
 
+template template_uklight(x,y){
+	[x+0,y,8,24,-3,-11] //North
+	[x+10,y,20,16,-13,-8] //North East
+	[x+32,y,32,13,-16,-9] //East
+	[x+66,y,20,16,-5,-8] //South East
+	[x+88,y,8,24,-3,-11] //South
+	[x+98,y,20,16,-13,-8] //South West
+	[x+120,y,32,13,-16,-9] //West
+	[x+154,y,20,16,-5,-8] //North West
+}
+
+template template_uklight_reverse(x,y){
+	[x+88,y,8,24,-3,-11] //South
+	[x+98,y,20,16,-13,-8] //South West
+	[x+120,y,32,13,-16,-9] //West
+	[x+154,y,20,16,-5,-8] //North West
+	[x+0,y,8,24,-3,-11] //North
+	[x+10,y,20,16,-13,-8] //North East
+	[x+32,y,32,13,-16,-9] //East
+	[x+66,y,20,16,-5,-8] //South East
+}
+
 template template_8_8(x,y){
     [ x, y, 8, 24, -3, -12]
     [ x+10, y, 21, 17, -12, -10]

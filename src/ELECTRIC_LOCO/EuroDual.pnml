@@ -1,3 +1,9 @@
+//Class 88
+
+//Spritesets
+
+spriteset(gfx_eurodual_drs        , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight(0,0)}
+spriteset(gfx_eurodual_drs_reverse, "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight_reverse(0,0)}
 
 
 
@@ -6,6 +12,13 @@
 
 
 
+
+//Sound effects decider
+
+switch(FEAT_TRAINS, PARENT, sw_sfx_eurodual_decider, current_railtype){
+	ELRL : sw_sfx_electric_loco_modern ;
+	sw_sfx_diesel_loco_modern ;
+}
 
 
 //Item
@@ -43,7 +56,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		purchase               : sw_eurodual_purchase ;
 		colour_mapping         : sw_eurodual_colours ;
 		sound_effect           : sw_sfx_eurodual_decider ;
-		create_effect          : vfx_diesel_default ;
+		create_effect          : sw_eurodual_effect_decider ;
 		cargo_capacity         : return 0 ;
 		power: (current_railtype == ELRL) ? 5364 : 986;
 	}
