@@ -2,7 +2,7 @@
 
 //Templates
 
-template temp_powerhaul(x, y){
+template template_powerhaul(x, y){
 	//left_x, upper_y, width, height, offset_x, offset_y
 	[x+0,y,8,23,-3,-11]    //North
 	[x+10,y,20,16,-13,-8]  //North East
@@ -14,7 +14,7 @@ template temp_powerhaul(x, y){
 	[x+156,y,20,16,-5,-8]  //North West
 }
 
-template temp_powerhaul_reverse(x, y){
+template template_powerhaul_reverse(x, y){
 	//left_x, upper_y, width, height, offset_x, offset_y
 	[x+89,y,8,23,-3,-11]   //South
 	[x+99,y,20,16,-13,-8]   //South West
@@ -29,12 +29,22 @@ template temp_powerhaul_reverse(x, y){
 
 //Sritesets
 
+spriteset (gfx_powerhaul_fliner             , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,25)}
+spriteset (gfx_powerhaul_fliner_reverse     , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,25)}
+spriteset (gfx_powerhaul_colas_2cc          , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,0)}
+spriteset (gfx_powerhaul_colas_2cc_reverse  , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,0)}
+spriteset (gfx_powerhaul_colas        , "gfx/DIESEL_LOCO/class_70_colas.png"){template_powerhaul(0,0)}
+spriteset (gfx_powerhaul_colas_reverse, "gfx/DIESEL_LOCO/class_70_colas.png"){template_powerhaul_reverse(0,0)}
 
-
-
+spriteset (gfx_powerhaul_headlights     , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,0)}
+spriteset (gfx_powerhaul_taillights     , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,25)}
 
 
 //Graphics
+
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_fliner_reverse_check, vehicle_is_reversed){ 1 :  ;  ; }
+
+
 
 //Automatic
 
@@ -53,8 +63,14 @@ template temp_powerhaul_reverse(x, y){
 
 //Spritestacking
 
+switch(FEAT_TRAINS, SELF, sw_powerhaul_headlights, position_in_consist){ 0 :  ) }
+switch(FEAT_TRAINS, SELF, sw_powerhaul_taillights, position_in_consist_from_end){ 0 :  ) }
 
-
+switch(FEAT_TRAINS, SELF, sw_powerhaul_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_powerhaul_gfx_manual_check ;
+	1 : sw_powerhaul_headlights ;
+	2 : sw_powerhaul_taillights ;
+}
 
 
 //Refit text
@@ -68,9 +84,20 @@ template temp_powerhaul_reverse(x, y){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, 
+switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, most_common_refit){
+	GOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	
+}
 
+switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, build_year){
+	2008..2014 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	sw_powerhaul_colours_auto_decider ;
+}
 
+switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+}
 
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_manual_check, livery_choice){
