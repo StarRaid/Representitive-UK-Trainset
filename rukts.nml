@@ -194,13 +194,13 @@ switch(FEAT_TRAINS, SELF, vfx_ohle_only, current_railtype){
 //Sound deciding switches
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_old_running, current_speed){
- 0..30 : sound("sfx/86_coast_2.wav") ;
- 31..80 : sound("sfx/86_coast_1.wav") ;
+ 0..13 : sound("sfx/86_coast_2.wav") ;
+ 14..36 : sound("sfx/86_coast_1.wav") ;
  sound("sfx/86_coast_3.wav") ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_modern_running, current_speed){
- 0..40 : sound("sfx/800_run.wav") ;
+ 0..22 : sound("sfx/800_run.wav") ;
  sound("sfx/800_coast.wav") ;
 }
 
@@ -1228,13 +1228,11 @@ template template_powerhaul_reverse(x, y){
 
 spriteset (gfx_powerhaul_fliner , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,25)}
 spriteset (gfx_powerhaul_fliner_reverse , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,25)}
-spriteset (gfx_powerhaul_colas_2cc , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,0)}
-spriteset (gfx_powerhaul_colas_2cc_reverse , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,0)}
-spriteset (gfx_powerhaul_colas , "gfx/DIESEL_LOCO/class_70_colas.png"){template_powerhaul(0,0)}
-spriteset (gfx_powerhaul_colas_reverse, "gfx/DIESEL_LOCO/class_70_colas.png"){template_powerhaul_reverse(0,0)}
+spriteset (gfx_powerhaul_colas , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,25)}
+spriteset (gfx_powerhaul_colas_reverse , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,25)}
 
-spriteset (gfx_powerhaul_headlights , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,0)}
-spriteset (gfx_powerhaul_taillights , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,25)}
+spriteset (gfx_powerhaul_headlights , "gfx/FIXTURES/class_70_lights.png"){template_powerhaul(0,0)}
+spriteset (gfx_powerhaul_taillights , "gfx/FIXTURES/class_70_lights.png"){template_powerhaul(0,25)}
 
 spriteset (gfx_powerhaul_fliner_purchase , "gfx/DIESEL_LOCO/class_70.png"){template_purchase_short(178,25)}
 spriteset (gfx_powerhaul_colas_purchase , "gfx/DIESEL_LOCO/class_70.png"){template_purchase_short(178,0)}
@@ -1243,18 +1241,11 @@ spriteset (gfx_powerhaul_colas_purchase , "gfx/DIESEL_LOCO/class_70.png"){templa
 //Graphics
 
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_fliner_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_fliner_reverse ; gfx_powerhaul_fliner ; }
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_2cc_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_colas_2cc_reverse ; gfx_powerhaul_colas_2cc ; }
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_colas_reverse ; gfx_powerhaul_colas ; }
-
-
-switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_colas_2cc_decider, colour_scheme_1){
- 1 : sw_powerhaul_gfx_colas_reverse_check ;
- sw_powerhaul_gfx_colas_2cc_reverse_check ;
-}
 
 //Automatic
 
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto, most_common_refit){
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, most_common_refit){
  GOOD : sw_powerhaul_gfx_fliner_reverse_check ;
  GRAI : sw_powerhaul_gfx_fliner_reverse_check ;
  IORE : sw_powerhaul_gfx_fliner_reverse_check ;
@@ -1264,14 +1255,20 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto, most_common_refit){
  OIL_ : sw_powerhaul_gfx_fliner_reverse_check ;
  SAND : sw_powerhaul_gfx_fliner_reverse_check ;
  VEHI : sw_powerhaul_gfx_fliner_reverse_check ;
- sw_powerhaul_gfx_colas_2cc_decider ;
+ sw_powerhaul_gfx_colas_reverse_check ;
 }
+
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, build_year){
+ 2008..2014 : sw_powerhaul_gfx_fliner_reverse_check ;
+ sw_powerhaul_gfx_auto_decider ;
+}
+
 
 //Manual
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_manual, cargo_subtype){
  0 : sw_powerhaul_gfx_fliner_reverse_check ;
- sw_powerhaul_gfx_colas_2cc_decider ;
+ sw_powerhaul_gfx_colas_reverse_check ;
 }
 
 

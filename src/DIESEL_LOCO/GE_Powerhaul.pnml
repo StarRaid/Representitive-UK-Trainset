@@ -48,11 +48,7 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_rev
 
 //Automatic
 
-<<<<<<< HEAD
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto, most_common_refit){
-=======
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, most_common_refit){
->>>>>>> 18bde34806b0a2f84e8ab85e85916a02037243e9
 	GOOD : sw_powerhaul_gfx_fliner_reverse_check ;
 	GRAI : sw_powerhaul_gfx_fliner_reverse_check ;
 	IORE : sw_powerhaul_gfx_fliner_reverse_check ;
