@@ -42,23 +42,49 @@ spriteset (gfx_powerhaul_taillights     , "gfx/DIESEL_LOCO/class_70.png"){templa
 
 //Graphics
 
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_fliner_reverse_check, vehicle_is_reversed){ 1 :  ;  ; }
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_fliner_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_fliner_reverse  ; gfx_powerhaul_fliner ; }
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_2cc_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_colas_2cc_reverse ; gfx_powerhaul_colas_2cc ; }
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_colas_reverse ; gfx_powerhaul_colas ; }
 
 
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_colas_2cc_decider, colour_scheme_1){
+	1 : sw_powerhaul_gfx_colas_reverse_check ;
+	sw_powerhaul_gfx_colas_2cc_reverse_check ;
+}
 
 //Automatic
 
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_refit){
+	GOOD : sw_powerhaul_gfx_fliner_reverse_check ;
+	GRAI : sw_powerhaul_gfx_fliner_reverse_check ;
+	IORE : sw_powerhaul_gfx_fliner_reverse_check ;
+	AORE : sw_powerhaul_gfx_fliner_reverse_check ;
+	GLAS : sw_powerhaul_gfx_fliner_reverse_check ;
+	PETR : sw_powerhaul_gfx_fliner_reverse_check ;
+	OIL_ : sw_powerhaul_gfx_fliner_reverse_check ;
+	SAND : sw_powerhaul_gfx_fliner_reverse_check ;
+	VEHI : sw_powerhaul_gfx_fliner_reverse_check ;
+	sw_powerhaul_gfx_colas_2cc_decider ;
+}
 
-
-
-
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, build_year){
+	2008..2014 : sw_powerhaul_gfx_fliner_reverse_check ;
+	sw_powerhaul_gfx_auto_decider ;
+}
 
 
 //Manual
 
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_manual, cargo_subtype){
+	0 : sw_powerhaul_gfx_fliner_reverse_check ;
+	sw_powerhaul_gfx_colas_2cc_decider ;
+}
 
 
-
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_manual_check, livery_choice){
+	1 : sw_powerhaul_gfx_manual ;
+	sw_powerhaul_gfx_auto ;
+}
 
 
 //Spritestacking
@@ -86,7 +112,15 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_spritestack, [STORE_TEMP((getbits(extra_c
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, most_common_refit){
 	GOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	
+	GRAI : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	IORE : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	AORE : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	GLAS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	PETR : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	OIL_ : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	SAND : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	VEHI : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, build_year){

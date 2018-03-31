@@ -12,29 +12,31 @@ STR_PARAM_COACHMAIL_DESC     :Coaches that have brake compartments can load mail
 STR_PARAM_LIVERY_CHOICE_NAME :Choose liveries manually
 STR_PARAM_LIVERY_CHOICE_DESC :Liveries are chosen through the cargo refit menu instead of them changing depending on year
 
-STR_LIVERY_BRGREEN              : British Railways Green
-STR_LIVERY_BRBLUE				: British Railways Blue 
-STR_LIVERY_BRBLUE_LOGO          : British Railways Large Logo
-STR_LIVERY_BRBLUE_SUBTYPE		: British Railways Blue {STRING}
-STR_LIVERY_INTERCITY			: Intercity
-STR_LIVERY_REG_RAILWAYS			: Regional Railways
-STR_LIVERY_NSE					: Network South East
-STR_LIVERY_VIRGIN_TRAINS		: Virgin Trains
-STR_LIVERY_CONNEX				: Connex
-STR_LIVERY_DRS					: Direct Rail Services
-STR_LIVERY_TPE_NEW				: Trans Pennine Express
-STR_LIVERY_CAL_SLEEPER			: Caledonian Sleeper
-STR_LIVERY_GBRF					: First GBRf
-STR_LIVERY_LONDON_MIDLAND		: Londom Midland
-STR_LIVERY_CHILTERN				: Chiltern Railways
-STR_LIVERY_COLAS				: Colas Rail
-STR_LIVERY_SE_BLUE				: Southeastern (Blue)
-STR_LIVERY_SE_YELLOW			: Southeastern (Yellow)
-STR_LIVERY_WCRC					: West Coast Railway Company
-STR_LIVERY_CRIMSON_CREAM		: British Railways "Crimson Lake"
-STR_LIVERY_MAROON				: British Railways Maroon
-STR_LIVERY_SWT					: South West Trains
-STR_LIVERY_SWT_HERITAGE			: South West Trains (Heritage Blue)
+STR_LIVERY_BRGREEN                : British Railways Green
+STR_LIVERY_BRBLUE				  : British Railways Blue 
+STR_LIVERY_BRBLUE_LOGO            : British Railways Large Logo
+STR_LIVERY_BRBLUE_SUBTYPE		  : British Railways Blue {STRING}
+STR_LIVERY_INTERCITY			  : Intercity
+STR_LIVERY_REG_RAILWAYS			  : Regional Railways
+STR_LIVERY_NSE					  : Network South East
+STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
+STR_LIVERY_CONNEX				  : Connex
+STR_LIVERY_DRS					  : Direct Rail Services
+STR_LIVERY_TPE_NEW				  : Trans Pennine Express
+STR_LIVERY_CAL_SLEEPER			  : Caledonian Sleeper
+STR_LIVERY_GBRF					  : First GBRf
+STR_LIVERY_LONDON_MIDLAND		  : Londom Midland
+STR_LIVERY_CHILTERN				  : Chiltern Railways
+STR_LIVERY_FREIGHTLINER           : Frieghtliner
+STR_LIVERY_FREIGHTLINER_POWERHAUL : Frieghtliner {GOLD}(Powerhaul)
+STR_LIVERY_COLAS				  : Colas Rail
+STR_LIVERY_SE_BLUE				  : Southeastern (Blue)
+STR_LIVERY_SE_YELLOW			  : Southeastern (Yellow)
+STR_LIVERY_WCRC					  : West Coast Railway Company
+STR_LIVERY_CRIMSON_CREAM		  : British Railways "Crimson Lake"
+STR_LIVERY_MAROON				  : British Railways Maroon
+STR_LIVERY_SWT					  : South West Trains
+STR_LIVERY_SWT_HERITAGE			  : South West Trains (Heritage Blue)
 
 
 STR_NAME_MK1					:Mark 1 Carriage
