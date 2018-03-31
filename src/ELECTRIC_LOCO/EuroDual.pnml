@@ -1,0 +1,50 @@
+
+
+
+
+
+
+
+
+
+
+//Item
+
+item (FEAT_TRAINS, item_eurodual, 88){
+	property{
+		name                           : string(STR_NAME_EURODUAL) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(2016, 7, 1) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 35 ;
+		reliability_decay              : 9 ;
+		cost_factor                    : 46 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 250 ;
+		refit_cost                     : 0 ; 
+		refittable_cargo_classes       : 0 ; 
+		cargo_allow_refit              : [GOOD]  ;
+		cargo_capacity                 : 1 ;
+		track_type                     : RAIL ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		speed                          : 100 mph ;
+		power                          : 5364 hp ;
+		weight                         : 86 ton ;
+		tractive_effort_coefficient    : 0.3686046511627907 ;
+		air_drag_coefficient           : 0.08 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                : sw_eurodual_spritestack ;
+		purchase               : sw_eurodual_purchase ;
+		colour_mapping         : sw_eurodual_colours ;
+		sound_effect           : sw_sfx_eurodual_decider ;
+		create_effect          : vfx_diesel_default ;
+		cargo_capacity         : return 0 ;
+		power: (current_railtype == ELRL) ? 5364 : 986;
+	}
+}
