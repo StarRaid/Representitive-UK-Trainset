@@ -2,12 +2,21 @@
 
 //Spritesets
 
-spriteset(gfx_eurodual_drs        , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight(0,0)}
-spriteset(gfx_eurodual_drs_reverse, "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight_reverse(0,0)}
+spriteset(gfx_eurodual_drs         , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight(0,0)}
+spriteset(gfx_eurodual_drs_reverse , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight_reverse(0,0)}
+
+spriteset(gfx_eurodual_drs_purchase, "gfx/ELECTRIC_LOCO/class_88.png"){template_purchase_short(176,0)}
 
 
+switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_drs_reversal_check, vehicle_is_reversed){
+	1 : gfx_eurodual_drs_reverse ;
+	gfx_eurodual_drs ;
+}
 
-
+switch(FEAT_TRAINS, SELF, sw_eurodual_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_eurodual_gfx_drs_reversal_check ;
+	1 : sw_uklight_gfx_headlights ;
+}
 
 
 
@@ -65,7 +74,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 	}
 	graphics{
 		default                : sw_eurodual_spritestack ;
-		purchase               : sw_eurodual_purchase ;
+		purchase               : gfx_eurodual_drs_purchase ;
 		colour_mapping         : sw_eurodual_colours ;
 		sound_effect           : sw_eurodual_sfx_decider ;
 		create_effect          : sw_eurodual_effect_decider ;
