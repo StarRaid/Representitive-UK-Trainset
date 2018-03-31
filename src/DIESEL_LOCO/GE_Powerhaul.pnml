@@ -50,10 +50,8 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_rev
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_refit){
 	CC_PIECE_GOODS : sw_powerhaul_gfx_fliner_reverse_check ;
-	CC_EXPRESS     : sw_powerhaul_gfx_fliner_reverse_check ;
 	CC_OVERSIZED   : sw_powerhaul_gfx_fliner_reverse_check ;
 	CC_PASSENGERS  : sw_powerhaul_gfx_fliner_reverse_check ;
-	CC_BULK        : sw_powerhaul_gfx_fliner_reverse_check ;
 	sw_powerhaul_gfx_colas_reverse_check ;
 }
 
@@ -116,10 +114,8 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, most_common_refit){
 	CC_PIECE_GOODS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	CC_EXPRESS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	CC_OVERSIZED : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	CC_PASSENGERS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	CC_BULK : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
