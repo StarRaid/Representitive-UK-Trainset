@@ -267,7 +267,7 @@ item (FEAT_TRAINS, item_Mk2, 9020){
 		introduction_date              : date( 1963, 1, 1) ;
 		model_life                     : 45 ;
 		vehicle_life                   : 50 ;
-		cost_factor                    : 35 ;
+		cost_factor                    : 65 ;
 		running_cost_base              : RUNNING_COST_NONE ;
 		running_cost_factor            : 38 ;
 		refit_cost                     : 0 ;

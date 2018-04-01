@@ -8,7 +8,7 @@ grf{
  grfid: "RUKT";
  name: string(STR_GRF_NAME);
  desc: string(STR_GRF_DESC);
- version: 0;
+ version: 1;
  min_compatible_version: 0;
  param 0{
   colour_scheme_1{
@@ -526,7 +526,7 @@ item (FEAT_TRAINS, item_Mk1, 9010) {
   refittable_cargo_classes: CC_PASSENGERS;
   cargo_allow_refit: [PASS, TOUR];
   loading_speed: 29;
-  cost_factor: 20;
+  cost_factor: 35;
   running_cost_factor: 45;
   sprite_id: SPRITE_ID_NEW_TRAIN;
   speed: 100 mph;
@@ -904,7 +904,7 @@ item (FEAT_TRAINS, item_Mk2, 9020){
   introduction_date : date( 1963, 1, 1) ;
   model_life : 45 ;
   vehicle_life : 50 ;
-  cost_factor : 35 ;
+  cost_factor : 65 ;
   running_cost_base : RUNNING_COST_NONE ;
   running_cost_factor : 38 ;
   refit_cost : 0 ;
@@ -966,7 +966,6 @@ switch(FEAT_TRAINS, SELF, sw_MU90_purchase, current_year){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_MU90_coupling_restrictions, vehicle_type_id) {
-    item_MU90: return CB_RESULT_ATTACH_ALLOW;
  700: return CB_RESULT_ATTACH_ALLOW;
  325: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_MU90_NO_COUPLE);
@@ -984,7 +983,7 @@ item (FEAT_TRAINS, item_MU90, 9090) {
   refittable_cargo_classes: CC_PASSENGERS;
   cargo_allow_refit: [PASS, TOUR, MAIL];
   loading_speed: 29;
-  cost_factor: 38;
+  cost_factor: 58;
   running_cost_factor: 34;
   sprite_id: SPRITE_ID_NEW_TRAIN;
   speed: 100 mph;
@@ -3354,8 +3353,8 @@ item (FEAT_TRAINS, item_700, 700) {
   refittable_cargo_classes: CC_PASSENGERS;
   cargo_allow_refit: [PASS, TOUR];
   loading_speed: 35;
-  cost_factor: 45;
-  running_cost_factor: 45;
+  cost_factor: 75;
+  running_cost_factor: 60;
   sprite_id: SPRITE_ID_NEW_TRAIN;
   speed: 100 mph;
   misc_flags: bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
@@ -3385,8 +3384,10 @@ item (FEAT_TRAINS, item_700, 700) {
  purchase_colour_mapping: sw_707_colour_mapping;
 }
   livery_override (item_MU90) {
-  cargo_capacity: 80;
+  cargo_capacity: 90;
+  power: 447;
   default: sw_700_trailer;
+  weight: 34;
   colour_mapping: sw_700_colour_mapping;
   cargo_subtype_text: sw_700_refit_text_decider;
 }

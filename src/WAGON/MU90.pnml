@@ -38,7 +38,6 @@ switch(FEAT_TRAINS, SELF, sw_MU90_purchase, current_year){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_MU90_coupling_restrictions, vehicle_type_id) {
-    item_MU90: return CB_RESULT_ATTACH_ALLOW;
 	700: return CB_RESULT_ATTACH_ALLOW;
 	325: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_MU90_NO_COUPLE);
@@ -56,7 +55,7 @@ item (FEAT_TRAINS, item_MU90, 9090) {
 		refittable_cargo_classes:		CC_PASSENGERS;
 		cargo_allow_refit:				[PASS, TOUR, MAIL];
 		loading_speed:					29;
-		cost_factor:					38;
+		cost_factor:					58;
 		running_cost_factor:			34;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
