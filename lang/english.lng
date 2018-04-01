@@ -39,6 +39,7 @@ STR_LIVERY_SWT					  : South West Trains
 STR_LIVERY_SWT_HERITAGE			  : South West Trains (Heritage Blue)
 STR_LIVERY_N_SPIRIT               : Northern Spirit
 STR_LIVERY_NORTHERN               : Northern
+STR_LIVERY_THAMESLINK             : Thameslink
 
 
 STR_NAME_MK1					:Mark 1 Carriage
@@ -61,6 +62,10 @@ STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_317				 :AC Express "Bed Pan"
 STR_NAME_325				 :Adtranz "Networker" (Dual Volatge)
 STR_NAME_411				 :Mark 1 EMU (3rd rail)
-STR_NAME_700				 :Desiro City
+STR_NAME_700				 :Seimens "Desiro City"
 
+STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another Leyland "Pacer"!
+STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another Mark 1 EMU (3rd rail)!
 STR_325_NO_COUPLE: You may only couple this train to a "Modern EMU car" or another Adtranz "Networker"!
+STR_700_NO_COUPLE: You may only couple this train to a "Modern EMU car" or another Seimens "Desiro City"!
+STR_MU90_NO_COUPLE: You may only couple this train to a correct EMU!

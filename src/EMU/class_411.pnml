@@ -437,6 +437,12 @@ switch(FEAT_TRAINS, PARENT, sw_411_colour_mapping_decider, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_411_coupling_restrictions, vehicle_type_id) {
+    9010: return CB_RESULT_ATTACH_ALLOW;
+	411: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_411_NO_COUPLE);
+}
+
 item (FEAT_TRAINS, item_411, 411) {
 	property {
 		name: 							string(STR_NAME_411);
@@ -473,7 +479,7 @@ item (FEAT_TRAINS, item_411, 411) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	can_attach_wagon:					sw_411_coupling_restrictions;
 	default: 							sw_411_default;
 	purchase:							sw_411_purchase;
 	create_effect:						vfx_3rd;

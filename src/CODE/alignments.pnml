@@ -5,7 +5,7 @@ template template_purchase(x,y){
 }
 
 template template_purchase_short(x,y){
-	[ x, y, 55, 12, -27, -6]
+	[ x, y, 55, 12, -39, -6]
 }
 
 template template_dualhead_purchase(x,y){

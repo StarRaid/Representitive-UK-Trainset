@@ -125,7 +125,7 @@ switch(FEAT_TRAINS, SELF, sw_142_manual_livery_decider_a_t, cargo_subtype){
 
 switch(FEAT_TRAINS, PARENT, sw_142_manual_livery_decider_t, build_year){
 	0 .. 1985: sw_140_t;
-	1986 .. 3000: sw_142_manual_livery_decider_a_t;
+	sw_142_manual_livery_decider_a_t;
 }
 
 switch(FEAT_TRAINS, SELF, sw_142_livery_choice_decider, livery_choice){
@@ -226,6 +226,12 @@ switch(FEAT_TRAINS, PARENT, sw_142_colour_mapping_decider, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_142_coupling_restrictions, vehicle_type_id) {
+    9010: return CB_RESULT_ATTACH_ALLOW;
+	142: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_142_NO_COUPLE);
+}
+
 item (FEAT_TRAINS, item_142, 142) {
 	property {
 		name: 							string(STR_NAME_142);
@@ -261,7 +267,7 @@ item (FEAT_TRAINS, item_142, 142) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	can_attach_wagon:					sw_142_coupling_restrictions;
 	default: 							sw_142_default;
 	purchase:							sw_142_purchase;
 	create_effect:						vfx_diesel_default;

@@ -37,6 +37,13 @@ switch(FEAT_TRAINS, SELF, sw_MU90_purchase, current_year){
 	spriteset_MU90_worker_seb_purchase;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_MU90_coupling_restrictions, vehicle_type_id) {
+    item_MU90: return CB_RESULT_ATTACH_ALLOW;
+	700: return CB_RESULT_ATTACH_ALLOW;
+	325: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_MU90_NO_COUPLE);
+}
+
 item (FEAT_TRAINS, item_MU90, 9090) {
 	property {
 		name: 							string(STR_NAME_MU90);
@@ -70,7 +77,7 @@ item (FEAT_TRAINS, item_MU90, 9090) {
 		cargo_age_period:				185;
 	}
 	graphics {
-	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	can_attach_wagon:					sw_MU90_coupling_restrictions;
 	default: 							sw_MU90_passenger_livery_decider_t;
 	purchase:							sw_MU90_purchase;
 }
