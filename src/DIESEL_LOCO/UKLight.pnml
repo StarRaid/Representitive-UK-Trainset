@@ -147,5 +147,6 @@ item (FEAT_TRAINS, item_uklight, 68){
 		create_effect          : vfx_diesel_default ;
 		cargo_subtype_text     : sw_uklight_refit_text_check ;
 		cargo_capacity         : return 0 ;
+		can_attach_wagon       : sw_all_but_MU90;
 	}
 }

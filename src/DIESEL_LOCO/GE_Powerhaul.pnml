@@ -179,5 +179,6 @@ item(FEAT_TRAINS, item_powerhaul, 70){
 		colour_mapping     : sw_powerhaul_colours_2cc_check ;
 		cargo_subtype_text : sw_powerhaul_refit_text_check ;
 		cargo_capacity     : return 0 ;
+		can_attach_wagon       : sw_all_but_MU90;
 	}
 }

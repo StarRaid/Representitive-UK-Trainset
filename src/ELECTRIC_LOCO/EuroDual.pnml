@@ -80,5 +80,6 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		create_effect          : sw_eurodual_effect_decider ;
 		cargo_capacity         : return 0 ;
 		power: (current_railtype == ELRL) ? 5364 : 986;
+		can_attach_wagon       : sw_all_but_MU90;
 	}
 }

@@ -6,6 +6,7 @@ disable_item(FEAT_TRAINS);
 #include "src/CODE/era_definitions.pnml"
 #include "src/CODE/visual_effects.pnml"
 #include "src/CODE/sound_effects.pnml"
+#include "src/CODE/coupling_restrictions.pnml"
 #include "src/WAGON/Mk1.pnml"
 //#include "src/WAGON/MK3.pnml"
 #include "src/WAGON/Mk2.pnml"

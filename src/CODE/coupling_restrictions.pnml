@@ -1,0 +1,4 @@
+switch(FEAT_TRAINS, SELF, sw_all_but_MU90, vehicle_type_id) {
+    item_MU90: return string(STR_MU90_NO_COUPLE);
+    return CB_RESULT_ATTACH_ALLOW;
+}

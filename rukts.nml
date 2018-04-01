@@ -271,6 +271,12 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
  SOUND_EVENT_TUNNEL : sound("sfx/40_horn.wav") ;
 }
 # 9 "rukts.pnml" 2
+# 1 "src/CODE/coupling_restrictions.pnml" 1
+switch(FEAT_TRAINS, SELF, sw_all_but_MU90, vehicle_type_id) {
+    item_MU90: return string(STR_MU90_NO_COUPLE);
+    return CB_RESULT_ATTACH_ALLOW;
+}
+# 10 "rukts.pnml" 2
 # 1 "src/WAGON/Mk1.pnml" 1
 spriteset(spriteset_Mk1_lined, "gfx/WAGON/mark_1.png") {
  template_8_8_networker(0, 25)
@@ -628,7 +634,7 @@ item (FEAT_TRAINS, item_Mk1, 9010) {
 }
 
 }*/
-# 10 "rukts.pnml" 2
+# 11 "rukts.pnml" 2
 //#include "src/WAGON/MK3.pnml"
 # 1 "src/WAGON/Mk2.pnml" 1
 //Mark 2
@@ -924,7 +930,7 @@ item (FEAT_TRAINS, item_Mk2, 9020){
   colour_mapping : sw_mk2_colour_mapping_decider ;
  }
 }
-# 12 "rukts.pnml" 2
+# 13 "rukts.pnml" 2
 # 1 "src/WAGON/MU90.pnml" 1
 spriteset(spriteset_MU90_worker_nse_t, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(0, 0)}
 
@@ -1009,7 +1015,7 @@ item (FEAT_TRAINS, item_MU90, 9090) {
  purchase: sw_MU90_purchase;
 }
 }
-# 13 "rukts.pnml" 2
+# 14 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/EE_Type4.pnml" 1
 //Defining EE Type 4 specific template
 
@@ -1197,9 +1203,10 @@ item (FEAT_TRAINS, item_eetype4, 40){
   create_effect : vfx_diesel_default ;
   cargo_subtype_text : sw_ee40_refit_text_check ;
   cargo_capacity : return 0 ;
+  can_attach_wagon : sw_all_but_MU90;
  }
 }
-# 14 "rukts.pnml" 2
+# 15 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/GE_Powerhaul.pnml" 1
 //GE Powerhaul
 
@@ -1398,9 +1405,10 @@ item(FEAT_TRAINS, item_powerhaul, 70){
   colour_mapping : sw_powerhaul_colours_2cc_check ;
   cargo_subtype_text : sw_powerhaul_refit_text_check ;
   cargo_capacity : return 0 ;
+  can_attach_wagon : sw_all_but_MU90;
  }
 }
-# 15 "rukts.pnml" 2
+# 16 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/UKLight.pnml" 1
 //UK Light
 
@@ -1551,9 +1559,10 @@ item (FEAT_TRAINS, item_uklight, 68){
   create_effect : vfx_diesel_default ;
   cargo_subtype_text : sw_uklight_refit_text_check ;
   cargo_capacity : return 0 ;
+  can_attach_wagon : sw_all_but_MU90;
  }
 }
-# 16 "rukts.pnml" 2
+# 17 "rukts.pnml" 2
 # 1 "src/ELECTRIC_LOCO/BR_Class87.pnml" 1
 //Class 87
 
@@ -1752,9 +1761,10 @@ item (FEAT_TRAINS, item_br87, 87){
   colour_mapping : sw_br87_colours_2cc_check ;
   cargo_subtype_text : sw_br87_refit_text_checker ;
   cargo_capacity : return 0 ;
+  can_attach_wagon : sw_all_but_MU90;
  }
 }
-# 17 "rukts.pnml" 2
+# 18 "rukts.pnml" 2
 # 1 "src/ELECTRIC_LOCO/EuroDual.pnml" 1
 //Class 88
 
@@ -1838,9 +1848,10 @@ item (FEAT_TRAINS, item_eurodual, 88){
   create_effect : sw_eurodual_effect_decider ;
   cargo_capacity : return 0 ;
   power: (current_railtype == ELRL) ? 5364 : 986;
+  can_attach_wagon : sw_all_but_MU90;
  }
 }
-# 18 "rukts.pnml" 2
+# 19 "rukts.pnml" 2
 # 1 "src/DMU/class_142.pnml" 1
 spriteset(spriteset_142_t_rr, "gfx/DMU/class_142.png") {template_7_4(0, 168)}
 spriteset(spriteset_142_f_rr, "gfx/DMU/class_142.png") {template_7_8(0, 96)}
@@ -2128,7 +2139,7 @@ item (FEAT_TRAINS, item_142, 142) {
   weight: 25;
 }
 }
-# 19 "rukts.pnml" 2
+# 20 "rukts.pnml" 2
 //#include "src/EMU/PEP.pnml"
 //#include "src/EMU/class_317.pnml"
 # 1 "src/EMU/class_325.pnml" 1
@@ -2677,7 +2688,7 @@ item (FEAT_TRAINS, item_325, 325) {
   create_effect: sw_325_t_vfx;
 }
 }
-# 22 "rukts.pnml" 2
+# 23 "rukts.pnml" 2
 # 1 "src/EMU/class_411.pnml" 1
 spriteset(spriteset_411_t_green, "gfx/EMU/class_411.png") {template_8_8_networker(0, 0)}
 
@@ -3175,7 +3186,7 @@ item (FEAT_TRAINS, item_411, 411) {
   cargo_subtype_text: sw_411_refit_text_decider ;
 }
 }
-# 23 "rukts.pnml" 2
+# 24 "rukts.pnml" 2
 # 1 "src/EMU/class_700.pnml" 1
 spriteset(spriteset_700_tl_f, "gfx/EMU/class_700.png") {
  template_8_8(0, 0)
@@ -3392,9 +3403,9 @@ item (FEAT_TRAINS, item_700, 700) {
   cargo_subtype_text: sw_700_refit_text_decider;
 }
 }
-# 24 "rukts.pnml" 2
-# 1 "src/CODE/purchase_list_sort.pnml" 1
 # 25 "rukts.pnml" 2
+# 1 "src/CODE/purchase_list_sort.pnml" 1
+# 26 "rukts.pnml" 2
 # 1 "src/CODE/sort_purchase.pnml" 1
 sort(FEAT_TRAINS,[
 40,
@@ -3410,4 +3421,4 @@ sort(FEAT_TRAINS,[
 9020,
 9090,
 ]);
-# 25 "rukts.pnml" 2
+# 26 "rukts.pnml" 2

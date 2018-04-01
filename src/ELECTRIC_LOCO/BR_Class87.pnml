@@ -195,5 +195,6 @@ item (FEAT_TRAINS, item_br87, 87){
 		colour_mapping     : sw_br87_colours_2cc_check ;
 		cargo_subtype_text : sw_br87_refit_text_checker ;
 		cargo_capacity     : return 0 ;
+		can_attach_wagon       : sw_all_but_MU90;
 	}
 }
