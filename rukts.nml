@@ -2082,7 +2082,7 @@ switch(FEAT_TRAINS, PARENT, sw_142_colour_mapping_decider, colour_scheme_1){
 }
 
 switch(FEAT_TRAINS, SELF, sw_142_coupling_restrictions, vehicle_type_id) {
-    9010: return CB_RESULT_ATTACH_ALLOW;
+    9020: return CB_RESULT_ATTACH_ALLOW;
  142: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_142_NO_COUPLE);
 }
@@ -2686,6 +2686,7 @@ item (FEAT_TRAINS, item_325, 325) {
   default: sw_325_default_t;
   colour_mapping: sw_325_colour_mapping_decider;
   create_effect: sw_325_t_vfx;
+  cargo_subtype_text: sw_325_refit_text_decider ;
 }
 }
 # 23 "rukts.pnml" 2

@@ -541,5 +541,6 @@ item (FEAT_TRAINS, item_325, 325) {
 		default: sw_325_default_t;
 		colour_mapping:	sw_325_colour_mapping_decider;
 		create_effect: sw_325_t_vfx;
+		cargo_subtype_text: sw_325_refit_text_decider ;
 }
 }
