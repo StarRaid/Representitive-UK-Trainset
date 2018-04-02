@@ -47,14 +47,14 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_fliner_reverse_check, vehicle_is_re
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_colas_reverse ; gfx_powerhaul_colas ; }
 
 //Automatic
-/*
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, bitmask_consist_info){
+
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, cargo_classes_in_consist){
 	CC_PIECE_GOODS : sw_powerhaul_gfx_fliner_reverse_check ;
 	CC_OVERSIZED   : sw_powerhaul_gfx_fliner_reverse_check ;
 	CC_PASSENGERS  : sw_powerhaul_gfx_fliner_reverse_check ;
 	sw_powerhaul_gfx_colas_reverse_check ;
 }
-*/
+
 switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, build_year){
 	2008..2014 : sw_powerhaul_gfx_fliner_reverse_check ;
 	sw_powerhaul_gfx_colas_reverse_check ;
@@ -111,14 +111,14 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase, current_year){
 
 
 //Colour mapping
-/*
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, bitmask_consist_info){
+
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, cargo_classes_in_consist){
 	CC_PIECE_GOODS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	CC_OVERSIZED : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	CC_PASSENGERS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
-*/
+
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, build_year){
 	2008..2014 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
