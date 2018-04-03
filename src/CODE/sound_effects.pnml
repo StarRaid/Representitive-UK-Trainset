@@ -63,7 +63,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee, getbits(extra_callback_info1, 0
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_desiro, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : sound("sfx/.wav") ;
+	//SOUND_EVENT_STOPPED       : sound("sfx/.wav") ;
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING       : sw_sfx_desiro_running ;
 	SOUND_EVENT_START         : sound("sfx/40_horn.wav") ;

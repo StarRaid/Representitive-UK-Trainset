@@ -203,6 +203,7 @@ item (FEAT_TRAINS, item_700, 700) {
 	colour_mapping:						sw_700_colour_mapping;
 	cargo_subtype_text:					sw_700_refit_text_decider;
 	purchase_colour_mapping:			sw_707_colour_mapping;
+	sound_effect:						sw_sfx_desiro;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 90;
