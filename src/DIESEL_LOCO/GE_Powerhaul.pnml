@@ -57,7 +57,7 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, cargo_classes_in_cons
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, build_year){
 	2008..2014 : sw_powerhaul_gfx_fliner_reverse_check ;
-	sw_powerhaul_gfx_colas_reverse_check ;
+	sw_powerhaul_gfx_auto_decider ;
 }
 
 
@@ -121,7 +121,7 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, cargo_classes_in_
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, build_year){
 	2008..2014 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	sw_powerhaul_colours_auto_decider ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_manual, cargo_subtype){
