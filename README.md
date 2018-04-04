@@ -11,12 +11,13 @@ Shading will be based off of the 405 graphic found on https://www.tt-forums.net/
 
 
 
-Licence for the use of RUKTS (Representative United Kingdom Train Set)
+# Licence for the use of RUKTS (Representative United Kingdom Train Set)
 
 All graphics are © StarRaid & Gwyd representatively. Distribution or modification without permision is strictly prohibited. Please contact the respectful owner of the graphic before using outside of this GRF.
 
-All code is licenced under GPL V2.
 
+		    All code is licenced under GPL V2.
+			
 		    GNU GENERAL PUBLIC LICENSE
 		       Version 2, June 1991
 
