@@ -19,7 +19,7 @@ Shading will be based off of the 405 graphic found on https://www.tt-forums.net/
 
 Redistribution of a released version of the compiled GRF is allowed without permision.
 
-All graphics are **©** StarRaid & Gwyd representatively. Distribution or modification without permision is **strictly prohibited. ** Please contact the respectful owner of the graphic before using outside of this GRF. Decompiling the released GRF is **strictly prohibited.**
+All graphics are **©** StarRaid & Gwyd representatively. Distribution or modification without permision is **strictly prohibited.** Please contact the respectful owner of the graphic before using outside of this GRF. Decompiling the released GRF is **strictly prohibited.**
 
 All code is licenced under GPL V2.
 			
