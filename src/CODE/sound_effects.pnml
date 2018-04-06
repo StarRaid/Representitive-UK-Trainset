@@ -75,7 +75,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : sound("sfx/dmu_idle.wav") ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/dmu_run.wav") ;
 	SOUND_EVENT_RUNNING       : sound("sfx/dmu_coast.wav") ;
-	SOUND_EVENT_START         : sound("sfx/40_horn.wav") ;
+	SOUND_EVENT_START         : sound("sfx/222_horn.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/40_horn.wav") ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/222_horn.wav") ;
 }
