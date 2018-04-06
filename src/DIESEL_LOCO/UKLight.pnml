@@ -30,7 +30,6 @@ switch(FEAT_TRAINS, SELF, sw_uklight_gfx_auto, build_year){
 	sw_uklight_gfx_passenger_check ;
 }
 
-
 //Manual
 
 switch(FEAT_TRAINS, SELF, sw_uklight_gfx_manual, cargo_subtype){
