@@ -56,7 +56,7 @@ random_switch(FEAT_TRAINS, SELF,  sw_ee40_gfx_brgreen, TRIGGER_VEHICLE_SERVICE){
 random_switch(FEAT_TRAINS, SELF,  sw_ee40_gfx_brblue, TRIGGER_VEHICLE_SERVICE){ 1 : sw_ee40_gfx_brblue_reverse_check ; }
 random_switch(FEAT_TRAINS, SELF,  sw_ee40_gfx_brblue_logo, TRIGGER_VEHICLE_SERVICE){ 1 : sw_ee40_gfx_brblue_logo_reverse_check ; }
 
-switch(FEAT_TRAINS, SELF, sw_ee40_gfx_auto, current_year){
+switch(FEAT_TRAINS, SELF, sw_ee40_gfx_auto, build_year){
 	ERA_BRCREST : sw_ee40_gfx_brgreen ;
 	1967..1982  : sw_ee40_gfx_brblue ;
 	sw_ee40_gfx_brblue_logo ;
@@ -124,7 +124,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee40_brgreen_colours, TRIGGER_VEHICLE_SERVIC
 random_switch(FEAT_TRAINS, SELF, sw_ee40_brblue, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;}
 
 
-switch(FEAT_TRAINS, SELF, sw_ee40_colours_auto, current_year){
+switch(FEAT_TRAINS, SELF, sw_ee40_colours_auto, build_year){
 	ERA_BRCREST : sw_ee40_brgreen_colours ;
 	sw_ee40_brblue ;
 }
@@ -184,6 +184,6 @@ item (FEAT_TRAINS, item_eetype4, 40){
 		create_effect                  : vfx_diesel_default ;
 		cargo_subtype_text             : sw_ee40_refit_text_check ;
 		cargo_capacity                 : return 0 ;
-		can_attach_wagon       : sw_all_but_MU90;
+		can_attach_wagon               : sw_all_but_MU90 ;
 	}
 }

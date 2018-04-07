@@ -8,6 +8,17 @@ template template_purchase_short(x,y){
 	[ x, y, 55, 12, -39, -6]
 }
 
+template base_32bpp(){
+	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //North
+	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //North East
+	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //East
+	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //South East
+	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //South
+	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //South West
+	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //West
+	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //North West
+}
+
 template template_dualhead_purchase(x,y){
 	[ x+77, y+11, 1, 1, 0, 0]
 	[ x+77, y+11, 1, 1, 0, 0]

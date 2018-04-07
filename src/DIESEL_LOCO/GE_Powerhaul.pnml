@@ -174,13 +174,14 @@ item(FEAT_TRAINS, item_powerhaul, 70){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default            : sw_powerhaul_spritestack ;
-		purchase           : sw_powerhaul_purchase ;
-		sound_effect       : sw_sfx_diesel_loco_modern ;
-		create_effect      : vfx_diesel_default ;
-		colour_mapping     : sw_powerhaul_colours_2cc_check ;
-		cargo_subtype_text : sw_powerhaul_refit_text_check ;
-		cargo_capacity     : return 0 ;
-		can_attach_wagon       : sw_all_but_MU90;
+		default                 : sw_powerhaul_spritestack ;
+		purchase                : sw_powerhaul_purchase ;
+		sound_effect            : sw_sfx_diesel_loco_modern ;
+		create_effect           : vfx_diesel_default ;
+		colour_mapping          : sw_powerhaul_colours_2cc_check ;
+		cargo_subtype_text      : sw_powerhaul_refit_text_check ;
+		purchase_cargo_capacity : 0 ;
+		cargo_capacity          : return 0 ;
+		can_attach_wagon        : sw_all_but_MU90;
 	}
 }

@@ -14,14 +14,18 @@ STR_PARAM_LIVERY_CHOICE_DESC :Liveries are chosen through the cargo refit menu i
 
 STR_LIVERY_BRGREEN                : British Railways Green
 STR_LIVERY_BRBLUE				  : British Railways Blue 
-STR_LIVERY_BRBLUE_LOGO            : British Railways Large Logo
+STR_LIVERY_BRBLUE_LOGO            : British Railways Large Logo {GOLD}(Blue)
+STR_LIVERY_BRRAILFREIGHT_LOGO     : British Railways Large Logo {GOLD}(Railfreight Grey)
 STR_LIVERY_BRBLUE_SUBTYPE		  : British Railways Blue {STRING}
 STR_LIVERY_INTERCITY			  : Intercity
 STR_LIVERY_REG_RAILWAYS			  : Regional Railways
 STR_LIVERY_NSE					  : Network South East
+STR_LIVERY_RAILFREIGHT            : Railfreight Two-Tone Grey {STRING}
 STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
 STR_LIVERY_CONNEX				  : Connex
 STR_LIVERY_DRS					  : Direct Rail Services
+STR_LIVERY_DRS_COMPASS            : Direct Rail Services {GOLD}(Compass)
+STR_LIVERY_EWS                    : English, Welsh & Scottish {GOLD}(EWS)
 STR_LIVERY_TPE_NEW				  : TransPennine Express
 STR_LIVERY_CAL_SLEEPER			  : Caledonian Sleeper
 STR_LIVERY_GBRF					  : First GBRf
@@ -30,17 +34,20 @@ STR_LIVERY_CHILTERN				  : Chiltern Railways
 STR_LIVERY_FREIGHTLINER           : Frieghtliner
 STR_LIVERY_FREIGHTLINER_POWERHAUL : Frieghtliner {GOLD}(Powerhaul)
 STR_LIVERY_COLAS				  : Colas Rail
-STR_LIVERY_SE_BLUE				  : Southeastern (Blue)
-STR_LIVERY_SE_YELLOW			  : Southeastern (Yellow)
+STR_LIVERY_SE_BLUE				  : Southeastern {GOLD}(Blue)
+STR_LIVERY_SE_YELLOW			  : Southeastern {GOLD}(Yellow)
 STR_LIVERY_WCRC					  : West Coast Railway Company
 STR_LIVERY_CRIMSON_CREAM		  : British Railways "Crimson Lake"
 STR_LIVERY_MAROON				  : British Railways Maroon
 STR_LIVERY_SWT					  : South West Trains
-STR_LIVERY_SWT_HERITAGE			  : South West Trains (Heritage Blue)
+STR_LIVERY_SWT_HERITAGE			  : South West Trains {GOLD}(Heritage Blue)
 STR_LIVERY_N_SPIRIT               : Northern Spirit
 STR_LIVERY_NORTHERN               : Northern
 STR_LIVERY_THAMESLINK             : Thameslink
 
+STR_SECTOR_GENERAL              :{GOLD}(General, Distribution)
+STR_SECTOR_COAL                 :{GOLD}(Coal)
+STR_SECTOR_METALS               :{GOLD}(Metals, Construction, Petroleum)
 
 STR_NAME_MK1					:Mark 1 Carriage
 STR_NAME_MK2					:BREL Mark 2 Carriage
@@ -49,7 +56,9 @@ STR_NAME_MK2F					:{GOLD}(Mk2f)
 STR_NAME_Mk3					:BREL Mark 3 Carriage
 STR_NAME_MU90					:Modern EMU car
 
+
 STR_NAME_87                  :BREL 87 (Electric)
+STR_NAME_EETYPE3			 :EE Type 3 (Diesel Electric)
 STR_NAME_EETYPE4			 :EE Whistler (Diesel Electric)
 STR_NAME_POWERHAUL			 :GE Powerhaul (Diesel Electric)
 STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
