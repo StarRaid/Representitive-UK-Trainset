@@ -202,15 +202,17 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfx_auto, build_year){
 
 
 switch(FEAT_TRAINS, SELF, sw_ee3_gfx_manual, cargo_subtype){
-	0    : sw_ee3_brgreen_reverse_check ;
-	1    : sw_ee3_brblue_reverse_check ;
-	4    : sw_ee3_regional_reverse_check ;
-	5..7 : sw_ee3_railfreight_reverse_check ;
-	8    : sw_ee3_drs_reverse_check ;
-	9    : sw_ee3_drscompass_reverse_check ;
-	10   : sw_ee3_ews_reverse_check ;
-	11   : sw_ee3_rog_reverse_check ;
-	12   : sw_ee3_colasrailfreight_reverse_check ;
+	0  : sw_ee3_brgreen_reverse_check ;
+	1  : sw_ee3_brblue_reverse_check ;
+	4  : sw_ee3_regional_reverse_check ;
+	5  : sw_ee3_railfreight_reverse_check ;
+	6  : sw_ee3_railfreight_black_reverse_check ;
+	7  : sw_ee3_railfreight_blue_reverse_check ;
+	8  : sw_ee3_drs_reverse_check ;
+	9  : sw_ee3_drscompass_reverse_check ;
+	10 : sw_ee3_ews_reverse_check ;
+	11 : sw_ee3_rog_reverse_check ;
+	12 : sw_ee3_colasrailfreight_reverse_check ;
 	sw_ee3_brlargelogo_reverse_check ;
 }
 
