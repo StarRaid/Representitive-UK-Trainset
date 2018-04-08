@@ -93,7 +93,7 @@ spriteset(gfx_ee3_railfreight_blue_reverse  , "gfx/DIESEL_LOCO/class_37_headcode
 spriteset(gfx_ee3_purchase_brgreen          , "gfx/DIESEL_LOCO/class_37.png"){template_purchase_short(178,0)}
 spriteset(gfx_ee3_purchase_brblue           , "gfx/DIESEL_LOCO/class_37.png"){template_purchase_short(178,25)}
 spriteset(gfx_ee3_purchase_brlargelogo      , "gfx/DIESEL_LOCO/class_37.png"){template_purchase_short(178,50)}
-spriteset(gfx_ee3_purchase_railfreight      , "gfx/DIESEL_LOCO/class_37.png"){template_purchase_short(178,100)}
+spriteset(gfx_ee3_purchase_regional         , "gfx/DIESEL_LOCO/class_37.png"){template_purchase_short(178,75)}
 spriteset(gfx_ee3_purchase_ews              , "gfx/DIESEL_LOCO/class_37.png"){template_purchase_short(178,150)}
 spriteset(gfx_ee3_purchase_colasrailfreight , "gfx/DIESEL_LOCO/class_37.png"){template_purchase_short(178,225)}
 
