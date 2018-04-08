@@ -64,10 +64,10 @@ spriteset(gfx_ee3_ews                 , "gfx/DIESEL_LOCO/class_37.png"){template
 spriteset(gfx_ee3_ews_reverse         , "gfx/DIESEL_LOCO/class_37.png"){template_ee3_reverse(0,150)}
 spriteset(gfx_ee3_rog                 , "gfx/DIESEL_LOCO/class_37.png"){template_ee3(0,175)}
 spriteset(gfx_ee3_rog_reverse         , "gfx/DIESEL_LOCO/class_37.png"){template_ee3_reverse(0,175)}
-spriteset(gfx_ee3_drscompass         , "gfx/DIESEL_LOCO/class_37.png"){template_ee3(0,200)}
-spriteset(gfx_ee3_drscompass_reverse , "gfx/DIESEL_LOCO/class_37.png"){template_ee3_reverse(0,200)}
-spriteset(gfx_ee3_colasrail          , "gfx/DIESEL_LOCO/class_37.png"){template_ee3(0,225)}
-spriteset(gfx_ee3_colasrail_reverse  , "gfx/DIESEL_LOCO/class_37.png"){template_ee3_reverse(0,225)}
+spriteset(gfx_ee3_drscompass          , "gfx/DIESEL_LOCO/class_37.png"){template_ee3(0,200)}
+spriteset(gfx_ee3_drscompass_reverse  , "gfx/DIESEL_LOCO/class_37.png"){template_ee3_reverse(0,200)}
+spriteset(gfx_ee3_colasrail           , "gfx/DIESEL_LOCO/class_37.png"){template_ee3(0,225)}
+spriteset(gfx_ee3_colasrail_reverse   , "gfx/DIESEL_LOCO/class_37.png"){template_ee3_reverse(0,225)}
 
 spriteset(gfx_ee3_headcode_brgreen_split          , "gfx/DIESEL_LOCO/class_37_headcodes.png"){template_ee3(0,0)}
 spriteset(gfx_ee3_headcode_brgreen_centre         , "gfx/DIESEL_LOCO/class_37_headcodes.png"){template_ee3(0,25)}
@@ -102,10 +102,10 @@ spriteset(gfx_ee3_dirt_light_reverse        , "gfx/FIXTURES/class_37_dirt.png"){
 spriteset(gfx_ee3_dirt_dark                 , "gfx/FIXTURES/class_37_dirt.png"){base_32bpp()}
 spriteset(gfx_ee3_dirt_dark_reverse         , "gfx/FIXTURES/class_37_dirt.png"){base_32bpp()}
 
-spriteset(gfx_ee3_dirt_light                , "gfx/FIXTURES/class_37_dirt.png"){template_ee3_dirt(0,0,"gfx/FIXTURES/class_37_dirt.png")}
-spriteset(gfx_ee3_dirt_light_reverse        , "gfx/FIXTURES/class_37_dirt.png"){template_ee3_dirt(0,0,"gfx/FIXTURES/class_37_dirt.png")}
-spriteset(gfx_ee3_dirt_dark                 , "gfx/FIXTURES/class_37_dirt.png"){template_ee3_dirt(48,0,"gfx/FIXTURES/class_37_dirt.png")}
-spriteset(gfx_ee3_dirt_dark_reverse         , "gfx/FIXTURES/class_37_dirt.png"){template_ee3_dirt(48,0,"gfx/FIXTURES/class_37_dirt.png")}
+alternative_sprites(gfx_ee3_dirt_light                , ZOOM_LEVEL_IN_2X, "gfx/FIXTURES/class_37_dirt.png"){template_ee3_dirt(0,0,"gfx/FIXTURES/class_37_dirt.png")}
+alternative_sprites(gfx_ee3_dirt_light_reverse        , ZOOM_LEVEL_IN_2X, "gfx/FIXTURES/class_37_dirt.png"){template_ee3_dirt(0,0,"gfx/FIXTURES/class_37_dirt.png")}
+alternative_sprites(gfx_ee3_dirt_dark                 , ZOOM_LEVEL_IN_2X, "gfx/FIXTURES/class_37_dirt.png"){template_ee3_dirt(48,0,"gfx/FIXTURES/class_37_dirt.png")}
+alternative_sprites(gfx_ee3_dirt_dark_reverse         , ZOOM_LEVEL_IN_2X, "gfx/FIXTURES/class_37_dirt.png"){template_ee3_dirt(48,0,"gfx/FIXTURES/class_37_dirt.png")}
 
 
 /*
