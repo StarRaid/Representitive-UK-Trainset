@@ -1214,7 +1214,8 @@ switch(FEAT_TRAINS, SELF, sw_ee3_lights_new_front , position_in_consist){ 0 : gf
 
 
 
-switch(FEAT_TRAINS, SELF, sw_ee3_railfreight_sector_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, PARENT, sw_ee3_sector_gfx_decider, cargo_classes_in_consist){
+ CC_PASSENGERS : sw_ee3_regional_reverse_check ;
  CC_BULK : sw_ee3_railfreight_black_reverse_check ;
  CC_LIQUID : sw_ee3_railfreight_blue_reverse_check ;
  CC_COVERED : sw_ee3_railfreight_blue_reverse_check ;
@@ -1223,18 +1224,12 @@ switch(FEAT_TRAINS, SELF, sw_ee3_railfreight_sector_decider, cargo_classes_in_co
  sw_ee3_railfreight_reverse_check ;
 }
 
-
-switch(FEAT_TRAINS, SELF, sw_ee3_sector_gfx_decider, cargo_classes_in_consist){
- CC_PASSENGERS : sw_ee3_regional_reverse_check ;
- sw_ee3_railfreight_sector_decider ;
-}
-
 random_switch(FEAT_TRAINS, SELF, sw_ee3_privatisation1_random, TRIGGER_VEHICLE_SERVICE){
  2 : sw_ee3_drs_reverse_check ;
  1 : sw_ee3_ews_reverse_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_ee3_privatisation2_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, PARENT, sw_ee3_privatisation2_decider, cargo_classes_in_consist){
  CC_PASSENGERS : sw_ee3_drscompass_reverse_check ;
  CC_MAIL : sw_ee3_drscompass_reverse_check ;
  CC_HAZARDOUS : sw_ee3_drscompass_reverse_check ;
@@ -1321,7 +1316,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_newlights_random, TRIGGER_VEHICLE_
 
 //Auto
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_sector_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_sector_decider, cargo_classes_in_consist){
  CC_PASSENGERS : gfx_ee3_headcode_centre ;
  sw_ee3_gfxhc_standard_3 ;
 }
@@ -1332,7 +1327,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_privatisation1_decider, TRIGGER_VE
  1 : sw_ee3_gfxhc_standard_3 ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_privatisation2_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_privatisation2_decider, cargo_classes_in_consist){
  CC_PASSENGERS : sw_ee3_gfxhc_standard_any ;
  CC_MAIL : sw_ee3_gfxhc_standard_any ;
  CC_HAZARDOUS : sw_ee3_gfxhc_standard_any ;
@@ -1414,7 +1409,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_newlights, TRIGGER_VEHICLE_SERVICE
 
 //Auto
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_sector_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_sector_decider, cargo_classes_in_consist){
  CC_PASSENGERS : sw_ee3_lights_centre_front ;
  sw_ee3_gfxlt_standard_3 ;
 }
@@ -1425,7 +1420,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_privatisation1_decider, TRIGGER_VE
  1 : sw_ee3_gfxlt_standard_3 ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_privatisation2_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_privatisation2_decider, cargo_classes_in_consist){
  CC_PASSENGERS : sw_ee3_gfxlt_standard_any ;
  CC_MAIL : sw_ee3_gfxlt_standard_any ;
  CC_HAZARDOUS : sw_ee3_gfxlt_standard_any ;
@@ -1924,7 +1919,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase, current_year){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, cargo_classes_in_consist){
  CC_PIECE_GOODS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  CC_OVERSIZED : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  CC_PASSENGERS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
