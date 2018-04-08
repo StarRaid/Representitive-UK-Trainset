@@ -83,10 +83,10 @@ spriteset(gfx_ee3_headcode_centre_newlights       , "gfx/FIXTURES/class_37_headc
 spriteset(gfx_ee3_headcode_newlights_headlight    , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(178,125)}
 spriteset(gfx_ee3_headcode_newlights_taillight    , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(356,125)}
 
-spriteset(gfx_ee3_railfreight_black       	, "gfx/FIXTURES/class_37.png"){template_ee3(235,100)}
-spriteset(gfx_ee3_railfreight_black_reverse	, "gfx/FIXTURES/class_37.png"){template_ee3_reverse(235,100)}
-spriteset(gfx_ee3_railfreight_blue          , "gfx/FIXTURES/class_37.png"){template_ee3(413,100)}
-spriteset(gfx_ee3_railfreight_blue_reverse  , "gfx/FIXTURES/class_37.png"){template_ee3_reverse(413,100)}
+spriteset(gfx_ee3_railfreight_black       	, "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(178,175)}
+spriteset(gfx_ee3_railfreight_black_reverse	, "gfx/FIXTURES/class_37_headcodes.png"){template_ee3_reverse(178,175)}
+spriteset(gfx_ee3_railfreight_blue          , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(356,175)}
+spriteset(gfx_ee3_railfreight_blue_reverse  , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3_reverse(356,175)}
 
 spriteset(gfx_ee3_purchase_brgreen          , "gfx/DIESEL_LOCO/class_37.png"){template_purchase_short(178,0)}
 spriteset(gfx_ee3_purchase_brblue           , "gfx/DIESEL_LOCO/class_37.png"){template_purchase_short(178,25)}

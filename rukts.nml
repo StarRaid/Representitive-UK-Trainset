@@ -239,7 +239,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee_coast_decider, current_speed){
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_old, getbits(extra_callback_info1, 0, 8)){
  SOUND_EVENT_STOPPED : sound("sfx/86_idle.wav") ;
  //SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
- SOUND_EVENT_RUNNING : sw_sfx_electric_old_running ;
+ SOUND_EVENT_RUNNING_16 : sw_sfx_electric_old_running ;
  SOUND_EVENT_START : sound("sfx/86_depart.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/40_horn.wav") ;
@@ -248,7 +248,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_old, getbits(extra_callback_info1
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_modern, getbits(extra_callback_info1, 0, 8)){
  SOUND_EVENT_STOPPED : sound("sfx/800_idle.wav") ;
  //SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
- SOUND_EVENT_RUNNING : sw_sfx_electric_modern_running ;
+ SOUND_EVENT_RUNNING_16 : sw_sfx_electric_modern_running ;
  SOUND_EVENT_START : sound("sfx/40_horn.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/40_horn.wav") ;
@@ -257,7 +257,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_modern, getbits(extra_callback_in
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_modern, getbits(extra_callback_info1, 0, 8)){
  SOUND_EVENT_STOPPED : sound("sfx/70_idle.wav") ;
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/70_run.wav") ;
- SOUND_EVENT_RUNNING : sound("sfx/70_coast.wav") ;
+ SOUND_EVENT_RUNNING_16 : sound("sfx/70_coast.wav") ;
  SOUND_EVENT_START : sound("sfx/70_horn.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/70_horn.wav") ;
@@ -266,7 +266,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_modern, getbits(extra_callback_info
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee, getbits(extra_callback_info1, 0, 8)){
  SOUND_EVENT_STOPPED : sound("sfx/40_idle.wav") ;
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/40_run.wav") ;
- SOUND_EVENT_RUNNING : sound("sfx/40_coast.wav") ;
+ SOUND_EVENT_RUNNING_16 : sound("sfx/40_coast.wav") ;
  SOUND_EVENT_START : sound("sfx/40_horn.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/40_horn.wav") ;
@@ -275,7 +275,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee, getbits(extra_callback_info1, 0
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2, getbits(extra_callback_info1, 0, 8)){
  SOUND_EVENT_STOPPED : sound("sfx/ee_idle.wav") ;
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_run.wav") ;
- SOUND_EVENT_RUNNING : sw_ee_coast_decider ;
+ SOUND_EVENT_RUNNING_16 : sw_ee_coast_decider ;
  SOUND_EVENT_START : sound("sfx/40_horn.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/40_horn.wav") ;
@@ -284,7 +284,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2, getbits(extra_callback_info1,
 switch(FEAT_TRAINS, SELF, sw_sfx_desiro, getbits(extra_callback_info1, 0, 8)){
  //SOUND_EVENT_STOPPED       : sound("sfx/.wav") ;
  //SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
- SOUND_EVENT_RUNNING : sw_sfx_desiro_running ;
+ SOUND_EVENT_RUNNING_16 : sw_sfx_desiro_running ;
  SOUND_EVENT_START : sound("sfx/40_horn.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/40_horn.wav") ;
@@ -293,7 +293,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_desiro, getbits(extra_callback_info1, 0, 8)){
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
  SOUND_EVENT_STOPPED : sound("sfx/dmu_idle.wav") ;
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/dmu_run.wav") ;
- SOUND_EVENT_RUNNING : sound("sfx/dmu_coast.wav") ;
+ SOUND_EVENT_RUNNING_16 : sound("sfx/dmu_coast.wav") ;
  SOUND_EVENT_START : sound("sfx/222_horn.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/222_horn.wav") ;
@@ -1130,8 +1130,6 @@ spriteset(gfx_ee3_headcode_centre_newlights , "gfx/FIXTURES/class_37_headcodes.p
 spriteset(gfx_ee3_headcode_newlights_headlight , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(178,125)}
 spriteset(gfx_ee3_headcode_newlights_taillight , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(356,125)}
 
-spriteset(gfx_ee3_railfreight_red , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(0,175)}
-spriteset(gfx_ee3_railfreight_red_reverse , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3_reverse(0,175)}
 spriteset(gfx_ee3_railfreight_black , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(178,175)}
 spriteset(gfx_ee3_railfreight_black_reverse , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3_reverse(178,175)}
 spriteset(gfx_ee3_railfreight_blue , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(356,175)}
@@ -1179,7 +1177,7 @@ DRS Compass
 Colas Railfreight
 
 */
-# 125 "src/DIESEL_LOCO/EE_Type3.pnml"
+# 123 "src/DIESEL_LOCO/EE_Type3.pnml"
 //Reversal checks
 
 switch(FEAT_TRAINS, PARENT, sw_ee3_brgreen_reverse_check , vehicle_is_reversed){ 1 : gfx_ee3_brgreen_reverse ; gfx_ee3_brgreen ; }
@@ -1193,7 +1191,6 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_rog_reverse_check , vehicle_is_reversed){ 1 :
 switch(FEAT_TRAINS, PARENT, sw_ee3_drscompass_reverse_check , vehicle_is_reversed){ 1 : gfx_ee3_drscompass_reverse ; gfx_ee3_drscompass ; }
 switch(FEAT_TRAINS, PARENT, sw_ee3_colasrailfreight_reverse_check , vehicle_is_reversed){ 1 : gfx_ee3_colasrail_reverse ; gfx_ee3_colasrail ; }
 
-switch(FEAT_TRAINS, PARENT, sw_ee3_railfreight_red_reverse_check , vehicle_is_reversed){ 1 : gfx_ee3_railfreight_red_reverse ; gfx_ee3_railfreight_red ; }
 switch(FEAT_TRAINS, PARENT, sw_ee3_railfreight_black_reverse_check , vehicle_is_reversed){ 1 : gfx_ee3_railfreight_black_reverse ; gfx_ee3_railfreight_black ; }
 switch(FEAT_TRAINS, PARENT, sw_ee3_railfreight_blue_reverse_check , vehicle_is_reversed){ 1 : gfx_ee3_railfreight_blue_reverse ; gfx_ee3_railfreight_blue ; }
 
@@ -1207,29 +1204,29 @@ switch(FEAT_TRAINS, SELF, sw_ee3_lights_centre_front , position_in_consist){ 0 :
 switch(FEAT_TRAINS, SELF, sw_ee3_lights_new_back , position_in_consist_from_end){ 0 : gfx_ee3_headcode_newlights_taillight ; }
 switch(FEAT_TRAINS, SELF, sw_ee3_lights_new_front , position_in_consist){ 0 : gfx_ee3_headcode_newlights_headlight ; sw_ee3_lights_new_back ; }
 
+
+
+
+
 //Graphics
 
 //Base
 
 
-switch(FEAT_TRAINS, PARENT, sw_ee3_railfreight_sector_decider, cargo_classes_in_consist){
+
+switch(FEAT_TRAINS, SELF, sw_ee3_railfreight_sector_decider, cargo_classes_in_consist){
  CC_BULK : sw_ee3_railfreight_black_reverse_check ;
  CC_LIQUID : sw_ee3_railfreight_blue_reverse_check ;
  CC_COVERED : sw_ee3_railfreight_blue_reverse_check ;
  CC_OVERSIZED : sw_ee3_railfreight_blue_reverse_check ;
  CC_POWDERIZED : sw_ee3_railfreight_blue_reverse_check ;
- sw_ee3_railfreight_red_reverse_check ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_ee3_railfreight_sector_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
- 0 : sw_ee3_railfreight_reverse_check ;
- 1 : sw_ee3_railfreight_sector_decider ;
+ sw_ee3_railfreight_reverse_check ;
 }
 
 
 switch(FEAT_TRAINS, PARENT, sw_ee3_sector_gfx_decider, cargo_classes_in_consist){
  CC_PASSENGERS : sw_ee3_regional_reverse_check ;
- sw_ee3_railfreight_sector_spritestack ;
+ sw_ee3_railfreight_sector_decider ;
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_ee3_privatisation1_random, TRIGGER_VEHICLE_SERVICE){
@@ -1280,6 +1277,8 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfx_manual_check, livery_choice){
  1 : sw_ee3_gfx_manual ;
  sw_ee3_gfx_auto ;
 }
+
+
 
 
 
@@ -1369,6 +1368,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_manual_check, livery_choice){
  1 : sw_ee3_gfxhc_manual ;
  sw_ee3_gfxhc_auto ;
 }
+
 
 
 
@@ -1470,7 +1470,6 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_manual_check, livery_choice){
 switch(FEAT_TRAINS, SELF, sw_ee3_dirt, age_in_days){
  3650 : sw_ee3_dirt_light_reverse_check ;
  9125 : sw_ee3_dirt_dark_reverse_check ;
- return 0 ;
 }
 
 
@@ -1479,8 +1478,8 @@ switch(FEAT_TRAINS, SELF, sw_ee3_dirt, age_in_days){
 switch(FEAT_TRAINS, SELF, sw_ee3_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
  0 : sw_ee3_gfx_manual_check ; //Base
  1 : sw_ee3_gfxhc_manual_check ; //Headcodes
- 2 : sw_ee3_dirt ; //Dirt
- 3 : sw_ee3_gfxlt_manual_check ; //Lights
+ 2 : sw_ee3_gfxlt_manual_check ; //Lights
+ 3 : sw_ee3_dirt ; //Dirt
 }
 
 
@@ -1527,7 +1526,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_purchase, current_year){
 //Colour mapping
 
 
-switch(FEAT_TRAINS, SELF, sw_ee3_colours_auto, current_year){
+switch(FEAT_TRAINS, SELF, sw_ee3_colours_auto, build_year){
  1948 .. 1966 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
  1967..1982 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
  1983..1986 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
@@ -1559,6 +1558,16 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_manual_check, livery_choice){
 switch(FEAT_TRAINS, SELF, sw_ee3_colours_2cc_check, colour_scheme_1){
  1 : sw_ee3_colours_manual_check ;
  palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_ee3_colours_purchase, current_year){
+ 1948 .. 1966 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+ 1967..1982 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+ 1983..1986 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+ 1987..1995 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+ 1996..2008 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+ 2009..4096 : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
 
@@ -1595,6 +1604,7 @@ item (FEAT_TRAINS, item_eetype3, 37){
  graphics{
   default : sw_ee3_spritestack ;
   colour_mapping : sw_ee3_colours_2cc_check ;
+  purchase_colour_mapping : sw_ee3_colours_purchase ;
   purchase : sw_ee3_purchase ;
   sound_effect : sw_sfx_diesel_loco_ee_2 ;
   create_effect : vfx_diesel_default ;
