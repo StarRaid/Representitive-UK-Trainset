@@ -353,21 +353,37 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_newlights, TRIGGER_VEHICLE_SERVICE
 
 //Auto
 
-switch(FEAT_TRAINS, SELF, sw
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_sector_decider, cargo_classes_in_consist){
+	CC_PASSENGERS : sw_ee3_lights_centre_front ;
+	sw_ee3_gfxlt_standard_3 ;
+}
 
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_privatisation1_decider, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_privatisation1_random ;
+	2 : sw_ee3_gfxlt_standard_any ;
+	1 : sw_ee3_gfxlt_standard_3 ;
+}
 
-
-
-
-
-
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_privatisation2_decider, cargo_classes_in_consist){
+	CC_PASSENGERS : sw_ee3_gfxlt_standard_any ;
+	CC_MAIL       : sw_ee3_gfxlt_standard_any ;
+	CC_HAZARDOUS  : sw_ee3_gfxlt_standard_any ;
+	CC_BULK       : sw_ee3_gfxlt_standard_3 ;
+	CC_COVERED    : sw_ee3_gfxlt_standard_3 ;
+	CC_OVERSIZED  : sw_ee3_gfxlt_standard_3 ;
+	CC_POWDERIZED : sw_ee3_gfxlt_standard_3 ;
+	sw_ee3_gfxlt_newlights ;
+}
 
 
 switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_auto, build_year){
 	ERA_BRCREST : sw_ee3_gfxlt_brgreen_random ;
-	1987..1995  : sw_ee3_gfxlt_ ;
+	1987..1995  : sw_ee3_gfxlt_sector_decider ;
+	1996..2008  : sw_ee3_gfxlt_privatisation1_decider ;
+	2009..4096  : sw_ee3_gfxlt_privatisation2_decider ;
 	sw_ee3_gfxlt_standard_random ;
 }
+
 
 
 //Manual
