@@ -1,27 +1,28 @@
 grf{
-	grfid: "RUKT";
-	name: string(STR_GRF_NAME);
-	desc: string(STR_GRF_DESC);
-	version: 1;
-	min_compatible_version: 0;
+	grfid: "RUKT" ;
+	name: string(STR_GRF_NAME) ;
+	desc: string(STR_GRF_DESC) ;
+	version: 1 ;
+	min_compatible_version: 0 ;
 	param 0{
 		colour_scheme_1{
-			type: bool;
-			name: string(STR_PARAM_COLOURSCHEME_NAME);
-			desc: string(STR_PARAM_COLOURSCHEME_DESC);
-			bit : 1;
+			type    : bool ;
+			name    : string(STR_PARAM_COLOURSCHEME_NAME) ;
+			desc    : string(STR_PARAM_COLOURSCHEME_DESC) ;
+			bit     : 1 ;
+			default : 1 ;
 		}
 		coaches_take_mail{
-			type: bool;
-			name: string(STR_PARAM_COACHMAIL_NAME);
-			desc: string(STR_PARAM_COACHMAIL_DESC);
-			bit : 2;
+			type : bool ;
+			name : string(STR_PARAM_COACHMAIL_NAME) ;
+			desc : string(STR_PARAM_COACHMAIL_DESC) ;
+			bit  : 2 ;
 		}
 		livery_choice{
-			type: bool;
-			name: string(STR_PARAM_LIVERY_CHOICE_NAME);
-			desc: string(STR_PARAM_LIVERY_CHOICE_DESC);
-			bit : 3;
+			type : bool ;
+			name : string(STR_PARAM_LIVERY_CHOICE_NAME) ;
+			desc : string(STR_PARAM_LIVERY_CHOICE_DESC) ;
+			bit  : 3 ;
 		}
 	}
 }

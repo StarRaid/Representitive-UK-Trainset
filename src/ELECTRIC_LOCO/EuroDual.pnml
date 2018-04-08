@@ -73,13 +73,14 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default                : sw_eurodual_spritestack ;
-		purchase               : gfx_eurodual_drs_purchase ;
-		colour_mapping         : sw_eurodual_colours ;
-		sound_effect           : sw_eurodual_sfx_decider ;
-		create_effect          : sw_eurodual_effect_decider ;
-		cargo_capacity         : return 0 ;
+		default                 : sw_eurodual_spritestack ;
+		purchase                : gfx_eurodual_drs_purchase ;
+		colour_mapping          : sw_eurodual_colours ;
+		sound_effect            : sw_eurodual_sfx_decider ;
+		create_effect           : sw_eurodual_effect_decider ;
+		purchase_cargo_capacity : 0 ;
+		cargo_capacity          : return 0 ;
 		power: (current_railtype == ELRL) ? 5364 : 986;
-		can_attach_wagon       : sw_all_but_MU90;
+		can_attach_wagon        : sw_all_but_MU90;
 	}
 }

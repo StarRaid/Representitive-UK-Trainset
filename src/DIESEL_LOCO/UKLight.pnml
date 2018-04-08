@@ -67,7 +67,7 @@ switch(FEAT_TRAINS, SELF, sw_uklight_purchase, current_year){
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_uklight_refit_text, cargo_subtype){
-	0 : string(STR_LIVERY_DRS) ;
+	0 : string(STR_LIVERY_DRS_COMPASS) ;
 	1 : string(STR_LIVERY_TPE_NEW) ;
 	CB_RESULT_NO_TEXT ;
 }
@@ -139,13 +139,14 @@ item (FEAT_TRAINS, item_uklight, 68){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default                : sw_uklight_spritestack ;
-		purchase               : sw_uklight_purchase ;
-		colour_mapping         : sw_uklight_colours_2cc_check ;
-		sound_effect           : sw_sfx_diesel_loco_modern ;
-		create_effect          : vfx_diesel_default ;
-		cargo_subtype_text     : sw_uklight_refit_text_check ;
-		cargo_capacity         : return 0 ;
-		can_attach_wagon       : sw_all_but_MU90;
+		default                 : sw_uklight_spritestack ;
+		purchase                : sw_uklight_purchase ;
+		colour_mapping          : sw_uklight_colours_2cc_check ;
+		sound_effect            : sw_sfx_diesel_loco_modern ;
+		create_effect           : vfx_diesel_default ;
+		cargo_subtype_text      : sw_uklight_refit_text_check ;
+		purchase_cargo_capacity : 0 ;
+		cargo_capacity          : return 0 ;
+		can_attach_wagon        : sw_all_but_MU90;
 	}
 }

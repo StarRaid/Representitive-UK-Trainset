@@ -44,7 +44,7 @@ switch(FEAT_TRAINS, SELF, sw_br87_gfx_privatised, most_common_refit){
 	sw_br87_gfx_gbrf ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_br87_gfx_auto, current_year){
+switch(FEAT_TRAINS, SELF, sw_br87_gfx_auto, build_year){
 	ERA_BRBLUETOPS : sw_br87_gfx_brblue ;
 	ERA_SECTORISATION : sw_br87_gfx_intercity ;
 	ERA_PRIVATISATION1 : sw_br87_gfx_virgin ;
@@ -128,7 +128,7 @@ switch(FEAT_TRAINS, SELF, sw_br87_privatised_colours, most_common_refit){
 	sw_br87_gbrf_colours ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_br87_colours_auto, current_year){
+switch(FEAT_TRAINS, SELF, sw_br87_colours_auto, build_year){
 	ERA_BRBLUETOPS     : sw_br87_brblue_colours ;
 	ERA_SECTORISATION  : sw_br87_sectorised_colours ;
 	ERA_PRIVATISATION1 : sw_br87_virgin_colours ;
@@ -188,13 +188,14 @@ item (FEAT_TRAINS, item_br87, 87){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default            : sw_br87_sprite_stack ;
-		purchase           : sw_br87_purchase ;
-		sound_effect       : sw_sfx_electric_loco_old ;
-		create_effect      : vfx_ohle ;
-		colour_mapping     : sw_br87_colours_2cc_check ;
-		cargo_subtype_text : sw_br87_refit_text_checker ;
-		cargo_capacity     : return 0 ;
-		can_attach_wagon       : sw_all_but_MU90;
+		default                 : sw_br87_sprite_stack ;
+		purchase                : sw_br87_purchase ;
+		sound_effect            : sw_sfx_electric_loco_old ;
+		create_effect           : vfx_ohle ;
+		colour_mapping          : sw_br87_colours_2cc_check ;
+		cargo_subtype_text      : sw_br87_refit_text_checker ;
+		purchase_cargo_capacity : 0 ;
+		cargo_capacity          : return 0 ;
+		can_attach_wagon        : sw_all_but_MU90;
 	}
 }

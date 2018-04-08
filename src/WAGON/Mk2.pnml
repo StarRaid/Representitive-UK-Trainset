@@ -88,7 +88,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2a_regional_back, position_in_vehid_chain_from_en
 random_switch(FEAT_TRAINS, SELF, sw_mk2a_brblue    , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2a_brblue_back ;}
 random_switch(FEAT_TRAINS, SELF, sw_mk2a_regional  , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2a_regional_back ;}
 
-switch(FEAT_TRAINS, SELF, sw_mk2a_livery_decider, current_year){
+switch(FEAT_TRAINS, SELF, sw_mk2a_livery_decider, build_year){
 	ERA_BRBLUE         : sw_mk2a_brblue ;
 	ERA_BRBLUETOPS     : sw_mk2a_brblue ;
 	ERA_SECTORISATION  : sw_mk2a_regional ;
@@ -118,7 +118,7 @@ random_switch(FEAT_TRAINS, SELF, sw_mk2f_intercity , TRIGGER_VEHICLE_SERVICE){ 1
 random_switch(FEAT_TRAINS, SELF, sw_mk2f_virgin    , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_virgin_back ;}
 random_switch(FEAT_TRAINS, SELF, sw_mk2f_directrail, TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_directrail_back ;}
 
-switch(FEAT_TRAINS, SELF, sw_mk2f_livery_decider, current_year){
+switch(FEAT_TRAINS, SELF, sw_mk2f_livery_decider, build_year){
 	ERA_BRBLUE         : sw_mk2f_brblue ;
 	ERA_BRBLUETOPS     : sw_mk2f_brblue ;
 	ERA_SECTORISATION  : sw_mk2f_intercity ;
@@ -199,7 +199,7 @@ random_switch(FEAT_TRAINS, SELF, sw_mk2_brblue_colour_mapping, TRIGGER_VEHICLE_S
 random_switch(FEAT_TRAINS, SELF, sw_mk2_random_sectorised_colourmapping, TRIGGER_VEHICLE_SERVICE){ 2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ; 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ; }
 random_switch(FEAT_TRAINS, SELF, sw_mk2_random_privatised_colourmapping){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ; 2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ; }
 
-switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_a, current_year){
+switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_a, build_year){
 	ERA_BRBLUE         : sw_mk2_brblue_colour_mapping ;
 	ERA_BRBLUETOPS     : sw_mk2_brblue_colour_mapping ;
 	ERA_SECTORISATION  : sw_mk2_random_sectorised_colourmapping ;
@@ -212,7 +212,7 @@ random_switch(FEAT_TRAINS, SELF, sw_mk2_intercity_colour_mapping, TRIGGER_VEHICL
 random_switch(FEAT_TRAINS, SELF, sw_mk2_virgin_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_RED, COLOUR_WHITE) ; }
 random_switch(FEAT_TRAINS, SELF, sw_mk2_directrail_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ; }
 
-switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_f, current_year){
+switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_f, build_year){
 	ERA_BRBLUE         : sw_mk2_brblue_colour_mapping ;
     ERA_BRBLUETOPS     : sw_mk2_brblue_colour_mapping ;
     ERA_SECTORISATION  : sw_mk2_intercity_colour_mapping ;
