@@ -10,7 +10,7 @@ grf{
 			name    : string(STR_PARAM_COLOURSCHEME_NAME) ;
 			desc    : string(STR_PARAM_COLOURSCHEME_DESC) ;
 			bit     : 1 ;
-			default : 1 ;
+			def_value : 1 ;
 		}
 		coaches_take_mail{
 			type : bool ;

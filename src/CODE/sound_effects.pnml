@@ -25,7 +25,7 @@ switch(FEAT_TRAINS, PARENT, sw_sfx_desiro_running, current_speed){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_ee_coast_decider, current_speed){
-	0..18 ; sound("sfx/ee_coast_2.wav") ;
+	0..18 : sound("sfx/ee_coast_2.wav") ;
 	sound("sfx/ee_coast.wav") ;
 }
 
