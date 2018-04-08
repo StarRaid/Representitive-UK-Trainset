@@ -464,12 +464,28 @@ switch(FEAT_TRAINS, SELF, sw_ee3_purchase, current_year){
 
 //Colour mapping
 
+switch(FEAT_TRAINS, PARENT, sw_ee3_colours_sectorised, most_common_refit){
+	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;	
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_colours_privatisation1_decider, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_privatisation1_random ;
+	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_colours_privatisation2_decider, most_common_refit){
+	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	GOOD : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
 
 switch(FEAT_TRAINS, SELF, sw_ee3_colours_auto, build_year){
 	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 	1967..1982  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	1983..1986  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1987..1995  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	1987..1995  : sw_ee3_colours_sectorised ;
 	1996..2008  : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	2009..4096  : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
