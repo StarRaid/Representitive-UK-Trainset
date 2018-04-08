@@ -48,7 +48,7 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_rev
 
 //Automatic
 
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, cargo_classes_in_consist){
 	CC_PIECE_GOODS : sw_powerhaul_gfx_fliner_reverse_check ;
 	CC_OVERSIZED   : sw_powerhaul_gfx_fliner_reverse_check ;
 	CC_PASSENGERS  : sw_powerhaul_gfx_fliner_reverse_check ;
@@ -113,7 +113,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase, current_year){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, cargo_classes_in_consist){
 	CC_PIECE_GOODS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	CC_OVERSIZED : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	CC_PASSENGERS : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
