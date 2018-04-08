@@ -141,6 +141,13 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_railfreight_blue_reverse_check   , vehicle_is
 switch(FEAT_TRAINS, PARENT, sw_ee3_dirt_light_reverse_check , vehicle_is_reversed){ 1 : gfx_ee3_dirt_light_reverse ; gfx_ee3_dirt_light ; }
 switch(FEAT_TRAINS, PARENT, sw_ee3_dirt_dark_reverse_check  , vehicle_is_reversed){ 1 : gfx_ee3_dirt_dark_reverse  ; gfx_ee3_dirt_dark  ; }
 
+switch(FEAT_TRAINS, SELF, sw_ee3_lights_split_back   , position_in_consist_from_end){ 0 : gfx_ee3_headcode_split_taillight ; }
+switch(FEAT_TRAINS, SELF, sw_ee3_lights_split_front  , position_in_consist){          0 : gfx_ee3_headcode_split_headlight ; sw_ee3_lights_split_back ; }
+switch(FEAT_TRAINS, SELF, sw_ee3_lights_centre_back  , position_in_consist_from_end){ 0 : gfx_ee3_headcode_centre_taillight ; }
+switch(FEAT_TRAINS, SELF, sw_ee3_lights_centre_front , position_in_consist){          0 : gfx_ee3_headcode_centre_headlight ; sw_ee3_lights_centre_back ; }
+switch(FEAT_TRAINS, SELF, sw_ee3_lights_new_back     , position_in_consist_from_end){ 0 : gfx_ee3_headcode_newlights_taillight ; }
+switch(FEAT_TRAINS, SELF, sw_ee3_lights_new_front    , position_in_consist){          0 : gfx_ee3_headcode_newlights_headlight ; sw_ee3_lights_new_back ; }
+
 //Graphics
 
 //Base
@@ -171,7 +178,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_privatisation1_random, TRIGGER_VEHICLE_S
 	1 : sw_ee3_ews_reverse_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_ee3_privatisation2_decider, cargo_classes_in_consist){
+switch(FEAT_TRAINS, PARENT, sw_ee3_privatisation2_decider, cargo_classes_in_consist){
 	CC_PASSENGERS : sw_ee3_drscompass_reverse_check ;
 	CC_MAIL       : sw_ee3_drscompass_reverse_check ;
 	CC_HAZARDOUS  : sw_ee3_drscompass_reverse_check ;
@@ -190,6 +197,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfx_auto, build_year){
 	2009..4096  : sw_ee3_privatisation2_decider ;
 	sw_ee3_brlargelogo_reverse_check ;
 }
+
 
 
 //Manual
@@ -215,27 +223,137 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfx_manual_check, livery_choice){
 }
 
 
+
+
 //Headcodes
 
+//Random switches
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_brgreen_random, TRIGGER_VEHICLE_SERVICE){
+	2 : gfx_ee3_headcode_brgreen_split ;
+	1 : gfx_ee3_headcode_brgreen_centre ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_standard_random, TRIGGER_VEHICLE_SERVICE){
+	2 : gfx_ee3_headcode_split ;
+	1 : gfx_ee3_headcode_centre ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_standard_3, TRIGGER_VEHICLE_SERVICE){
+	1 : gfx_ee3_headcode_none ;
+	1 : gfx_ee3_headcode_centre ;
+	1 : gfx_ee3_headcode_split ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_standard_any, TRIGGER_VEHICLE_SERVICE){
+	1 : gfx_ee3_headcode_split ;
+	1 : gfx_ee3_headcode_centre ;
+	1 : gfx_ee3_headcode_none ;
+	1 : gfx_ee3_headcode_none_newlights ;
+	1 : gfx_ee3_headcode_centre_newlights ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_newlights_random, TRIGGER_VEHICLE_SERVICE){
+	1 : gfx_ee3_headcode_none_newlights ;
+	1 : gfx_ee3_headcode_centre_newlights ;
+}
 
 
+//Auto
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_sector_decider, cargo_classes_in_consist){
+	CC_PASSENGERS : gfx_ee3_headcode_centre ;
+	sw_ee3_gfxhc_standard_3 ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_privatisation1_decider, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_privatisation1_random ;
+	2 : sw_ee3_gfxhc_standard_any ;
+	1 : sw_ee3_gfxhc_standard_3 ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_privatisation2_decider, cargo_classes_in_consist){
+	CC_PASSENGERS : sw_ee3_gfxhc_standard_any ;
+	CC_MAIL       : sw_ee3_gfxhc_standard_any ;
+	CC_HAZARDOUS  : sw_ee3_gfxhc_standard_any ;
+	CC_BULK       : sw_ee3_gfxhc_standard_3 ;
+	CC_COVERED    : sw_ee3_gfxhc_standard_3 ;
+	CC_OVERSIZED  : sw_ee3_gfxhc_standard_3 ;
+	CC_POWDERIZED : sw_ee3_gfxhc_standard_3 ;
+	sw_ee3_gfxhc_newlights_random ;
+}
 
 
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_auto, build_year){
+	ERA_BRCREST : sw_ee3_gfxhc_brgreen_random ;
+	1987..1995  : sw_ee3_gfxhc_sector_decider ;
+	1996..2008  : sw_ee3_gfxhc_privatisation1_decider ;
+	2009..4096  : sw_ee3_gfxhc_privatisation2_decider ;
+	sw_ee3_gfxhc_standard_random ;
+}
 
 
+//Manual
 
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_manual, cargo_subtype){
+	0    : sw_ee3_gfxhc_brgreen_random ;
+	4    : gfx_ee3_headcode_centre ;
+	5..7 : sw_ee3_gfxhc_standard_3 ;
+	8..9 : sw_ee3_gfxhc_standard_any ;
+	10   : sw_ee3_gfxhc_standard_3 ;
+	11   : sw_ee3_gfxhc_newlights_random ;
+	12   : sw_ee3_gfxhc_standard_3 ;
+	sw_ee3_gfxhc_standard_random ;
+}
 
-
-
-
-
-
-
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_manual_check, livery_choice){
+	1 : sw_ee3_gfxhc_manual ;
+	sw_ee3_gfxhc_auto ;
+}
 
 
 
 //Lights
 
+//Random switches
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_brgreen_random, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_gfxhc_brgreen_random ;
+	2 : sw_ee3_lights_split_front ;
+	1 : sw_ee3_lights_centre_front ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_standard_random, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_gfxhc_standard_random ;
+	2 : sw_ee3_lights_split_front ;
+	1 : sw_ee3_lights_centre_front ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_standard_3, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_gfxhc_standard_3 ;
+	1 : sw_ee3_lights_centre_front ;
+	1 : sw_ee3_lights_centre_front ;
+	1 : sw_ee3_lights_split_front ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_standard_any, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_gfxhc_standard_any ;
+	1 : sw_ee3_lights_split_front ;
+	1 : sw_ee3_lights_centre_front ;
+	1 : sw_ee3_lights_centre_front ;
+	1 : sw_ee3_lights_new_front ;
+	1 : sw_ee3_lights_new_front ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_newlights, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_gfxhc_newlights_random ;
+	1 : sw_ee3_lights_new_front ;
+	1 : sw_ee3_lights_new_front ;
+}
+
+//Auto
+
+switch(FEAT_TRAINS, SELF, sw
 
 
 
@@ -245,8 +363,31 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfx_manual_check, livery_choice){
 
 
 
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_auto, build_year){
+	ERA_BRCREST : sw_ee3_gfxlt_brgreen_random ;
+	1987..1995  : sw_ee3_gfxlt_ ;
+	sw_ee3_gfxlt_standard_random ;
+}
 
 
+//Manual
+
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_manual, cargo_subtype){
+	0    : sw_ee3_gfxlt_brgreen_random ;
+	4    : sw_ee3_lights_centre_front ;
+	5..7 : sw_ee3_gfxlt_standard_3 ;
+	8..9 : sw_ee3_gfxlt_standard_any ;
+	10   : sw_ee3_gfxlt_standard_3 ;
+	11   : sw_ee3_gfxlt_newlights ;
+	12   : sw_ee3_gfxlt_standard_3 ;
+	sw_ee3_gfxlt_standard_random ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_manual_check, livery_choice){
+	1 : sw_ee3_gfxlt_manual ;
+	sw_ee3_gfxlt_auto ;
+}
 
 //Dirt
 
