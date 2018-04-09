@@ -291,9 +291,10 @@ item (FEAT_TRAINS, item_Mk2, 9020){
 		weight                         : 34 ton ;
 	}
 	graphics{
-		default             : sw_mk2_default ;
-		purchase            : sw_mk2_purchase ;
-		cargo_subtype_text  : sw_mk2_refit_text_decider ;
-		colour_mapping      : sw_mk2_colour_mapping_decider ;
+		default                 : sw_mk2_default ;
+		purchase                : sw_mk2_purchase ;
+		purchase_colour_mapping : sw_mk2_purchase_colours_2cc_check ;
+		cargo_subtype_text      : sw_mk2_refit_text_decider ;
+		colour_mapping          : sw_mk2_colour_mapping_decider ;
 	}
 }
