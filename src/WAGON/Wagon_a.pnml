@@ -1,0 +1,12 @@
+//Templates
+template template_wagon_a(x,y){
+	[x+0,y,8,14,-3,-7]
+	[x+10,y,11,12,-5,-4]
+	[x+23,y,12,12,-6,-9]
+	[x+37,y,11,12,-5,-4]
+}
+
+spriteset(spriteset_wagon_a, "gfx/WAGON/wagon_a.png") {template_wagon_a(0, 0)}
+spriteset(spriteset_wagon_a_load_full, "gfx/WAGON/wagon_a.png") {template_wagon_a(0, 0)}
+spriteset(spriteset_wagon_aa_load_med, "gfx/WAGON/wagon_a.png") {template_wagon_a(0, 0)}
+spriteset(spriteset_wagon_aa_load_low, "gfx/WAGON/wagon_a.png") {template_wagon_a(0, 0)}
