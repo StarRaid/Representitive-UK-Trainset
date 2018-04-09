@@ -2954,12 +2954,12 @@ switch(FEAT_TRAINS, SELF, sw_168_colours_manual, cargo_subtype){
  palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_168_colours_manual_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_168_colours_manual_check, livery_choice){
  1 : sw_168_colours_manual ;
  sw_168_colours_auto ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_168_colours_2cc_check, livery_choice){
+switch(FEAT_TRAINS, SELF, sw_168_colours_2cc_check, colour_scheme_1){
  1 : sw_168_colours_manual_check ;
  palette_2cc(company_colour1, company_colour2) ;
 }
