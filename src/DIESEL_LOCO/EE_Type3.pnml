@@ -252,6 +252,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_newlights_random, TRIGGER_VEHICLE_
 //Auto
 
 random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_largelogo, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_largelogo_colours ;
 	2 : sw_ee3_gfxhc_standard_random ;
 	1 : sw_ee3_gfxhc_standard_3 ;
 }
@@ -351,7 +352,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_newlights, TRIGGER_VEHICLE_SERVICE
 //Auto
 
 random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_largelogo, TRIGGER_VEHICLE_SERVICE){
-	dependent : sw_ee3_gfxhc_largelogo ;
+	dependent : sw_ee3_largelogo_colours ;
 	2 : sw_ee3_gfxlt_standard_random ;
 	1 : sw_ee3_gfxlt_standard_3 ;
 }
@@ -408,8 +409,9 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_manual_check, livery_choice){
 	sw_ee3_gfxlt_auto ;
 }
 
-//Dirt
 
+
+//Dirt
 
 switch(FEAT_TRAINS, SELF, sw_ee3_dirt, age_in_days){
 	0..3649    : gfx_blank ;
@@ -471,7 +473,6 @@ switch(FEAT_TRAINS, SELF, sw_ee3_purchase, current_year){
 //Colour mapping
 
 random_switch(FEAT_TRAINS, SELF, sw_ee3_largelogo_colours, TRIGGER_VEHICLE_SERVICE){
-	dependent : sw_ee3_gfxhc_largelogo ;
 	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	1 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
 }
