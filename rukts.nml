@@ -2865,8 +2865,8 @@ spriteset (cl172_lm_front, "gfx/DMU/class_172.png"){template_turbo_double(0,0) }
 spriteset (cl172_lm_back, "gfx/DMU/class_172.png"){template_turbo_double(0,26)}
 spriteset (cl172_lm_mid, "gfx/DMU/class_172.png"){template_turbo_single(0,52)}
 
-spriteset (cl168_purchase, "gfx/DMU/class_168.png"){template_purchase(88,52)}
-spriteset (cl172_purchase, "gfx/DMU/class_172.png"){template_purchase(88,52)}
+spriteset (cl168_purchase, "gfx/DMU/class_168.png"){template_dualhead_purchase(88,52)}
+spriteset (cl172_purchase, "gfx/DMU/class_172.png"){template_dualhead_purchase(88,52)}
 
 //Graphics
 
@@ -2880,16 +2880,37 @@ switch(FEAT_TRAINS, SELF, sw_172_decider, position_in_consist_from_end){
  cl172_lm_front ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_168_gfx_decider, build_year){
+switch(FEAT_TRAINS, SELF, sw_168_gfx_auto, build_year){
  1996..2009 : sw_168_decider ;
  sw_172_decider ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_168_gfx_trailer_decider, build_year){
+switch(FEAT_TRAINS, SELF, sw_168_gfx_manual, cargo_subtype){
+ 0 : sw_168_decider ;
+ sw_172_decider ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_168_gfx_manual_check, livery_choice){
+ 1 : sw_168_gfx_manual ;
+ sw_168_gfx_auto ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_168_gfx_trailer_auto, build_year){
  1996..2009 : cl168_cm_mid ;
  cl172_lm_mid ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_168_gfx_trailer_manual, cargo_subtype){
+ 0 : cl168_cm_mid ;
+ cl172_lm_mid ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_168_gfx_trailer_manual_check, livery_choice){
+ 1 : sw_168_gfx_trailer_manual ;
+ sw_168_gfx_trailer_auto ;
+}
 
 //Purchase
 
@@ -2974,7 +2995,7 @@ item (FEAT_TRAINS, item_cl168, 168){
   dual_headed : 1 ;
  }
  graphics{
-  default : sw_168_gfx_decider ;
+  default : sw_168_gfx_manual_check ;
   colour_mapping : sw_168_colours_2cc_check ;
   purchase : sw_168_purchase ;
   purchase_colour_mapping : sw_168_purchase_2cc_check ;
@@ -2983,7 +3004,8 @@ item (FEAT_TRAINS, item_cl168, 168){
   cargo_subtype_text : sw_168_refit_text_check ;
  }
  livery_override (item_MU90){
-  default : sw_168_gfx_trailer_decider ;
+  default : sw_168_gfx_trailer_manual_check ;
+  colour_mapping : sw_168_colours_2cc_check ;
   power : 700;
   cargo_capacity : 75 ;
   cargo_subtype_text : sw_168_refit_text_check ;
