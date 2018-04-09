@@ -1017,7 +1017,6 @@ item (FEAT_TRAINS, item_MU90, 9090) {
   vehicle_life: 50;
   reliability_decay: 7;
   refittable_cargo_classes: CC_PASSENGERS;
-  cargo_allow_refit: [PASS, TOUR, MAIL];
   loading_speed: 29;
   cost_factor: 58;
   running_cost_factor: 34;
@@ -1049,10 +1048,10 @@ item (FEAT_TRAINS, item_MU90, 9090) {
 # 1 "src/WAGON/Wagon_a.pnml" 1
 //Templates
 template template_wagon_a(x,y){
- [x+0,y,8,14,-3,-7]
- [x+10,y,11,12,-5,-4]
+ [x+0,y,8,14,-3,-4]
+ [x+10,y,11,12,-4,-9]
  [x+23,y,12,12,-6,-9]
- [x+37,y,11,12,-5,-4]
+ [x+37,y,11,12,3,-4]
 }
 
 spriteset(spriteset_wagon_a, "gfx/WAGON/wagon_a.png") {template_wagon_a(0, 0)}
@@ -1084,6 +1083,8 @@ item (FEAT_TRAINS, item_WAGON_A, 10000) {
   vehicle_life: 50;
   reliability_decay: 7;
   refittable_cargo_classes: CC_BULK;
+  non_refittable_cargo_classes: bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE);
+  cargo_allow_refit: [COAL, GRAI, IORE, WHEA, CORE, FRUT, MAIZ, AORE, CERA, CERE, CMNT, FERT, LIME, OLSD, POTA, SAND, GRVL, MNSP, PHOS, PORE, COPR, SUGR];
   loading_speed: 29;
   cost_factor: 2;
   running_cost_factor: 5;
@@ -1101,7 +1102,7 @@ item (FEAT_TRAINS, item_WAGON_A, 10000) {
   weight: 5 ton;
   tractive_effort_coefficient: 0.07;
   air_drag_coefficient: 0.08;
-  length: 8;
+  length: 3;
   bitmask_vehicle_info: 0;
  }
  graphics {
