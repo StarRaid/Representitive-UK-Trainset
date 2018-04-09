@@ -13,7 +13,7 @@ Representative UK Train Set (RUKTS) is a GRF for OpenTTD designed to give a vari
 Graphics are drawn with the DOS pallete, and have 2 pixels between each graphic.
 Shading will be based off of the 405 graphic found on https://www.tt-forums.net/viewtopic.php?t=82596
 
-
+![RUKTS preview image 3](/RUKTS3.png)
 
 ## Licence for the use of RUKTS (Representative United Kingdom Train Set)
 
