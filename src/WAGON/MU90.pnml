@@ -53,7 +53,6 @@ item (FEAT_TRAINS, item_MU90, 9090) {
 		vehicle_life:					50;
 		reliability_decay:				7;
 		refittable_cargo_classes:		CC_PASSENGERS;
-		cargo_allow_refit:				[PASS, TOUR, MAIL];
 		loading_speed:					29;
 		cost_factor:					58;
 		running_cost_factor:			34;
