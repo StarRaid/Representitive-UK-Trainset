@@ -2,8 +2,12 @@
 template template_wagon_a(x,y){
 	[x+0,y,8,14,-3,-4]
 	[x+10,y,11,12,-4,-9]
-	[x+23,y,12,12,-6,-9]
-	[x+37,y,11,12,3,-4]
+	[x+23,y,12,12,3,-8]
+	[x+37,y,11,12,4,-4]
+	[x+0,y,8,14,-3,-4]
+	[x+10,y,11,12,-14,-4]
+	[x+23,y,12,12,-16,-8]
+	[x+37,y,11,12,-6,-9]
 }
 
 spriteset(spriteset_wagon_a, "gfx/WAGON/wagon_a.png") {template_wagon_a(0, 0)}
