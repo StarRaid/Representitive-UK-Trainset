@@ -46,6 +46,14 @@ template template_ee3_dirt_reverse(x,y, filename){
 	[x+134,y,40,32,-11,-16, filename] //South East
 }
 
+//Large logo colour mapping
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_largelogo_colours, TRIGGER_VEHICLE_SERVICE){
+	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
+}
+
+
 //Spritesets
 
 spriteset(gfx_ee3_brgreen             , "gfx/DIESEL_LOCO/class_37.png"){template_ee3(0,0)}
@@ -471,11 +479,6 @@ switch(FEAT_TRAINS, SELF, sw_ee3_purchase, current_year){
 
 
 //Colour mapping
-
-random_switch(FEAT_TRAINS, SELF, sw_ee3_largelogo_colours, TRIGGER_VEHICLE_SERVICE){
-	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
-}
 
 random_switch(FEAT_TRAINS, SELF, sw_ee3_colours_sectorised, TRIGGER_VEHICLE_SERVICE){
 	dependent : sw_ee3_sector_gfx_decider ;
