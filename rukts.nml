@@ -857,8 +857,6 @@ switch(FEAT_TRAINS, SELF, sw_mk2_refit_text_decider, livery_choice){
 
 //Purchase sprite decider
 switch(FEAT_TRAINS, SELF, sw_mk2_purchase, current_year){
- 1967 .. 1970 : gfx_mk2_purchase_brblue ;
- 1971 .. 1982 : gfx_mk2_purchase_brblue ;
  1983 .. 1995 : gfx_mk2_purchase_regional ;
  1996 .. 2004 : gfx_mk2_purchase_virgin ;
  2005 .. 4096 : gfx_mk2_purchase_directrail ;
@@ -907,8 +905,6 @@ switch(FEAT_TRAINS, PARENT, sw_mk2_colour_mapping_auto_checker_one, vehicle_type
 
 
 switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_manual, cargo_subtype){
- 0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
- 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
  2 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
  3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
  4 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
@@ -927,6 +923,20 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_decider, colour_scheme_1){
  palette_2cc(company_colour1, company_colour2) ;
 }
 
+
+//Purchase menu colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_mk2_purchase_colours, current_year){
+ 1983 .. 1995 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+ 1996 .. 2004 : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+ 2005 .. 4096 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+ palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk2_purchase_colours_2cc_check, colour_scheme_1){
+ 1 : sw_mk2_purchase_colours ;
+ palette_2cc(company_colour1, company_colour2) ;
+}
 
 //Item
 
@@ -956,6 +966,7 @@ item (FEAT_TRAINS, item_Mk2, 9020){
  graphics{
   default : sw_mk2_default ;
   purchase : sw_mk2_purchase ;
+  purchase_colour_mapping : sw_mk2_purchase_colours_2cc_check ;
   cargo_subtype_text : sw_mk2_refit_text_decider ;
   colour_mapping : sw_mk2_colour_mapping_decider ;
  }
@@ -1017,6 +1028,7 @@ item (FEAT_TRAINS, item_MU90, 9090) {
   vehicle_life: 50;
   reliability_decay: 7;
   refittable_cargo_classes: CC_PASSENGERS;
+  cargo_allow_refit: [PASS, TOUR, MAIL];
   loading_speed: 29;
   cost_factor: 58;
   running_cost_factor: 34;
@@ -1048,11 +1060,11 @@ item (FEAT_TRAINS, item_MU90, 9090) {
 # 1 "src/WAGON/Wagon_a.pnml" 1
 //Templates
 template template_wagon_a(x,y){
- [x+0,y,8,14,-3,-4]
+ [x+0,y,8,14,-3,-11]
  [x+10,y,11,12,-4,-9]
  [x+23,y,12,12,3,-8]
  [x+37,y,11,12,4,-4]
- [x+0,y,8,14,-3,-4]
+ [x+0,y,8,14,-3,-3]
  [x+10,y,11,12,-14,-4]
  [x+23,y,12,12,-16,-8]
  [x+37,y,11,12,-6,-9]
@@ -1066,10 +1078,10 @@ spriteset(spriteset_wagon_a_load_low, "gfx/WAGON/wagon_a.png") {template_wagon_a
 spriteset(spriteset_wagon_a_purchase, "gfx/WAGON/wagon_a.png") {template_purchase_short(0, 60)}
 
 switch(FEAT_TRAINS,SELF, sw_wagon_a_load,cargo_count){
- 0: return 0;
+ 0: spriteset_wagon_a;
  1..3: spriteset_wagon_a_load_low;
  4..9: spriteset_wagon_a_load_med;
- 10..12: spriteset_wagon_a_load_full;
+ 10..2000: spriteset_wagon_a_load_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_wagon_a_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
@@ -1089,12 +1101,12 @@ item (FEAT_TRAINS, item_WAGON_A, 10000) {
   refittable_cargo_classes: CC_BULK;
   non_refittable_cargo_classes: bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE);
   cargo_allow_refit: [COAL, GRAI, IORE, WHEA, CORE, FRUT, MAIZ, AORE, CERA, CERE, CMNT, FERT, LIME, OLSD, POTA, SAND, GRVL, MNSP, PHOS, PORE, COPR, SUGR];
-  loading_speed: 29;
+  loading_speed: 10;
   cost_factor: 2;
   running_cost_factor: 5;
   sprite_id: SPRITE_ID_NEW_TRAIN;
   speed: 70 mph;
-  misc_flags: bitmask(TRAIN_FLAG_2CC);
+  misc_flags: bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
   refit_cost: 0;
   track_type: RAIL;
   ai_special_flag: AI_FLAG_CARGO;
@@ -1774,14 +1786,10 @@ switch(FEAT_TRAINS, PARENT, sw_ee40_gfx_brgreen_reverse_check , vehicle_is_rever
 switch(FEAT_TRAINS, PARENT, sw_ee40_gfx_brblue_reverse_check , vehicle_is_reversed){ 1 : ee40_br_blue_rev ; ee40_br_blue ; }
 switch(FEAT_TRAINS, PARENT, sw_ee40_gfx_brblue_logo_reverse_check , vehicle_is_reversed){ 1 : ee40_br_blue_logo_rev ; ee40_br_blue_logo ; }
 
-random_switch(FEAT_TRAINS, SELF, sw_ee40_gfx_brgreen, TRIGGER_VEHICLE_SERVICE){ 1 : sw_ee40_gfx_brgreen_reverse_check ; }
-random_switch(FEAT_TRAINS, SELF, sw_ee40_gfx_brblue, TRIGGER_VEHICLE_SERVICE){ 1 : sw_ee40_gfx_brblue_reverse_check ; }
-random_switch(FEAT_TRAINS, SELF, sw_ee40_gfx_brblue_logo, TRIGGER_VEHICLE_SERVICE){ 1 : sw_ee40_gfx_brblue_logo_reverse_check ; }
-
 switch(FEAT_TRAINS, SELF, sw_ee40_gfx_auto, build_year){
- 1948 .. 1966 : sw_ee40_gfx_brgreen ;
- 1967..1982 : sw_ee40_gfx_brblue ;
- sw_ee40_gfx_brblue_logo ;
+ 1948 .. 1966 : sw_ee40_gfx_brgreen_reverse_check ;
+ 1967..1982 : sw_ee40_gfx_brblue_reverse_check ;
+ sw_ee40_gfx_brblue_logo_reverse_check ;
 }
 
 
@@ -1842,13 +1850,9 @@ switch(FEAT_TRAINS, SELF, sw_ee40_refit_text_check, livery_choice){
 
 //Colour mapping
 
-random_switch(FEAT_TRAINS, SELF, sw_ee40_brgreen_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;}
-random_switch(FEAT_TRAINS, SELF, sw_ee40_brblue, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;}
-
-
 switch(FEAT_TRAINS, SELF, sw_ee40_colours_auto, build_year){
- 1948 .. 1966 : sw_ee40_brgreen_colours ;
- sw_ee40_brblue ;
+ 1948 .. 1966 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+ palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee40_recolours_manual, cargo_subtype){
@@ -2020,6 +2024,16 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase, current_year){
  gfx_powerhaul_colas_purchase ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase_colours, current_year){
+ 2008..2014 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+ palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase_2cc_check, livery_choice){
+ 1 : sw_powerhaul_purchase_colours ;
+ palette_2cc(company_colour1, company_colour2) ;
+}
+
 
 //Colour mapping
 
@@ -2087,6 +2101,7 @@ item(FEAT_TRAINS, item_powerhaul, 70){
   sound_effect : sw_sfx_diesel_loco_modern ;
   create_effect : vfx_diesel_default ;
   colour_mapping : sw_powerhaul_colours_2cc_check ;
+  purchase_colour_mapping : sw_powerhaul_purchase_2cc_check ;
   cargo_subtype_text : sw_powerhaul_refit_text_check ;
   purchase_cargo_capacity : 0 ;
   cargo_capacity : return 0 ;
@@ -2117,9 +2132,9 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_tpe_reverse_check, vehicle_is_reverse
 
 //Automatic
 
-switch(FEAT_TRAINS, SELF, sw_uklight_gfx_passenger_check, most_common_refit){
- PASS : sw_uklight_gfx_tpe_reverse_check ;
- sw_uklight_gfx_drs_reverse_check ;
+random_switch(FEAT_TRAINS, SELF, sw_uklight_gfx_passenger_check, TRIGGER_VEHICLE_SERVICE){
+ 1 : sw_uklight_gfx_tpe_reverse_check ;
+ 3 : sw_uklight_gfx_drs_reverse_check ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_uklight_gfx_auto, build_year){
@@ -2153,14 +2168,6 @@ switch(FEAT_TRAINS, SELF, sw_uklight_spritestack, [STORE_TEMP((getbits(extra_cal
 }
 
 
-//Purchase
-
-switch(FEAT_TRAINS, SELF, sw_uklight_purchase, current_year){
- 2013..2018 : gfx_uklight_drs_purchase ;
- gfx_uklight_tpe_purchase ;
-}
-
-
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_uklight_refit_text, cargo_subtype){
@@ -2177,9 +2184,12 @@ switch(FEAT_TRAINS, SELF, sw_uklight_refit_text_check, livery_choice){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_uklight_colours_passenger_decider, most_common_refit){
- PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
- palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+
+
+random_switch(FEAT_TRAINS, SELF, sw_uklight_colours_passenger_decider, TRIGGER_VEHICLE_SERVICE){
+ dependent : sw_uklight_gfx_passenger_check ;
+ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+ 3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_uklight_colours_auto, build_year){
@@ -2237,8 +2247,9 @@ item (FEAT_TRAINS, item_uklight, 68){
  }
  graphics{
   default : sw_uklight_spritestack ;
-  purchase : sw_uklight_purchase ;
+  purchase : gfx_uklight_drs_purchase ;
   colour_mapping : sw_uklight_colours_2cc_check ;
+  purchase_colour_mapping : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN);
   sound_effect : sw_sfx_diesel_loco_modern ;
   create_effect : vfx_diesel_default ;
   cargo_subtype_text : sw_uklight_refit_text_check ;
@@ -2360,7 +2371,6 @@ switch(FEAT_TRAINS, SELF, sw_br87_refit_text_checker, livery_choice){
 switch(FEAT_TRAINS, SELF, sw_br87_purchase, current_year){
  1971 .. 1982 : gfx_br87_brblue_purchase ;
  1983 .. 1995 : gfx_br87_intercity_purchase ;
- 1996 .. 2004 : gfx_br87_virgin_purchase ;
  2005 .. 4096 : gfx_br87_calsleeper_purchase ;
  gfx_br87_virgin_purchase ;
 }
@@ -2368,23 +2378,18 @@ switch(FEAT_TRAINS, SELF, sw_br87_purchase, current_year){
 //Colour mapping
 
 
-random_switch(FEAT_TRAINS, SELF, sw_br87_brblue_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;}
 random_switch(FEAT_TRAINS, SELF, sw_br87_sectorised_colours, TRIGGER_VEHICLE_SERVICE){ 3 : palette_2cc(COLOUR_GREY, COLOUR_RED) ; 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_virgin_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_calsleeper_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_gbrf_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;}
 
 switch(FEAT_TRAINS, SELF, sw_br87_privatised_colours, most_common_refit){
- CC_PASSENGERS: sw_br87_calsleeper_colours ;
- sw_br87_gbrf_colours ;
+ CC_PASSENGERS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+ palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_br87_colours_auto, build_year){
- 1971 .. 1982 : sw_br87_brblue_colours ;
+ 1971 .. 1982 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
  1983 .. 1995 : sw_br87_sectorised_colours ;
- 1996 .. 2004 : sw_br87_virgin_colours ;
  2005 .. 4096 : sw_br87_privatised_colours ;
- sw_br87_virgin_colours ;
+ palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_br87_colours_manual, cargo_subtype){
@@ -2444,6 +2449,7 @@ item (FEAT_TRAINS, item_br87, 87){
   sound_effect : sw_sfx_electric_loco_old ;
   create_effect : vfx_ohle ;
   colour_mapping : sw_br87_colours_2cc_check ;
+  purchase_colour_mapping : sw_br87_colours_auto ;
   cargo_subtype_text : sw_br87_refit_text_checker ;
   purchase_cargo_capacity : 0 ;
   cargo_capacity : return 0 ;

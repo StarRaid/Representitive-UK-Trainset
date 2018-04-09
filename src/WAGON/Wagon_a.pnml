@@ -1,10 +1,10 @@
 //Templates
 template template_wagon_a(x,y){
-	[x+0,y,8,14,-3,-4]
+	[x+0,y,8,14,-3,-11]
 	[x+10,y,11,12,-4,-9]
 	[x+23,y,12,12,3,-8]
 	[x+37,y,11,12,4,-4]
-	[x+0,y,8,14,-3,-4]
+	[x+0,y,8,14,-3,-3]
 	[x+10,y,11,12,-14,-4]
 	[x+23,y,12,12,-16,-8]
 	[x+37,y,11,12,-6,-9]
@@ -18,10 +18,10 @@ spriteset(spriteset_wagon_a_load_low, "gfx/WAGON/wagon_a.png") {template_wagon_a
 spriteset(spriteset_wagon_a_purchase, "gfx/WAGON/wagon_a.png") {template_purchase_short(0, 60)}
 
 switch(FEAT_TRAINS,SELF, sw_wagon_a_load,cargo_count){
-	0: return 0;
+	0: spriteset_wagon_a;
 	1..3: spriteset_wagon_a_load_low;
 	4..9: spriteset_wagon_a_load_med;
-	10..12: spriteset_wagon_a_load_full;
+	10..2000: spriteset_wagon_a_load_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_wagon_a_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
@@ -41,12 +41,12 @@ item (FEAT_TRAINS, item_WAGON_A, 10000) {
 		refittable_cargo_classes:		CC_BULK;
 		non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE);
 		cargo_allow_refit:				[COAL, GRAI, IORE, WHEA, CORE, FRUT, MAIZ, AORE, CERA, CERE, CMNT, FERT, LIME, OLSD, POTA, SAND, GRVL, MNSP, PHOS, PORE, COPR, SUGR];
-		loading_speed:					29;
+		loading_speed:					10;
 		cost_factor:					2;
 		running_cost_factor:			5;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							70 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
