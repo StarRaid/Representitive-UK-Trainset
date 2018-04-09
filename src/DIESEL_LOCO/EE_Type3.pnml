@@ -28,22 +28,22 @@ template template_ee3_dirt(x,y, filename){
 	[x+0,y,16,46,-6,-22, filename] //North
 	[x+20,y,40,32,-28,-16, filename] //North East
 	[x+64,y,66,26,-34,-18, filename] //East
-	[x+134,y,40,32,-10,-16, filename] //South East
+	[x+134,y,40,32,-11,-16, filename] //South East
 	[x+178,y,16,46,-6,-22, filename] //South
-	[x+198,y,40,32,-28,-16, filename] //South West
+	[x+198,y,40,32,-27,-16, filename] //South West
 	[x+242,y,66,26,-34,-18, filename] //West
 	[x+312,y,40,32,-10,-16, filename] //North West
 }
 
 template template_ee3_dirt_reverse(x,y, filename){
 	[x+178,y,16,46,-6,-22, filename] //South
-	[x+198,y,40,32,-28,-16, filename] //South West
+	[x+198,y,40,32,-27,-16, filename] //South West
 	[x+242,y,66,26,-34,-18, filename] //West
 	[x+312,y,40,32,-10,-16, filename] //North West
 	[x+0,y,16,46,-6,-22, filename] //North
 	[x+20,y,40,32,-28,-16, filename] //North East
 	[x+64,y,66,26,-34,-18, filename] //East
-	[x+134,y,40,32,-10,-16, filename] //South East
+	[x+134,y,40,32,-11,-16, filename] //South East
 }
 
 //Spritesets
@@ -407,8 +407,9 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_manual_check, livery_choice){
 
 
 switch(FEAT_TRAINS, SELF, sw_ee3_dirt, age_in_days){
-	3650 : sw_ee3_dirt_light_reverse_check ;
-	9125 : sw_ee3_dirt_dark_reverse_check ;
+	0..3649    : gfx_blank ;
+	3650..9124 : sw_ee3_dirt_light_reverse_check ;
+	sw_ee3_dirt_dark_reverse_check ;
 }
 
 
