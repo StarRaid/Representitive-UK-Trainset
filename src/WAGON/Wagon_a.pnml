@@ -15,7 +15,7 @@ spriteset(spriteset_wagon_a_load_full, "gfx/WAGON/wagon_a.png") {template_wagon_
 spriteset(spriteset_wagon_a_load_med, "gfx/WAGON/wagon_a.png") {template_wagon_a(0, 30)}
 spriteset(spriteset_wagon_a_load_low, "gfx/WAGON/wagon_a.png") {template_wagon_a(0, 45)}
 
-spriteset(spriteset_wagon_a_purchase, "gfx/WAGON/wagon_a.png") {template_wagon_a(0, 45)}
+spriteset(spriteset_wagon_a_purchase, "gfx/WAGON/wagon_a.png") {template_purchase_short(0, 60)}
 
 switch(FEAT_TRAINS,SELF, sw_wagon_a_load,cargo_count){
 	0: return 0;
