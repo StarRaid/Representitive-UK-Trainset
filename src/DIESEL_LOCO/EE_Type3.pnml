@@ -498,7 +498,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_colours_privatisation2_decider, TRIGGER_
 	dependent : sw_ee3_privatisation2_decider ;
 	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 	2 : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	1 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee3_colours_auto, build_year){
