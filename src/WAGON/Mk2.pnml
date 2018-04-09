@@ -184,8 +184,6 @@ switch(FEAT_TRAINS, SELF, sw_mk2_refit_text_decider, livery_choice){
 
 //Purchase sprite decider
 switch(FEAT_TRAINS, SELF, sw_mk2_purchase, current_year){
-	ERA_BRBLUE         : gfx_mk2_purchase_brblue ;
-	ERA_BRBLUETOPS     : gfx_mk2_purchase_brblue ;
 	ERA_SECTORISATION  : gfx_mk2_purchase_regional ;
 	ERA_PRIVATISATION1 : gfx_mk2_purchase_virgin ;
 	ERA_PRIVATISATION2 : gfx_mk2_purchase_directrail ;
@@ -234,8 +232,6 @@ switch(FEAT_TRAINS, PARENT, sw_mk2_colour_mapping_auto_checker_one, vehicle_type
 
 
 switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_manual, cargo_subtype){
-	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	2 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
 	4 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
@@ -254,6 +250,20 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_decider, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+
+//Purchase menu colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_mk2_purchase_colours, current_year){
+	ERA_SECTORISATION  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	ERA_PRIVATISATION1 : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	ERA_PRIVATISATION2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk2_purchase_colours_2cc_check, colour_scheme_1){
+	1 : sw_mk2_purchase_colours ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
 
 //Item
 

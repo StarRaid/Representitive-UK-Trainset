@@ -109,7 +109,6 @@ switch(FEAT_TRAINS, SELF, sw_br87_refit_text_checker, livery_choice){
 switch(FEAT_TRAINS, SELF, sw_br87_purchase, current_year){
 	ERA_BRBLUETOPS     : gfx_br87_brblue_purchase ;  
 	ERA_SECTORISATION  : gfx_br87_intercity_purchase ;  
-	ERA_PRIVATISATION1 : gfx_br87_virgin_purchase ;
 	ERA_PRIVATISATION2 : gfx_br87_calsleeper_purchase ;
 	gfx_br87_virgin_purchase ;
 }
@@ -117,23 +116,18 @@ switch(FEAT_TRAINS, SELF, sw_br87_purchase, current_year){
 //Colour mapping
 
 
-random_switch(FEAT_TRAINS, SELF, sw_br87_brblue_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;}
 random_switch(FEAT_TRAINS, SELF, sw_br87_sectorised_colours, TRIGGER_VEHICLE_SERVICE){ 3 : palette_2cc(COLOUR_GREY, COLOUR_RED) ; 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_virgin_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_calsleeper_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_gbrf_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;}
 
 switch(FEAT_TRAINS, SELF, sw_br87_privatised_colours, most_common_refit){
-	CC_PASSENGERS: sw_br87_calsleeper_colours ;
-	sw_br87_gbrf_colours ;
+	CC_PASSENGERS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_br87_colours_auto, build_year){
-	ERA_BRBLUETOPS     : sw_br87_brblue_colours ;
+	ERA_BRBLUETOPS     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	ERA_SECTORISATION  : sw_br87_sectorised_colours ;
-	ERA_PRIVATISATION1 : sw_br87_virgin_colours ;
 	ERA_PRIVATISATION2 : sw_br87_privatised_colours ;
-	sw_br87_virgin_colours ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_br87_colours_manual, cargo_subtype){
@@ -193,6 +187,7 @@ item (FEAT_TRAINS, item_br87, 87){
 		sound_effect            : sw_sfx_electric_loco_old ;
 		create_effect           : vfx_ohle ;
 		colour_mapping          : sw_br87_colours_2cc_check ;
+		purchase_colour_mapping : sw_br87_colours_auto ;
 		cargo_subtype_text      : sw_br87_refit_text_checker ;
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;

@@ -20,9 +20,9 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_tpe_reverse_check, vehicle_is_reverse
 
 //Automatic
 
-switch(FEAT_TRAINS, SELF, sw_uklight_gfx_passenger_check, most_common_refit){
-	PASS : sw_uklight_gfx_tpe_reverse_check ;
-	sw_uklight_gfx_drs_reverse_check ;
+random_switch(FEAT_TRAINS, SELF, sw_uklight_gfx_passenger_check, TRIGGER_VEHICLE_SERVICE){
+	1 : sw_uklight_gfx_tpe_reverse_check ;
+	3 : sw_uklight_gfx_drs_reverse_check ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_uklight_gfx_auto, build_year){
@@ -56,14 +56,6 @@ switch(FEAT_TRAINS, SELF, sw_uklight_spritestack, [STORE_TEMP((getbits(extra_cal
 }
 
 
-//Purchase
-
-switch(FEAT_TRAINS, SELF, sw_uklight_purchase, current_year){
-	2013..2018 : gfx_uklight_drs_purchase ;
-	gfx_uklight_tpe_purchase ;
-}
-
-
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_uklight_refit_text, cargo_subtype){
@@ -80,9 +72,12 @@ switch(FEAT_TRAINS, SELF, sw_uklight_refit_text_check, livery_choice){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_uklight_colours_passenger_decider, most_common_refit){
-	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+
+
+random_switch(FEAT_TRAINS, SELF, sw_uklight_colours_passenger_decider, most_common_refit){
+	dependent : sw_uklight_gfx_passenger_check ;
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_uklight_colours_auto, build_year){
@@ -140,8 +135,9 @@ item (FEAT_TRAINS, item_uklight, 68){
 	}
 	graphics{
 		default                 : sw_uklight_spritestack ;
-		purchase                : sw_uklight_purchase ;
+		purchase                : gfx_uklight_drs_purchase ;
 		colour_mapping          : sw_uklight_colours_2cc_check ;
+		purchase_colour_mapping : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN); 
 		sound_effect            : sw_sfx_diesel_loco_modern ;
 		create_effect           : vfx_diesel_default ;
 		cargo_subtype_text      : sw_uklight_refit_text_check ;

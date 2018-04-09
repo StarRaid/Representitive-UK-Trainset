@@ -52,14 +52,10 @@ switch(FEAT_TRAINS, PARENT, sw_ee40_gfx_brgreen_reverse_check     , vehicle_is_r
 switch(FEAT_TRAINS, PARENT, sw_ee40_gfx_brblue_reverse_check      , vehicle_is_reversed){ 1 : ee40_br_blue_rev ; ee40_br_blue ; }
 switch(FEAT_TRAINS, PARENT, sw_ee40_gfx_brblue_logo_reverse_check , vehicle_is_reversed){ 1 : ee40_br_blue_logo_rev ; ee40_br_blue_logo ; }
 
-random_switch(FEAT_TRAINS, SELF,  sw_ee40_gfx_brgreen, TRIGGER_VEHICLE_SERVICE){ 1 : sw_ee40_gfx_brgreen_reverse_check ; }
-random_switch(FEAT_TRAINS, SELF,  sw_ee40_gfx_brblue, TRIGGER_VEHICLE_SERVICE){ 1 : sw_ee40_gfx_brblue_reverse_check ; }
-random_switch(FEAT_TRAINS, SELF,  sw_ee40_gfx_brblue_logo, TRIGGER_VEHICLE_SERVICE){ 1 : sw_ee40_gfx_brblue_logo_reverse_check ; }
-
 switch(FEAT_TRAINS, SELF, sw_ee40_gfx_auto, build_year){
-	ERA_BRCREST : sw_ee40_gfx_brgreen ;
-	1967..1982  : sw_ee40_gfx_brblue ;
-	sw_ee40_gfx_brblue_logo ;
+	ERA_BRCREST : sw_ee40_gfx_brgreen_reverse_check ;
+	1967..1982  : sw_ee40_gfx_brblue_reverse_check ;
+	sw_ee40_gfx_brblue_logo_reverse_check ;
 }
 
 
@@ -120,13 +116,9 @@ switch(FEAT_TRAINS, SELF, sw_ee40_refit_text_check, livery_choice){
 
 //Colour mapping
 
-random_switch(FEAT_TRAINS, SELF, sw_ee40_brgreen_colours, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;}
-random_switch(FEAT_TRAINS, SELF, sw_ee40_brblue, TRIGGER_VEHICLE_SERVICE){ 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;}
-
-
 switch(FEAT_TRAINS, SELF, sw_ee40_colours_auto, build_year){
-	ERA_BRCREST : sw_ee40_brgreen_colours ;
-	sw_ee40_brblue ;
+	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee40_recolours_manual, cargo_subtype){
