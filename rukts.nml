@@ -236,6 +236,12 @@ switch(FEAT_TRAINS, PARENT, sw_ee_coast_decider, current_speed){
  sound("sfx/ee_coast.wav") ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_sfx_electric_networker_running, current_speed){
+ 0..17 : sound("sfx/465_coast_2.wav") ;
+ 18..40 : sound("sfx/465_coast_1.wav") ;
+ sound("sfx/465_coast_3.wav") ;
+}
+
 //Sound effect switches
 
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_old, getbits(extra_callback_info1, 0, 8)){
@@ -299,6 +305,15 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
  SOUND_EVENT_START : sound("sfx/222_horn.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/222_horn.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info1, 0, 8)){
+ SOUND_EVENT_STOPPED : sound("sfx/465_idle.wav") ;
+ SOUND_EVENT_VISUAL_EFFECT : sound("sfx/465_shoe_clatter.wav") ;
+ SOUND_EVENT_RUNNING_16 : sw_sfx_electric_networker_running ;
+ SOUND_EVENT_START : sound("sfx/465_depart.wav") ;
+ SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
+ SOUND_EVENT_TUNNEL : sound("sfx/465_horn.wav") ;
 }
 # 9 "rukts.pnml" 2
 # 1 "src/CODE/coupling_restrictions.pnml" 1
@@ -3552,7 +3567,7 @@ item (FEAT_TRAINS, item_325, 325) {
  create_effect: vfx_3rd_only;
  cargo_subtype_text: sw_325_refit_text_decider ;
  colour_mapping: sw_325_colour_mapping_decider ;
- sound_effect: sw_sfx_electric_loco_modern;
+ sound_effect: sw_sfx_electric_networker;
 }
   livery_override (item_MU90) {
   cargo_capacity: 110;
