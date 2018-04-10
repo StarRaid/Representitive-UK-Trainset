@@ -1627,7 +1627,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_privatisation2_decider, most_common_car
  CLAY : sw_ee3_gfxlt_standard_3 ;
  GRVL : sw_ee3_gfxlt_standard_3 ;
  COPR : sw_ee3_gfxlt_standard_3 ;
- sw_ee3_gfxlt_privatisation1_decider ;
+ sw_ee3_gfxlt_newlights ;
 }
 
 
