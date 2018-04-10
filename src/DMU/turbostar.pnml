@@ -159,6 +159,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		dual_headed                    : 1 ;
 	}
 	graphics{
+		can_attach_wagon:		sw_325_coupling_restrictions;
 		default                 : sw_168_gfx_manual_check ;
 		colour_mapping          : sw_168_colours_2cc_check ;
 		purchase                : sw_168_purchase ;

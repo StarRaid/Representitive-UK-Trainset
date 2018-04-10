@@ -55,7 +55,7 @@ STR_NAME_MK2					:BREL Mark 2 Carriage
 STR_NAME_MK2A					:{GOLD}(Mk2a)
 STR_NAME_MK2F					:{GOLD}(Mk2f)
 STR_NAME_Mk3					:BREL Mark 3 Carriage
-STR_NAME_MU90					:Modern EMU car
+STR_NAME_MU90					:Modern MU car
 STR_NAME_WAGON_A                :BR Bulk Goods Wagon
 
 
@@ -76,7 +76,8 @@ STR_NAME_411				 :Mark 1 EMU (3rd rail)
 STR_NAME_700				 :Siemens "Desiro City"
 
 STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another Leyland "Pacer"!
+STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another Mark 1 EMU (3rd rail)!
-STR_325_NO_COUPLE: You may only couple this train to a "Modern EMU car" or another Adtranz "Networker"!
-STR_700_NO_COUPLE: You may only couple this train to a "Modern EMU car" or another Seimens "Desiro City"!
-STR_MU90_NO_COUPLE: You may only couple this train to a correct EMU!
+STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
+STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Seimens "Desiro City"!
+STR_MU90_NO_COUPLE: You may only couple this train to a correct MU!
