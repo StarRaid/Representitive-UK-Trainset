@@ -8,7 +8,7 @@ grf{
  grfid: "RUKT" ;
  name: string(STR_GRF_NAME) ;
  desc: string(STR_GRF_DESC) ;
- version: 3;
+ version: 4;
  min_compatible_version: 0 ;
  param 0{
   colour_scheme_1{
@@ -1989,7 +1989,7 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_rev
 
 //Automatic
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, most_common_cargo_type){
  GOOD : sw_powerhaul_gfx_fliner_reverse_check ;
  FOOD : sw_powerhaul_gfx_fliner_reverse_check ;
  STEL : sw_powerhaul_gfx_fliner_reverse_check ;
@@ -2056,7 +2056,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase_colours, current_year){
  palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase_2cc_check, livery_choice){
+switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase_2cc_check, colour_scheme_1){
  1 : sw_powerhaul_purchase_colours ;
  palette_2cc(company_colour1, company_colour2) ;
 }
@@ -2064,7 +2064,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase_2cc_check, livery_choice){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, most_common_cargo_type){
  GOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  FOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  STEL : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
@@ -2161,7 +2161,7 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_tpe_reverse_check, vehicle_is_reverse
 
 //Automatic
 
-switch(FEAT_TRAINS, SELF, sw_uklight_gfx_passenger_check, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_passenger_check, most_common_cargo_type){
  PASS : sw_uklight_gfx_tpe_reverse_check ;
  sw_uklight_gfx_drs_reverse_check ;
 }
@@ -2215,7 +2215,7 @@ switch(FEAT_TRAINS, SELF, sw_uklight_refit_text_check, livery_choice){
 
 
 
-switch(FEAT_TRAINS, SELF, sw_uklight_colours_passenger_decider, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_uklight_colours_passenger_decider, most_common_cargo_type){
  PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
  palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
@@ -2323,7 +2323,7 @@ switch(FEAT_TRAINS, PARENT, sw_br87_gfx_gbrf_reverse_check , vehicle_is_reversed
 
 //Automatic liveries
 
-switch(FEAT_TRAINS, SELF, sw_br87_gfx_privatised, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_privatised, most_common_cargo_type){
  PASS : sw_br87_gfx_calsleeper_reverse_check ;
  sw_br87_gfx_gbrf_reverse_check ;
 }
@@ -2401,7 +2401,7 @@ switch(FEAT_TRAINS, SELF, sw_br87_purchase, current_year){
 
 random_switch(FEAT_TRAINS, SELF, sw_br87_sectorised_colours, TRIGGER_VEHICLE_SERVICE){ 3 : palette_2cc(COLOUR_GREY, COLOUR_RED) ; 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;}
 
-switch(FEAT_TRAINS, SELF, sw_br87_privatised_colours, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_br87_privatised_colours, most_common_cargo_type){
  PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
  palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }
