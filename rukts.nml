@@ -1335,7 +1335,6 @@ switch(FEAT_TRAINS, SELF, sw_ee3_sector_gfx_decider, most_common_cargo_type){
  BDMT : sw_ee3_railfreight_blue_reverse_check ;
  GLAS : sw_ee3_railfreight_blue_reverse_check ;
  PETR : sw_ee3_railfreight_blue_reverse_check ;
- PLAS : sw_ee3_railfreight_blue_reverse_check ;
  RFPR : sw_ee3_railfreight_blue_reverse_check ;
  SAND : sw_ee3_railfreight_blue_reverse_check ;
  ENSP : sw_ee3_railfreight_blue_reverse_check ;
@@ -2560,6 +2559,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
   colour_mapping : sw_eurodual_colours ;
   sound_effect : sw_eurodual_sfx_decider ;
   create_effect : sw_eurodual_effect_decider ;
+  purchase_power : 5364 ;
   purchase_cargo_capacity : 0 ;
   cargo_capacity : return 0 ;
   power: (current_railtype == ELRL) ? 5364 : 986;
