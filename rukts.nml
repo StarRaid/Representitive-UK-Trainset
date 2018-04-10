@@ -237,8 +237,8 @@ switch(FEAT_TRAINS, PARENT, sw_ee_coast_decider, current_speed){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_networker_running, current_speed){
- 0..17 : sound("sfx/465_coast_2.wav") ;
- 18..40 : sound("sfx/465_coast_1.wav") ;
+ 0..7 : sound("sfx/465_idle.wav") ;
+ 8..40 : sound("sfx/465_coast_2.wav") ;
  sound("sfx/465_coast_3.wav") ;
 }
 
@@ -308,7 +308,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info1, 0, 8)){
- SOUND_EVENT_STOPPED : sound("sfx/465_idle.wav") ;
+ //SOUND_EVENT_STOPPED       : sound("sfx/465_idle.wav") ;
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/465_shoe_clatter.wav") ;
  SOUND_EVENT_RUNNING_16 : sw_sfx_electric_networker_running ;
  SOUND_EVENT_START : sound("sfx/465_depart.wav") ;
