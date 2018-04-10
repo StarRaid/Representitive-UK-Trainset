@@ -176,7 +176,6 @@ switch(FEAT_TRAINS, SELF, sw_ee3_sector_gfx_decider, most_common_cargo_type){
 	BDMT : sw_ee3_railfreight_blue_reverse_check ;
 	GLAS : sw_ee3_railfreight_blue_reverse_check ;
 	PETR : sw_ee3_railfreight_blue_reverse_check ;
-	PLAS : sw_ee3_railfreight_blue_reverse_check ;
 	RFPR : sw_ee3_railfreight_blue_reverse_check ;
 	SAND : sw_ee3_railfreight_blue_reverse_check ;
 	ENSP : sw_ee3_railfreight_blue_reverse_check ;
