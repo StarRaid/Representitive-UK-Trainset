@@ -164,6 +164,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		dual_headed                    : 1 ;
+		loading_speed                  : 23 ;
 	}
 	graphics{
 		can_attach_wagon:		sw_168_coupling_restrictions;
