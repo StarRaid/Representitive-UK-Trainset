@@ -48,7 +48,7 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_rev
 
 //Automatic
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_auto_decider, most_common_cargo_type){
 	GOOD : sw_powerhaul_gfx_fliner_reverse_check ;
 	FOOD : sw_powerhaul_gfx_fliner_reverse_check ;
 	STEL : sw_powerhaul_gfx_fliner_reverse_check ;
@@ -123,7 +123,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase_2cc_check, colour_scheme_1){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_colours_auto_decider, most_common_cargo_type){
 	GOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	FOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	STEL : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;

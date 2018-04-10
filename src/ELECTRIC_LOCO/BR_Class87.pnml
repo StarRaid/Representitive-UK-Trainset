@@ -33,7 +33,7 @@ switch(FEAT_TRAINS, PARENT, sw_br87_gfx_gbrf_reverse_check       , vehicle_is_re
 
 //Automatic liveries
 
-switch(FEAT_TRAINS, SELF, sw_br87_gfx_privatised, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_privatised, most_common_cargo_type){
 	PASS : sw_br87_gfx_calsleeper_reverse_check ;
 	sw_br87_gfx_gbrf_reverse_check ;
 }
@@ -111,7 +111,7 @@ switch(FEAT_TRAINS, SELF, sw_br87_purchase, current_year){
 
 random_switch(FEAT_TRAINS, SELF, sw_br87_sectorised_colours, TRIGGER_VEHICLE_SERVICE){ 3 : palette_2cc(COLOUR_GREY, COLOUR_RED) ; 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;}
 
-switch(FEAT_TRAINS, SELF, sw_br87_privatised_colours, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_br87_privatised_colours, most_common_cargo_type){
 	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }
