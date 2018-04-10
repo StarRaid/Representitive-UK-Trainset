@@ -258,7 +258,7 @@ item (FEAT_TRAINS, item_142, 142) {
 		default_cargo_type:				PASS;
 		cargo_capacity:					55;
 		weight:							25 ton;
-		tractive_effort_coefficient:	0.35;
+		tractive_effort_coefficient:	0.55;
 		air_drag_coefficient:			0.05;
 		length:							7;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_DIESEL;

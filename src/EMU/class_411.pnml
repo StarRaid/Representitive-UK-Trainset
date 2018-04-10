@@ -470,7 +470,7 @@ item (FEAT_TRAINS, item_411, 411) {
 		cargo_capacity:					90;
 		weight:							30 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.35;
+		tractive_effort_coefficient:	0.45;
 		air_drag_coefficient:			0.05;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;

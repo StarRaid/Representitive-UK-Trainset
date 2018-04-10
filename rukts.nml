@@ -48,6 +48,9 @@ cargotable {
 
 //FIRS
    BEER, CLAY, ENSP, FMSP, FRVG, GRVL, MILK, MNSP, PHOS, PORE, RCYC, SCMT, SGBT, SGCN, JAVA, COPR, SUGR,
+
+//Nuclear stuff
+ URAN, NWST
    }
 # 4 "rukts.pnml" 2
 # 1 "src/CODE/railtype_table.pnml" 1
@@ -233,7 +236,7 @@ switch(FEAT_TRAINS, PARENT, sw_sfx_desiro_running, current_speed){
 
 switch(FEAT_TRAINS, PARENT, sw_ee_coast_decider, current_speed){
  0..18 : sound("sfx/ee_coast_2.wav") ;
- sound("sfx/ee_coast.wav") ;
+ sound("sfx/ee_coast.wav", 90) ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_networker_running, current_speed){
@@ -281,12 +284,12 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee, getbits(extra_callback_info1, 0
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2, getbits(extra_callback_info1, 0, 8)){
- SOUND_EVENT_STOPPED : sound("sfx/ee_idle.wav") ;
- SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_run.wav") ;
+ SOUND_EVENT_STOPPED : sound("sfx/ee_idle.wav",90) ;
+ SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_run.wav",90) ;
  SOUND_EVENT_RUNNING_16 : sw_ee_coast_decider ;
- SOUND_EVENT_START : sound("sfx/40_horn.wav") ;
+ SOUND_EVENT_START : sound("sfx/40_horn.wav",90) ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
- SOUND_EVENT_TUNNEL : sound("sfx/40_horn.wav") ;
+ SOUND_EVENT_TUNNEL : sound("sfx/40_horn.wav",90) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_desiro, getbits(extra_callback_info1, 0, 8)){
@@ -299,7 +302,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_desiro, getbits(extra_callback_info1, 0, 8)){
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
- SOUND_EVENT_STOPPED : sound("sfx/dmu_idle.wav") ;
+ SOUND_EVENT_STOPPED : sound("sfx/dmu_idle.wav",80) ;
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/dmu_run.wav") ;
  SOUND_EVENT_RUNNING_16 : sound("sfx/dmu_coast.wav") ;
  SOUND_EVENT_START : sound("sfx/222_horn.wav") ;
@@ -2821,7 +2824,7 @@ item (FEAT_TRAINS, item_142, 142) {
   default_cargo_type: PASS;
   cargo_capacity: 55;
   weight: 25 ton;
-  tractive_effort_coefficient: 0.35;
+  tractive_effort_coefficient: 0.55;
   air_drag_coefficient: 0.05;
   length: 7;
   effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_DIESEL;
@@ -3015,6 +3018,7 @@ item (FEAT_TRAINS, item_cl168, 168){
   effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
   sprite_id : SPRITE_ID_NEW_TRAIN ;
   dual_headed : 1 ;
+  loading_speed : 23 ;
  }
  graphics{
   can_attach_wagon: sw_168_coupling_restrictions;
@@ -4059,7 +4063,7 @@ item (FEAT_TRAINS, item_411, 411) {
   cargo_capacity: 90;
   weight: 30 ton;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  tractive_effort_coefficient: 0.35;
+  tractive_effort_coefficient: 0.45;
   air_drag_coefficient: 0.05;
   length: 8;
   effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_ELECTRIC;
