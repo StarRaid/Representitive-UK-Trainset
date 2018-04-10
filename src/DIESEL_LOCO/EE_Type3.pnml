@@ -191,10 +191,36 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_privatisation1_random, TRIGGER_VEHICLE_S
 	1 : sw_ee3_ews_reverse_check ;
 }
 
-random_switch(FEAT_TRAINS, SELF, sw_ee3_privatisation2_decider, TRIGGER_VEHICLE_SERVICE){
-	3 : sw_ee3_drscompass_reverse_check ;
-	2 : sw_ee3_colasrailfreight_reverse_check ;
-	1 : sw_ee3_rog_reverse_check ;
+switch(FEAT_TRAINS, PARENT, sw_ee3_privatisation2_decider, most_common_cargo_type){
+	PASS : sw_ee3_drscompass_reverse_check ;
+	URAN : sw_ee3_drscompass_reverse_check ;
+	NWST : sw_ee3_drscompass_reverse_check ;
+	GOOD : sw_ee3_drscompass_reverse_check ;
+	MAIL : sw_ee3_drscompass_reverse_check ;
+	VALU : sw_ee3_drscompass_reverse_check ;
+	GOLD : sw_ee3_drscompass_reverse_check ;
+	FOOD : sw_ee3_drscompass_reverse_check ;
+	STEL : sw_ee3_colasrailfreight_reverse_check ;
+	COAL : sw_ee3_colasrailfreight_reverse_check ;
+	IORE : sw_ee3_colasrailfreight_reverse_check ;
+	LVST : sw_ee3_colasrailfreight_reverse_check ;
+	OIL_ : sw_ee3_colasrailfreight_reverse_check ;
+	PAPR : sw_ee3_colasrailfreight_reverse_check ;
+	WOOD : sw_ee3_colasrailfreight_reverse_check ;
+	CORE : sw_ee3_colasrailfreight_reverse_check ;
+	AORE : sw_ee3_colasrailfreight_reverse_check ;
+	BDMT : sw_ee3_colasrailfreight_reverse_check ;
+	BRCK : sw_ee3_colasrailfreight_reverse_check ;
+	CMNT : sw_ee3_colasrailfreight_reverse_check ;
+	GLAS : sw_ee3_colasrailfreight_reverse_check ;
+	PETR : sw_ee3_colasrailfreight_reverse_check ;
+	PLAS : sw_ee3_colasrailfreight_reverse_check ;
+	RFPR : sw_ee3_colasrailfreight_reverse_check ;
+	SAND : sw_ee3_colasrailfreight_reverse_check ;
+	CLAY : sw_ee3_colasrailfreight_reverse_check ;
+	GRVL : sw_ee3_colasrailfreight_reverse_check ;
+	COPR : sw_ee3_colasrailfreight_reverse_check ;
+	sw_ee3_rog_reverse_check ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee3_gfx_auto, build_year){
@@ -291,11 +317,36 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_privatisation1_decider, TRIGGER_VE
 	1 : sw_ee3_gfxhc_standard_3 ;
 }
 
-random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_privatisation2_decider, TRIGGER_VEHICLE_SERVICE){
-	dependent : sw_ee3_privatisation2_decider ;
-	3 : sw_ee3_gfxhc_standard_any ;
-	2 : sw_ee3_gfxhc_standard_3 ;
-	1 : sw_ee3_gfxhc_newlights_random ;
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_privatisation2_decider, most_common_cargo_type){
+	PASS : sw_ee3_gfxhc_standard_any ;
+	URAN : sw_ee3_gfxhc_standard_any ;
+	NWST : sw_ee3_gfxhc_standard_any ;
+	GOOD : sw_ee3_gfxhc_standard_any ;
+	MAIL : sw_ee3_gfxhc_standard_any ;
+	VALU : sw_ee3_gfxhc_standard_any ;
+	GOLD : sw_ee3_gfxhc_standard_any ;
+	FOOD : sw_ee3_gfxhc_standard_any ;
+	STEL : sw_ee3_gfxhc_standard_3 ;
+	COAL : sw_ee3_gfxhc_standard_3 ;
+	IORE : sw_ee3_gfxhc_standard_3 ;
+	LVST : sw_ee3_gfxhc_standard_3 ;
+	OIL_ : sw_ee3_gfxhc_standard_3 ;
+	PAPR : sw_ee3_gfxhc_standard_3 ;
+	WOOD : sw_ee3_gfxhc_standard_3 ;
+	CORE : sw_ee3_gfxhc_standard_3 ;
+	AORE : sw_ee3_gfxhc_standard_3 ;
+	BDMT : sw_ee3_gfxhc_standard_3 ;
+	BRCK : sw_ee3_gfxhc_standard_3 ;
+	CMNT : sw_ee3_gfxhc_standard_3 ;
+	GLAS : sw_ee3_gfxhc_standard_3 ;
+	PETR : sw_ee3_gfxhc_standard_3 ;
+	PLAS : sw_ee3_gfxhc_standard_3 ;
+	RFPR : sw_ee3_gfxhc_standard_3 ;
+	SAND : sw_ee3_gfxhc_standard_3 ;
+	CLAY : sw_ee3_gfxhc_standard_3 ;
+	GRVL : sw_ee3_gfxhc_standard_3 ;
+	COPR : sw_ee3_gfxhc_standard_3 ;
+	sw_ee3_gfxhc_newlights_random ;
 }
 
 
@@ -389,10 +440,35 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_privatisation1_decider, TRIGGER_VE
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_privatisation2_decider, TRIGGER_VEHICLE_SERVICE){
-	dependent : sw_ee3_privatisation2_decider ;
-	3 : sw_ee3_gfxlt_standard_any ;
-	2 : sw_ee3_gfxlt_standard_3 ;
-	1 : sw_ee3_gfxlt_newlights ;
+	PASS : sw_ee3_gfxlt_standard_any ;
+	URAN : sw_ee3_gfxlt_standard_any ;
+	NWST : sw_ee3_gfxlt_standard_any ;
+	GOOD : sw_ee3_gfxlt_standard_any ;
+	MAIL : sw_ee3_gfxlt_standard_any ;
+	VALU : sw_ee3_gfxlt_standard_any ;
+	GOLD : sw_ee3_gfxlt_standard_any ;
+	FOOD : sw_ee3_gfxlt_standard_any ;
+	STEL : sw_ee3_gfxlt_standard_3 ;
+	COAL : sw_ee3_gfxlt_standard_3 ;
+	IORE : sw_ee3_gfxlt_standard_3 ;
+	LVST : sw_ee3_gfxlt_standard_3 ;
+	OIL_ : sw_ee3_gfxlt_standard_3 ;
+	PAPR : sw_ee3_gfxlt_standard_3 ;
+	WOOD : sw_ee3_gfxlt_standard_3 ;
+	CORE : sw_ee3_gfxlt_standard_3 ;
+	AORE : sw_ee3_gfxlt_standard_3 ;
+	BDMT : sw_ee3_gfxlt_standard_3 ;
+	BRCK : sw_ee3_gfxlt_standard_3 ;
+	CMNT : sw_ee3_gfxlt_standard_3 ;
+	GLAS : sw_ee3_gfxlt_standard_3 ;
+	PETR : sw_ee3_gfxlt_standard_3 ;
+	PLAS : sw_ee3_gfxlt_standard_3 ;
+	RFPR : sw_ee3_gfxlt_standard_3 ;
+	SAND : sw_ee3_gfxlt_standard_3 ;
+	CLAY : sw_ee3_gfxlt_standard_3 ;
+	GRVL : sw_ee3_gfxlt_standard_3 ;
+	COPR : sw_ee3_gfxlt_standard_3 ;
+	sw_ee3_gfxlt_newlights_random ;
 }
 
 
@@ -501,10 +577,35 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_colours_privatisation1_decider, TRIGGER_
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_ee3_colours_privatisation2_decider, TRIGGER_VEHICLE_SERVICE){
-	dependent : sw_ee3_privatisation2_decider ;
-	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	2 : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	1 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	URAN : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	NWST : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	GOOD : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	MAIL : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	VALU : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	GOLD : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	FOOD : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	STEL : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	COAL : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	IORE : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	LVST : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	OIL_ : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	PAPR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	WOOD : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	CORE : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	AORE : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	BDMT : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	BRCK : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	CMNT : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	GLAS : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	PETR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	PLAS : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	RFPR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	SAND : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	CLAY : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	GRVL : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	COPR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee3_colours_auto, build_year){
