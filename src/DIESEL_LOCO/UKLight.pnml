@@ -74,10 +74,9 @@ switch(FEAT_TRAINS, SELF, sw_uklight_refit_text_check, livery_choice){
 
 
 
-random_switch(FEAT_TRAINS, SELF, sw_uklight_colours_passenger_decider, TRIGGER_VEHICLE_SERVICE){
-	dependent : sw_uklight_gfx_passenger_check ;
-	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
-	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+switch(FEAT_TRAINS, SELF, sw_uklight_colours_passenger_decider, most_common_cargo_type){
+	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_uklight_colours_auto, build_year){
