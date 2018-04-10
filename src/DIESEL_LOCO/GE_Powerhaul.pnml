@@ -48,9 +48,12 @@ switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_rev
 
 //Automatic
 
-random_switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, TRIGGER_VEHICLE_SERVICE){
-	2 : sw_powerhaul_gfx_fliner_reverse_check ;
-	1 : sw_powerhaul_gfx_colas_reverse_check ;
+switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto_decider, most_common_cargo_type){
+	GOOD : sw_powerhaul_gfx_fliner_reverse_check ;
+	FOOD : sw_powerhaul_gfx_fliner_reverse_check ;
+	STEL : sw_powerhaul_gfx_fliner_reverse_check ;
+	MAIL : sw_powerhaul_gfx_fliner_reverse_check ;
+	sw_powerhaul_gfx_colas_reverse_check ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, build_year){
@@ -120,10 +123,12 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_purchase_2cc_check, livery_choice){
 
 //Colour mapping
 
-random_switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, TRIGGER_VEHICLE_SERVICE){
-	dependent : sw_powerhaul_gfx_auto_decider ;
-	2 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	1 : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto_decider, most_common_cargo_type){
+	GOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	FOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	STEL : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	MAIL : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, build_year){

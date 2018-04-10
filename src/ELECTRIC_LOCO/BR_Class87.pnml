@@ -31,25 +31,18 @@ switch(FEAT_TRAINS, PARENT, sw_br87_gfx_virgin_reverse_check     , vehicle_is_re
 switch(FEAT_TRAINS, PARENT, sw_br87_gfx_calsleeper_reverse_check , vehicle_is_reversed){ 1 : gfx_br87_calsleeper_reverse ; gfx_br87_calsleeper ;}
 switch(FEAT_TRAINS, PARENT, sw_br87_gfx_gbrf_reverse_check       , vehicle_is_reversed){ 1 : gfx_br87_gbrf_reverse       ; gfx_br87_gbrf ;}
 
-random_switch(FEAT_TRAINS, SELF, sw_br87_gfx_brblue     , TRIGGER_VEHICLE_SERVICE){ 1 : sw_br87_gfx_brblue_reverse_check ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_gfx_intercity  , TRIGGER_VEHICLE_SERVICE){ 1 : sw_br87_gfx_intercity_reverse_check ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_gfx_virgin     , TRIGGER_VEHICLE_SERVICE){ 1 : sw_br87_gfx_virgin_reverse_check ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_gfx_calsleeper , TRIGGER_VEHICLE_SERVICE){ 1 : sw_br87_gfx_calsleeper_reverse_check ;}
-random_switch(FEAT_TRAINS, SELF, sw_br87_gfx_gbrf       , TRIGGER_VEHICLE_SERVICE){ 1 : sw_br87_gfx_gbrf_reverse_check ;}
-
 //Automatic liveries
 
-switch(FEAT_TRAINS, SELF, sw_br87_gfx_privatised, most_common_refit){
-	CC_PASSENGERS : sw_br87_gfx_calsleeper ;
-	sw_br87_gfx_gbrf ;
+switch(FEAT_TRAINS, SELF, sw_br87_gfx_privatised, most_common_cargo_type){
+	PASS : sw_br87_gfx_calsleeper_reverse_check ;
+	sw_br87_gfx_gbrf_reverse_check ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_br87_gfx_auto, build_year){
-	ERA_BRBLUETOPS : sw_br87_gfx_brblue ;
-	ERA_SECTORISATION : sw_br87_gfx_intercity ;
-	ERA_PRIVATISATION1 : sw_br87_gfx_virgin ;
+	ERA_BRBLUETOPS : sw_br87_gfx_brblue_reverse_check ;
+	ERA_SECTORISATION : sw_br87_gfx_intercity_reverse_check ;
 	ERA_PRIVATISATION2 : sw_br87_gfx_privatised ;
-	sw_br87_gfx_virgin ;
+	sw_br87_gfx_virgin_reverse_check ;
 }
 
 //Manual liveries
@@ -118,8 +111,8 @@ switch(FEAT_TRAINS, SELF, sw_br87_purchase, current_year){
 
 random_switch(FEAT_TRAINS, SELF, sw_br87_sectorised_colours, TRIGGER_VEHICLE_SERVICE){ 3 : palette_2cc(COLOUR_GREY, COLOUR_RED) ; 1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;}
 
-switch(FEAT_TRAINS, SELF, sw_br87_privatised_colours, most_common_refit){
-	CC_PASSENGERS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+switch(FEAT_TRAINS, SELF, sw_br87_privatised_colours, most_common_cargo_type){
+	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }
 

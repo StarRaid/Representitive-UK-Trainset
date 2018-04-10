@@ -20,9 +20,9 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_tpe_reverse_check, vehicle_is_reverse
 
 //Automatic
 
-random_switch(FEAT_TRAINS, SELF, sw_uklight_gfx_passenger_check, TRIGGER_VEHICLE_SERVICE){
-	1 : sw_uklight_gfx_tpe_reverse_check ;
-	3 : sw_uklight_gfx_drs_reverse_check ;
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_passenger_check, most_common_cargo_type){
+	PASS : sw_uklight_gfx_tpe_reverse_check ;
+	sw_uklight_gfx_drs_reverse_check ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_uklight_gfx_auto, build_year){
