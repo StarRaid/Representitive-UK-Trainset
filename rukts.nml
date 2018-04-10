@@ -2979,6 +2979,13 @@ switch(FEAT_TRAINS, SELF, sw_168_colours_2cc_check, colour_scheme_1){
  palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_168_coupling_restrictions, vehicle_type_id) {
+    item_MU90: return CB_RESULT_ATTACH_ALLOW;
+ item_cl168: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_168_NO_COUPLE);
+}
+
+
 //Item 
 
 item (FEAT_TRAINS, item_cl168, 168){
@@ -3010,7 +3017,7 @@ item (FEAT_TRAINS, item_cl168, 168){
   dual_headed : 1 ;
  }
  graphics{
-  can_attach_wagon: sw_325_coupling_restrictions;
+  can_attach_wagon: sw_168_coupling_restrictions;
   default : sw_168_gfx_manual_check ;
   colour_mapping : sw_168_colours_2cc_check ;
   purchase : sw_168_purchase ;
