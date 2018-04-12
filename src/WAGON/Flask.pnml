@@ -1,0 +1,92 @@
+//Nuclear flask
+
+//Templates
+
+template template_flask(x,y){
+	[x+0 , y, 8 , 19, -3 , -2]
+	[x+10, y, 16, 14, -8 , -7 ]
+	[x+28, y, 24, 10, -8, -5 ]
+	[x+55, y, 16, 14, -4 , -7 ]
+}
+
+template template_flask_double(x,y){
+	[x+0  , y, 8 , 19, -3 , -16]
+	[x+10 , y, 16, 14, -8 , -7 ]
+	[x+28 , y, 24, 10, -12, -5 ]
+	[x+55 , y, 16, 14, -8 , -7 ]
+	[x+73 , y, 8 , 19, -3 , -16]
+	[x+83 , y, 16, 14, -8 , -7 ]
+	[x+101, y, 24, 10, -12, -5 ]
+	[x+128, y, 16, 14, -8 , -7 ]
+}
+
+
+//Spritesets
+spriteset(gfx_flask           , "gfx/WAGON/flask.png"){template_flask(0,0)}
+spriteset(gfx_flask_container , "gfx/WAGON/flask.png"){template_flask(0,21)}
+spriteset(gfx_flask_light     , "gfx/WAGON/flask.png"){template_flask_double(0,42)}
+spriteset(gfx_flask_purchase  , "gfx/WAGON/flask.png"){template_purchase_short(73,0)}
+
+switch(FEAT_TRAINS, SELF, sw_flask_container_decider, cargo_count > 0){
+	1 : gfx_flask_container ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_flask_light_decider, position_in_consist_from_end){
+	0 : gfx_flask_light ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_flask_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : gfx_flask ;
+	1 : sw_flask_container_decider ;
+	2 : sw_flask_light_decider ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_flask_colours_auto, build_year){
+	1970..1995 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_WHITE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_flask_2cc_check, colour_scheme_1){
+	0 : palette_2cc(company_colour1, company_colour2) ;
+	sw_flask_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_flask_weight, cargo_count > 0){
+	1 : 55 ;
+	10 ;
+}
+
+item (FEAT_TRAINS, flask_wagon){
+	property{
+		name                         : string(STR_NAME_FLASK) ;
+		climates_available           : ALL_CLIMATES ;
+		introduction_date            : date(1971,1,1) ;
+		model_life                   : VEHICLE_NEVER_EXPIRES ;
+		refittable_cargo_classes     : bitmask(CC_HAZARDOUS, CC_COVERED) ;
+		non_refittable_cargo_classes : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_BULK, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
+		cargo_allow_refit            : [URAN, NWST, SULP] ;
+		loading_speed                : 3 ;
+		cost_factor                  : 8 ;
+		running_cost_factor          : 15 ;
+		running_cost_base            : RUNNING_COST_NONE ;
+		sprite_id                    : SPRITE_ID_NEW_TRAIN ;
+		speed                        : 75 mph ;
+		misc_flags                   : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
+		refit_cost                   : 0 ;
+		track_type                   : RAIL ;
+		ai_special_flag              : AI_FLAG_CARGO ;
+		power                        : 0 hp ;
+		dual_headed                  : 0 ;
+		default_cargo_type           : NWST ;
+		cargo_capacity               : 5 ;
+		weight                       : 0 ton ;
+		length                       : 6 ;
+	}
+	graphics{
+		default        : sw_flask_spritestack ;
+		purchase       : gfx_flask_purchase ;
+		colour_mapping : sw_flask_2cc_check ;
+		weight         : sw_flask_weight ;
+	}
+}
