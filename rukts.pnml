@@ -21,6 +21,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DMU/class_142.pnml"
 #include "src/DMU/turbostar.pnml"
 //#include "src/EMU/PEP.pnml"
+#include "src/EMU/class_313.pnml"
 //#include "src/EMU/class_317.pnml"
 #include "src/EMU/class_325.pnml"
 #include "src/EMU/class_411.pnml"

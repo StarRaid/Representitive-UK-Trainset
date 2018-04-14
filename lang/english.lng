@@ -14,6 +14,7 @@ STR_PARAM_LIVERY_CHOICE_DESC :Liveries are chosen through the cargo refit menu i
 
 STR_LIVERY_BRGREEN                : British Railways Green
 STR_LIVERY_BRBLUE				  : British Railways Blue 
+STR_LIVERY_BRBLUE_SPT			  : British Railways Strathclyde Partnership for Transport
 STR_LIVERY_BRBLUE_LOGO            : British Railways Large Logo {GOLD}(Blue)
 STR_LIVERY_BRRAILFREIGHT_LOGO     : British Railways Large Logo {GOLD}(Railfreight Grey)
 STR_LIVERY_BRBLUE_SUBTYPE		  : British Railways Blue {STRING}
@@ -45,6 +46,19 @@ STR_LIVERY_N_SPIRIT               : Northern Spirit
 STR_LIVERY_NORTHERN               : Northern
 STR_LIVERY_THAMESLINK             : Thameslink
 STR_LIVERY_ROG_EUROPHENIX         : Rail Operations Group {GOLD}(Europhenix)
+STR_LIVERY_SILVERLINK	          : Silverlink
+STR_LIVERY_WAGN		              : West Anglia Great Northern
+STR_LIVERY_SOUTHERN	              : Southern
+STR_LIVERY_FCC  	              : First Capital Connect
+STR_LIVERY_SPT_ORANGE			  : Strathclyde Partnership for Transport (Orange) 
+STR_LIVERY_SPT_CARMINE_CREAM	  : Strathclyde Partnership for Transport (Carmine & Cream)
+STR_LIVERY_SCOTRAIL				  : Scotrail "Saltaire"
+STR_LIVERY_FGE					  : First Great Eastern
+STR_LIVERY_ONE_ANGLIA			  : One Anglia
+STR_LIVERY_ABELLIO_GREATER_ANGLIA : Abellio Greater Anglia
+STR_LIVERY_TFL					  : TfL Rail
+STR_LIVERY_MERSEYRAIL			  : Merseyrail
+STR_LIVERY_MERSEYRAIL_REFERB	  : Merseyrail {GOLD}(Refurbished)
 
 STR_SECTOR_GENERAL              :{GOLD}(General, Distribution)
 STR_SECTOR_COAL                 :{GOLD}(Coal)
@@ -71,6 +85,8 @@ STR_NAME_142				 :Leyland "Pacer"
 
 STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
+STR_NAME_313				 :BREL Second Gereration EMU (Dual Voltage)
+STR_NAME_314				 :BREL Second Gereration EMU (Electric)
 STR_NAME_317				 :AC Express "Bed Pan"
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
 STR_NAME_411				 :Mark 1 EMU (3rd rail)
@@ -78,6 +94,7 @@ STR_NAME_700				 :Siemens "Desiro City"
 
 STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another Leyland "Pacer"!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
+STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another Mark 1 EMU (3rd rail)!
 STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
 STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Seimens "Desiro City"!

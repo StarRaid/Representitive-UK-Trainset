@@ -1,0 +1,109 @@
+switch(FEAT_TRAINS, SELF, sw_313_colour_mapping_decider, current_year){
+	ERA_BRBLUETOPS: sw_313_brb_colour_mapping;
+	ERA_SECTORISATION: sw_313_nse_colour_mapping;
+	1996 .. 2005: sw_313_slk_colour_mapping;
+	2006 .. 2010: sw_313_fcc_colour_mapping;
+	sw_313_stn_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_314_colour_mapping_decider, current_year){
+	ERA_BRBLUETOPS: sw_313_brb_colour_mapping;
+	ERA_SECTORISATION: sw_313_spn_colour_mapping;
+	1996 .. 2005: sw_313_spn_colour_mapping;
+	2006 .. 2010: sw_313_scr_colour_mapping;
+	sw_313_scr_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_315_colour_mapping_decider, current_year){
+	ERA_BRBLUETOPS: sw_313_brb_colour_mapping;
+	ERA_SECTORISATION: sw_313_nse_colour_mapping;
+	1996 .. 2000: sw_313_wgn_colour_mapping;
+	2001 .. 2005: sw_313_one_colour_mapping;
+	2006 .. 2010: sw_313_aga_colour_mapping;
+	sw_313_tlf_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_508_colour_mapping_decider, current_year){
+	ERA_BRBLUETOPS: sw_313_brb_colour_mapping;
+	ERA_SECTORISATION: sw_313_mr_colour_mapping;
+	1996 .. 2005: sw_313_mr_colour_mapping;
+	sw_313_mr_colour_mapping;
+}
+
+//Manual liveries
+
+switch(FEAT_TRAINS, SELF, sw_313_manual_colour_mapping_decider, cargo_subtype){
+	0: sw_313_brb_colour_mapping;
+	1: sw_313_nse_colour_mapping;
+	2: sw_313_slk_colour_mapping;
+	3: sw_313_wgn_colour_mapping;
+	4: sw_313_fcc_colour_mapping;
+	5: sw_313_stn_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_314_manual_colour_mapping_decider, cargo_subtype){
+	0: sw_313_brb_colour_mapping;
+	1: sw_313_spn_colour_mapping;
+	2: sw_313_spn_colour_mapping;
+	3: sw_313_scr_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_315_manual_colour_mapping_decider, cargo_subtype){
+	0: sw_313_brb_colour_mapping;
+	1: sw_313_nse_colour_mapping;
+	2: sw_313_wgn_colour_mapping;
+	3: sw_313_fge_colour_mapping;
+	4: sw_313_one_colour_mapping;
+	5: sw_313_aga_colour_mapping;
+	6: sw_313_tlf_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_508_manual_colour_mapping_decider, cargo_subtype){
+	0: sw_313_brb_colour_mapping;
+	1: sw_313_mr_colour_mapping;
+	2: sw_313_se_colour_mapping;
+	3: sw_313_se_colour_mapping;
+	4: sw_313_se_colour_mapping;
+	5: sw_313_slk_colour_mapping;
+	6: sw_313_mr_colour_mapping;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_313_manual_colour_mapping_choice_decider, (count_veh_id(313)/count_veh_id(9020)){
+	=>2 : sw_313_manual_colour_mapping_decider ; 
+	sw_508_manual_colour_mapping_decider ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_313_colour_mapping_choice_decider, colour_mapping_choice){
+	1 : sw_313_manual_colour_mapping_decider ; 
+	sw_313_colour_mapping_decider ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_314_colour_mapping_choice_decider, colour_mapping_choice){
+	1 : sw_314_manual_colour_mapping_decider ; 
+	sw_314_colour_mapping_decider ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_315_colour_mapping_choice_decider, colour_mapping_choice){
+	1 : sw_315_manual_colour_mapping_decider ; 
+	sw_315_colour_mapping_decider ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_508_colour_mapping_choice_decider, colour_mapping_choice){
+	1 : sw_508_manual_colour_mapping_decider ; 
+	sw_508_colour_mapping_decider ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_313_final_colour_mapping_choice_decider, (count_veh_id(313)/count_veh_id(9020)){
+	=>2 : sw_313_colour_mapping_choice_decider ; 
+	sw_508_colour_mapping_choice_decider ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_314_final_colour_mapping_choice_decider, (count_veh_id(314)/count_veh_id(9020)){
+	=>2 : sw_314_colour_mapping_choice_decider ; 
+	sw_315_colour_mapping_choice_decider ;
+}
