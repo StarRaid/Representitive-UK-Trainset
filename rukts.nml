@@ -3928,22 +3928,22 @@ switch(FEAT_TRAINS, SELF, sw_508_t_livery_choice_decider, livery_choice){
  sw_508_t_livery_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_313_final_livery_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(313))){
+switch(FEAT_TRAINS, PARENT, sw_313_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
  -1..0 : sw_313_livery_choice_decider ;
  sw_508_livery_choice_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_313_t_final_livery_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(313))){
+switch(FEAT_TRAINS, PARENT, sw_313_t_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
  -1..0 : sw_313_t_livery_choice_decider ;
  sw_508_t_livery_choice_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_314_final_livery_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(314))){
+switch(FEAT_TRAINS, PARENT, sw_314_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
  -1..0 : sw_314_livery_choice_decider ;
  sw_315_livery_choice_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_314_t_final_livery_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(314))){
+switch(FEAT_TRAINS, PARENT, sw_314_t_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
  -1..0 : sw_314_t_livery_choice_decider ;
  sw_315_t_livery_choice_decider ;
 }
@@ -3990,12 +3990,12 @@ switch(FEAT_TRAINS, SELF, sw_508_refit_text, cargo_subtype){
  return CB_RESULT_NO_TEXT ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_313_refit_text_class_decider, ((count_veh_id(9020)+1)/count_veh_id(313))){
+switch(FEAT_TRAINS, PARENT, sw_313_refit_text_class_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
  -1..0 : sw_313_refit_text ;
  sw_508_refit_text ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_314_refit_text_class_decider, ((count_veh_id(9020)+1)/count_veh_id(314))){
+switch(FEAT_TRAINS, PARENT, sw_314_refit_text_class_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
  -1..0 : sw_314_refit_text ;
  sw_315_refit_text ;
 }
@@ -4208,13 +4208,13 @@ switch(FEAT_TRAINS, SELF, sw_508_colour_mapping_choice_decider, livery_choice){
 }
 
 
-switch(FEAT_TRAINS, PARENT, sw_313_final_colour_mapping_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(313))){
+switch(FEAT_TRAINS, PARENT, sw_313_final_colour_mapping_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
  -1..0 : sw_313_colour_mapping_choice_decider ;
  sw_508_colour_mapping_choice_decider ;
 }
 
 
-switch(FEAT_TRAINS, PARENT, sw_314_final_colour_mapping_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(314))){
+switch(FEAT_TRAINS, PARENT, sw_314_final_colour_mapping_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
  -1..0 : sw_314_colour_mapping_choice_decider ;
  sw_315_colour_mapping_choice_decider ;
 }
@@ -5458,12 +5458,12 @@ random_switch(FEAT_TRAINS, SELF, sw_707_t, TRIGGER_VEHICLE_SERVICE){1: sw_707_sw
 
 //How the livery is selected
 
-switch(FEAT_TRAINS, SELF, sw_700_livery_selection_auto, (count_veh_id(0)/count_veh_id(1))){
+switch(FEAT_TRAINS, SELF, sw_700_livery_selection_auto, (count_veh_id(item_MU90)/count_veh_id(item_700))){
  0..1: sw_707;
   sw_700;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_700_livery_selection_auto_t, (count_veh_id(0)/count_veh_id(1))){
+switch(FEAT_TRAINS, PARENT, sw_700_livery_selection_auto_t, (count_veh_id(item_MU90)/count_veh_id(item_700))){
  0..1: sw_707_t;
   sw_700_t;
 }
@@ -5521,7 +5521,7 @@ random_switch(FEAT_TRAINS, SELF, sw_700_tl_colour_mapping, TRIGGER_VEHICLE_SERVI
 
 //Recolour decicsion
 
-switch(FEAT_TRAINS, PARENT, sw_700_recolour_selection_auto, (count_veh_id(0)/count_veh_id(1))){
+switch(FEAT_TRAINS, PARENT, sw_700_recolour_selection_auto, (count_veh_id(item_MU90)/count_veh_id(item_700))){
  0..1: sw_707_colour_mapping;
   sw_700_tl_colour_mapping;
 }

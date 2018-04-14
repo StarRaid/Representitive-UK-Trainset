@@ -73,12 +73,12 @@ random_switch(FEAT_TRAINS, SELF, sw_707_t, TRIGGER_VEHICLE_SERVICE){1: sw_707_sw
 
 //How the livery is selected
 
-switch(FEAT_TRAINS, SELF, sw_700_livery_selection_auto, (count_veh_id(0)/count_veh_id(1))){
+switch(FEAT_TRAINS, SELF, sw_700_livery_selection_auto, (count_veh_id(item_MU90)/count_veh_id(item_700))){
 	0..1: sw_707;
 	 sw_700;
 } 
 
-switch(FEAT_TRAINS, PARENT, sw_700_livery_selection_auto_t, (count_veh_id(0)/count_veh_id(1))){
+switch(FEAT_TRAINS, PARENT, sw_700_livery_selection_auto_t, (count_veh_id(item_MU90)/count_veh_id(item_700))){
 	0..1: sw_707_t;
 	 sw_700_t;
 } 
@@ -136,7 +136,7 @@ random_switch(FEAT_TRAINS, SELF, sw_700_tl_colour_mapping, TRIGGER_VEHICLE_SERVI
 
 //Recolour decicsion
 
-switch(FEAT_TRAINS, PARENT, sw_700_recolour_selection_auto, (count_veh_id(0)/count_veh_id(1))){
+switch(FEAT_TRAINS, PARENT, sw_700_recolour_selection_auto, (count_veh_id(item_MU90)/count_veh_id(item_700))){
 	0..1: sw_707_colour_mapping;
 	 sw_700_tl_colour_mapping;
 } 

@@ -779,22 +779,22 @@ switch(FEAT_TRAINS, SELF, sw_508_t_livery_choice_decider, livery_choice){
 	sw_508_t_livery_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_313_final_livery_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(313))){
+switch(FEAT_TRAINS, PARENT, sw_313_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
 	-1..0 : sw_313_livery_choice_decider ; 
 	sw_508_livery_choice_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_313_t_final_livery_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(313))){
+switch(FEAT_TRAINS, PARENT, sw_313_t_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
 	-1..0 : sw_313_t_livery_choice_decider ; 
 	sw_508_t_livery_choice_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_314_final_livery_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(314))){
+switch(FEAT_TRAINS, PARENT, sw_314_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
 	-1..0 : sw_314_livery_choice_decider ; 
 	sw_315_livery_choice_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_314_t_final_livery_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(314))){
+switch(FEAT_TRAINS, PARENT, sw_314_t_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
 	-1..0 : sw_314_t_livery_choice_decider ; 
 	sw_315_t_livery_choice_decider ;
 }
@@ -841,12 +841,12 @@ switch(FEAT_TRAINS, SELF, sw_508_refit_text, cargo_subtype){
 	return CB_RESULT_NO_TEXT ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_313_refit_text_class_decider, ((count_veh_id(9020)+1)/count_veh_id(313))){
+switch(FEAT_TRAINS, PARENT, sw_313_refit_text_class_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
 	-1..0 : sw_313_refit_text ; 
 	sw_508_refit_text ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_314_refit_text_class_decider, ((count_veh_id(9020)+1)/count_veh_id(314))){
+switch(FEAT_TRAINS, PARENT, sw_314_refit_text_class_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
 	-1..0 : sw_314_refit_text ; 
 	sw_315_refit_text ;
 }
@@ -1059,13 +1059,13 @@ switch(FEAT_TRAINS, SELF, sw_508_colour_mapping_choice_decider, livery_choice){
 }
 
 
-switch(FEAT_TRAINS, PARENT, sw_313_final_colour_mapping_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(313))){
+switch(FEAT_TRAINS, PARENT, sw_313_final_colour_mapping_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
 	-1..0 : sw_313_colour_mapping_choice_decider ; 
 	sw_508_colour_mapping_choice_decider ;
 }
 
 
-switch(FEAT_TRAINS, PARENT, sw_314_final_colour_mapping_choice_decider, ((count_veh_id(9020)+1)/count_veh_id(314))){
+switch(FEAT_TRAINS, PARENT, sw_314_final_colour_mapping_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
 	-1..0 : sw_314_colour_mapping_choice_decider ; 
 	sw_315_colour_mapping_choice_decider ;
 }
