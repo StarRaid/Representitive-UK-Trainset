@@ -36,11 +36,18 @@ switch(FEAT_TRAINS, PARENT, sw_eurodual_sfx_decider, current_railtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_eurodual_effect_decider, current_railtype){
-	ELRL : vfx_ohle ;
+	ELRL   : vfx_ohle ;
+	SAAZ   : vfx_ohle ;
+	"3RDC" : vfx_ohle ;
 	vfx_diesel_default ;
 }
 
-
+switch(FEAT_TRAINS, PARENT, sw_eurodual_power_decider, current_railtype){
+	ELRL   : 5364 ;
+	SAAZ   : 5364 ;
+	"3RDC" : 5364 ;
+	986 ;	
+}
 
 //Item
 
@@ -81,7 +88,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		purchase_power          : 5364 ;
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
-		power: (current_railtype == ELRL) ? 5364 : 986;
+		power                   : sw_eurodual_power_decider;
 		can_attach_wagon        : sw_all_but_MU90;
 	}
 }
