@@ -56,10 +56,12 @@ switch(FEAT_TRAINS, SELF, sw_flask_2cc_check, colour_scheme_1){
 	sw_flask_colours_auto ;
 }
 
+/*
 switch(FEAT_TRAINS, SELF, sw_flask_weight, cargo_count > 0){
 	1 : 55 ;
 	10 ;
 }
+*/
 
 item (FEAT_TRAINS, flask_wagon, 10001){
 	property{
@@ -84,13 +86,12 @@ item (FEAT_TRAINS, flask_wagon, 10001){
 		dual_headed                  : 0 ;
 		default_cargo_type           : NWST ;
 		cargo_capacity               : 5 ;
-		weight                       : 0 ton ;
+		weight                       : 10 ton ;
 		length                       : 6 ;
 	}
 	graphics{
 		default        : sw_flask_spritestack ;
 		purchase       : gfx_flask_purchase ;
 		colour_mapping : sw_flask_2cc_check ;
-		weight         : sw_flask_weight ;
 	}
 }
