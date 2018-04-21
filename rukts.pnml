@@ -12,6 +12,7 @@ disable_item(FEAT_TRAINS);
 #include "src/WAGON/Mk2.pnml"
 #include "src/WAGON/MU90.pnml"
 #include "src/WAGON/Wagon_a.pnml"
+#include "src/WAGON/Flask.pnml"
 #include "src/DIESEL_LOCO/EE_Type3.pnml"
 #include "src/DIESEL_LOCO/EE_Type4.pnml"
 #include "src/DIESEL_LOCO/GE_Powerhaul.pnml"

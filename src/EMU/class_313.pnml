@@ -779,24 +779,24 @@ switch(FEAT_TRAINS, SELF, sw_508_t_livery_choice_decider, livery_choice){
 	sw_508_t_livery_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_313_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
-	-1..0 : sw_313_livery_choice_decider ; 
-	sw_508_livery_choice_decider ;
+switch(FEAT_TRAINS, PARENT, sw_313_final_livery_choice_decider, ((count_veh_id(item_Mk2))-(count_veh_id(item_313)))){
+	-256..-1: sw_313_livery_choice_decider ; 
+	0..256: sw_508_livery_choice_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_313_t_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
-	-1..0 : sw_313_t_livery_choice_decider ; 
-	sw_508_t_livery_choice_decider ;
+switch(FEAT_TRAINS, PARENT, sw_313_t_final_livery_choice_decider, ((count_veh_id(item_Mk2))-(count_veh_id(item_313)))){
+	-256..-1: sw_313_t_livery_choice_decider ; 
+	0..256: sw_508_t_livery_choice_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_314_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
-	-1..0 : sw_314_livery_choice_decider ; 
-	sw_315_livery_choice_decider ;
+switch(FEAT_TRAINS, PARENT, sw_314_final_livery_choice_decider, ((count_veh_id(item_Mk2))-(count_veh_id(item_314)))){
+	-256..-1: sw_314_livery_choice_decider ; 
+	0..256: sw_315_livery_choice_decider ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_314_t_final_livery_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
-	-1..0 : sw_314_t_livery_choice_decider ; 
-	sw_315_t_livery_choice_decider ;
+switch(FEAT_TRAINS, PARENT, sw_314_t_final_livery_choice_decider, ((count_veh_id(item_Mk2))-(count_veh_id(item_314)))){
+	-256..-1: sw_314_t_livery_choice_decider ; 
+	0..256: sw_315_t_livery_choice_decider ;
 }
 
 //Refit text
@@ -841,14 +841,14 @@ switch(FEAT_TRAINS, SELF, sw_508_refit_text, cargo_subtype){
 	return CB_RESULT_NO_TEXT ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_313_refit_text_class_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
-	-1..0 : sw_313_refit_text ; 
-	sw_508_refit_text ;
+switch(FEAT_TRAINS, PARENT, sw_313_refit_text_class_decider, ((count_veh_id(item_Mk2))-(count_veh_id(item_313)))){
+	-256..-1: sw_313_refit_text ; 
+	0..256: sw_508_refit_text ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_314_refit_text_class_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
-	-1..0 : sw_314_refit_text ; 
-	sw_315_refit_text ;
+switch(FEAT_TRAINS, PARENT, sw_314_refit_text_class_decider, ((count_veh_id(item_Mk2))-(count_veh_id(item_314)))){
+	-256..-1: sw_314_refit_text ; 
+	0..256: sw_315_refit_text ;
 }
 
 //Refit text
@@ -1059,15 +1059,15 @@ switch(FEAT_TRAINS, SELF, sw_508_colour_mapping_choice_decider, livery_choice){
 }
 
 
-switch(FEAT_TRAINS, PARENT, sw_313_final_colour_mapping_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
-	-1..0 : sw_313_colour_mapping_choice_decider ; 
-	sw_508_colour_mapping_choice_decider ;
+switch(FEAT_TRAINS, PARENT, sw_313_final_colour_mapping_choice_decider, ((count_veh_id(item_Mk2))-(count_veh_id(item_313)))){
+	-256..-1: sw_313_colour_mapping_choice_decider ; 
+	0..256: sw_508_colour_mapping_choice_decider ;
 }
 
 
-switch(FEAT_TRAINS, PARENT, sw_314_final_colour_mapping_choice_decider, ((count_veh_id(item_Mk2))/count_veh_id(0))){
-	-1..0 : sw_314_colour_mapping_choice_decider ; 
-	sw_315_colour_mapping_choice_decider ;
+switch(FEAT_TRAINS, PARENT, sw_314_final_colour_mapping_choice_decider, ((count_veh_id(item_Mk2))-(count_veh_id(item_314)))){
+	-256..-1: sw_314_colour_mapping_choice_decider ; 
+	0..256: sw_315_colour_mapping_choice_decider ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_313_colour_mapping_decider, colour_scheme_1){
@@ -1117,7 +1117,7 @@ item (FEAT_TRAINS, item_313, 313) {
 	}
 	graphics {
 	can_attach_wagon:					sw_313_coupling_restrictions;
-	default: 							sw_313_final_livery_choice_decider;
+	default: 							sw_313_default;
 	purchase:							sw_313_purchase;
 	create_effect:						vfx_3rd_only;
 	cargo_subtype_text:					sw_313_refit_text_decider ;
@@ -1126,7 +1126,7 @@ item (FEAT_TRAINS, item_313, 313) {
 }
 		livery_override (item_Mk2) {
 		cargo_capacity: 85;
-		default: sw_313_t_final_livery_choice_decider;
+		default: sw_313_default_t;
 		colour_mapping:	sw_313_colour_mapping_decider;
 		cargo_subtype_text: sw_313_refit_text_decider ;
 		weight: 30;
@@ -1170,7 +1170,7 @@ item (FEAT_TRAINS, item_314, 314) {
 	}
 	graphics {
 	can_attach_wagon:					sw_313_coupling_restrictions;
-	default: 							sw_314_final_livery_choice_decider;
+	default: 							sw_314_default;
 	purchase:							sw_314_purchase;
 	create_effect:						vfx_3rd_only;
 	cargo_subtype_text:					sw_314_refit_text_decider ;
@@ -1179,7 +1179,7 @@ item (FEAT_TRAINS, item_314, 314) {
 }
 		livery_override (item_Mk2) {
 		cargo_capacity: 85;
-		default: sw_314_t_final_livery_choice_decider;
+		default: sw_314_default_t;
 		colour_mapping:	sw_314_colour_mapping_decider;
 		cargo_subtype_text: sw_314_refit_text_decider ;
 		weight: 30;
