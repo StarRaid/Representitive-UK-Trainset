@@ -1,0 +1,13 @@
+##grflangid 0x01
+
+STR_GRF_NAME        :Representative UK Train Set - Nuclear Addition
+STR_GRF_DESC        :{GOLD}An addon for the RUKTS GRF that adds a Nuclear Reprocessing Site industry to the game.{}Graphics by various artists from ISR and OpenGFX. Coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
+
+STR_NWST_NAME           :Nuclear Waste
+STR_NWST_ITEMS_OF_CARGO :{COMMA} flasks of Nuclear Waste
+STR_NWST_ABBREV         :{TINYFONT}NW
+
+STR_POWER_STATION_STATION_NAME :{STRING} Power Station
+STR_NUCPROC_NAME               :Nuclear Reprocessing Plant
+STR_NUCPROC_STATION_NAME       :{STRING} Nuclear Reprocessing Plant
+STR_ERROR_NOT_NEAR_WATER       :This industry must be built at least 32 tiles within a water tile.
