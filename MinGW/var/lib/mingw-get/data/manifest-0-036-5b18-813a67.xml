@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-5b18-813a67">
+    <release tarname="wget-1.12-1-msys-1.0.13-bin.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="bin" />
+        <file path="bin/wget.exe" />
+        <dir path="etc" />
+        <file path="etc/wgetrc" />
+    </manifest>
+</package>

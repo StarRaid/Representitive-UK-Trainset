@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-ea1f-1ba3de">
+    <release tarname="unzip-6.0-1-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/unzip-6.0-1-msys.RELEASE_NOTES.txt" />
+        <dir path="share/doc/unzip" />
+        <dir path="share/doc/unzip/6.0" />
+        <file path="share/doc/unzip/6.0/BUGS" />
+        <file path="share/doc/unzip/6.0/funzip.txt" />
+        <file path="share/doc/unzip/6.0/History.600" />
+        <dir path="share/doc/unzip/6.0/proginfo" />
+        <file path="share/doc/unzip/6.0/proginfo/3rdparty.bug" />
+        <file path="share/doc/unzip/6.0/proginfo/Contents" />
+        <file path="share/doc/unzip/6.0/proginfo/CONTRIBS" />
+        <file path="share/doc/unzip/6.0/proginfo/defer.in" />
+        <file path="share/doc/unzip/6.0/proginfo/extrafld.txt" />
+        <file path="share/doc/unzip/6.0/proginfo/fileinfo.cms" />
+        <file path="share/doc/unzip/6.0/proginfo/nt.sd" />
+        <file path="share/doc/unzip/6.0/proginfo/perform.dos" />
+        <file path="share/doc/unzip/6.0/proginfo/timezone.txt" />
+        <file path="share/doc/unzip/6.0/proginfo/ziplimit.txt" />
+        <file path="share/doc/unzip/6.0/proginfo/ZipPorts" />
+        <file path="share/doc/unzip/6.0/README" />
+        <file path="share/doc/unzip/6.0/ToDo" />
+        <file path="share/doc/unzip/6.0/unzip.txt" />
+        <file path="share/doc/unzip/6.0/unzipsfx.txt" />
+        <file path="share/doc/unzip/6.0/WHERE" />
+        <file path="share/doc/unzip/6.0/zipgrep.txt" />
+        <file path="share/doc/unzip/6.0/zipinfo.txt" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/funzip.1" />
+        <file path="share/man/man1/unzip.1" />
+        <file path="share/man/man1/unzipsfx.1" />
+        <file path="share/man/man1/zipgrep.1" />
+        <file path="share/man/man1/zipinfo.1" />
+    </manifest>
+</package>

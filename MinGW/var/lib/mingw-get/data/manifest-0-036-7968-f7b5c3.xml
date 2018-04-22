@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-036-7968-f7b5c3">
+    <release tarname="bash-3.1.23-1-msys-1.0.18-lic.tar.xz" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="share/doc/bash/3.1.23/COPYING" />
+    </manifest>
+</package>

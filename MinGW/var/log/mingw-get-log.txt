@@ -1,0 +1,111 @@
+http://prdownloads.sourceforge.net/mingw/mingw-get-0.5-mingw32-beta-20120426-1-bin.tar.xz?download
+246.61 kB / 246.61 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/mingw-get-0.5-mingw32-beta-20120426-1-lic.tar.xz?download
+12.04 kB / 12.04 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/pkginfo-0.5-mingw32-beta-20120426-1-bin.tar.xz?download
+7.10 kB / 7.10 kB       |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libiconv-1.14-2-mingw32-dll-2.tar.lzma?download
+535.88 kB / 535.88 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libgmp-5.0.1-1-mingw32-dll-10.tar.lzma?download
+155.29 kB / 155.29 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libmpfr-2.4.1-1-mingw32-dll-1.tar.lzma?download
+108.53 kB / 108.53 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libpthreadgc-2.9.0-mingw32-pre-20110507-2-dll-2.tar.lzma?download
+26.71 kB / 26.71 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/pthreads-w32-2.9.0-mingw32-pre-20110507-2-dev.tar.lzma?download
+21.05 kB / 21.05 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libquadmath-4.6.2-1-mingw32-dll-0.tar.lzma?download
+159.00 kB / 159.00 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libgomp-4.6.2-1-mingw32-dll-1.tar.lzma?download
+18.61 kB / 18.61 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libmpc-0.8.1-1-mingw32-dll-2.tar.lzma?download
+23.58 kB / 23.58 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libssp-4.6.2-1-mingw32-dll-0.tar.lzma?download
+15.03 kB / 15.03 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libgcc-4.6.2-1-mingw32-dll-1.tar.lzma?download
+41.19 kB / 41.19 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libintl-0.18.1.1-2-mingw32-dll-8.tar.lzma?download
+44.14 kB / 44.14 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/mingwrt-3.20-mingw32-dll.tar.gz?download
+15.69 kB / 15.69 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/w32api-3.17-2-mingw32-dev.tar.lzma?download
+1.07 MB / 1.07 MB       |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/mingwrt-3.20-mingw32-dev.tar.gz?download
+862.97 kB / 862.97 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/binutils-2.22-1-mingw32-bin.tar.lzma?download
+3.61 MB / 3.61 MB       |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libexpat-2.0.1-1-mingw32-dll-1.tar.gz?download
+61.31 kB / 61.31 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/gdb-7.4-2-mingw32-bin.tar.lzma?download
+1.28 MB / 1.28 MB       |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/make-3.82-5-mingw32-bin.tar.lzma?download
+91.45 kB / 91.45 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/gcc-4.6.2-1-mingw32-lic.tar.lzma?download
+20.72 kB / 20.72 kB     |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/libstdc++-4.6.2-1-mingw32-dll-6.tar.lzma?download
+221.96 kB / 221.96 kB   |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/gcc-core-4.6.2-1-mingw32-bin.tar.lzma?download
+9.44 MB / 9.44 MB       |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/gcc-4.6.2-1-mingw32-doc.tar.lzma?download
+1.36 MB / 1.36 MB       |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/gcc-4.6.2-1-mingw32-lang.tar.lzma?download
+1.23 MB / 1.23 MB       |================================================| 100%
+http://prdownloads.sourceforge.net/mingw/gcc-c++-4.6.2-1-mingw32-bin.tar.lzma?download
+5.65 MB / 5.65 MB       |================================================| 100%
+install: mingw-get-0.5-mingw32-beta-20120426-1-bin.tar.xz
+ installing mingw-get-0.5-mingw32-beta-20120426-1-bin.tar.xz
+ running post-install hooks for mingw-get-bin
+install: mingw-get-0.5-mingw32-beta-20120426-1-lic.tar.xz
+ installing mingw-get-0.5-mingw32-beta-20120426-1-lic.tar.xz
+install: pkginfo-0.5-mingw32-beta-20120426-1-bin.tar.xz
+ installing pkginfo-0.5-mingw32-beta-20120426-1-bin.tar.xz
+install: libiconv-1.14-2-mingw32-dll-2.tar.lzma
+ installing libiconv-1.14-2-mingw32-dll-2.tar.lzma
+install: libgmp-5.0.1-1-mingw32-dll-10.tar.lzma
+ installing libgmp-5.0.1-1-mingw32-dll-10.tar.lzma
+install: libmpfr-2.4.1-1-mingw32-dll-1.tar.lzma
+ installing libmpfr-2.4.1-1-mingw32-dll-1.tar.lzma
+install: libpthreadgc-2.9.0-mingw32-pre-20110507-2-dll-2.tar.lzma
+ installing libpthreadgc-2.9.0-mingw32-pre-20110507-2-dll-2.tar.lzma
+install: pthreads-w32-2.9.0-mingw32-pre-20110507-2-dev.tar.lzma
+ installing pthreads-w32-2.9.0-mingw32-pre-20110507-2-dev.tar.lzma
+install: libquadmath-4.6.2-1-mingw32-dll-0.tar.lzma
+ installing libquadmath-4.6.2-1-mingw32-dll-0.tar.lzma
+install: libgomp-4.6.2-1-mingw32-dll-1.tar.lzma
+ installing libgomp-4.6.2-1-mingw32-dll-1.tar.lzma
+install: libmpc-0.8.1-1-mingw32-dll-2.tar.lzma
+ installing libmpc-0.8.1-1-mingw32-dll-2.tar.lzma
+install: libssp-4.6.2-1-mingw32-dll-0.tar.lzma
+ installing libssp-4.6.2-1-mingw32-dll-0.tar.lzma
+install: libgcc-4.6.2-1-mingw32-dll-1.tar.lzma
+ installing libgcc-4.6.2-1-mingw32-dll-1.tar.lzma
+install: libintl-0.18.1.1-2-mingw32-dll-8.tar.lzma
+ installing libintl-0.18.1.1-2-mingw32-dll-8.tar.lzma
+install: mingwrt-3.20-mingw32-dll.tar.gz
+ installing mingwrt-3.20-mingw32-dll.tar.gz
+install: w32api-3.17-2-mingw32-dev.tar.lzma
+ installing w32api-3.17-2-mingw32-dev.tar.lzma
+install: mingwrt-3.20-mingw32-dev.tar.gz
+ installing mingwrt-3.20-mingw32-dev.tar.gz
+install: binutils-2.22-1-mingw32-bin.tar.lzma
+ installing binutils-2.22-1-mingw32-bin.tar.lzma
+install: libexpat-2.0.1-1-mingw32-dll-1.tar.gz
+ installing libexpat-2.0.1-1-mingw32-dll-1.tar.gz
+install: gdb-7.4-2-mingw32-bin.tar.lzma
+ installing gdb-7.4-2-mingw32-bin.tar.lzma
+install: make-3.82-5-mingw32-bin.tar.lzma
+ installing make-3.82-5-mingw32-bin.tar.lzma
+install: gcc-4.6.2-1-mingw32-lic.tar.lzma
+ installing gcc-4.6.2-1-mingw32-lic.tar.lzma
+install: libstdc++-4.6.2-1-mingw32-dll-6.tar.lzma
+ installing libstdc++-4.6.2-1-mingw32-dll-6.tar.lzma
+install: gcc-core-4.6.2-1-mingw32-bin.tar.lzma
+ installing gcc-core-4.6.2-1-mingw32-bin.tar.lzma
+install: mingw32-base-2011060500-mingw32-bin.meta
+ installing mingw32-base-2011060500-mingw32-bin.meta
+install: gcc-4.6.2-1-mingw32-doc.tar.lzma
+ installing gcc-4.6.2-1-mingw32-doc.tar.lzma
+install: gcc-4.6.2-1-mingw32-lang.tar.lzma
+ installing gcc-4.6.2-1-mingw32-lang.tar.lzma
+install: gcc-c++-4.6.2-1-mingw32-bin.tar.lzma
+ installing gcc-c++-4.6.2-1-mingw32-bin.tar.lzma

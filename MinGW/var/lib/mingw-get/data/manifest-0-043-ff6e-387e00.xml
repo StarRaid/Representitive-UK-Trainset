@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-043-ff6e-387e00">
+    <release tarname="binutils-2.19.51-3-msys-1.0.13-lic.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <file path="share/doc/binutils/2.19.51/COPYING" />
+        <file path="share/doc/binutils/2.19.51/COPYING.LIB" />
+        <file path="share/doc/binutils/2.19.51/COPYING.NEWLIB" />
+        <file path="share/doc/binutils/2.19.51/COPYING3" />
+        <file path="share/doc/binutils/2.19.51/COPYING3.LIB" />
+    </manifest>
+</package>

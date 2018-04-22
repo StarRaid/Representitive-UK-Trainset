@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-038-0bb2-9b7dc5">
+    <release tarname="patch-2.6.1-1-msys-1.0.13-doc.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="share/doc" />
+        <dir path="share/doc/MSYS" />
+        <file path="share/doc/MSYS/patch-2.6.1-1-msys.RELEASE_NOTES.txt" />
+        <dir path="share/doc/patch" />
+        <dir path="share/doc/patch/2.6.1" />
+        <file path="share/doc/patch/2.6.1/AUTHORS" />
+        <file path="share/doc/patch/2.6.1/ChangeLog" />
+        <file path="share/doc/patch/2.6.1/NEWS" />
+        <file path="share/doc/patch/2.6.1/README" />
+        <dir path="share/man" />
+        <dir path="share/man/man1" />
+        <file path="share/man/man1/patch.1" />
+    </manifest>
+</package>

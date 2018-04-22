@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<package id="manifest-0-043-67c3-f783d0">
+    <release tarname="binutils-2.19.51-3-msys-1.0.13-bin.tar.lzma" />
+    <references>
+        <sysroot id="sysroot-0-011-664d-7cd9c6" />
+    </references>
+    <manifest>
+        <dir path="bin" />
+        <file path="bin/addr2line.exe" />
+        <file path="bin/ar.exe" />
+        <file path="bin/as.exe" />
+        <file path="bin/c++filt.exe" />
+        <file path="bin/dlltool.exe" />
+        <file path="bin/dllwrap.exe" />
+        <file path="bin/gprof.exe" />
+        <file path="bin/ld.exe" />
+        <file path="bin/nm.exe" />
+        <file path="bin/objcopy.exe" />
+        <file path="bin/objdump.exe" />
+        <file path="bin/ranlib.exe" />
+        <file path="bin/readelf.exe" />
+        <file path="bin/size.exe" />
+        <file path="bin/strings.exe" />
+        <file path="bin/strip.exe" />
+        <file path="bin/windmc.exe" />
+        <file path="bin/windres.exe" />
+        <dir path="include" />
+        <file path="include/ansidecl.h" />
+        <file path="include/bfd.h" />
+        <file path="include/bfdlink.h" />
+        <file path="include/dis-asm.h" />
+        <file path="include/symcat.h" />
+        <dir path="lib" />
+        <dir path="lib/ldscripts" />
+        <file path="lib/ldscripts/i386pe.x" />
+        <file path="lib/ldscripts/i386pe.xa" />
+        <file path="lib/ldscripts/i386pe.xbn" />
+        <file path="lib/ldscripts/i386pe.xn" />
+        <file path="lib/ldscripts/i386pe.xr" />
+        <file path="lib/ldscripts/i386pe.xu" />
+        <file path="lib/libbfd.a" />
+        <file path="lib/libbfd.la" />
+        <file path="lib/libiberty.a" />
+        <file path="lib/libopcodes.a" />
+        <file path="lib/libopcodes.la" />
+    </manifest>
+</package>

@@ -1,0 +1,98 @@
+msys binutils version
+========================================================================
+Binutils is a collection of binary utilities, including:
+* ar (for creating, modifying and extracting from archives),
+* as (a family of GNU assemblers),
+* gprof (for displaying call graph profile data),
+* ld (the GNU linker),
+* nm (for listing symbols from object files),
+* objcopy (for copying and translating object files),
+* objdump (for displaying information from object files),
+* ranlib (for generating an index for the contents of an archive),
+* size (for listing the section sizes of an object or archive file),
+* strings (for listing printable strings from files),
+* strip (for discarding symbols),
+* and addr2line (for converting addresses to file and line).
+
+This port contains all Cygwin patches, plus a Cygwin->MSYS string
+conversion patch.
+
+MSYS binutils also provides the following libraries:
+lib/libbfd.a
+lib/libbfd.la
+lib/libiberty.a
+lib/libopcodes.a
+lib/libopcodes.la
+
+Runtime requirements:
+  MSYS Environment
+    msysCORE-1.0.13-1-msys-1.0.13-bin
+
+Build requirements:
+  MSYS Environment
+    msysCORE-1.0.13-1-msys-1.0.13-bin
+    bash-3.1.17-2-msys-1.0.11-bin
+    bison-2.4.1-1-msys-1.0.11-bin
+    bzip2-1.0.5-1-msys-1.0.11-bin.tar.gz
+    libbz2-1.0.5-1-msys-1.0.11-dll-1.tar.gz
+    coreutils-5.97-2-msys-1.0.11-bin
+    diffutils-2.8.7.20071206cvs-2-msys-1.0.11-bin
+    findutils-4.4.2-1-msys-1.0.11-bin
+    flex-2.5.35-1-msys-1.0.11-bin
+    libcrypt-1.1_1-2-msys-1.0.11-dll-0.tar.lzma
+    libregex-1.20090805-1-msys-1.0.11-dll-1
+    gawk-3.1.7-1-msys-1.0.11-bin
+    grep-2.5.4-1-msys-1.0.11-bin
+    m4-1.4.13-1-msys-1.0.11-bin
+    make-3.81-2-msys-1.0.11-bin
+    patch-2.5.9-1-msys-1.0.11-bin
+    perl-5.6.1_2-1-msys-1.0.11-bin.tar.lzma
+    sed-4.2.1-1-msys-1.0.11-bin
+    tar-1.22-1-msys-1.0.11-bin
+    texinfo-4.13a-1-msys-1.0.11-bin
+    xz-4.999.9beta-1-msys-1.0.12-bin.tar.gz
+    liblzma-4.999.9beta-1-msys-1.0.12-dll-1.tar.gz
+  MSYS toolchain
+    binutils-2.19.51-3-msys-1.0.13-bin
+    gcc-3.4.4-3-msys-1.0.13-bin
+    w32api-3.14-2-msys-1.0.12-dev
+    msysCORE-1.0.13-1-msys-1.0.13-dev.tar.bz2
+
+Canonical homepage:
+  http://www.sourceware.org/binutils/
+
+Canonical download:
+  http://ftp.gnu.org/gnu/binutils
+  
+License:
+  GPLv3+
+
+Language:
+  C
+
+========================================================================
+
+Build instructions:
+  unpack binutils-2.19.51-X-msys-1.0.13-src.tar.lzma
+  <path-to-source>/msysrlsbld
+See <path-to-source>/msysrlsbld -h for further options.
+
+This will create:
+  binutils-2.19.51-X-msys-1.0.13-bin.tar.lzma
+    Executables and development files.
+  binutils-2.19.51-X-msys-1.0.13-doc.tar.lzma
+    Manual pages and developer information.
+  binutils-2.19.51-X-msys-1.0.13-lic.tar.lzma
+    Software licenses.
+
+========================================================================
+
+----------  binutils-2.19.51-3 -- 2010 Jan 16 -----------
+* Place documentation in correct directory.
+* Move files from /usr/i686-pc-msys/lib to /usr/lib.
+
+----------  binutils-2.19.51-2 -- 2010 Jan 9 -----------
+* Fix empty documentation.
+
+----------  binutils-2.19.51-1 -- 2010 Jan 5 -----------
+* First release.
