@@ -1,41 +1,41 @@
-spriteset(spriteset_700_tl_f, "gfx/EMU/class_700.png") {
-	template_8_8(0, 0)
+spriteset(spriteset_700_tl_f, "gfx/EMU/class_707.png") {
+	template_8_8_networker(0, 200)
 }
 
-spriteset(spriteset_700_tl_r, "gfx/EMU/class_700.png") {
-	template_8_8(0, 25)
+spriteset(spriteset_700_tl_r, "gfx/EMU/class_707.png") {
+	template_8_8_networker(0, 225)
 }
 
-spriteset(spriteset_700_tl_o, "gfx/EMU/class_700.png") {
-	template_8_8(0, 50)
+spriteset(spriteset_700_tl_o, "gfx/EMU/class_707.png") {
+	template_8_8_networker(0, 250)
 }
 
-spriteset(spriteset_700_tl_t, "gfx/EMU/class_700.png") {
-	template_8_8(0, 75)
+spriteset(spriteset_700_tl_t, "gfx/EMU/class_707.png") {
+	template_8_8_networker(0, 150)
 }
 
-spriteset(spriteset_700_tl_p, "gfx/EMU/class_700.png") {
-	template_8_8(0, 100)
+spriteset(spriteset_700_tl_p, "gfx/EMU/class_707.png") {
+	template_8_8_networker(0, 175)
 }
 
-spriteset(spriteset_700_swt_f, "gfx/EMU/class_700.png") {
-	template_8_8(0, 125)
+spriteset(spriteset_700_swt_f, "gfx/EMU/class_707.png") {
+	template_8_8_networker(0, 350)
 }
 
-spriteset(spriteset_700_swt_r, "gfx/EMU/class_700.png") {
-	template_8_8(0, 150)
+spriteset(spriteset_700_swt_r, "gfx/EMU/class_707.png") {
+	template_8_8_networker(0, 375)
 }
 
-spriteset(spriteset_700_swt_o, "gfx/EMU/class_700.png") {
-	template_8_8(0, 175)
+spriteset(spriteset_700_swt_o, "gfx/EMU/class_707.png") {
+	template_8_8_networker(0, 400)
 }
 
-spriteset(spriteset_700_swt_t, "gfx/EMU/class_700.png") {
-	template_8_8(0, 200)
+spriteset(spriteset_700_swt_t, "gfx/EMU/class_707.png") {
+	template_8_8_networker(0, 300)
 }
 
-spriteset(spriteset_700_purchase, "gfx/EMU/class_700.png") {
-	template_dualhead_purchase(179, 0)
+spriteset(spriteset_700_purchase, "gfx/EMU/class_707.png") {
+	template_dualhead_purchase(0, 275)
 }
 
 //Switches
@@ -131,7 +131,7 @@ random_switch(FEAT_TRAINS, SELF, sw_707_colour_mapping, TRIGGER_VEHICLE_SERVICE)
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_700_tl_colour_mapping, TRIGGER_VEHICLE_SERVICE){
-	1: palette_2cc(company_colour1, COLOUR_LIGHT_BLUE) ;
+	1: palette_2cc(COLOUR_LIGHT_BLUE, company_colour2) ;
 }
 
 //Recolour decicsion
