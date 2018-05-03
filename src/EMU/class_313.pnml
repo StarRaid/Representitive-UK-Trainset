@@ -1123,6 +1123,7 @@ item (FEAT_TRAINS, item_313, 313) {
 	cargo_subtype_text:					sw_313_refit_text_decider ;
 	colour_mapping:						sw_313_colour_mapping_decider ;
 	sound_effect:						sw_sfx_electric_networker;
+	purchase_colour_mapping:			sw_313_colour_mapping_choice_decider;
 }
 		livery_override (item_Mk2) {
 		cargo_capacity: 85;
@@ -1176,6 +1177,7 @@ item (FEAT_TRAINS, item_314, 314) {
 	cargo_subtype_text:					sw_314_refit_text_decider ;
 	colour_mapping:						sw_314_colour_mapping_decider ;
 	sound_effect:						sw_sfx_electric_networker;
+	purchase_colour_mapping:			sw_314_colour_mapping_choice_decider;
 }
 		livery_override (item_Mk2) {
 		cargo_capacity: 85;

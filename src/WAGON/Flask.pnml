@@ -24,12 +24,11 @@ template template_flask_double(x,y){
 	[x+128, y, 16, 14, -5,  -8 ] // NORTH WEST
 }
 
-
 //Spritesets
-spriteset(gfx_flask           , "gfx/WAGON/flask.png"){template_flask(0,0)}
-spriteset(gfx_flask_container , "gfx/WAGON/flask.png"){template_flask(0,21)}
-spriteset(gfx_flask_light     , "gfx/WAGON/flask.png"){template_flask_double(0,42)}
-spriteset(gfx_flask_purchase  , "gfx/WAGON/flask.png"){template_purchase_short(73,0)}
+spriteset(gfx_flask           , "gfx/flask.png"){template_flask(157,20)}
+spriteset(gfx_flask_container , "gfx/flask.png"){template_flask(157,40)}
+spriteset(gfx_flask_light     , "gfx/flask.png"){template_flask_double(157,60)}
+spriteset(gfx_flask_purchase  , "gfx/flask.png"){template_purchase_short(73,0)}
 
 switch(FEAT_TRAINS, SELF, sw_flask_container_decider, cargo_count > 0){
 	1 : gfx_flask_container ;
@@ -47,7 +46,7 @@ switch(FEAT_TRAINS, SELF, sw_flask_spritestack, [STORE_TEMP((getbits(extra_callb
 }
 
 switch(FEAT_TRAINS, SELF, sw_flask_colours_auto, build_year){
-	1970..1995 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	1960..1995 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_WHITE, COLOUR_WHITE) ;
 }
 
@@ -56,18 +55,16 @@ switch(FEAT_TRAINS, SELF, sw_flask_2cc_check, colour_scheme_1){
 	sw_flask_colours_auto ;
 }
 
-/*
 switch(FEAT_TRAINS, SELF, sw_flask_weight, cargo_count > 0){
 	1 : 55 ;
 	10 ;
 }
-*/
 
 item (FEAT_TRAINS, flask_wagon, 10001){
 	property{
 		name                         : string(STR_NAME_FLASK) ;
 		climates_available           : ALL_CLIMATES ;
-		introduction_date            : date(1971,1,1) ;
+		introduction_date            : date(1960,1,1) ;
 		model_life                   : VEHICLE_NEVER_EXPIRES ;
 		refittable_cargo_classes     : bitmask(CC_HAZARDOUS, CC_COVERED) ;
 		non_refittable_cargo_classes : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_BULK, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
@@ -85,13 +82,14 @@ item (FEAT_TRAINS, flask_wagon, 10001){
 		power                        : 0 hp ;
 		dual_headed                  : 0 ;
 		default_cargo_type           : NWST ;
-		cargo_capacity               : 5 ;
-		weight                       : 10 ton ;
+		cargo_capacity               : 10 ;
+		weight                       : 20 ton ;
 		length                       : 6 ;
 	}
 	graphics{
 		default        : sw_flask_spritestack ;
 		purchase       : gfx_flask_purchase ;
 		colour_mapping : sw_flask_2cc_check ;
+		//weight         : sw_flask_weight ;
 	}
 }
