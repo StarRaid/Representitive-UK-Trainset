@@ -25,10 +25,10 @@ template template_flask_double(x,y){
 }
 
 //Spritesets
-spriteset(gfx_flask           , "gfx/flask.png"){template_flask(157,20)}
-spriteset(gfx_flask_container , "gfx/flask.png"){template_flask(157,40)}
-spriteset(gfx_flask_light     , "gfx/flask.png"){template_flask_double(157,60)}
-spriteset(gfx_flask_purchase  , "gfx/flask.png"){template_purchase_short(73,0)}
+spriteset(gfx_flask           , "gfx/WAGON/flask.png"){template_flask(157,20)}
+spriteset(gfx_flask_container , "gfx/WAGON/flask.png"){template_flask(157,40)}
+spriteset(gfx_flask_light     , "gfx/WAGON/flask.png"){template_flask_double(157,60)}
+spriteset(gfx_flask_purchase  , "gfx/WAGON/flask.png"){template_purchase_short(73,0)}
 
 switch(FEAT_TRAINS, SELF, sw_flask_container_decider, cargo_count > 0){
 	1 : gfx_flask_container ;
