@@ -348,8 +348,8 @@ item (FEAT_TRAINS, item_411, 411) {
 		cargo_capacity:					90;
 		weight:							30 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.45;
-		air_drag_coefficient:			0.05;
+		tractive_effort_coefficient:	0.49;
+		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
 		bitmask_vehicle_info:			0;
@@ -363,13 +363,13 @@ item (FEAT_TRAINS, item_411, 411) {
 	create_effect:						vfx_3rd;
 	cargo_subtype_text:					sw_411_refit_text_decider ;
 	colour_mapping:						sw_411_colour_mapping_decider;
+	purchase_colour_mapping: 			sw_411_colour_mapping_decider;
 	//sound_effect:						sw_sfx_electric_loco;
 }
 		livery_override (9010) {
 		cargo_capacity: 90;
 		default: sw_411_default_t;
 		colour_mapping:	sw_411_colour_mapping_decider;
-		purchase_colour_mapping: sw_411_colour_mapping_decider;
 		cargo_subtype_text: sw_411_refit_text_decider ;
 }
 }
