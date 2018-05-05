@@ -4,7 +4,7 @@
 
 //Spritesets
 
-spriteset(gfx_nrwgarratt_coal       , "gfx/narrow_garrat.png"){
+spriteset(gfx_nrwgarratt_coal       , "gfx/STEAM_LOCO/narrow_garrat.png"){
 	[  0 ,  0 ,  8 , 14 , -3 , -11] //North
 	[ 10 ,  0 , 12 , 13 , -3 , -9 ] //North East
 	[ 28 ,  0 , 17 , 13 ,  0 , -8 ] //East
@@ -14,7 +14,7 @@ spriteset(gfx_nrwgarratt_coal       , "gfx/narrow_garrat.png"){
 	[100 ,  0 , 17 , 13 , -17, -8 ] //West
 	[126 ,  0 , 12 , 13 , -7 , -9 ] //North West
 }
-spriteset(gfx_nrwgarratt_coal_rev   , "gfx/narrow_garrat.png"){
+spriteset(gfx_nrwgarratt_coal_rev   , "gfx/STEAM_LOCO/narrow_garrat.png"){
 	[ 72 ,  0 ,  8 , 14 , -3 , -11] //North
 	[ 82 ,  0 , 12 , 13 , -6 , -8 ] //North East
 	[100 ,  0 , 17 , 13 , -1 , -8 ] //East
@@ -28,7 +28,7 @@ spriteset(gfx_nrwgarratt_coal_rev   , "gfx/narrow_garrat.png"){
 
 
 
-spriteset(gfx_nrwgarratt_water      , "gfx/narrow_garrat.png"){
+spriteset(gfx_nrwgarratt_water      , "gfx/STEAM_LOCO/narrow_garrat.png"){
 	[ 72 , 35 ,  8 , 14 , -3 , -11] //North
 	[ 82 , 35 , 12 , 13 , -4 , -9 ] //North East
 	[100 , 35 , 17 , 13 , -1 , -8 ] //East
@@ -38,7 +38,7 @@ spriteset(gfx_nrwgarratt_water      , "gfx/narrow_garrat.png"){
 	[ 28 , 35 , 17 , 13 , -16, -8 ] //West
 	[ 54 , 35 , 12 , 13 , -6 , -9 ] //North West
 }
-spriteset(gfx_nrwgarratt_water_rev  , "gfx/narrow_garrat.png"){
+spriteset(gfx_nrwgarratt_water_rev  , "gfx/STEAM_LOCO/narrow_garrat.png"){
 	[  0 , 35 ,  8 , 14 , -3 , -11] //North
 	[ 10 , 35 , 12 , 13 , -5 , -8 ] //North East
 	[ 28 , 35 , 17 , 13 ,  0 , -8 ] //East
@@ -52,7 +52,7 @@ spriteset(gfx_nrwgarratt_water_rev  , "gfx/narrow_garrat.png"){
 
 
 
-spriteset(gfx_nrwgarratt_boiler     , "gfx/narrow_garrat.png"){
+spriteset(gfx_nrwgarratt_boiler     , "gfx/STEAM_LOCO/narrow_garrat.png"){
 	[ 72 , 15 ,  8 , 19 , -3 , -13] //North
 	[ 82 , 15 , 16 , 15 , -7 , -10] //North East
 	[100 , 15 , 24 , 13 , -6 , -8 ] //East
@@ -62,7 +62,7 @@ spriteset(gfx_nrwgarratt_boiler     , "gfx/narrow_garrat.png"){
 	[ 28 , 15 , 24 , 13 , -18, -8 ] //West
 	[ 54 , 15 , 16 , 15 , -7 , -10] //North West
 }
-spriteset(gfx_nrwgarratt_boiler_rev , "gfx/narrow_garrat.png"){
+spriteset(gfx_nrwgarratt_boiler_rev , "gfx/STEAM_LOCO/narrow_garrat.png"){
 	[  0 , 15 ,  8 , 19 , -3 , -13] //North
 	[ 10 , 15 , 16 , 15 , -9 , -8 ] //North East
 	[ 28 , 15 , 24 , 13 , -6 , -8 ] //East

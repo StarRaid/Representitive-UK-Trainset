@@ -94,6 +94,13 @@ STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
 STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
 STR_NAME_700				 :Siemens "Desiro City"
 
+STR_NAME_NRWGARRATT :Beyer-Garratt 2-4-2+2-4-2 (Steam)
+
+STR_COLOUR_DKBLUE   :{BLUE}Dark blue
+STR_COLOUR_RED      :{RED}Red
+STR_COLOUR_GREEN    :{GREEN}Green
+STR_COLOUR_GREY     :Grey
+
 STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another Leyland "Pacer"!
 STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
@@ -102,3 +109,8 @@ STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or anot
 STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
 STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro City"!
 STR_MU90_NO_COUPLE: You may only couple this train to a correct MU!
+
+STR_NAAN_NAME         :Narrow Gauge Rails
+STR_NAAN_BUILD_NAME   :Narrow Gauge Construction
+STR_NAAN_REPLACE_NAME :Replace with Narrow Gauge
+STR_NAAN_NEW_TRAIN    :Looksie here! A new train built for Narrow Gauge!
