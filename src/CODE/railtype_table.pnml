@@ -4,4 +4,5 @@ railtypetable {
 	SAA3: ["3RDR", ELRL],
 	SAAZ: ["3RDC", ELRL],
 	SAA4: [SAA3, ELRL],
+	NAAN: [NAAN, NRGL, RAIL]
 }
