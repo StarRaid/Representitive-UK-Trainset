@@ -88,21 +88,25 @@ template base_32bpp(){
 spriteset(gfx_blank){base_32bpp()}
 
 template template_narrow_4_4(x, y){
- [x+000, y , 8 , 14 , -3 , -0 ] //North
- [x+010, y , 12 , 13 , -0 , -4 ] //North East
- [x+024, y , 17 , 13 , -0 , -4 ] //East
- [x+043, y , 12 , 13 , -0 , -4 ] //South East
+ [x+000, y , 8 , 14 , -3 , -11] //North
+ [x+010, y , 12 , 13 , -5 , -9 ] //North East
+ [x+024, y , 17 , 13 , -0 , -9 ] //East
+ [x+043, y , 12 , 13 , 3 , -5 ] //South East
+ [x+000, y , 8 , 14 , -3 , -4 ] //South
+ [x+010, y , 12 , 13 , -13, -5 ] //South West
+ [x+024, y , 17 , 13 , -17, -9 ] //West
+ [x+043, y , 12 , 13 , -5 , -9 ] //North West
 }
 
 template template_narrow_4_8(x, y){
- [x+000, y , 8 , 14 , -3 , -0 ] //North
- [x+010, y , 12 , 13 , -0 , -4 ] //North East
- [x+024, y , 17 , 13 , -0 , -4 ] //East
- [x+043, y , 12 , 13 , -0 , -4 ] //South East
- [x+057, y , 8 , 14 , -3 , -0 ] //South
- [x+067, y , 12 , 13 , -0 , -4 ] //South West
- [x+081, y , 17 , 13 , -0 , -4 ] //West
- [x+100, y , 12 , 13 , -0 , -4 ] //North West
+ [x+000, y , 8 , 14 , -3 , -11] //North
+ [x+010, y , 12 , 13 , -5 , -9 ] //North East
+ [x+024, y , 17 , 13 , -0 , -9 ] //East
+ [x+043, y , 12 , 13 , 3 , -5 ] //South East
+ [x+057, y , 8 , 14 , -3 , -4 ] //South
+ [x+067, y , 12 , 13 , -13, -5 ] //South West
+ [x+081, y , 17 , 13 , -17, -9 ] //West
+ [x+100, y , 12 , 13 , -5 , -9 ] //North West
 }
 
 
@@ -237,7 +241,7 @@ switch(FEAT_TRAINS, SELF, vfx_ohle_only, current_railtype){
  return 0;
 }
 
-switch(FEAT_TRAINS, SELF, vfx_steam, [STORE_TEMP(create_effect(EFFECT_SPRITE_STEAM, 0, 0, 0), 0x100)]) {
+switch(FEAT_TRAINS, SELF, vfx_steam, [STORE_TEMP(create_effect(EFFECT_SPRITE_STEAM, 0, 0, 10), 0x100)]) {
     return 1;
 }
 # 8 "rukts.pnml" 2
@@ -435,6 +439,24 @@ spriteset(gfx_narrow_bridges, "gfx/TRACKS/narrow_gauge.png"){
  [ 40 , 98 , 40 , 21 , -19, 5 ] //Cross over
 }
 
+spriteset(gfx_narrow_tunnels, "gfx/TRACKS/narrow_gauge.png"){
+ [ 0 , 72 , 40 , 21 , -19, 5 ] //North East
+ [ 50 , 72 , 40 , 21 , -19, 5 ] //North West
+ [ 0 , 72 , 40 , 21 , -19, 5 ] //North East
+ [ 50 , 72 , 40 , 21 , -19, 5 ] //North West
+}
+
+spriteset(gfx_narrow_level_crossing, "gfx/TRACKS/narrow_gauge.png"){
+ [ 0 , 72 , 1 , 1 , 0 , 0 ]
+ [ 0 , 72 , 1 , 1 , 0 , 0 ]
+ [ 0 , 72 , 1 , 1 , 0 , 0 ]
+ [ 0 , 72 , 1 , 1 , 0 , 0 ]
+ [ 0 , 72 , 1 , 1 , 0 , 0 ]
+ [ 0 , 72 , 1 , 1 , 0 , 0 ]
+ [ 0 , 72 , 1 , 1 , 0 , 0 ]
+ [ 0 , 72 , 1 , 1 , 0 , 0 ]
+}
+
 /*
 
 spriteset(gfx_narrow_track_diag_y, "gfx/TRACKS/narrow_gauge.png"){}
@@ -448,7 +470,7 @@ spriteset(gfx_narrow_track_vert_l, "gfx/TRACKS/narrow_gauge.png"){}
 spriteset(gfx_narrow_track_vert_r, "gfx/TRACKS/narrow_gauge.png"){}
 
 */
-# 56 "src/TRACKS/narrow_gauge.pnml"
+# 74 "src/TRACKS/narrow_gauge.pnml"
 item(FEAT_RAILTYPES, narrow_rail, 5) {
  property {
   label : "NAAN" ;
@@ -464,14 +486,15 @@ item(FEAT_RAILTYPES, narrow_rail, 5) {
   construction_cost : 40 ;
   speed_limit : 50 mph ;
   acceleration_model : ACC_MODEL_RAIL ;
+  railtype_flags : bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
   //introduction_date         : date(1869,1,1) ;
  }
  graphics {
   track_overlay : gfx_narrow_track ;
   underlay : gfx_narrow_trackbed ;
   bridge_surfaces : gfx_narrow_bridges ;
-  //level_crossings : 
-  //tunnels         : 
+  tunnels : gfx_narrow_tunnels ;
+  level_crossings : gfx_narrow_level_crossing ;
   //depots          : 
   //fences          : 
  }
@@ -3686,7 +3709,7 @@ item (FEAT_TRAINS, item_205, 205) {
  cargo_subtype_text: sw_205_refit_text_decider ;
  colour_mapping: sw_205_colour_mapping_decider;
  purchase_colour_mapping: sw_205_colour_mapping_decider;
- //sound_effect:						sw_sfx_electric_loco;
+  sound_effect : sw_sfx_diesel_loco_ee_2 ;
 }
   livery_override (9010) {
   cargo_capacity: 95;
@@ -5780,7 +5803,7 @@ item (FEAT_TRAINS, item_411, 411) {
   refit_cost: 0;
   track_type: SAA3;
   ai_special_flag: AI_FLAG_CARGO;
-  power: 500 hp;
+  power: 1000 hp;
   running_cost_base: RUNNING_COST_ELECTRIC;
   dual_headed: 1;
   default_cargo_type: PASS;
@@ -6101,8 +6124,8 @@ item (FEAT_TRAINS, item_455, 455) {
   cargo_capacity: 80;
   weight: 30 ton;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  tractive_effort_coefficient: 0.55;
-  air_drag_coefficient: 0.5;
+  tractive_effort_coefficient: 0.7;
+  air_drag_coefficient: 0.4;
   length: 8;
   effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_ELECTRIC;
   bitmask_vehicle_info: 0;
@@ -6313,7 +6336,7 @@ item (FEAT_TRAINS, item_700, 700) {
   refit_cost: 0;
   track_type: SAAZ;
   ai_special_flag: AI_FLAG_CARGO;
-  power: 2234 hp;
+  power: 4425 hp;
   running_cost_base: RUNNING_COST_ELECTRIC;
   dual_headed: 1;
   default_cargo_type: PASS;
@@ -6338,7 +6361,7 @@ item (FEAT_TRAINS, item_700, 700) {
 }
   livery_override (item_MU90) {
   cargo_capacity: 90;
-  power: 447;
+  power: 200;
   default: sw_700_trailer;
   weight: 34;
   colour_mapping: sw_700_colour_mapping;
@@ -6552,6 +6575,8 @@ spriteset(gfx_nrwcoachone_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_
 
 //Switches
 
+//Switches
+
 random_switch(FEAT_TRAINS, SELF, sw_nrwcoachone_gfx_auto){
  1 : gfx_nrwcoachone_1tone ;
  2 : gfx_nrwcoachone_2tone ;
@@ -6586,13 +6611,13 @@ switch(FEAT_TRAINS, SELF, sw_nrwcoachone_refit_text_check, livery_choice){
 
 random_switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_auto){
  dependent : sw_nrwcoachone_gfx_auto ;
- 1 : palette_2cc(COLOUR_GREEN, COLOUR_GREEN) ;
- 2 : palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
+ 1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+ 2 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_manual, cargo_subtype){
- 1 : palette_2cc(COLOUR_GREEN, COLOUR_GREEN) ;
- palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
+ 1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+ palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_manual_check, livery_choice){

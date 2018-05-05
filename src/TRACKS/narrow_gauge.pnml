@@ -44,14 +44,14 @@ spriteset(gfx_narrow_bridges, "gfx/TRACKS/narrow_gauge.png"){
 	[ 40 , 98 , 40 , 21 , -19, 5   ] //Cross over
 }
 
-spriteset(gfx_narrow_tunnels, "gfx/TRACKS/tracks.png"){
+spriteset(gfx_narrow_tunnels, "gfx/TRACKS/narrow_gauge.png"){
 	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
 	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
 	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
 	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
 }
 
-spriteset(gfx_narrow_level_crossing, "gfx/TRACKS/tracks.png"){
+spriteset(gfx_narrow_level_crossing, "gfx/TRACKS/narrow_gauge.png"){
 	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
 	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
 	[ 0  , 72 , 1  , 1  , 0  , 0   ] 

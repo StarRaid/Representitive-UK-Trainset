@@ -182,7 +182,7 @@ item (FEAT_TRAINS, item_700, 700) {
 		refit_cost:						0;
 		track_type:						SAAZ;
 		ai_special_flag:				AI_FLAG_CARGO;
-		power:							2234 hp;
+		power:							4425 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
@@ -207,7 +207,7 @@ item (FEAT_TRAINS, item_700, 700) {
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 90;
-		power: 447;
+		power: 200;
 		default: sw_700_trailer;
 		weight:	34;
 		colour_mapping:	sw_700_colour_mapping;

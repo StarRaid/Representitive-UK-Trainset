@@ -284,7 +284,7 @@ item (FEAT_TRAINS, item_205, 205) {
 	cargo_subtype_text:					sw_205_refit_text_decider ;
 	colour_mapping:						sw_205_colour_mapping_decider;
 	purchase_colour_mapping: 			sw_205_colour_mapping_decider;
-	//sound_effect:						sw_sfx_electric_loco;
+		sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
 }
 		livery_override (9010) {
 		cargo_capacity: 95;
