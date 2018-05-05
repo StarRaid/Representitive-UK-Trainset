@@ -153,7 +153,7 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 	property{
 		name                           : string(STR_NAME_NRWGARRATT) ;  
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1966,1,1) ;
+		introduction_date              : date(1937,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
 		cargo_allow_refit              : [GOOD] ;
