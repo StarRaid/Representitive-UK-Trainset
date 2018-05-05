@@ -25,14 +25,14 @@ random_switch(FEAT_TRAINS, SELF, sw_sfx_random_flange){
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_sfx_random_desiro_low_speed){
-	2 : sound("sfx/desiro_run_low.wav") ;
+	2 : sound("sfx/desiro_run_low.wav", 60) ;
 	1 : sw_sfx_random_flange;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_desiro_running, current_speed){
-	0..13 : sw_sfx_random_desiro_low_speed ;
-	14..23 : sound("sfx/desiro_run_medium.wav") ;
-	sound("sfx/desiro_run_high.wav") ;
+	0..16 : sw_sfx_random_desiro_low_speed ;
+	17..32 : sound("sfx/desiro_run_medium.wav", 60) ;
+	sound("sfx/desiro_run_high.wav", 60) ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_ee_coast_decider, current_speed){
