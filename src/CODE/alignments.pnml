@@ -21,6 +21,28 @@ template base_32bpp(){
 
 spriteset(gfx_blank){base_32bpp()}
 
+template template_narrow_4_4(x, y){
+	[x+000, y  ,  8 , 14 , -3 , -0 ] //North
+	[x+010, y  , 12 , 13 , -0 , -4 ] //North East
+	[x+024, y  , 17 , 13 , -0 , -4 ] //East
+	[x+043, y  , 12 , 13 , -0 , -4 ] //South East
+}
+
+template template_narrow_4_8(x, y){
+	[x+000, y  ,  8 , 14 , -3 , -0 ] //North
+	[x+010, y  , 12 , 13 , -0 , -4 ] //North East
+	[x+024, y  , 17 , 13 , -0 , -4 ] //East
+	[x+043, y  , 12 , 13 , -0 , -4 ] //South East
+	[x+057, y  ,  8 , 14 , -3 , -0 ] //South
+	[x+067, y  , 12 , 13 , -0 , -4 ] //South West
+	[x+081, y  , 17 , 13 , -0 , -4 ] //West
+	[x+100, y  , 12 , 13 , -0 , -4 ] //North West
+}
+}
+
+
+
+
 template template_dualhead_purchase(x,y){
 	[ x+77, y+11, 1, 1, 0, 0]
 	[ x+77, y+11, 1, 1, 0, 0]

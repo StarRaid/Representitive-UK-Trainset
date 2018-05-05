@@ -1,0 +1,94 @@
+//Narrow coach one
+
+//Spritesets
+
+spriteset(gfx_nrwcoachone_1tone   , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(0, 0)      }
+spriteset(gfx_nrwcoachone_2tone   , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(0, 23)     }
+spriteset(gfx_nrwcoachone_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_purchase_short(63, 1) }
+
+//Switches
+
+random_switch(FEAT_TRAINS, SELF, sw_nrwcoachone_gfx_auto){
+	1 : gfx_nrwcoachone_1tone ;
+	2 : gfx_nrwcoachone_2tone ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwcoachone_gfx_manual. cargo_subtype){
+	1 : gfx_nrwcoachone_1tone ;
+	gfx_nrwcoachone_2tone ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwcoachone_gfx_manual_check, livery_choice){
+	1 : sw_nrwcoachone_gfx_manual ;
+	sw_nrwcoachone_gfx_auto ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_nrwcoachone_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_NRW_2TONE) ;
+	1 : string(STR_LIVERY_NRW_1TONE) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwcoachone_refit_text_check, livery_choice){
+	1 : sw_nrwcoachone_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+//Colour mapping
+
+random_switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_auto){
+	dependent : sw_nrwcoachone_gfx_auto ;
+	1 : palette_2cc(COLOUR_GREEN, COLOUR_GREEN) ;
+	2 : palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_manual, cargo_subtype){
+	1 : palette_2cc(COLOUR_GREEN, COLOUR_GREEN) ;
+	palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_manual_check, livery_choice){
+	1 : sw_nrwcoachone_colour_manual ;
+	sw_nrwcoachone_colour_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_2cc_check, colour_scheme_1){
+	1 : sw_nrwcoachone_colour_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+item(FEAT_TRAINS, item_nrwcoachone, 9060){
+	property{
+		name						   : string(STR_NAME_NRWCOACHONE) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 4 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1870, 1, 1) ;
+		model_life                     : 50 ;
+		vehicle_life                   : 60 ;
+		cost_factor                    : 20 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 28 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 40 ;
+		loading_speed                  : 10 ;
+		track_type                     : NAAN ;
+		power                          : 0 hp ;
+		weight                         : 6 ton ;
+	}
+	graphics{
+		default                 : sw_nrwcoachone_gfx_manual_check ;
+		purchase                : gfx_nrwcoachone_purchase ;
+		purchase_colour_mapping : palette_2cc(COLOUR_CREAM, COLOUR_RED) ; ;
+		cargo_subtype_text      : sw_nrwcoachone_refit_text_check ;
+		colour_mapping          : sw_nrwcoachone_colour_2cc_check ;
+	}
+}
