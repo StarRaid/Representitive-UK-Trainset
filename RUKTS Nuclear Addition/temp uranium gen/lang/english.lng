@@ -1,0 +1,9 @@
+##grflangid 0x01
+
+STR_GRF_NAME        :RUKTS Temporary Uranium Generator
+STR_GRF_DESC        :{GOLD}URAN
+
+
+STR_URAN_NAME               :Uranium Mine
+STR_URAN_STATION_NAME       :{STRING} Uranium Mine
+STR_ERROR_NOT_NEAR_WATER    :This industry must be built at least 32 tiles within a water tile.

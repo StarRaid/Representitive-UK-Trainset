@@ -1,0 +1,152 @@
+grf{
+	grfid                  : "RTUG" ;
+	name                   : string(STR_GRF_NAME) ;
+	desc                   : string(STR_GRF_DESC) ;
+	version                : 0 ;
+	min_compatible_version : 0 ;
+}
+
+//Cargo table
+
+cargotable {
+//Default cargos
+   PASS, MAIL, COAL, FOOD, GOLD, GOOD, GRAI, IORE, LVST, OIL_, PAPR, STEL, VALU, WHEA, WOOD,
+
+//Tropical cargos
+   CORE, DIAM, FRUT, MAIZ, RUBR, WATR, 
+
+//ECS
+   AORE, BDMT, BRCK, CERA, CERE, CMNT, DYES, FERT, FICR, FISH, GLAS, LIME, OLSD, PETR, PLAS, POTA, RFPR, SAND, SULP, TOUR, VEHI, WDPR, WOOL, 
+   
+//FIRS
+   BEER, CLAY, ENSP, FMSP, FRVG, GRVL, MILK, MNSP, PHOS, PORE, RCYC, SCMT, SGBT, SGCN, JAVA, COPR, SUGR,
+   
+//Nuclear stuff
+	URAN, NWST
+}
+
+
+
+
+
+
+
+
+
+
+
+
+spriteset(gfx_nucrep_empty_tile       , "nuclear_reprocessing_site.png"){[ 0  , 208, 64, 40, -31, -9  ]}
+spriteset(gfx_nucrep_forklift         , "nuclear_reprocessing_site.png"){[ 156, 124, 64, 41, -31, -9  ]}
+spriteset(gfx_nucrep_forklift_loaded  , "nuclear_reprocessing_site.png"){[ 156, 167, 64, 41, -31, -10 ]}
+spriteset(gfx_nucrep_sphere_tank      , "nuclear_reprocessing_site.png"){[ 66 , 58 , 64, 64, -31, -33 ]}
+spriteset(gfx_nucrep_generic_building , "nuclear_reprocessing_site.png"){[ 0  , 87 , 64, 66, -31, -35 ]}
+
+
+//Sprite layouts
+
+spritelayout spritelayout_forklift {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_forklift ; }
+}
+
+spritelayout spritelayout_forklift_cargo {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_forklift_loaded ; }
+}
+
+spritelayout spritelayout_sphere_tank {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_sphere_tank ; }
+}
+
+spritelayout spritelayout_generic_building {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_generic_building ; }
+}
+
+//Cargo switches
+
+switch(FEAT_INDUSTRYTILES, PARENT, sw_nucrep_forklift_cargo_decider, waiting_cargo_1 > 0){
+	1 : spritelayout_forklift_cargo ;
+	spritelayout_forklift ;
+}
+
+
+//Tile graphics decider
+
+switch(FEAT_INDUSTRYTILES, SELF, nucrep_tile_gfx_decider, relative_pos){
+	relative_coord(0,0) : spritelayout_generic_building ;
+	relative_coord(0,1) : spritelayout_sphere_tank ;
+	
+	relative_coord(1,0) : spritelayout_generic_building ;
+	relative_coord(1,1) : sw_nucrep_forklift_cargo_decider ;
+}
+
+
+//Industry tile
+
+item(FEAT_INDUSTRYTILES, nucrep_tile){
+	property{
+		substitute       : 0 ;
+		accepted_cargos  : [] ;
+		land_shape_flags : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+	}
+	graphics{
+		default    : nucrep_tile_gfx_decider ;
+	}
+}
+
+
+//Tile layout
+
+tilelayout tilelayout_nucrep_site{
+	0,0 : nucrep_tile ;
+	0,1 : nucrep_tile ;
+	
+	1,0 : nucrep_tile ;
+	1,1 : nucrep_tile ;
+}
+
+switch (FEAT_INDUSTRIES, SELF, nucrep_water_check, water_distance){
+	0..32 : CB_RESULT_LOCATION_ALLOW ;
+	return string(STR_ERROR_NOT_NEAR_WATER) ;
+}
+
+switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change, transported_last_month_1){
+	0 : STORE_PERM(0x00, LOAD_PERM(0x00) - 1) ;
+	STORE_PERM(0x00, LOAD_PERM(0x00) + 1) ;
+}
+
+switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change_check, production_rate_1){
+	1..8 : sw_uran_monthly_change ;
+	0 : CB_RESULT_IND_PROD_MULTIPLY_BY_4 ;
+	CB_RESULT_IND_PROD_NO_CHANGE ;
+}
+
+produce(nucrep_produce_monthly, 0, 0, 0, LOAD_PERM(0x00), 0);
+
+item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
+	property {
+		substitute            : 0x01 ;
+		layouts               : [tilelayout_nucrep_site] ;
+		life_type             : IND_LIFE_TYPE_BLACK_HOLE ;
+		fund_cost_multiplier  : 37 ;
+		prod_cargo_types      : [cargotype("URAN")] ;
+		accept_cargo_types    : [] ;
+		conflicting_ind_types : [0x01] ;
+		prob_random           : 3 ;
+		prob_in_game          : 2 ;
+		map_colour            : 255 ;
+		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
+		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
+		name                  : string(STR_URAN_NAME) ;
+		nearby_station_name   : string(STR_URAN_STATION_NAME) ;
+	}
+	graphics {
+		produce_256_ticks     : nucrep_produce_monthly ;
+		location_check        : nucrep_water_check ;
+		monthly_prod_change   : sw_uran_monthly_change_check ;
+		//random_prod_change    : nucrep_random_prod_change_switch ;
+	}
+}

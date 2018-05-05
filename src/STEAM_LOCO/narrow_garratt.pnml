@@ -1,0 +1,189 @@
+//Narrow Garrat
+
+//Graphics
+
+//Spritesets
+
+spriteset(gfx_nrwgarratt_coal       , "gfx/narrow_garrat.png"){
+	[  0 ,  0 ,  8 , 14 , -3 , -11] //North
+	[ 10 ,  0 , 12 , 13 , -3 , -9 ] //North East
+	[ 28 ,  0 , 17 , 13 ,  0 , -8 ] //East
+	[ 54 ,  0 , 12 , 13 ,  2 , -5 ] //South East
+	[ 72 ,  0 ,  8 , 14 , -3 , -3 ] //South
+	[ 82 ,  0 , 12 , 13 , -14, -4 ] //South West
+	[100 ,  0 , 17 , 13 , -17, -8 ] //West
+	[126 ,  0 , 12 , 13 , -7 , -9 ] //North West
+}
+spriteset(gfx_nrwgarratt_coal_rev   , "gfx/narrow_garrat.png"){
+	[ 72 ,  0 ,  8 , 14 , -3 , -11] //North
+	[ 82 ,  0 , 12 , 13 , -6 , -8 ] //North East
+	[100 ,  0 , 17 , 13 , -1 , -8 ] //East
+	[126 ,  0 , 12 , 13 ,  1 , -5 ] //South East
+	[  0 ,  0 ,  8 , 14 , -3 , -3 ] //South
+	[ 10 ,  0 , 12 , 13 , -11, -5 ] //South West
+	[ 28 ,  0 , 17 , 13 , -16, -8 ] //West
+	[ 54 ,  0 , 12 , 13 , -6 , -9 ] //North West
+}
+
+
+
+
+spriteset(gfx_nrwgarratt_water      , "gfx/narrow_garrat.png"){
+	[ 72 , 35 ,  8 , 14 , -3 , -11] //North
+	[ 82 , 35 , 12 , 13 , -4 , -9 ] //North East
+	[100 , 35 , 17 , 13 , -1 , -8 ] //East
+	[126 , 35 , 12 , 13 ,  1 , -5 ] //South East
+	[  0 , 35 ,  8 , 14 , -3 , -3 ] //South
+	[ 10 , 35 , 12 , 13 , -13, -4 ] //South West
+	[ 28 , 35 , 17 , 13 , -16, -8 ] //West
+	[ 54 , 35 , 12 , 13 , -6 , -9 ] //North West
+}
+spriteset(gfx_nrwgarratt_water_rev  , "gfx/narrow_garrat.png"){
+	[  0 , 35 ,  8 , 14 , -3 , -11] //North
+	[ 10 , 35 , 12 , 13 , -5 , -8 ] //North East
+	[ 28 , 35 , 17 , 13 ,  0 , -8 ] //East
+	[ 54 , 35 , 12 , 13 ,  2 , -5 ] //South East
+	[ 72 , 35 ,  8 , 14 , -3 , -3 ] //South
+	[ 82 , 35 , 12 , 13 , -12, -5 ] //South West
+	[100 , 35 , 17 , 13 , -17, -8 ] //West
+	[126 , 35 , 12 , 13 , -7 , -9 ] //North West
+}
+
+
+
+
+spriteset(gfx_nrwgarratt_boiler     , "gfx/narrow_garrat.png"){
+	[ 72 , 15 ,  8 , 19 , -3 , -13] //North
+	[ 82 , 15 , 16 , 15 , -7 , -10] //North East
+	[100 , 15 , 24 , 13 , -6 , -8 ] //East
+	[126 , 15 , 16 , 15 , -1 , -6 ] //South East
+	[  0 , 15 ,  8 , 19 , -3 , -7 ] //South
+	[ 10 , 15 , 16 , 15 , -15, -5 ] //South West
+	[ 28 , 15 , 24 , 13 , -18, -8 ] //West
+	[ 54 , 15 , 16 , 15 , -7 , -10] //North West
+}
+spriteset(gfx_nrwgarratt_boiler_rev , "gfx/narrow_garrat.png"){
+	[  0 , 15 ,  8 , 19 , -3 , -13] //North
+	[ 10 , 15 , 16 , 15 , -9 , -8 ] //North East
+	[ 28 , 15 , 24 , 13 , -6 , -8 ] //East
+	[ 54 , 15 , 16 , 15 , -1 , -7 ] //South East
+	[ 72 , 15 ,  8 , 19 , -3 , -7 ] //South
+	[ 82 , 15 , 16 , 15 , -13, -7 ] //South West
+	[100 , 15 , 24 , 13 , -18, -8 ] //West
+	[126 , 15 , 16 , 15 , -7 , -9 ] //North West
+}
+
+
+
+switch(FEAT_TRAINS, PARENT, sw_nrwgarratt_tender_front_check_one, vehicle_is_reversed){ 1 : gfx_nrwgarratt_coal   ; gfx_nrwgarratt_water_rev  ; }
+switch(FEAT_TRAINS, PARENT, sw_nrwgarratt_tender_front_check_two, vehicle_is_reversed){ 1 : gfx_nrwgarratt_water  ; gfx_nrwgarratt_coal_rev   ; }
+switch(FEAT_TRAINS, PARENT, sw_nrwgarratt_boiler_front_check    , vehicle_is_reversed){ 1 : gfx_nrwgarratt_boiler ; gfx_nrwgarratt_boiler_rev ; }
+
+switch(FEAT_TRAINS, SELF, sw_nrwgarratt_gfx_decider, ( position_in_vehid_chain + 1 ) % 3){
+	1 : sw_nrwgarratt_tender_front_check_two ;
+	2 : sw_nrwgarratt_boiler_front_check ;
+	sw_nrwgarratt_tender_front_check_one ;
+}
+
+
+
+//Switches
+
+switch(FEAT_TRAINS, SELF, sw_nrwgarratt_articulated, extra_callback_info1){
+	1 : item_nrwgarratt;
+	2 : item_nrwgarratt ;
+	CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwgarratt_length, ( position_in_vehid_chain + 1 ) % 3){
+	2 : 5 ;
+	4 ;
+}
+
+
+//Cargo refit text
+
+switch(FEAT_TRAINS, SELF, sw_nrwgarratt_refit_text, cargo_subtype){
+	0 : string(STR_COLOUR_DKBLUE) ;
+	1 : string(STR_COLOUR_RED) ;
+	2 : string(STR_COLOUR_GREEN) ;
+	3 : string(STR_COLOUR_GREY) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwgarratt_refit_text_check, livery_choice && colour_scheme_1){
+	1 : sw_nrwgarratt_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+//Colours 
+
+random_switch(FEAT_TRAINS, PARENT, sw_nrwgarratt_random_colours){
+	1 : palette_1cc(COLOUR_DARK_BLUE) ;
+	1 : palette_1cc(COLOUR_RED) ;
+	1 : palette_1cc(COLOUR_GREEN) ;
+	1 : palette_1cc(COLOUR_GREY) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwgarratt_manual, cargo_subtype){
+	1 : palette_1cc(COLOUR_RED) ;
+	2 : palette_1cc(COLOUR_GREEN) ;
+	3 : palette_1cc(COLOUR_GREY) ; 
+	palette_1cc(COLOUR_DARK_BLUE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwgarratt_colours_manual_check, livery_choice){
+	1 : sw_nrwgarratt_manual ;
+	sw_nrwgarratt_random_colours ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwgarratt_2cc_check, colour_scheme_1){
+	1 : sw_nrwgarratt_colours_manual_check ;
+	palette_1cc(company_colour1) ;
+}
+
+
+//Main item
+
+item(FEAT_TRAINS, item_nrwgarratt, 1000){
+	property{
+		name                           : string(STR_NAME_NRWGARRATT) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1966,1,1) ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : 20 ;
+		vehicle_life                   : 45 ;
+		reliability_decay              : 10 ;
+		cost_factor                    : 10 ;
+		running_cost_base              : RUNNING_COST_STEAM ;
+		running_cost_factor            : 60 ;
+		speed                          : 50 mph ;
+		track_type                     : RAIL ;
+		power                          : 750 hp ;
+		weight                         : 20 ton ;
+		engine_class                   : ENGINE_CLASS_STEAM ;
+		tractive_effort_coefficient    : 0.5 ;
+		air_drag_coefficient           : 0.1 ;
+		length                         : 4 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_STEAM ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : sw_nrwgarratt_gfx_decider ;
+		colour_mapping                 : sw_nrwgarratt_2cc_check ;
+		purchase                       : sw_ee3_purchase ;
+		//sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
+		//create_effect                  : vfx_diesel_default ;
+		cargo_subtype_text             : sw_nrwgarratt_refit_text_check ;
+		purchase_cargo_capacity        : 0 ;
+		cargo_capacity                 : return 0 ;
+		//can_attach_wagon               : sw_all_but_MU90 ;
+		articulated_part               : sw_nrwgarratt_articulated ;
+		length                         : sw_nrwgarratt_length ;
+	}
+}

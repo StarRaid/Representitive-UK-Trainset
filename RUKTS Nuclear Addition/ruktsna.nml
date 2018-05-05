@@ -32,6 +32,32 @@ cargotable {
 
 spriteset(gfx_nwst_cargo_icon, "gfx/nuclear_reprocessing_site.png"){[69, 186, 10, 10, 0, 0]}
 
+
+item(FEAT_CARGOS, cargo_uranium, 30){
+	property{
+		number                    : 30 ;
+		type_name                 : string(STR_URAN_NAME) ;
+		unit_name                 : string(STR_URAN_NAME) ;
+		units_of_cargo            : TTD_STR_TONS ;
+		items_of_cargo            : string(STR_URAN_ITEMS_OF_CARGO) ;
+		type_abbreviation         : string(STR_URAN_ABBREV) ;
+		sprite                    : NEW_CARGO_SPRITE ;
+		weight                    : 7 ;
+		penalty_lowerbound        : 255 ;
+		single_penalty_length     : 255 ;
+		price_factor              : 4000 ;
+		station_list_colour       : 205 ;
+		cargo_payment_list_colour : 205 ;
+		is_freight                : 1 ;
+		cargo_classes             : bitmask(CC_HAZARDOUS) ;
+		cargo_label               : "URAN" ;
+		capacity_multiplier       : 12 ;
+	}
+	graphics{
+		default : gfx_nwst_cargo_icon ;
+	}
+}
+
 item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 	property{
 		number                    : 31 ;
@@ -44,9 +70,9 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 		weight                    : 5 ;
 		penalty_lowerbound        : 255 ;
 		single_penalty_length     : 255 ;
-		price_factor              : 30000 ;
-		station_list_colour       : 239 ;
-		cargo_payment_list_colour : 239 ;
+		price_factor              : 6000 ;
+		station_list_colour       : 208 ;
+		cargo_payment_list_colour : 208 ;
 		is_freight                : 1 ;
 		cargo_classes             : bitmask(CC_HAZARDOUS) ;
 		cargo_label               : "NWST" ;
@@ -62,29 +88,107 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 
 
 
+
 //Power plant modification
 
-produce(produce_power_plant, 100, 0, 0, 2, 0);
-produce(produce_power_plant_arrival, 9999, 0, 0, 0, 0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+produce(produce_power_plant_none   , 0, 0, 8 , 0 ,  0);
+produce(produce_power_plant_low    , 0, 0, 10, 4 ,  0);
+produce(produce_power_plant_medium , 0, 0, 12, 7 , 0);
+produce(produce_power_plant_high   , 0, 0, 14, 10, 0);
+produce(produce_power_plant_arrival, 9999, 9999, 0, 0, 0);
+
+switch(FEAT_INDUSTRIES, SELF, sw_power_plant_produce, waiting_cargo_3){
+	0       : produce_power_plant_none ;
+	1..40   : produce_power_plant_high ;
+	41..80  : produce_power_plant_medium ;
+	81..110 : produce_power_plant_low ;
+}
 
 item(FEAT_INDUSTRIES, power_plant, 0x01){
 	property {
 		substitute          : 0x01 ;
 		override            : 0x01 ;
 		life_type           : IND_LIFE_TYPE_BLACK_HOLE ;
-		accept_cargo_types  : [cargotype("COAL")];
+		accept_cargo_types  : [cargotype("COAL"), cargotype("OIL_"), cargotype("URAN")];
 		prod_cargo_types    : [cargotype("NWST")] ;
 		nearby_station_name : string(STR_POWER_STATION_STATION_NAME) ;
 	}	
 	graphics {
 		produce_cargo_arrival : produce_power_plant_arrival ;
-		produce_256_ticks     : produce_power_plant ;
+		produce_256_ticks     : sw_power_plant_produce ;
 	}
 }
 
+*/
 
 
 
+
+//Smoke effects
+
+spriteset(gfx_smoke_1, "gfx/smoke.png"){[ 0  , 0  , 50 , 60 , -25 , -40 ]}
+spriteset(gfx_smoke_2, "gfx/smoke.png"){[ 52 , 0  , 50 , 60 , -25 , -40 ]}
+spriteset(gfx_smoke_3, "gfx/smoke.png"){[ 104, 0  , 50 , 60 , -25 , -40 ]}
+spriteset(gfx_smoke_4, "gfx/smoke.png"){[ 156, 0  , 50 , 60 , -25 , -40 ]}
+spriteset(gfx_smoke_5, "gfx/smoke.png"){[ 208, 0  , 50 , 60 , -25 , -40 ]}
+spriteset(gfx_smoke_6, "gfx/smoke.png"){[ 260, 0  , 50 , 60 , -25 , -40 ]}
+spriteset(gfx_smoke_7, "gfx/smoke.png"){[ 312, 0  , 50 , 60 , -25 , -40 ]}
+spriteset(gfx_smoke_8, "gfx/smoke.png"){[ 364, 0  , 50 , 60 , -25 , -40 ]}
+
+/*
+spritelayout smoke_1 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_smoke_1 ; }
+}
+
+spritelayout smoke_2 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_smoke_2 ; }
+}
+
+spritelayout smoke_3 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_smoke_3 ; }
+}
+
+spritelayout smoke_4 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_smoke_4 ; }
+}
+
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_smoke_medium, animation_frame){
+	1 : smoke_2 ;
+	2 : smoke_3 ;
+	3 : smoke_4 ;
+	smoke_1 ;
+}
+
+
+		animation_info     : [ANIMATION_LOOPING, 4] ;
+		animation_triggers : bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP) ;
+		
+		default         : sw_smoke_medium ;
+		anim_next_frame : sw_smoke_medium_next_frame ;
+*/
 
 
 
@@ -93,20 +197,25 @@ item(FEAT_INDUSTRIES, power_plant, 0x01){
 
 //Graphics
 
-spriteset(gfx_nucrep_empty_tile       , "gfx/nuclear_reprocessing_site.png"){[ 0  , 208, 64, 40, -31, -9  ]}
-spriteset(gfx_nucrep_empty_tile_loaded, "gfx/nuclear_reprocessing_site.png"){[ 66 , 208, 64, 40, -31, -10  ]}
-spriteset(gfx_nucrep_forklift         , "gfx/nuclear_reprocessing_site.png"){[ 156, 124, 64, 41, -31, -9  ]}
-spriteset(gfx_nucrep_forklift_loaded  , "gfx/nuclear_reprocessing_site.png"){[ 156, 167, 64, 41, -31, -10  ]}
-spriteset(gfx_nucrep_overpass         , "gfx/nuclear_reprocessing_site.png"){[ 69 , 124, 85, 60, -31, -29 ]}
-spriteset(gfx_nucrep_shed             , "gfx/nuclear_reprocessing_site.png"){[ 0  , 155, 67, 51, -32, -20 ]}
-spriteset(gfx_nucrep_sphere_tank      , "gfx/nuclear_reprocessing_site.png"){[ 66 , 58 , 64, 64, -31, -33 ]}
-spriteset(gfx_nucrep_road_overlay     , "gfx/nuclear_reprocessing_site.png"){[ 111, 0  , 96, 47, -31, -16 ]}
-spriteset(gfx_nucrep_cooling_tower    , "gfx/nuclear_reprocessing_site.png"){[ 66 , 0  , 43, 56, -21, -32 ]}
-spriteset(gfx_nucrep_chimney_building , "gfx/nuclear_reprocessing_site.png"){[ 0  , 0  , 64, 85, -30, -54 ]}
-spriteset(gfx_nucrep_generic_building , "gfx/nuclear_reprocessing_site.png"){[ 0  , 87 , 64, 66, -31, -35 ]}
+spriteset(gfx_nucrep_empty_tile         , "gfx/nuclear_reprocessing_site.png"){[ 0  , 208, 64, 40 , -31, -9  ]}
+spriteset(gfx_nucrep_empty_tile_loaded  , "gfx/nuclear_reprocessing_site.png"){[ 66 , 208, 64, 40 , -31, -10 ]}
+spriteset(gfx_nucrep_forklift           , "gfx/nuclear_reprocessing_site.png"){[ 156, 124, 64, 41 , -31, -9  ]}
+spriteset(gfx_nucrep_forklift_loaded    , "gfx/nuclear_reprocessing_site.png"){[ 156, 167, 64, 41 , -31, -10 ]}
+spriteset(gfx_nucrep_overpass           , "gfx/nuclear_reprocessing_site.png"){[ 69 , 124, 85, 60 , -31, -29 ]}
+spriteset(gfx_nucrep_shed               , "gfx/nuclear_reprocessing_site.png"){[ 0  , 155, 67, 51 , -32, -20 ]}
+spriteset(gfx_nucrep_sphere_tank        , "gfx/nuclear_reprocessing_site.png"){[ 66 , 58 , 64, 64 , -31, -33 ]}
+spriteset(gfx_nucrep_road_overlay       , "gfx/nuclear_reprocessing_site.png"){[ 111, 0  , 96, 47 , -31, -16 ]}
+spriteset(gfx_nucrep_cooling_tower      , "gfx/nuclear_reprocessing_site.png"){[ 66 , 0  , 43, 56 , -21, -32 ]}
+spriteset(gfx_nucrep_chimney_building_1 , "gfx/nuclear_reprocessing_site.png"){[ 342, 110, 64, 138, -31, -107]}
+spriteset(gfx_nucrep_chimney_building_2 , "gfx/nuclear_reprocessing_site.png"){[ 408, 110, 64, 138, -31, -107]}
+spriteset(gfx_nucrep_chimney_building_3 , "gfx/nuclear_reprocessing_site.png"){[ 474, 110, 64, 138, -31, -107]}
+spriteset(gfx_nucrep_chimney_building_4 , "gfx/nuclear_reprocessing_site.png"){[ 540, 110, 64, 138, -31, -107]}
+spriteset(gfx_nucrep_generic_building   , "gfx/nuclear_reprocessing_site.png"){[ 0  , 87 , 64, 66 , -31, -35 ]}
 
 
 //Sprite layouts
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_nucrep_container_colour_check, current_year){ 1960..1995 : palette_1cc(COLOUR_YELLOW) ; palette_1cc(COLOUR_WHITE) ; }
 
 spritelayout spritelayout_cooling_tower {
 	ground { sprite : gfx_nucrep_empty_tile ; }
@@ -120,7 +229,7 @@ spritelayout spritelayout_empty_tile {
 
 spritelayout spritelayout_empty_tile_cargo {
 	ground { sprite : gfx_nucrep_empty_tile ; }
-	building { sprite : gfx_nucrep_empty_tile_loaded ; }
+	building { sprite : gfx_nucrep_empty_tile_loaded ; recolour_mode : RECOLOUR_REMAP ; palette : palette_1cc(COLOUR_YELLOW) ; }
 }
 
 spritelayout spritelayout_forklift {
@@ -130,7 +239,7 @@ spritelayout spritelayout_forklift {
 
 spritelayout spritelayout_forklift_cargo {
 	ground { sprite : gfx_nucrep_empty_tile ; }
-	building { sprite : gfx_nucrep_forklift_loaded ; }
+	building { sprite : gfx_nucrep_forklift_loaded ; recolour_mode : RECOLOUR_REMAP ; palette : palette_1cc(COLOUR_YELLOW) ; }
 }
 
 spritelayout spritelayout_overpass {
@@ -140,7 +249,7 @@ spritelayout spritelayout_overpass {
 
 spritelayout spritelayout_shed {
 	ground { sprite : gfx_nucrep_empty_tile ; }
-	building { sprite : gfx_nucrep_shed ; }
+	building { sprite : gfx_nucrep_shed ; recolour_mode : RECOLOUR_REMAP ; palette : palette_1cc(COLOUR_YELLOW) ; }
 }
 
 spritelayout spritelayout_sphere_tank {
@@ -153,9 +262,24 @@ spritelayout spritelayout_road_overlay {
 	//building { sprite : gfx_nucrep_road_overlay ; }
 }
 
-spritelayout spritelayout_chimney_building {
+spritelayout spritelayout_chimney_building_1 {
 	ground { sprite : gfx_nucrep_empty_tile ; }
-	building { sprite : gfx_nucrep_chimney_building ; }
+	building { sprite : gfx_nucrep_chimney_building_1 ; }
+}
+
+spritelayout spritelayout_chimney_building_2 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_chimney_building_2 ; }
+}
+
+spritelayout spritelayout_chimney_building_3 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_chimney_building_3 ; }
+}
+
+spritelayout spritelayout_chimney_building_4 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_chimney_building_4 ; }
 }
 
 spritelayout spritelayout_generic_building {
@@ -163,7 +287,7 @@ spritelayout spritelayout_generic_building {
 	building { sprite : gfx_nucrep_generic_building ; }
 }
 
-//Cargo switches
+//Sprite layout switches
 
 switch(FEAT_INDUSTRYTILES, PARENT, sw_nucrep_empty_cargo_decider, waiting_cargo_1 > 0){
 	1 : spritelayout_empty_tile_cargo ;
@@ -175,7 +299,12 @@ switch(FEAT_INDUSTRYTILES, PARENT, sw_nucrep_forklift_cargo_decider, waiting_car
 	spritelayout_forklift ;
 }
 
-
+switch(FEAT_INDUSTRYTILES, SELF, sw_nucrep_chimney_animation_decider, animation_frame){
+	0 : spritelayout_chimney_building_1 ;
+	1 : spritelayout_chimney_building_2 ;
+	2 : spritelayout_chimney_building_3 ;
+	spritelayout_chimney_building_4 ;
+}
 
 
 
@@ -197,17 +326,17 @@ switch(FEAT_INDUSTRYTILES, SELF, nucrep_tile_gfx_decider, relative_pos){
 	relative_coord(1,5) : sw_nucrep_forklift_cargo_decider ;
 	//Skip a row
 	relative_coord(3,0) : spritelayout_cooling_tower ;
-	relative_coord(3,1) : spritelayout_chimney_building ;
+	relative_coord(3,1) : spritelayout_chimney_building_1 ;
 	relative_coord(3,2) : sw_nucrep_forklift_cargo_decider ;
 	relative_coord(3,3) : spritelayout_overpass ;
 	relative_coord(3,4) : sw_nucrep_empty_cargo_decider ;
 	relative_coord(3,5) : sw_nucrep_empty_cargo_decider ;
 	
 	relative_coord(4,0) : spritelayout_cooling_tower ;
-	relative_coord(4,1) : spritelayout_chimney_building ;
+	relative_coord(4,1) : spritelayout_chimney_building_1 ;
 	relative_coord(4,2) : sw_nucrep_empty_cargo_decider ;
 	relative_coord(4,3) : spritelayout_shed ;
-	relative_coord(4,4) : spritelayout_chimney_building ;
+	relative_coord(4,4) : spritelayout_chimney_building_1 ;
 	relative_coord(4,5) : sw_nucrep_forklift_cargo_decider ;
 	//Skip a row
 	relative_coord(6,0) : spritelayout_road_overlay ;
@@ -219,7 +348,7 @@ switch(FEAT_INDUSTRYTILES, SELF, nucrep_tile_gfx_decider, relative_pos){
 }
 
 
-//Industry tile
+//Industry tiles
 
 item(FEAT_INDUSTRYTILES, nucrep_tile){
 	property{
@@ -228,7 +357,41 @@ item(FEAT_INDUSTRYTILES, nucrep_tile){
 		land_shape_flags : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
 	}
 	graphics{
-		default    : nucrep_tile_gfx_decider ;
+		default : nucrep_tile_gfx_decider ;
+	}
+}
+
+/*
+item(FEAT_INDUSTRYTILES, nucrep_cooling_tower){
+	property{
+		substitute         : 0 ;
+		accepted_cargos    : [] ;
+		land_shape_flags   : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+	}
+	graphics{
+		default      : nucrep_tile_gfx_decider ;
+	}
+}
+*/
+
+switch (FEAT_INDUSTRYTILES, SELF, nucrep_chimney_animation, animation_frame) {
+	0..2 : CB_RESULT_NEXT_FRAME ;
+	return 0 ;
+}
+
+item(FEAT_INDUSTRYTILES, nucrep_chimney){
+	property{
+		substitute       : 0x07 ;
+		accepted_cargos  : [[NWST, 8]] ;
+		land_shape_flags : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+		animation_info     : [ANIMATION_LOOPING, 4] ;
+		animation_speed    : 2 ;
+		animation_triggers : bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP) ;
+	}
+	graphics{
+		default         : sw_nucrep_chimney_animation_decider ;
+		anim_next_frame : nucrep_chimney_animation ;
+		//anim_control    : CB_RESULT_START_ANIMATION ;
 	}
 }
 
@@ -247,12 +410,12 @@ tilelayout tilelayout_nucrep_site_big{
 	1,3 : nucrep_tile ;
 
 	3,0 : nucrep_tile ;
-	3,1 : nucrep_tile ;
+	3,1 : nucrep_chimney ;  //chimney
 	3,2 : nucrep_tile ;
 	3,3 : nucrep_tile ;
       
 	4,0 : nucrep_tile ;
-	4,1 : nucrep_tile ;
+	4,1 : nucrep_chimney ; //chimney
 	4,2 : nucrep_tile ;
 	4,3 : nucrep_tile ;
 	  
@@ -278,17 +441,17 @@ tilelayout tilelayout_nucrep_site_medium{
 	1,5 : nucrep_tile ;
 
 	3,0 : nucrep_tile ;
-	3,1 : nucrep_tile ;
+	3,1 : nucrep_chimney ; //chimney
 	3,2 : nucrep_tile ;
 	3,3 : nucrep_tile ;
 	3,4 : nucrep_tile ;
 	3,5 : nucrep_tile ;
       
 	4,0 : nucrep_tile ;
-	4,1 : nucrep_tile ;
+	4,1 : nucrep_chimney ; //chimney
 	4,2 : nucrep_tile ;
 	4,3 : nucrep_tile ;
-	4,4 : nucrep_tile ;
+	4,4 : nucrep_chimney ; //chimney
 	4,5 : nucrep_tile ;
 }
 
@@ -316,35 +479,40 @@ tilelayout tilelayout_nucrep_site_small{
  produce(nucrep_cargo_arrive_produce, 0, 0, 0, 0, STORE_PERM(0, 0x00));
  
  /* Every month the counter is increased. */
- switch (FEAT_INDUSTRIES, SELF, nucrep_monthly_prod_change_switch, STORE_PERM(LOAD_PERM(0x00) + 1, 0x00)) {
+ switch (FEAT_INDUSTRIES, SELF, sw_nucrep_monthly_prod_change_switch, STORE_PERM(LOAD_PERM(0x00) + 1, 0x00)) {
  	return CB_RESULT_IND_PROD_NO_CHANGE;
  }
  
+ switch (FEAT_INDUSTRIES, SELF, sw_nucrep_monthly_prod_change_check, waiting_cargo_1){
+	0 : sw_nucrep_monthly_prod_change_switch ;
+	CB_RESULT_IND_PROD_NO_CHANGE ;
+ }
+ 
  /* Only check industry closure if the counter is greater than 60. */
- switch (FEAT_INDUSTRIES, SELF, nucrep_random_prod_change_switch, LOAD_PERM(0x00)) {
+ switch (FEAT_INDUSTRIES, SELF, sw_nucrep_random_prod_change_switch, LOAD_PERM(0x00)) {
  	0..60: return CB_RESULT_IND_PROD_NO_CHANGE;
  	return CB_RESULT_IND_PROD_CLOSE;
  }
 
-switch (FEAT_INDUSTRIES, SELF, nucrep_water_check, water_distance){
+switch (FEAT_INDUSTRIES, SELF, sw_nucrep_water_check, water_distance){
 	0..32 : CB_RESULT_LOCATION_ALLOW ;
 	return string(STR_ERROR_NOT_NEAR_WATER) ;
 }
 
 produce(nucrep_produce_monthly, 2, 0, 0, 0, 0);
 
-item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
+item(FEAT_INDUSTRIES, nuclear_reprocessing_site, 0){
 	property {
 		substitute            : 0x01 ;
 		layouts               : [tilelayout_nucrep_site_big, tilelayout_nucrep_site_medium, tilelayout_nucrep_site_small] ;
 		life_type             : IND_LIFE_TYPE_BLACK_HOLE ;
-		fund_cost_multiplier  : 37 ;
+		fund_cost_multiplier  : 255 ;
 		prod_cargo_types      : [] ;
 		accept_cargo_types    : [cargotype("NWST")] ;
-		conflicting_ind_types : [0x01] ;
-		prob_random           : 3 ;
-		prob_in_game          : 2 ;
-		map_colour            : 255 ;
+		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
+		prob_map_gen           : 3 ;
+		prob_in_game          : 1 ;
+		map_colour            : 208 ;
 		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
 		name                  : string(STR_NUCPROC_NAME) ;
@@ -353,55 +521,373 @@ item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 	graphics {
 		produce_cargo_arrival : nucrep_cargo_arrive_produce ;
 		produce_256_ticks     : nucrep_produce_monthly ;
-		location_check        : nucrep_water_check ;
-		monthly_prod_change   : nucrep_monthly_prod_change_switch ;
-		random_prod_change    : nucrep_random_prod_change_switch ;
+		location_check        : sw_nucrep_water_check ;
+		monthly_prod_change   : sw_nucrep_monthly_prod_change_check ;
+		random_prod_change    : sw_nucrep_random_prod_change_switch ;
+		//colour                : sw_nucrep_colour_check ;
 	}
 }
 
 
 
-/*
-item(FEAT_INDUSTRYTILES, nucrep_tile_test){
+
+
+
+
+
+
+//Graphics
+
+template template_btrsea(x, y){ [ x  , y  , 64 , 122, -31 , -91] }
+
+spriteset(gfx_btrsea_1_0       , "gfx/battersea_power_station.png"){ template_btrsea( 0  , 0  ) }
+spriteset(gfx_btrsea_2_0       , "gfx/battersea_power_station.png"){ template_btrsea( 65 , 0  ) }
+spriteset(gfx_btrsea_3_0       , "gfx/battersea_power_station.png"){ [ 130, 0  , 64 , 122, -33 , -92] }
+spriteset(gfx_btrsea_1_1       , "gfx/battersea_power_station.png"){ template_btrsea( 195, 0  ) }
+spriteset(gfx_btrsea_2_1       , "gfx/battersea_power_station.png"){ template_btrsea( 260, 0  ) }
+spriteset(gfx_btrsea_3_1       , "gfx/battersea_power_station.png"){ template_btrsea( 325, 0  ) }
+
+spriteset(gfx_btrsea_3_0_pig_1 , "gfx/battersea_power_station.png"){ [ 0  , 123, 71 , 134, -33 , -104] }
+spriteset(gfx_btrsea_3_0_pig_2 , "gfx/battersea_power_station.png"){ [ 72 , 123, 71 , 134, -33 , -104] }
+spriteset(gfx_btrsea_3_0_pig_3 , "gfx/battersea_power_station.png"){ [ 144, 123, 71 , 134, -33 , -104] }
+spriteset(gfx_btrsea_3_0_pig_4 , "gfx/battersea_power_station.png"){ [ 216, 123, 71 , 134, -33 , -104] }
+
+spriteset(gfx_btrsea_1_0_1     , "gfx/battersea_power_station.png"){ [ 0  , 258, 92 , 147, -31 , -116] }  
+spriteset(gfx_btrsea_1_0_2     , "gfx/battersea_power_station.png"){ [ 93 , 258, 92 , 147, -31 , -116] }  
+spriteset(gfx_btrsea_1_0_3     , "gfx/battersea_power_station.png"){ [ 186, 258, 92 , 147, -31 , -116] }  
+spriteset(gfx_btrsea_1_0_4     , "gfx/battersea_power_station.png"){ [ 279, 258, 92 , 147, -31 , -116] }  
+
+spriteset(gfx_btrsea_3_0_1     , "gfx/battersea_power_station.png"){ [ 0  , 406, 72 , 135, -33 , -105] }
+spriteset(gfx_btrsea_3_0_2     , "gfx/battersea_power_station.png"){ [ 73 , 406, 72 , 135, -33 , -105] }
+spriteset(gfx_btrsea_3_0_3     , "gfx/battersea_power_station.png"){ [ 146, 406, 72 , 135, -33 , -105] }
+spriteset(gfx_btrsea_3_0_4     , "gfx/battersea_power_station.png"){ [ 219, 406, 72 , 135, -33 , -105] }
+
+spriteset(gfx_btrsea_1_1_1     , "gfx/battersea_power_station.png"){ [ 0  , 542, 84 , 152, -31 , -121] }  
+spriteset(gfx_btrsea_1_1_2     , "gfx/battersea_power_station.png"){ [ 85 , 542, 84 , 152, -31 , -121] }    
+spriteset(gfx_btrsea_1_1_3     , "gfx/battersea_power_station.png"){ [ 170, 542, 84 , 152, -31 , -121] }    
+spriteset(gfx_btrsea_1_1_4     , "gfx/battersea_power_station.png"){ [ 255, 542, 84 , 152, -31 , -121] }    
+
+spriteset(gfx_btrsea_3_1_1     , "gfx/battersea_power_station.png"){ [ 0  , 695, 64 , 140, -31 , -109] }  
+spriteset(gfx_btrsea_3_1_2     , "gfx/battersea_power_station.png"){ [ 65 , 695, 64 , 140, -31 , -109] }    
+spriteset(gfx_btrsea_3_1_3     , "gfx/battersea_power_station.png"){ [ 130, 695, 64 , 140, -31 , -109] }    
+spriteset(gfx_btrsea_3_1_4     , "gfx/battersea_power_station.png"){ [ 195, 695, 64 , 140, -31 , -109] }    
+
+spriteset(gfx_btrsea_coal_med  , "gfx/battersea_power_station.png"){ [ 390, 0  , 64 , 34 , -31 , -3  ] } 
+spriteset(gfx_btrsea_coal_full , "gfx/battersea_power_station.png"){ [ 455, 0  , 64 , 34 , -31 , -3  ] } 
+spriteset(gfx_btrsea_tank      , "gfx/battersea_power_station.png"){ [ 390 , 35, 64 , 44 , -31 , -13 ] } 
+
+
+
+//Sprite layouts
+
+spritelayout spritelayout_btrsea_1_0   	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_0 ;       zextent : 80 ;} }
+spritelayout spritelayout_btrsea_1_0_1 	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_0_1 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_1_0_2 	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_0_2 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_1_0_3 	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_0_3 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_1_0_4 	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_0_4 ;     zextent : 80 ;} }
+
+spritelayout spritelayout_btrsea_2_0 	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_2_0 ;       zextent : 80 ;} }
+
+spritelayout spritelayout_btrsea_3_0 	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0 ;       zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_0_1	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_1 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_0_2	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_2 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_0_3	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_3 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_0_4	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_4 ;     zextent : 80 ;} }
+
+spritelayout spritelayout_btrsea_1_1 	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_1 ;       zextent : 80 ;} }
+spritelayout spritelayout_btrsea_1_1_1	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_1_1 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_1_1_2	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_1_2 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_1_1_3	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_1_3 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_1_1_4	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_1_1_4 ;     zextent : 80 ;} }
+
+spritelayout spritelayout_btrsea_2_1	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_2_1 ;       zextent : 80 ;} }
+
+spritelayout spritelayout_btrsea_3_1 	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_1 ;       zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_1_1	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_1_1 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_1_2	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_1_2 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_1_3	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_1_3 ;     zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_1_4	   { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_1_4 ;     zextent : 80 ;} }
+	
+spritelayout spritelayout_btrsea_3_0_pig_1 { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_pig_1 ; zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_0_pig_2 { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_pig_2 ; zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_0_pig_3 { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_pig_3 ; zextent : 80 ;} }
+spritelayout spritelayout_btrsea_3_0_pig_4 { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_pig_4 ; zextent : 80 ;} }
+
+spritelayout spritelayout_btrsea_coal_med  { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_coal_med ; } }
+spritelayout spritelayout_btrsea_coal_full { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_coal_full ; } }
+spritelayout spritelayout_btrsea_tank      { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_tank ; } }
+
+
+//Tiles
+
+//Animations
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_btrsea_pig_animation, animation_frame){
+	0 : spritelayout_btrsea_3_0_pig_1 ;
+	1 : spritelayout_btrsea_3_0_pig_2 ;
+	2 : spritelayout_btrsea_3_0_pig_3 ;
+	spritelayout_btrsea_3_0_pig_4 ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_btrsea_1_0_animation, animation_frame){
+	0 : spritelayout_btrsea_1_0_1 ;
+	1 : spritelayout_btrsea_1_0_2 ;
+	2 : spritelayout_btrsea_1_0_3 ;
+	spritelayout_btrsea_1_0_4 ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_btrsea_3_0_animation, animation_frame){
+	0 : spritelayout_btrsea_3_0_1 ;
+	1 : spritelayout_btrsea_3_0_2 ;
+	2 : spritelayout_btrsea_3_0_3 ;
+	spritelayout_btrsea_3_0_4 ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_btrsea_1_1_animation, animation_frame){
+	0 : spritelayout_btrsea_1_1_1 ;
+	1 : spritelayout_btrsea_1_1_2 ;
+	2 : spritelayout_btrsea_1_1_3 ;
+	spritelayout_btrsea_1_1_4 ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_btrsea_3_1_animation, animation_frame){
+	0 : spritelayout_btrsea_3_1_1 ;
+	1 : spritelayout_btrsea_3_1_2 ;
+	2 : spritelayout_btrsea_3_1_3 ;
+	spritelayout_btrsea_3_1_4 ;
+}
+
+
+//Without pig
+
+switch(FEAT_INDUSTRYTILES, SELF, btrsea_chimney_gfx_non_animated, relative_pos){
+	relative_coord(1, 0) : spritelayout_btrsea_1_0 ;
+	relative_coord(3, 0) : spritelayout_btrsea_3_0 ;
+	relative_coord(1, 1) : spritelayout_btrsea_1_1 ;
+	relative_coord(3, 1) : spritelayout_btrsea_3_1 ;
+	spritelayout_btrsea_1_0 ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, btrsea_chimney_gfx_animated, relative_pos){
+	relative_coord(1, 0) : sw_btrsea_1_0_animation ;
+	relative_coord(3, 0) : sw_btrsea_3_0_animation ;
+	relative_coord(1, 1) : sw_btrsea_1_1_animation ;
+	relative_coord(3, 1) : sw_btrsea_3_1_animation ;
+	sw_btrsea_1_0_animation ;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, btrsea_chimney_gfx_decider, waiting_cargo_1 + waiting_cargo_2){
+	0 : btrsea_chimney_gfx_non_animated ;
+	btrsea_chimney_gfx_animated ;
+}
+
+
+//With pig
+
+switch(FEAT_INDUSTRYTILES, SELF, btrsea_chimney_gfx_non_animated_pig, relative_pos){
+	relative_coord(1, 0) : spritelayout_btrsea_1_0 ;
+	relative_coord(3, 0) : sw_btrsea_pig_animation ;
+	relative_coord(1, 1) : spritelayout_btrsea_1_1 ;
+	relative_coord(3, 1) : spritelayout_btrsea_3_1 ;
+	spritelayout_btrsea_1_0 ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, btrsea_chimney_gfx_animated_pig, relative_pos){
+	relative_coord(1, 0) : sw_btrsea_1_0_animation ;
+	relative_coord(3, 0) : sw_btrsea_pig_animation ;
+	relative_coord(1, 1) : sw_btrsea_1_1_animation ;
+	relative_coord(3, 1) : sw_btrsea_3_1_animation ;
+	sw_btrsea_1_0_animation ;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, btrsea_chimney_gfx_decider_pig, waiting_cargo_1 + waiting_cargo_2){
+	0 : btrsea_chimney_gfx_non_animated_pig ;
+	btrsea_chimney_gfx_animated_pig ;
+}
+
+
+
+//Pig check
+
+random_switch(FEAT_INDUSTRYTILES, SELF, btrsea_chimney_random_pig_check){
+	2 : btrsea_chimney_gfx_decider ;
+	1 : btrsea_chimney_gfx_decider_pig ;
+}
+
+
+
+item(FEAT_INDUSTRYTILES, btrsea_chimney_tile){
 	property{
-		substitute       : 0 ;
-		accepted_cargos  : [[NWST, 8]] ;
+		substitute         : 0x07 ;
+		accepted_cargos    : [] ;
+		land_shape_flags   : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+		animation_info     : [ANIMATION_LOOPING, 4] ;
+		animation_speed    : 2 ;
+		animation_triggers : bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP) ;
+	}
+	graphics{
+		default         : btrsea_chimney_random_pig_check ;
+		anim_next_frame : nucrep_chimney_animation ;
+	}
+}
+
+
+
+
+switch(FEAT_INDUSTRYTILES, PARENT, sw_btrsea_coal_decider, waiting_cargo_1){
+	1..250     : spritelayout_btrsea_coal_med ;
+	250..65536 : spritelayout_btrsea_coal_full ;
+	spritelayout_empty_tile ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, btrsea_building_gfx_decider, relative_pos){
+	relative_coord(0, 0) : spritelayout_btrsea_tank ;
+	relative_coord(0, 1) : sw_btrsea_coal_decider ;
+	relative_coord(2, 0) : spritelayout_btrsea_2_0 ;
+	relative_coord(2, 1) : spritelayout_btrsea_2_1 ;
+	spritelayout_btrsea_1_1 ;
+}
+
+item (FEAT_INDUSTRYTILES, btrsea_building_tile){
+	property{
+		substitute       : 0x08 ;
+		accepted_cargos  : [[COAL, 8],[OIL_, 8],[URAN, 8]] ;
 		land_shape_flags : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
 	}
 	graphics{
-		default    : spritelayout_generic_building ;
+		default    : btrsea_building_gfx_decider ;
 	}
 }
 
 
+//Tile layout
 
-tilelayout tilelayout_nucrep_site_test {
-	0,0 : nucrep_tile_test ;
+tilelayout btrsea_tilelayout {
+	0, 0 : btrsea_building_tile ;
+	1, 0 : btrsea_chimney_tile ;
+	2, 0 : btrsea_building_tile ;
+	3, 0 : btrsea_chimney_tile ;
+	0, 1 : btrsea_building_tile ;
+	1, 1 : btrsea_chimney_tile ;
+	2, 1 : btrsea_building_tile ;
+	3, 1 : btrsea_chimney_tile ;
 }
 
-item(FEAT_INDUSTRIES, nuclear_reprocessing_site_test){
+
+produce(produce_btrsea_none   , 68 , 68 , 8 , 0 , 0);
+produce(produce_btrsea_low    , 60 , 60 , 10, 6 , 0);
+produce(produce_btrsea_medium , 52 , 52 , 12, 9 , 0);
+produce(produce_btrsea_high   , 48 , 48 , 14, 12, 0);
+produce(produce_btrsea_arrival, 200, 200, 20 ,10 , 0);
+
+switch(FEAT_INDUSTRIES, SELF, sw_btrsea_produce, waiting_cargo_3){
+	0       : produce_btrsea_none ;
+	1..40   : produce_btrsea_low ;
+	41..80  : produce_btrsea_medium ;
+	produce_btrsea_high ;
+}
+
+item(FEAT_INDUSTRIES, btrsea_power_station, 0x01){
 	property {
 		substitute            : 0x01 ;
-		layouts               : [tilelayout_nucrep_site_test] ;
-		life_type             : IND_LIFE_TYPE_BLACK_HOLE ;
-		fund_cost_multiplier  : 37 ;
-		prod_cargo_types      : [] ;
-		accept_cargo_types    : [cargotype("NWST")] ;
-		conflicting_ind_types : [0x01] ;
-		prob_random           : 3 ;
-		prob_in_game          : 2 ;
-		map_colour            : 239 ;
-		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
-		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
-		name                  : string(STR_NUCPROC_NAME) ;
-		nearby_station_name   : string(STR_NUCPROC_STATION_NAME) ;
-	}
+		override              : 0x01 ;
+		layouts               : [btrsea_tilelayout] ;
+		life_type             : IND_LIFE_TYPE_PROCESSING ;
+		accept_cargo_types    : [cargotype("COAL"), cargotype("OIL_"), cargotype("URAN")];
+		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
+		prod_cargo_types      : [cargotype("NWST")] ;
+		nearby_station_name   : string(STR_POWER_STATION_STATION_NAME) ;
+	}	
 	graphics {
-		produce_cargo_arrival : nucrep_cargo_arrive_produce ;
-		produce_256_ticks     : nucrep_produce_monthly ;
-		location_check        : nucrep_water_check ;
-		monthly_prod_change   : nucrep_monthly_prod_change_switch ;
-		random_prod_change    : nucrep_random_prod_change_switch ;
+		//produce_cargo_arrival : produce_btrsea_arrival ;
+		produce_256_ticks     : sw_btrsea_produce ;
 	}
 }
+
+
+
+
+//Uranium mine
+
+//Graphics
+
+
+
+
+//Spritelayouts
+
+
+
+
+//Tile
+
+/*
+item(FEAT_INDUSTRYTILES, uranmine_tile){
+	property{
+		substitute         : 0x00 ;
+		accepted_cargos    : [] ;
+		land_shape_flags   : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+	}
+	graphics{
+		default         : sw_uranmine_tile_animation ;
+	}
+}
+
+
+
+//Switches
+
+
+
+
+
+//Tile layout
+
+tilelayout tilelayout_uranmine_tile {
+	0, 0 : uranmine_tile ;
+}
+
+
+//Industry
+
+
+produce(produce_uranmine, 0, 0, 0, 9 ,0);
+
+item(FEAT_INDUSTRIES, urnamine_industry, 1){
+	property {
+		substitute            : 0x00 ;
+		override              : 1 ;
+		layouts               : [tilelayout_uranmine_tile] ;
+		life_type             : IND_LIFE_TYPE_EXTRACTIVE ;
+		fund_cost_multiplier  : 255 ;
+		prod_cargo_types      : [cargotype("NWST")] ;
+		accept_cargo_types    : [] ;
+		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
+		prob_map_gen          : 4 ;
+		prob_in_game          : 2 ;
+		map_colour            : 159 ;
+		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
+		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
+		name                  : string(STR_URANMINE_NAME) ;
+		nearby_station_name   : string(STR_URANMINE_STATION_NAME) ;
+		prospect_chance       : 0.3 ;
+	}
+	graphics {
+		//produce_cargo_arrival : produce_btrsea_arrival ;
+		produce_256_ticks     : produce_uranmine ;
+	}
+}
+
+
+
+
+
+
+
 */
+
+
+
+
+
+
