@@ -269,8 +269,8 @@ switch(FEAT_TRAINS, PARENT, sw_sfx_modern_diesel_running, current_speed){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_networker_running, current_speed){
- 0..7 : sound("sfx/465_idle.wav") ;
- 8..40 : sound("sfx/465_coast_2.wav") ;
+ 0..13 : sound("sfx/465_coast_1.wav") ;
+ 14..23 : sound("sfx/465_coast_2.wav") ;
  sound("sfx/465_coast_3.wav") ;
 }
 
@@ -346,7 +346,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info
  SOUND_EVENT_RUNNING_16 : sw_sfx_electric_networker_running ;
  SOUND_EVENT_START : sound("sfx/465_depart.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
- SOUND_EVENT_TUNNEL : sound("sfx/465_horn.wav") ;
+ SOUND_EVENT_TUNNEL : sound("sfx/horn_1.wav") ;
 }
 # 9 "rukts.pnml" 2
 # 1 "src/CODE/coupling_restrictions.pnml" 1
@@ -733,29 +733,29 @@ item (FEAT_TRAINS, item_Mk1, 9010) {
 
 template template_Mk2_single(x,y){
  [x+0,y,8,23,-3,-11] //North
- [x+10,y,20,16,-14,-8] //North East
+ [x+10,y,20,16,-13,-8] //North East
  [x+32,y,33,13,-17,-9] //East
  [x+67,y,20,16,-5,-8] //South East
 }
 
 template template_Mk2_double(x,y){
  [x+0,y,8,23,-3,-11] //North
- [x+10,y,20,16,-14,-8] //North East
+ [x+10,y,20,16,-13,-8] //North East
  [x+32,y,33,13,-17,-9] //East
  [x+67,y,20,16,-5,-8] //South East
  [x+89,y,8,23,-3,-11] //South
- [x+99,y,20,16,-14,-8] //South West
+ [x+99,y,20,16,-13,-8] //South West
  [x+121,y,33,13,-17,-9] //West
  [x+156,y,20,16,-5,-8] //North West
 }
 
 template template_Mk2_double_reverse(x,y){
  [x+89,y,8,23,-3,-11] //South
- [x+99,y,20,16,-14,-8] //South West
+ [x+99,y,20,16,-13,-8] //South West
  [x+121,y,33,13,-17,-9] //West
  [x+156,y,20,16,-5,-8] //North West
  [x+0,y,8,23,-3,-11] //North
- [x+10,y,20,16,-14,-8] //North East
+ [x+10,y,20,16,-13,-8] //North East
  [x+32,y,33,13,-17,-9] //East
  [x+67,y,20,16,-5,-8] //South East
 }
@@ -1279,44 +1279,44 @@ item (FEAT_TRAINS, flask_wagon, 10001){
 
 template template_ee3(x,y){
  [x+0,y,8,23,-3,-11] //North
- [x+10,y,20,16,-14,-8] //North East
+ [x+10,y,20,16,-13,-8] //North East
  [x+32,y,33,13,-17,-9] //East
  [x+67,y,20,16,-5,-8] //South East
  [x+89,y,8,23,-3,-11] //South
- [x+99,y,20,16,-14,-8] //South West
+ [x+99,y,20,16,-13,-8] //South West
  [x+121,y,33,13,-17,-9] //West
  [x+156,y,20,16,-5,-8] //North West
 }
 
 template template_ee3_reverse(x,y){
  [x+89,y,8,23,-3,-11] //South
- [x+99,y,20,16,-14,-8] //South West
+ [x+99,y,20,16,-13,-8] //South West
  [x+121,y,33,13,-17,-9] //West
  [x+156,y,20,16,-5,-8] //North West
  [x+0,y,8,23,-3,-11] //North
- [x+10,y,20,16,-14,-8] //North East
+ [x+10,y,20,16,-13,-8] //North East
  [x+32,y,33,13,-17,-9] //East
  [x+67,y,20,16,-5,-8] //South East
 }
 
 template template_ee3_dirt(x,y, filename){
  [x+0,y,16,46,-6,-22, filename] //North
- [x+20,y,40,32,-28,-16, filename] //North East
+ [x+20,y,40,32,-26,-16, filename] //North East
  [x+64,y,66,26,-34,-18, filename] //East
  [x+134,y,40,32,-11,-16, filename] //South East
  [x+178,y,16,46,-6,-22, filename] //South
- [x+198,y,40,32,-27,-16, filename] //South West
+ [x+198,y,40,32,-25,-16, filename] //South West
  [x+242,y,66,26,-34,-18, filename] //West
  [x+312,y,40,32,-10,-16, filename] //North West
 }
 
 template template_ee3_dirt_reverse(x,y, filename){
  [x+178,y,16,46,-6,-22, filename] //South
- [x+198,y,40,32,-27,-16, filename] //South West
+ [x+198,y,40,32,-25,-16, filename] //South West
  [x+242,y,66,26,-34,-18, filename] //West
  [x+312,y,40,32,-10,-16, filename] //North West
  [x+0,y,16,46,-6,-22, filename] //North
- [x+20,y,40,32,-28,-16, filename] //North East
+ [x+20,y,40,32,-26,-16, filename] //North East
  [x+64,y,66,26,-34,-18, filename] //East
  [x+134,y,40,32,-11,-16, filename] //South East
 }
@@ -3348,9 +3348,9 @@ switch(FEAT_TRAINS, SELF, sw_southern_thump_brb_select, build_year){0..1960: sw_
 random_switch(FEAT_TRAINS, SELF, sw_southern_thump_brb, TRIGGER_VEHICLE_SERVICE){1: sw_southern_thump_brb_select;}
 
 
-switch(FEAT_TRAINS, SELF, sw_205_bbg_f, vehicle_is_reversed){0: spriteset_205_m_bbg; spriteset_205_dt_bbg;}
-switch(FEAT_TRAINS, SELF, sw_205_bbg_r, vehicle_is_reversed){0: spriteset_205_dt_bbg; spriteset_205_m_bbg;}
-switch(FEAT_TRAINS, SELF, sw_205_bbg, count_veh_id(205)%2){1: spriteset_205_m_bbg; spriteset_205_dt_bbg;}
+switch(FEAT_TRAINS, SELF, sw_205_bbg_f, count_veh_id(205)%2){1: spriteset_205_dt_bbg; spriteset_205_m_bbg;}
+switch(FEAT_TRAINS, SELF, sw_205_bbg_r, count_veh_id(205)%2){1: spriteset_205_m_bbg; spriteset_205_dt_bbg;}
+switch(FEAT_TRAINS, SELF, sw_205_bbg, vehicle_is_reversed){0: spriteset_205_dt_bbg; spriteset_205_m_bbg;}
 
 switch(FEAT_TRAINS, SELF, sw_207_bbg_f, vehicle_is_reversed){0: spriteset_207_m_bbg; spriteset_207_dt_bbg;}
 switch(FEAT_TRAINS, SELF, sw_207_bbg_r, vehicle_is_reversed){0: spriteset_207_dt_bbg; spriteset_207_m_bbg;}
