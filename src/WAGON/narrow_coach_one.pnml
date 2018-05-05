@@ -80,7 +80,7 @@ item(FEAT_TRAINS, item_nrwcoachone, 9060){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 40 ;
+		cargo_capacity                 : 10 ;
 		loading_speed                  : 10 ;
 		track_type                     : NAAN ;
 		power                          : 0 hp ;

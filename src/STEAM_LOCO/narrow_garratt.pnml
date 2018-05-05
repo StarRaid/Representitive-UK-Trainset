@@ -161,12 +161,12 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		model_life                     : 20 ;
 		vehicle_life                   : 45 ;
 		reliability_decay              : 10 ;
-		cost_factor                    : 10 ;
+		cost_factor                    : 20 ;
 		running_cost_base              : RUNNING_COST_STEAM ;
 		running_cost_factor            : 60 ;
 		speed                          : 50 mph ;
 		track_type                     : NAAN ;
-		power                          : 650 hp ;
+		power                          : 600 hp ;
 		weight                         : 60 ton ;
 		engine_class                   : ENGINE_CLASS_STEAM ;
 		tractive_effort_coefficient    : 0.1383333333333333 ;
