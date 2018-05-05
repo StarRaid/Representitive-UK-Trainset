@@ -8,6 +8,8 @@ spriteset(gfx_nrwcoachone_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_
 
 //Switches
 
+//Switches
+
 random_switch(FEAT_TRAINS, SELF, sw_nrwcoachone_gfx_auto){
 	1 : gfx_nrwcoachone_1tone ;
 	2 : gfx_nrwcoachone_2tone ;
@@ -42,13 +44,13 @@ switch(FEAT_TRAINS, SELF, sw_nrwcoachone_refit_text_check, livery_choice){
 
 random_switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_auto){
 	dependent : sw_nrwcoachone_gfx_auto ;
-	1 : palette_2cc(COLOUR_GREEN, COLOUR_GREEN) ;
-	2 : palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	2 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_manual, cargo_subtype){
-	1 : palette_2cc(COLOUR_GREEN, COLOUR_GREEN) ;
-	palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_nrwcoachone_colour_manual_check, livery_choice){
@@ -87,7 +89,7 @@ item(FEAT_TRAINS, item_nrwcoachone, 9060){
 	graphics{
 		default                 : sw_nrwcoachone_gfx_manual_check ;
 		purchase                : gfx_nrwcoachone_purchase ;
-		purchase_colour_mapping : palette_2cc(COLOUR_CREAM, COLOUR_RED) ; 
+		purchase_colour_mapping : palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
 		cargo_subtype_text      : sw_nrwcoachone_refit_text_check ;
 		colour_mapping          : sw_nrwcoachone_colour_2cc_check ;
 	}

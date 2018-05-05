@@ -44,6 +44,24 @@ spriteset(gfx_narrow_bridges, "gfx/TRACKS/narrow_gauge.png"){
 	[ 40 , 98 , 40 , 21 , -19, 5   ] //Cross over
 }
 
+spriteset(gfx_narrow_tunnels, "gfx/TRACKS/tracks.png"){
+	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
+	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
+	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
+	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
+}
+
+spriteset(gfx_narrow_level_crossing, "gfx/TRACKS/tracks.png"){
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+}
+
 /*
 spriteset(gfx_narrow_track_diag_y, "gfx/TRACKS/narrow_gauge.png"){}
 spriteset(gfx_narrow_track_hori_s, "gfx/TRACKS/narrow_gauge.png"){}
@@ -68,14 +86,15 @@ item(FEAT_RAILTYPES, narrow_rail, 5) {
 		construction_cost         : 40 ;
 		speed_limit               : 50 mph ;
 		acceleration_model        : ACC_MODEL_RAIL ;
+		railtype_flags            : bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		//introduction_date         : date(1869,1,1) ;
 	}
 	graphics {
 		track_overlay   : gfx_narrow_track ;
 		underlay        : gfx_narrow_trackbed ;
 		bridge_surfaces : gfx_narrow_bridges ;
-		//level_crossings : 
-		//tunnels         : 
+		tunnels         : gfx_narrow_tunnels ;
+		level_crossings : gfx_narrow_level_crossing ;
 		//depots          : 
 		//fences          : 
 	}
