@@ -14,6 +14,7 @@ STR_PARAM_LIVERY_CHOICE_DESC :Liveries are chosen through the cargo refit menu i
 
 STR_LIVERY_BRGREEN                : British Railways Green
 STR_LIVERY_BRBLUE				  : British Railways Blue 
+STR_LIVERY_BRBLUEGREY			  : British Railways Blue and Grey
 STR_LIVERY_BRBLUE_SPT			  : British Railways Strathclyde Partnership for Transport
 STR_LIVERY_BRBLUE_LOGO            : British Railways Large Logo {GOLD}(Blue)
 STR_LIVERY_BRRAILFREIGHT_LOGO     : British Railways Large Logo {GOLD}(Railfreight Grey)
@@ -82,6 +83,7 @@ STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
 STR_NAME_EURODUAL            :Stadler Euro Dual (Electro Diesel)
 
 STR_NAME_142				 :Leyland "Pacer"
+STR_NAME_205				 :BR Southern DEMU "Thumper"
 
 STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
@@ -89,13 +91,14 @@ STR_NAME_313				 :BREL Second Gereration EMU (Dual Voltage)
 STR_NAME_314				 :BREL Second Gereration EMU (Electric)
 STR_NAME_317				 :AC Express "Bed Pan"
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
-STR_NAME_411				 :Mark 1 EMU (3rd rail)
+STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
 STR_NAME_700				 :Siemens "Desiro City"
 
 STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another Leyland "Pacer"!
+STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
-STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another Mark 1 EMU (3rd rail)!
+STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Mark 1 EMU (3rd rail)!
 STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
-STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Seimens "Desiro City"!
+STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro City"!
 STR_MU90_NO_COUPLE: You may only couple this train to a correct MU!

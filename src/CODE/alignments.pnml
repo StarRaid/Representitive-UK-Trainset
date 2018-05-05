@@ -110,3 +110,10 @@ template template_8_8_networker_reverse(x,y){
     [ x+33, y, 32, 12, -16, -8]
     [ x+67, y, 21, 18, -6, -10]
 }
+
+template template_8_4_networker(x,y){
+    [ x, y, 8, 24, -3, -12]
+    [ x+10, y, 21, 18, -13, -10]
+    [ x+33, y, 32, 12, -16, -8]
+    [ x+67, y, 21, 18, -6, -10]
+}
