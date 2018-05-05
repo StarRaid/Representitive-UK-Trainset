@@ -100,6 +100,10 @@ switch(FEAT_TRAINS, SELF, sw_nrwgarratt_length, ( position_in_vehid_chain + 1 ) 
 	4 ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_nrwgarratt_vfx_check, ( position_in_vehid_chain + 1 ) % 3){
+	2 : vfx_steam ;
+	return 0 ;
+}
 
 //Cargo refit text
 
@@ -177,7 +181,6 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		default                        : sw_nrwgarratt_gfx_decider ;
 		colour_mapping                 : sw_nrwgarratt_2cc_check ;
 		purchase                       : gfx_nrwgarratt_purchase ;
-		visual_effect                  : visual_effect(VISUAL_EFFECT_STEAM, 5) ;
 		sound_effect                   : sw_sfx_steam ;
 		cargo_subtype_text             : sw_nrwgarratt_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
@@ -185,5 +188,6 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		can_attach_wagon               : sw_all_but_MU90 ;
 		articulated_part               : sw_nrwgarratt_articulated ;
 		length                         : sw_nrwgarratt_length ;
+		create_effect                  : sw_nrwgarratt_vfx_check ;
 	}
 }

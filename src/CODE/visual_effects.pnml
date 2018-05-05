@@ -25,3 +25,7 @@ switch(FEAT_TRAINS, SELF, vfx_ohle_only, current_railtype){
 	SAAZ: vfx_ohle;
 	return 0;
 }
+
+switch(FEAT_TRAINS, SELF, vfx_steam, [STORE_TEMP(create_effect(EFFECT_SPRITE_STEAM, 0, -5, 9), 0x100)]) {
+    return 1;
+}
