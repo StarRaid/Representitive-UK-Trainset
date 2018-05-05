@@ -161,7 +161,7 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		running_cost_base              : RUNNING_COST_STEAM ;
 		running_cost_factor            : 60 ;
 		speed                          : 50 mph ;
-		track_type                     : RAIL ;
+		track_type                     : NAAN ;
 		power                          : 750 hp ;
 		weight                         : 20 ton ;
 		engine_class                   : ENGINE_CLASS_STEAM ;
