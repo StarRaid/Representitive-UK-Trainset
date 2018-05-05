@@ -2,7 +2,7 @@
 
 //Graphics
 
-spriteset(gfx_narrow_track, "gfx/TRACKS/tracks.png"){
+spriteset(gfx_narrow_track, "gfx/TRACKS/narrow_gauge.png"){
 	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
 	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
 	[ 100, 72 , 40 , 7  , -19,  4  ] //Horizontal Top
@@ -15,7 +15,7 @@ spriteset(gfx_narrow_track, "gfx/TRACKS/tracks.png"){
 	[ 299, 72 , 36 , 27 , -17, -2  ] //Slope NW
 }
 
-spriteset(gfx_narrow_trackbed, "gfx/TRACKS/tracks.png"){
+spriteset(gfx_narrow_trackbed, "gfx/TRACKS/narrow_gauge.png"){
 	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
 	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
 	[ 100, 72 , 40 , 7  , -19,  4  ] //Horizontal Top
@@ -34,7 +34,7 @@ spriteset(gfx_narrow_trackbed, "gfx/TRACKS/tracks.png"){
 	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
 }
 
-spriteset(gfx_narrow_bridges, "gfx/TRACKS/tracks.png"){
+spriteset(gfx_narrow_bridges, "gfx/TRACKS/narrow_gauge.png"){
 	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
 	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
 	[ 259, 72 , 36 , 27 , -17, -2  ] //Slope NE
@@ -45,11 +45,11 @@ spriteset(gfx_narrow_bridges, "gfx/TRACKS/tracks.png"){
 }
 
 /*
-spriteset(gfx_narrow_track_diag_y, "gfx/TRACKS/tracks.png"){}
-spriteset(gfx_narrow_track_hori_s, "gfx/TRACKS/tracks.png"){}
-spriteset(gfx_narrow_track_hori_n, "gfx/TRACKS/tracks.png"){}
-spriteset(gfx_narrow_track_vert_l, "gfx/TRACKS/tracks.png"){}
-spriteset(gfx_narrow_track_vert_r, "gfx/TRACKS/tracks.png"){}
+spriteset(gfx_narrow_track_diag_y, "gfx/TRACKS/narrow_gauge.png"){}
+spriteset(gfx_narrow_track_hori_s, "gfx/TRACKS/narrow_gauge.png"){}
+spriteset(gfx_narrow_track_hori_n, "gfx/TRACKS/narrow_gauge.png"){}
+spriteset(gfx_narrow_track_vert_l, "gfx/TRACKS/narrow_gauge.png"){}
+spriteset(gfx_narrow_track_vert_r, "gfx/TRACKS/narrow_gauge.png"){}
 */
 
 
