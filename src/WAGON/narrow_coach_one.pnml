@@ -4,7 +4,7 @@
 
 spriteset(gfx_nrwcoachone_1tone   , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(0, 0)      }
 spriteset(gfx_nrwcoachone_2tone   , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(0, 23)     }
-spriteset(gfx_nrwcoachone_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_purchase_short(63, 1) }
+spriteset(gfx_nrwcoachone_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_purchase_short(63, 0) }
 
 //Switches
 
@@ -13,7 +13,7 @@ random_switch(FEAT_TRAINS, SELF, sw_nrwcoachone_gfx_auto){
 	2 : gfx_nrwcoachone_2tone ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_nrwcoachone_gfx_manual. cargo_subtype){
+switch(FEAT_TRAINS, SELF, sw_nrwcoachone_gfx_manual, cargo_subtype){
 	1 : gfx_nrwcoachone_1tone ;
 	gfx_nrwcoachone_2tone ;
 }
@@ -87,7 +87,7 @@ item(FEAT_TRAINS, item_nrwcoachone, 9060){
 	graphics{
 		default                 : sw_nrwcoachone_gfx_manual_check ;
 		purchase                : gfx_nrwcoachone_purchase ;
-		purchase_colour_mapping : palette_2cc(COLOUR_CREAM, COLOUR_RED) ; ;
+		purchase_colour_mapping : palette_2cc(COLOUR_CREAM, COLOUR_RED) ; 
 		cargo_subtype_text      : sw_nrwcoachone_refit_text_check ;
 		colour_mapping          : sw_nrwcoachone_colour_2cc_check ;
 	}
