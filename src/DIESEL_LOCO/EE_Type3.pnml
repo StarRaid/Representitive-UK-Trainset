@@ -4,44 +4,44 @@
 
 template template_ee3(x,y){
 	[x+0,y,8,23,-3,-11] //North
-	[x+10,y,20,16,-14,-8] //North East
+	[x+10,y,20,16,-13,-8] //North East
 	[x+32,y,33,13,-17,-9] //East
 	[x+67,y,20,16,-5,-8] //South East
 	[x+89,y,8,23,-3,-11] //South
-	[x+99,y,20,16,-14,-8] //South West
+	[x+99,y,20,16,-13,-8] //South West
 	[x+121,y,33,13,-17,-9] //West
 	[x+156,y,20,16,-5,-8] //North West
 }
 
 template template_ee3_reverse(x,y){
 	[x+89,y,8,23,-3,-11] //South
-	[x+99,y,20,16,-14,-8] //South West
+	[x+99,y,20,16,-13,-8] //South West
 	[x+121,y,33,13,-17,-9] //West
 	[x+156,y,20,16,-5,-8] //North West
 	[x+0,y,8,23,-3,-11] //North
-	[x+10,y,20,16,-14,-8] //North East
+	[x+10,y,20,16,-13,-8] //North East
 	[x+32,y,33,13,-17,-9] //East
 	[x+67,y,20,16,-5,-8] //South East
 }
 
 template template_ee3_dirt(x,y, filename){
 	[x+0,y,16,46,-6,-22, filename] //North
-	[x+20,y,40,32,-28,-16, filename] //North East
+	[x+20,y,40,32,-26,-16, filename] //North East
 	[x+64,y,66,26,-34,-18, filename] //East
 	[x+134,y,40,32,-11,-16, filename] //South East
 	[x+178,y,16,46,-6,-22, filename] //South
-	[x+198,y,40,32,-27,-16, filename] //South West
+	[x+198,y,40,32,-25,-16, filename] //South West
 	[x+242,y,66,26,-34,-18, filename] //West
 	[x+312,y,40,32,-10,-16, filename] //North West
 }
 
 template template_ee3_dirt_reverse(x,y, filename){
 	[x+178,y,16,46,-6,-22, filename] //South
-	[x+198,y,40,32,-27,-16, filename] //South West
+	[x+198,y,40,32,-25,-16, filename] //South West
 	[x+242,y,66,26,-34,-18, filename] //West
 	[x+312,y,40,32,-10,-16, filename] //North West
 	[x+0,y,16,46,-6,-22, filename] //North
-	[x+20,y,40,32,-28,-16, filename] //North East
+	[x+20,y,40,32,-26,-16, filename] //North East
 	[x+64,y,66,26,-34,-18, filename] //East
 	[x+134,y,40,32,-11,-16, filename] //South East
 }
