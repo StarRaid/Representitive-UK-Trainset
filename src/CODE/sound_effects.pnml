@@ -125,3 +125,9 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/horn_1.wav") ;
 }
+
+switch(FEAT_TRAINS, SELF, sw_sfx_steam, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_START : sound("sfx/steam_whistle.wav", 70) ;
+	SOUND_EVENT_TUNNEL : sound("sfx/steam_whistle.wav", 70) ;
+	SOUND_EVENT_RUNNING_16 : sound("sfx/steam_run.wav", 80) ;
+}

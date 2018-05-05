@@ -73,7 +73,7 @@ spriteset(gfx_nrwgarratt_boiler_rev , "gfx/STEAM_LOCO/narrow_garrat.png"){
 	[126 , 15 , 16 , 15 , -7 , -9 ] //North West
 }
 
-
+spriteset(gfx_nrwgarratt_purchase  , "gfx/STEAM_LOCO/narrow_garrat.png"){ template_purchase(218,50) }
 
 switch(FEAT_TRAINS, PARENT, sw_nrwgarratt_tender_front_check_one, vehicle_is_reversed){ 1 : gfx_nrwgarratt_coal   ; gfx_nrwgarratt_water_rev  ; }
 switch(FEAT_TRAINS, PARENT, sw_nrwgarratt_tender_front_check_two, vehicle_is_reversed){ 1 : gfx_nrwgarratt_water  ; gfx_nrwgarratt_coal_rev   ; }
@@ -162,10 +162,10 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		running_cost_factor            : 60 ;
 		speed                          : 50 mph ;
 		track_type                     : NAAN ;
-		power                          : 750 hp ;
-		weight                         : 20 ton ;
+		power                          : 650 hp ;
+		weight                         : 60 ton ;
 		engine_class                   : ENGINE_CLASS_STEAM ;
-		tractive_effort_coefficient    : 0.5 ;
+		tractive_effort_coefficient    : 0.1383333333333333 ;
 		air_drag_coefficient           : 0.1 ;
 		length                         : 4 ;
 		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
@@ -176,13 +176,13 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 	graphics{
 		default                        : sw_nrwgarratt_gfx_decider ;
 		colour_mapping                 : sw_nrwgarratt_2cc_check ;
-		purchase                       : sw_ee3_purchase ;
-		//sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
-		//create_effect                  : vfx_diesel_default ;
+		purchase                       : gfx_nrwgarratt_purchase ;
+		visual_effect                  : visual_effect(VISUAL_EFFECT_STEAM, 5) ;
+		sound_effect                   : sw_sfx_steam ;
 		cargo_subtype_text             : sw_nrwgarratt_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
-		//can_attach_wagon               : sw_all_but_MU90 ;
+		can_attach_wagon               : sw_all_but_MU90 ;
 		articulated_part               : sw_nrwgarratt_articulated ;
 		length                         : sw_nrwgarratt_length ;
 	}
