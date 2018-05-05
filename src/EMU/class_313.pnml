@@ -1100,14 +1100,14 @@ item (FEAT_TRAINS, item_313, 313) {
 		refit_cost:						0;
 		track_type:						SAAZ;
 		ai_special_flag:				AI_FLAG_CARGO;
-		power:							440 hp;
+		power:							880 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
 		cargo_capacity:					74;
 		weight:							35 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.6;
+		tractive_effort_coefficient:	0.8;
 		air_drag_coefficient:			0.2;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -1122,7 +1122,7 @@ item (FEAT_TRAINS, item_313, 313) {
 	create_effect:						vfx_3rd_only;
 	cargo_subtype_text:					sw_313_refit_text_decider ;
 	colour_mapping:						sw_313_colour_mapping_decider ;
-	sound_effect:						sw_sfx_electric_networker;
+	//sound_effect:						sw_sfx_electric_networker;
 	purchase_colour_mapping:			sw_313_colour_mapping_choice_decider;
 }
 		livery_override (item_Mk2) {
@@ -1154,14 +1154,14 @@ item (FEAT_TRAINS, item_314, 314) {
 		refit_cost:						0;
 		track_type:						ELRL;
 		ai_special_flag:				AI_FLAG_CARGO;
-		power:							440 hp;
+		power:							880 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
 		cargo_capacity:					74;
 		weight:							35 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.6;
+		tractive_effort_coefficient:	0.8;
 		air_drag_coefficient:			0.2;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -1176,7 +1176,7 @@ item (FEAT_TRAINS, item_314, 314) {
 	create_effect:						vfx_3rd_only;
 	cargo_subtype_text:					sw_314_refit_text_decider ;
 	colour_mapping:						sw_314_colour_mapping_decider ;
-	sound_effect:						sw_sfx_electric_networker;
+	//sound_effect:						sw_sfx_electric_networker;
 	purchase_colour_mapping:			sw_314_colour_mapping_choice_decider;
 }
 		livery_override (item_Mk2) {

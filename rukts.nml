@@ -4822,14 +4822,14 @@ item (FEAT_TRAINS, item_313, 313) {
   refit_cost: 0;
   track_type: SAAZ;
   ai_special_flag: AI_FLAG_CARGO;
-  power: 440 hp;
+  power: 880 hp;
   running_cost_base: RUNNING_COST_ELECTRIC;
   dual_headed: 1;
   default_cargo_type: PASS;
   cargo_capacity: 74;
   weight: 35 ton;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  tractive_effort_coefficient: 0.6;
+  tractive_effort_coefficient: 0.8;
   air_drag_coefficient: 0.2;
   length: 8;
   effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -4844,7 +4844,7 @@ item (FEAT_TRAINS, item_313, 313) {
  create_effect: vfx_3rd_only;
  cargo_subtype_text: sw_313_refit_text_decider ;
  colour_mapping: sw_313_colour_mapping_decider ;
- sound_effect: sw_sfx_electric_networker;
+ //sound_effect:						sw_sfx_electric_networker;
  purchase_colour_mapping: sw_313_colour_mapping_choice_decider;
 }
   livery_override (item_Mk2) {
@@ -4876,14 +4876,14 @@ item (FEAT_TRAINS, item_314, 314) {
   refit_cost: 0;
   track_type: ELRL;
   ai_special_flag: AI_FLAG_CARGO;
-  power: 440 hp;
+  power: 880 hp;
   running_cost_base: RUNNING_COST_ELECTRIC;
   dual_headed: 1;
   default_cargo_type: PASS;
   cargo_capacity: 74;
   weight: 35 ton;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  tractive_effort_coefficient: 0.6;
+  tractive_effort_coefficient: 0.8;
   air_drag_coefficient: 0.2;
   length: 8;
   effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -4898,7 +4898,7 @@ item (FEAT_TRAINS, item_314, 314) {
  create_effect: vfx_3rd_only;
  cargo_subtype_text: sw_314_refit_text_decider ;
  colour_mapping: sw_314_colour_mapping_decider ;
- sound_effect: sw_sfx_electric_networker;
+ //sound_effect:						sw_sfx_electric_networker;
  purchase_colour_mapping: sw_314_colour_mapping_choice_decider;
 }
   livery_override (item_Mk2) {
@@ -6124,7 +6124,7 @@ item (FEAT_TRAINS, item_455, 455) {
   cargo_capacity: 80;
   weight: 30 ton;
   engine_class: ENGINE_CLASS_ELECTRIC;
-  tractive_effort_coefficient: 0.7;
+  tractive_effort_coefficient: 0.75;
   air_drag_coefficient: 0.4;
   length: 8;
   effect_spawn_model_and_powered: EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -6533,12 +6533,12 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
   model_life : 20 ;
   vehicle_life : 45 ;
   reliability_decay : 10 ;
-  cost_factor : 10 ;
+  cost_factor : 20 ;
   running_cost_base : RUNNING_COST_STEAM ;
   running_cost_factor : 60 ;
   speed : 50 mph ;
   track_type : NAAN ;
-  power : 650 hp ;
+  power : 600 hp ;
   weight : 60 ton ;
   engine_class : ENGINE_CLASS_STEAM ;
   tractive_effort_coefficient : 0.1383333333333333 ;
@@ -6647,7 +6647,7 @@ item(FEAT_TRAINS, item_nrwcoachone, 9060){
   refit_cost : 0 ;
   refittable_cargo_classes : CC_PASSENGERS ;
   cargo_allow_refit : [PASS, TOUR] ;
-  cargo_capacity : 40 ;
+  cargo_capacity : 10 ;
   loading_speed : 10 ;
   track_type : NAAN ;
   power : 0 hp ;
@@ -6669,6 +6669,7 @@ sort(FEAT_TRAINS,[
 68,
 142,
 205,
+168,
 87,
 88,
 313,
@@ -6678,8 +6679,11 @@ sort(FEAT_TRAINS,[
 325,
 700,
 10000,
+10001,
 9010,
 9020,
 9090,
+1000,
+9060,
 ]);
 # 34 "rukts.pnml" 2
