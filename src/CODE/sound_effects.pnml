@@ -46,9 +46,9 @@ switch(FEAT_TRAINS, PARENT, sw_sfx_modern_diesel_running, current_speed){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_networker_running, current_speed){
- 0..7 : sound("sfx/465_idle.wav") ;
- 8..40 : sound("sfx/465_coast_2.wav") ;
- sound("sfx/465_coast_3.wav") ;
+	0..13 : sound("sfx/465_coast_1.wav") ;
+	14..23 : sound("sfx/465_coast_2.wav") ;
+	sound("sfx/465_coast_3.wav") ;
 }
 
 
@@ -123,5 +123,5 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info
  SOUND_EVENT_RUNNING_16 : sw_sfx_electric_networker_running ;
  SOUND_EVENT_START : sound("sfx/465_depart.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
- SOUND_EVENT_TUNNEL : sound("sfx/465_horn.wav") ;
+ SOUND_EVENT_TUNNEL : sound("sfx/horn_1.wav") ;
 }
