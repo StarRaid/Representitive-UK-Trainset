@@ -103,8 +103,8 @@ switch(FEAT_TRAINS, SELF, sw_207_cnx_r, (count_veh_id(205)+1)%2){1: spriteset_20
 switch(FEAT_TRAINS, PARENT, sw_207_cnx, vehicle_is_reversed){0: sw_207_cnx_f; sw_207_cnx_r;}
 
 switch(FEAT_TRAINS, SELF, sw_southern_thump_cnx_select, build_year){0..1960: sw_205_cnx; sw_207_cnx;}
-	
 random_switch(FEAT_TRAINS, SELF, sw_southern_thump_cnx, TRIGGER_VEHICLE_SERVICE){1: sw_southern_thump_cnx_select;}
+	
 
 //Trailers
 random_switch(FEAT_TRAINS, SELF, sw_southern_thump_brg_t, TRIGGER_VEHICLE_SERVICE){1: spriteset_205_t_brg;}

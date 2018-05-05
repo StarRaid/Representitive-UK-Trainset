@@ -42,6 +42,7 @@ STR_LIVERY_WCRC					  : West Coast Railway Company
 STR_LIVERY_CRIMSON_CREAM		  : British Railways "Crimson Lake"
 STR_LIVERY_MAROON				  : British Railways Maroon
 STR_LIVERY_SWT					  : South West Trains
+STR_LIVERY_SWT_REFURB			  : South West Trains (Refurbished)
 STR_LIVERY_SWT_HERITAGE			  : South West Trains {GOLD}(Heritage Blue)
 STR_LIVERY_N_SPIRIT               : Northern Spirit
 STR_LIVERY_NORTHERN               : Northern
@@ -92,6 +93,7 @@ STR_NAME_314				 :BREL Second Gereration EMU (Electric)
 STR_NAME_317				 :AC Express "Bed Pan"
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
 STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
+STR_NAME_455				 :BREL Suburban EMU (3rd rail)
 STR_NAME_700				 :Siemens "Desiro City"
 
 STR_NAME_NRWGARRATT :Beyer-Garratt 2-4-2+2-4-2 (Steam)
@@ -106,6 +108,7 @@ STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or anot
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Mark 1 EMU (3rd rail)!
+STR_455_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Suburban EMU (3rd rail)
 STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
 STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro City"!
 STR_MU90_NO_COUPLE: You may only couple this train to a correct MU!

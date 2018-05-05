@@ -27,7 +27,7 @@ disable_item(FEAT_TRAINS);
 //#include "src/EMU/class_317.pnml"
 #include "src/EMU/class_325.pnml"
 #include "src/EMU/class_411.pnml"
+#include "src/EMU/class_455.pnml"
 #include "src/EMU/class_700.pnml"
 #include "src/STEAM_LOCO/narrow_garratt.pnml"
-#include "src/CODE/purchase_list_sort.pnml"
 #include "src/CODE/sort_purchase.pnml"
