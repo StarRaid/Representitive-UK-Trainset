@@ -6,27 +6,27 @@ import sys
 import os
 import argparse
 
-print("\n=======StarRaid's NML compiler!=======\n")
+print("\n=======StarRaid's NML patcher!=======\n")
 
 #Starting with argument handling from command-line interface
 
-parser = argparse.ArgumentParser(description="Patch a GRF in NML from pnml files into one NML file. If no arguments provided, the program will loop and prompt an input for the file to compile. WARNING! This does NOT compile into a .grf file, it patches your pnml files into an nml file for you to compile with NMLC!")
+parser = argparse.ArgumentParser(description="Patch a GRF in NML from pnml files into one NML file. If no arguments provided, the program will loop and prompt an input for the file to patch. WARNING! This does NOT compile into a .grf file, it patches your pnml files into an nml file for you to compile with NMLC!")
 
-parser.add_argument("-o", "--output", type=str, help='The file to output the written file to. Please enclose the file name in quotation marks (e.g. python nml_compiler.py -o "output.nml)"')
+parser.add_argument("-o", "--output", type=str, help='The file to output the written file to. Please enclose the file name in quotation marks (e.g. python nml_patcher.py -o "output.nml)"')
 parser.add_argument("-f", "--file", type=str, help="The header file to read from. Please enclose the file name in quotation marks.")
 parser.add_argument("-b", "--backup", type=int, help="1 or 0, to say if the program will create a backup if overwriting the output file.", choices=[0,1])
 
 args = parser.parse_args()
+arguments = vars(args)
 
-
+"""
 #Checking if any of the arguments have any value that is not "None"
 used_args = False
-arguments = vars(args)
 
 for argument in arguments:
 	if not used_args and arguments[argument] != None:
 		used_args = True
-
+"""
 
 #Defining general purpose functions
 
@@ -46,7 +46,12 @@ def backup(name):
 	if name in os.listdir():
 		if not ("backups" in os.listdir()):
 			os.mkdir("backups")
-		os.rename(name, "backups/" + rm_file_extension(name) + "-" + strftime("%H-%M-%S-%Y-%m-%d", gmtime())+".nml")
+		new_file_name = rm_file_extension(name) + "-" + strftime("%H-%M-%S-%Y-%m-%d", gmtime())+".nml"
+		os.rename(name, "backups/" + new_file_name)
+		if new_file_name in os.listdir("backups"):
+			print('Successfully backed up to "backups/' +  new_file_name + '"!')
+		else:
+			print_general_error("Failed to backup file")
 
 		
 	
@@ -62,6 +67,7 @@ def print_general_error(cause):
 	print("\nEncountered error!")
 	print("Cause      : ", cause)
 	print("This was most likely an internal error.\n")
+
 
 	
 
@@ -83,6 +89,16 @@ class writer:
 	
 	def close(self):
 		self.output.close()
+		
+	def patch(self):
+		#Writing the header beggining
+		self.write_line('# 1 "' + arguments["file"] + '"')
+		
+		
+		#The main sequence that opens the files and then writes to the output
+		header.main()
+		self.close()
+		header.close()
 
 		
 	
@@ -94,9 +110,15 @@ class reader:
 	list_of_definitions = {}
 	total_list_of_errors = []
 	faulty_definitions = []
+	main_header = []
 	
 	def __init__(self, file_name, *parent_variables):
 		try:
+			if not (True in self.main_header):
+				self.main_header.append(True)
+				self.write_header = False
+				print('Opening "' + file_name + '" as the main header.')
+			self.first_header = 0
 			self.current_line = 0
 			self.errors_made = 0
 			self.file_name = file_name
@@ -143,7 +165,12 @@ class reader:
 			
 			#If the line starts with the "#include" command, then it create another instance that reads and writes that file first
 			if line.lower()[:8] == "#include":
+				
+				if self.first_header == 0:
+					self.first_header = self.line_counter
 			
+				output.write_line('# 1 ' + line[9:] + ' 1')
+				
 				self.subreader = reader(line.replace('"', '')[9:], self.file_name, line, self.line_counter)
 				self.subreader.main()
 				
@@ -153,6 +180,8 @@ class reader:
 					print("Patched", line.replace('"', '')[9:], "with", self.subreader.errors_made, "errors!")
 				else:
 					print("Patched", line.replace('"', '')[9:], "with no errors.")
+					
+				output.write_line('# ' + str(self.current_line+1) + ' "' + self.file_name + '" ' + str(self.first_header))
 							
 				do_write = False
 				
@@ -218,30 +247,22 @@ for argument in arguments:
 
 #Checking if any arguments are used
 
-if used_args:
-
-	#Check if the 'file' argument was given, as the program cannot continue without it
-	if arguments["file"] != None:
+if arguments["file"] != None:
+	try:
+		#The main sequence that opens the files and then writes to the output
+		output = writer()
+		header = reader(arguments["file"])
+		output.patch()
 		
-		try:
-			#The main sequence that opens the files and then writes to the output
-			output = writer()
-			header = reader(arguments["file"])
-			header.main()
-			output.close()
-			header.close()
-			
-			#Display messages after patching
-			if len(header.list_of_definitions) > 0:
-				print("\nList of custom definitions used in this file:")
-				for definition in header.list_of_definitions:
-					print(definition, header.list_of_definitions[definition])
-			
-		#Catch any other raised errors
-		except Exception as inst:
-			print_general_error(str(inst) + " from " + str(type(inst))) 
-	else:
-		print("\nNo input file given!")
+		#Display messages after patching
+		if len(header.list_of_definitions) > 0:
+			print("\nList of custom definitions used in this file:")
+			for definition in header.list_of_definitions:
+				print(definition, header.list_of_definitions[definition])
+		
+	#Catch any other raised errors
+	except SyntaxError:#Exception as inst:
+		print_general_error(str(inst) + " from " + str(type(inst))) 
 	
 else:
 	print("\nType 'exit' to exit the program\n")
@@ -258,20 +279,22 @@ else:
 				raise KeyboardInterrupt
 				
 			#Creating the output file from the input file name
-			arguments["output"] = rm_file_extension(arguments["file"])+".nml"
+			if arguments["output"] == None:
+				arguments["output"] = rm_file_extension(arguments["file"])+".nml"
 				
 			#The main sequence that opens the files and then writes to the output
 			output = writer()
 			header = reader(arguments["file"])
-			header.main()
-			output.close()
-			header.close()
+			output.patch()
 			
 			#Display messages after patching
 			if len(header.list_of_definitions) > 0:
 				print("\nList of custom definitions used in this file:")
 				for definition in header.list_of_definitions:
 					print(definition, header.list_of_definitions[definition])
+					
+			if arguments["output"] == rm_file_extension(arguments["file"])+".nml":
+				arguments["output"] == None
 		
 		#If the command is entered or Ctrl + C is pressed, then the program will terminate
 		except KeyboardInterrupt:
@@ -279,7 +302,7 @@ else:
 			break
 			
 		#Catching any other raised errors
-		except SyntaxError:#Exception as inst:
+		except Exception as inst:
 			print_general_error(str(inst) + " from " + str(type(inst))) 
 
 
