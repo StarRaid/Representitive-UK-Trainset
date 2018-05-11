@@ -73,7 +73,7 @@ random_switch(FEAT_TRAINS, SELF, sw_707_t, TRIGGER_VEHICLE_SERVICE){1: sw_707_sw
 
 //How the livery is selected
 
-switch(FEAT_TRAINS, SELF, sw_700_livery_selection_auto, (count_veh_id(item_MU90)/count_veh_id(item_700))){
+switch(FEAT_TRAINS, PARENT, sw_700_livery_selection_auto, (count_veh_id(item_MU90)/count_veh_id(item_700))){
 	0..1: sw_707;
 	 sw_700;
 } 

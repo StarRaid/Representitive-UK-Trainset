@@ -31,19 +31,23 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_colours, colour_scheme_1){
 //Effects deciders
 
 switch(FEAT_TRAINS, PARENT, sw_eurodual_sfx_decider, current_railtype){
-	ELRL : sw_sfx_electric_loco_modern ;
+	ELRL   : sw_sfx_electric_loco_modern ;
+	SAAZ   : sw_sfx_electric_loco_modern ;
+	//"3RDC" : sw_sfx_electric_loco_modern ;
 	sw_sfx_diesel_loco_modern ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_eurodual_effect_decider, current_railtype){
 	ELRL   : vfx_ohle ;
 	SAAZ   : vfx_ohle ;
+	//"3RDC" : vfx_ohle ;
 	vfx_diesel_default ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_eurodual_power_decider, current_railtype){
 	ELRL   : 5364 ;
 	SAAZ   : 5364 ;
+	//"3RDC" : 5364 ;
 	986 ;	
 }
 

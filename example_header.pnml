@@ -1,0 +1,34 @@
+//Welcome to the example header!
+disable_item(FEAT_TRAINS);
+#include "src/header.pnml"
+#define ERA_MILLENIAL 2000..4096
+
+#define DEAD 
+
+#include "src/lol this will not work.pnml"
+//Rail type table
+railtypetable {
+    RAIL,
+ ELRL,
+ SAA3: [ELRL],
+ SAAZ: [ELRL],
+ SAA4: [SAA3, ELRL],
+ NAAN: [NAAN, NGRL, RAIL],
+}
+
+#include "src/cargo_table.pnml"
+#include "src/train_one.pnml"
+#include "src/train_two.pnml"
+#include "src/train_three.pnml"
+
+//Sorting the purchase list
+
+sort(FEAT_TRAINS, [
+3,
+1,
+]);
+
+DEAD
+DEAD
+DEAD
+DEAD
