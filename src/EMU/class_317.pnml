@@ -129,17 +129,17 @@ spriteset(spriteset_317_p_one, "gfx/EMU/class_317.png") {
 //Switches
 
 switch(FEAT_TRAINS, SELF, sw_317_old_livery_A, current_year){
-	ERA_BRBLUETOPS: spriteset_317_old_br;
+	ERA_BRTOPS: spriteset_317_old_br;
 	ERA_SECTORISATION: spriteset_317_old_nse;
-	ERA_PRIVATISATION1: spriteset_317_old_wagn;
-	ERA_PRIVATISATION2: spriteset_317_old_one;
+	ERA_PRIVATE_ONE: spriteset_317_old_wagn;
+	ERA_PRIVATE_TWO: spriteset_317_old_one;
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_new_livery_A, current_year){
-	ERA_BRBLUETOPS: spriteset_317_new_br;
+	ERA_BRTOPS: spriteset_317_new_br;
 	ERA_SECTORISATION: spriteset_317_new_nse;
-	ERA_PRIVATISATION1: spriteset_317_new_wagn;
-	ERA_PRIVATISATION2: spriteset_317_new_one;
+	ERA_PRIVATE_ONE: spriteset_317_new_wagn;
+	ERA_PRIVATE_TWO: spriteset_317_new_one;
 }
 
 random_switch (FEAT_TRAINS, SELF, sw_317_late){
@@ -154,17 +154,17 @@ switch(FEAT_TRAINS, SELF, sw_317_year_A, build_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_old_livery_B, current_year){
-	ERA_BRBLUETOPS: spriteset_317_old_br_r;
+	ERA_BRTOPS: spriteset_317_old_br_r;
 	ERA_SECTORISATION: spriteset_317_old_nse_r;
-	ERA_PRIVATISATION1: spriteset_317_old_wagn_r;
-	ERA_PRIVATISATION2: spriteset_317_old_one_r;
+	ERA_PRIVATE_ONE: spriteset_317_old_wagn_r;
+	ERA_PRIVATE_TWO: spriteset_317_old_one_r;
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_new_livery_B, current_year){
-	ERA_BRBLUETOPS: spriteset_317_new_br_r;
+	ERA_BRTOPS: spriteset_317_new_br_r;
 	ERA_SECTORISATION: spriteset_317_new_nse_r;
-	ERA_PRIVATISATION1: spriteset_317_new_wagn_r;
-	ERA_PRIVATISATION2: spriteset_317_new_one_r;
+	ERA_PRIVATE_ONE: spriteset_317_new_wagn_r;
+	ERA_PRIVATE_TWO: spriteset_317_new_one_r;
 }
 
 random_switch (FEAT_TRAINS, SELF, sw_317_late_b){
@@ -179,17 +179,17 @@ switch(FEAT_TRAINS, SELF, sw_317_year_B, build_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_old_livery_O, current_year){
-	ERA_BRBLUETOPS: spriteset_317_old_br_o;
+	ERA_BRTOPS: spriteset_317_old_br_o;
 	ERA_SECTORISATION: spriteset_317_old_nse_o;
-	ERA_PRIVATISATION1: spriteset_317_old_wagn_o;
-	ERA_PRIVATISATION2: spriteset_317_old_one_o;
+	ERA_PRIVATE_ONE: spriteset_317_old_wagn_o;
+	ERA_PRIVATE_TWO: spriteset_317_old_one_o;
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_new_livery_O, current_year){
-	ERA_BRBLUETOPS: spriteset_317_new_br_o;
+	ERA_BRTOPS: spriteset_317_new_br_o;
 	ERA_SECTORISATION: spriteset_317_new_nse_o;
-	ERA_PRIVATISATION1: spriteset_317_new_wagn_o;
-	ERA_PRIVATISATION2: spriteset_317_new_one_o;
+	ERA_PRIVATE_ONE: spriteset_317_new_wagn_o;
+	ERA_PRIVATE_TWO: spriteset_317_new_one_o;
 }
 
 random_switch (FEAT_TRAINS, SELF, sw_317_late_o){
@@ -214,17 +214,17 @@ switch(FEAT_TRAINS, SELF, sw_317_default, position_in_consist_from_end){
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_t_year, current_year){
-	ERA_BRBLUETOPS: spriteset_317_t_br;
+	ERA_BRTOPS: spriteset_317_t_br;
 	ERA_SECTORISATION: spriteset_317_t_nse;
-	ERA_PRIVATISATION1: spriteset_317_t_wagn;
-	ERA_PRIVATISATION2: spriteset_317_t_one;
+	ERA_PRIVATE_ONE: spriteset_317_t_wagn;
+	ERA_PRIVATE_TWO: spriteset_317_t_one;
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_p_year, current_year){
-	ERA_BRBLUETOPS: spriteset_317_p_br;
+	ERA_BRTOPS: spriteset_317_p_br;
 	ERA_SECTORISATION: spriteset_317_p_nse;
-	ERA_PRIVATISATION1: spriteset_317_p_wagn;
-	ERA_PRIVATISATION2: spriteset_317_p_one;
+	ERA_PRIVATE_ONE: spriteset_317_p_wagn;
+	ERA_PRIVATE_TWO: spriteset_317_p_one;
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_trailer, position_in_vehid_chain){

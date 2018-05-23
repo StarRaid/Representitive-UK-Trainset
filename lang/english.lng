@@ -12,18 +12,21 @@ STR_PARAM_COACHMAIL_DESC     :Coaches that have brake compartments can load mail
 STR_PARAM_LIVERY_CHOICE_NAME :Choose liveries manually
 STR_PARAM_LIVERY_CHOICE_DESC :Liveries are chosen through the cargo refit menu instead of them changing depending on year
 
-STR_LIVERY_BRGREEN                : British Railways Green
-STR_LIVERY_BRBLUE				  : British Railways Blue 
-STR_LIVERY_BRBLUEGREY			  : British Railways Blue and Grey
+STR_LIVERY_BRGREEN                : British Railways {GOLD}(Green)
+STR_LIVERY_BRBLUE				  : British Railways {GOLD}(Blue)
+STR_LIVERY_BRBLUEGREY			  : British Railways {GOLD}(Blue and Grey)
 STR_LIVERY_BRBLUE_SPT			  : British Railways Strathclyde Partnership for Transport
 STR_LIVERY_BRBLUE_LOGO            : British Railways Large Logo {GOLD}(Blue)
 STR_LIVERY_BRRAILFREIGHT_LOGO     : British Railways Large Logo {GOLD}(Railfreight Grey)
 STR_LIVERY_BRBLUE_SUBTYPE		  : British Railways Blue {STRING}
 STR_LIVERY_INTERCITY			  : Intercity
+STR_LIVERY_INTERCITY_SWL		  : Intercity {GOLD}(Swallow)
 STR_LIVERY_REG_RAILWAYS			  : Regional Railways
 STR_LIVERY_NSE					  : Network South East
 STR_LIVERY_RAILFREIGHT            : Railfreight Two-Tone Grey {STRING}
 STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
+STR_LIVERY_MIDLAND_MAINLINE_BLUE  : Midland Mainline {GOLD}(Blue)
+STR_LIVERY_EMT                    : East Midlands trains
 STR_LIVERY_CONNEX				  : Connex
 STR_LIVERY_DRS					  : Direct Rail Services
 STR_LIVERY_DRS_COMPASS            : Direct Rail Services {GOLD}(Compass)
@@ -31,7 +34,7 @@ STR_LIVERY_EWS                    : English, Welsh & Scottish {GOLD}(EWS)
 STR_LIVERY_TPE_NEW				  : TransPennine Express
 STR_LIVERY_CAL_SLEEPER			  : Caledonian Sleeper
 STR_LIVERY_GBRF					  : First GBRf
-STR_LIVERY_LONDON_MIDLAND		  : Londom Midland
+STR_LIVERY_LONDON_MIDLAND		  : London Midland
 STR_LIVERY_CHILTERN				  : Chiltern Railways
 STR_LIVERY_FREIGHTLINER           : Frieghtliner
 STR_LIVERY_FREIGHTLINER_POWERHAUL : Frieghtliner {GOLD}(Powerhaul)
@@ -52,16 +55,24 @@ STR_LIVERY_SILVERLINK	          : Silverlink
 STR_LIVERY_WAGN		              : West Anglia Great Northern
 STR_LIVERY_SOUTHERN	              : Southern
 STR_LIVERY_FCC  	              : First Capital Connect
+STR_LIVERY_FGE					  : First Great Eastern
+STR_LIVERY_FIRST_FAG              : First Great Western {GOLD}(Fag) {STRING}
+STR_LIVERY_FIRST_BARBIE           : First Great Western {GOLD}(Barbie) {STRING}
+STR_LIVERY_FIRST_FGW              : First Great Western {GOLD}(Corporate Blue) {STRING}
+STR_LIVERY_FIRST_GWR              : Great Western Railway {STRING}
+STR_LIVERY_FIRST_SCOT_RAIL        : First Scot Rail {STRING}
 STR_LIVERY_SPT_ORANGE			  : Strathclyde Partnership for Transport (Orange) 
 STR_LIVERY_SPT_CARMINE_CREAM	  : Strathclyde Partnership for Transport (Carmine & Cream)
 STR_LIVERY_SCOTRAIL				  : Scotrail "Saltaire"
-STR_LIVERY_FGE					  : First Great Eastern
 STR_LIVERY_ONE_ANGLIA			  : One Anglia
 STR_LIVERY_ABELLIO_GREATER_ANGLIA : Abellio Greater Anglia
 STR_LIVERY_TFL					  : TfL Rail
 STR_LIVERY_MERSEYRAIL			  : Merseyrail
 STR_LIVERY_MERSEYRAIL_REFERB	  : Merseyrail {GOLD}(Refurbished)
+STR_LIVERY_NETWORK_RAIL           : Network Rail
 
+STR_LIVERY_SLEEPER              :{BLACK}(Sleeper)
+STR_LIVERY_EMPTY	            : 
 STR_SECTOR_GENERAL              :{GOLD}(General, Distribution)
 STR_SECTOR_COAL                 :{GOLD}(Coal)
 STR_SECTOR_METALS               :{GOLD}(Metals, Construction, Petroleum)
@@ -79,6 +90,8 @@ STR_NAME_FLASK      			:Nuclear Flask Wagon
 STR_NAME_87                  :BREL 87 (Electric)
 STR_NAME_EETYPE3			 :EE Type 3 (Diesel Electric)
 STR_NAME_EETYPE4			 :EE Whistler (Diesel Electric)
+STR_NAME_BRUSH_PEAK          :Brush "Peaks" (Diesel Electric)
+STR_NAME_HST                 :BREL HST (Diesel Electric)
 STR_NAME_POWERHAUL			 :GE Powerhaul (Diesel Electric)
 STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
 STR_NAME_EURODUAL            :Stadler Euro Dual (Electro Diesel)

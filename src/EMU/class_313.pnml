@@ -602,7 +602,7 @@ random_switch(FEAT_TRAINS, SELF, sw_313_scr_t_select, TRIGGER_VEHICLE_SERVICE){
 //Livery Switches 
  
 switch(FEAT_TRAINS, SELF, sw_313_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_select;
+	ERA_BRTOPS: sw_313_brb_select;
 	ERA_SECTORISATION: sw_313_nse_select;
 	1996 .. 2005: sw_313_slk_select;
 	2006 .. 2010: sw_313_fcc_select;
@@ -610,7 +610,7 @@ switch(FEAT_TRAINS, SELF, sw_313_livery_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_select;
+	ERA_BRTOPS: sw_313_brb_select;
 	ERA_SECTORISATION: sw_313_spc_select;
 	1996 .. 2005: sw_313_spn_select;
 	2006 .. 2010: sw_313_scr_select;
@@ -618,7 +618,7 @@ switch(FEAT_TRAINS, SELF, sw_314_livery_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_315_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_select;
+	ERA_BRTOPS: sw_313_brb_select;
 	ERA_SECTORISATION: sw_313_nse_select;
 	1996 .. 2000: sw_313_wgn_select;
 	2001 .. 2005: sw_313_one_select;
@@ -627,14 +627,14 @@ switch(FEAT_TRAINS, SELF, sw_315_livery_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_select;
+	ERA_BRTOPS: sw_313_brb_select;
 	ERA_SECTORISATION: sw_313_mro_select;
 	1996 .. 2005: sw_313_mro_select;
 	sw_313_mrn_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_313_t_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_t_select;
+	ERA_BRTOPS: sw_313_brb_t_select;
 	ERA_SECTORISATION: sw_313_nse_t_select;
 	1996 .. 2005: sw_313_slk_t_select;
 	2006 .. 2010: sw_313_fcc_t_select;
@@ -642,7 +642,7 @@ switch(FEAT_TRAINS, SELF, sw_313_t_livery_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_t_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_t_select;
+	ERA_BRTOPS: sw_313_brb_t_select;
 	ERA_SECTORISATION: sw_313_spc_t_select;
 	1996 .. 2005: sw_313_spn_t_select;
 	2006 .. 2010: sw_313_scr_t_select;
@@ -650,7 +650,7 @@ switch(FEAT_TRAINS, SELF, sw_314_t_livery_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_315_t_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_t_select;
+	ERA_BRTOPS: sw_313_brb_t_select;
 	ERA_SECTORISATION: sw_313_nse_t_select;
 	1996 .. 2000: sw_313_wgn_t_select;
 	2001 .. 2005: sw_313_one_t_select;
@@ -659,7 +659,7 @@ switch(FEAT_TRAINS, SELF, sw_315_t_livery_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_t_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_t_select;
+	ERA_BRTOPS: sw_313_brb_t_select;
 	ERA_SECTORISATION: sw_313_mro_t_select;
 	1996 .. 2005: sw_313_mro_t_select;
 	sw_313_mrn_t_select;
@@ -865,7 +865,7 @@ switch(FEAT_TRAINS, SELF, sw_314_refit_text_decider, livery_choice){
 
 //Purchase sprite decider
 switch(FEAT_TRAINS, SELF, sw_313_purchase, current_year){
-	ERA_BRBLUETOPS: spriteset_313_brb_purchase;
+	ERA_BRTOPS: spriteset_313_brb_purchase;
 	ERA_SECTORISATION: spriteset_313_nse_purchase;
 	1996 .. 2005: spriteset_313_slk_purchase;
 	2006 .. 2010: spriteset_313_fcc_purchase;
@@ -873,7 +873,7 @@ switch(FEAT_TRAINS, SELF, sw_313_purchase, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_purchase, current_year){
-	ERA_BRBLUETOPS: spriteset_313_brb_purchase;
+	ERA_BRTOPS: spriteset_313_brb_purchase;
 	ERA_SECTORISATION: spriteset_313_spc_purchase;
 	1996 .. 2005: spriteset_313_spn_purchase;
 	2006 .. 2010: spriteset_313_scr_purchase;
@@ -966,7 +966,7 @@ random_switch(FEAT_TRAINS, PARENT, sw_313_wgn_colour_mapping){
 //Recolour Switches
 
 switch(FEAT_TRAINS, SELF, sw_313_colour_mapping_year_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_colour_mapping;
+	ERA_BRTOPS: sw_313_brb_colour_mapping;
 	ERA_SECTORISATION: sw_313_nse_colour_mapping;
 	1996 .. 2005: sw_313_slk_colour_mapping;
 	2006 .. 2010: sw_313_fcc_colour_mapping;
@@ -974,7 +974,7 @@ switch(FEAT_TRAINS, SELF, sw_313_colour_mapping_year_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_colour_mapping_year_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_colour_mapping;
+	ERA_BRTOPS: sw_313_brb_colour_mapping;
 	ERA_SECTORISATION: sw_313_spn_colour_mapping;
 	1996 .. 2005: sw_313_spn_colour_mapping;
 	2006 .. 2010: sw_313_scr_colour_mapping;
@@ -982,7 +982,7 @@ switch(FEAT_TRAINS, SELF, sw_314_colour_mapping_year_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_315_colour_mapping_year_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_colour_mapping;
+	ERA_BRTOPS: sw_313_brb_colour_mapping;
 	ERA_SECTORISATION: sw_313_nse_colour_mapping;
 	1996 .. 2000: sw_313_wgn_colour_mapping;
 	2001 .. 2005: sw_313_one_colour_mapping;
@@ -991,7 +991,7 @@ switch(FEAT_TRAINS, SELF, sw_315_colour_mapping_year_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_colour_mapping_year_decider, current_year){
-	ERA_BRBLUETOPS: sw_313_brb_colour_mapping;
+	ERA_BRTOPS: sw_313_brb_colour_mapping;
 	ERA_SECTORISATION: sw_313_mr_colour_mapping;
 	1996 .. 2005: sw_313_mr_colour_mapping;
 	sw_313_mr_colour_mapping;
