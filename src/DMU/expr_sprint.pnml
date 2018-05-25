@@ -1,0 +1,176 @@
+//Express Sprinter
+
+/*
+
+Liveries
+
+Regional Railways
+Trans Pennine Express
+WYPTE Metro
+Northern Rail
+New Northern
+
+Alphaline
+Arriva Trains Wales
+Arrive Trains Wales (Executive)
+First Great Western
+Great Western Railway
+East Midlands Trains
+
+Network South East
+South West Trains
+South Western Railway
+
+*/
+
+
+
+//Sprite sets
+
+spriteset(gfx_expsprint_base        , "gfx/DMU/class_158.png") { template_Mk2_double         (  0,  0) }
+spriteset(gfx_expsprint_base_rev    , "gfx/DMU/class_158.png") { template_Mk2_double_reverse (  0,  0) }
+spriteset(gfx_expsprint_base_mid    , "gfx/DMU/class_158.png") { template_Mk2_single         (259,  0) }
+spriteset(gfx_expsprint_fgw         , "gfx/DMU/class_158.png") { template_Mk2_double         (  0, 25) }
+spriteset(gfx_expsprint_fgw_rev     , "gfx/DMU/class_158.png") { template_Mk2_double_reverse (  0, 25) }
+spriteset(gfx_expsprint_fgw_mid     , "gfx/DMU/class_158.png") { template_Mk2_single         (259, 25) }
+
+spriteset(gfx_expsprint_purchase_fgw     , "gfx/DMU/class_158.png") { template_dualhead_purchase (178, 25) }
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_base_id_check, vehicle_type_id){ 9030 : gfx_expsprint_base_mid ; gfx_expsprint_base ; }
+switch(FEAT_TRAINS, SELF, sw_expsprint_fgw_id_check , vehicle_type_id){ 9030 : gfx_expsprint_fgw_mid ; gfx_expsprint_fgw ; }
+
+
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_gfx_auto, cargo_subtype){
+	sw_expsprint_base_id_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_gfx_manual, cargo_subtype){
+	1 : sw_expsprint_fgw_id_check ;
+	sw_expsprint_base_id_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_gfx_manual_check, livery_choice){
+	1 : sw_expsprint_gfx_manual ;
+	sw_expsprint_gfx_auto ;
+}
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_colours_auto, build_year){
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_colours_manual, cargo_subtype){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_colours_manual_check, livery_choice){
+	1 : sw_expsprint_colours_manual ;
+	sw_expsprint_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_colours_2cc_check, colour_scheme_1){
+	1 : sw_expsprint_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour1) ;
+}
+
+
+//Purchase sprite
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_purchase_sprite, current_year){
+	gfx_expsprint_purchase_fgw ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_purchase_sprite_colours, current_year){
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_purchase_sprite_colours_2cc_check, colour_scheme_1){
+	1 : sw_expsprint_purchase_sprite_colours ;
+	palette_2cc(company_colour1, company_colour1) ;
+}
+
+
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_REG_RAILWAYS) ;
+	1 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_EMPTY)) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_refit_text_check, livery_choice){
+	1 : sw_expsprint_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+
+//Item
+
+switch(FEAT_TRAINS, SELF, sw_expsprint_attach, vehicle_type_id){
+	37   : return CB_RESULT_ATTACH_ALLOW  ;
+	158  : return CB_RESULT_ATTACH_ALLOW  ;
+	9030 : return CB_RESULT_ATTACH_ALLOW  ;
+	return string(STR_158_NO_COUPLE) ;
+}
+
+
+item(FEAT_TRAINS, item_expsprint, 158){
+	property{
+		name                           : string(STR_NAME_EXPRESS_SPRINTER) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1988,1,1) ;
+		model_life                     : 25 ;
+		vehicle_life                   : 40 ;
+		reliability_decay              : 7 ;
+		cost_factor                    : 65 ;
+		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_factor            : 40 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 90 ;
+		loading_speed                  : 20 ;
+		track_type                     : RAIL ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		speed                          : 90 mph ;
+		power                          : 522 kW ;
+		weight                         : 38.5 ton ;
+		tractive_effort_coefficient    : 0.475 ;
+		air_drag_coefficient           : 0.09 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		dual_headed                    : 1 ;
+	}
+	graphics{
+		default                 : sw_expsprint_gfx_manual_check ;
+		purchase                : sw_expsprint_purchase_sprite ;
+		sound_effect            : sw_sfx_dmu_one ;
+		create_effect           : vfx_diesel_default ;
+		colour_mapping          : sw_expsprint_colours_2cc_check ;
+		purchase_colour_mapping : sw_expsprint_purchase_sprite_colours_2cc_check ;
+		cargo_subtype_text      : sw_expsprint_refit_text_check ;
+		can_attach_wagon        : sw_expsprint_attach ;
+	}
+	livery_override (9030){
+		default                     : sw_expsprint_gfx_manual_check ;
+		colour_mapping              : sw_expsprint_colours_2cc_check ;
+		cargo_capacity              : 90 ;
+		cargo_subtype_text          : sw_expsprint_refit_text_check ;
+		weight                      : 38 ;
+	}
+}

@@ -23,6 +23,7 @@ STR_LIVERY_INTERCITY			  : Intercity
 STR_LIVERY_INTERCITY_SWL		  : Intercity {GOLD}(Swallow)
 STR_LIVERY_REG_RAILWAYS			  : Regional Railways
 STR_LIVERY_NSE					  : Network South East
+STR_LIVERY_BR_SCOTRAIL            : Scotrail
 STR_LIVERY_RAILFREIGHT            : Railfreight Two-Tone Grey {STRING}
 STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
 STR_LIVERY_MIDLAND_MAINLINE_BLUE  : Midland Mainline {GOLD}(Blue)
@@ -77,6 +78,8 @@ STR_SECTOR_GENERAL              :{GOLD}(General, Distribution)
 STR_SECTOR_COAL                 :{GOLD}(Coal)
 STR_SECTOR_METALS               :{GOLD}(Metals, Construction, Petroleum)
 
+STR_NAME_DBSO                   :BREL Mark 2 Driving Coach
+STR_NAME_DVT                    :BREL Driving Van Trailer
 STR_NAME_MK1					:Mark 1 Carriage
 STR_NAME_MK2					:BREL Mark 2 Carriage
 STR_NAME_MK2A					:{GOLD}(Mk2a)
@@ -98,8 +101,9 @@ STR_NAME_EURODUAL            :Stadler Euro Dual (Electro Diesel)
 
 STR_NAME_142				 :Leyland "Pacer"
 STR_NAME_205				 :BR Southern DEMU "Thumper"
-
+STR_NAME_EXPRESS_SPRINTER    :BREL Express Sprinter
 STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
+
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_313				 :BREL Second Gereration EMU (Dual Voltage)
 STR_NAME_314				 :BREL Second Gereration EMU (Electric)
@@ -120,8 +124,10 @@ STR_COLOUR_RED      :{RED}Red
 STR_COLOUR_GREEN    :{GREEN}Green
 STR_COLOUR_GREY     :Grey
 
+STR_DBSO_NO_COUPLE: You may only couple a DBSO/DVT at the back of another passenger locomotive from the "RUKTS" GRF!
 STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another Leyland "Pacer"!
 STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
+STR_158_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Express Sprinter!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Mark 1 EMU (3rd rail)!

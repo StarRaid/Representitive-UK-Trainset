@@ -1,0 +1,189 @@
+//DBSO Item
+
+//Over ride headers
+
+#include "src/WAGON/DBSO/ee_type3.pnml"
+#include "src/WAGON/DBSO/ee_type4.pnml"
+#include "src/WAGON/DBSO/uklight.pnml"
+#include "src/WAGON/DBSO/br87.pnml"
+
+
+
+//Purchase menu graphics
+
+spriteset(gfx_dbso_purchase_scotrail  , "gfx/WAGON/mark_2_dbso.png"){ template_purchase (178, 50) }
+spriteset(gfx_dbso_purchase_intercity , "gfx/WAGON/mark_2_dbso.png"){ template_purchase (178, 75) }
+spriteset(gfx_dbso_purchase_directrail, "gfx/WAGON/mark_2_dbso.png"){ template_purchase (178,100) }
+
+switch(FEAT_TRAINS, SELF, sw_dbso_purchase_sprite, current_year){
+	ERA_BRTOPS        : gfx_dbso_purchase_scotrail ;
+	ERA_SECTORISATION : gfx_dbso_purchase_intercity ;
+	gfx_dbso_purchase_directrail ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_dbso_purchase_colours_2cc_check, colour_scheme_1){
+	1 : sw_dbso_colours_auto ;
+	palette_2cc(company_colour1, company_colour1) ;
+}
+
+
+
+
+//Graphics checks
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_gfx_parent_id_check, vehicle_type_id){
+	37 :sw_ee3_dbso_spritestack  ;
+	40 : sw_ee40_spritestack_dbso ;
+	68 : sw_uklight_spritestack_dbso ;
+	87 : sw_br87_sprite_stack_dbso ;
+	88 : sw_eurodual_spritestack ;
+	sw_dbso_sprite_stack ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_gfx_reverse_check, vehicle_is_reversed){
+	1 : sw_dbso_gfx_parent_id_check ;
+	sw_dbso_sprite_stack ;
+}
+
+
+
+
+//Colours checks
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_colours_parent_id_check, vehicle_type_id){
+	37 : sw_ee3_dbso_colours_2cc_check ;
+	40 : sw_ee40_colours_2cc_check_dbso ;
+	68 : sw_uklight_colours_2cc_check_dbso ;
+	87 : sw_br87_colours_2cc_check_dbso ;
+	88 : sw_eurodual_colours ;
+	sw_dbso_colours_2cc_check ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_colours_reverse_check, vehicle_is_reversed){
+	1 : sw_dbso_colours_parent_id_check ;
+	sw_dbso_colours_2cc_check ;
+}
+
+
+
+/*
+
+//SFX checks
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_sfx_parent_id_check, vehicle_type_id){
+	37 : sw_sfx_diesel_loco_ee_2 ;
+	68 : sw_sfx_diesel_loco_modern ;
+	88 : sw_eurodual_sfx_decider ;
+	CB_RESULT_NO_SOUND ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_sfx_reverse_check, vehicle_is_reversed){
+	1 : sw_dbso_sfx_parent_id_check ;
+	CB_RESULT_NO_SOUND ;
+}
+
+*/
+
+
+
+//VFX checks
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_vfx_parent_id_check, vehicle_type_id){
+	37 : vfx_diesel_default ;
+	40 : vfx_diesel_default ;
+	68 : vfx_diesel_default ;
+	87 : vfx_ohle ;
+	88 : sw_eurodual_effect_decider ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_vfx_reverse_check, vehicle_is_reversed){
+	1 : sw_dbso_vfx_parent_id_check ;
+}
+
+
+
+//Effect spawn model check
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_effect_parent_id_check, vehicle_type_id){
+	37 : EFFECT_SPAWN_MODEL_DIESEL ;
+	40 : EFFECT_SPAWN_MODEL_DIESEL ;
+	68 : EFFECT_SPAWN_MODEL_DIESEL ;
+	87 : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	88 : EFFECT_SPAWN_MODEL_ELECTRIC ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_effect_reverse_check, vehicle_is_reversed){
+	1 : sw_dbso_effect_parent_id_check ;
+	EFFECT_SPAWN_MODEL_NONE ;
+}
+
+
+
+//Attach checks
+
+switch(FEAT_TRAINS, SELF, sw_dbso_attach_pos_check, vehicle_type_id){
+	37 : return CB_RESULT_ATTACH_ALLOW  ;
+	40 : return CB_RESULT_ATTACH_ALLOW  ;
+	68 : return CB_RESULT_ATTACH_ALLOW  ;
+	87 : return CB_RESULT_ATTACH_ALLOW  ;
+	88 : return CB_RESULT_ATTACH_ALLOW  ;
+	9020 : return CB_RESULT_ATTACH_ALLOW  ;
+	9025 : return CB_RESULT_ATTACH_ALLOW  ;
+	9030 : return CB_RESULT_ATTACH_ALLOW  ;
+	return string(STR_DBSO_NO_COUPLE)  ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_dbso_attach_parent_id_check, vehicle_type_id){
+	37 : sw_dbso_attach_pos_check ;
+	40 : sw_dbso_attach_pos_check ;
+	68 : sw_dbso_attach_pos_check ;
+	87 : sw_dbso_attach_pos_check ;
+	88 : sw_dbso_attach_pos_check ;
+	9025 : sw_dbso_attach_pos_check ;
+	9030 : sw_dbso_attach_pos_check ;
+	return string(STR_DBSO_NO_COUPLE) ;
+}
+
+
+
+//The item itself
+
+item(FEAT_TRAINS, item_dbso, 9025){
+	property{
+		name						   : string(STR_NAME_DBSO) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1979, 1, 1) ;
+		model_life                     : 35 ;
+		vehicle_life                   : 40 ;
+		cost_factor                    : 95 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 58 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 40 ;
+		loading_speed                  : 10 ;
+		track_type                     : RAIL ;
+		speed                          : 100 mph ;
+		power                          : 0 hp ;
+		weight                         : 38 ton ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+	}
+	graphics{
+		default                        : sw_dbso_gfx_reverse_check ;
+		colour_mapping                 : sw_dbso_colours_reverse_check ;
+		purchase                       : sw_dbso_purchase_sprite ;
+		purchase_colour_mapping        : sw_dbso_purchase_colours_2cc_check ;
+		//cargo_subtype_text             : sw_dbso_refit_text_check ;
+		can_attach_wagon               : sw_dbso_attach_parent_id_check ;
+		create_effect                  : sw_dbso_vfx_reverse_check ;
+		effect_spawn_model_and_powered : sw_dbso_effect_reverse_check ;
+		//sound_effect                   : sw_dbso_sfx_reverse_check ;
+	}
+}

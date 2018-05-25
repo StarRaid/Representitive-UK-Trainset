@@ -209,7 +209,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_colours_manual, cargo_subtype){
 	9..10  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;     //First Great Western
 	11..12 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;   //GWR
 	13     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;    //First Barbie
-	14     : palette_2cc(COLOUR_YELLOW, COLOUR_RED) ;         //Network Rail
+	14     : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;         //Network Rail
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;              //Virgin
 }
 
@@ -251,7 +251,7 @@ item (FEAT_TRAINS, item_mk3, 9030) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		default_cargo_type:				PASS;
-		cargo_capacity:					75;
+		cargo_capacity:					90;
 		weight:							33 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;

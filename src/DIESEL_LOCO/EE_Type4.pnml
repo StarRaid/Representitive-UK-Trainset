@@ -83,9 +83,14 @@ random_switch(FEAT_TRAINS, SELF, sw_ee40_random_headcode, TRIGGER_VEHICLE_SERVIC
 	27 : ee40_headcode_3 ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_ee40_headcode_dbso_check, count_veh_id(9025) > 0){
+	1 : ee40_headcode_2 ;
+	sw_ee40_random_headcode ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_ee40_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_ee40_gfx_manual_check ;
-	1 : sw_ee40_random_headcode ;
+	1 : sw_ee40_headcode_dbso_check ;
 }
 
 
@@ -138,6 +143,23 @@ switch(FEAT_TRAINS, SELF, sw_ee40_colours_2cc_check, colour_scheme_1){
 }
 
 
+//DBSO checks
+
+switch(FEAT_TRAINS, SELF, sw_ee40_gfx_dbso_check, DBSO_CHECK){
+	1 : sw_dbso_sprite_stack ;
+	sw_ee40_spritestack ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee40_colours_dbso_check, DBSO_CHECK){
+	1 : sw_dbso_colours_2cc_check ;
+	sw_ee40_colours_2cc_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee40_vfx_dbso_check, DBSO_CHECK){
+	0 : vfx_diesel_default ;
+}
+
+
 //EE Type 4 item
 
 item (FEAT_TRAINS, item_eetype4, 40){
@@ -169,11 +191,12 @@ item (FEAT_TRAINS, item_eetype4, 40){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default                        : sw_ee40_spritestack ;
-		colour_mapping                 : sw_ee40_colours_2cc_check ;
+		default                        : sw_ee40_gfx_dbso_check ;
+		colour_mapping                 : sw_ee40_colours_dbso_check ;
 		purchase                       : sw_ee40_purchase ;
+		purchase_colour_mapping        : sw_ee40_colours_2cc_check ;
 		sound_effect                   : sw_sfx_diesel_loco_ee ;
-		create_effect                  : vfx_diesel_default ;
+		create_effect                  : sw_ee40_vfx_dbso_check ;
 		cargo_subtype_text             : sw_ee40_refit_text_check ;
 		cargo_capacity                 : return 0 ;
 		can_attach_wagon               : sw_all_but_MU90 ;

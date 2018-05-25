@@ -272,6 +272,7 @@ item(FEAT_TRAINS, item_hst, 43){
 		tractive_effort_coefficient    : 0.1142857142857143 ;
 		air_drag_coefficient           : 0.064 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		ai_special_flag                : AI_FLAG_PASSENGER ;
 		dual_headed                    : 0 ;
 	}
 	graphics{

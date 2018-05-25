@@ -26,7 +26,7 @@ spriteset(gfx_bshpeak_blank           , "gfx/DIESEL_LOCO/class_46.png"){ base_32
 
 //Headcodes
 
-switch(FEAT_TRAINS, SELF, sw_bshpeak_hc_split_decider_auto, cargo_subtype){
+switch(FEAT_TRAINS, SELF, sw_bshpeak_hc_split_decider_auto, current_year){
 	1948..1967 : gfx_bshpeak_hc_split_brgreen ;
 	gfx_bshpeak_hc_split_brblue ;
 }
@@ -84,7 +84,7 @@ switch(FEAT_TRAINS, SELF, sw_bshpeak_headlight_check, position_in_consist){ 0: s
 
 //Sprite stack
 
-switch(FEAT_TRAINS, SELF, sw_bshpeak_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+switch(FEAT_TRAINS, SELF, sw_bshpeak_spritestack, SPR_STACK){
 	0 : sw_bshpeak_manual_check ;
 	1 : sw_bshpeak_random_headcode ;
 	2 : sw_bshpeak_headlight_check ;

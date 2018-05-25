@@ -1,0 +1,199 @@
+
+
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_sector_gfx_decider, most_common_cargo_type){
+	PASS : sw_ee3_regional_reverse_check ;
+	COAL : sw_ee3_railfreight_black_reverse_check ;
+	OIL_ : sw_ee3_railfreight_blue_reverse_check ;
+	STEL : sw_ee3_railfreight_blue_reverse_check ;
+	PLAS : sw_ee3_railfreight_blue_reverse_check ;
+	BRCK : sw_ee3_railfreight_blue_reverse_check ;
+	CMNT : sw_ee3_railfreight_blue_reverse_check ;
+	GOLD : sw_ee3_railfreight_blue_reverse_check ;
+	BDMT : sw_ee3_railfreight_blue_reverse_check ;
+	GLAS : sw_ee3_railfreight_blue_reverse_check ;
+	PETR : sw_ee3_railfreight_blue_reverse_check ;
+	RFPR : sw_ee3_railfreight_blue_reverse_check ;
+	SAND : sw_ee3_railfreight_blue_reverse_check ;
+	ENSP : sw_ee3_railfreight_blue_reverse_check ;
+	GRVL : sw_ee3_railfreight_blue_reverse_check ;
+	MNSP : sw_ee3_railfreight_blue_reverse_check ;
+	SCMT : sw_ee3_railfreight_blue_reverse_check ;
+	COPR : sw_ee3_railfreight_blue_reverse_check ;
+	sw_ee3_railfreight_reverse_check ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_dbso_privatisation1_random, TRIGGER_VEHICLE_SERVICE){
+	2 : sw_ee3_drs_reverse_check ;
+	1 : sw_ee3_ews_reverse_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_privatisation2_decider, most_common_cargo_type){
+	PASS : sw_ee3_drscompass_reverse_check ;
+	URAN : sw_ee3_drscompass_reverse_check ;
+	NWST : sw_ee3_drscompass_reverse_check ;
+	GOOD : sw_ee3_drscompass_reverse_check ;
+	MAIL : sw_ee3_drscompass_reverse_check ;
+	VALU : sw_ee3_drscompass_reverse_check ;
+	GOLD : sw_ee3_drscompass_reverse_check ;
+	FOOD : sw_ee3_drscompass_reverse_check ;
+	STEL : sw_ee3_colasrailfreight_reverse_check ;
+	COAL : sw_ee3_colasrailfreight_reverse_check ;
+	IORE : sw_ee3_colasrailfreight_reverse_check ;
+	LVST : sw_ee3_colasrailfreight_reverse_check ;
+	OIL_ : sw_ee3_colasrailfreight_reverse_check ;
+	PAPR : sw_ee3_colasrailfreight_reverse_check ;
+	WOOD : sw_ee3_colasrailfreight_reverse_check ;
+	CORE : sw_ee3_colasrailfreight_reverse_check ;
+	AORE : sw_ee3_colasrailfreight_reverse_check ;
+	BDMT : sw_ee3_colasrailfreight_reverse_check ;
+	BRCK : sw_ee3_colasrailfreight_reverse_check ;
+	CMNT : sw_ee3_colasrailfreight_reverse_check ;
+	GLAS : sw_ee3_colasrailfreight_reverse_check ;
+	PETR : sw_ee3_colasrailfreight_reverse_check ;
+	PLAS : sw_ee3_colasrailfreight_reverse_check ;
+	RFPR : sw_ee3_colasrailfreight_reverse_check ;
+	SAND : sw_ee3_colasrailfreight_reverse_check ;
+	CLAY : sw_ee3_colasrailfreight_reverse_check ;
+	GRVL : sw_ee3_colasrailfreight_reverse_check ;
+	COPR : sw_ee3_colasrailfreight_reverse_check ;
+	sw_ee3_rog_reverse_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_gfx_auto, build_year){
+	ERA_BRCREST : sw_ee3_brgreen_reverse_check ;
+	1967..1982  : sw_ee3_brblue_reverse_check ;
+	1987..1995  : sw_ee3_dbso_sector_gfx_decider ;
+	1996..2008  : sw_ee3_dbso_privatisation1_random ;
+	2009..4096  : sw_ee3_dbso_privatisation2_decider ;
+	sw_ee3_brlargelogo_reverse_check ;
+}
+
+
+
+//Manual
+
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_gfx_manual, cargo_subtype){
+	0  : sw_ee3_brgreen_reverse_check ;
+	1  : sw_ee3_brblue_reverse_check ;
+	4  : sw_ee3_regional_reverse_check ;
+	5  : sw_ee3_railfreight_reverse_check ;
+	6  : sw_ee3_railfreight_black_reverse_check ;
+	7  : sw_ee3_railfreight_blue_reverse_check ;
+	8  : sw_ee3_drs_reverse_check ;
+	9  : sw_ee3_drscompass_reverse_check ;
+	10 : sw_ee3_ews_reverse_check ;
+	11 : sw_ee3_rog_reverse_check ;
+	12 : sw_ee3_colasrailfreight_reverse_check ;
+	sw_ee3_brlargelogo_reverse_check ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_gfx_manual_check, livery_choice){
+	1 : sw_ee3_dbso_gfx_manual ;
+	sw_ee3_dbso_gfx_auto ;
+}
+
+
+//Dirt
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_dirt, age_in_days){
+	0..3649    : gfx_blank ;
+	3650..9124 : sw_ee3_dirt_light_reverse_check ;
+	sw_ee3_dirt_dark_reverse_check ;
+}
+
+
+//Sprite stacking
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_ee3_dbso_gfx_manual_check ;    //Base
+	1 : gfx_ee3_headcode_centre ;  //Headcodes
+	2 : sw_ee3_lights_centre_front ;  //Lights
+	3 : sw_ee3_dbso_dirt ;                //Dirt
+}
+
+
+
+
+
+
+//Colour mapping
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_colours_sectorised, most_common_cargo_type){
+	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_ee3_dbso_colours_privatisation1_decider, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_dbso_privatisation1_random ;
+	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_colours_privatisation2_decider, most_common_cargo_type){
+	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	URAN : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	NWST : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	GOOD : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	MAIL : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	VALU : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	GOLD : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	FOOD : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	STEL : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	COAL : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	IORE : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	LVST : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	OIL_ : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	PAPR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	WOOD : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	CORE : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	AORE : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	BDMT : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	BRCK : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	CMNT : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	GLAS : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	PETR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	PLAS : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	RFPR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	SAND : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	CLAY : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	GRVL : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	COPR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_colours_auto, build_year){
+	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	1967..1982  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1983..1986  : sw_ee3_largelogo_colours ;
+	1987..1995  : sw_ee3_dbso_colours_sectorised ;
+	1996..2008  : sw_ee3_dbso_colours_privatisation1_decider ;
+	2009..4096  : sw_ee3_dbso_colours_privatisation2_decider ;
+}
+
+
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_colours_manual, cargo_subtype){
+	0    : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	1..2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	3    : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
+	4    : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	5..7 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	8..9 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	10   : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	11   : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	12   : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_colours_manual_check, livery_choice){
+	1 : sw_ee3_dbso_colours_manual ;
+	sw_ee3_dbso_colours_auto ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_colours_2cc_check, colour_scheme_1){
+	1 : sw_ee3_dbso_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}

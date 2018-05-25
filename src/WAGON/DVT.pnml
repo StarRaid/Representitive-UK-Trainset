@@ -1,0 +1,130 @@
+//DVT Item
+
+//Over ride headers
+
+
+
+//Purchase menu graphics
+
+spriteset(gfx_dvt_purchase_generic     , "gfx/WAGON/dvt.png"){ template_purchase(178,  0) }
+spriteset(gfx_dvt_purchase_intercity   , "gfx/WAGON/dvt.png"){ template_purchase(178, 25) }
+spriteset(gfx_dvt_purchase_virgin      , "gfx/WAGON/dvt.png"){ template_purchase(178, 50) }
+
+
+switch(FEAT_TRAINS, SELF, sw_dvt_purchase_sprite, current_year){
+	ERA_SECTORISATION : gfx_dvt_purchase_intercity ;
+	gfx_dvt_purchase_virgin ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_dvt_purchase_colours_2cc_check, colour_scheme_1){
+	1 : sw_dvt_colours_auto ;
+	palette_2cc(company_colour1, company_colour1) ;
+}
+
+
+//Graphics checks
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_gfx_parent_id_check, vehicle_type_id){
+	68 : sw_uklight_spritestack_dbso ;
+	87 : sw_br87_sprite_stack_dbso ;
+	88 : sw_eurodual_spritestack ;
+	sw_dvt_sprite_stack ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_gfx_reverse_check, vehicle_is_reversed){
+	1 : sw_dvt_gfx_parent_id_check ;
+	sw_dvt_sprite_stack ;
+}
+
+
+//Colours checks
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_colours_parent_id_check, vehicle_type_id){
+	68 : sw_uklight_colours_2cc_check_dbso ;
+	87 : sw_br87_colours_2cc_check_dbso ;
+	88 : sw_eurodual_colours ;
+	sw_dvt_colours_2cc_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_colours_reverse_check, vehicle_is_reversed){
+	1 : sw_dvt_colours_parent_id_check ;
+	sw_dvt_colours_2cc_check ;
+}
+
+
+
+//VFX checks
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_vfx_parent_id_check, vehicle_type_id){
+	68 : vfx_diesel_default ;
+	87 : vfx_ohle ;
+	88 : sw_eurodual_effect_decider ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_vfx_reverse_check, vehicle_is_reversed){
+	1 : sw_dvt_vfx_parent_id_check ;
+}
+
+
+//Effect spawn model checks
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_effect_parent_id_check, vehicle_type_id){
+	68 : EFFECT_SPAWN_MODEL_DIESEL ;
+	87 : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	88 : EFFECT_SPAWN_MODEL_ELECTRIC ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_effect_reverse_check, vehicle_is_reversed){
+	1 : sw_dvt_effect_parent_id_check ;
+}
+
+
+
+//Attach checks
+
+
+
+
+
+
+
+
+
+//DVT Item
+
+item(FEAT_TRAINS, item_dvt, 9035){
+	property{
+		name						   : string(STR_NAME_DVT) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1988, 1, 1) ;
+		model_life                     : 30 ;
+		vehicle_life                   : 45 ;
+		cost_factor                    : 115 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 64 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [MAIL] ;
+		cargo_capacity                 : 40 ;
+		loading_speed                  : 10 ;
+		track_type                     : RAIL ;
+		speed                          : 110 mph ;
+		power                          : 0 hp ;
+		weight                         : 38 ton ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+	}
+	graphics{
+		default                        : sw_dvt_gfx_reverse_check ;
+		colour_mapping                 : sw_dvt_colours_reverse_check ;
+		purchase                       : sw_dvt_purchase_sprite ;
+		purchase_colour_mapping        : sw_dvt_purchase_colours_2cc_check ;
+		//cargo_subtype_text             : sw_dbso_refit_text_check ;
+		can_attach_wagon               : sw_dbso_attach_parent_id_check ;
+		create_effect                  : sw_dvt_vfx_reverse_check ;
+		effect_spawn_model_and_powered : sw_dvt_effect_reverse_check ;
+		//sound_effect                   : sw_dbso_sfx_reverse_check ;
+	}
+}

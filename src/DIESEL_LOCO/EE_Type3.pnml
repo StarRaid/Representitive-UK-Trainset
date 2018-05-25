@@ -378,7 +378,10 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_manual_check, livery_choice){
 	sw_ee3_gfxhc_auto ;
 }
 
-
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_dbso_check, count_veh_id(9025) > 0){
+	1 : gfx_ee3_headcode_centre ;
+	sw_ee3_gfxhc_manual_check ;
+}
 
 
 //Lights
@@ -502,6 +505,10 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_manual_check, livery_choice){
 	sw_ee3_gfxlt_auto ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_dbso_check, count_veh_id(9025) > 0){
+	1 : sw_ee3_lights_centre_front ;
+	sw_ee3_gfxlt_manual_check ;
+}
 
 
 //Dirt
@@ -517,13 +524,16 @@ switch(FEAT_TRAINS, SELF, sw_ee3_dirt, age_in_days){
 
 switch(FEAT_TRAINS, SELF, sw_ee3_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_ee3_gfx_manual_check ;    //Base
-	1 : sw_ee3_gfxhc_manual_check ;  //Headcodes
-	2 : sw_ee3_gfxlt_manual_check ;  //Lights
+	1 : sw_ee3_gfxhc_dbso_check ;  //Headcodes
+	2 : sw_ee3_gfxlt_dbso_check ;  //Lights
 	3 : sw_ee3_dirt ;                //Dirt
 }
 
 
-
+switch(FEAT_TRAINS, SELF, sw_ee3_dbso_check, DBSO_CHECK){
+	1 : sw_dbso_sprite_stack ;
+	sw_ee3_spritestack ;
+}
 
 
 //Refit text
@@ -642,6 +652,11 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_2cc_check, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_ee3_colours_dbso_check, DBSO_CHECK){
+	1 : sw_dbso_colours_2cc_check ;
+	sw_ee3_colours_2cc_check ;
+}
+
 
 switch(FEAT_TRAINS, SELF, sw_ee3_colours_purchase, current_year){
 	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
@@ -650,6 +665,11 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_purchase, current_year){
 	1987..1995  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
 	1996..2008  : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	2009..4096  : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_ee3_vfx_dbso_check, DBSO_CHECK){
+	0 : vfx_diesel_default ;
 }
 
 
@@ -684,12 +704,12 @@ item (FEAT_TRAINS, item_eetype3, 37){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default                        : sw_ee3_spritestack ;
-		colour_mapping                 : sw_ee3_colours_2cc_check ;
+		default                        : sw_ee3_dbso_check ;
+		colour_mapping                 : sw_ee3_colours_dbso_check ;
 		purchase_colour_mapping        : sw_ee3_colours_purchase ;
 		purchase                       : sw_ee3_purchase ;
 		sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
-		create_effect                  : vfx_diesel_default ;
+		create_effect                  : sw_ee3_vfx_dbso_check ;
 		cargo_subtype_text             : sw_ee3_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
