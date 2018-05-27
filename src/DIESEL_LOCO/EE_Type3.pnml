@@ -526,7 +526,6 @@ switch(FEAT_TRAINS, SELF, sw_ee3_spritestack, [STORE_TEMP((getbits(extra_callbac
 	0 : sw_ee3_gfx_manual_check ;    //Base
 	1 : sw_ee3_gfxhc_dbso_check ;  //Headcodes
 	2 : sw_ee3_gfxlt_dbso_check ;  //Lights
-	3 : sw_ee3_dirt ;                //Dirt
 }
 
 

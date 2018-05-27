@@ -2446,8 +2446,8 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_dbso_check, count_veh_id(9025) > 0){
 //Dirt
 
 switch(FEAT_TRAINS, SELF, sw_ee3_dirt, age_in_days){
-	0..3649    : gfx_blank ;
-	3650..9124 : sw_ee3_dirt_light_reverse_check ;
+	0..1    : gfx_blank ;
+	2..3 : sw_ee3_dirt_light_reverse_check ;
 	sw_ee3_dirt_dark_reverse_check ;
 }
 
@@ -2458,6 +2458,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_spritestack, [STORE_TEMP((getbits(extra_callbac
 	0 : sw_ee3_gfx_manual_check ;    //Base
 	1 : sw_ee3_gfxhc_dbso_check ;  //Headcodes
 	2 : sw_ee3_gfxlt_dbso_check ;  //Lights
+	3 : sw_ee3_dirt ;                //Dirt
 }
 
 
@@ -5144,31 +5145,20 @@ South Western Railway
 
 //Sprite sets
 
-spriteset(gfx_expsprint_base            , "gfx/DMU/class_158.png") { template_Mk2_double         (  0,  0) }
-spriteset(gfx_expsprint_base_rev        , "gfx/DMU/class_158.png") { template_Mk2_double_reverse (  0,  0) }
-spriteset(gfx_expsprint_base_mid        , "gfx/DMU/class_158.png") { template_Mk2_single         (259,  0) }
-spriteset(gfx_expsprint_fgw             , "gfx/DMU/class_158.png") { template_Mk2_double         (  0, 25) }
-spriteset(gfx_expsprint_fgw_mid         , "gfx/DMU/class_158.png") { template_Mk2_single         (259, 25) }
-spriteset(gfx_expsprint_swt             , "gfx/DMU/class_158.png") { template_Mk2_double         (  0, 50) }
-spriteset(gfx_expsprint_swt_mid         , "gfx/DMU/class_158.png") { template_Mk2_single         (259, 50) }
-spriteset(gfx_expsprint_atw_refurb      , "gfx/DMU/class_158.png") { template_Mk2_double         (  0, 75) }
-spriteset(gfx_expsprint_atw_refurb_mid  , "gfx/DMU/class_158.png") { template_Mk2_single         (259, 75) }
-spriteset(gfx_expsprint_atw             , "gfx/DMU/class_158.png") { template_Mk2_double         (  0,100) }
-spriteset(gfx_expsprint_atw_mid         , "gfx/DMU/class_158.png") { template_Mk2_single         (259,100) }
-spriteset(gfx_expsprint_atw_exec        , "gfx/DMU/class_158.png") { template_Mk2_double         (  0,125) }
-spriteset(gfx_expsprint_atw_exec_mid    , "gfx/DMU/class_158.png") { template_Mk2_single         (259,125) }
+spriteset(gfx_expsprint_base        , "gfx/DMU/class_158.png") { template_Mk2_double         (  0,  0) }
+spriteset(gfx_expsprint_base_rev    , "gfx/DMU/class_158.png") { template_Mk2_double_reverse (  0,  0) }
+spriteset(gfx_expsprint_base_mid    , "gfx/DMU/class_158.png") { template_Mk2_single         (259,  0) }
+spriteset(gfx_expsprint_fgw         , "gfx/DMU/class_158.png") { template_Mk2_double         (  0, 25) }
+spriteset(gfx_expsprint_fgw_rev     , "gfx/DMU/class_158.png") { template_Mk2_double_reverse (  0, 25) }
+spriteset(gfx_expsprint_fgw_mid     , "gfx/DMU/class_158.png") { template_Mk2_single         (259, 25) }
 
-spriteset(gfx_expsprint_purchase_fgw    , "gfx/DMU/class_158.png") { template_dualhead_purchase (178, 25) }
+spriteset(gfx_expsprint_purchase_fgw     , "gfx/DMU/class_158.png") { template_dualhead_purchase (178, 25) }
 
 
 //Graphics switches
 
-switch(FEAT_TRAINS, SELF, sw_expsprint_base_id_check,        vehicle_type_id){ 9030 : gfx_expsprint_base_mid ; gfx_expsprint_base ; }
-switch(FEAT_TRAINS, SELF, sw_expsprint_fgw_id_check ,        vehicle_type_id){ 9030 : gfx_expsprint_fgw_mid ; gfx_expsprint_fgw ; }
-switch(FEAT_TRAINS, SELF, sw_expsprint_swt_id_check ,        vehicle_type_id){ 9030 : gfx_expsprint_swt_mid ; gfx_expsprint_swt ; }
-switch(FEAT_TRAINS, SELF, sw_expsprint_atw_id_check ,        vehicle_type_id){ 9030 : gfx_expsprint_atw_mid ; gfx_expsprint_atw ; }
-switch(FEAT_TRAINS, SELF, sw_expsprint_atw_refurb_id_check , vehicle_type_id){ 9030 : gfx_expsprint_atw_refurb_mid ; gfx_expsprint_atw_refurb ; }
-switch(FEAT_TRAINS, SELF, sw_expsprint_atw_exec_id_check   , vehicle_type_id){ 9030 : gfx_expsprint_atw_exec_mid ; gfx_expsprint_atw_exec ; }
+switch(FEAT_TRAINS, SELF, sw_expsprint_base_id_check, vehicle_type_id){ 9030 : gfx_expsprint_base_mid ; gfx_expsprint_base ; }
+switch(FEAT_TRAINS, SELF, sw_expsprint_fgw_id_check , vehicle_type_id){ 9030 : gfx_expsprint_fgw_mid ; gfx_expsprint_fgw ; }
 
 
 
@@ -5178,10 +5168,6 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_gfx_auto, cargo_subtype){
 
 switch(FEAT_TRAINS, SELF, sw_expsprint_gfx_manual, cargo_subtype){
 	1 : sw_expsprint_fgw_id_check ;
-	2 : sw_expsprint_swt_id_check ;
-	3 : sw_expsprint_atw_id_check ;
-	4 : sw_expsprint_atw_refurb_id_check ;
-	5 : sw_expsprint_atw_exec_id_check ;
 	sw_expsprint_base_id_check ;
 }
 
@@ -5200,10 +5186,6 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_colours_auto, build_year){
 
 switch(FEAT_TRAINS, SELF, sw_expsprint_colours_manual, cargo_subtype){
 	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
-	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	3 : palette_2cc(COLOUR_BLUE, COLOUR_YELLOW) ;
-	4 : palette_2cc(COLOUR_BLUE, COLOUR_YELLOW) ;
-	5 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
 }
 
@@ -5242,10 +5224,6 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_purchase_sprite_colours_2cc_check, colour
 switch(FEAT_TRAINS, SELF, sw_expsprint_refit_text, cargo_subtype){
 	0 : string(STR_LIVERY_REG_RAILWAYS) ;
 	1 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_EMPTY)) ;
-	2 : string(STR_LIVERY_SWT) ;
-	3 : string(STR_LIVERY_ATW) ;
-	4 : string(STR_LIVERY_ATW_REFURB) ;
-	5 : string(STR_LIVERY_ATW_EXEC) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -5261,8 +5239,6 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_refit_text_check, livery_choice){
 
 switch(FEAT_TRAINS, SELF, sw_expsprint_attach, vehicle_type_id){
 	37   : return CB_RESULT_ATTACH_ALLOW  ;
-	150  : return CB_RESULT_ATTACH_ALLOW  ;
-	153  : return CB_RESULT_ATTACH_ALLOW  ;
 	158  : return CB_RESULT_ATTACH_ALLOW  ;
 	9030 : return CB_RESULT_ATTACH_ALLOW  ;
 	return string(STR_158_NO_COUPLE) ;
@@ -5312,7 +5288,6 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		default                     : sw_expsprint_gfx_manual_check ;
 		colour_mapping              : sw_expsprint_colours_2cc_check ;
 		cargo_capacity              : 90 ;
-		power                       : 500 ;
 		cargo_subtype_text          : sw_expsprint_refit_text_check ;
 		weight                      : 38 ;
 	}
