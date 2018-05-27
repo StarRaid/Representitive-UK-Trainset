@@ -1,7 +1,6 @@
 @ECHO OFF
 :start
-
-python nml_patcher.py -f "rukts.pnml" -o "rukts_py.nml"
-nmlc rukts_py.nml -o rukts_py.grf
+python nml_patcher.py -f "rukts.pnml" -o "rukts.nml"
+nmlc rukts.nml -o rukts.grf
 PAUSE
 goto start
