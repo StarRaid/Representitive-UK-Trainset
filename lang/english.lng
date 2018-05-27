@@ -72,6 +72,9 @@ STR_LIVERY_TFL					  : TfL Rail
 STR_LIVERY_MERSEYRAIL			  : Merseyrail
 STR_LIVERY_MERSEYRAIL_REFERB	  : Merseyrail {GOLD}(Refurbished)
 STR_LIVERY_NETWORK_RAIL           : Network Rail
+STR_LIVERY_ATW                    : Arriva Trains Wales
+STR_LIVERY_ATW_REFURB             : Arriva Trains Wales {GOLD}(Refurbished)
+STR_LIVERY_ATW_EXEC               : Arriva Trains Wales {GOLD}(Executive)
 
 STR_LIVERY_SLEEPER              :{BLACK}(Sleeper)
 STR_LIVERY_EMPTY	            : 
