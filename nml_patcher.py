@@ -15,6 +15,7 @@ parser = argparse.ArgumentParser(description="Patch a GRF in NML from pnml files
 parser.add_argument("-o", "--output", type=str, help='The file to output the written file to. Please enclose the file name in quotation marks (e.g. python nml_patcher.py -o "output.nml)"')
 parser.add_argument("-f", "--file", type=str, help="The header file to read from. Please enclose the file name in quotation marks.")
 parser.add_argument("-b", "--backup", type=int, help="1 or 0, to say if the program will create a backup if overwriting the output file.", choices=[0,1])
+parser.add_argument("-v", "--verbose", type=int, help="1 or 0, print all the possible un-needed information.", choices=[0,1])
 
 args = parser.parse_args()
 arguments = vars(args)
@@ -178,7 +179,7 @@ class reader:
 					print("Patched", line.replace('"', '')[9:], "with 1 error!")
 				elif self.subreader.errors_made > 1:
 					print("Patched", line.replace('"', '')[9:], "with", self.subreader.errors_made, "errors!")
-				else:
+				elif arguments["verbose"]:
 					print("Patched", line.replace('"', '')[9:], "with no errors.")
 					
 				output.write_line('# ' + str(self.current_line+1) + ' "' + self.file_name + '" ' + str(self.first_header))
@@ -195,7 +196,8 @@ class reader:
 					if letter == " " and not found_def_name:
 						new_line = new_line.replace(def_name + " ", "")
 						if len(new_line) > 0:
-							print("Made custom definition", def_name, "with a value of", new_line)
+							if arguments["verbose"]:
+								print("Made custom definition", def_name, "with a value of", new_line)
 							self.list_of_definitions[def_name] = new_line
 						elif len(def_name) > 1:
 							self.total_list_of_errors.append(["Invalid custom definition!", "Line" + str(self.line_counter) + " of " + self.file_name + ": " + line, "Check the definition's value"])
@@ -255,7 +257,7 @@ if arguments["file"] != None:
 		output.patch()
 		
 		#Display messages after patching
-		if len(header.list_of_definitions) > 0:
+		if len(header.list_of_definitions) > 0 and arguments["verbose"]:
 			print("\nList of custom definitions used in this file:")
 			for definition in header.list_of_definitions:
 				print(definition, header.list_of_definitions[definition])
@@ -288,7 +290,7 @@ else:
 			output.patch()
 			
 			#Display messages after patching
-			if len(header.list_of_definitions) > 0:
+			if len(header.list_of_definitions) > 0 and arguments["verbose"]:
 				print("\nList of custom definitions used in this file:")
 				for definition in header.list_of_definitions:
 					print(definition, header.list_of_definitions[definition])

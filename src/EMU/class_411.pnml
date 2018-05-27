@@ -171,7 +171,7 @@ switch(FEAT_TRAINS, SELF, sw_411_passenger_livery_decider, current_year){
 	0 .. 1963: sw_southern_slam_green;
 	1964 .. 1982: sw_southern_slam_blue_grey;
 	ERA_SECTORISATION: sw_southern_slam_nse;
-	ERA_PRIVATISATION1: sw_southern_slam_swt;
+	ERA_PRIVATE_ONE: sw_southern_slam_swt;
 	2005 .. 2008: sw_southern_slam_cnx;
 	sw_southern_slam_heritage;
 }
@@ -180,7 +180,7 @@ switch(FEAT_TRAINS, SELF, sw_411_passenger_livery_decider_t, current_year){
 	0 .. 1963: sw_southern_slam_green_t;
 	1964 .. 1982: sw_southern_slam_blue_grey_t;
 	ERA_SECTORISATION: sw_southern_slam_nse_t;
-	ERA_PRIVATISATION1: sw_southern_slam_swt_t;
+	ERA_PRIVATE_ONE: sw_southern_slam_swt_t;
 	2005 .. 2008: sw_southern_slam_cnx_t;
 	sw_southern_slam_heritage_t;
 }
@@ -240,7 +240,7 @@ switch(FEAT_TRAINS, SELF, sw_411_purchase, current_year){
 	0 .. 1963: spriteset_421_purchase_brg;
 	1964 .. 1982: spriteset_421_purchase_brb;
 	ERA_SECTORISATION: spriteset_421_purchase_nse;
-	ERA_PRIVATISATION1: spriteset_421_purchase_swt;
+	ERA_PRIVATE_ONE: spriteset_421_purchase_swt;
 	2005 .. 2008: spriteset_421_purchase_cnx;
 	spriteset_421_purchase_htg;
 }
@@ -289,7 +289,7 @@ switch(FEAT_TRAINS, SELF, sw_411_colour_mapping_auto, current_year){
 	0 .. 1963: sw_411_green_colour_mapping;
 	1964 .. 1982: sw_411_blue_grey_colour_mapping;
 	ERA_SECTORISATION: sw_411_nse_colour_mapping;
-	ERA_PRIVATISATION1: sw_411_swt_colour_mapping;
+	ERA_PRIVATE_ONE: sw_411_swt_colour_mapping;
 	2005 .. 2008: sw_411_cnx_colour_mapping;
 	sw_411_heritage_colour_mapping;
 }

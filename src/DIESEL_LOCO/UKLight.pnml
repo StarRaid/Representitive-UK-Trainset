@@ -102,6 +102,32 @@ switch(FEAT_TRAINS, SELF, sw_uklight_colours_2cc_check, colour_scheme_1){
 }
 
 
+//DBSO checks
+
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_dbso_check, DBSO_CHECK){
+	1 : sw_dbso_sprite_stack ;
+	sw_uklight_spritestack ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_dvt_check, DVT_CHECK){
+	1 : sw_dvt_sprite_stack ;
+	sw_uklight_gfx_dbso_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_uklight_colours_dbso_check, DBSO_CHECK){
+	1 : sw_dbso_colours_2cc_check ;
+	sw_uklight_colours_2cc_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_uklight_colours_dvt_check, DVT_CHECK){
+	1 : sw_dvt_colours_2cc_check ;
+	sw_uklight_colours_dbso_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_uklight_vfx_dbso_check, (DBSO_CHECK) | (DVT_CHECK)){
+	0 : vfx_diesel_default ;
+}
+
 //Item
 
 item (FEAT_TRAINS, item_uklight, 68){
@@ -133,12 +159,12 @@ item (FEAT_TRAINS, item_uklight, 68){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default                 : sw_uklight_spritestack ;
+		default                 : sw_uklight_gfx_dvt_check ;
 		purchase                : gfx_uklight_drs_purchase ;
-		colour_mapping          : sw_uklight_colours_2cc_check ;
+		colour_mapping          : sw_uklight_colours_dvt_check ;
 		purchase_colour_mapping : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN); 
 		sound_effect            : sw_sfx_diesel_loco_modern ;
-		create_effect           : vfx_diesel_default ;
+		create_effect           : sw_uklight_vfx_dbso_check ;
 		cargo_subtype_text      : sw_uklight_refit_text_check ;
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;

@@ -18,6 +18,15 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_spritestack, [STORE_TEMP((getbits(extra_ca
 	1 : sw_uklight_gfx_headlights ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_eurodual_dbso_check, DBSO_CHECK){
+	1 : sw_dbso_sprite_stack ;
+	sw_eurodual_spritestack ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_dvt_check, DVT_CHECK){
+	1 : sw_dvt_sprite_stack ;
+	sw_eurodual_dbso_check ;
+}
 
 
 //Colour mapping
@@ -27,24 +36,38 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_colours, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_eurodual_colours_dbso_check, DBSO_CHECK){
+	1 : sw_dbso_colours_2cc_check ;
+	sw_eurodual_colours ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_colours_dvt_check, DVT_CHECK){
+	1 : sw_dvt_colours_2cc_check ;
+	sw_eurodual_colours_dbso_check ;
+}
+
 
 //Effects deciders
 
-switch(FEAT_TRAINS, PARENT, sw_eurodual_sfx_decider, current_railtype){
+switch(FEAT_TRAINS, SELF, sw_eurodual_sfx_decider, current_railtype){
 	ELRL   : sw_sfx_electric_loco_modern ;
 	SAAZ   : sw_sfx_electric_loco_modern ;
 	//"3RDC" : sw_sfx_electric_loco_modern ;
 	sw_sfx_diesel_loco_modern ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_eurodual_effect_decider, current_railtype){
+switch(FEAT_TRAINS, SELF, sw_eurodual_effect_decider, current_railtype){
 	ELRL   : vfx_ohle ;
 	SAAZ   : vfx_ohle ;
 	//"3RDC" : vfx_ohle ;
 	vfx_diesel_default ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_eurodual_power_decider, current_railtype){
+switch(FEAT_TRAINS, SELF, sw_eurodual_effect_dbso_check, (DBSO_CHECK) | (DVT_CHECK)){
+	0 : sw_eurodual_effect_decider ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_power_decider, current_railtype){
 	ELRL   : 5364 ;
 	SAAZ   : 5364 ;
 	//"3RDC" : 5364 ;
@@ -82,11 +105,12 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default                 : sw_eurodual_spritestack ;
+		default                 : sw_eurodual_dvt_check ;
 		purchase                : gfx_eurodual_drs_purchase ;
-		colour_mapping          : sw_eurodual_colours ;
+		purchase_colour_mapping : sw_eurodual_colours ;
+		colour_mapping          : sw_eurodual_colours_dvt_check ;
 		sound_effect            : sw_eurodual_sfx_decider ;
-		create_effect           : sw_eurodual_effect_decider ;
+		create_effect           : sw_eurodual_effect_dbso_check ;
 		purchase_power          : 5364 ;
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;

@@ -122,7 +122,7 @@ switch(FEAT_TRAINS, SELF, sw_Mk1_auto_livery_decider, current_year){
 	1948 .. 1960:sw_mk1_gfx_crimson_cream;
 	1961 .. 1966:sw_mk1_gfx_crest;
 	ERA_BRBLUE:sw_mk1_gfx_blue_grey;
-	ERA_BRBLUETOPS:sw_mk1_gfx_blue_grey;
+	ERA_BRTOPS:sw_mk1_gfx_blue_grey;
 	ERA_SECTORISATION:sw_mk1_gfx_sectorisation;
 	return sw_mk1_gfx_lined;
 }
@@ -131,7 +131,7 @@ switch(FEAT_TRAINS, SELF, sw_Mk1_purchase, current_year){
 	1948 .. 1960:spriteset_Mk1_2_tone_purchase;
 	1961 .. 1966:spriteset_Mk1_lined_purchase;
 	ERA_BRBLUE:spriteset_Mk1_2_tone_purchase;
-	ERA_BRBLUETOPS:spriteset_Mk1_2_tone_purchase;
+	ERA_BRTOPS:spriteset_Mk1_2_tone_purchase;
 	ERA_SECTORISATION:spriteset_Mk1_nse_purchase;
 	return spriteset_Mk1_lined_purchase;
 }
@@ -207,7 +207,7 @@ switch(FEAT_TRAINS, SELF, sw_Mk1_auto_colour_decider, current_year){
 	1948 .. 1960:sw_mk1_colour_crimson_cream;
 	1961 .. 1966:sw_mk1_colour_maroon;
 	ERA_BRBLUE:sw_mk1_colour_br_blue;
-	ERA_BRBLUETOPS:sw_mk1_colour_br_blue;
+	ERA_BRTOPS:sw_mk1_colour_br_blue;
 	ERA_SECTORISATION:sw_mk1_colour_sectorisation;
 	return sw_mk1_colour_wcrc;
 }

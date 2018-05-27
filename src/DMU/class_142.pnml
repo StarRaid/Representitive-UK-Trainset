@@ -82,8 +82,8 @@ random_switch(FEAT_TRAINS, SELF, sw_142_northern_t, TRIGGER_VEHICLE_SERVICE){
  
 switch(FEAT_TRAINS, SELF, sw_142_passenger_livery_decider_a, current_year){
 	ERA_SECTORISATION: sw_142_rr;
-	ERA_PRIVATISATION1: sw_142_n_spirit;
-	ERA_PRIVATISATION2: sw_142_northern;
+	ERA_PRIVATE_ONE: sw_142_n_spirit;
+	ERA_PRIVATE_TWO: sw_142_northern;
 	sw_142_northern;
 }
 
@@ -94,8 +94,8 @@ switch(FEAT_TRAINS, SELF, sw_142_passenger_livery_decider, build_year){
 
 switch(FEAT_TRAINS, SELF, sw_142_passenger_livery_decider_a_t, current_year){
 	ERA_SECTORISATION: sw_142_rr_t;
-	ERA_PRIVATISATION1: sw_142_n_spirit_t;
-	ERA_PRIVATISATION2: sw_142_northern_t;
+	ERA_PRIVATE_ONE: sw_142_n_spirit_t;
+	ERA_PRIVATE_TWO: sw_142_northern_t;
 	sw_142_northern_t;
 }
 
@@ -161,7 +161,7 @@ switch(FEAT_TRAINS, SELF, sw_142_refit_text_decider, livery_choice){
 switch(FEAT_TRAINS, SELF, sw_142_purchase, current_year){
 	0 .. 1985: spriteset_140_purchase;
 	ERA_SECTORISATION: spriteset_142_rr_purchase;
-	ERA_PRIVATISATION1: spriteset_142_n_spirit_purchase;
+	ERA_PRIVATE_ONE: spriteset_142_n_spirit_purchase;
 	spriteset_142_northern_purchase;
 }
 
@@ -195,7 +195,7 @@ random_switch(FEAT_TRAINS, SELF, sw_140_colour_mapping, TRIGGER_VEHICLE_SERVICE)
 
 switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_auto_a, current_year){
 	ERA_SECTORISATION: sw_142_rr_colour_mapping;
-	ERA_PRIVATISATION1: sw_142_n_spirit_colour_mapping;
+	ERA_PRIVATE_ONE: sw_142_n_spirit_colour_mapping;
 	sw_142_northern_colour_mapping;
 }
 

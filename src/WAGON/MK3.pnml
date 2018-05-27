@@ -1,71 +1,249 @@
-spriteset(spriteset_Mk3_br, "gfx/WAGON/mk3.png") {
-	template_8_8(0, 0)
+//Mark 3 Carriage
+
+/*
+
+Liveries done:
+BR Blue
+Intercity
+Virgin
+Midland Mainline (Blue)
+EMT
+First Fag
+First Barbie
+FGW
+GWR
+
+Liveries to do:
+Scotrail
+ATW
+One
+Virgin Pretendolino
+Greater Anglia
+Network Rail
+Chiltern Railways
+
+*/
+
+//Spritesets
+
+spriteset(gfx_mk3_generic             , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,  0) }
+spriteset(gfx_mk3_brblue              , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0, 25) }
+spriteset(gfx_mk3_intercity           , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0, 50) }
+spriteset(gfx_mk3_virgin              , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0, 75) }
+spriteset(gfx_mk3_first_fag           , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,100) }
+spriteset(gfx_mk3_mml                 , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,125) }
+spriteset(gfx_mk3_first_barbie        , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,150) }
+spriteset(gfx_mk3_fgw                 , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,175) }
+spriteset(gfx_mk3_gwr                 , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,200) }
+spriteset(gfx_mk3_emt                 , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,225) }
+spriteset(gfx_mk3_first_scotrail      , "gfx/WAGON/mark_3.png"){ template_Mk2_single(170,150) }
+
+spriteset(gfx_mk3_purchase_brblue     , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89, 25) }
+spriteset(gfx_mk3_purchase_intercity  , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89, 50) }
+spriteset(gfx_mk3_purchase_virgin     , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89, 75) }
+spriteset(gfx_mk3_purchase_mml        , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89,125) }
+spriteset(gfx_mk3_purchase_fgw        , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89,175) }
+spriteset(gfx_mk3_purchase_emt        , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89,225) }
+
+spriteset(gfx_mk3_windows_normal      , "gfx/WAGON/mark_3.png"){ template_Mk2_single(180, 25)         }
+spriteset(gfx_mk3_windows_sleeper     , "gfx/WAGON/mark_3.png"){ template_Mk2_double(180, 75)         }
+spriteset(gfx_mk3_windows_sleeper_rev , "gfx/WAGON/mark_3.png"){ template_Mk2_double_reverse(180, 75) }
+spriteset(gfx_mk3_windows_buffet      , "gfx/WAGON/mark_3.png"){ template_Mk2_double(180, 50)         }
+spriteset(gfx_mk3_windows_buffet_rev  , "gfx/WAGON/mark_3.png"){ template_Mk2_double_reverse(180, 50) }
+
+//Graphics switches
+
+//Automatic liveries
+
+switch(FEAT_TRAINS, SELF, sw_mk3_gfx_auto, build_year){
+	ERA_BRTOPS        : gfx_mk3_brblue ;
+	ERA_SECTORISATION : gfx_mk3_intercity ;
+	2005..2016        : gfx_mk3_mml ;
+	gfx_mk3_virgin ;
 }
 
-spriteset(spriteset_Mk3_BUF_br, "gfx/WAGON/mk3.png") {
-	template_8_8(0, 25)
+
+//Manual liveries
+
+switch(FEAT_TRAINS, SELF, sw_mk3_gfx_manual, cargo_subtype){
+	0      : gfx_mk3_brblue ;
+	1      : gfx_mk3_intercity ;
+	3      : gfx_mk3_mml ;
+	4      : gfx_mk3_emt ;
+	5..6   : gfx_mk3_first_fag ;
+	7..8   : gfx_mk3_first_barbie ;
+	9..10  : gfx_mk3_fgw ;
+	11..12 : gfx_mk3_gwr ;
+	13     : gfx_mk3_first_scotrail ;
+	14     : gfx_mk3_generic ;
+	gfx_mk3_virgin ;
 }
 
-spriteset(spriteset_Mk3_intercity, "gfx/WAGON/mk3.png") {
-	template_8_8(0, 73)
+switch(FEAT_TRAINS, SELF, sw_mk3_gfx_manual_check, livery_choice){
+	1 : sw_mk3_gfx_manual ;
+	sw_mk3_gfx_auto ;
 }
 
-spriteset(spriteset_Mk3_BUF_intercity, "gfx/WAGON/mk3.png") {
-	template_8_8(0, 98)
+
+//Windows switches
+
+switch(FEAT_TRAINS, SELF, sw_mk3_sleeper_pos_check_rev, (position_in_consist - 1) > (num_vehs_in_consist / 2)){
+	1 : gfx_mk3_windows_sleeper_rev ;
+	gfx_mk3_windows_normal ;
 }
 
-spriteset(spriteset_Mk3_DVT_intercity_r, "gfx/WAGON/mk3.png") {
-	template_7_8(0, 123)
+switch(FEAT_TRAINS, SELF, sw_mk3_sleeper_pos_check, (position_in_consist - 1) <= (num_vehs_in_consist / 2)){
+	1 : gfx_mk3_windows_sleeper ;
+	gfx_mk3_windows_normal ;
 }
 
-spriteset(spriteset_Mk3_DVT_intercity_f, "gfx/WAGON/mk3.png") {
-	template_7_8(0, 146)
+switch(FEAT_TRAINS, PARENT, sw_mk3_sleeper_rev_check, vehicle_is_reversed){
+	1 : sw_mk3_sleeper_pos_check_rev ;
+	sw_mk3_sleeper_pos_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Mk3_BR, position_in_consist){
-	4: spriteset_Mk3_BUF_br;
-	spriteset_Mk3_br;
+switch(FEAT_TRAINS, SELF, sw_mk3_sleeper_manual, cargo_subtype){
+	6      : sw_mk3_sleeper_rev_check ;
+	8      : sw_mk3_sleeper_rev_check ;
+	10     : sw_mk3_sleeper_rev_check ;
+	12..13 : sw_mk3_sleeper_rev_check ;
+	gfx_mk3_windows_normal ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Mk3_IC, position_in_consist_from_end){
-	4: spriteset_Mk3_BUF_intercity;
-	0: spriteset_Mk3_DVT_intercity_r;
-	spriteset_Mk3_intercity;
+switch(FEAT_TRAINS, SELF, sw_mk3_sleeper_manual_check, livery_choice){
+	1 : sw_mk3_sleeper_manual ;
+	gfx_mk3_windows_normal ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Mk3_length_dvt, position_in_consist_from_end){
-	0: return 7;
-	return 8;
+switch(FEAT_TRAINS, SELF, sw_mk3_gfx_window, position_in_vehid_chain ){
+	2 : gfx_mk3_windows_buffet ;
+	sw_mk3_sleeper_manual_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Mk3_length, current_year){
-	ERA_BRBLUETOPS: return 8;
-	return sw_Mk3_length_dvt;
+switch(FEAT_TRAINS, SELF, sw_mk3_gfx_window_reverse, position_in_vehid_chain_from_end ){
+	2 : gfx_mk3_windows_buffet_rev ;
+	sw_mk3_sleeper_manual_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_Mk3_livery, current_year){
-	ERA_BRBLUETOPS: sw_Mk3_BR;
-	ERA_SECTORISATION: sw_Mk3_IC;
-	sw_Mk3_IC;
+switch(FEAT_TRAINS, PARENT, sw_mk3_gfx_window_reverse_check, vehicle_is_reversed){
+	1 : sw_mk3_gfx_window_reverse ;
+	sw_mk3_gfx_window ;
 }
 
-item (FEAT_TRAINS, item_Mk3, 9030) {
+
+//Sprite stacking
+
+switch(FEAT_TRAINS, SELF, sw_mk3_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	1 : sw_mk3_gfx_manual_check ;
+	2 : sw_mk3_gfx_window_reverse_check ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_mk3_refit_text, cargo_subtype){
+	0  : string(STR_LIVERY_BRBLUE) ;
+	1  : string(STR_LIVERY_INTERCITY) ;
+	2  : string(STR_LIVERY_VIRGIN_TRAINS) ;
+	3  : string(STR_LIVERY_MIDLAND_MAINLINE_BLUE) ;
+	4  : string(STR_LIVERY_EMT) ;
+	5  : string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_EMPTY)) ;
+	6  : string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_SLEEPER)) ;
+	7  : string(STR_LIVERY_FIRST_BARBIE, string(STR_LIVERY_EMPTY)) ;
+	8  : string(STR_LIVERY_FIRST_BARBIE, string(STR_LIVERY_SLEEPER)) ;
+	9  : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_EMPTY)) ;
+	10 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_SLEEPER)) ;
+	11 : string(STR_LIVERY_FIRST_GWR, string(STR_LIVERY_EMPTY)) ;
+	12 : string(STR_LIVERY_FIRST_GWR, string(STR_LIVERY_SLEEPER)) ;
+	13 : string(STR_LIVERY_FIRST_SCOT_RAIL, string(STR_LIVERY_SLEEPER)) ;
+	14 : string(STR_LIVERY_NETWORK_RAIL) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk3_refit_text_check, livery_choice){
+	1 : sw_mk3_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+//Purchase sprite switches
+
+switch(FEAT_TRAINS, SELF, sw_mk3_purchase, current_year){
+	ERA_BRTOPS        : gfx_mk3_purchase_brblue ;
+	ERA_SECTORISATION : gfx_mk3_purchase_intercity ;
+	2005..2016        : gfx_mk3_purchase_mml ;
+	gfx_mk3_purchase_virgin ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk3_purchase_colours, current_year){
+	ERA_BRTOPS        : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	ERA_SECTORISATION : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2005..2016        : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk3_purchase_colours_2cc_check, colour_scheme_1){
+	1 : sw_mk3_purchase_colours ;
+	palette_2cc(company_colour1, company_colour1) ;
+}
+
+
+
+//Colour mapping
+
+
+switch(FEAT_TRAINS, SELF, sw_mk3_colours_auto, build_year){
+	ERA_BRTOPS        : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	ERA_SECTORISATION : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2005..2016        : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk3_colours_manual, cargo_subtype){
+	0      : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;    //BR Blue
+	1      : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;          //Intercity
+	3      : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;     //MML
+	4      : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;      //EMT
+	5..6   : palette_2cc(COLOUR_PALE_GREEN, COLOUR_YELLOW) ;  //First Fag
+	7..8   : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;   //First Barbie
+	9..10  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;     //First Great Western
+	11..12 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;   //GWR
+	13     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;    //First Barbie
+	14     : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;         //Network Rail
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;              //Virgin
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk3_colours_manual_check, livery_choice){
+	1 : sw_mk3_colours_manual ;
+	sw_mk3_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk3_colours_2cc_check, colour_scheme_1){
+	1 : sw_mk3_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+//Item
+
+item (FEAT_TRAINS, item_mk3, 9030) {
 	property {
 		name: 							string(STR_NAME_Mk3);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1975, 1, 1);
-		model_life:						15;
+		model_life:						25;
 		retire_early:					1;
 		vehicle_life:					50;
 		reliability_decay:				7;
 		refittable_cargo_classes:		CC_PASSENGERS;
-		cargo_allow_refit:				[PASS, TOUR, MAIL];
+		cargo_allow_refit:				[PASS, TOUR];
 		loading_speed:					29;
 		cost_factor:					38;
 		running_cost_factor:			34;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							125 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -73,8 +251,8 @@ item (FEAT_TRAINS, item_Mk3, 9030) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		default_cargo_type:				PASS;
-		cargo_capacity:					80;
-		weight:							5 ton;
+		cargo_capacity:					90;
+		weight:							33 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
 		length:							8;
@@ -82,10 +260,10 @@ item (FEAT_TRAINS, item_Mk3, 9030) {
 		cargo_age_period:				185;
 	}
 	graphics {
-	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
-	default: 							sw_Mk3_livery;
-	purchase:							sw_Mk3_livery;
-	length:								sw_Mk3_length;
-	colour_mapping:						return 0;
-}
+		default                 : sw_mk3_sprite_stack ;
+		purchase                : sw_mk3_purchase ;
+		purchase_colour_mapping : sw_mk3_purchase_colours_2cc_check ;
+		cargo_subtype_text      : sw_mk3_refit_text_check ;
+		colour_mapping          : sw_mk3_colours_2cc_check ;
+	}
 }

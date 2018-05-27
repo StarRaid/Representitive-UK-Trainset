@@ -99,6 +99,24 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2, getbits(extra_callback_info1,
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav",90) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : sound("sfx/brush_idle.wav",90) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/brush_run.wav",90) ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/brush_coast.wav",90) ;
+	SOUND_EVENT_START         : sound("sfx/horn_3.wav",90) ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav",90) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_hst, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : sound("sfx/hst_idle.wav",90) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/hst_run.wav",90) ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/hst_coast.wav",90) ;
+	SOUND_EVENT_START         : sound("sfx/horn_1.wav",90) ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav",90) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_sfx_emu_desiro, getbits(extra_callback_info1, 0, 8)){
 	//SOUND_EVENT_STOPPED       : sound("sfx/.wav") ;
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;

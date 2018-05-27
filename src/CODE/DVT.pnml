@@ -1,0 +1,123 @@
+//DVT Source
+
+#define DVT_CHECK vehicle_is_reversed && (count_veh_id(9035) > 0)
+
+
+/*
+
+Liveries needed
+
+Intercity
+Virgin Trains
+Greater Anglia
+Arriva Trains Wales
+Network Rail
+Chiltern Railways
+
+Mark 4
+
+GNER
+East Coast
+Virgin East Coast
+
+*/
+
+
+//Spritesets
+
+spriteset(gfx_dvt_generic       , "gfx/WAGON/dvt.png"){ template_Mk2_double(  0,  0)         }
+spriteset(gfx_dvt_generic_rev   , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0,  0) }
+spriteset(gfx_dvt_intercity     , "gfx/WAGON/dvt.png"){ template_Mk2_double(  0, 25)         }
+spriteset(gfx_dvt_intercity_rev , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0, 25) }
+spriteset(gfx_dvt_virgin        , "gfx/WAGON/dvt.png"){ template_Mk2_double(  0, 50)         }
+spriteset(gfx_dvt_virgin_rev    , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0, 50) }
+
+spriteset(gfx_dvt_taillights    , "gfx/WAGON/dvt.png"){ template_Mk2_double(259,  0)         }
+spriteset(gfx_dvt_headlights    , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(259, 25) }
+
+
+
+
+//Switches
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_generic_rev_check, vehicle_is_reversed){ 1 : gfx_dvt_generic_rev ; gfx_dvt_generic ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check, vehicle_is_reversed){ 1 : gfx_dvt_intercity_rev ; gfx_dvt_intercity ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check, vehicle_is_reversed){ 1 : gfx_dvt_virgin_rev ; gfx_dvt_virgin ; }
+
+
+
+//Automatix GFX
+
+switch(FEAT_TRAINS, SELF, sw_dvt_auto, build_year){
+	ERA_SECTORISATION : sw_dvt_intercity_rev_check ;
+	sw_dvt_virgin_rev_check ;
+}
+
+
+//Manual GFX
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_manual_br87, cargo_subtype){
+	1 : sw_dvt_intercity_rev_check ;
+	sw_dvt_virgin_rev_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_manual, vehicle_type_id){
+	87 : sw_dvt_manual_br87 ;
+	sw_dvt_virgin_rev_check ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_dvt_manual_check, livery_choice){
+	1 : sw_dvt_manual ;
+	sw_dvt_auto ;
+}
+
+//Sprite stacking & lights deciders
+
+switch(FEAT_TRAINS, SELF, sw_dvt_taillight_check, position_in_consist_from_end){ 0 : gfx_dvt_taillights ; }
+
+switch(FEAT_TRAINS, SELF, sw_dvt_headlight_check, position_in_consist){
+	0 : gfx_dvt_headlights ;
+	sw_dvt_taillight_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_dvt_sprite_stack, SPR_STACK){
+	0 : sw_dvt_manual_check ;
+	1 : sw_dvt_headlight_check ;
+}
+
+
+
+//Colour mapping
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_colours_auto, build_year){
+	ERA_SECTORISATION : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_colours_br87, cargo_subtype){
+	1 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_colours_manual, vehicle_type_id){
+	87 : sw_dvt_colours_br87 ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_dvt_colours_manual_check, livery_choice){
+	1 : sw_dvt_colours_manual ;
+	sw_dvt_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_dvt_colours_2cc_check, colour_scheme_1){
+	1 : sw_dvt_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}

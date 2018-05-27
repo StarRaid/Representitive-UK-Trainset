@@ -1,0 +1,71 @@
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_privatised_dbso, most_common_cargo_type){
+	PASS : sw_br87_gfx_calsleeper_reverse_check ;
+	sw_br87_gfx_gbrf_reverse_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_auto_dbso, build_year){
+	ERA_BRTOPS : sw_br87_gfx_brblue_reverse_check ;
+	ERA_SECTORISATION : sw_br87_gfx_intercity_reverse_check ;
+	ERA_PRIVATE_TWO : sw_br87_gfx_privatised_dbso ;
+	sw_br87_gfx_virgin_reverse_check ;
+}
+
+//Manual liveries
+
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_manual_dbso, cargo_subtype){
+	0 : sw_br87_gfx_brblue_reverse_check ;
+	1 : sw_br87_gfx_intercity_reverse_check ;
+	2 : sw_br87_gfx_virgin_reverse_check ;
+	3 : sw_br87_gfx_calsleeper_reverse_check ;
+	4 : sw_br87_gfx_gbrf_reverse_check ;
+	sw_br87_gfx_virgin_reverse_check ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_br87_gfx_manual_check_dbso, livery_choice){
+	1 : sw_br87_gfx_manual_dbso ;
+	sw_br87_gfx_auto_dbso ;
+}
+
+
+//Sprite stacking
+
+switch(FEAT_TRAINS, PARENT, sw_br87_sprite_stack_dbso, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_br87_gfx_manual_check_dbso ;
+	1 : sw_br87_headlight_decider ;
+	2 : sw_br87_taillight_decider ;
+}
+
+
+//Colours
+
+switch(FEAT_TRAINS, PARENT, sw_br87_privatised_colours_dbso, most_common_cargo_type){
+	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_br87_colours_auto_dbso, build_year){
+	ERA_BRTOPS     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	ERA_SECTORISATION  : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	ERA_PRIVATE_TWO : sw_br87_privatised_colours_dbso ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_br87_colours_manual_dbso, cargo_subtype){
+	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	2 : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	4 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_br87_colours_manual_check_dbso, livery_choice){
+	1 : sw_br87_colours_manual_dbso ;
+	sw_br87_colours_auto_dbso ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_br87_colours_2cc_check_dbso, colour_scheme_1){
+	1 : sw_br87_colours_manual_check_dbso ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
