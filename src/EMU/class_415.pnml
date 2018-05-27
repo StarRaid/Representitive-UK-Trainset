@@ -1,0 +1,23 @@
+//415 SR (415/1) DMBSO
+spriteset(spriteset_415_1_m_brg, "gfx/EMU/class_415.png") {template_8_8_networker(358, 0)}
+spriteset(spriteset_415_1_m_brb, "gfx/EMU/class_415.png") {template_8_8_networker(358, 75)}
+spriteset(spriteset_415_1_m_bbg, "gfx/EMU/class_415.png") {template_8_8_networker(358, 150)}
+spriteset(spriteset_415_1_m_nse, "gfx/EMU/class_415.png") {template_8_8_networker(358, 225)}
+
+//415 SR (415/1) TS
+spriteset(spriteset_415_1_t_brg, "gfx/EMU/class_415.png") {template_8_8_networker(358, 25)}
+spriteset(spriteset_415_1_t_brb, "gfx/EMU/class_415.png") {template_8_8_networker(358, 100)}
+spriteset(spriteset_415_1_t_bbg, "gfx/EMU/class_415.png") {template_8_8_networker(358, 175)}
+spriteset(spriteset_415_1_t_nse, "gfx/EMU/class_415.png") {template_8_8_networker(358, 250)}
+
+//415 SR (415/1) DTS
+spriteset(spriteset_415_1_dt_brg, "gfx/EMU/class_415.png") {template_8_8_networker(358, 50)}
+spriteset(spriteset_415_1_dt_brb, "gfx/EMU/class_415.png") {template_8_8_networker(358, 125)}
+spriteset(spriteset_415_1_dt_bbg, "gfx/EMU/class_415.png") {template_8_8_networker(358, 200)}
+spriteset(spriteset_415_1_dt_nse, "gfx/EMU/class_415.png") {template_8_8_networker(358, 275)}
+
+//415 BR (415/2) DMBSO
+spriteset(spriteset_415_2_m_brg, "gfx/EMU/class_415.png") {template_8_8_networker(0, 0)}
+spriteset(spriteset_415_2_m_brb, "gfx/EMU/class_415.png") {template_8_8_networker(0, 75)}
+spriteset(spriteset_415_2_m_bbg, "gfx/EMU/class_415.png") {template_8_8_networker(0, 150)}
+spriteset(spriteset_415_2_m_nse, "gfx/EMU/class_415.png") {template_8_8_networker(0, 225)}

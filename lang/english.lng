@@ -36,6 +36,7 @@ STR_LIVERY_CHILTERN				  : Chiltern Railways
 STR_LIVERY_FREIGHTLINER           : Frieghtliner
 STR_LIVERY_FREIGHTLINER_POWERHAUL : Frieghtliner {GOLD}(Powerhaul)
 STR_LIVERY_COLAS				  : Colas Rail
+STR_LIVERY_GATEX				  : Gatwick Express
 STR_LIVERY_SE_BLUE				  : Southeastern {GOLD}(Blue)
 STR_LIVERY_SE_YELLOW			  : Southeastern {GOLD}(Yellow)
 STR_LIVERY_WCRC					  : West Coast Railway Company
@@ -93,6 +94,7 @@ STR_NAME_314				 :BREL Second Gereration EMU (Electric)
 STR_NAME_317				 :AC Express "Bed Pan"
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
 STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
+STR_NAME_442				 :BREL "Wessex Express"
 STR_NAME_455				 :BREL Suburban EMU (3rd rail)
 STR_NAME_700				 :Siemens "Desiro City"
 
@@ -112,6 +114,7 @@ STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or anot
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Mark 1 EMU (3rd rail)!
+STR_442_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL "Wessex Express"!
 STR_455_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Suburban EMU (3rd rail)
 STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
 STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro City"!

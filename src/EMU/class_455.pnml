@@ -124,7 +124,7 @@ random_switch(FEAT_TRAINS, SELF, sw_455_cnx_t_select, TRIGGER_VEHICLE_SERVICE){
 //Livery Switches 
  
 switch(FEAT_TRAINS, SELF, sw_455_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_455_brb_select;
+	ERA_BRTOPS: sw_455_brb_select;
 	ERA_SECTORISATION: sw_455_nse_select;
 	1996 .. 2005: sw_455_swo_select;
 	2006 .. 2010: sw_455_swt_select;
@@ -132,7 +132,7 @@ switch(FEAT_TRAINS, SELF, sw_455_livery_decider, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_455_t_livery_decider, current_year){
-	ERA_BRBLUETOPS: sw_455_brb_t_select;
+	ERA_BRTOPS: sw_455_brb_t_select;
 	ERA_SECTORISATION: sw_455_nse_t_select;
 	1996 .. 2005: sw_455_swo_t_select;
 	2006 .. 2010: sw_455_swt_t_select;
@@ -190,7 +190,7 @@ switch(FEAT_TRAINS, SELF, sw_455_refit_text_decider, livery_choice){
 
 //Purchase sprite decider
 switch(FEAT_TRAINS, SELF, sw_455_purchase, current_year){
-	ERA_BRBLUETOPS: spriteset_455_brb_purchase;
+	ERA_BRTOPS: spriteset_455_brb_purchase;
 	ERA_SECTORISATION: spriteset_455_nse_purchase;
 	1996 .. 2005: spriteset_455_swo_purchase;
 	2006 .. 2010: spriteset_455_swt_purchase;
@@ -224,13 +224,13 @@ random_switch(FEAT_TRAINS, SELF, sw_455_se_colour_mapping, TRIGGER_VEHICLE_SERVI
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_455_stn_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
-	1 : palette_2cc(COLOUR_GREEN, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 }
 
 //Recolour Switches
 
 switch(FEAT_TRAINS, SELF, sw_455_colour_mapping_year_decider, current_year){
-	ERA_BRBLUETOPS: sw_455_brb_colour_mapping;
+	ERA_BRTOPS: sw_455_brb_colour_mapping;
 	ERA_SECTORISATION: sw_455_nse_colour_mapping;
 	1996 .. 2005: sw_455_nse_colour_mapping;
 	2006 .. 2010: sw_455_swt_colour_mapping;
