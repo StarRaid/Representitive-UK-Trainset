@@ -9,10 +9,6 @@ disable_item(FEAT_TRAINS);
 #include "src/CODE/coupling_restrictions.pnml"
 #include "src/TRACKS/narrow_gauge.pnml"
 #include "src/WAGON/Mk1.pnml"
-<<<<<<< HEAD
-#include "src/WAGON/MK3.pnml"
-=======
->>>>>>> 398da1528be1e19e0d8168142c92950a8e523a9c
 #include "src/WAGON/Mk2.pnml"
 #include "src/WAGON/MK3.pnml"
 #include "src/WAGON/MU90.pnml"
@@ -38,6 +34,7 @@ disable_item(FEAT_TRAINS);
 //#include "src/EMU/class_317.pnml"
 #include "src/EMU/class_325.pnml"
 #include "src/EMU/class_411.pnml"
+#include "src/EMU/class_415.pnml"
 #include "src/EMU/class_442.pnml"
 #include "src/EMU/class_455.pnml"
 #include "src/EMU/class_700.pnml"
