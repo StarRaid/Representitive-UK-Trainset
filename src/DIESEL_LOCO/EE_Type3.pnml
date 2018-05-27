@@ -534,6 +534,11 @@ switch(FEAT_TRAINS, SELF, sw_ee3_dbso_check, DBSO_CHECK){
 	sw_ee3_spritestack ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_ee3_dvt_check, DVT_CHECK){
+	1 : sw_dvt_sprite_stack ;
+	sw_ee3_dbso_check ;
+}
+
 
 //Refit text
 
@@ -656,6 +661,11 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_dbso_check, DBSO_CHECK){
 	sw_ee3_colours_2cc_check ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_ee3_colours_dvt_check, DVT_CHECK){
+	1 : sw_dvt_colours_2cc_check ;
+	sw_ee3_colours_dbso_check ;
+}
+
 
 switch(FEAT_TRAINS, SELF, sw_ee3_colours_purchase, current_year){
 	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
@@ -667,7 +677,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_purchase, current_year){
 }
 
 
-switch(FEAT_TRAINS, SELF, sw_ee3_vfx_dbso_check, DBSO_CHECK){
+switch(FEAT_TRAINS, SELF, sw_ee3_vfx_dbso_check, DBSO_CHECK | DVT_CHECK){
 	0 : vfx_diesel_default ;
 }
 
@@ -703,8 +713,8 @@ item (FEAT_TRAINS, item_eetype3, 37){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default                        : sw_ee3_dbso_check ;
-		colour_mapping                 : sw_ee3_colours_dbso_check ;
+		default                        : sw_ee3_dvt_check ;
+		colour_mapping                 : sw_ee3_colours_dvt_check ;
 		purchase_colour_mapping        : sw_ee3_colours_purchase ;
 		purchase                       : sw_ee3_purchase ;
 		sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
