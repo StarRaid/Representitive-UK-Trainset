@@ -64,7 +64,7 @@ switch(FEAT_TRAINS, PARENT, sw_br_epb_brg_select_2, count_veh_id(9010)){0: sw_41
 switch(FEAT_TRAINS, SELF, sw_br_epb_brg_select_1, position_in_articulated_veh){0..1: sw_414_brg; 3: spriteset_415_2_m_brg;}
 switch(FEAT_TRAINS, SELF, sw_br_epb_brg_select, num_vehs_in_vehid_chain){3: sw_br_epb_brg_select_1; sw_br_epb_brg_select_2;}
 	
-random_switch(FEAT_TRAINS, SELF, sw_southern_compartment_brg){26: sw_sr_epb_brg_select; 7: sw_br_epb_brg_select;}
+random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_brg){26: sw_sr_epb_brg_select; 7: sw_br_epb_brg_select;}
 
 //br blue
 switch(FEAT_TRAINS, SELF, sw_416_brb_f, (count_veh_id(415)+1)%2){1: spriteset_415_1_m_brb; spriteset_415_1_dt_brb;}
@@ -83,7 +83,7 @@ switch(FEAT_TRAINS, PARENT, sw_br_epb_brb_select_2, count_veh_id(9010)){0: sw_41
 switch(FEAT_TRAINS, SELF, sw_br_epb_brb_select_1, position_in_articulated_veh){0..1: sw_414_brb; 3: spriteset_415_2_m_brb;}
 switch(FEAT_TRAINS, SELF, sw_br_epb_brb_select, num_vehs_in_vehid_chain){3: sw_br_epb_brb_select_1; sw_br_epb_brb_select_2;}
 	
-random_switch(FEAT_TRAINS, SELF, sw_southern_compartment_brb){26: sw_sr_epb_brb_select; 7: sw_br_epb_brb_select;}
+random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_brb){26: sw_sr_epb_brb_select; 7: sw_br_epb_brb_select;}
 
 //br bluegrey
 switch(FEAT_TRAINS, SELF, sw_416_bbg_f, (count_veh_id(415)+1)%2){1: spriteset_415_1_m_bbg; spriteset_415_1_dt_bbg;}
@@ -102,7 +102,7 @@ switch(FEAT_TRAINS, PARENT, sw_br_epb_bbg_select_2, count_veh_id(9010)){0: sw_41
 switch(FEAT_TRAINS, SELF, sw_br_epb_bbg_select_1, position_in_articulated_veh){0..1: sw_414_bbg; 3: spriteset_415_2_m_bbg;}
 switch(FEAT_TRAINS, SELF, sw_br_epb_bbg_select, num_vehs_in_vehid_chain){3: sw_br_epb_bbg_select_1; sw_br_epb_bbg_select_2;}
 	
-random_switch(FEAT_TRAINS, SELF, sw_southern_compartment_bbg){26: sw_sr_epb_bbg_select; 7: sw_br_epb_bbg_select;}
+random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_bbg){26: sw_sr_epb_bbg_select; 7: sw_br_epb_bbg_select;}
 
 //nse
 switch(FEAT_TRAINS, SELF, sw_416_nse_f, (count_veh_id(415)+1)%2){1: spriteset_415_1_m_nse; spriteset_415_1_dt_nse;}
@@ -121,7 +121,7 @@ switch(FEAT_TRAINS, PARENT, sw_br_epb_nse_select_2, count_veh_id(9010)){0: sw_41
 switch(FEAT_TRAINS, SELF, sw_br_epb_nse_select_1, position_in_articulated_veh){0..1: sw_414_nse; 3: spriteset_415_2_m_nse;}
 switch(FEAT_TRAINS, SELF, sw_br_epb_nse_select, num_vehs_in_vehid_chain){3: sw_br_epb_nse_select_1; sw_br_epb_nse_select_2;}
 	
-random_switch(FEAT_TRAINS, SELF, sw_southern_compartment_nse){26: sw_sr_epb_nse_select; 7: sw_br_epb_nse_select;}
+random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_nse){26: sw_sr_epb_nse_select; 7: sw_br_epb_nse_select;}
 
 random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_brg_t){dependent: sw_southern_compartment_brg; 26: spriteset_415_1_t_brg; 7: spriteset_415_2_t_brg;}
 random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_brb_t){dependent: sw_southern_compartment_brb; 26: spriteset_415_1_t_brb; 7: spriteset_415_2_t_brb;}
