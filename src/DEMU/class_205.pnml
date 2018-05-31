@@ -241,6 +241,9 @@ switch(FEAT_TRAINS, SELF, sw_205_coupling_restrictions, vehicle_type_id) {
     return string(STR_205_NO_COUPLE);
 }
 
+
+if (vehicle_selection >= 1){
+
 item (FEAT_TRAINS, item_205, 205) {
 	property {
 		name: 							string(STR_NAME_205);
@@ -291,5 +294,6 @@ item (FEAT_TRAINS, item_205, 205) {
 		default: sw_205_default_t;
 		colour_mapping:	sw_205_colour_mapping_decider;
 		cargo_subtype_text: sw_205_refit_text_decider ;
+}
 }
 }

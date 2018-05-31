@@ -75,6 +75,7 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_power_decider, current_railtype){
 }
 
 //Item
+if (vehicle_selection >= 1){
 
 item (FEAT_TRAINS, item_eurodual, 88){
 	property{
@@ -117,4 +118,5 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		power                   : sw_eurodual_power_decider;
 		can_attach_wagon        : sw_all_but_MU90;
 	}
+}
 }

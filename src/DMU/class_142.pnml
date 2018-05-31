@@ -232,6 +232,8 @@ switch(FEAT_TRAINS, SELF, sw_142_coupling_restrictions, vehicle_type_id) {
     return string(STR_142_NO_COUPLE);
 }
 
+if (vehicle_selection >= 1){
+
 item (FEAT_TRAINS, item_142, 142) {
 	property {
 		name: 							string(STR_NAME_142);
@@ -282,5 +284,6 @@ item (FEAT_TRAINS, item_142, 142) {
 		cargo_subtype_text: sw_142_refit_text_decider ;
 		length: 7;
 		weight: 25;
+}
 }
 }

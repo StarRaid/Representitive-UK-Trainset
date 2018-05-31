@@ -95,6 +95,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_effect_reverse_check, vehicle_is_reversed){
 
 
 //DVT Item
+if (vehicle_selection >= 2){
 
 item(FEAT_TRAINS, item_dvt, 9035){
 	property{
@@ -131,4 +132,6 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		effect_spawn_model_and_powered : sw_dvt_effect_reverse_check ;
 		//sound_effect                   : sw_dbso_sfx_reverse_check ;
 	}
+}
+
 }

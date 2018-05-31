@@ -4715,6 +4715,7 @@ switch(FEAT_TRAINS, SELF, sw_dbso_attach_parent_id_check, vehicle_type_id){
 
 
 //The item itself
+if (vehicle_selection >= 2){
 
 item(FEAT_TRAINS, item_dbso, 9025){
 	property{
@@ -4751,6 +4752,8 @@ item(FEAT_TRAINS, item_dbso, 9025){
 		effect_spawn_model_and_powered : sw_dbso_effect_reverse_check ;
 		//sound_effect                   : sw_dbso_sfx_reverse_check ;
 	}
+}
+
 }
 # 1 "rukts.pnml" 2
 # 1 "src/WAGON/DVT.pnml" 1
@@ -4851,6 +4854,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_effect_reverse_check, vehicle_is_reversed){
 
 
 //DVT Item
+if (vehicle_selection >= 2){
 
 item(FEAT_TRAINS, item_dvt, 9035){
 	property{
@@ -4887,6 +4891,8 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		effect_spawn_model_and_powered : sw_dvt_effect_reverse_check ;
 		//sound_effect                   : sw_dbso_sfx_reverse_check ;
 	}
+}
+
 }
 # 1 "rukts.pnml" 2
 # 1 "src/DMU/class_142.pnml" 1
@@ -5331,6 +5337,7 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_attach, vehicle_type_id){
 	return string(STR_158_NO_COUPLE) ;
 }
 
+if (vehicle_selection >= 1){
 
 item(FEAT_TRAINS, item_expsprint, 158){
 	property{
@@ -5379,6 +5386,8 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		cargo_subtype_text          : sw_expsprint_refit_text_check ;
 		weight                      : 38 ;
 	}
+}
+
 }
 # 1 "rukts.pnml" 2
 # 1 "src/DMU/turbostar.pnml" 1

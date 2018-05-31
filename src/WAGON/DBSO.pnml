@@ -150,6 +150,7 @@ switch(FEAT_TRAINS, SELF, sw_dbso_attach_parent_id_check, vehicle_type_id){
 
 
 //The item itself
+if (vehicle_selection >= 2){
 
 item(FEAT_TRAINS, item_dbso, 9025){
 	property{
@@ -186,4 +187,6 @@ item(FEAT_TRAINS, item_dbso, 9025){
 		effect_spawn_model_and_powered : sw_dbso_effect_reverse_check ;
 		//sound_effect                   : sw_dbso_sfx_reverse_check ;
 	}
+}
+
 }

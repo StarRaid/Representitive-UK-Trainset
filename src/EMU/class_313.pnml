@@ -1080,6 +1080,8 @@ switch(FEAT_TRAINS, PARENT, sw_314_colour_mapping_decider, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+if (vehicle_selection >= 2){
+
 item (FEAT_TRAINS, item_313, 313) {
 	property {
 		name: 							string(STR_NAME_313);
@@ -1131,6 +1133,7 @@ item (FEAT_TRAINS, item_313, 313) {
 		colour_mapping:	sw_313_colour_mapping_decider;
 		cargo_subtype_text: sw_313_refit_text_decider ;
 		weight: 30;
+}
 }
 }
 
