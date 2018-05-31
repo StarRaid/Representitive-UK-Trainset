@@ -1,16 +1,23 @@
 ##grflangid 0x01
 
-STR_GRF_NAME                 :Representative UK Train Set - RUKTS
-STR_GRF_DESC                 :{GOLD}A representative collection of various UK trains! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
+STR_GRF_NAME                      :Representative UK Train Set - RUKTS
+STR_GRF_DESC                      :{GOLD}A representative collection of various UK trains! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
 
-STR_PARAM_COLOURSCHEME_NAME  :Real liveries
-STR_PARAM_COLOURSCHEME_DESC  :Use real life colours instead of company colours
+STR_PARAM_COLOURSCHEME_NAME       :Real liveries
+STR_PARAM_COLOURSCHEME_DESC       :Use real life colours instead of company colours
 
-STR_PARAM_COACHMAIL_NAME     :Coaches can take mail
-STR_PARAM_COACHMAIL_DESC     :Coaches that have brake compartments can load mail as well as passengers (turn off if you don't want cluttered mail around your network)
+STR_PARAM_COACHMAIL_NAME          :Coaches can take mail
+STR_PARAM_COACHMAIL_DESC          :Coaches that have brake compartments can load mail as well as passengers (turn off if you don't want cluttered mail around your network)
 
-STR_PARAM_LIVERY_CHOICE_NAME :Choose liveries manually
-STR_PARAM_LIVERY_CHOICE_DESC :Liveries are chosen through the cargo refit menu instead of them changing depending on year
+STR_PARAM_LIVERY_CHOICE_NAME      :Choose liveries manually
+STR_PARAM_LIVERY_CHOICE_DESC      :Liveries are chosen through the cargo refit menu instead of them changing depending on year
+
+STR_PARAM_VEH_SELEC_NAME          :Vehicle selection
+STR_PARAM_VEH_SELEC_DESC          :Choose the selection of vehicles that will appear in game.
+STR_PARAM_VEH_SELEC_CHOICE_ONE    :Transport Tycoon Style
+STR_PARAM_VEH_SELEC_CHOICE_TWO    :Limited
+STR_PARAM_VEH_SELEC_CHOICE_THREE  :Normal
+STR_PARAM_VEH_SELEC_CHOICE_FOUR   :Extended
 
 STR_LIVERY_BRGREEN                : British Railways {GOLD}(Green)
 STR_LIVERY_BRBLUE				  : British Railways {GOLD}(Blue)

@@ -28,6 +28,22 @@ grf{
 			bit  : 3 ;
 		}
 	}
+	param 1{
+		vehicle_selection{
+			type      : int ;
+			name      : string(STR_PARAM_VEH_SELEC_NAME) ;
+			desc      : string(STR_PARAM_VEH_SELEC_DESC) ;
+			min_value : 0 ;
+			max_value : 3 ;
+			def_value : 2 ;
+			names     : {
+				0 : string(STR_PARAM_VEH_SELEC_CHOICE_ONE  ) ;
+				1 : string(STR_PARAM_VEH_SELEC_CHOICE_TWO  ) ;
+				2 : string(STR_PARAM_VEH_SELEC_CHOICE_THREE) ;
+				3 : string(STR_PARAM_VEH_SELEC_CHOICE_FOUR ) ;
+			} ;
+		}
+	}
 }
 
 // Tractive Effort Coefficient = Actual Tractive effort / Weight / 10
@@ -1856,9 +1872,9 @@ spriteset(gfx_dvt_headlights    , "gfx/WAGON/dvt.png"){ template_Mk2_double_reve
 
 //Graphics switches
 
-switch(FEAT_TRAINS, PARENT, sw_dvt_generic_rev_check, vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87)){ 1 : gfx_dvt_generic ; gfx_dvt_generic ; }
-switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check, vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87)){ 1 : gfx_dvt_intercity ; gfx_dvt_intercity ; }
-switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check, vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87)){ 1 : gfx_dvt_virgin ; gfx_dvt_virgin ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_generic_rev_check, vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87)){ 1 : gfx_dvt_generic_rev ; gfx_dvt_generic ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check, vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87)){ 1 : gfx_dvt_intercity_rev ; gfx_dvt_intercity ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check, vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87)){ 1 : gfx_dvt_virgin_rev ; gfx_dvt_virgin ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_atw_exec_rev_check, vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87)){ 1 : gfx_dvt_atw_exec_rev ; gfx_dvt_atw_exec ; }
 
 
