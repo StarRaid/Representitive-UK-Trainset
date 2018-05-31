@@ -2872,6 +2872,8 @@ switch(FEAT_TRAINS, SELF, sw_ee40_vfx_dbso_check, vehicle_is_reversed && (count_
 
 //EE Type 4 item
 
+if (vehicle_selection >= 2){
+
 item (FEAT_TRAINS, item_eetype4, 40){
 	property{
 		name                           : string(STR_NAME_EETYPE4) ;  
@@ -2911,6 +2913,7 @@ item (FEAT_TRAINS, item_eetype4, 40){
 		cargo_capacity                 : return 0 ;
 		can_attach_wagon               : sw_all_but_MU90 ;
 	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/Brush_Peak.pnml" 1
@@ -3541,6 +3544,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_2cc_check, colour_scheme_1){
 
 
 //item
+if (vehicle_selection >= 1){
 
 item(FEAT_TRAINS, item_powerhaul, 70){
 	property{
@@ -3582,6 +3586,7 @@ item(FEAT_TRAINS, item_powerhaul, 70){
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;
 	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/UKLight.pnml" 1
@@ -4129,6 +4134,7 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_power_decider, current_railtype){
 }
 
 //Item
+if (vehicle_selection >= 1){
 
 item (FEAT_TRAINS, item_eurodual, 88){
 	property{
@@ -4171,6 +4177,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		power                   : sw_eurodual_power_decider;
 		can_attach_wagon        : sw_all_but_MU90;
 	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/WAGON/DBSO.pnml" 1
@@ -5130,6 +5137,8 @@ switch(FEAT_TRAINS, SELF, sw_142_coupling_restrictions, vehicle_type_id) {
     return string(STR_142_NO_COUPLE);
 }
 
+if (vehicle_selection >= 1){
+
 item (FEAT_TRAINS, item_142, 142) {
 	property {
 		name: 							string(STR_NAME_142);
@@ -5180,6 +5189,7 @@ item (FEAT_TRAINS, item_142, 142) {
 		cargo_subtype_text: sw_142_refit_text_decider ;
 		length: 7;
 		weight: 25;
+}
 }
 }
 # 1 "rukts.pnml" 2
@@ -5530,6 +5540,8 @@ switch(FEAT_TRAINS, SELF, sw_168_coupling_restrictions, vehicle_type_id) {
 
 //Item 
 
+if (vehicle_selection >= 2){
+
 item (FEAT_TRAINS, item_cl168, 168){
 	property{
 		name                           : string(STR_NAME_TURBOSTAR) ;
@@ -5577,6 +5589,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		cargo_subtype_text          : sw_168_refit_text_check ;
 		weight                      : 45 ;
 	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/DEMU/class_205.pnml" 1
@@ -5823,6 +5836,9 @@ switch(FEAT_TRAINS, SELF, sw_205_coupling_restrictions, vehicle_type_id) {
     return string(STR_205_NO_COUPLE);
 }
 
+
+if (vehicle_selection >= 1){
+
 item (FEAT_TRAINS, item_205, 205) {
 	property {
 		name: 							string(STR_NAME_205);
@@ -5873,6 +5889,7 @@ item (FEAT_TRAINS, item_205, 205) {
 		default: sw_205_default_t;
 		colour_mapping:	sw_205_colour_mapping_decider;
 		cargo_subtype_text: sw_205_refit_text_decider ;
+}
 }
 }
 # 1 "rukts.pnml" 2
@@ -6959,6 +6976,8 @@ switch(FEAT_TRAINS, PARENT, sw_314_colour_mapping_decider, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+if (vehicle_selection >= 2){
+
 item (FEAT_TRAINS, item_313, 313) {
 	property {
 		name: 							string(STR_NAME_313);
@@ -7010,6 +7029,7 @@ item (FEAT_TRAINS, item_313, 313) {
 		colour_mapping:	sw_313_colour_mapping_decider;
 		cargo_subtype_text: sw_313_refit_text_decider ;
 		weight: 30;
+}
 }
 }
 
