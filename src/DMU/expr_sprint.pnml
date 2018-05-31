@@ -200,11 +200,3 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		weight                      : 38 ;
 	}
 }
-
-if (vehicle_selection < 1){
-item (FEAT_TRAINS, item_expsprint, 158){
-	property{
-		climates_available             : NO_CLIMATE ;
-	}
-}
-}
