@@ -154,8 +154,6 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_2cc_check, colour_scheme_1){
 
 
 //item
-if (vehicle_selection >= 1){
-
 item(FEAT_TRAINS, item_powerhaul, 70){
 	property{
 		name                           : string(STR_NAME_POWERHAUL) ;
@@ -195,6 +193,13 @@ item(FEAT_TRAINS, item_powerhaul, 70){
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;
+	}
+}
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_powerhaul, 70){
+	property{
+		climates_available             : NO_CLIMATE ;
 	}
 }
 }
