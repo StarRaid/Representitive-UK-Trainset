@@ -317,7 +317,7 @@ item (FEAT_TRAINS, item_319, 319) {
 	property {
 		name: 							string(STR_NAME_319);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1956, 1, 1);
+		introduction_date:				date(1987, 1, 1);
 		model_life:						30;
 		retire_early:					1;
 		vehicle_life:					50;
@@ -363,5 +363,13 @@ item (FEAT_TRAINS, item_319, 319) {
 		default: sw_319_default_t;
 		colour_mapping:	sw_319_colour_mapping_decider;
 		cargo_subtype_text: sw_319_refit_text_decider ;
+}
+}
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_319, 319){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }

@@ -544,3 +544,11 @@ item (FEAT_TRAINS, item_325, 325) {
 		cargo_subtype_text: sw_325_refit_text_decider ;
 }
 }
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_325, 325){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}

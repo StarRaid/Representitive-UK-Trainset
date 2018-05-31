@@ -1080,7 +1080,6 @@ switch(FEAT_TRAINS, PARENT, sw_314_colour_mapping_decider, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
-if (vehicle_selection >= 2){
 
 item (FEAT_TRAINS, item_313, 313) {
 	property {
@@ -1135,7 +1134,15 @@ item (FEAT_TRAINS, item_313, 313) {
 		weight: 30;
 }
 }
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_313, 313){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
+}
+
 
 item (FEAT_TRAINS, item_314, 314) {
 	property {

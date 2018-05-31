@@ -3550,8 +3550,6 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_2cc_check, colour_scheme_1){
 
 
 //item
-if (vehicle_selection >= 1){
-
 item(FEAT_TRAINS, item_powerhaul, 70){
 	property{
 		name                           : string(STR_NAME_POWERHAUL) ;
@@ -3591,6 +3589,13 @@ item(FEAT_TRAINS, item_powerhaul, 70){
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;
+	}
+}
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_powerhaul, 70){
+	property{
+		climates_available             : NO_CLIMATE ;
 	}
 }
 }
@@ -4140,7 +4145,6 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_power_decider, current_railtype){
 }
 
 //Item
-if (vehicle_selection >= 1){
 
 item (FEAT_TRAINS, item_eurodual, 88){
 	property{
@@ -4182,6 +4186,14 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		cargo_capacity          : return 0 ;
 		power                   : sw_eurodual_power_decider;
 		can_attach_wagon        : sw_all_but_MU90;
+	
+	}
+}
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_eurodual, 88){
+	property{
+		climates_available             : NO_CLIMATE ;
 	}
 }
 }
@@ -4728,7 +4740,6 @@ switch(FEAT_TRAINS, SELF, sw_dbso_attach_parent_id_check, vehicle_type_id){
 
 
 //The item itself
-if (vehicle_selection >= 2){
 
 item(FEAT_TRAINS, item_dbso, 9025){
 	property{
@@ -4767,6 +4778,12 @@ item(FEAT_TRAINS, item_dbso, 9025){
 	}
 }
 
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_dbso, 9025){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/WAGON/DVT.pnml" 1
@@ -4867,7 +4884,6 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_effect_reverse_check, vehicle_is_reversed){
 
 
 //DVT Item
-if (vehicle_selection >= 2){
 
 item(FEAT_TRAINS, item_dvt, 9035){
 	property{
@@ -4906,6 +4922,12 @@ item(FEAT_TRAINS, item_dvt, 9035){
 	}
 }
 
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_dvt, 9035){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/DMU/class_142.pnml" 1
@@ -5353,7 +5375,6 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_attach, vehicle_type_id){
 	return string(STR_158_NO_COUPLE) ;
 }
 
-if (vehicle_selection >= 1){
 
 item(FEAT_TRAINS, item_expsprint, 158){
 	property{
@@ -5404,6 +5425,12 @@ item(FEAT_TRAINS, item_expsprint, 158){
 	}
 }
 
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_expsprint, 158){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/DMU/turbostar.pnml" 1
@@ -5546,7 +5573,6 @@ switch(FEAT_TRAINS, SELF, sw_168_coupling_restrictions, vehicle_type_id) {
 
 //Item 
 
-if (vehicle_selection >= 2){
 
 item (FEAT_TRAINS, item_cl168, 168){
 	property{
@@ -5594,6 +5620,13 @@ item (FEAT_TRAINS, item_cl168, 168){
 		cargo_capacity              : 75 ;
 		cargo_subtype_text          : sw_168_refit_text_check ;
 		weight                      : 45 ;
+	}
+}
+
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_cl168, 168){
+	property{
+		climates_available             : NO_CLIMATE ;
 	}
 }
 }
@@ -5843,7 +5876,6 @@ switch(FEAT_TRAINS, SELF, sw_205_coupling_restrictions, vehicle_type_id) {
 }
 
 
-if (vehicle_selection >= 1){
 
 item (FEAT_TRAINS, item_205, 205) {
 	property {
@@ -5896,6 +5928,13 @@ item (FEAT_TRAINS, item_205, 205) {
 		colour_mapping:	sw_205_colour_mapping_decider;
 		cargo_subtype_text: sw_205_refit_text_decider ;
 }
+}
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_205, 205){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }
 # 1 "rukts.pnml" 2
@@ -6982,7 +7021,6 @@ switch(FEAT_TRAINS, PARENT, sw_314_colour_mapping_decider, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
-if (vehicle_selection >= 2){
 
 item (FEAT_TRAINS, item_313, 313) {
 	property {
@@ -7037,7 +7075,15 @@ item (FEAT_TRAINS, item_313, 313) {
 		weight: 30;
 }
 }
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_313, 313){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
+}
+
 
 item (FEAT_TRAINS, item_314, 314) {
 	property {
@@ -7641,6 +7687,14 @@ item (FEAT_TRAINS, item_325, 325) {
 		cargo_subtype_text: sw_325_refit_text_decider ;
 }
 }
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_325, 325){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_411.pnml" 1
 //Front Cars
@@ -8016,6 +8070,14 @@ item (FEAT_TRAINS, item_411, 411) {
 		default: sw_411_default_t;
 		colour_mapping:	sw_411_colour_mapping_decider;
 		cargo_subtype_text: sw_411_refit_text_decider ;
+}
+}
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_411, 411){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }
 # 1 "rukts.pnml" 2
@@ -8443,7 +8505,7 @@ item (FEAT_TRAINS, item_442, 442) {
 	property {
 		name: 							string(STR_NAME_442);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1956, 1, 1);
+		introduction_date:				date(1988, 1, 1);
 		model_life:						30;
 		retire_early:					1;
 		vehicle_life:					50;
@@ -8804,6 +8866,14 @@ item (FEAT_TRAINS, item_455, 455) {
 		colour_mapping:	sw_455_colour_mapping_choice_decider;
 		cargo_subtype_text: sw_455_refit_text_decider ;
 		weight: 35;
+}
+}
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_455, 455){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }
 # 1 "rukts.pnml" 2

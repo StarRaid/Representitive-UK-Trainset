@@ -242,7 +242,6 @@ switch(FEAT_TRAINS, SELF, sw_205_coupling_restrictions, vehicle_type_id) {
 }
 
 
-if (vehicle_selection >= 1){
 
 item (FEAT_TRAINS, item_205, 205) {
 	property {
@@ -295,5 +294,12 @@ item (FEAT_TRAINS, item_205, 205) {
 		colour_mapping:	sw_205_colour_mapping_decider;
 		cargo_subtype_text: sw_205_refit_text_decider ;
 }
+}
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_205, 205){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }

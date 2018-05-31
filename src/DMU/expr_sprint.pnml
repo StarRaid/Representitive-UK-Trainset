@@ -151,7 +151,6 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_attach, vehicle_type_id){
 	return string(STR_158_NO_COUPLE) ;
 }
 
-if (vehicle_selection >= 1){
 
 item(FEAT_TRAINS, item_expsprint, 158){
 	property{
@@ -202,4 +201,10 @@ item(FEAT_TRAINS, item_expsprint, 158){
 	}
 }
 
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_expsprint, 158){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
 }

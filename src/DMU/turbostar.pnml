@@ -137,7 +137,6 @@ switch(FEAT_TRAINS, SELF, sw_168_coupling_restrictions, vehicle_type_id) {
 
 //Item 
 
-if (vehicle_selection >= 2){
 
 item (FEAT_TRAINS, item_cl168, 168){
 	property{
@@ -185,6 +184,13 @@ item (FEAT_TRAINS, item_cl168, 168){
 		cargo_capacity              : 75 ;
 		cargo_subtype_text          : sw_168_refit_text_check ;
 		weight                      : 45 ;
+	}
+}
+
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_cl168, 168){
+	property{
+		climates_available             : NO_CLIMATE ;
 	}
 }
 }

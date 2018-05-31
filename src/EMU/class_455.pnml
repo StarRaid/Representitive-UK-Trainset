@@ -311,3 +311,11 @@ item (FEAT_TRAINS, item_455, 455) {
 		weight: 35;
 }
 }
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_455, 455){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
