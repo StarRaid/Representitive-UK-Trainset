@@ -46,6 +46,9 @@ grf{
 	}
 }
 
+train_width_32_px = 1 ;
+//train_width_32_px : 1 ;
+
 // Tractive Effort Coefficient = Actual Tractive effort / Weight / 10
 
 
@@ -5165,7 +5168,6 @@ switch(FEAT_TRAINS, SELF, sw_142_coupling_restrictions, vehicle_type_id) {
     return string(STR_142_NO_COUPLE);
 }
 
-if (vehicle_selection >= 1){
 
 item (FEAT_TRAINS, item_142, 142) {
 	property {
@@ -5218,6 +5220,14 @@ item (FEAT_TRAINS, item_142, 142) {
 		length: 7;
 		weight: 25;
 }
+}
+
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_142, 142){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }
 # 1 "rukts.pnml" 2
@@ -5423,14 +5433,6 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		cargo_subtype_text          : sw_expsprint_refit_text_check ;
 		weight                      : 38 ;
 	}
-}
-
-if (vehicle_selection < 1){
-item (FEAT_TRAINS, item_expsprint, 158){
-	property{
-		climates_available             : NO_CLIMATE ;
-	}
-}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/DMU/turbostar.pnml" 1
@@ -5927,14 +5929,6 @@ item (FEAT_TRAINS, item_205, 205) {
 		default: sw_205_default_t;
 		colour_mapping:	sw_205_colour_mapping_decider;
 		cargo_subtype_text: sw_205_refit_text_decider ;
-}
-}
-
-if (vehicle_selection < 1){
-item (FEAT_TRAINS, item_205, 205){
-	property{
-		climates_available             : NO_CLIMATE ;
-	}
 }
 }
 # 1 "rukts.pnml" 2
@@ -7149,7 +7143,7 @@ spriteset(spriteset_319_f_cnx, "gfx/EMU/class_319.png") {template_8_8_networker(
 spriteset(spriteset_319_f_fcc, "gfx/EMU/class_319.png") {template_8_8_networker(537, 325)}
 spriteset(spriteset_319_f_stn, "gfx/EMU/class_319.png") {template_8_8_networker(537, 400)}
 spriteset(spriteset_319_f_lom, "gfx/EMU/class_319.png") {template_8_8_networker(179, 600)}
-spriteset(spriteset_319_f_gtr, "gfx/EMU/class_319.png") {template_8_8_networker(179, 600)}
+spriteset(spriteset_319_f_gtr, "gfx/EMU/class_319.png") {template_8_8_networker(179, 425)}
 //Rear Cars
 spriteset(spriteset_319_r_ns1, "gfx/EMU/class_319.png") {template_8_8_networker(537, 50)}
 spriteset(spriteset_319_r_ns2, "gfx/EMU/class_319.png") {template_8_8_networker(537, 125)}
