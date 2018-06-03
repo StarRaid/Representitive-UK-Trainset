@@ -43,7 +43,8 @@ grf{
 	}
 }
 
-train_width_32_px = 1 ;
+train_width_32_px  = 1 ;
+traininfo_y_offset = 1 ;
 //train_width_32_px : 1 ;
 
 // Tractive Effort Coefficient = Actual Tractive effort / Weight / 10
