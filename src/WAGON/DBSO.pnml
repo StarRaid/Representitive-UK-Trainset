@@ -187,3 +187,11 @@ item(FEAT_TRAINS, item_dbso, 9025){
 		//sound_effect                   : sw_dbso_sfx_reverse_check ;
 	}
 }
+
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_dbso, 9025){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}

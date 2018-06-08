@@ -162,6 +162,7 @@ switch(FEAT_TRAINS, SELF, sw_ee40_vfx_dbso_check, DBSO_CHECK){
 
 //EE Type 4 item
 
+
 item (FEAT_TRAINS, item_eetype4, 40){
 	property{
 		name                           : string(STR_NAME_EETYPE4) ;  
@@ -201,4 +202,12 @@ item (FEAT_TRAINS, item_eetype4, 40){
 		cargo_capacity                 : return 0 ;
 		can_attach_wagon               : sw_all_but_MU90 ;
 	}
+}
+
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_eetype4, 40){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
 }

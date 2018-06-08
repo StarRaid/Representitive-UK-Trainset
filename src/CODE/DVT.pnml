@@ -1,6 +1,7 @@
 //DVT Source
 
 #define DVT_CHECK vehicle_is_reversed && (count_veh_id(9035) > 0)
+#define DVT_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87)
 
 
 /*
@@ -45,10 +46,10 @@ spriteset(gfx_dvt_headlights    , "gfx/WAGON/dvt.png"){ template_Mk2_double_reve
 
 //Graphics switches
 
-switch(FEAT_TRAINS, PARENT, sw_dvt_generic_rev_check, vehicle_is_reversed){ 1 : gfx_dvt_generic_rev ; gfx_dvt_generic ; }
-switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check, vehicle_is_reversed){ 1 : gfx_dvt_intercity_rev ; gfx_dvt_intercity ; }
-switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check, vehicle_is_reversed){ 1 : gfx_dvt_virgin_rev ; gfx_dvt_virgin ; }
-switch(FEAT_TRAINS, PARENT, sw_dvt_atw_exec_rev_check, vehicle_is_reversed){ 1 : gfx_dvt_atw_exec_rev ; gfx_dvt_atw_exec ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_generic_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_generic_rev ; gfx_dvt_generic ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_intercity_rev ; gfx_dvt_intercity ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_virgin_rev ; gfx_dvt_virgin ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_atw_exec_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_atw_exec_rev ; gfx_dvt_atw_exec ; }
 
 
 

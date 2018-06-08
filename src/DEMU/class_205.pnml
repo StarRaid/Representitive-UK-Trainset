@@ -241,6 +241,8 @@ switch(FEAT_TRAINS, SELF, sw_205_coupling_restrictions, vehicle_type_id) {
     return string(STR_205_NO_COUPLE);
 }
 
+
+
 item (FEAT_TRAINS, item_205, 205) {
 	property {
 		name: 							string(STR_NAME_205);

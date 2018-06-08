@@ -1,6 +1,7 @@
 //DBSO Source
 
 #define DBSO_CHECK vehicle_is_reversed && (count_veh_id(9025) > 0)
+#define DBSO_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 40 | vehicle_type_id == 68 | vehicle_type_id == 87 | vehicle_type_id == 88)
 
 //Spritesets
 
@@ -22,10 +23,10 @@ spriteset(gfx_dbso_taillight         , "gfx/WAGON/mark_2_dbso.png"){ template_Mk
 
 //Graphics switches
 
-switch(FEAT_TRAINS, PARENT, sw_dbso_scotrail_rev_check, vehicle_is_reversed){ 1 : gfx_dbso_scotrail_rev ; gfx_dbso_scotrail ; }
-switch(FEAT_TRAINS, PARENT, sw_dbso_intercity_rev_check, vehicle_is_reversed){ 1 : gfx_dbso_intercity_rev ; gfx_dbso_intercity ; }
-switch(FEAT_TRAINS, PARENT, sw_dbso_directrail_rev_check, vehicle_is_reversed){ 1 : gfx_dbso_directrail_rev ; gfx_dbso_directrail ; }
-switch(FEAT_TRAINS, PARENT, sw_dbso_generic_rev_check, vehicle_is_reversed){ 1 : gfx_dbso_generic_rev ; gfx_dbso_generic ; }
+switch(FEAT_TRAINS, PARENT, sw_dbso_scotrail_rev_check, DBSO_REVERSE_CHECK){ 1 : gfx_dbso_scotrail_rev ; gfx_dbso_scotrail ; }
+switch(FEAT_TRAINS, PARENT, sw_dbso_intercity_rev_check, DBSO_REVERSE_CHECK){ 1 : gfx_dbso_intercity_rev ; gfx_dbso_intercity ; }
+switch(FEAT_TRAINS, PARENT, sw_dbso_directrail_rev_check, DBSO_REVERSE_CHECK){ 1 : gfx_dbso_directrail_rev ; gfx_dbso_directrail ; }
+switch(FEAT_TRAINS, PARENT, sw_dbso_generic_rev_check, DBSO_REVERSE_CHECK){ 1 : gfx_dbso_generic_rev ; gfx_dbso_generic ; }
 
 //Automatic gfx
 

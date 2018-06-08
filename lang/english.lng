@@ -1,16 +1,23 @@
 ##grflangid 0x01
 
-STR_GRF_NAME                 :Representative UK Train Set - RUKTS
-STR_GRF_DESC                 :{GOLD}A representative collection of various UK trains! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
+STR_GRF_NAME                      :Representative UK Train Set - RUKTS
+STR_GRF_DESC                      :{GOLD}A representative collection of various UK trains! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
 
-STR_PARAM_COLOURSCHEME_NAME  :Real liveries
-STR_PARAM_COLOURSCHEME_DESC  :Use real life colours instead of company colours
+STR_PARAM_COLOURSCHEME_NAME       :Real liveries
+STR_PARAM_COLOURSCHEME_DESC       :Use real life colours instead of company colours
 
-STR_PARAM_COACHMAIL_NAME     :Coaches can take mail
-STR_PARAM_COACHMAIL_DESC     :Coaches that have brake compartments can load mail as well as passengers (turn off if you don't want cluttered mail around your network)
+STR_PARAM_COACHMAIL_NAME          :Coaches can take mail
+STR_PARAM_COACHMAIL_DESC          :Coaches that have brake compartments can load mail as well as passengers (turn off if you don't want cluttered mail around your network)
 
-STR_PARAM_LIVERY_CHOICE_NAME :Choose liveries manually
-STR_PARAM_LIVERY_CHOICE_DESC :Liveries are chosen through the cargo refit menu instead of them changing depending on year
+STR_PARAM_LIVERY_CHOICE_NAME      :Choose liveries manually
+STR_PARAM_LIVERY_CHOICE_DESC      :Liveries are chosen through the cargo refit menu instead of them changing depending on year
+
+STR_PARAM_VEH_SELEC_NAME          :Vehicle selection
+STR_PARAM_VEH_SELEC_DESC          :Choose the selection of vehicles that will appear in game.
+STR_PARAM_VEH_SELEC_CHOICE_ONE    :Transport Tycoon Style
+STR_PARAM_VEH_SELEC_CHOICE_TWO    :Limited
+STR_PARAM_VEH_SELEC_CHOICE_THREE  :Normal
+STR_PARAM_VEH_SELEC_CHOICE_FOUR   :Extended
 
 STR_LIVERY_BRGREEN                : British Railways {GOLD}(Green)
 STR_LIVERY_BRBLUE				  : British Railways {GOLD}(Blue)
@@ -97,7 +104,7 @@ STR_NAME_FLASK      			:Nuclear Flask Wagon
 STR_NAME_87                  :BREL 87 (Electric)
 STR_NAME_EETYPE3			 :EE Type 3 (Diesel Electric)
 STR_NAME_EETYPE4			 :EE Whistler (Diesel Electric)
-STR_NAME_BRUSH_PEAK          :Brush "Peaks" (Diesel Electric)
+STR_NAME_BRUSH_PEAK          :Sulzer Type 4 (Diesel Electric)
 STR_NAME_HST                 :BREL HST (Diesel Electric)
 STR_NAME_POWERHAUL			 :GE Powerhaul (Diesel Electric)
 STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
@@ -111,7 +118,9 @@ STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_313				 :BREL Second Gereration EMU (Dual Voltage)
 STR_NAME_314				 :BREL Second Gereration EMU (Electric)
-STR_NAME_317				 :AC Express "Bed Pan"
+STR_NAME_317				 :AC Express "Bed Pan" (Electric)
+STR_NAME_319                 :BREL Thameslink (Dual Voltage)
+STR_NAME_321                 :BREL AC Express (Electric)
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
 STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
 STR_NAME_415				 :BR Compartment EMU (3rd rail)
