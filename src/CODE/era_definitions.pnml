@@ -9,3 +9,5 @@
 #define ERA_PRIVATE_ONE 1996 .. 2004
 #define ERA_PRIVATE_TWO 2005 .. 4096
 #define SPR_STACK [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]
+#define RNING_COST_A return (speed == 0 ? 
+#define RNING_COST_B  / 5 : 
