@@ -34,6 +34,8 @@ STR_LIVERY_NSW					  : Network South East (White)
 STR_LIVERY_NSG					  : Network South East (Grey)
 STR_LIVERY_BR_SCOTRAIL            : Scotrail
 STR_LIVERY_RAILFREIGHT            : Railfreight Two-Tone Grey {STRING}
+STR_LIVERY_NCB                    : National Coal Board {GOLD}(Blue)
+STR_LIVERY_BSC                    : British Steel Corporation
 STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
 STR_LIVERY_MIDLAND_MAINLINE_BLUE  : Midland Mainline {GOLD}(Blue)
 STR_LIVERY_EMT                    : East Midlands trains
@@ -105,7 +107,8 @@ STR_NAME_FLASK      			:Nuclear Flask Wagon
 
 
 STR_NAME_87                  :BREL 87 (Electric)
-STR_NAME_EETYPE3			 :EE Type 3 (Diesel Electric)
+STR_NAME_SWTYPE1             :Swindon Type 1 (Diesel)
+STR_NAME_EETYPE3			 :EE Type 3 (Diesel Electric) 
 STR_NAME_EETYPE4			 :EE Whistler (Diesel Electric)
 STR_NAME_BRUSH_PEAK          :Sulzer Type 4 (Diesel Electric)
 STR_NAME_HST                 :BREL HST (Diesel Electric)
@@ -113,9 +116,9 @@ STR_NAME_POWERHAUL			 :GE Powerhaul (Diesel Electric)
 STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
 STR_NAME_EURODUAL            :Stadler Euro Dual (Electro Diesel)
 
-STR_NAME_142				 :Leyland "Pacer"
-STR_NAME_205				 :BR Southern DEMU "Thumper"
-STR_NAME_EXPRESS_SPRINTER    :BREL Express Sprinter
+STR_NAME_142				 :Leyland "Pacer" (Diesel)
+STR_NAME_205				 :BR Southern DEMU "Thumper" (Diesel Electric)
+STR_NAME_EXPRESS_SPRINTER    :BREL Express Sprinter (Diesel)
 STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
 
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
@@ -127,9 +130,9 @@ STR_NAME_321                 :BREL AC Express (Electric)
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
 STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
 STR_NAME_415				 :BR Compartment EMU (3rd rail)
-STR_NAME_442				 :BREL "Wessex Express"
+STR_NAME_442				 :BREL "Wessex Express" (3rd rail)
 STR_NAME_455				 :BREL Suburban EMU (3rd rail)
-STR_NAME_700				 :Siemens "Desiro City"
+STR_NAME_700				 :Siemens "Desiro City" (Dual Volatge)
 
 STR_NAME_NRWGARRATT :Beyer-Garratt 2-4-2+2-4-2 (Steam)
 
