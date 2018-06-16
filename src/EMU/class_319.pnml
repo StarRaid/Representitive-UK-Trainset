@@ -194,20 +194,20 @@ random_switch(FEAT_TRAINS, SELF, sw_thameslink_classic_gtr_t, TRIGGER_VEHICLE_SE
 //Livery Switches 
  
 switch(FEAT_TRAINS, SELF, sw_319_passenger_livery_decider, current_year){
-	0 .. 1963: sw_thameslink_classic_nsg;
-	1964 .. 1982: sw_thameslink_classic_nsw;
-	ERA_SECTORISATION: sw_thameslink_classic_tlb;
-	ERA_PRIVATE_ONE: sw_thameslink_classic_cnx;
-	2005 .. 2008: sw_thameslink_classic_fcc;
+	0 .. 1993: sw_thameslink_classic_nsg;
+	1994 .. 1995: sw_thameslink_classic_nsw;
+	1996 .. 1999: sw_thameslink_classic_tlb;
+	2000..2002: sw_thameslink_classic_cnx;
+	2003 .. 2014: sw_thameslink_classic_fcc;
 	sw_thameslink_classic_gtr;
 }
 
 switch(FEAT_TRAINS, SELF, sw_319_passenger_livery_decider_t, current_year){
-	0 .. 1963: sw_thameslink_classic_nsg_t;
-	1964 .. 1982: sw_thameslink_classic_nsw_t;
-	ERA_SECTORISATION: sw_thameslink_classic_tlb_t;
-	ERA_PRIVATE_ONE: sw_thameslink_classic_cnx_t;
-	2005 .. 2008: sw_thameslink_classic_fcc_t;
+	0 .. 1993: sw_thameslink_classic_nsg_t;
+	1994 .. 1995: sw_thameslink_classic_nsw_t;
+	1996 .. 1999: sw_thameslink_classic_tlb_t;
+	2000..2002: sw_thameslink_classic_cnx_t;
+	2003 .. 2014: sw_thameslink_classic_fcc_t;
 	sw_thameslink_classic_gtr_t;
 }
 
@@ -263,11 +263,11 @@ switch(FEAT_TRAINS, SELF, sw_319_refit_text_decider, livery_choice){
 
 //Purchase sprite decider
 switch(FEAT_TRAINS, SELF, sw_319_purchase, current_year){
-	0 .. 1963: spriteset_319_purchase_ns1;
-	1964 .. 1982: spriteset_319_purchase_ns2;
-	ERA_SECTORISATION: spriteset_319_purchase_tlb;
-	ERA_PRIVATE_ONE: spriteset_319_purchase_cnx;
-	2005 .. 2008: spriteset_319_purchase_fcc;
+	0 .. 1993: spriteset_319_purchase_ns1;
+	1994 .. 1995: spriteset_319_purchase_ns2;
+	1996 .. 1999: spriteset_319_purchase_tlb;
+	2000..2002: spriteset_319_purchase_cnx;
+	2003 .. 2014: spriteset_319_purchase_fcc;
 	spriteset_319_purchase_gtr;
 }
 
@@ -312,11 +312,11 @@ random_switch(FEAT_TRAINS, SELF, sw_319_stn_colour_mapping, TRIGGER_VEHICLE_SERV
 //Recolour Switches
 
 switch(FEAT_TRAINS, SELF, sw_319_colour_mapping_auto, current_year){
-	0 .. 1963: sw_319_nsg_colour_mapping;
-	1964 .. 1982: sw_319_nsw_colour_mapping;
-	ERA_SECTORISATION: sw_319_tlb_colour_mapping;
-	ERA_PRIVATE_ONE: sw_319_cnx_colour_mapping;
-	2005 .. 2008: sw_319_fcc_colour_mapping;
+	0 .. 1993: sw_319_nsg_colour_mapping;
+	1994 .. 1995: sw_319_nsw_colour_mapping;
+	1996 .. 1999: sw_319_tlb_colour_mapping;
+	2000..2002: sw_319_cnx_colour_mapping;
+	2003 .. 2014: sw_319_fcc_colour_mapping;
 	sw_319_gtr_colour_mapping;
 }
 

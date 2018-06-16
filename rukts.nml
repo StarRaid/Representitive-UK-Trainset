@@ -8437,7 +8437,7 @@ random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_nse){26: sw_sr_epb_ns
 
 random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_brg_t){dependent: sw_southern_compartment_brg; 26: spriteset_415_1_t_brg; 7: spriteset_415_2_t_brg;}
 random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_brb_t){dependent: sw_southern_compartment_brb; 26: spriteset_415_1_t_brb; 7: spriteset_415_2_t_brb;}
-random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_bbg_t){dependent: sw_southern_compartment_bbg; 26: spriteset_415_1_t_brg; 7: spriteset_415_2_t_brg;}
+random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_bbg_t){dependent: sw_southern_compartment_bbg; 26: spriteset_415_1_t_bbg; 7: spriteset_415_2_t_bbg;}
 random_switch(FEAT_TRAINS, PARENT, sw_southern_compartment_nse_t){dependent: sw_southern_compartment_nse; 26: spriteset_415_1_t_nse; 7: spriteset_415_2_t_nse;}
 
 switch(FEAT_TRAINS, SELF, sw_415_passenger_livery_decider, current_year){
