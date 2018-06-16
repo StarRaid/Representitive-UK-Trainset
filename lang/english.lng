@@ -30,6 +30,8 @@ STR_LIVERY_INTERCITY			  : Intercity
 STR_LIVERY_INTERCITY_SWL		  : Intercity {GOLD}(Swallow)
 STR_LIVERY_REG_RAILWAYS			  : Regional Railways
 STR_LIVERY_NSE					  : Network South East
+STR_LIVERY_NSW					  : Network South East (White)
+STR_LIVERY_NSG					  : Network South East (Grey)
 STR_LIVERY_BR_SCOTRAIL            : Scotrail
 STR_LIVERY_RAILFREIGHT            : Railfreight Two-Tone Grey {STRING}
 STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
@@ -59,6 +61,7 @@ STR_LIVERY_SWT_HERITAGE			  : South West Trains {GOLD}(Heritage Blue)
 STR_LIVERY_N_SPIRIT               : Northern Spirit
 STR_LIVERY_NORTHERN               : Northern
 STR_LIVERY_THAMESLINK             : Thameslink
+STR_LIVERY_TLB		   		      : Thameslink Blue
 STR_LIVERY_ROG_EUROPHENIX         : Rail Operations Group {GOLD}(Europhenix)
 STR_LIVERY_SILVERLINK	          : Silverlink
 STR_LIVERY_WAGN		              : West Anglia Great Northern
@@ -119,7 +122,7 @@ STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_313				 :BREL Second Gereration EMU (Dual Voltage)
 STR_NAME_314				 :BREL Second Gereration EMU (Electric)
 STR_NAME_317				 :AC Express "Bed Pan" (Electric)
-STR_NAME_319                 :BREL Thameslink (Dual Voltage)
+STR_NAME_319                 :BREL Thameslink Classic (Dual Voltage)
 STR_NAME_321                 :BREL AC Express (Electric)
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
 STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
@@ -138,13 +141,13 @@ STR_COLOUR_DKBLUE   :{BLUE}Dark blue
 STR_COLOUR_RED      :{RED}Red
 STR_COLOUR_GREEN    :{GREEN}Green
 STR_COLOUR_GREY     :Grey
-
 STR_DBSO_NO_COUPLE: You may only couple a DBSO/DVT at the back of another passenger locomotive from the "RUKTS" GRF!
 STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another Leyland "Pacer"!
 STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
 STR_158_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Express Sprinter!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
+STR_319_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Thameslink Classic!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Mark 1 EMU (3rd rail)!
 STR_415_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Compartment EMU (3rd rail)!
 STR_442_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL "Wessex Express"!
