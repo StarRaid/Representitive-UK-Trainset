@@ -100,11 +100,12 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2, getbits(extra_callback_info1,
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : sound("sfx/ee_2_idle.wav",90) ;
-	SOUND_EVENT_RUNNING_16    : sound("sfx/ee_2_coast_high.wav", 90) ;
-	SOUND_EVENT_START         : sound("sfx/horn_2.wav",90) ;
+	SOUND_EVENT_STOPPED       : sound("sfx/thump_idle.wav",60) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/thump_coast.wav",60) ;
+	SOUND_EVENT_START         : sound("sfx/thump_whistle.wav",60) ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_2.wav",90) ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav",60) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage, getbits(extra_callback_info1, 0, 8)){

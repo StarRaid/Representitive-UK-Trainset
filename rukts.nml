@@ -406,11 +406,12 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2, getbits(extra_callback_info1,
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : sound("sfx/ee_2_idle.wav",90) ;
-	SOUND_EVENT_RUNNING_16    : sound("sfx/ee_2_coast_high.wav", 90) ;
-	SOUND_EVENT_START         : sound("sfx/horn_2.wav",90) ;
+	SOUND_EVENT_STOPPED       : sound("sfx/thump_idle.wav",60) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/thump_coast.wav",60) ;
+	SOUND_EVENT_START         : sound("sfx/thump_whistle.wav",60) ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_2.wav",90) ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav",60) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage, getbits(extra_callback_info1, 0, 8)){
@@ -6049,8 +6050,8 @@ switch(FEAT_TRAINS, SELF, sw_205_purchase, current_year){
 }
 
 //Visual Effects switch
-switch(FEAT_TRAINS, SELF, sw_205_visual_effect_f, vehicle_is_reversed){0: vfx_diesel_default; VISUAL_EFFECT_DISABLE;}
-switch(FEAT_TRAINS, SELF, sw_205_visual_effect_r, vehicle_is_reversed){0: VISUAL_EFFECT_DISABLE; vfx_diesel_default;}
+switch(FEAT_TRAINS, PARENT, sw_205_visual_effect_f, vehicle_is_reversed){1: vfx_diesel_default; VISUAL_EFFECT_DISABLE;}
+switch(FEAT_TRAINS, PARENT, sw_205_visual_effect_r, vehicle_is_reversed){1: VISUAL_EFFECT_DISABLE; vfx_diesel_default;}
 switch(FEAT_TRAINS, SELF, sw_205_visual_effect, (count_veh_id(205)+1)%2){1: sw_205_visual_effect_r; sw_205_visual_effect_f;}
 
 //Headcodes
@@ -6141,7 +6142,7 @@ item (FEAT_TRAINS, item_205, 205) {
 		tractive_effort_coefficient:	0.49;
 		air_drag_coefficient:			0.06;
 		length:							8;
-		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_DIESEL;
 		bitmask_vehicle_info:			0;
 		cargo_age_period:				185;
 		default_cargo_type:				PASS;
@@ -6155,7 +6156,7 @@ item (FEAT_TRAINS, item_205, 205) {
 	cargo_subtype_text:					sw_205_refit_text_decider ;
 	colour_mapping:						sw_205_colour_mapping_decider;
 	purchase_colour_mapping: 			sw_205_colour_mapping_decider;
-		sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
+	sound_effect:                       sw_sfx_diesel_loco_small;
 }
 		livery_override (9010) {
 		cargo_capacity: 95;
