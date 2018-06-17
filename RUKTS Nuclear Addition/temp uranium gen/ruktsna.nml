@@ -130,11 +130,12 @@ item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 	property {
 		substitute            : 0x01 ;
 		layouts               : [tilelayout_nucrep_site] ;
-		life_type             : IND_LIFE_TYPE_BLACK_HOLE ;
+		life_type             : IND_LIFE_TYPE_EXTRACTIVE ;
 		fund_cost_multiplier  : 37 ;
 		prod_cargo_types      : [cargotype("URAN")] ;
 		accept_cargo_types    : [] ;
 		conflicting_ind_types : [0x01] ;
+		prod_multiplier       : [2] ;
 		prob_random           : 3 ;
 		prob_in_game          : 2 ;
 		map_colour            : 255 ;
