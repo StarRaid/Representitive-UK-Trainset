@@ -1,3 +1,122 @@
+///Brush/ABB 92
+
+//Spritesets
+
+spriteset(gfx_abb92_railfreight       , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double(  0, 50) }
+spriteset(gfx_abb92_railfreight_rev   , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double_reverse(  0, 50) }
+
+spriteset(gfx_abb92_purchase_railfreight, "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase_short(178, 50) }
+
+spriteset(gfx_abb92_pantograph          , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double(235, 25) }
+spriteset(gfx_abb92_pantograph_rev      , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double_reverse(235, 25) }
+spriteset(gfx_abb92_headlight           , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double(235, 50) }
+spriteset(gfx_abb92_taillight           , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double(235, 75) }
+
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, PARENT, sw_abb92_railfreight_rev_check, vehicle_is_reversed){ 1 : gfx_abb92_railfreight_rev ; gfx_abb92_railfreight ;}
+
+
+switch(FEAT_TRAINS, SELF, sw_abb92_auto, build_year){
+	sw_abb92_railfreight_rev_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_abb92_manual, cargo_subtype){
+	sw_abb92_railfreight_rev_check ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_abb92_manual_check, livery_choice){
+	1 : sw_abb92_manual ;
+	sw_abb92_auto ;
+}
+
+//Sprite stacking
+
+switch(FEAT_TRAINS, PARENT, sw_abb92_panto_rev_check, vehicle_is_reversed){ 1 : gfx_abb92_pantograph_rev ; gfx_abb92_pantograph ; }
+switch(FEAT_TRAINS, SELF, sw_abb92_panto_check, current_railtype){ ELRL : sw_abb92_panto_rev_check ; SAAZ : sw_abb92_panto_rev_check ; }
+
+switch(FEAT_TRAINS, SELF, sw_abb92_headlight_check, position_in_consist){ 0 : gfx_abb92_headlight ; }
+switch(FEAT_TRAINS, SELF, sw_abb92_taillight_check, position_in_consist_from_end){ 0 : gfx_abb92_taillight ; }
+
+switch(FEAT_TRAINS, SELF, sw_abb92_spritestack, SPR_STACK){
+	0 : sw_abb92_manual_check ;
+	1 : sw_abb92_headlight_check ;
+	2 : sw_abb92_taillight_check ;
+	3 : sw_abb92_panto_check ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_abb92_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_RAILFREIGHT, string(STR_LIVERY_EMPTY)) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_abb92_refit_text_checker){
+	1 : sw_abb92_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+
+//Purchase
+
+switch(FEAT_TRAINS, SELF, sw_abb92_purchase, current_year){
+	gfx_abb92_purchase_railfreight ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_abb92_purchase_colours, current_year){
+	palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_abb92_purchase_2cc_check, colour_scheme_1){
+	1 : sw_abb92_purchase_colours ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+//Colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_abb92_colours_auto, build_year){
+	palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_abb92_colours_manual, cargo_subtype){
+	palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_abb92_colours_manual_check, livery_choice){
+	1 : sw_abb92_colours_manual ;
+	sw_abb92_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_abb92_colours_2cc_check, colour_scheme_1){
+	1 : sw_abb92_colours_auto_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+//Other switches
+
+switch(FEAT_TRAINS, SELF, sw_abb92_power, current_railtype){ ELRL : 5000 ; SAAZ : 5000 ; }
+
+switch(FEAT_TRAINS, SELF, sw_abb92_colours_dbso_check, DBSO_CHECK){ 1 : sw_dbso_colours_2cc_check ; sw_abb92_colours_2cc_check ;}
+switch(FEAT_TRAINS, SELF, sw_abb92_colours_dvt_check, DVT_CHECK){ 1 : sw_dvt_colours_2cc_check ; sw_abb92_colours_dbso_check ;}
+
+switch(FEAT_TRAINS, SELF, sw_abb92_gfx_dbso_check, DBSO_CHECK){ 1 : sw_dbso_sprite_stack ; sw_abb92_spritestack ;}
+switch(FEAT_TRAINS, SELF, sw_abb92_gfx_dvt_check, DVT_CHECK){ 1 : sw_dvt_sprite_stack ; sw_abb92_gfx_dbso_check ;}
+
+switch(FEAT_TRAINS, SELF, sw_abb92_vfx_dbso_dvt_check, (DBSO_CHECK) | (DVT_CHECK)){ 0 : vfx_dual_voltage ; }
+
+//Item
+
 item (FEAT_TRAINS, item_abb92, 92){
 	property{
 		name                           : string(STR_NAME_92) ;
@@ -16,13 +135,13 @@ item (FEAT_TRAINS, item_abb92, 92){
 		refittable_cargo_classes       : 0 ;
 		cargo_allow_refit              : [GOOD] ;
 		cargo_capacity                 : 1 ;
-		track_type                     : ELRL ;
+		track_type                     : SAAZ ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
 		speed                          : 85 mph ;
 		power                          : 5000 kW ;
-		weight                         : 83 ton ;
-		tractive_effort_coefficient    : 0.3108433734939759 ;
-		air_drag_coefficient           : 0.0727272727272727 ;
+		weight                         : 126 ton ;
+		tractive_effort_coefficient    : 0.2857142857142857 ;
+		air_drag_coefficient           : 0.095 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 0 ;
 	}
@@ -32,8 +151,10 @@ item (FEAT_TRAINS, item_abb92, 92){
 		sound_effect            : sw_sfx_electric_loco_modern ;
 		create_effect           : sw_abb92_vfx_dbso_dvt_check ;
 		colour_mapping          : sw_abb92_colours_dvt_check ;
-		purchase_colour_mapping : sw_abb92_colours_auto ;
+		purchase_colour_mapping : sw_abb92_purchase_2cc_check ;
 		cargo_subtype_text      : sw_abb92_refit_text_checker ;
+		purchase_power          : 5000 ;
+		power                   : sw_abb92_power ;
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;

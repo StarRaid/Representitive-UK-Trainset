@@ -24,6 +24,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DIESEL_LOCO/GE_Powerhaul.pnml"
 #include "src/DIESEL_LOCO/UKLight.pnml"
 #include "src/ELECTRIC_LOCO/BR_Class87.pnml"
+#include "src/ELECTRIC_LOCO/class_92.pnml"
 #include "src/ELECTRIC_LOCO/EuroDual.pnml"
 #include "src/WAGON/DBSO.pnml"
 #include "src/WAGON/DVT.pnml"
