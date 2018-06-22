@@ -1,0 +1,58 @@
+switch(FEAT_TRAINS, PARENT, sw_abb92_auto_dbso, build_year){
+	1995..2007 : sw_abb92_ews_rev_check ;
+	2008..2012 : sw_abb92_dbcargo_rev_check ;
+	2013..4096 : sw_abb92_private_2_decider ;
+	sw_abb92_railfreight_rev_check ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_abb92_manual_dbso, cargo_subtype){
+	1 : sw_abb92_ews_rev_check ;
+	2 : sw_abb92_dbcargo_rev_check ;
+	3 : sw_abb92_gbrf_rev_check ;
+	4 : sw_abb92_calsleeper_rev_check ;
+	sw_abb92_railfreight_rev_check ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_abb92_manual_check_dbso, livery_choice){
+	1 : sw_abb92_manual_dbso ;
+	sw_abb92_auto_dbso ;
+}
+
+//Sprite stacking
+
+switch(FEAT_TRAINS, SELF, sw_abb92_spritestack_dbso, SPR_STACK){
+	0 : sw_abb92_manual_check_dbso ;
+	1 : sw_abb92_headlight_check ;
+	//2 : sw_abb92_taillight_check ;
+	2 : sw_abb92_panto_check ;
+}
+
+
+
+switch(FEAT_TRAINS, PARENT, sw_abb92_colours_auto_dbso, build_year){
+	1995..2012 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	2013..4096 : sw_abb92_colours_private_2_decider ;
+	palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_abb92_colours_manual_dbso, cargo_subtype){
+	1..2 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	3    : palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
+	4    : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_abb92_colours_manual_check_dbso, livery_choice){
+	1 : sw_abb92_colours_manual_dbso ;
+	sw_abb92_colours_auto_dbso ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_abb92_colours_2cc_check_dbso, colour_scheme_1){
+	1 : sw_abb92_colours_manual_check_dbso ;
+	palette_2cc(company_colour1, company_colour2) ;
+}

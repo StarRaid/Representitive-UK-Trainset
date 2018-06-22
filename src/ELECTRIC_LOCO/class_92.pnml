@@ -120,7 +120,7 @@ switch(FEAT_TRAINS, SELF, sw_abb92_purchase_2cc_check, colour_scheme_1){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_abb92_colours_private_2_decider, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_abb92_colours_private_2_decider, most_common_cargo_type){
 	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }

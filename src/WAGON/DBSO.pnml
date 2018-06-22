@@ -6,6 +6,7 @@
 #include "src/WAGON/DBSO/ee_type4.pnml"
 #include "src/WAGON/DBSO/uklight.pnml"
 #include "src/WAGON/DBSO/br87.pnml"
+#include "src/WAGON/DBSO/class_92.pnml"
 
 
 
@@ -37,6 +38,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_gfx_parent_id_check, vehicle_type_id){
 	68 : sw_uklight_spritestack_dbso ;
 	87 : sw_br87_sprite_stack_dbso ;
 	88 : sw_eurodual_spritestack ;
+	92 : sw_abb92_spritestack_dbso ;
 	sw_dbso_sprite_stack ;
 }
 
@@ -56,6 +58,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_colours_parent_id_check, vehicle_type_id){
 	68 : sw_uklight_colours_2cc_check_dbso ;
 	87 : sw_br87_colours_2cc_check_dbso ;
 	88 : sw_eurodual_colours ;
+	92 : sw_abb92_colours_2cc_check_dbso ;
 	sw_dbso_colours_2cc_check ;
 }
 
@@ -96,6 +99,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_vfx_parent_id_check, vehicle_type_id){
 	68 : vfx_diesel_default ;
 	87 : vfx_ohle ;
 	88 : sw_eurodual_effect_decider ;
+	92 : sw_abb92_vfx_dbso_dvt_check ;
 }
 
 
@@ -113,6 +117,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_effect_parent_id_check, vehicle_type_id){
 	68 : EFFECT_SPAWN_MODEL_DIESEL ;
 	87 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	88 : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	92 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dbso_effect_reverse_check, vehicle_is_reversed){

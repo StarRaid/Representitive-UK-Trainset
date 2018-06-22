@@ -1,7 +1,7 @@
 //DVT Source
 
 #define DVT_CHECK vehicle_is_reversed && (count_veh_id(9035) > 0)
-#define DVT_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87)
+#define DVT_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 87 | vehicle_type_id == 88 | vehicle_type_id == 92)
 
 
 /*
@@ -79,10 +79,18 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_ee3, cargo_subtype){
 	sw_dvt_virgin_rev_check ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_dvt_manual_abb92, cargo_subtype){
+	0    : sw_dvt_intercity_rev_check ;
+	1..2 : sw_dvt_atw_exec_rev_check ;
+	3    : sw_dvt_generic_rev_check ;
+	sw_dvt_virgin_rev_check ;
+}
+
 switch(FEAT_TRAINS, PARENT, sw_dvt_manual, vehicle_type_id){
 	37 : sw_dvt_manual_ee3 ;
 	68 : sw_dvt_manual_uklight ;
 	87 : sw_dvt_manual_br87 ;
+	92 : sw_dvt_manual_abb92 ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -134,10 +142,18 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_ee3, cargo_subtype){
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_dvt_colours_abb92, cargo_subtype){
+	0    : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	1..2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	3    : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+}
+
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_manual, vehicle_type_id){
 	37 : sw_dvt_colours_ee3 ;
 	68 : sw_dvt_colours_uklight ;
 	87 : sw_dvt_colours_br87 ;
+	92 : sw_dvt_colours_abb92 ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
