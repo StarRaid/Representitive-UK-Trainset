@@ -162,12 +162,12 @@ switch(FEAT_TRAINS, SELF, sw_br87_mk3_override_gfx, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_br87_mk3_override_windows, position_in_vehid_chain){
 	2 : gfx_mk3_windows_buffet ;
-	sw_mk3_sleeper_pos_check ;
+	gfx_mk3_windows_sleeper ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_br87_mk3_override_windows_rev, position_in_vehid_chain_from_end){
 	2 : gfx_mk3_windows_buffet_rev ;
-	sw_mk3_sleeper_pos_check_rev ;
+	gfx_mk3_windows_sleeper ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_br87_mk3_override_windows_rev_check, vehicle_is_reversed){

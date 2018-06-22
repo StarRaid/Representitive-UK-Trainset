@@ -87,7 +87,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_gfx_manual_check, livery_choice){
 }
 
 
-//Windows switches
+/*Windows switches
 
 switch(FEAT_TRAINS, SELF, sw_mk3_sleeper_pos_check_rev, (position_in_consist - 1) > (num_vehs_in_consist / 2)){
 	1 : gfx_mk3_windows_sleeper_rev ;
@@ -102,13 +102,13 @@ switch(FEAT_TRAINS, SELF, sw_mk3_sleeper_pos_check, (position_in_consist - 1) <=
 switch(FEAT_TRAINS, PARENT, sw_mk3_sleeper_rev_check, vehicle_is_reversed){
 	1 : sw_mk3_sleeper_pos_check_rev ;
 	sw_mk3_sleeper_pos_check ;
-}
+}*/
 
 switch(FEAT_TRAINS, SELF, sw_mk3_sleeper_manual, cargo_subtype){
-	6      : sw_mk3_sleeper_rev_check ;
-	8      : sw_mk3_sleeper_rev_check ;
-	10     : sw_mk3_sleeper_rev_check ;
-	12..13 : sw_mk3_sleeper_rev_check ;
+	6      : gfx_mk3_windows_sleeper ;
+	8      : gfx_mk3_windows_sleeper ;
+	10     : gfx_mk3_windows_sleeper ;
+	12..13 : gfx_mk3_windows_sleeper ;
 	gfx_mk3_windows_normal ;
 }
 
