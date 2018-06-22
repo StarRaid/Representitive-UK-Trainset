@@ -1,0 +1,41 @@
+item (FEAT_TRAINS, item_abb92, 92){
+	property{
+		name                           : string(STR_NAME_92) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1993,4,1) ;
+		model_life                     : 30 ;
+		vehicle_life                   : 45 ;
+		reliability_decay              : 5 ;
+		cost_factor                    : 65 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 225 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [GOOD] ;
+		cargo_capacity                 : 1 ;
+		track_type                     : ELRL ;
+		engine_class                   : ENGINE_CLASS_ELECTRIC ;
+		speed                          : 85 mph ;
+		power                          : 5000 kW ;
+		weight                         : 83 ton ;
+		tractive_effort_coefficient    : 0.3108433734939759 ;
+		air_drag_coefficient           : 0.0727272727272727 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                 : sw_abb92_gfx_dvt_check ;
+		purchase                : sw_abb92_purchase ;
+		sound_effect            : sw_sfx_electric_loco_modern ;
+		create_effect           : sw_abb92_vfx_dbso_dvt_check ;
+		colour_mapping          : sw_abb92_colours_dvt_check ;
+		purchase_colour_mapping : sw_abb92_colours_auto ;
+		cargo_subtype_text      : sw_abb92_refit_text_checker ;
+		purchase_cargo_capacity : 0 ;
+		cargo_capacity          : return 0 ;
+		can_attach_wagon        : sw_all_but_MU90;
+	}
+}
