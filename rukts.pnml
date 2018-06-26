@@ -14,6 +14,7 @@ disable_item(FEAT_TRAINS);
 #include "src/WAGON/MU90.pnml"
 #include "src/WAGON/Wagon_a.pnml"
 #include "src/WAGON/Flask.pnml"
+#include "src/WAGON/intermodal.pnml"
 #include "src/CODE/DBSO.pnml"
 #include "src/CODE/DVT.pnml"
 #include "src/DIESEL_LOCO/Swindon_Type1.pnml"

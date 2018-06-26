@@ -1,0 +1,165 @@
+//Intermodal container transport
+
+//Spritesets
+
+spriteset(gfx_container_empty          , "gfx/WAGON/intermodal.png"){ template_Mk2_single(  0,  0) }
+spriteset(gfx_container_double         , "gfx/WAGON/intermodal.png"){ template_Mk2_double(  0, 25) }
+spriteset(gfx_container_double_rev     , "gfx/WAGON/intermodal.png"){ template_Mk2_double_reverse(  0, 25) }
+spriteset(gfx_container_double_full    , "gfx/WAGON/intermodal.png"){ template_Mk2_double(  0, 50) }
+spriteset(gfx_container_double_full_rev, "gfx/WAGON/intermodal.png"){ template_Mk2_double_reverse(  0, 50) }
+spriteset(gfx_container_single         , "gfx/WAGON/intermodal.png"){ template_Mk2_single( 0, 75) }
+
+spriteset(gfx_container_purchase   , "gfx/WAGON/intermodal.png"){ template_purchase( 89,  0) }
+
+
+//Graphics switches
+
+//Cargo count checks
+
+switch(FEAT_TRAINS, PARENT, sw_container_double_rev_check, vehicle_is_reversed){
+	1 : gfx_container_double_rev ;
+	gfx_container_double ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_container_double_full_rev_check, vehicle_is_reversed){
+	1 : gfx_container_double_full_rev ;
+	gfx_container_double_full ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_container_double_load_check, cargo_count){
+	0     : gfx_container_empty ;
+	1..15  : sw_container_double_rev_check ;
+	gfx_container_double_full ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_container_single_load_check, cargo_count){
+	0 : gfx_container_empty ;
+	gfx_container_single ;
+}
+
+
+//Livery checks
+
+random_switch(FEAT_TRAINS, SELF, sw_container_auto, TRIGGER_VEHICLE_UNLOAD_ALL){
+	2 : sw_container_double_load_check ;
+	1 : sw_container_single_load_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_container_manual, cargo_subtype){
+	1 : sw_container_single_load_check ;
+	2 : sw_container_double_load_check ;
+	sw_container_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_container_manual_check, livery_choice){
+	1 : sw_container_manual ;
+	sw_container_auto ;
+}
+
+
+//Colours
+
+random_switch(FEAT_TRAINS, PARENT, sw_container_colours_single){
+	2 : palette_1cc(COLOUR_DARK_BLUE) ;
+	1 : palette_1cc(COLOUR_RED) ;
+	1 : palette_1cc(COLOUR_DARK_GREEN) ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_container_colours_double, TRIGGER_VEHICLE_UNLOAD_ALL){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_ORANGE) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_BLUE) ;
+	1 : palette_2cc(COLOUR_WHITE, COLOUR_GREEN) ;
+	1 : palette_2cc(COLOUR_GREEN, COLOUR_RED) ;
+	1 : palette_2cc(COLOUR_ORANGE, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
+	1 : palette_2cc(COLOUR_YELLOW, COLOUR_GREY) ;
+	1 : palette_2cc(COLOUR_CREAM, COLOUR_MAUVE) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	1 : palette_2cc(COLOUR_MAUVE, COLOUR_BLUE) ;
+	1 : palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_DARK_BLUE) ;
+}
+
+/*
+COLOUR_MAUVE
+COLOUR_CREAM
+COLOUR_YELLOW
+COLOUR_BLUE
+COLOUR_GREY
+*/
+
+
+
+random_switch(FEAT_TRAINS, SELF, sw_container_colours_auto, TRIGGER_VEHICLE_UNLOAD_ALL){
+	dependent : sw_container_auto ;
+	2 : sw_container_colours_double ;
+	1 : sw_container_colours_single ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_container_colours_manual, cargo_subtype){
+	1 : sw_container_colours_single ;
+	2 : sw_container_colours_double ;
+	sw_container_colours_auto ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_container_colours_manual_check, livery_choice){
+	1 : sw_container_colours_manual ;
+	sw_container_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_container_colours_2cc_check, colour_scheme_1){
+	1 : sw_container_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_container_refit_text, cargo_subtype){
+	0 : string(STR_CONTAINER_MIXED) ;
+	1 : string(STR_CONTAINER_LARGE) ;
+	2 : string(STR_CONTAINER_SMALL) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_container_refit_text_check, livery_choice){
+	1 : sw_container_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+item (FEAT_TRAINS, item_container, 10002){
+	property{
+		name                         : string(STR_NAME_INTERMODAL) ;
+		climates_available           : ALL_CLIMATES ;
+		introduction_date            : date(1968,1,1) ;
+		model_life                   : VEHICLE_NEVER_EXPIRES ;
+		refittable_cargo_classes     : bitmask(CC_EXPRESS) ;
+		non_refittable_cargo_classes : bitmask(CC_PASSENGERS, CC_MAIL, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_BULK, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_HAZARDOUS, CC_COVERED) ;
+		cargo_allow_refit            : [GOOD, FOOD] ;
+		loading_speed                : 5 ;
+		cost_factor                  : 8 ;
+		running_cost_factor          : 15 ;
+		running_cost_base            : RUNNING_COST_NONE ;
+		sprite_id                    : SPRITE_ID_NEW_TRAIN ;
+		speed                        : 90 mph ;
+		misc_flags                   : bitmask(TRAIN_FLAG_2CC) ;
+		refit_cost                   : 0 ;
+		track_type                   : RAIL ;
+		ai_special_flag              : AI_FLAG_CARGO ;
+		power                        : 0 hp ;
+		dual_headed                  : 0 ;
+		default_cargo_type           : GOOD ;
+		cargo_capacity               : 30 ;
+		weight                       : 25 ton ;
+		length                       : 8 ;
+	}
+	graphics{
+		default                 : sw_container_manual_check ;
+		purchase                : gfx_container_purchase ;
+		colour_mapping          : sw_container_colours_2cc_check ;
+		cargo_subtype_text      : sw_container_refit_text_check ;
+	}
+}
