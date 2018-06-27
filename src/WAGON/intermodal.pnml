@@ -2,14 +2,14 @@
 
 //Spritesets
 
-spriteset(gfx_container_empty          , "gfx/WAGON/intermodal.png"){ template_Mk2_single(  0,  0) }
-spriteset(gfx_container_double         , "gfx/WAGON/intermodal.png"){ template_Mk2_double(  0, 25) }
-spriteset(gfx_container_double_rev     , "gfx/WAGON/intermodal.png"){ template_Mk2_double_reverse(  0, 25) }
-spriteset(gfx_container_double_full    , "gfx/WAGON/intermodal.png"){ template_Mk2_double(  0, 50) }
-spriteset(gfx_container_double_full_rev, "gfx/WAGON/intermodal.png"){ template_Mk2_double_reverse(  0, 50) }
-spriteset(gfx_container_single         , "gfx/WAGON/intermodal.png"){ template_Mk2_single( 0, 75) }
+spriteset(gfx_container_empty          , "gfx/WAGON/intermodal.png"){ template_Mk2_single(  0,125) }
+spriteset(gfx_container_double         , "gfx/WAGON/intermodal.png"){ template_Mk2_double(  0,150) }
+spriteset(gfx_container_double_rev     , "gfx/WAGON/intermodal.png"){ template_Mk2_double_reverse(  0,150) }
+spriteset(gfx_container_double_full    , "gfx/WAGON/intermodal.png"){ template_Mk2_double(  0,175) }
+spriteset(gfx_container_double_full_rev, "gfx/WAGON/intermodal.png"){ template_Mk2_double_reverse(  0,175) }
+spriteset(gfx_container_single         , "gfx/WAGON/intermodal.png"){ template_Mk2_single( 0,200) }
 
-spriteset(gfx_container_purchase   , "gfx/WAGON/intermodal.png"){ template_purchase( 89,  0) }
+spriteset(gfx_container_purchase   , "gfx/WAGON/intermodal.png"){ template_purchase( 89,125) }
 
 
 //Graphics switches
