@@ -1,0 +1,200 @@
+spriteset(spriteset_350_slv, "gfx/EMU/class_450.png") {
+	template_8_8_networker(359, 25)
+}
+
+spriteset(spriteset_350_slv_t, "gfx/EMU/class_450.png") {
+	template_8_4_networker(449, 50)
+}
+
+spriteset(spriteset_350_slv_t_p, "gfx/EMU/class_450.png") {
+	template_8_8_networker(539, 0)
+}
+
+spriteset(spriteset_350_lml, "gfx/EMU/class_450.png") {
+	template_8_8_networker(539, 25)
+}
+
+spriteset(spriteset_350_lml_t, "gfx/EMU/class_450.png") {
+	template_8_4_networker(539, 75)
+}
+
+spriteset(spriteset_350_lml_t_p, "gfx/EMU/class_450.png") {
+	template_8_8_networker(539, 50)
+}
+
+spriteset(spriteset_350_ftp, "gfx/EMU/class_450.png") {
+	template_8_8_networker(718, 0)
+}
+
+spriteset(spriteset_350_ftp_t, "gfx/EMU/class_450.png") {
+	template_8_4_networker(629, 75)
+}
+
+spriteset(spriteset_350_ftp_t_p, "gfx/EMU/class_450.png") {
+	template_8_8_networker(718, 25)
+}
+
+
+spriteset(spriteset_350_purchase, "gfx/EMU/class_450.png") {
+	template_dualhead_purchase(0, 25)
+}
+
+//Switches
+
+switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_svl, (vehicle_is_reversed && position_in_vehid_chain_from_end == 0) || (vehicle_is_reversed == 0 && position_in_vehid_chain == 0)){
+	1 : spriteset_350_slv_t_p ;
+	spriteset_350_slv_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_lml, (vehicle_is_reversed && position_in_vehid_chain_from_end == 0) || (vehicle_is_reversed == 0 && position_in_vehid_chain == 0)){
+	1 : spriteset_350_lml_t_p ;
+	spriteset_350_lml_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_ftp, (vehicle_is_reversed && position_in_vehid_chain_from_end == 0) || (vehicle_is_reversed == 0 && position_in_vehid_chain == 0)){
+	1 : spriteset_350_ftp_t_p ;
+	spriteset_350_ftp_t ;
+}
+
+//How the livery is selected
+
+switch(FEAT_TRAINS, SELF, sw_350_livery_selection_auto, build_year){
+	2004..2006 : spriteset_350_slv ;
+	2007..2013 : spriteset_350_lml ;
+	spriteset_350_ftp ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_livery_selection_auto_t, build_year){
+	2004..2006 : sw_350_t_panto_decider_svl ;
+	2007..2013 : sw_350_t_panto_decider_lml ;
+	sw_350_t_panto_decider_ftp ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_350_livery_selection_manual, cargo_subtype){
+	0: spriteset_350_slv ;
+	1: spriteset_350_lml ;
+	spriteset_350_ftp ;
+} 
+
+switch(FEAT_TRAINS, PARENT, sw_350_livery_selection_manual_t, cargo_subtype){
+	0: sw_350_t_panto_decider_svl;
+	1: sw_350_t_panto_decider_lml;
+	sw_350_t_panto_decider_ftp ;
+} 
+
+switch(FEAT_TRAINS, SELF, sw_350_livery_selection, livery_choice){
+	1: sw_350_livery_selection_manual;
+	sw_350_livery_selection_auto;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_livery_selection_t, livery_choice){
+	1: sw_350_livery_selection_manual_t;
+	sw_350_livery_selection_auto_t;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : return sw_350_livery_selection;
+	1 : return sw_450_swt_select;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_trailer, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : return sw_350_livery_selection_t;
+}
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_350_refit_text, cargo_subtype){
+	0: string(STR_LIVERY_SWT_STR);
+	1: string(STR_LIVERY_SWT_STR);
+	2: string(STR_LIVERY_FIRST_TPE);
+	return CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_refit_text_decider, livery_choice){
+	1 : sw_350_refit_text ;
+	return CB_RESULT_NO_TEXT ;
+}
+
+//Recolour decicsion
+
+switch(FEAT_TRAINS, PARENT, sw_350_recolour_selection_auto, build_year){
+	2004..2006 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
+	2007..2013 : palette_2cc(COLOUR_GREEN, COLOUR_DARK_GREEN) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+} 
+
+switch(FEAT_TRAINS, SELF, sw_350_recolour_selection_manual, cargo_subtype){
+	0: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
+	1: palette_2cc(COLOUR_GREEN, COLOUR_DARK_GREEN) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_recolour_livery_selection, livery_choice){
+	1: sw_350_recolour_selection_manual;
+	sw_350_recolour_selection_auto;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_350_colour_mapping, colour_scheme_1){
+	1 : sw_350_recolour_livery_selection ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_coupling_restrictions, vehicle_type_id) {
+    item_MU90: return CB_RESULT_ATTACH_ALLOW;
+	item_350: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_350_NO_COUPLE);
+}
+
+item (FEAT_TRAINS, item_350, 350) {
+	property {
+		name: 							string(STR_NAME_350);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(2004, 1, 1);
+		model_life:						15;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					35;
+		cost_factor:					75;
+		running_cost_factor:			60;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							110 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						SAAZ;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							2000 kW;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					80;
+		weight:							48 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.11;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		can_attach_wagon:					sw_350_coupling_restrictions;
+		default: 							sw_350_default;
+		purchase:							spriteset_444_purchase;
+		create_effect:						vfx_dual_voltage;
+		colour_mapping:						sw_350_colour_mapping;
+		cargo_subtype_text:					sw_350_refit_text_decider;
+		purchase_colour_mapping:			sw_350_colour_mapping;
+		sound_effect:						sw_sfx_emu_desiro;
+}
+		livery_override (item_MU90) {
+		cargo_capacity: 75;
+		default: sw_350_trailer;
+		weight:	34;
+		colour_mapping:	sw_350_colour_mapping;
+		cargo_subtype_text: sw_350_refit_text_decider;
+}
+}
