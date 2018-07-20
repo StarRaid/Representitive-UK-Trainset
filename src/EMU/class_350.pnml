@@ -41,19 +41,51 @@ spriteset(spriteset_350_purchase, "gfx/EMU/class_450.png") {
 
 //Switches
 
-switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_svl, (vehicle_is_reversed && position_in_vehid_chain_from_end == 0) || (vehicle_is_reversed == 0 && position_in_vehid_chain == 0)){
-	1 : spriteset_350_slv_t_p ;
+switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_svl_f, position_in_vehid_chain){
+	0 : spriteset_350_slv_t_p ;
 	spriteset_350_slv_t ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_lml, (vehicle_is_reversed && position_in_vehid_chain_from_end == 0) || (vehicle_is_reversed == 0 && position_in_vehid_chain == 0)){
-	1 : spriteset_350_lml_t_p ;
+switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_svl_b, position_in_vehid_chain_from_end){
+	0 : spriteset_350_slv_t_p ;
+	spriteset_350_slv_t ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_350_t_panto_decider_svl, vehicle_is_reversed){
+	1 : sw_350_t_panto_decider_svl_b ;
+	sw_350_t_panto_decider_svl_f ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_lml_f, position_in_vehid_chain){
+	0 : spriteset_350_lml_t_p ;
 	spriteset_350_lml_t ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_ftp, (vehicle_is_reversed && position_in_vehid_chain_from_end == 0) || (vehicle_is_reversed == 0 && position_in_vehid_chain == 0)){
-	1 : spriteset_350_ftp_t_p ;
+switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_lml_b, position_in_vehid_chain_from_end){
+	0 : spriteset_350_lml_t_p ;
+	spriteset_350_lml_t ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_350_t_panto_decider_lml, vehicle_is_reversed){
+	1 : sw_350_t_panto_decider_lml_b ;
+	sw_350_t_panto_decider_lml_f ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_ftp_f, position_in_vehid_chain){
+	0 : spriteset_350_ftp_t_p ;
 	spriteset_350_ftp_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_t_panto_decider_ftp_b, position_in_vehid_chain_from_end){
+	0 : spriteset_350_ftp_t_p ;
+	spriteset_350_ftp_t ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_350_t_panto_decider_ftp, vehicle_is_reversed){
+	1 : sw_350_t_panto_decider_ftp_b ;
+	sw_350_t_panto_decider_ftp_f ;
 }
 
 //How the livery is selected
@@ -106,8 +138,8 @@ switch(FEAT_TRAINS, SELF, sw_350_trailer, [STORE_TEMP((getbits(extra_callback_in
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_350_refit_text, cargo_subtype){
-	0: string(STR_LIVERY_SWT_STR);
-	1: string(STR_LIVERY_SWT_STR);
+	0: string(STR_LIVERY_SILVERLINK);
+	1: string(STR_LIVERY_LONDON_MIDLAND);
 	2: string(STR_LIVERY_FIRST_TPE);
 	return CB_RESULT_NO_TEXT;
 }
