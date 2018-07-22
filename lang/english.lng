@@ -169,9 +169,11 @@ STR_415_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or anot
 STR_442_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL "Wessex Express"!
 STR_444_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro" (3rd rail)!
 STR_455_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Suburban EMU (3rd rail)
+STR_458_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Alstom "Juniper"!
 STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
 STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro City"!
 STR_MU90_NO_COUPLE: You may only couple this train to a correct MU!
+STR_WRONG_JUNIPER_CANNOT_START: You need to refit this train to a correct version for the track type!
 
 STR_NAAN_NAME         :Narrow Gauge Rails
 STR_NAAN_BUILD_NAME   :Narrow Gauge Construction
