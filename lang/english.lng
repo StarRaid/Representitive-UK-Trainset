@@ -79,6 +79,7 @@ STR_LIVERY_FGE					  : First Great Eastern
 STR_LIVERY_FIRST_FAG              : First Great Western {GOLD}(Fag) {STRING}
 STR_LIVERY_FIRST_BARBIE           : First Great Western {GOLD}(Barbie) {STRING}
 STR_LIVERY_FIRST_FGW              : First Great Western {GOLD}(Corporate Blue) {STRING}
+STR_LIVERY_FIRST_TPE              : First TransPennine Express
 STR_LIVERY_FIRST_GWR              : Great Western Railway {STRING}
 STR_LIVERY_FIRST_SCOT_RAIL        : First Scot Rail {STRING}
 STR_LIVERY_SPT_ORANGE			  : Strathclyde Partnership for Transport (Orange) 
@@ -140,6 +141,7 @@ STR_NAME_317				 :AC Express "Bed Pan" (Electric)
 STR_NAME_319                 :BREL Thameslink Classic (Dual Voltage)
 STR_NAME_321                 :BREL AC Express (Electric)
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
+STR_NAME_350				 :Siemens "Desiro" (Dual Volatge)
 STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
 STR_NAME_415				 :BR Compartment EMU (3rd rail)
 STR_NAME_442				 :BREL "Wessex Express" (3rd rail)
@@ -168,6 +170,7 @@ STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or anot
 STR_415_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Compartment EMU (3rd rail)!
 STR_442_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL "Wessex Express"!
 STR_444_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro" (3rd rail)!
+STR_350_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro" (Dual Volatge)!
 STR_455_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Suburban EMU (3rd rail)
 STR_458_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Alstom "Juniper"!
 STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
