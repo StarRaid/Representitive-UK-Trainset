@@ -42,6 +42,7 @@ disable_item(FEAT_TRAINS);
 #include "src/EMU/class_442.pnml"
 #include "src/EMU/class_450.pnml"
 #include "src/EMU/class_350.pnml"
+#include "src/EMU/class_375.pnml"
 #include "src/EMU/class_455.pnml"
 #include "src/EMU/class_700.pnml"
 #include "src/STEAM_LOCO/narrow_garratt.pnml"
