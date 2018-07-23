@@ -284,5 +284,6 @@ item(FEAT_TRAINS, item_hst, 43){
 		purchase_colour_mapping : sw_hst_purchase_sprite_colours_2cc_check ;
 		cargo_subtype_text      : sw_hst_refit_text_check ;
 		can_attach_wagon        : sw_all_but_MU90;
+		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
 	}
 }

@@ -221,6 +221,7 @@ item (FEAT_TRAINS, item_350, 350) {
 		cargo_subtype_text:					sw_350_refit_text_decider;
 		purchase_colour_mapping:			sw_350_colour_mapping;
 		sound_effect:						sw_sfx_emu_desiro;
+		running_cost_factor:				return(current_speed == 0 ? 15 : 60) ;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 75;

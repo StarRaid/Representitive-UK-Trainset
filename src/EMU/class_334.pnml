@@ -483,14 +483,15 @@ item (FEAT_TRAINS, item_458, 458) {
 		engine_class:					ENGINE_CLASS_ELECTRIC;
 	}
 	graphics {
-	can_attach_wagon:					sw_458_coupling_restrictions;
-	default: 							sw_458_default;
-	purchase:							sw_458_purchase;
-	create_effect:						vfx_3rd;
-	cargo_subtype_text:					sw_458_refit_text_decider ;
-	colour_mapping:						sw_458_colour_mapping_decider;
-	purchase_colour_mapping: 			sw_458_colour_mapping_decider;
-	//sound_effect:						sw_sfx_electric_loco;
+		can_attach_wagon:					sw_458_coupling_restrictions;
+		default: 							sw_458_default;
+		purchase:							sw_458_purchase;
+		create_effect:						vfx_3rd;
+		cargo_subtype_text:					sw_458_refit_text_decider ;
+		colour_mapping:						sw_458_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_458_colour_mapping_decider;
+		running_cost_factor:				return(current_speed == 0 ? 7 : 31) ;
+		//sound_effect:						sw_sfx_electric_loco;
 }
 		livery_override (9030) {
 		cargo_capacity: 85;

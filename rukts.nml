@@ -2393,7 +2393,7 @@ item(FEAT_TRAINS, item_swtype1, 14){
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
 		can_attach_wagon               : sw_all_but_MU90;
-		running_cost_factor            : return(current_speed == 0 ? 14 : 80) ;
+		running_cost_factor            : return(current_speed == 0 ? 20 : 80) ;
 		purchase_running_cost_factor   : 80 ;
 	}
 }
@@ -3124,6 +3124,7 @@ item (FEAT_TRAINS, item_eetype3, 37){
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
 		can_attach_wagon               : sw_all_but_MU90;
+		running_cost_factor            : return(current_speed == 0 ? 42 : 170) ;
 	}
 }
 # 1 "rukts.pnml" 2
@@ -3331,6 +3332,7 @@ item (FEAT_TRAINS, item_eetype4, 40){
 		cargo_subtype_text             : sw_ee40_refit_text_check ;
 		cargo_capacity                 : return 0 ;
 		can_attach_wagon               : sw_all_but_MU90 ;
+		running_cost_factor            : return(current_speed == 0 ? 50 : 200) ;
 	}
 }
 
@@ -3520,6 +3522,7 @@ item(FEAT_TRAINS, item_bshpeak, 46){
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
 		can_attach_wagon               : sw_all_but_MU90;
+		running_cost_factor            : return(current_speed == 0 ? 57 : 230) ;
 	}
 }
 # 1 "rukts.pnml" 2
@@ -3810,6 +3813,7 @@ item(FEAT_TRAINS, item_hst, 43){
 		purchase_colour_mapping : sw_hst_purchase_sprite_colours_2cc_check ;
 		cargo_subtype_text      : sw_hst_refit_text_check ;
 		can_attach_wagon        : sw_all_but_MU90;
+		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
 	}
 }
 # 1 "rukts.pnml" 2
@@ -4009,6 +4013,7 @@ item(FEAT_TRAINS, item_powerhaul, 70){
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;
+		running_cost_factor     : return(current_speed == 0 ? 64 : 255) ;
 	}
 }
 
@@ -4192,6 +4197,7 @@ item (FEAT_TRAINS, item_uklight, 68){
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;
+		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
 	}
 }
 # 1 "rukts.pnml" 2
@@ -4479,6 +4485,7 @@ item (FEAT_TRAINS, item_br87, 87){
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;
+		running_cost_factor     : return(current_speed == 0 ? 65 : 250) ;
 	}
 	livery_override(9030){
 		default                 : sw_br87_mk3_override_gfx_check ;
@@ -4695,6 +4702,7 @@ item (FEAT_TRAINS, item_abb92, 92){
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;
+		running_cost_factor     : return(current_speed == 0 ? 55 : 225) ;
 	}
 }
 # 1 "rukts.pnml" 2
@@ -4817,6 +4825,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		cargo_capacity          : return 0 ;
 		power                   : sw_eurodual_power_decider;
 		can_attach_wagon        : sw_all_but_MU90;
+		running_cost_factor     : return(current_speed == 0 ? 60 : 250) ;
 	
 	}
 }
@@ -5900,13 +5909,14 @@ item (FEAT_TRAINS, item_142, 142) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					sw_142_coupling_restrictions;
-	default: 							sw_142_default;
-	purchase:							sw_142_purchase;
-	create_effect:						vfx_diesel_default;
-	cargo_subtype_text:					sw_142_refit_text_decider ;
-	colour_mapping:						sw_142_colour_mapping_decider;
-	sound_effect:						sw_sfx_dmu_one;
+		can_attach_wagon:					sw_142_coupling_restrictions;
+		default: 							sw_142_default;
+		purchase:							sw_142_purchase;
+		create_effect:						vfx_diesel_default;
+		cargo_subtype_text:					sw_142_refit_text_decider ;
+		colour_mapping:						sw_142_colour_mapping_decider;
+		sound_effect:						sw_sfx_dmu_one;
+		running_cost_factor:                return(current_speed == 0 ? 4 : 15) ;
 }
 		livery_override (9020) {
 		cargo_capacity: 60;
@@ -6120,6 +6130,7 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		purchase_colour_mapping : sw_expsprint_purchase_sprite_colours_2cc_check ;
 		cargo_subtype_text      : sw_expsprint_refit_text_check ;
 		can_attach_wagon        : sw_expsprint_attach ;
+		running_cost_factor     : return(current_speed == 0 ? 10 : 40) ;
 	}
 	livery_override (9030){
 		default                     : sw_expsprint_gfx_manual_check ;
@@ -6310,6 +6321,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		sound_effect            : sw_sfx_dmu_one ;
 		create_effect           : vfx_diesel_default ;
 		cargo_subtype_text      : sw_168_refit_text_check ;
+		running_cost_factor     : return(current_speed == 0 ? 12 : 46) ;
 	}
 	livery_override (item_MU90){
 		default                     : sw_168_gfx_trailer_manual_check ;
@@ -6611,14 +6623,15 @@ item (FEAT_TRAINS, item_205, 205) {
 		engine_class:					ENGINE_CLASS_DIESEL;
 	}
 	graphics {
-	can_attach_wagon:					sw_205_coupling_restrictions;
-	default: 							sw_205_default;
-	purchase:							sw_205_purchase;
-	create_effect:						sw_205_visual_effect;
-	cargo_subtype_text:					sw_205_refit_text_decider ;
-	colour_mapping:						sw_205_colour_mapping_decider;
-	purchase_colour_mapping: 			sw_205_colour_mapping_decider;
-	sound_effect:                       sw_sfx_diesel_loco_small;
+		can_attach_wagon:					sw_205_coupling_restrictions;
+		default: 							sw_205_default;
+		purchase:							sw_205_purchase;
+		create_effect:						sw_205_visual_effect;
+		cargo_subtype_text:					sw_205_refit_text_decider ;
+		colour_mapping:						sw_205_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_205_colour_mapping_decider;
+		sound_effect:                   	sw_sfx_diesel_loco_small;
+		running_cost_factor: 				return(current_speed == 0 ? 7 : 28) ;
 }
 		livery_override (9010) {
 		cargo_capacity: 95;
@@ -7811,14 +7824,15 @@ item (FEAT_TRAINS, item_314, 314) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					sw_313_coupling_restrictions;
-	default: 							sw_314_default;
-	purchase:							sw_314_purchase;
-	create_effect:						vfx_3rd_only;
-	cargo_subtype_text:					sw_314_refit_text_decider ;
-	colour_mapping:						sw_314_colour_mapping_decider ;
-	//sound_effect:						sw_sfx_electric_networker;
-	purchase_colour_mapping:			sw_314_colour_mapping_choice_decider;
+		can_attach_wagon:					sw_313_coupling_restrictions;
+		default: 							sw_314_default;
+		purchase:							sw_314_purchase;
+		create_effect:						vfx_3rd_only;
+		cargo_subtype_text:					sw_314_refit_text_decider ;
+		colour_mapping:						sw_314_colour_mapping_decider ;
+		//sound_effect:						sw_sfx_electric_networker;
+		purchase_colour_mapping:			sw_314_colour_mapping_choice_decider;
+		running_cost_factor:				return(current_speed == 0 ? 7 : 30) ;
 }
 		livery_override (item_Mk2) {
 		cargo_capacity: 85;
@@ -8326,13 +8340,14 @@ item (FEAT_TRAINS, item_319, 319) {
 		engine_class:					ENGINE_CLASS_ELECTRIC;
 	}
 	graphics {
-	can_attach_wagon:					sw_319_coupling_restrictions;
-	default: 							sw_319_default;
-	purchase:							sw_319_purchase;
-	create_effect:						vfx_3rd;
-	cargo_subtype_text:					sw_319_refit_text_decider ;
-	colour_mapping:						sw_319_colour_mapping_decider;
-	purchase_colour_mapping: 			sw_319_colour_mapping_decider;
+		can_attach_wagon:					sw_319_coupling_restrictions;
+		default: 							sw_319_default;
+		purchase:							sw_319_purchase;
+		create_effect:						vfx_3rd;
+		cargo_subtype_text:					sw_319_refit_text_decider ;
+		colour_mapping:						sw_319_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_319_colour_mapping_decider;
+		running_cost_factor: return(current_speed == 0 ? 8 : 31) ;
 	//sound_effect:						sw_sfx_electric_loco;
 }
 		livery_override (9030) {
@@ -8882,13 +8897,14 @@ item (FEAT_TRAINS, item_325, 325) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					sw_325_coupling_restrictions;
-	default: 							sw_325_default;
-	purchase:							sw_325_purchase;
-	create_effect:						vfx_3rd_only;
-	cargo_subtype_text:					sw_325_refit_text_decider ;
-	colour_mapping:						sw_325_colour_mapping_decider ;
-	sound_effect:						sw_sfx_electric_networker;
+		can_attach_wagon:					sw_325_coupling_restrictions;
+		default: 							sw_325_default;
+		purchase:							sw_325_purchase;
+		create_effect:						vfx_3rd_only;
+		cargo_subtype_text:					sw_325_refit_text_decider ;
+		colour_mapping:						sw_325_colour_mapping_decider ;
+		sound_effect:						sw_sfx_electric_networker;
+		running_cost_factor:				return(current_speed == 0 ? 11 : 45) ;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 110;
@@ -9267,14 +9283,15 @@ item (FEAT_TRAINS, item_411, 411) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					sw_411_coupling_restrictions;
-	default: 							sw_411_default;
-	purchase:							sw_411_purchase;
-	create_effect:						vfx_3rd;
-	cargo_subtype_text:					sw_411_refit_text_decider ;
-	colour_mapping:						sw_411_colour_mapping_decider;
-	purchase_colour_mapping: 			sw_411_colour_mapping_decider;
-	//sound_effect:						sw_sfx_electric_loco;
+		can_attach_wagon:					sw_411_coupling_restrictions;
+		default: 							sw_411_default;
+		purchase:							sw_411_purchase;
+		create_effect:						vfx_3rd;
+		cargo_subtype_text:					sw_411_refit_text_decider ;
+		colour_mapping:						sw_411_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_411_colour_mapping_decider;
+		running_cost_factor:				return(current_speed == 0 ? 5 : 25) ;
+		//sound_effect:						sw_sfx_electric_loco;
 }
 		livery_override (9010) {
 		cargo_capacity: 90;
@@ -9564,13 +9581,14 @@ item (FEAT_TRAINS, item_415, 415) {
 		engine_class:					ENGINE_CLASS_ELECTRIC;
 	}
 	graphics {
-	can_attach_wagon:					sw_415_coupling_restrictions;
-	default: 							sw_415_default;
-	purchase:							sw_415_purchase;
-	create_effect:						vfx_3rd;
-	cargo_subtype_text:					sw_415_refit_text_decider ;
-	purchase_colour_mapping:						sw_415_colour_mapping_auto;
-	colour_mapping:						sw_415_colour_mapping_decider;
+		can_attach_wagon:					sw_415_coupling_restrictions;
+		default: 							sw_415_default;
+		purchase:							sw_415_purchase;
+		create_effect:						vfx_3rd;
+		cargo_subtype_text:					sw_415_refit_text_decider ;
+		purchase_colour_mapping:			sw_415_colour_mapping_auto;
+		colour_mapping:						sw_415_colour_mapping_decider;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 25) ;
 }
 		livery_override (9010) {
 		cargo_capacity: 105;
@@ -9748,14 +9766,15 @@ item (FEAT_TRAINS, item_442, 442) {
 		engine_class:					ENGINE_CLASS_ELECTRIC;
 	}
 	graphics {
-	can_attach_wagon:					sw_442_coupling_restrictions;
-	default: 							sw_442_default;
-	purchase:							sw_442_purchase;
-	create_effect:						vfx_3rd_only;
-	cargo_subtype_text:					sw_442_refit_text_decider ;
-	colour_mapping:						sw_442_colour_mapping_decider;
-	purchase_colour_mapping: 			sw_442_colour_mapping_decider;
-	sound_effect:						sw_sfx_electric_modern_running ;
+		can_attach_wagon:					sw_442_coupling_restrictions;
+		default: 							sw_442_default;
+		purchase:							sw_442_purchase;
+		create_effect:						vfx_3rd_only;
+		cargo_subtype_text:					sw_442_refit_text_decider ;
+		colour_mapping:						sw_442_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_442_colour_mapping_decider;
+		sound_effect:						sw_sfx_electric_modern_running ;
+		running_cost_factor:				return(current_speed == 0 ? 9 : 35) ;
 }
 		livery_override (9030) {
 		cargo_capacity: 62;
@@ -9926,14 +9945,15 @@ item (FEAT_TRAINS, item_444, 444) {
 		bitmask_vehicle_info:			0;
 	}
 	graphics {
-	can_attach_wagon:					sw_444_coupling_restrictions;
-	default: 							sw_444_default;
-	purchase:							spriteset_444_purchase;
-	create_effect:						vfx_dual_voltage;
-	colour_mapping:						sw_444_colour_mapping;
-	cargo_subtype_text:					sw_444_refit_text_decider;
-	purchase_colour_mapping:			sw_444_colour_mapping;
-	sound_effect:						sw_sfx_emu_desiro;
+		can_attach_wagon:					sw_444_coupling_restrictions;
+		default: 							sw_444_default;
+		purchase:							spriteset_444_purchase;
+		create_effect:						vfx_dual_voltage;
+		colour_mapping:						sw_444_colour_mapping;
+		cargo_subtype_text:					sw_444_refit_text_decider;
+		purchase_colour_mapping:			sw_444_colour_mapping;
+		sound_effect:						sw_sfx_emu_desiro;
+		running_cost_factor:				return(current_speed == 0 ? 18 : 60) ;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 75;
@@ -10168,6 +10188,7 @@ item (FEAT_TRAINS, item_350, 350) {
 		cargo_subtype_text:					sw_350_refit_text_decider;
 		purchase_colour_mapping:			sw_350_colour_mapping;
 		sound_effect:						sw_sfx_emu_desiro;
+		running_cost_factor:				return(current_speed == 0 ? 15 : 60) ;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 75;
@@ -10775,14 +10796,15 @@ item (FEAT_TRAINS, item_455, 455) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					sw_455_coupling_restrictions;
-	default: 							sw_455_default;
-	purchase:							sw_455_purchase;
-	create_effect:						vfx_3rd_only;
-	cargo_subtype_text:					sw_455_refit_text_decider ;
-	colour_mapping:						sw_455_colour_mapping_choice_decider ;
-	//sound_effect:						sw_sfx_electric_networker;
-	purchase_colour_mapping:			sw_455_colour_mapping_choice_decider;
+		can_attach_wagon:					sw_455_coupling_restrictions;
+		default: 							sw_455_default;
+		purchase:							sw_455_purchase;
+		create_effect:						vfx_3rd_only;
+		cargo_subtype_text:					sw_455_refit_text_decider ;
+		colour_mapping:						sw_455_colour_mapping_choice_decider ;
+		//sound_effect:						sw_sfx_electric_networker;
+		purchase_colour_mapping:			sw_455_colour_mapping_choice_decider;
+		running_cost_factor:				return(current_speed == 0 ? 7 : 30) ;
 }
 		livery_override (item_Mk2) {
 		cargo_capacity: 85;
@@ -11000,14 +11022,15 @@ item (FEAT_TRAINS, item_700, 700) {
 		bitmask_vehicle_info:			0;
 	}
 	graphics {
-	can_attach_wagon:					sw_700_coupling_restrictions;
-	default: 							sw_700_default;
-	purchase:							spriteset_700_purchase;
-	create_effect:						vfx_dual_voltage;
-	colour_mapping:						sw_700_colour_mapping;
-	cargo_subtype_text:					sw_700_refit_text_decider;
-	purchase_colour_mapping:			sw_700_colour_mapping;
-	sound_effect:						sw_sfx_emu_desiro;
+		can_attach_wagon:					sw_700_coupling_restrictions;
+		default: 							sw_700_default;
+		purchase:							spriteset_700_purchase;
+		create_effect:						vfx_dual_voltage;
+		colour_mapping:						sw_700_colour_mapping;
+		cargo_subtype_text:					sw_700_refit_text_decider;
+		purchase_colour_mapping:			sw_700_colour_mapping;
+		sound_effect:						sw_sfx_emu_desiro;
+		running_cost_factor:				return(current_speed == 0 ? 19 : 60) ;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 90;
@@ -11211,6 +11234,7 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		articulated_part               : sw_nrwgarratt_articulated ;
 		length                         : sw_nrwgarratt_length ;
 		create_effect                  : sw_nrwgarratt_vfx_check ;
+		running_cost_factor            : return(current_speed == 0 ? 8 : 20) ;
 	}
 }
 # 1 "rukts.pnml" 2

@@ -196,14 +196,15 @@ item (FEAT_TRAINS, item_700, 700) {
 		bitmask_vehicle_info:			0;
 	}
 	graphics {
-	can_attach_wagon:					sw_700_coupling_restrictions;
-	default: 							sw_700_default;
-	purchase:							spriteset_700_purchase;
-	create_effect:						vfx_dual_voltage;
-	colour_mapping:						sw_700_colour_mapping;
-	cargo_subtype_text:					sw_700_refit_text_decider;
-	purchase_colour_mapping:			sw_700_colour_mapping;
-	sound_effect:						sw_sfx_emu_desiro;
+		can_attach_wagon:					sw_700_coupling_restrictions;
+		default: 							sw_700_default;
+		purchase:							spriteset_700_purchase;
+		create_effect:						vfx_dual_voltage;
+		colour_mapping:						sw_700_colour_mapping;
+		cargo_subtype_text:					sw_700_refit_text_decider;
+		purchase_colour_mapping:			sw_700_colour_mapping;
+		sound_effect:						sw_sfx_emu_desiro;
+		running_cost_factor:				return(current_speed == 0 ? 19 : 60) ;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 90;

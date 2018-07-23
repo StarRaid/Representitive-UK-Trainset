@@ -176,6 +176,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		sound_effect            : sw_sfx_dmu_one ;
 		create_effect           : vfx_diesel_default ;
 		cargo_subtype_text      : sw_168_refit_text_check ;
+		running_cost_factor     : return(current_speed == 0 ? 12 : 46) ;
 	}
 	livery_override (item_MU90){
 		default                     : sw_168_gfx_trailer_manual_check ;

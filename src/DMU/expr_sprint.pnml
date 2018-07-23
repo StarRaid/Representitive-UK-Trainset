@@ -190,6 +190,7 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		purchase_colour_mapping : sw_expsprint_purchase_sprite_colours_2cc_check ;
 		cargo_subtype_text      : sw_expsprint_refit_text_check ;
 		can_attach_wagon        : sw_expsprint_attach ;
+		running_cost_factor     : return(current_speed == 0 ? 10 : 40) ;
 	}
 	livery_override (9030){
 		default                     : sw_expsprint_gfx_manual_check ;

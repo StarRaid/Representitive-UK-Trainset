@@ -189,5 +189,6 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		articulated_part               : sw_nrwgarratt_articulated ;
 		length                         : sw_nrwgarratt_length ;
 		create_effect                  : sw_nrwgarratt_vfx_check ;
+		running_cost_factor            : return(current_speed == 0 ? 8 : 20) ;
 	}
 }

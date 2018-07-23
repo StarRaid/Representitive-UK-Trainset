@@ -268,13 +268,14 @@ item (FEAT_TRAINS, item_142, 142) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					sw_142_coupling_restrictions;
-	default: 							sw_142_default;
-	purchase:							sw_142_purchase;
-	create_effect:						vfx_diesel_default;
-	cargo_subtype_text:					sw_142_refit_text_decider ;
-	colour_mapping:						sw_142_colour_mapping_decider;
-	sound_effect:						sw_sfx_dmu_one;
+		can_attach_wagon:					sw_142_coupling_restrictions;
+		default: 							sw_142_default;
+		purchase:							sw_142_purchase;
+		create_effect:						vfx_diesel_default;
+		cargo_subtype_text:					sw_142_refit_text_decider ;
+		colour_mapping:						sw_142_colour_mapping_decider;
+		sound_effect:						sw_sfx_dmu_one;
+		running_cost_factor:                return(current_speed == 0 ? 4 : 15) ;
 }
 		livery_override (9020) {
 		cargo_capacity: 60;

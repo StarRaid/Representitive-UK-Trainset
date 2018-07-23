@@ -279,14 +279,15 @@ item (FEAT_TRAINS, item_205, 205) {
 		engine_class:					ENGINE_CLASS_DIESEL;
 	}
 	graphics {
-	can_attach_wagon:					sw_205_coupling_restrictions;
-	default: 							sw_205_default;
-	purchase:							sw_205_purchase;
-	create_effect:						sw_205_visual_effect;
-	cargo_subtype_text:					sw_205_refit_text_decider ;
-	colour_mapping:						sw_205_colour_mapping_decider;
-	purchase_colour_mapping: 			sw_205_colour_mapping_decider;
-	sound_effect:                       sw_sfx_diesel_loco_small;
+		can_attach_wagon:					sw_205_coupling_restrictions;
+		default: 							sw_205_default;
+		purchase:							sw_205_purchase;
+		create_effect:						sw_205_visual_effect;
+		cargo_subtype_text:					sw_205_refit_text_decider ;
+		colour_mapping:						sw_205_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_205_colour_mapping_decider;
+		sound_effect:                   	sw_sfx_diesel_loco_small;
+		running_cost_factor: 				return(current_speed == 0 ? 7 : 28) ;
 }
 		livery_override (9010) {
 		cargo_capacity: 95;
