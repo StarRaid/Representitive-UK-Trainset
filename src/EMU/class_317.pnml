@@ -272,7 +272,7 @@ item (FEAT_TRAINS, item_317) {
 		purchase:							sw_317_year_A;
 		create_effect:						vfx_dual_voltage;
 		running_cost_factor:				return(current_speed == 0 ? 10 : 34) ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		sound_effect:						sw_sfx_emu_gec ;
 }
 		livery_override (item_Mk3) {
 		cargo_capacity: 80;

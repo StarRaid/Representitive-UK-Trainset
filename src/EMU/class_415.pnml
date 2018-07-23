@@ -277,7 +277,7 @@ item (FEAT_TRAINS, item_415, 415) {
 		purchase_colour_mapping:			sw_415_colour_mapping_auto;
 		colour_mapping:						sw_415_colour_mapping_decider;
 		running_cost_factor:				return(current_speed == 0 ? 8 : 25) ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		sound_effect:						sw_sfx_emu_gec ;
 }
 		livery_override (9010) {
 		cargo_capacity: 105;
