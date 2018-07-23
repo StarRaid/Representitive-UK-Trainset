@@ -405,7 +405,7 @@ random_switch(FEAT_TRAINS, SELF, sw_319_stn_colour_mapping, TRIGGER_VEHICLE_SERV
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_319_lmi_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
-	1 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREY) ;
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_319_nth_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
