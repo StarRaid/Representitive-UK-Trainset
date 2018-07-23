@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 9;
+	version: 10;
 	min_compatible_version: 0 ;
 	param 0{
 		colour_scheme_1{
@@ -10264,11 +10264,23 @@ spriteset(spriteset_377_p_fcc, "gfx/EMU/leccystar3.png") {template_8_8_networker
 spriteset(spriteset_387_p_gtr_c2c, "gfx/EMU/leccystar3.png") {template_8_8_networker(0, 550)}
 spriteset(spriteset_387_p_gax_gwr, "gfx/EMU/leccystar3.png") {template_8_8_networker(0, 625)}
 spriteset(spriteset_379_p_gan, "gfx/EMU/leccystar3.png") {template_8_8_networker(0, 700)}
+spriteset(spriteset_375_pr_cnx, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 25)}
+spriteset(spriteset_377_pr_stn, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 100)}
+spriteset(spriteset_375_pr_sxs, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 175)}
+spriteset(spriteset_375_pr_sgs, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 250)}
+spriteset(spriteset_375_pr_sbs, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 325)}
+spriteset(spriteset_375_pr_ser, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 400)}
+spriteset(spriteset_377_pr_fcc, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 475)}
+spriteset(spriteset_387_pr_gtr_c2c, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 550)}
+spriteset(spriteset_387_pr_gax_gwr, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 625)}
+spriteset(spriteset_379_pr_gan, "gfx/EMU/leccystar3.png") {template_8_8_networker_reverse(0, 700)}
 //Fixtures
 spriteset(spriteset_375_f_lights, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker(0, 0)}
 spriteset(spriteset_375_r_lights, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker(0, 25)}
 spriteset(spriteset_375_pan_up, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker(0, 50)}
 spriteset(spriteset_375_pan_down, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker(0, 75)}
+spriteset(spriteset_375_pan_up_r, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker_reverse(0, 50)}
+spriteset(spriteset_375_pan_down_r, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker_reverse(0, 75)}
 //Purchase
 spriteset(spriteset_375_cnx_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 300)}
 spriteset(spriteset_375_sxs_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 325)}
@@ -10318,7 +10330,7 @@ switch(FEAT_TRAINS, SELF, sw_electrostar_trailer_man, cargo_subtype){
 11: spriteset_379_t_gan;
 }
 
-switch(FEAT_TRAINS, SELF, sw_electrostar_pan_man, cargo_subtype){
+switch(FEAT_TRAINS, SELF, sw_electrostar_pan_man_f, cargo_subtype){
 0: spriteset_375_p_cnx;
 1: spriteset_377_p_stn;
 2: spriteset_375_p_sxs;
@@ -10331,6 +10343,24 @@ switch(FEAT_TRAINS, SELF, sw_electrostar_pan_man, cargo_subtype){
 11: spriteset_379_p_gan;
 }
 
+switch(FEAT_TRAINS, SELF, sw_electrostar_pan_man_r, cargo_subtype){
+0: spriteset_375_pr_cnx;
+1: spriteset_377_pr_stn;
+2: spriteset_375_pr_sxs;
+3: spriteset_375_pr_sgs;
+4: spriteset_375_pr_sbs;
+5: spriteset_375_pr_ser;
+6: spriteset_377_pr_fcc;
+7..8: spriteset_387_pr_gtr_c2c;
+9..10: spriteset_387_pr_gax_gwr;
+11: spriteset_379_pr_gan;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_electrostar_pan_man, vehicle_is_reversed){
+0: sw_electrostar_pan_man_f;
+sw_electrostar_pan_man_r;
+}
+
 switch(FEAT_TRAINS, SELF, sw_electrostar_t_auto, current_year){
 0 .. 2000: spriteset_375_t_cnx;
 2001 .. 2003: spriteset_375_t_sxs;
@@ -10339,12 +10369,25 @@ switch(FEAT_TRAINS, SELF, sw_electrostar_t_auto, current_year){
 spriteset_387_t_gtr_c2c;
 }
 
-switch(FEAT_TRAINS, SELF, sw_electrostar_p_auto, current_year){
+switch(FEAT_TRAINS, SELF, sw_electrostar_p_auto_f, current_year){
 0 .. 2000: spriteset_375_p_cnx;
 2001 .. 2003: spriteset_375_p_sxs;
 2004 .. 2009: spriteset_375_p_sgs;
 2010 .. 2016: spriteset_375_p_ser;
 spriteset_387_p_gtr_c2c;
+}
+
+switch(FEAT_TRAINS, SELF, sw_electrostar_p_auto_r, current_year){
+0 .. 2000: spriteset_375_pr_cnx;
+2001 .. 2003: spriteset_375_pr_sxs;
+2004 .. 2009: spriteset_375_pr_sgs;
+2010 .. 2016: spriteset_375_pr_ser;
+spriteset_387_pr_gtr_c2c;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_electrostar_p_auto, vehicle_is_reversed){
+0: sw_electrostar_p_auto_f;
+sw_electrostar_p_auto_r;
 }
 
 switch(FEAT_TRAINS, SELF, sw_375_livery_param, livery_choice){1 : sw_electrostar_front_man ; sw_electrostar_front_auto ;}
@@ -10361,9 +10404,19 @@ switch(FEAT_TRAINS, SELF, sw_electrostar_headlights, position_in_consist_from_en
 sw_electrostar_headlights_1;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_electrostar_pan, current_railtype){
+switch(FEAT_TRAINS, PARENT, sw_electrostar_pan_f, current_railtype){
 ELRL: spriteset_375_pan_up;
 spriteset_375_pan_down;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_electrostar_pan_r, current_railtype){
+ELRL: spriteset_375_pan_up_r;
+spriteset_375_pan_down_r;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_electrostar_pan, vehicle_is_reversed){
+0: sw_electrostar_pan_f;
+sw_electrostar_pan_r;
 }
 
 switch(FEAT_TRAINS, SELF, sw_375_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
@@ -10386,9 +10439,19 @@ switch(FEAT_TRAINS, PARENT, sw_375_nd_livery_param, vehicle_is_reversed){
 sw_375_nd_livery_param_2;
 }
 
-switch(FEAT_TRAINS, SELF, sw_375_nd_pan_switch, position_in_vehid_chain){
+switch(FEAT_TRAINS, SELF, sw_375_ndf_pan_switch, position_in_vehid_chain){
 0: sw_electrostar_pan;
 gfx_blank;
+}
+
+switch(FEAT_TRAINS, SELF, sw_375_ndr_pan_switch, position_in_vehid_chain_from_end){
+0: sw_electrostar_pan;
+gfx_blank;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_375_nd_pan_switch, vehicle_is_reversed){
+0: sw_375_ndf_pan_switch;
+sw_375_ndr_pan_switch;
 }
 
 switch(FEAT_TRAINS, SELF, sw_375_t_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
