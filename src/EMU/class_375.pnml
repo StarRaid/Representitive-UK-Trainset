@@ -138,9 +138,19 @@ switch(FEAT_TRAINS, SELF, sw_375_default, [STORE_TEMP((getbits(extra_callback_in
 	1: return sw_electrostar_headlights;
 }
 
-switch(FEAT_TRAINS, SELF, sw_375_nd_livery_param, position_in_vehid_chain){
+switch(FEAT_TRAINS, SELF, sw_375_nd_livery_param_1, position_in_vehid_chain){
 0: sw_375_p_livery_param;
 sw_375_t_livery_param;
+}
+
+switch(FEAT_TRAINS, SELF, sw_375_nd_livery_param_2, position_in_vehid_chain_from_end){
+0: sw_375_p_livery_param;
+sw_375_t_livery_param;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_375_nd_livery_param, vehicle_is_reversed){
+0: sw_375_nd_livery_param_1;
+sw_375_nd_livery_param_2;
 }
 
 switch(FEAT_TRAINS, SELF, sw_375_nd_pan_switch, position_in_vehid_chain){
@@ -227,8 +237,8 @@ switch(FEAT_TRAINS, SELF, sw_375_coupling_restrictions, vehicle_type_id) {
 }
 
 switch(FEAT_TRAINS, SELF, sw_375_speed, build_year) {
-    0 .. 2015: 45;
-	49;
+    0 .. 2015: 160;
+	176;
 }
 
 item (FEAT_TRAINS, item_375, 375) {
