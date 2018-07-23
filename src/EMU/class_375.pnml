@@ -254,7 +254,7 @@ item (FEAT_TRAINS, item_375, 375) {
 		cargo_allow_refit:				[PASS, TOUR];
 		loading_speed:					35;
 		cost_factor:					35;
-		running_cost_factor:			20;
+		running_cost_factor:			30;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -277,14 +277,16 @@ item (FEAT_TRAINS, item_375, 375) {
 		engine_class:					ENGINE_CLASS_ELECTRIC;
 	}
 	graphics {
-	can_attach_wagon:					sw_375_coupling_restrictions;
-	default: 							sw_375_default;
-	purchase:							sw_electrostar_purchase;
-	create_effect:						vfx_3rd_only;
-	cargo_subtype_text:					sw_375_livery_decider ;
-	colour_mapping:						sw_375_recolour;
-	purchase_colour_mapping: 			sw_375_recolour;
-	speed:								sw_375_speed;
+		can_attach_wagon:					sw_375_coupling_restrictions;
+		default: 							sw_375_default;
+		purchase:							sw_electrostar_purchase;
+		create_effect:						vfx_3rd_only;
+		cargo_subtype_text:					sw_375_livery_decider ;
+		colour_mapping:						sw_375_recolour;
+		purchase_colour_mapping: 			sw_375_recolour;
+		speed:								sw_375_speed;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
+		sound_effect:						sw_sfx_electric_loco_modern ;
 }
 		livery_override (9090) {
 		cargo_capacity: 85;

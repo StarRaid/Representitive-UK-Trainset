@@ -321,8 +321,8 @@ switch(FEAT_TRAINS, PARENT, sw_sfx_electric_old_running, current_speed){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_modern_running, current_speed){
-	0..27 : sound("sfx/800_run.wav") ;
-	sound("sfx/800_coast.wav") ;
+	0..27 : sound("sfx/modern_electric_slow.wav") ;
+	sound("sfx/modern_electric_fast.wav") ;
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_sfx_random_flange){
@@ -351,11 +351,12 @@ switch(FEAT_TRAINS, PARENT, sw_sfx_modern_diesel_running, current_speed){
 	sound("sfx/modern_diesel_coast_high.wav") ;
 }
 
+/*
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_networker_running, current_speed){
 	0..13 : sound("sfx/465_coast_1.wav") ;
 	14..23 : sound("sfx/465_coast_2.wav") ;
 	sound("sfx/465_coast_3.wav") ;
-}
+}*/
 
 
 //Sound effect switches
@@ -370,12 +371,12 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_old, getbits(extra_callback_info1
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_modern, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : sound("sfx/800_idle.wav") ;
+	SOUND_EVENT_STOPPED       : sound("sfx/modern_electric_idle.wav") ;
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_electric_modern_running ;
-	SOUND_EVENT_START         : sound("sfx/horn_2.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_4.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_2.wav") ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_4.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_modern, getbits(extra_callback_info1, 0, 8)){
@@ -436,20 +437,21 @@ switch(FEAT_TRAINS, SELF, sw_sfx_emu_desiro, getbits(extra_callback_info1, 0, 8)
 	//SOUND_EVENT_STOPPED       : sound("sfx/.wav") ;
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_desiro_running ;
-	SOUND_EVENT_START         : sound("sfx/horn_1.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_4.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_4.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : sound("sfx/dmu_idle.wav",80) ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/dmu_run.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/dmu_coast.wav") ;
-	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
 }
 
+/*
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info1, 0, 8)){
  //SOUND_EVENT_STOPPED       : sound("sfx/465_idle.wav") ;
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/465_shoe_clatter.wav") ;
@@ -457,7 +459,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info
  SOUND_EVENT_START : sound("sfx/465_depart.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/horn_1.wav") ;
-}
+}*/
 
 switch(FEAT_TRAINS, SELF, sw_sfx_steam, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_START : sound("sfx/steam_whistle.wav", 70) ;
@@ -7830,7 +7832,7 @@ item (FEAT_TRAINS, item_314, 314) {
 		create_effect:						vfx_3rd_only;
 		cargo_subtype_text:					sw_314_refit_text_decider ;
 		colour_mapping:						sw_314_colour_mapping_decider ;
-		//sound_effect:						sw_sfx_electric_networker;
+		sound_effect:						sw_sfx_electric_loco_modern ;
 		purchase_colour_mapping:			sw_314_colour_mapping_choice_decider;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 30) ;
 }
@@ -8348,7 +8350,7 @@ item (FEAT_TRAINS, item_319, 319) {
 		colour_mapping:						sw_319_colour_mapping_decider;
 		purchase_colour_mapping: 			sw_319_colour_mapping_decider;
 		running_cost_factor: return(current_speed == 0 ? 8 : 31) ;
-	//sound_effect:						sw_sfx_electric_loco;
+		sound_effect:						sw_sfx_electric_loco_modern ;
 }
 		livery_override (9030) {
 		cargo_capacity: 85;
@@ -8903,7 +8905,7 @@ item (FEAT_TRAINS, item_325, 325) {
 		create_effect:						vfx_3rd_only;
 		cargo_subtype_text:					sw_325_refit_text_decider ;
 		colour_mapping:						sw_325_colour_mapping_decider ;
-		sound_effect:						sw_sfx_electric_networker;
+		sound_effect:						sw_sfx_electric_loco_modern ;
 		running_cost_factor:				return(current_speed == 0 ? 11 : 45) ;
 }
 		livery_override (item_MU90) {
@@ -9291,7 +9293,7 @@ item (FEAT_TRAINS, item_411, 411) {
 		colour_mapping:						sw_411_colour_mapping_decider;
 		purchase_colour_mapping: 			sw_411_colour_mapping_decider;
 		running_cost_factor:				return(current_speed == 0 ? 5 : 25) ;
-		//sound_effect:						sw_sfx_electric_loco;
+		sound_effect:						sw_sfx_electric_loco_modern ;
 }
 		livery_override (9010) {
 		cargo_capacity: 90;
@@ -9589,6 +9591,7 @@ item (FEAT_TRAINS, item_415, 415) {
 		purchase_colour_mapping:			sw_415_colour_mapping_auto;
 		colour_mapping:						sw_415_colour_mapping_decider;
 		running_cost_factor:				return(current_speed == 0 ? 8 : 25) ;
+		sound_effect:						sw_sfx_electric_loco_modern ;
 }
 		livery_override (9010) {
 		cargo_capacity: 105;
@@ -10456,7 +10459,7 @@ item (FEAT_TRAINS, item_375, 375) {
 		cargo_allow_refit:				[PASS, TOUR];
 		loading_speed:					35;
 		cost_factor:					35;
-		running_cost_factor:			20;
+		running_cost_factor:			30;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -10479,14 +10482,16 @@ item (FEAT_TRAINS, item_375, 375) {
 		engine_class:					ENGINE_CLASS_ELECTRIC;
 	}
 	graphics {
-	can_attach_wagon:					sw_375_coupling_restrictions;
-	default: 							sw_375_default;
-	purchase:							sw_electrostar_purchase;
-	create_effect:						vfx_3rd_only;
-	cargo_subtype_text:					sw_375_livery_decider ;
-	colour_mapping:						sw_375_recolour;
-	purchase_colour_mapping: 			sw_375_recolour;
-	speed:								sw_375_speed;
+		can_attach_wagon:					sw_375_coupling_restrictions;
+		default: 							sw_375_default;
+		purchase:							sw_electrostar_purchase;
+		create_effect:						vfx_3rd_only;
+		cargo_subtype_text:					sw_375_livery_decider ;
+		colour_mapping:						sw_375_recolour;
+		purchase_colour_mapping: 			sw_375_recolour;
+		speed:								sw_375_speed;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
+		sound_effect:						sw_sfx_electric_loco_modern ;
 }
 		livery_override (9090) {
 		cargo_capacity: 85;
@@ -10802,7 +10807,7 @@ item (FEAT_TRAINS, item_455, 455) {
 		create_effect:						vfx_3rd_only;
 		cargo_subtype_text:					sw_455_refit_text_decider ;
 		colour_mapping:						sw_455_colour_mapping_choice_decider ;
-		//sound_effect:						sw_sfx_electric_networker;
+		sound_effect:						sw_sfx_electric_loco_modern ;
 		purchase_colour_mapping:			sw_455_colour_mapping_choice_decider;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 30) ;
 }

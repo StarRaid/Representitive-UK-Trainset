@@ -15,8 +15,8 @@ switch(FEAT_TRAINS, PARENT, sw_sfx_electric_old_running, current_speed){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_modern_running, current_speed){
-	0..27 : sound("sfx/800_run.wav") ;
-	sound("sfx/800_coast.wav") ;
+	0..27 : sound("sfx/modern_electric_slow.wav") ;
+	sound("sfx/modern_electric_fast.wav") ;
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_sfx_random_flange){
@@ -45,11 +45,12 @@ switch(FEAT_TRAINS, PARENT, sw_sfx_modern_diesel_running, current_speed){
 	sound("sfx/modern_diesel_coast_high.wav") ;
 }
 
+/*
 switch(FEAT_TRAINS, PARENT, sw_sfx_electric_networker_running, current_speed){
 	0..13 : sound("sfx/465_coast_1.wav") ;
 	14..23 : sound("sfx/465_coast_2.wav") ;
 	sound("sfx/465_coast_3.wav") ;
-}
+}*/
 
 
 //Sound effect switches
@@ -64,12 +65,12 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_old, getbits(extra_callback_info1
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_modern, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : sound("sfx/800_idle.wav") ;
+	SOUND_EVENT_STOPPED       : sound("sfx/modern_electric_idle.wav") ;
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_electric_modern_running ;
-	SOUND_EVENT_START         : sound("sfx/horn_2.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_4.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_2.wav") ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_4.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_modern, getbits(extra_callback_info1, 0, 8)){
@@ -130,20 +131,21 @@ switch(FEAT_TRAINS, SELF, sw_sfx_emu_desiro, getbits(extra_callback_info1, 0, 8)
 	//SOUND_EVENT_STOPPED       : sound("sfx/.wav") ;
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_desiro_running ;
-	SOUND_EVENT_START         : sound("sfx/horn_1.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_4.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_4.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : sound("sfx/dmu_idle.wav",80) ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/dmu_run.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/dmu_coast.wav") ;
-	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
 }
 
+/*
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info1, 0, 8)){
  //SOUND_EVENT_STOPPED       : sound("sfx/465_idle.wav") ;
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/465_shoe_clatter.wav") ;
@@ -151,7 +153,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info
  SOUND_EVENT_START : sound("sfx/465_depart.wav") ;
  SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
  SOUND_EVENT_TUNNEL : sound("sfx/horn_1.wav") ;
-}
+}*/
 
 switch(FEAT_TRAINS, SELF, sw_sfx_steam, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_START : sound("sfx/steam_whistle.wav", 70) ;

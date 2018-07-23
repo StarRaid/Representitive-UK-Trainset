@@ -301,7 +301,7 @@ item (FEAT_TRAINS, item_455, 455) {
 		create_effect:						vfx_3rd_only;
 		cargo_subtype_text:					sw_455_refit_text_decider ;
 		colour_mapping:						sw_455_colour_mapping_choice_decider ;
-		//sound_effect:						sw_sfx_electric_networker;
+		sound_effect:						sw_sfx_electric_loco_modern ;
 		purchase_colour_mapping:			sw_455_colour_mapping_choice_decider;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 30) ;
 }
