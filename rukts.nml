@@ -76,7 +76,7 @@ cargotable {
    
 //Nuclear stuff
 	URAN, NWST
-   }
+}
 # 1 "rukts.pnml" 2
 # 1 "src/CODE/railtype_table.pnml" 1
 railtypetable {
@@ -7791,14 +7791,14 @@ item (FEAT_TRAINS, item_313, 313) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-	can_attach_wagon:					sw_313_coupling_restrictions;
-	default: 							sw_313_default;
-	purchase:							sw_313_purchase;
-	create_effect:						vfx_3rd_only;
-	cargo_subtype_text:					sw_313_refit_text_decider ;
-	colour_mapping:						sw_313_colour_mapping_decider ;
-	//sound_effect:						sw_sfx_electric_networker;
-	purchase_colour_mapping:			sw_313_colour_mapping_choice_decider;
+		can_attach_wagon:					sw_313_coupling_restrictions;
+		default: 							sw_313_default;
+		purchase:							sw_313_purchase;
+		create_effect:						vfx_3rd_only;
+		cargo_subtype_text:					sw_313_refit_text_decider ;
+		colour_mapping:						sw_313_colour_mapping_decider ;
+		sound_effect:						sw_sfx_emu_gec ;
+		purchase_colour_mapping:			sw_313_colour_mapping_choice_decider;
 }
 		livery_override (item_Mk2) {
 		cargo_capacity: 85;
@@ -8282,7 +8282,7 @@ random_switch(FEAT_TRAINS, SELF, sw_319_stn_colour_mapping, TRIGGER_VEHICLE_SERV
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_319_lmi_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
-	1 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREY) ;
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_319_nth_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
@@ -11429,6 +11429,87 @@ item(FEAT_TRAINS, item_nrwcoachone, 9060){
 		purchase_colour_mapping : palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
 		cargo_subtype_text      : sw_nrwcoachone_refit_text_check ;
 		colour_mapping          : sw_nrwcoachone_colour_2cc_check ;
+	}
+}
+# 1 "rukts.pnml" 2
+# 1 "src/WAGON/narrow_slate_wagon.pnml" 1
+//Slate wagon
+
+//Spritesets
+
+spriteset(gfx_slatewgn_base      , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(0, 50)   }
+spriteset(gfx_slatewgn_coal_h    , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(0, 75)   }
+spriteset(gfx_slatewgn_coal_f    , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(57, 75)   }
+spriteset(gfx_slatewgn_generic_h , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(114, 75) }
+spriteset(gfx_slatewgn_generic_f , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(114, 75) }
+spriteset(gfx_slatewgn_iron_h    , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(0, 91)   }
+spriteset(gfx_slatewgn_iron_f    , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_4_4(57, 91)   }
+
+
+spriteset(gfx_slatewgn_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_purchase_short(63, 50) }
+
+//Switches
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_coal_load_check, cargo_count){
+	1..7  : gfx_slatewgn_coal_h ;
+	8..15 : gfx_slatewgn_coal_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iron_load_check, cargo_count){
+	1..7  : gfx_slatewgn_iron_h ;
+	8..15 : gfx_slatewgn_iron_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_generic_load_check, cargo_count){
+	1..7  : gfx_slatewgn_generic_h ;
+	8..15 : gfx_slatewgn_generic_f ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_gfx_slatewgn_cargo_decider, most_common_cargo_type){
+	COAL : sw_coal_load_check ;
+	IORE : sw_iron_load_check ;
+	sw_generic_load_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_slatewgn_spr_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	1 : gfx_slatewgn_base ;
+	2 : sw_gfx_slatewgn_cargo_decider ;
+}
+
+
+//Item
+
+item(FEAT_TRAINS, item_slatewgn, 10003){
+	property{
+		name						   : string(STR_NAME_NRWCOACHONE) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 4 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1870, 1, 1) ;
+		model_life                     : 50 ;
+		vehicle_life                   : 60 ;
+		cost_factor                    : 12 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 32 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_BULK ;
+		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
+		cargo_allow_refit              : [COAL, GOLD, IORE, CORE, DIAM, AORE, PORE, COPR] ;
+		cargo_capacity                 : 15 ;
+		loading_speed                  : 7 ;
+		track_type                     : NAAN ;
+		power                          : 0 hp ;
+		weight                         : 8 ton ;
+	}
+	graphics{
+		default                 : sw_slatewgn_spr_stack ;
+		purchase                : gfx_slatewgn_purchase ;
 	}
 }
 # 1 "rukts.pnml" 2
