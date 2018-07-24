@@ -1,0 +1,106 @@
+//Narrow bulk wagon
+
+//Sprite sets
+
+spriteset(gfx_nrwplank_base    , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4(   0, 107) }
+spriteset(gfx_nrwplank_coal_h  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 114, 107) }
+spriteset(gfx_nrwplank_coal_f  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 187, 107) }
+spriteset(gfx_nrwplank_iron_h  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 114, 127) }
+spriteset(gfx_nrwplank_iron_f  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 187, 127) }
+spriteset(gfx_nrwplank_gnrc_h  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 114, 147) }
+spriteset(gfx_nrwplank_gnrc_f  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 187, 147) }
+spriteset(gfx_nrwplank_sand_h  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 114, 167) }
+spriteset(gfx_nrwplank_sand_f  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 187, 167) }
+
+spriteset(gfx_nrwplank_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_purchase_short(0,127) }
+
+
+//Switches
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_coal_load_check, cargo_count){
+	1..6   : gfx_nrwplank_coal_h ;
+	7..15  : gfx_nrwplank_coal_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_iron_load_check, cargo_count){
+	1..6   : gfx_nrwplank_iron_h ;
+	7..15  : gfx_nrwplank_iron_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_gnrc_load_check, cargo_count){
+	1..6   : gfx_nrwplank_gnrc_h ;
+	7..15  : gfx_nrwplank_gnrc_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_sand_load_check, cargo_count){
+	1..6   : gfx_nrwplank_sand_h ;
+	7..15  : gfx_nrwplank_sand_f ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_gfx_nrwplank_cargo_decider, most_common_cargo_type){
+	COAL : sw_nrwplank_coal_load_check ;
+	IORE : sw_nrwplank_iron_load_check ;
+	CORE : sw_nrwplank_iron_load_check ;
+	COPR : sw_nrwplank_iron_load_check ;
+	PORE : sw_nrwplank_iron_load_check ;
+	AORE : sw_nrwplank_iron_load_check ;
+	SAND : sw_nrwplank_sand_load_check ;
+	WHEA : sw_nrwplank_sand_load_check ;
+	GOLD : sw_nrwplank_sand_load_check ;
+	sw_nrwplank_gnrc_load_check ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_spr_stack, SPR_STACK){
+	1 : gfx_nrwplank_base ;
+	2 : sw_gfx_nrwplank_cargo_decider ;
+}
+
+//Colour mapping
+
+random_switch(FEAT_TRAINS, SELF, sw_nrwplank_random_colours, TRIGGER_VEHICLE_SERVICE){
+	1 : palette_1cc(COLOUR_GREY) ;
+	1 : palette_1cc(COLOUR_WHITE) ;
+	1 : palette_1cc(COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_colours_2cc_check, colour_scheme_1){
+	1 : sw_nrwplank_random_colours ;
+	palette_1cc(company_colour2) ;
+}
+
+//Item
+
+item(FEAT_TRAINS, item_nrwplank, 10004){
+	property{
+		name						   : string(STR_NAME_NRWPLANK) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 6 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1920, 1, 1) ;
+		model_life                     : 60 ;
+		vehicle_life                   : 40 ;
+		cost_factor                    : 20 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 50 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_BULK ;
+		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
+		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR] ;
+		cargo_capacity                 : 15 ;
+		loading_speed                  : 10 ;
+		track_type                     : NAAN ;
+		power                          : 0 hp ;
+		weight                         : 10 ton ;
+	}
+	graphics{
+		default                 : sw_nrwplank_spr_stack ;
+		purchase                : gfx_nrwplank_purchase ;
+		colour_mapping          : sw_nrwplank_colours_2cc_check ;
+	}
+}

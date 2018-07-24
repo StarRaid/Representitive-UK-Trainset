@@ -134,6 +134,28 @@ template template_narrow_4_8(x, y){
 	[x+100, y  , 12 , 13 , -5 , -9 ] //North West
 }
 
+template template_narrow_6_4(x, y){
+	[x+000, y  ,  8 , 18 , -3 , -15] //North
+	[x+010, y  , 16 , 15 , -7 , -11] //North East
+	[x+028, y  , 25 , 13 , -8 , -9 ] //East
+	[x+055, y  , 16 , 15 ,  2 , -4 ] //South East
+	[x+000, y  ,  8 , 18 , -3 , -8 ] //South
+	[x+010, y  , 16 , 15 , -15, -6 ] //South West
+	[x+028, y  , 25 , 13 , -25, -9 ] //West
+	[x+055, y  , 16 , 15 , -7 , -10] //North West
+}
+
+template template_narrow_6_8(x, y){
+	[x+000, y  ,  8 , 18 , -3 , -15] //North
+	[x+010, y  , 16 , 15 , -7 , -11] //North East
+	[x+028, y  , 25 , 13 , -8 , -9 ] //East
+	[x+055, y  , 16 , 15 ,  2 , -4 ] //South East
+	[x+073, y  ,  8 , 18 , -3 , -8 ] //South
+	[x+083, y  , 16 , 15 , -15, -6 ] //South West
+	[x+101, y  , 25 , 13 , -25, -9 ] //West
+	[x+128, y  , 16 , 15 , -7 , -10] //North West
+}
+
 
 
 
@@ -11453,26 +11475,29 @@ spriteset(gfx_slatewgn_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_pur
 
 //Graphics switches
 
-switch(FEAT_TRAINS, SELF, sw_coal_load_check, cargo_count){
-	1..7  : gfx_slatewgn_coal_h ;
-	8..15 : gfx_slatewgn_coal_f ;
+switch(FEAT_TRAINS, SELF, sw_slatewgn_coal_load_check, cargo_count){
+	1..4  : gfx_slatewgn_coal_h ;
+	5..8  : gfx_slatewgn_coal_f ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_iron_load_check, cargo_count){
-	1..7  : gfx_slatewgn_iron_h ;
-	8..15 : gfx_slatewgn_iron_f ;
+switch(FEAT_TRAINS, SELF, sw_slatewgn_iron_load_check, cargo_count){
+	1..4  : gfx_slatewgn_iron_h ;
+	5..8  : gfx_slatewgn_iron_f ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_generic_load_check, cargo_count){
-	1..7  : gfx_slatewgn_generic_h ;
-	8..15 : gfx_slatewgn_generic_f ;
+switch(FEAT_TRAINS, SELF, sw_slatewgn_generic_load_check, cargo_count){
+	1..4  : gfx_slatewgn_generic_h ;
+	5..8  : gfx_slatewgn_generic_f ;
 }
 
 
 switch(FEAT_TRAINS, PARENT, sw_gfx_slatewgn_cargo_decider, most_common_cargo_type){
-	COAL : sw_coal_load_check ;
-	IORE : sw_iron_load_check ;
-	sw_generic_load_check ;
+	COAL : sw_slatewgn_coal_load_check ;
+	IORE : sw_slatewgn_iron_load_check ;
+	CORE : sw_slatewgn_iron_load_check ;
+	COPR : sw_slatewgn_iron_load_check ;
+	AORE : sw_slatewgn_iron_load_check ;
+	sw_slatewgn_generic_load_check ;
 }
 
 
@@ -11486,7 +11511,7 @@ switch(FEAT_TRAINS, SELF, sw_slatewgn_spr_stack, [STORE_TEMP((getbits(extra_call
 
 item(FEAT_TRAINS, item_slatewgn, 10003){
 	property{
-		name						   : string(STR_NAME_NRWCOACHONE) ;
+		name						   : string(STR_NAME_NRWSLATE) ;
 		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 4 ;
@@ -11501,7 +11526,7 @@ item(FEAT_TRAINS, item_slatewgn, 10003){
 		refittable_cargo_classes       : CC_BULK ;
 		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
 		cargo_allow_refit              : [COAL, GOLD, IORE, CORE, DIAM, AORE, PORE, COPR] ;
-		cargo_capacity                 : 15 ;
+		cargo_capacity                 : 8 ;
 		loading_speed                  : 7 ;
 		track_type                     : NAAN ;
 		power                          : 0 hp ;
@@ -11510,6 +11535,114 @@ item(FEAT_TRAINS, item_slatewgn, 10003){
 	graphics{
 		default                 : sw_slatewgn_spr_stack ;
 		purchase                : gfx_slatewgn_purchase ;
+	}
+}
+# 1 "rukts.pnml" 2
+# 1 "src/WAGON/narrow_plank_wagon.pnml" 1
+//Narrow bulk wagon
+
+//Sprite sets
+
+spriteset(gfx_nrwplank_base    , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4(   0, 107) }
+spriteset(gfx_nrwplank_coal_h  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 114, 107) }
+spriteset(gfx_nrwplank_coal_f  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 187, 107) }
+spriteset(gfx_nrwplank_iron_h  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 114, 127) }
+spriteset(gfx_nrwplank_iron_f  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 187, 127) }
+spriteset(gfx_nrwplank_gnrc_h  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 114, 147) }
+spriteset(gfx_nrwplank_gnrc_f  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 187, 147) }
+spriteset(gfx_nrwplank_sand_h  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 114, 167) }
+spriteset(gfx_nrwplank_sand_f  , "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4( 187, 167) }
+
+spriteset(gfx_nrwplank_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_purchase_short(0,127) }
+
+
+//Switches
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_coal_load_check, cargo_count){
+	1..6   : gfx_nrwplank_coal_h ;
+	7..15  : gfx_nrwplank_coal_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_iron_load_check, cargo_count){
+	1..6   : gfx_nrwplank_iron_h ;
+	7..15  : gfx_nrwplank_iron_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_gnrc_load_check, cargo_count){
+	1..6   : gfx_nrwplank_gnrc_h ;
+	7..15  : gfx_nrwplank_gnrc_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_sand_load_check, cargo_count){
+	1..6   : gfx_nrwplank_sand_h ;
+	7..15  : gfx_nrwplank_sand_f ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_gfx_nrwplank_cargo_decider, most_common_cargo_type){
+	COAL : sw_nrwplank_coal_load_check ;
+	IORE : sw_nrwplank_iron_load_check ;
+	CORE : sw_nrwplank_iron_load_check ;
+	COPR : sw_nrwplank_iron_load_check ;
+	PORE : sw_nrwplank_iron_load_check ;
+	AORE : sw_nrwplank_iron_load_check ;
+	SAND : sw_nrwplank_sand_load_check ;
+	WHEA : sw_nrwplank_sand_load_check ;
+	GOLD : sw_nrwplank_sand_load_check ;
+	sw_nrwplank_gnrc_load_check ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_spr_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	1 : gfx_nrwplank_base ;
+	2 : sw_gfx_nrwplank_cargo_decider ;
+}
+
+//Colour mapping
+
+random_switch(FEAT_TRAINS, SELF, sw_nrwplank_random_colours, TRIGGER_VEHICLE_SERVICE){
+	1 : palette_1cc(COLOUR_GREY) ;
+	1 : palette_1cc(COLOUR_WHITE) ;
+	1 : palette_1cc(COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nrwplank_colours_2cc_check, colour_scheme_1){
+	1 : sw_nrwplank_random_colours ;
+	palette_1cc(company_colour2) ;
+}
+
+//Item
+
+item(FEAT_TRAINS, item_nrwplank, 10004){
+	property{
+		name						   : string(STR_NAME_NRWPLANK) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 6 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1920, 1, 1) ;
+		model_life                     : 60 ;
+		vehicle_life                   : 40 ;
+		cost_factor                    : 20 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 50 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_BULK ;
+		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
+		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR] ;
+		cargo_capacity                 : 15 ;
+		loading_speed                  : 10 ;
+		track_type                     : NAAN ;
+		power                          : 0 hp ;
+		weight                         : 10 ton ;
+	}
+	graphics{
+		default                 : sw_nrwplank_spr_stack ;
+		purchase                : gfx_nrwplank_purchase ;
+		colour_mapping          : sw_nrwplank_colours_2cc_check ;
 	}
 }
 # 1 "rukts.pnml" 2
