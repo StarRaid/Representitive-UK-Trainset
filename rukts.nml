@@ -115,7 +115,7 @@ spriteset(gfx_blank){base_32bpp()}
 template template_narrow_4_4(x, y){
 	[x+000, y  ,  8 , 14 , -3 , -11] //North
 	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
-	[x+024, y  , 17 , 13 , -0 , -9 ] //East
+	[x+024, y  , 17 , 13 , -1 , -9 ] //East
 	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
 	[x+000, y  ,  8 , 14 , -3 , -4 ] //South
 	[x+010, y  , 12 , 13 , -13, -5 ] //South West
@@ -126,7 +126,7 @@ template template_narrow_4_4(x, y){
 template template_narrow_4_8(x, y){
 	[x+000, y  ,  8 , 14 , -3 , -11] //North
 	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
-	[x+024, y  , 17 , 13 , -0 , -9 ] //East
+	[x+024, y  , 17 , 13 , -1 , -9 ] //East
 	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
 	[x+057, y  ,  8 , 14 , -3 , -4 ] //South
 	[x+067, y  , 12 , 13 , -13, -5 ] //South West
@@ -135,25 +135,25 @@ template template_narrow_4_8(x, y){
 }
 
 template template_narrow_6_4(x, y){
-	[x+000, y  ,  8 , 18 , -3 , -15] //North
-	[x+010, y  , 16 , 15 , -7 , -11] //North East
-	[x+028, y  , 25 , 13 , -8 , -9 ] //East
-	[x+055, y  , 16 , 15 ,  2 , -4 ] //South East
+	[x+000, y  ,  8 , 18 , -3 , -12] //North
+	[x+010, y  , 16 , 15 , -9 , -9 ] //North East
+	[x+028, y  , 25 , 13 , -9 , -9 ] //East
+	[x+055, y  , 16 , 15 , -1 , -7 ] //South East
 	[x+000, y  ,  8 , 18 , -3 , -8 ] //South
-	[x+010, y  , 16 , 15 , -15, -6 ] //South West
-	[x+028, y  , 25 , 13 , -25, -9 ] //West
-	[x+055, y  , 16 , 15 , -7 , -10] //North West
+	[x+010, y  , 16 , 15 , -13, -7 ] //South West
+	[x+028, y  , 25 , 13 , -17, -9 ] //West
+	[x+055, y  , 16 , 15 , -5 , -9 ] //North West
 }
 
 template template_narrow_6_8(x, y){
-	[x+000, y  ,  8 , 18 , -3 , -15] //North
-	[x+010, y  , 16 , 15 , -7 , -11] //North East
-	[x+028, y  , 25 , 13 , -8 , -9 ] //East
-	[x+055, y  , 16 , 15 ,  2 , -4 ] //South East
+	[x+000, y  ,  8 , 18 , -3 , -12] //North
+	[x+010, y  , 16 , 15 , -9 , -9 ] //North East
+	[x+028, y  , 25 , 13 , -9 , -9 ] //East
+	[x+055, y  , 16 , 15 , -1 , -7 ] //South East
 	[x+073, y  ,  8 , 18 , -3 , -8 ] //South
-	[x+083, y  , 16 , 15 , -15, -6 ] //South West
-	[x+101, y  , 25 , 13 , -25, -9 ] //West
-	[x+128, y  , 16 , 15 , -7 , -10] //North West
+	[x+083, y  , 16 , 15 , -13, -7 ] //South West
+	[x+101, y  , 25 , 13 , -17, -9 ] //West
+	[x+128, y  , 16 , 15 , -5 , -9 ] //North West
 }
 
 
@@ -11603,7 +11603,7 @@ switch(FEAT_TRAINS, SELF, sw_nrwplank_spr_stack, [STORE_TEMP((getbits(extra_call
 
 //Colour mapping
 
-random_switch(FEAT_TRAINS, SELF, sw_nrwplank_random_colours, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, PARENT, sw_nrwplank_random_colours){
 	1 : palette_1cc(COLOUR_GREY) ;
 	1 : palette_1cc(COLOUR_WHITE) ;
 	1 : palette_1cc(COLOUR_RED) ;

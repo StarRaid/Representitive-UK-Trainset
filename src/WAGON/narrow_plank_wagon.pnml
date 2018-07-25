@@ -62,7 +62,7 @@ switch(FEAT_TRAINS, SELF, sw_nrwplank_spr_stack, SPR_STACK){
 
 //Colour mapping
 
-random_switch(FEAT_TRAINS, SELF, sw_nrwplank_random_colours, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, PARENT, sw_nrwplank_random_colours){
 	1 : palette_1cc(COLOUR_GREY) ;
 	1 : palette_1cc(COLOUR_WHITE) ;
 	1 : palette_1cc(COLOUR_RED) ;
