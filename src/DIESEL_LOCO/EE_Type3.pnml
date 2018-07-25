@@ -699,7 +699,7 @@ item (FEAT_TRAINS, item_eetype3, 37){
 		cost_factor                    : 55 ;
 		running_cost_base              : RUNNING_COST_DIESEL ;
 		running_cost_factor            : 170 ;
-		speed                          : 80 mph ;
+		speed                          : 90 mph ;
 		track_type                     : RAIL ;
 		power                          : 1750 hp ;
 		weight                         : 100 ton ;
