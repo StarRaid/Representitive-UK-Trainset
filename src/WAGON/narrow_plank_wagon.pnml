@@ -50,6 +50,7 @@ switch(FEAT_TRAINS, PARENT, sw_gfx_nrwplank_cargo_decider, most_common_cargo_typ
 	SAND : sw_nrwplank_sand_load_check ;
 	WHEA : sw_nrwplank_sand_load_check ;
 	GOLD : sw_nrwplank_sand_load_check ;
+	CERA : sw_nrwplank_sand_load_check ;
 	sw_nrwplank_gnrc_load_check ;
 }
 
@@ -91,12 +92,12 @@ item(FEAT_TRAINS, item_nrwplank, 10004){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_BULK ;
 		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
-		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR] ;
+		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
 		cargo_capacity                 : 15 ;
 		loading_speed                  : 10 ;
 		track_type                     : NAAN ;
 		power                          : 0 hp ;
-		weight                         : 10 ton ;
+		weight                         : 7 ton ;
 	}
 	graphics{
 		default                 : sw_nrwplank_spr_stack ;

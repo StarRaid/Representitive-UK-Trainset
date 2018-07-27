@@ -80,7 +80,7 @@ item(FEAT_TRAINS, item_nrwcoachone, 9060){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 10 ;
+		cargo_capacity                 : 15 ;
 		loading_speed                  : 10 ;
 		track_type                     : NAAN ;
 		power                          : 0 hp ;
@@ -92,5 +92,49 @@ item(FEAT_TRAINS, item_nrwcoachone, 9060){
 		purchase_colour_mapping : palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
 		cargo_subtype_text      : sw_nrwcoachone_refit_text_check ;
 		colour_mapping          : sw_nrwcoachone_colour_2cc_check ;
+	}
+}
+
+
+//Bristol Carriage
+
+spriteset(gfx_brstcoach,          "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4(    0, 150) }
+spriteset(gfx_brstcoach_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_purchase_short(0, 170) }
+
+//Colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_brstcoach_colours, colour_scheme_1){
+	1 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+//Item
+
+item(FEAT_TRAINS, item_brstcoach, 9061){
+	property{
+		name						   : string(STR_NAME_NRWCOACHTWO) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 6 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1900, 1, 1) ;
+		model_life                     : 50 ;
+		vehicle_life                   : 40 ;
+		cost_factor                    : 43 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 30 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 40 ;
+		loading_speed                  : 15 ;
+		track_type                     : NAAN ;
+		power                          : 0 hp ;
+		weight                         : 10 ton ;
+	}
+	graphics{
+		default                 : gfx_brstcoach ;
+		purchase                : gfx_brstcoach_purchase ;
+		colour_mapping          : sw_brstcoach_colours ;
 	}
 }

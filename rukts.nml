@@ -113,7 +113,7 @@ template base_32bpp(){
 spriteset(gfx_blank){base_32bpp()}
 
 template template_narrow_4_4(x, y){
-	[x+000, y  ,  8 , 14 , -3 , -11] //North
+	[x+000, y  ,  8 , 14 , -3 , -12] //North
 	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
 	[x+024, y  , 17 , 13 , -1 , -9 ] //East
 	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
@@ -124,7 +124,7 @@ template template_narrow_4_4(x, y){
 }
 
 template template_narrow_4_8(x, y){
-	[x+000, y  ,  8 , 14 , -3 , -11] //North
+	[x+000, y  ,  8 , 14 , -3 , -12] //North
 	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
 	[x+024, y  , 17 , 13 , -1 , -9 ] //East
 	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
@@ -3152,7 +3152,7 @@ item (FEAT_TRAINS, item_eetype3, 37){
 		cost_factor                    : 55 ;
 		running_cost_base              : RUNNING_COST_DIESEL ;
 		running_cost_factor            : 170 ;
-		speed                          : 80 mph ;
+		speed                          : 90 mph ;
 		track_type                     : RAIL ;
 		power                          : 1750 hp ;
 		weight                         : 100 ton ;
@@ -11329,10 +11329,10 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		running_cost_factor            : 60 ;
 		speed                          : 50 mph ;
 		track_type                     : NAAN ;
-		power                          : 600 hp ;
+		power                          : 600 kW ;
 		weight                         : 60 ton ;
 		engine_class                   : ENGINE_CLASS_STEAM ;
-		tractive_effort_coefficient    : 0.1383333333333333 ;
+		tractive_effort_coefficient    : 0.2 ;
 		air_drag_coefficient           : 0.1 ;
 		length                         : 4 ;
 		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
@@ -11439,7 +11439,7 @@ item(FEAT_TRAINS, item_nrwcoachone, 9060){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 10 ;
+		cargo_capacity                 : 15 ;
 		loading_speed                  : 10 ;
 		track_type                     : NAAN ;
 		power                          : 0 hp ;
@@ -11451,6 +11451,50 @@ item(FEAT_TRAINS, item_nrwcoachone, 9060){
 		purchase_colour_mapping : palette_2cc(COLOUR_CREAM, COLOUR_RED) ;
 		cargo_subtype_text      : sw_nrwcoachone_refit_text_check ;
 		colour_mapping          : sw_nrwcoachone_colour_2cc_check ;
+	}
+}
+
+
+//Bristol Carriage
+
+spriteset(gfx_brstcoach,          "gfx/WAGON/narrow_coach_one.png"){ template_narrow_6_4(    0, 150) }
+spriteset(gfx_brstcoach_purchase, "gfx/WAGON/narrow_coach_one.png"){ template_purchase_short(0, 170) }
+
+//Colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_brstcoach_colours, colour_scheme_1){
+	1 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+//Item
+
+item(FEAT_TRAINS, item_brstcoach, 9061){
+	property{
+		name						   : string(STR_NAME_NRWCOACHTWO) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 6 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1900, 1, 1) ;
+		model_life                     : 50 ;
+		vehicle_life                   : 40 ;
+		cost_factor                    : 43 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 30 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 40 ;
+		loading_speed                  : 15 ;
+		track_type                     : NAAN ;
+		power                          : 0 hp ;
+		weight                         : 10 ton ;
+	}
+	graphics{
+		default                 : gfx_brstcoach ;
+		purchase                : gfx_brstcoach_purchase ;
+		colour_mapping          : sw_brstcoach_colours ;
 	}
 }
 # 1 "rukts.pnml" 2
@@ -11530,7 +11574,7 @@ item(FEAT_TRAINS, item_slatewgn, 10003){
 		loading_speed                  : 7 ;
 		track_type                     : NAAN ;
 		power                          : 0 hp ;
-		weight                         : 8 ton ;
+		weight                         : 5 ton ;
 	}
 	graphics{
 		default                 : sw_slatewgn_spr_stack ;
@@ -11591,6 +11635,7 @@ switch(FEAT_TRAINS, PARENT, sw_gfx_nrwplank_cargo_decider, most_common_cargo_typ
 	SAND : sw_nrwplank_sand_load_check ;
 	WHEA : sw_nrwplank_sand_load_check ;
 	GOLD : sw_nrwplank_sand_load_check ;
+	CERA : sw_nrwplank_sand_load_check ;
 	sw_nrwplank_gnrc_load_check ;
 }
 
@@ -11632,12 +11677,12 @@ item(FEAT_TRAINS, item_nrwplank, 10004){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_BULK ;
 		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
-		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR] ;
+		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
 		cargo_capacity                 : 15 ;
 		loading_speed                  : 10 ;
 		track_type                     : NAAN ;
 		power                          : 0 hp ;
-		weight                         : 10 ton ;
+		weight                         : 7 ton ;
 	}
 	graphics{
 		default                 : sw_nrwplank_spr_stack ;

@@ -73,7 +73,7 @@ item(FEAT_TRAINS, item_slatewgn, 10003){
 		loading_speed                  : 7 ;
 		track_type                     : NAAN ;
 		power                          : 0 hp ;
-		weight                         : 8 ton ;
+		weight                         : 5 ton ;
 	}
 	graphics{
 		default                 : sw_slatewgn_spr_stack ;
