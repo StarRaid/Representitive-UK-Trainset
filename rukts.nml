@@ -114,46 +114,46 @@ spriteset(gfx_blank){base_32bpp()}
 
 template template_narrow_4_4(x, y){
 	[x+000, y  ,  8 , 14 , -3 , -12] //North
-	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
-	[x+024, y  , 17 , 13 , -1 , -9 ] //East
+	[x+010, y  , 12 , 13 , -5 , -10] //North East
+	[x+024, y  , 17 , 13 , -1 , -10] //East
 	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
 	[x+000, y  ,  8 , 14 , -3 , -4 ] //South
-	[x+010, y  , 12 , 13 , -13, -5 ] //South West
-	[x+024, y  , 17 , 13 , -17, -9 ] //West
-	[x+043, y  , 12 , 13 , -5 , -9 ] //North West
+	[x+010, y  , 12 , 13 , -13, -6 ] //South West
+	[x+024, y  , 17 , 13 , -17, -10] //West
+	[x+043, y  , 12 , 13 , -5 , -10] //North West
 }
 
 template template_narrow_4_8(x, y){
 	[x+000, y  ,  8 , 14 , -3 , -12] //North
-	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
-	[x+024, y  , 17 , 13 , -1 , -9 ] //East
+	[x+010, y  , 12 , 13 , -5 , -10] //North East
+	[x+024, y  , 17 , 13 , -1 , -10] //East
 	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
 	[x+057, y  ,  8 , 14 , -3 , -4 ] //South
-	[x+067, y  , 12 , 13 , -13, -5 ] //South West
-	[x+081, y  , 17 , 13 , -17, -9 ] //West
-	[x+100, y  , 12 , 13 , -5 , -9 ] //North West
+	[x+067, y  , 12 , 13 , -13, -6 ] //South West
+	[x+081, y  , 17 , 13 , -17, -10] //West
+	[x+100, y  , 12 , 13 , -5 , -10] //North West
 }
 
 template template_narrow_6_4(x, y){
 	[x+000, y  ,  8 , 18 , -3 , -12] //North
-	[x+010, y  , 16 , 15 , -9 , -9 ] //North East
-	[x+028, y  , 25 , 13 , -9 , -9 ] //East
-	[x+055, y  , 16 , 15 , -1 , -7 ] //South East
+	[x+010, y  , 16 , 15 , -9 , -10] //North East
+	[x+028, y  , 25 , 13 , -9 , -10] //East
+	[x+055, y  , 16 , 15 , -1 , -8 ] //South East
 	[x+000, y  ,  8 , 18 , -3 , -8 ] //South
-	[x+010, y  , 16 , 15 , -13, -7 ] //South West
-	[x+028, y  , 25 , 13 , -17, -9 ] //West
-	[x+055, y  , 16 , 15 , -5 , -9 ] //North West
+	[x+010, y  , 16 , 15 , -13, -8 ] //South West
+	[x+028, y  , 25 , 13 , -17, -10] //West
+	[x+055, y  , 16 , 15 , -5 , -10] //North West
 }
 
 template template_narrow_6_8(x, y){
 	[x+000, y  ,  8 , 18 , -3 , -12] //North
-	[x+010, y  , 16 , 15 , -9 , -9 ] //North East
-	[x+028, y  , 25 , 13 , -9 , -9 ] //East
-	[x+055, y  , 16 , 15 , -1 , -7 ] //South East
+	[x+010, y  , 16 , 15 , -9 , -10] //North East
+	[x+028, y  , 25 , 13 , -9 , -10] //East
+	[x+055, y  , 16 , 15 , -1 , -8 ] //South East
 	[x+073, y  ,  8 , 18 , -3 , -8 ] //South
-	[x+083, y  , 16 , 15 , -13, -7 ] //South West
-	[x+101, y  , 25 , 13 , -17, -9 ] //West
-	[x+128, y  , 16 , 15 , -5 , -9 ] //North West
+	[x+083, y  , 16 , 15 , -13, -8 ] //South West
+	[x+101, y  , 25 , 13 , -17, -10] //West
+	[x+128, y  , 16 , 15 , -5 , -10] //North West
 }
 
 
@@ -323,6 +323,10 @@ switch(FEAT_TRAINS, SELF, vfx_ohle_only, current_railtype){
 
 switch(FEAT_TRAINS, SELF, vfx_steam, [STORE_TEMP(create_effect(EFFECT_SPRITE_STEAM, 0, 0, 10), 0x100)]) {
     return 1;
+}
+
+switch(FEAT_TRAINS, SELF, vfx_steam_double, [STORE_TEMP(create_effect(EFFECT_SPRITE_STEAM, 0, 0, 10), 0x100), STORE_TEMP(create_effect(EFFECT_SPRITE_STEAM, 0, 0, 4), 0x100)]) {
+    return 2;
 }
 # 1 "rukts.pnml" 2
 # 1 "src/CODE/sound_effects.pnml" 1
@@ -4922,6 +4926,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_sector_gfx_decider, most_common_cargo_ty
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_ee3_dbso_privatisation1_random, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_privatisation1_random ;
 	2 : sw_ee3_drs_reverse_check ;
 	1 : sw_ee3_ews_reverse_check ;
 }
@@ -5009,7 +5014,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_spritestack, [STORE_TEMP((getbits(extra_
 	0 : sw_ee3_dbso_gfx_manual_check ;    //Base
 	1 : gfx_ee3_headcode_centre ;  //Headcodes
 	2 : sw_ee3_lights_centre_front ;  //Lights
-	3 : sw_ee3_dbso_dirt ;                //Dirt
+	//3 : sw_ee3_dbso_dirt ;                //Dirt
 }
 
 
@@ -6150,7 +6155,7 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU);
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
-		climates_available             : ALL_CLIMATES ;
+		climates_available             : NO_CLIMATE ;
 		introduction_date              : date(1988,1,1) ;
 		model_life                     : 25 ;
 		vehicle_life                   : 40 ;
@@ -11355,6 +11360,68 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		running_cost_factor            : return(current_speed == 0 ? 8 : 20) ;
 	}
 }
+# 1 "rukts.pnml" 2
+# 1 "src/STEAM_LOCO/fairlie.pnml" 1
+//Fairlie
+
+
+//Sprite sets
+
+spriteset(fairlie          , "gfx/STEAM_LOCO/fairlie.png" ){ template_narrow_6_4(  0 , 43 ) }
+spriteset(fairlie_purchase , "gfx/STEAM_LOCO/fairlie.png" ){ template_purchase_short(  0 , 63 ) }
+
+
+//Switches
+random_switch(FEAT_TRAINS, SELF, sw_fairlie_random_colours){
+	1 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_fairlie_colours, colour_scheme_1){
+	1 : sw_fairlie_random_colours ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+//switch(FEAT_TRAINS, SELF, 
+
+//Item
+
+item(FEAT_TRAINS, item_fairlie, 1001){
+	property{
+		name                           : string(STR_NAME_FAIRLIE) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1870,1,1) ;
+		refittable_cargo_classes       : 0 ;
+		model_life                     : 65 ;
+		vehicle_life                   : 50 ;
+		reliability_decay              : 7 ;
+		cost_factor                    : 20 ;
+		running_cost_base              : RUNNING_COST_STEAM ;
+		running_cost_factor            : 34 ;
+		speed                          : 35 mph ;
+		track_type                     : NAAN ;
+		power                          : 350 kW ;
+		weight                         : 35 ton ;
+		engine_class                   : ENGINE_CLASS_STEAM ;
+		tractive_effort_coefficient    : 0.25 ;
+		air_drag_coefficient           : 0.1 ;
+		length                         : 6 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_STEAM ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : fairlie ;
+		colour_mapping                 : sw_fairlie_colours ;
+		purchase                       : fairlie_purchase ;
+		sound_effect                   : sw_sfx_steam ;
+		can_attach_wagon               : sw_all_but_MU90 ;
+		create_effect                  : vfx_steam ;
+		running_cost_factor            : return(current_speed == 0 ? 8 : 20) ;
+	}
+}
+
 # 1 "rukts.pnml" 2
 # 1 "src/WAGON/narrow_coach_one.pnml" 1
 //Narrow coach one

@@ -24,6 +24,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_sector_gfx_decider, most_common_cargo_ty
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_ee3_dbso_privatisation1_random, TRIGGER_VEHICLE_SERVICE){
+	dependent : sw_ee3_privatisation1_random ;
 	2 : sw_ee3_drs_reverse_check ;
 	1 : sw_ee3_ews_reverse_check ;
 }
@@ -111,7 +112,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_spritestack, [STORE_TEMP((getbits(extra_
 	0 : sw_ee3_dbso_gfx_manual_check ;    //Base
 	1 : gfx_ee3_headcode_centre ;  //Headcodes
 	2 : sw_ee3_lights_centre_front ;  //Lights
-	3 : sw_ee3_dbso_dirt ;                //Dirt
+	//3 : sw_ee3_dbso_dirt ;                //Dirt
 }
 
 

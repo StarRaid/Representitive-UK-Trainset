@@ -23,46 +23,46 @@ spriteset(gfx_blank){base_32bpp()}
 
 template template_narrow_4_4(x, y){
 	[x+000, y  ,  8 , 14 , -3 , -12] //North
-	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
-	[x+024, y  , 17 , 13 , -1 , -9 ] //East
+	[x+010, y  , 12 , 13 , -5 , -10] //North East
+	[x+024, y  , 17 , 13 , -1 , -10] //East
 	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
 	[x+000, y  ,  8 , 14 , -3 , -4 ] //South
-	[x+010, y  , 12 , 13 , -13, -5 ] //South West
-	[x+024, y  , 17 , 13 , -17, -9 ] //West
-	[x+043, y  , 12 , 13 , -5 , -9 ] //North West
+	[x+010, y  , 12 , 13 , -13, -6 ] //South West
+	[x+024, y  , 17 , 13 , -17, -10] //West
+	[x+043, y  , 12 , 13 , -5 , -10] //North West
 }
 
 template template_narrow_4_8(x, y){
 	[x+000, y  ,  8 , 14 , -3 , -12] //North
-	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
-	[x+024, y  , 17 , 13 , -1 , -9 ] //East
+	[x+010, y  , 12 , 13 , -5 , -10] //North East
+	[x+024, y  , 17 , 13 , -1 , -10] //East
 	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
 	[x+057, y  ,  8 , 14 , -3 , -4 ] //South
-	[x+067, y  , 12 , 13 , -13, -5 ] //South West
-	[x+081, y  , 17 , 13 , -17, -9 ] //West
-	[x+100, y  , 12 , 13 , -5 , -9 ] //North West
+	[x+067, y  , 12 , 13 , -13, -6 ] //South West
+	[x+081, y  , 17 , 13 , -17, -10] //West
+	[x+100, y  , 12 , 13 , -5 , -10] //North West
 }
 
 template template_narrow_6_4(x, y){
 	[x+000, y  ,  8 , 18 , -3 , -12] //North
-	[x+010, y  , 16 , 15 , -9 , -9 ] //North East
-	[x+028, y  , 25 , 13 , -9 , -9 ] //East
-	[x+055, y  , 16 , 15 , -1 , -7 ] //South East
+	[x+010, y  , 16 , 15 , -9 , -10] //North East
+	[x+028, y  , 25 , 13 , -9 , -10] //East
+	[x+055, y  , 16 , 15 , -1 , -8 ] //South East
 	[x+000, y  ,  8 , 18 , -3 , -8 ] //South
-	[x+010, y  , 16 , 15 , -13, -7 ] //South West
-	[x+028, y  , 25 , 13 , -17, -9 ] //West
-	[x+055, y  , 16 , 15 , -5 , -9 ] //North West
+	[x+010, y  , 16 , 15 , -13, -8 ] //South West
+	[x+028, y  , 25 , 13 , -17, -10] //West
+	[x+055, y  , 16 , 15 , -5 , -10] //North West
 }
 
 template template_narrow_6_8(x, y){
 	[x+000, y  ,  8 , 18 , -3 , -12] //North
-	[x+010, y  , 16 , 15 , -9 , -9 ] //North East
-	[x+028, y  , 25 , 13 , -9 , -9 ] //East
-	[x+055, y  , 16 , 15 , -1 , -7 ] //South East
+	[x+010, y  , 16 , 15 , -9 , -10] //North East
+	[x+028, y  , 25 , 13 , -9 , -10] //East
+	[x+055, y  , 16 , 15 , -1 , -8 ] //South East
 	[x+073, y  ,  8 , 18 , -3 , -8 ] //South
-	[x+083, y  , 16 , 15 , -13, -7 ] //South West
-	[x+101, y  , 25 , 13 , -17, -9 ] //West
-	[x+128, y  , 16 , 15 , -5 , -9 ] //North West
+	[x+083, y  , 16 , 15 , -13, -8 ] //South West
+	[x+101, y  , 25 , 13 , -17, -10] //West
+	[x+128, y  , 16 , 15 , -5 , -10] //North West
 }
 
 

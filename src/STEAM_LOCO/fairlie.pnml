@@ -1,0 +1,60 @@
+//Fairlie
+
+
+//Sprite sets
+
+spriteset(fairlie          , "gfx/STEAM_LOCO/fairlie.png" ){ template_narrow_6_4(  0 , 43 ) }
+spriteset(fairlie_purchase , "gfx/STEAM_LOCO/fairlie.png" ){ template_purchase_short(  0 , 63 ) }
+
+
+//Switches
+random_switch(FEAT_TRAINS, SELF, sw_fairlie_random_colours){
+	1 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_fairlie_colours, colour_scheme_1){
+	1 : sw_fairlie_random_colours ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+//switch(FEAT_TRAINS, SELF, 
+
+//Item
+
+item(FEAT_TRAINS, item_fairlie, 1001){
+	property{
+		name                           : string(STR_NAME_FAIRLIE) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1870,1,1) ;
+		refittable_cargo_classes       : 0 ;
+		model_life                     : 65 ;
+		vehicle_life                   : 50 ;
+		reliability_decay              : 7 ;
+		cost_factor                    : 20 ;
+		running_cost_base              : RUNNING_COST_STEAM ;
+		running_cost_factor            : 34 ;
+		speed                          : 35 mph ;
+		track_type                     : NAAN ;
+		power                          : 350 kW ;
+		weight                         : 35 ton ;
+		engine_class                   : ENGINE_CLASS_STEAM ;
+		tractive_effort_coefficient    : 0.25 ;
+		air_drag_coefficient           : 0.1 ;
+		length                         : 6 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_STEAM ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : fairlie ;
+		colour_mapping                 : sw_fairlie_colours ;
+		purchase                       : fairlie_purchase ;
+		sound_effect                   : sw_sfx_steam ;
+		can_attach_wagon               : sw_all_but_MU90 ;
+		create_effect                  : vfx_steam ;
+		running_cost_factor            : return(current_speed == 0 ? 8 : 20) ;
+	}
+}
+
