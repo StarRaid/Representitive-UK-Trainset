@@ -1,11 +1,11 @@
 //template_x_y where x is length and y is no. views
 
 template template_purchase(x,y){
-	[ x, y, 79, 12, -39, -6]
+	[ x, y, 79, 12, -39, -8]
 }
 
 template template_purchase_short(x,y){
-	[ x, y, 55, 12, -39, -6]
+	[ x, y, 55, 12, -39, -8]
 }
 
 template base_32bpp(){
