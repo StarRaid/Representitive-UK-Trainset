@@ -35,8 +35,16 @@ spriteset(spriteset_350_ftp_t_p, "gfx/EMU/class_450.png") {
 }
 
 
-spriteset(spriteset_350_purchase, "gfx/EMU/class_450.png") {
-	template_dualhead_purchase(0, 25)
+spriteset(spriteset_350_purchase_slv, "gfx/EMU/class_450.png") {
+	template_dualhead_purchase(718, 50)
+}
+
+spriteset(spriteset_350_purchase_lml, "gfx/EMU/class_450.png") {
+	template_dualhead_purchase(718, 63)
+}
+
+spriteset(spriteset_350_purchase_tpe, "gfx/EMU/class_450.png") {
+	template_dualhead_purchase(718, 76)
 }
 
 //Switches
@@ -176,8 +184,23 @@ switch(FEAT_TRAINS, PARENT, sw_350_colour_mapping, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_350_coupling_restrictions, vehicle_type_id) {
     item_MU90: return CB_RESULT_ATTACH_ALLOW;
 	item_350: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_350_NO_COUPLE);
 }
+
+//Purchase sprite_id
+
+switch(FEAT_TRAINS, SELF, sw_350_purchase_sprite, current_year){
+	2004..2006 : spriteset_350_purchase_slv ;
+	2007..2013 : spriteset_350_purchase_lml ;
+	spriteset_350_purchase_tpe ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_purchase_colours_check, colour_scheme_1){
+	1 : sw_350_recolour_selection_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
 
 item (FEAT_TRAINS, item_350, 350) {
 	property {
@@ -215,11 +238,11 @@ item (FEAT_TRAINS, item_350, 350) {
 	graphics {
 		can_attach_wagon:					sw_350_coupling_restrictions;
 		default: 							sw_350_default;
-		purchase:							spriteset_444_purchase;
+		purchase:							sw_350_purchase_sprite;
 		create_effect:						vfx_dual_voltage;
 		colour_mapping:						sw_350_colour_mapping;
 		cargo_subtype_text:					sw_350_refit_text_decider;
-		purchase_colour_mapping:			sw_350_colour_mapping;
+		purchase_colour_mapping:			sw_350_purchase_colours_check;
 		sound_effect:						sw_sfx_emu_desiro;
 		running_cost_factor:				return(current_speed == 0 ? 15 : 60) ;
 }
@@ -229,5 +252,13 @@ item (FEAT_TRAINS, item_350, 350) {
 		weight:	34;
 		colour_mapping:	sw_350_colour_mapping;
 		cargo_subtype_text: sw_350_refit_text_decider;
+}
+}
+
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_350, 350){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }

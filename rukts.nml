@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 11;
+	version: 12 ;
 	min_compatible_version: 0 ;
 	param 0{
 		colour_scheme_1{
@@ -501,6 +501,14 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_sfx_dmu_two, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : sound("sfx/voyager_idle.wav") ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/voyager_run.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_1.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
+}
+
 /*
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info1, 0, 8)){
  //SOUND_EVENT_STOPPED       : sound("sfx/465_idle.wav") ;
@@ -871,7 +879,7 @@ item (FEAT_TRAINS, item_Mk1, 9010) {
 		name: 							string(STR_NAME_MK1);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1953, 1, 1);
-		model_life:						15;
+		model_life:						25;
 		retire_early:					1;
 		vehicle_life:					50;
 		reliability_decay:				7;
@@ -6870,15 +6878,16 @@ item(FEAT_TRAINS, item_voyager, 220){
 		dual_headed                    : 1 ;
 	}
 	graphics{
-		default					: sw_voyager_manual_check ;
-		purchase				: sw_voyager_purchase_sprite ;
-		sound_effect			: sw_sfx_dmu_one ;
-		create_effect			: vfx_diesel_default ;
-		colour_mapping			: sw_voyager_colours_2cc_check ;
-		purchase_colour_mapping	: sw_voyager_purchase_2cc_check ;
-		cargo_subtype_text		: sw_voyager_refit_text_check ;
-		can_attach_wagon		: sw_voyager_attach ;
-		running_cost_factor		: return(current_speed == 0 ? 50 : 180) ;
+		default							: sw_voyager_manual_check ;
+		purchase						: sw_voyager_purchase_sprite ;
+		sound_effect					: sw_sfx_dmu_two ;
+		create_effect					: vfx_diesel_default ;
+		colour_mapping					: sw_voyager_colours_2cc_check ;
+		purchase_colour_mapping			: sw_voyager_purchase_2cc_check ;
+		cargo_subtype_text				: sw_voyager_refit_text_check ;
+		can_attach_wagon				: sw_voyager_attach ;
+		running_cost_factor				: return(current_speed == 0 ? 50 : 180) ;
+		purchase_running_cost_factor	: 180 ;
 	}
 	livery_override (item_MU90){
 		default							: sw_voyager_middle_manual_check ;
@@ -7053,6 +7062,7 @@ switch(FEAT_TRAINS, SELF, sw_313_coupling_restrictions, vehicle_type_id) {
     item_Mk2: return CB_RESULT_ATTACH_ALLOW;
 	item_313: return CB_RESULT_ATTACH_ALLOW;
 	item_314: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_313_NO_COUPLE);
 }
 
@@ -8552,6 +8562,7 @@ switch(FEAT_TRAINS, PARENT, sw_319_colour_mapping_decider, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_319_coupling_restrictions, vehicle_type_id) {
     9030: return CB_RESULT_ATTACH_ALLOW;
 	319: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_319_NO_COUPLE);
 }
 
@@ -8713,6 +8724,7 @@ switch(FEAT_TRAINS, SELF, sw_325_t_vfx, vehicle_is_reversed){
 switch(FEAT_TRAINS, SELF, sw_325_coupling_restrictions, vehicle_type_id) {
     item_MU90: return CB_RESULT_ATTACH_ALLOW;
 	item_325: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_325_NO_COUPLE);
 }
 
@@ -9174,6 +9186,7 @@ item (FEAT_TRAINS, item_325, 325){
 }
 }
 # 1 "rukts.pnml" 2
+//#include "src/EMU/class_334.pnml"
 # 1 "src/EMU/class_411.pnml" 1
 //Front Cars
 spriteset(spriteset_421_f_brg, "gfx/EMU/class_309.png") {template_8_8_networker(537, 25)}
@@ -9495,6 +9508,7 @@ switch(FEAT_TRAINS, PARENT, sw_411_colour_mapping_decider, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_411_coupling_restrictions, vehicle_type_id) {
     9010: return CB_RESULT_ATTACH_ALLOW;
 	411: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_411_NO_COUPLE);
 }
 
@@ -9792,6 +9806,7 @@ switch(FEAT_TRAINS, PARENT, sw_415_colour_mapping_decider, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_415_coupling_restrictions, vehicle_type_id) {
     9010: return CB_RESULT_ATTACH_ALLOW;
 	415: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_415_NO_COUPLE);
 }
 
@@ -9979,6 +9994,7 @@ switch(FEAT_TRAINS, PARENT, sw_442_colour_mapping_decider, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_442_coupling_restrictions, vehicle_type_id) {
     9030: return CB_RESULT_ATTACH_ALLOW;
 	442: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_442_NO_COUPLE);
 }
 
@@ -10160,6 +10176,7 @@ switch(FEAT_TRAINS, PARENT, sw_444_colour_mapping, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_444_coupling_restrictions, vehicle_type_id) {
     item_MU90: return CB_RESULT_ATTACH_ALLOW;
 	item_444: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_444_NO_COUPLE);
 }
 
@@ -10215,6 +10232,15 @@ item (FEAT_TRAINS, item_444, 444) {
 		cargo_subtype_text: sw_444_refit_text_decider;
 }
 }
+
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_444, 444){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_350.pnml" 1
 spriteset(spriteset_350_slv, "gfx/EMU/class_450.png") {
@@ -10254,8 +10280,16 @@ spriteset(spriteset_350_ftp_t_p, "gfx/EMU/class_450.png") {
 }
 
 
-spriteset(spriteset_350_purchase, "gfx/EMU/class_450.png") {
-	template_dualhead_purchase(0, 25)
+spriteset(spriteset_350_purchase_slv, "gfx/EMU/class_450.png") {
+	template_dualhead_purchase(718, 50)
+}
+
+spriteset(spriteset_350_purchase_lml, "gfx/EMU/class_450.png") {
+	template_dualhead_purchase(718, 63)
+}
+
+spriteset(spriteset_350_purchase_tpe, "gfx/EMU/class_450.png") {
+	template_dualhead_purchase(718, 76)
 }
 
 //Switches
@@ -10395,8 +10429,23 @@ switch(FEAT_TRAINS, PARENT, sw_350_colour_mapping, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_350_coupling_restrictions, vehicle_type_id) {
     item_MU90: return CB_RESULT_ATTACH_ALLOW;
 	item_350: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_350_NO_COUPLE);
 }
+
+//Purchase sprite_id
+
+switch(FEAT_TRAINS, SELF, sw_350_purchase_sprite, current_year){
+	2004..2006 : spriteset_350_purchase_slv ;
+	2007..2013 : spriteset_350_purchase_lml ;
+	spriteset_350_purchase_tpe ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_350_purchase_colours_check, colour_scheme_1){
+	1 : sw_350_recolour_selection_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
 
 item (FEAT_TRAINS, item_350, 350) {
 	property {
@@ -10434,11 +10483,11 @@ item (FEAT_TRAINS, item_350, 350) {
 	graphics {
 		can_attach_wagon:					sw_350_coupling_restrictions;
 		default: 							sw_350_default;
-		purchase:							spriteset_444_purchase;
+		purchase:							sw_350_purchase_sprite;
 		create_effect:						vfx_dual_voltage;
 		colour_mapping:						sw_350_colour_mapping;
 		cargo_subtype_text:					sw_350_refit_text_decider;
-		purchase_colour_mapping:			sw_350_colour_mapping;
+		purchase_colour_mapping:			sw_350_purchase_colours_check;
 		sound_effect:						sw_sfx_emu_desiro;
 		running_cost_factor:				return(current_speed == 0 ? 15 : 60) ;
 }
@@ -10448,6 +10497,14 @@ item (FEAT_TRAINS, item_350, 350) {
 		weight:	34;
 		colour_mapping:	sw_350_colour_mapping;
 		cargo_subtype_text: sw_350_refit_text_decider;
+}
+}
+
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_350, 350){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }
 # 1 "rukts.pnml" 2
@@ -10750,6 +10807,7 @@ switch(FEAT_TRAINS, SELF, sw_375_recolour, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_375_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	375: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_375_NO_COUPLE);
 }
 
@@ -10814,6 +10872,15 @@ item (FEAT_TRAINS, item_375, 375) {
 	power:				580;
 }
 }
+
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_375, 375){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_455.pnml" 1
 //BR Blue/grey
@@ -10866,6 +10933,7 @@ switch(FEAT_TRAINS, SELF, sw_455_coupling_restrictions, vehicle_type_id) {
     item_Mk2: return CB_RESULT_ATTACH_ALLOW;
 	item_455: return CB_RESULT_ATTACH_ALLOW;
 	456: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_455_NO_COUPLE);
 }
 
@@ -11302,6 +11370,7 @@ switch(FEAT_TRAINS, PARENT, sw_700_colour_mapping, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_700_coupling_restrictions, vehicle_type_id) {
     item_MU90: return CB_RESULT_ATTACH_ALLOW;
 	item_700: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_700_NO_COUPLE);
 }
 
@@ -11964,6 +12033,7 @@ sort(FEAT_TRAINS,[
 158,
 168,
 43,
+220,
 87,
 92,
 88,
@@ -11976,6 +12046,9 @@ sort(FEAT_TRAINS,[
 321,
 442,
 325,
+375,
+444,
+350,
 700,
 10000,
 10001,
@@ -11986,7 +12059,11 @@ sort(FEAT_TRAINS,[
 9030,
 9035,
 9090,
+1001,
 1000,
 9060,
+9061,
+10003,
+10004
 ]);
 # 1 "rukts.pnml" 2

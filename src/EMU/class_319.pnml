@@ -454,6 +454,7 @@ switch(FEAT_TRAINS, PARENT, sw_319_colour_mapping_decider, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_319_coupling_restrictions, vehicle_type_id) {
     9030: return CB_RESULT_ATTACH_ALLOW;
 	319: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_319_NO_COUPLE);
 }
 

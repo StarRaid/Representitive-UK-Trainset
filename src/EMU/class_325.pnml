@@ -93,6 +93,7 @@ switch(FEAT_TRAINS, SELF, sw_325_t_vfx, vehicle_is_reversed){
 switch(FEAT_TRAINS, SELF, sw_325_coupling_restrictions, vehicle_type_id) {
     item_MU90: return CB_RESULT_ATTACH_ALLOW;
 	item_325: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_325_NO_COUPLE);
 }
 

@@ -48,6 +48,7 @@ switch(FEAT_TRAINS, SELF, sw_455_coupling_restrictions, vehicle_type_id) {
     item_Mk2: return CB_RESULT_ATTACH_ALLOW;
 	item_455: return CB_RESULT_ATTACH_ALLOW;
 	456: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_455_NO_COUPLE);
 }
 

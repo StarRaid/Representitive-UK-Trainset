@@ -296,6 +296,7 @@ switch(FEAT_TRAINS, SELF, sw_375_recolour, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_375_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	375: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_375_NO_COUPLE);
 }
 
@@ -358,5 +359,14 @@ item (FEAT_TRAINS, item_375, 375) {
 		cargo_subtype_text: sw_375_livery_decider ;
 	speed:								sw_375_speed;
 	power:				580;
+}
+}
+
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_375, 375){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }

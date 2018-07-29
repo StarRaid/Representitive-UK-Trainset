@@ -173,6 +173,14 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_sfx_dmu_two, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : sound("sfx/voyager_idle.wav") ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/voyager_run.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_1.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
+}
+
 /*
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, getbits(extra_callback_info1, 0, 8)){
  //SOUND_EVENT_STOPPED       : sound("sfx/465_idle.wav") ;

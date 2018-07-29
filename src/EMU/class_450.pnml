@@ -121,6 +121,7 @@ switch(FEAT_TRAINS, PARENT, sw_444_colour_mapping, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_444_coupling_restrictions, vehicle_type_id) {
     item_MU90: return CB_RESULT_ATTACH_ALLOW;
 	item_444: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_444_NO_COUPLE);
 }
 
@@ -174,5 +175,14 @@ item (FEAT_TRAINS, item_444, 444) {
 		weight:	34;
 		colour_mapping:	sw_444_colour_mapping;
 		cargo_subtype_text: sw_444_refit_text_decider;
+}
+}
+
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_444, 444){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
 }
 }

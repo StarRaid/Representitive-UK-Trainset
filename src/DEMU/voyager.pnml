@@ -173,15 +173,16 @@ item(FEAT_TRAINS, item_voyager, 220){
 		dual_headed                    : 1 ;
 	}
 	graphics{
-		default					: sw_voyager_manual_check ;
-		purchase				: sw_voyager_purchase_sprite ;
-		sound_effect			: sw_sfx_dmu_one ;
-		create_effect			: vfx_diesel_default ;
-		colour_mapping			: sw_voyager_colours_2cc_check ;
-		purchase_colour_mapping	: sw_voyager_purchase_2cc_check ;
-		cargo_subtype_text		: sw_voyager_refit_text_check ;
-		can_attach_wagon		: sw_voyager_attach ;
-		running_cost_factor		: return(current_speed == 0 ? 50 : 180) ;
+		default							: sw_voyager_manual_check ;
+		purchase						: sw_voyager_purchase_sprite ;
+		sound_effect					: sw_sfx_dmu_two ;
+		create_effect					: vfx_diesel_default ;
+		colour_mapping					: sw_voyager_colours_2cc_check ;
+		purchase_colour_mapping			: sw_voyager_purchase_2cc_check ;
+		cargo_subtype_text				: sw_voyager_refit_text_check ;
+		can_attach_wagon				: sw_voyager_attach ;
+		running_cost_factor				: return(current_speed == 0 ? 50 : 180) ;
+		purchase_running_cost_factor	: 180 ;
 	}
 	livery_override (item_MU90){
 		default							: sw_voyager_middle_manual_check ;
