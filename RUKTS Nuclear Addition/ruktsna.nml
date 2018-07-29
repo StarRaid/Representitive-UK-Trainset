@@ -2,7 +2,7 @@ grf{
 	grfid                  : "RTNA" ;
 	name                   : string(STR_GRF_NAME) ;
 	desc                   : string(STR_GRF_DESC) ;
-	version                : 0 ;
+	version                : 1 ;
 	min_compatible_version : 0 ;
 }
 
@@ -808,85 +808,59 @@ item(FEAT_INDUSTRIES, btrsea_power_station, 0x01){
 
 
 //Uranium mine
-
-//Graphics
-
-
-
-
-//Spritelayouts
-
-
-
-
-//Tile
-
-/*
-item(FEAT_INDUSTRYTILES, uranmine_tile){
-	property{
-		substitute         : 0x00 ;
-		accepted_cargos    : [] ;
-		land_shape_flags   : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
-	}
-	graphics{
-		default         : sw_uranmine_tile_animation ;
-	}
-}
-
-
-
-//Switches
-
-
-
-
-
 //Tile layout
 
-tilelayout tilelayout_uranmine_tile {
-	0, 0 : uranmine_tile ;
+tilelayout tilelayout_uran_mine{
+	0,0 : nucrep_tile ;
+	0,1 : nucrep_tile ;
+	
+	1,0 : nucrep_tile ;
+	1,1 : nucrep_tile ;
 }
 
+switch (FEAT_INDUSTRIES, SELF, uran_mine_water_check, water_distance){
+	0..64 : CB_RESULT_LOCATION_ALLOW ;
+	return string(STR_ERROR_NOT_NEAR_WATER) ;
+}
 
-//Industry
+switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change, transported_last_month_1){
+	0 : STORE_PERM(0x00, LOAD_PERM(0x00) - 1) ;
+	STORE_PERM(0x00, LOAD_PERM(0x00) + 1) ;
+}
 
+switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change_check, production_rate_1){
+	1..8 : sw_uran_monthly_change ;
+	0 : CB_RESULT_IND_PROD_MULTIPLY_BY_4 ;
+	CB_RESULT_IND_PROD_NO_CHANGE ;
+}
 
-produce(produce_uranmine, 0, 0, 0, 9 ,0);
+produce(uran_mine_produce_monthly, 0, 0, 0, LOAD_PERM(0x00), 0);
 
-item(FEAT_INDUSTRIES, urnamine_industry, 1){
+item(FEAT_INDUSTRIES, uran_mine){
 	property {
-		substitute            : 0x00 ;
-		override              : 1 ;
-		layouts               : [tilelayout_uranmine_tile] ;
+		substitute            : 0x01 ;
+		layouts               : [tilelayout_uran_mine] ;
 		life_type             : IND_LIFE_TYPE_EXTRACTIVE ;
-		fund_cost_multiplier  : 255 ;
-		prod_cargo_types      : [cargotype("NWST")] ;
+		fund_cost_multiplier  : 37 ;
+		prod_cargo_types      : [cargotype("URAN")] ;
 		accept_cargo_types    : [] ;
-		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
-		prob_map_gen          : 4 ;
+		conflicting_ind_types : [0x01] ;
+		prod_multiplier       : [2] ;
+		prob_random           : 3 ;
 		prob_in_game          : 2 ;
-		map_colour            : 159 ;
+		map_colour            : 255 ;
 		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
 		name                  : string(STR_URANMINE_NAME) ;
 		nearby_station_name   : string(STR_URANMINE_STATION_NAME) ;
-		prospect_chance       : 0.3 ;
 	}
 	graphics {
-		//produce_cargo_arrival : produce_btrsea_arrival ;
-		produce_256_ticks     : produce_uranmine ;
+		produce_256_ticks     : uran_mine_produce_monthly ;
+		location_check        : uran_mine_water_check ;
+		monthly_prod_change   : sw_uran_monthly_change_check ;
+		//random_prod_change    : nucrep_random_prod_change_switch ;
 	}
 }
-
-
-
-
-
-
-
-*/
-
-
 
 
 

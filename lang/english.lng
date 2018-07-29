@@ -37,6 +37,7 @@ STR_LIVERY_RAILFREIGHT            : Railfreight Two-Tone Grey {STRING}
 STR_LIVERY_NCB                    : National Coal Board {GOLD}(Blue)
 STR_LIVERY_BSC                    : British Steel Corporation
 STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
+STR_LIVERY_ARRIVA_XC			  : Arriva Cross Country
 STR_LIVERY_MIDLAND_MAINLINE_BLUE  : Midland Mainline {GOLD}(Blue)
 STR_LIVERY_EMT                    : East Midlands trains
 STR_LIVERY_CONNEX				  : Connex
@@ -137,6 +138,7 @@ STR_NAME_142				 :Leyland "Pacer" (Diesel)
 STR_NAME_205				 :BR Southern DEMU "Thumper" (Diesel Electric)
 STR_NAME_EXPRESS_SPRINTER    :BREL Express Sprinter (Diesel)
 STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
+STR_NAME_VOYAGER             :Bombardier Voyager (Diesel Electric)
 
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_313				 :BREL Second Generation EMU (Dual Voltage)
@@ -173,6 +175,7 @@ STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or
 STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
 STR_158_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Express Sprinter!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
+STR_220_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Voyager!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
 STR_319_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Thameslink Classic!
 STR_375_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier "Electrostar" (Dual Volatge)!

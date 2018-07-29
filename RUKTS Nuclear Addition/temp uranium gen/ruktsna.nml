@@ -100,7 +100,7 @@ item(FEAT_INDUSTRYTILES, nucrep_tile){
 
 //Tile layout
 
-tilelayout tilelayout_nucrep_site{
+tilelayout tilelayout_uranium_mine{
 	0,0 : nucrep_tile ;
 	0,1 : nucrep_tile ;
 	
@@ -124,12 +124,12 @@ switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change_check, production_rate_1){
 	CB_RESULT_IND_PROD_NO_CHANGE ;
 }
 
-produce(nucrep_produce_monthly, 0, 0, 0, LOAD_PERM(0x00), 0);
+produce(ura_produce_monthly, 0, 0, 0, LOAD_PERM(0x00), 0);
 
-item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
+item(FEAT_INDUSTRIES, uran_mine){
 	property {
 		substitute            : 0x01 ;
-		layouts               : [tilelayout_nucrep_site] ;
+		layouts               : [tilelayout_uranium_mine] ;
 		life_type             : IND_LIFE_TYPE_EXTRACTIVE ;
 		fund_cost_multiplier  : 37 ;
 		prod_cargo_types      : [cargotype("URAN")] ;

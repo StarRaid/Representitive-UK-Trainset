@@ -1,0 +1,196 @@
+//Voyager
+
+
+//Sprite sets
+
+spriteset(gfx_voyager_virgin_middle		, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 125)}
+spriteset(gfx_voyager_virgin_front_hl	, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 150)}
+spriteset(gfx_voyager_virgin_front_tl	, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 175)}
+spriteset(gfx_voyager_virgin_front		, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 200)}
+
+spriteset(gfx_voyager_arriva_middle		, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 251)}
+spriteset(gfx_voyager_arriva_front_hl	, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 276)}
+spriteset(gfx_voyager_arriva_front_tl	, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 301)}
+spriteset(gfx_voyager_arriva_front		, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 326)}
+
+spriteset(gfx_voyager_virgin_purchase	, "gfx/DEMU/class_221.png"	){	template_dualhead_purchase( 0, 225)}
+spriteset(gfx_voyager_arriva_purchase	, "gfx/DEMU/class_221.png"	){	template_dualhead_purchase( 0, 351)}
+
+
+
+//Switches
+
+
+//Graphics
+
+switch(FEAT_TRAINS, SELF, sw_voyager_virgin_back_check, position_in_consist_from_end){
+	0 : gfx_voyager_virgin_front_tl ;
+	gfx_voyager_virgin_front ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_virgin_front_check, position_in_consist){
+	0 : gfx_voyager_virgin_front_hl ;
+	sw_voyager_virgin_back_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_arriva_back_check, position_in_consist_from_end){
+	0 : gfx_voyager_arriva_front_tl ;
+	gfx_voyager_arriva_front ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_arriva_front_check, position_in_consist){
+	0 : gfx_voyager_arriva_front_hl ;
+	sw_voyager_arriva_back_check ;
+}
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_voyager_auto, build_year < 2009){
+	1 : sw_voyager_virgin_front_check ;
+	sw_voyager_arriva_front_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_manual, cargo_subtype){
+	1 : sw_voyager_arriva_front_check ;
+	sw_voyager_virgin_front_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_manual_check, livery_choice){
+	1 : sw_voyager_manual ;
+	sw_voyager_auto ;
+}
+
+
+//Intermediate carriages
+
+switch(FEAT_TRAINS, SELF, sw_voyager_middle_auto, build_year < 2009){
+	1 : gfx_voyager_virgin_middle ;
+	gfx_voyager_arriva_middle ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_middle_manual, cargo_subtype){
+	1 : gfx_voyager_arriva_middle ;
+	gfx_voyager_virgin_middle ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_middle_manual_check, livery_choice){
+	1 : sw_voyager_middle_manual ;
+	sw_voyager_middle_auto ;
+}
+
+
+//Colour Mapping
+
+switch(FEAT_TRAINS, SELF, sw_voyager_colours_auto, build_year < 2009){
+	1 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	palette_2cc(COLOUR_PINK, COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_colours_manual, cargo_subtype){
+	1 : palette_2cc(COLOUR_PINK, COLOUR_RED) ;
+	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_colours_manual_check, livery_choice){
+	1 : sw_voyager_colours_manual ;
+	sw_voyager_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_colours_2cc_check, colour_scheme_1){
+	1 : sw_voyager_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+//Purchase sprite
+
+switch(FEAT_TRAINS, SELF, sw_voyager_purchase_sprite, current_year < 2009){
+	1 : gfx_voyager_virgin_purchase ;
+	gfx_voyager_arriva_purchase ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_purchase_2cc_check, colour_scheme_1){
+	1 : sw_voyager_colours_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_voyager_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_VIRGIN_TRAINS) ;
+	1 : string(STR_LIVERY_ARRIVA_XC) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_refit_text_check, livery_choice){
+	1 : sw_voyager_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+//Item
+
+
+switch(FEAT_TRAINS, SELF, sw_voyager_attach, vehicle_type_id){
+	220 : return CB_RESULT_ATTACH_ALLOW  ;
+	item_MU90 : return CB_RESULT_ATTACH_ALLOW  ;
+	return string(STR_220_NO_COUPLE) ;
+}
+
+
+item(FEAT_TRAINS, item_voyager, 220){
+	property{
+		name                           : string(STR_NAME_VOYAGER) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(2001,1,1) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 35 ;
+		reliability_decay              : 9 ;
+		cost_factor                    : 100 ;
+		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_factor            : 180 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 70 ;
+		loading_speed                  : 20 ;
+		track_type                     : RAIL ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		speed                          : 125 mph ;
+		power                          : 1120 kW ;
+		weight                         : 50 ton ;
+		tractive_effort_coefficient    : 0.45 ;
+		air_drag_coefficient           : 0.06 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		dual_headed                    : 1 ;
+	}
+	graphics{
+		default					: sw_voyager_manual_check ;
+		purchase				: sw_voyager_purchase_sprite ;
+		sound_effect			: sw_sfx_dmu_one ;
+		create_effect			: vfx_diesel_default ;
+		colour_mapping			: sw_voyager_colours_2cc_check ;
+		purchase_colour_mapping	: sw_voyager_purchase_2cc_check ;
+		cargo_subtype_text		: sw_voyager_refit_text_check ;
+		can_attach_wagon		: sw_voyager_attach ;
+		running_cost_factor		: return(current_speed == 0 ? 50 : 180) ;
+	}
+	livery_override (item_MU90){
+		default							: sw_voyager_middle_manual_check ;
+		colour_mapping					: sw_voyager_colours_2cc_check ;
+		cargo_capacity					: 80 ;
+		power							: 560 ;
+		cargo_subtype_text				: sw_voyager_refit_text_check ;
+		weight							: 45 ;
+		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_DIESEL ;
+		create_effect					: vfx_diesel_default ;
+	}
+}
