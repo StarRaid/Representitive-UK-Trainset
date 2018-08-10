@@ -236,7 +236,7 @@ item (FEAT_TRAINS, item_mk3, 9030) {
 		name: 							string(STR_NAME_Mk3);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1975, 1, 1);
-		model_life:						25;
+		model_life:						VEHICLE_NEVER_EXPIRES ;
 		retire_early:					1;
 		vehicle_life:					50;
 		reliability_decay:				7;

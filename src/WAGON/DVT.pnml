@@ -108,7 +108,7 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date( 1988, 1, 1) ;
-		model_life                     : 30 ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 45 ;
 		cost_factor                    : 115 ;
 		running_cost_base              : RUNNING_COST_NONE ;
