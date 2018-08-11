@@ -1,0 +1,281 @@
+Attached file is a precompiled module for m4nfo, a high-level frontend for generating low-level nfo byte-code for programming game extensions (newGRFs) for the successors of the game Transport Tycoon, namely TTDPatch and OpenTTD.
+
+For information about installation and usage please visit:
+
+http://www.ttdpatch.de/grfspecs/m4nfoManual/
+
+History:
+
+//------------------------------------------------------------------
+// m4nfo - header module	C)opyright 2009 - 2018 by Michael Blunck
+// see: http://www.ttdpatch.de/grfspecs/m4nfoManual/
+//
+// changes:
+// mb 15.09.2009	first version
+//
+// mb 14.02.2011	changed: yearbuilt() and ifyear() now handle long date formats
+// mb 16.02.2011	added: __sumbitsword for more than 8 bit evaluations (cargo classes)
+// mb 22.02.2011	changed: year() now handles long date formats
+// mb 11.03.2011	changed: text handling by deftxt() and reftxt(); added freetextlabel()
+// mb 12.04.2011	added: "if" now handles operators (<,>), "ifyear" removed
+// mb 27.05.2011	added: "grftext()" (moved from trains.m4)
+// mb 11.08.2011	added: some error handling functions
+// mb 28.08.2011	fixed: colourtable() missed sprite_count
+// mb 06.09.2011	fixed: _xbyte not allowed in spriteblock action0A
+// mb 11.09.2011	added: FIRST, same as MENU, for better readability
+// mb 15.09.2011	added: error handling for BYTE values
+// mb 18.09.2011	added: multiple sets in action0A for recolouring; allow for 32640 tables now
+// mb 19.09.2011	changed: getcolour() now takes a WORD as its parameter; needed for more recolour tables than FF 
+// mb 26.09.2011	removed: refitted()
+// mb 03.10.2011	fixed: __xtrim() never returned a valid hex format; the "x" was missing by some M4 reason
+// mb 07.10.2011	added: cbfail() replaces "ref(0)" for better readability
+// mb 14.10.2011	added: shiftmask() to be used in (some) function parameter lists
+// mb 19.10.2011	changed: OIL to OIL_ because of CTT label
+// mb 23.10.2011	added: building cost BUILD_RV
+// mb 27.10.2011	added: getcolour_plus2cc(), references 2cc tables in addition to a given base address
+// mb 29.10.2011	added: cargo classes (PASS and MAIL where cargoes as well)
+// mb 31.10.2011	added: "engine" in yearbuilt()
+// mb 12.11.2011	added: error messages for user data handling
+// mb 24.11.2011	added: Graphics Resource Management (GRM)
+// mb 02.12.2011	added: UTF-8 label for text strings
+// mb 05.12.2011	added: setproperties() - setting single properties for multiple
+//			vehicles/houses/objects/..
+// mb 07.12.2011	added: autorefit(<WORD>) - set cost and bit14 (autorefitting) for CB_RCOST
+// mb 09.12.2011	changed: <varsize> in skipif() is only BYTE for bit operations, else DWORD
+// mb 11.12.2011	fixed: <varsize> in skipif() was always the same ...
+// mb 18.12.2011	added: cargo class POWDER
+// mb 27.12.2011	changed: cargo classes SHELTER -> COVERED, WEIGHT -> OVERSIZED
+// mb 29.12.2011	fixed: condition type for BITCLR in skipif() was (still) broken
+//
+// mb 02.01.2012	added: functions to implement OTTD's action14
+// mb 03.01.2012	added: temporary change of comment delimiters for non-quoted strings
+// mb 28.01.2012	added: genders and gendertable()
+// mb 16.02.2012	added: custom tunnel portals (PORTALS) in spriteblock()
+// mb 17.02.2012	changed: generalizing parameter handling in spriteblock()
+// mb 17.02.2012	added: all remaining action5 features
+// mb 20.02.2012	added: displaymode() for vehicles, and enums
+// mb 25.02.2012	added: enums for town zones
+// mb 28.02.2012	added: helpers animcontrol(), animframe(); enums A_STOP, A_START, A_NEXT, A_NOP
+// mb 01.03.2012	added: anim_counter() checking the general animation counter
+// mb 02.03.2012	changed: shiftmask() now takes WORD masks as well
+// mb 29.03.2012	added: constants for landscape class
+// mb 20.05.2012	moved: yearbuilt() to "trains.m4" (and also to rvs.m4, ships.m4)
+// mb 08.06.2012	added: climate(), snowline() (changes for new "calculate()")
+// mb 10.06.2012	changed: climate() -> current_climate()
+// mb 24.08.2012	changed: TRACKTYPE to RAILTYPE in skipif()
+// mb 03.09.2012	changed: railtypetranslationtable() -> railtypetranslationtable()
+// mb 20.09.2012	added: auxiliary functions __cbword() and __scancbword()
+// mb 08.10.2012	added: aux functions __checkword() and __addtoshift()
+// mb 08.10.2012	added: ERR_WORDSIZE
+// mb 28.12.2012	added: waterclass constants: WC_LAND, WC_SEA, WC_CANAL, WC_RIVER
+// mb 31.12.2012	changed: removed decr() from __sumbits(), removed incr() from setbit() [internal]
+//
+// mb 15.01.2013	added: language-ID for Polish
+// mb 02.02.2013	changed/added: some internals (_ntext() -> __npar(); __collapse()
+// mb 06.02.2013	fixed: __makelo() didn't return a WORD-sized 0 in expressions like if(<word(3))
+// mb 17.02.2013	added: game_mode()
+// mb 19.01.2013	added: language-ID for Hungarian
+// mb 22.02.2013	added: __xbyte() instead of __byte() in makevehicle() and override() to support veh-IDs > 255 
+// mb 27.02.2013	changed: day() -> date() [WORD]: current date (counted as days from 1920)
+// mb 28.02.2013	added: new calculate() version for all TTD features
+// mb 01.03.2013	fixed: hex conversion in calculate() [in op 0E]
+// mb 02.03.2013	changed/fixed: calculate() [provisions for some weird newobject functions]
+// mb 10.04.2013	changed: removed some spurious spaces [ref(), __bytewordflag()]
+// mb 10.04.2013	added: internal functions for block post-processing:
+// mb 10.04.2013	__trail(), __hex2word(), __byteval1(), __byteval2(), __wordval1(),
+// mb 10.04.2013	__wordval2(), __splitblock(), __handleblock(), __handleblockentry(),
+// mb 10.04.2013	__byte2dword(), __word2dword()
+// mb 10.04.2013	changed: date() now uses DWORDs instead of WORDs
+// mb 11.04.2013	fixed: __handleblock(), __handleblockentry() didn't recognized comments
+// mb 11.04.2013	added: __postprocess()
+// mb 11.04.2013	changed: date() using _postprocess() [DWORD] now
+// mb 12.04.2013	added: __byte2word(), mixed2dword(), mixed2word() [for WORD post-processing]
+// mb 12.04.2013	changed: __handleblock(), __handleblockentry(), __postprocess() now for WORDs as well
+// mb 18.04.2013	changed: re-introduced setpath()
+// mb 03.08.2013	added: extended action1 format (OTTD >r22925 only) [implemented but somewhat missing?]
+// mb 05.08.2013	added: missing(?) snowlinetable()
+// mb 05.08.2013	added: dayofmonth(), leapyear(), dayofyear(), trafficside(), game_level()
+// mb 05.08.2013	changed: current_climate() now returns (1,2,4,8 == TEMPERATE, ARCTIC, TROPIC, TOYLAND)
+// mb 05.08.2013	changed: export() now keeps the highest allocated text-ID, to allow use of more deftxt() in following source files
+// mb 18.08.2013	fixed: spriteset() - multiple ground tiles count as building tiles!
+// mb 24.08.2013	fixed: comment handling in __postprocess(), __splitblock(), __trimout()
+// mb 24.08.2013	changed: anim_counter() __postprocess() now with self-adjusting shift-mask
+// mb 07.09.2013	fixed: __trail() (M4's implementation of regexp can't handle TABs explicitly)
+// mb 11.09.2013	changed: new calculate() incl changes in register()
+// mb 11.09.2013	added: __inflate(), __addmask() for use with calculate()
+// mb 11.09.2013	removed: __expand() for use with calculate()
+// mb 11.09.2013	changed: year() adapted to new calculate()
+// mb 11.09.2013	fixed: __commentstart() in __postprocess() failed when comment started at 0
+// mb 30.09.2013	added: 2nd parameter to def() to be used as a ref() label
+// mb 10.10.2013	changed: ref()/def() don't take 255 as parameter because of cbfail(), added err message
+// mb 11.10.2013	added: init of cbfail() in grfinit()
+// mb 20.10.2013	fixed: cbfail() may not use ref() itself [circle ref!]
+// mb 20.11.2013	fixed: cbfail() needed different empty action2 for various features
+//
+// mb 04.04.2014	r79 added: pcalc(), parameter() - allow math operations on grf parameter(s)
+// mb 18.04.2014	r80 fixed: cbfail() didn't set __lastref()
+// mb 15.05.2014	r81 added: automatic parameter allocation for recolour maps:
+// mb 15.05.2014	r81 changed: spriteblock(), getcolour(), getcolour_pluscc(), getcolour_plus2cc()
+// mb 20.05.2014	r82 changed: introducing 2nd parameter for CB helper function autorefit(): "%"
+// mb 22.05.2014	r83 fixed: autorefit(), wrong calculation when using %
+// mb 26.05.2014	r84 changed: cargotranslationtable() now automatically generates cargo-IDs from specified cargo labels
+// mb 27.05.2014	r84 fixed: proper error message for settype() [Thilo]
+// mb 29.05.2014	r84 fixed: parameter() didn't need __byte() [Thilo]
+// mb 29.05.2014	r84 added: setdefault(), setvalues(), menuvalue() in grfinit() [Thilo]
+// mb 31.05.2014	r84 fixed: no callback init for bridges
+// mb 05.06.2014	r85 added: exposing internal variable "__sprcount"
+// mb 05.06.2014	r85 changed: calculating __parcount, to handle different parameter allocations
+// mb 06.06.2014	r85 added: templating functions for(), foreach()
+// mb 14.06.2014	r86 changed: a spriteblock()'s set() can be named
+// mb 14.06.2014	r86 changed: _exportloop() -> __exportloop() [internal]
+// mb 25.06.2014	r86 added: mask parameter in function skipif()
+// mb 03.07.2014	r86 changed: improved template function for()
+// mb 03.07.2014	r86 changed: renamed for() -> forloop(), foreach() -> forloop()
+// mb 18.07.2014	r86 changed: ENDLIST -> grftext(NONE)
+// mb 25.07.2014	r86 changed: getcolour(), getcolour_pluscc(), getcolour_plus2cc() using cbfail() as default ref val now [internal]
+// mb 23.08.2014	r86 added: ERR_NOSTATCLASS (missing station class)
+// mb 17.10.2014	r87 fixed: text "parameter" needs quoting in function error() [internal]
+// mb 31.10.2014	r88 changed: date() -> current_date()
+// mb 31.10.2014	r88 added: aux function date()
+// mb 31.10.2014	r88 fixed: __longdate(), removed CR/LF
+// mb 31.10.2014	r88 removed: __testwordflag()
+// mb 31.10.2014	r88 changed: __bytewordflag() (for DWORDs)
+// mb 31.10.2014	r88 changed: in if() (for DWORDs): __makelo(), __makehi(), __less89, __greater(), _range()
+// mb 31.10.2014	r88 changed: in __postprocess(): __handleblockentry()
+// mb 31.10.2014	r88 added: in __postprocess(): __wordval3(), __byte2dword2(), __mixed2dword2()
+// mb 03.11.2014	r89 changed: incrbasecost() -> basecost()
+// mb 04.11.2014	r89 added: __max() [internal]
+// mb 04.11.2014	r89 added: allow non-ordered parameter settings in grf_init()
+// mb 08.11.2014	r89 added: allow action5's offset parameter in spriteblock()
+//
+// mb 04.01.2015	r90 added: sprite() may take a label too
+// mb 10.01.2015	r90 fixed: OTTD version check was broken for stable versions
+// mb 13.04.2015	r91 added: getothergrfparameter() probes GRF VERSION as well now
+// mb 17.04.2015	r91 added: OS dependency for cargotranslationtable() and export()
+// mb 29.05.2015	r91 added: __year() and __printyear() [internal: fix lifecycle()]
+// mb 01.06.2015	r91 fixed: setproperties() lacked provision for "extended byte" IDs
+// mb 28.06.2015	r91 fixed: backport of former sprite allocation handling (might be incompatible to TTDPatch)
+// mb 25.07.2015	r91 fixed: operator ">" in if() [internal: bug in __makehi() for WORDs]
+//
+// mb 02.03.2016	r92 added: aux functions shiftmask_add_div() and shiftmask_add_mod() [from objects.m4]
+// mb 16.03.2016	r92 added: setbaselabel() for labels in extended format sprite block
+// mb 16.03.2016	r92 changed: set() sprite base for labels
+// mb 22.03.2016	r92 fixed: (re-)added parameter count to spriteblock allocate (action6) [r91, 28.06.]
+// mb 04.04.2016	r93 moved: setregisters() [from newobjects/stations.m4]
+// mb 29.04.2016	r93 moved: __scanaddlist() from stations.m4 and newobjects.m4 [internal]
+// mb 21.10.2016	r94 added: support for "New Map Features" (NMF)
+// mb 03.11.2016	r95 added: spritestack(), spritelayer()
+// mb 03.11.2016	r95 added: RC_DEFAULT, RC_NONE [stacked sprites]
+//
+// mb 07.01.2017	r96 added: ERR_VEHID (Invalid veh-ID in function; version 07)
+// mb 25.02.2017	r97 changed: load() and move() allowed with no parameter [stacked sprites]
+// mb 06.03.2017	r98 changed: grftext(NONE) also for GRF v8 now
+// mb 09.03.2017	r98 added: aux function cargomapsprite() for spritestack()
+// mb 16.03.2017	r99 fixed: spritestack() lacked invalidation of __hidden() [internal]
+// mb 02.05.2017	r100 added: CB helper function setrefitcost() [CB_RCOST]
+// mb 02.05.2017	r100 fixed: autorefit(), silenced wrong err message
+// mb 07.05.2017	r100 fixed: setproperties() didn't reset property count [internal]
+// mb 12.05.2017	r100 changed: __parcount from grfinit() now written to scratch file directly, not through export()
+// mb 04.06.2017	r101 added: helper functions randomallocsprite(), randomttdsprite() [stacked sprites]
+// mb 21.06.2017	r102 added: ERR_PRICE (Missing enginetype parameter in function)
+// mb 07.09.2017	r103 fixed: echo for OSX [CTT]
+// mb 17.09.2017	r103 added: grfblitter() [32 bpp]
+// mb 27.09.2017	r103 fixed: echo for OSX [parcount]
+// mb 07.11.2017	r104 changed: set GRF version 8 as default
+// mb 11.11.2017	r105 changed: __incrbasecost() [internal: enlarged factors]
+// mb 22.11.2017	r106 fixed: grftext() can only display 'no text' by CB result in GRF version 8
+// mb 22.12.2017	r107 added: helper function sub() [for setregisters()]
+//
+// mb 02.02.2018	r108 changed: BUILD_WAGGONS -> BUILD_WAGONS
+// mb 02.02.2018	r108 added: RUN_ENGINES, RUN_WAGONS (base costs: 'real' price/cost scheme)
+// mb 22.02.2018	r109 added: language CZ; err message for missing language ERR_NOLANGUAGE
+// mb 27.02.2018	r110 fixed: language code for CZ is 0x95
+// mb 14.03.2018	r111 added: function parameter() now includes eval()
+// mb 31.03.2018	r111 fixed: offset bug in helper function sub()
+//
+// mb 16.05.2018	r112 changed: checkparameter() -> getparameter()
+// mb 16.05.2018	r112 changed: setgrfparameter() -> setparameter()
+// mb 16.05.2018	r112 changed: parameter() -> param()
+// mb 18.05.2018	r113 changed: import/export scheme [now export(<file>, {<label>}) ]
+// mb 27.05.2018	r113: fixed: wrong err message [CID0 -> CID255]
+//
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+// m4nfo - stations module	C)opyright 2009 - 2018 by Michael Blunck
+// see: http://www.ttdpatch.de/grfspecs/m4nfoManual/
+// 
+// changes:
+// mb 16.09.2012	newly assembled from m4nfo.m4, m4nfo_st.m4 and m4nfo_st0.m4
+// mb 27.11.2012	added: CB_AISELECT, AI_STATID, AI_cargo(), AI_stationsize()
+// mb 27.11.2012	changed: makestation() now allows for generic CB (action3)
+// mb 25.12.2012	fixed: setcargotriggers() was lacking support for multiple station-IDs
+// mb 28.12.2012	added: tinfo_flatwater(<pos>), returns "32" if tile is flat/full water
+//
+// mb 09.01.2013	added: TTD_NONE for functions pylons()/nopylons(), wires()/nowires() and nontrack()
+// mb 15.01.2013	added: ALLCARGO (ff ff ff ff) for setcargotriggers()
+// mb 31.01.2013	added: test_tiletype() for CB_TILETYPE
+// mb 01.02.2013	added: tiletypelayout() [prop 0E]
+// mb 03.02.2013	added: plt_tiletype(), plt_axis()
+// mb 04.02.2013	added: test_axis(), test_size() for CB_TILETYPE
+// mb 15.02.2013	added: anim_frame(), anim_trigger() (when in CB_ACONTROL)
+// mb 16.02.2013	fixed: bug in plt_index(), plt_indexrev(), test_position()
+// mb 16.02.2013	added: stationage()
+// mb 16.02.2013	changed: animation triggers now explicitly available
+// mb 16.02.2013	added: cargo_trigger() returning cargo type from CB_ACONTROL triggers NEWCARGO/NOCARGO
+// mb 18.02.2013	changed: namechange position() -> pos()
+// mb 19.02.2013	added: copytilelayout()
+// mb 20.02.2013	added: notransparency() (was missing?)
+// mb 12.03.2013	changed: tiletype() -> spritetype
+// mb 16.05.2013	added: exclusiverights(), iswaypoint()
+// mb 16.05.2013	added: servicedbytype(); TRAIN, BUS, TRUCK, AIRCRAFT, SHIP
+// mb 16.05.2013	added: timesinceload(), timesinceunload()
+// mb 24.08.2013	added: stationage() with __postprocess() now
+// mb 23.09.2013	changed: animation() -> anim_info(), animationspeed() -> anim_speed(), ...
+// mb 23.09.2013	changed: ... animationtriggers() -> anim_triggers()
+// mb 20.11.2013	r20 added: hook for empty action2 [internal]
+//
+// mb 27.06.2014	r21 fixed: empty action2 was buggy
+// mb 27.06.2014	r21 added: tinfo_tracktype()
+// mb 23.08.2014	r21 added: error(ERR_NOSTATCLASS) in definestation()
+// mb 24.08.2014	r22 deleted: mask(), use shiftmask() instead
+//
+// mb 04.01.2015	r23 changed: [internal] implementation of plt_total(), plt_length(), plt_num(), plt_numrev(), plt_pos(), plt_posrev(), plt_midpos(), plt_midnum()
+// mb 04.01.2015	r23 added: aux function addmodulo()
+// mb 04.01.2015	r23 added: tile() may take a label
+// mb 04.01.2015	r23 fixed: anim_info() anim frame number was off by 1
+// mb 11.01.2015	r23 added: CB_LAYOUT helper function reftile()
+// mb 06.12.2015	r24 fixed: yearbuilt() missed postprocess()
+//
+// mb 01.03.2016	r25 changed: unify random and animation triggers [internal]
+// mb 22.03.2016	r25 added: cargowaiting() - amount of cargo waiting at station
+// mb 23.03.2016	r25 changed: shiftmask for anim_trigger()
+// mb 04.04.2016	r25 added: advanced sprite layout [ASL]
+// mb 29.04.2016	r25 moved: __scanaddlist() to header.m4 [internal]
+// mb 10.06.2016	r25 fixed: missing recolour bit in __a_compcol() [internal]
+// mb 15.06.2016	r25 added: plt_edges()
+// mb 16.06.2016	r25 added: more CB_TILETYPE test functions: test_total(), ~length(), ~num(), ~numrev(), ~pos(), ~posrev()
+// mb 25.06.2016	r25 added: plt_size()
+// mb 21.10.2016	r26 added: bridge_height() [NMF only]
+//
+// mb 11.08.2017	r27 added: PIXOFFSET_XY (ASL)
+// mb 11.08.2017	r27 changed: animation triggers [internal]
+// mb 12.08.2017	r27 fixed: cargowaiting() lacking shift op
+// mb 31.03.2018	r28 fixed: cargowaiting() missing num par check
+// mb 16.05.2018	r28 changed: normal() -> regular() [32bpp extra zoom]
+//
+//------------------------------------------------------------------
+
+Copyright Notice
+
+m4nfo - © 2009 - 2018 Michael Blunck - All Rights Reserved. 
+
+Permission to use, copy and distribute this software and its documentation for non-commercial purposes, without fee and without a signed licensing agreement, is hereby granted, provided that the above copyright notice, this paragraph and the following four paragraphs appear in all copies and distributions. Contact the above Copyright holder for commercial licensing opportunities. 
+
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, LOSS OF USE, DATA, OR PROFITS) ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE COPYRIGHT HOLDER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+
+THE SOFTWARE AND ACCOMPANYING DOCUMENTATION, IF ANY, PROVIDED HEREUNDER IS PROVIDED "AS IS". THE COPYRIGHT HOLDER HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS. 
+
+ALL COMMERCIAL USE OF THIS SOFTWARE IS STRICTLY PROHIBITED. 
+
+ALL REDISTRIBUTION OF THIS SOFTWARE TO OTHER PARTIES FOR COMMERCIAL USE IS STRICTLY PROHIBITED.
+

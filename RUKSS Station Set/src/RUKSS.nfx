@@ -1,0 +1,434 @@
+setfeature(_STATION)
+grfinit(52554B53,
+	grfname(ALL,"Representive UK Stations Set")
+	grfdescription(ALL, "nothing here yet" 0D
+	"nothing here yet")
+	grfpalette(DOS)
+	grfversion(1)
+	grfminversion(1)
+)
+
+define(RUKSS_UK_BASIC_DUAL,			000)
+define(RUKSS_UK_BASIC_BACK,			001)
+define(RUKSS_UK_BASIC_FRONT,		002)
+define(RUKSS_UK_BASIC_RAMP_FAR,		003)
+define(RUKSS_UK_BASIC_RAMP_NEAR,	004)
+define(RUKSS_UK_BASIC_FRONT_FAR,	005)
+define(RUKSS_UK_BASIC_FRONT_NEAR,	006)
+define(RUKSS_UK_BASIC_BACK_FAR,		007)
+define(RUKSS_UK_BASIC_BACK_NEAR,	010)
+define(RUKSS_UK_BASIC_SHELTER,		011)
+define(RUKSS_UK_BASIC_BACK_SHELTER,	012)
+define(RUKSS_UK_BASIC_FRONT_SHELTER,013)
+
+
+
+define(CLASS_PLATFORM,	50 4c 54 46) //PLTF
+define(CLASS_PLATFORMS,	44 42 50 4c) //DBPL
+define(CLASS_BUILDING,	42 4c 44 4e) //BLDN
+define(CLASS_EYECANDY,	45 59 43 44) //EYCN
+
+definestation(RUKSS_UK_BASIC_DUAL,"Generic platform 1",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_BACK,"Generic platform 1 - Back",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_FRONT,"Generic platform 1 - Front",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_RAMP_FAR,"Generic platform 1 - Far Ramp",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_RAMP_NEAR,"Generic platform 1 - Near Ramp",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_FRONT_FAR,"Generic platform 1 - Front Far Ramp",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_FRONT_NEAR,"Generic platform 1 - Front Near Ramp",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_BACK_FAR,"Generic platform 1 - Rear Far Ramp",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_BACK_NEAR,"Generic platform 1 - Rear Near Ramp",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_SHELTER,"Generic platform 1 - Old Style Shelter",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_BACK_SHELTER,"Generic platform 1 - Rear Old Style Shelter",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_FRONT_SHELTER,"Generic platform 1 - Front Old Style Shelter",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+spriteblock(
+    set(
+////Standard Platfoms Modern
+// 0..3, standard platforms
+	sprite(gfx/gwst1.png 0 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 80 0 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 160 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 240 0 09 122 64 -9 -102)
+// 4..7, back platforms
+	sprite(gfx/gwst1.png 0 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 160 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+// 8..11, front platforms	
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 80 0 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 240 0 09 122 64 -9 -102)
+// 12..15, standard end ramps (far)
+	sprite(gfx/gwst1.png 320 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 400 0 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 480 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 560 0 09 122 64 -9 -102)
+// 16..19, standard end ramps (near)
+	sprite(gfx/gwst1.png 640 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 720 0 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 800 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 880 0 09 122 64 -9 -102)
+// 20..23, front platforms (far)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 400 0 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 560 0 09 122 64 -9 -102)
+// 24..27, front platforms ramps (near)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 720 0 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 880 0 09 122 64 -9 -102)
+// 28..31, back platforms (far)
+	sprite(gfx/gwst1.png 320 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 480 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -9 -91)
+// 32..35, back platforms (near)
+	sprite(gfx/gwst1.png 640 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 800 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -9 -91)
+// 36..39, shelters
+	sprite(gfx/gwst1.png 320 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 400 123 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 480 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 560 123 09 122 64 -9 -102)
+// 40..43, back shelters 
+	sprite(gfx/gwst1.png 320 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 480 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -9 -91)
+// 44..47, front shelters
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 400 123 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 560 123 09 122 64 -9 -102)
+	
+	)
+)
+
+def(1) spriteset(little(0),lots(0))
+
+layout(RUKSS_UK_BASIC_DUAL,
+    tile(_RUKSS_UK_BASIC_DUAL,
+      ground(1012)
+      regular(0, xyz(0,0,0),dxdydz(16,5,7))
+      regular(1, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(2, xyz(0,0,0),dxdydz(5,16,7))
+      regular(3, xyz(11,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_BASIC_BACK,
+    tile(_RUKSS_UK_BASIC_BACK,
+      ground(1012)
+      regular(4, xyz(0,0,0),dxdydz(16,5,7))
+      regular(5, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(6, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(7, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_FRONT,
+    tile(_RUKSS_UK_BASIC_FRONT,
+      ground(1012)
+      regular(8, xyz(0,0,0),dxdydz(16,5,7))
+      regular(9, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(10, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(11, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_RAMP_FAR,
+    tile(_RUKSS_UK_BASIC_RAMP_FAR,
+      ground(1012)
+      regular(12, xyz(0,0,0),dxdydz(16,5,7))
+      regular(13, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(14, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(15, xyz(11,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_BASIC_RAMP_NEAR,
+    tile(_RUKSS_UK_BASIC_RAMP_NEAR,
+      ground(1012)
+      regular(16, xyz(0,0,0),dxdydz(16,5,7))
+      regular(17, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(18, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(19, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_FRONT_FAR,
+    tile(_RUKSS_UK_BASIC_FRONT_FAR,
+      ground(1012)
+      regular(20, xyz(0,0,0),dxdydz(16,5,7))
+      regular(21, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(22, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(23, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_FRONT_NEAR,
+    tile(_RUKSS_UK_BASIC_FRONT_NEAR,
+      ground(1012)
+      regular(24, xyz(0,0,0),dxdydz(16,5,7))
+      regular(25, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(26, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(27, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_BACK_FAR,
+    tile(_RUKSS_UK_BASIC_BACK_FAR,
+      ground(1012)
+      regular(28, xyz(0,0,0),dxdydz(16,5,7))
+      regular(29, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(30, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(31, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_BACK_NEAR,
+    tile(_RUKSS_UK_BASIC_BACK_NEAR,
+      ground(1012)
+      regular(32, xyz(0,0,0),dxdydz(16,5,7))
+      regular(33, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(34, xyz(0,0,0),dxdydz(5,16,7))
+	  	regular(35, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_SHELTER,
+    tile(_RUKSS_UK_BASIC_SHELTER,
+      ground(1012)
+      regular(36, xyz(0,0,0),dxdydz(16,5,7))
+      regular(37, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(38, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(39, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_BACK_SHELTER,
+    tile(_RUKSS_UK_BASIC_BACK_SHELTER,
+      ground(1012)
+      regular(40, xyz(0,0,0),dxdydz(16,5,7))
+      regular(41, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(42, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(43, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_FRONT_SHELTER,
+    tile(_RUKSS_UK_BASIC_FRONT_SHELTER,
+      ground(1012)
+      regular(44, xyz(0,0,0),dxdydz(16,5,7))
+      regular(45, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(46, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(47, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+def(2) callback(
+	reftile(_RUKSS_UK_BASIC_DUAL) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(3) callback(
+	reftile(_RUKSS_UK_BASIC_BACK) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(4) callback(
+	reftile(_RUKSS_UK_BASIC_FRONT) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(5) callback(
+	reftile(_RUKSS_UK_BASIC_RAMP_FAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(6) callback(
+	reftile(_RUKSS_UK_BASIC_RAMP_NEAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(7) callback(
+	reftile(_RUKSS_UK_BASIC_FRONT_FAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(8) callback(
+	reftile(_RUKSS_UK_BASIC_FRONT_NEAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(9) callback(
+	reftile(_RUKSS_UK_BASIC_BACK_FAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(10) callback(
+	reftile(_RUKSS_UK_BASIC_BACK_NEAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(11) callback(
+	reftile(_RUKSS_UK_BASIC_SHELTER) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(12) callback(
+	reftile(_RUKSS_UK_BASIC_BACK_SHELTER) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(13) callback(
+	reftile(_RUKSS_UK_BASIC_FRONT_SHELTER) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+makestation(RUKSS_UK_BASIC_DUAL,
+	default(ref(2))
+)
+
+makestation(RUKSS_UK_BASIC_BACK,
+	default(ref(3))
+)
+
+makestation(RUKSS_UK_BASIC_FRONT,
+	default(ref(4))
+)
+
+makestation(RUKSS_UK_BASIC_RAMP_FAR,
+	default(ref(5))
+)
+
+makestation(RUKSS_UK_BASIC_RAMP_NEAR,
+	default(ref(6))
+)
+
+makestation(RUKSS_UK_BASIC_FRONT_FAR,
+	default(ref(7))
+)
+
+makestation(RUKSS_UK_BASIC_FRONT_NEAR,
+	default(ref(8))
+)
+
+makestation(RUKSS_UK_BASIC_BACK_FAR,
+	default(ref(9))
+)
+
+makestation(RUKSS_UK_BASIC_BACK_NEAR,
+	default(ref(10))
+)
+
+makestation(RUKSS_UK_BASIC_SHELTER,
+	default(ref(11))
+)
+
+makestation(RUKSS_UK_BASIC_BACK_SHELTER,
+	default(ref(12))
+)
+
+makestation(RUKSS_UK_BASIC_FRONT_SHELTER,
+	default(ref(13))
+)
