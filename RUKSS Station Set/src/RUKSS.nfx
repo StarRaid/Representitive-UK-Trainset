@@ -26,13 +26,18 @@ define(RUKSS_UK_FENCE_FRONT_FAR,	016)
 define(RUKSS_UK_FENCE_FRONT_NEAR,	017)
 define(RUKSS_UK_FENCE_BACK_FAR,		020)
 define(RUKSS_UK_FENCE_BACK_NEAR,	021)
+define(RUKSS_UK_OLD_BACK_FENCE_DUAL,	022)
+define(RUKSS_UK_OLD_BACK_FENCE_BACK,	023)
+define(RUKSS_UK_OLD_BACK_FENCE_FRONT,	024)
+define(RUKSS_UK_INFO_BOARD_DUAL,	025)
+define(RUKSS_UK_INFO_BOARD_BACK,	026)
+define(RUKSS_UK_INFO_BOARD_FRONT,	027)
 
-
-
-define(CLASS_PLATFORM,	50 4c 54 46) //PLTF
+define(CLASS_PLATFORM,	52 55 4B 53) //PLTF
 define(CLASS_PLATFORMS,	44 42 50 4c) //DBPL
 define(CLASS_BUILDING,	42 4c 44 4e) //BLDN
 define(CLASS_EYECANDY,	45 59 43 44) //EYCN
+
 
 definestation(RUKSS_UK_BASIC_DUAL,"Generic platform 1",
 	class(CLASS_PLATFORM)
@@ -142,6 +147,51 @@ definestation(RUKSS_UK_FENCE_BACK_NEAR,"Generic platform 1 - Rear Near Ramp with
 	pylons(TTD_NONE)
 )
 
+definestation(RUKSS_UK_OLD_BACK_FENCE_DUAL,"Old style fenced platform",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_OLD_BACK_FENCE_BACK,"Old style fenced platform - Back",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_OLD_BACK_FENCE_FRONT,"Old style fenced platform - Front",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_INFO_BOARD_DUAL,"Platform with Information Board",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	anim_triggers(BUILT)
+	pylons(TTD_NONE)
+	anim_info({4,LOOP})
+	anim_speed(4)
+)
+
+definestation(RUKSS_UK_INFO_BOARD_BACK,"Platform with Information Board - Back",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	anim_triggers(BUILT)
+	pylons(TTD_NONE)
+	anim_info({4,LOOP})
+	anim_speed(4)
+)
+
+definestation(RUKSS_UK_INFO_BOARD_FRONT,"Platform with Information Board - Front",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	anim_triggers(BUILT)
+	pylons(TTD_NONE)
+	anim_info({4,LOOP})
+	anim_speed(4)
+)
+
 spriteblock(
     set(
 ////Standard Platfoms Modern
@@ -235,6 +285,65 @@ spriteblock(
 	sprite(gfx/gwst1.png 80 246 09 122 64 -53 -102)
 	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)	
 	sprite(gfx/gwst1.png 240 246 09 122 64 -9 -102)
+// 72..75, old fence
+	sprite(gfx/gwst1.png 640 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 720 246 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 800 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 880 246 09 122 64 -9 -102)
+// 76..79, old fence, back
+	sprite(gfx/gwst1.png 640 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)	
+	sprite(gfx/gwst1.png 800 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)	
+// 80..83, old fence, front
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)	
+	sprite(gfx/gwst1.png 720 246 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)	
+	sprite(gfx/gwst1.png 880 246 09 122 64 -9 -102)
+//84..87, info board [1/4]
+	sprite(gfx/gwst1.png 0 369 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 80 369 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 160 369 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 240 369 09 122 64 -9 -102)
+//88..91, info board [2/4]
+	sprite(gfx/gwst1.png 320 369 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 400 369 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 480 369 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 560 369 09 122 64 -9 -102)
+//92..95, info board [3/4]
+	sprite(gfx/gwst1.png 320 492 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 400 492 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 480 492 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 560 492 09 122 64 -9 -102)
+//96..99, info board [4/4]
+	sprite(gfx/gwst1.png 0 492 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 80 492 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 160 492 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 240 492 09 122 64 -9 -102)
+//100..101, info board back [1/4]
+	sprite(gfx/gwst1.png 0 369 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 160 369 09 122 64 -31 -91)
+//102..103, info board back [2/4]
+	sprite(gfx/gwst1.png 320 369 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 480 369 09 122 64 -31 -91)
+//104..105, info board back [3/4]
+	sprite(gfx/gwst1.png 320 492 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 480 492 09 122 64 -31 -91)
+//106..107, info board back [4/4]
+	sprite(gfx/gwst1.png 0 492 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 160 492 09 122 64 -31 -91)
+//108..109, info board front [1/4]
+	sprite(gfx/gwst1.png 80 369 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 240 369 09 122 64 -9 -102)
+//110..111, info board front [2/4]
+	sprite(gfx/gwst1.png 400 369 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 560 369 09 122 64 -9 -102)
+//112..113, info board front [3/4]
+	sprite(gfx/gwst1.png 400 492 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 560 492 09 122 64 -9 -102)
+//114..115, info board front [4/4]
+	sprite(gfx/gwst1.png 80 492 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 240 492 09 122 64 -9 -102)
 	)
 )
 
@@ -474,6 +583,156 @@ layout(RUKSS_UK_FENCE_BACK_NEAR,
     )
 ) 
 
+layout(RUKSS_UK_OLD_BACK_FENCE_DUAL,
+    tile(_RUKSS_UK_OLD_BACK_FENCE_DUAL,
+      ground(1012)
+      regular(72, xyz(0,0,0),dxdydz(16,5,7))
+      regular(73, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(74, xyz(0,0,0),dxdydz(5,16,7))
+      regular(75, xyz(11,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_OLD_BACK_FENCE_BACK,
+    tile(_RUKSS_UK_OLD_BACK_FENCE_BACK,
+      ground(1012)
+      regular(76, xyz(0,0,0),dxdydz(16,5,7))
+      regular(77, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(78, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(79, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_OLD_BACK_FENCE_FRONT,
+    tile(_RUKSS_UK_OLD_BACK_FENCE_FRONT,
+      ground(1012)
+      regular(80, xyz(0,0,0),dxdydz(16,5,7))
+      regular(81, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(82, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(83, xyz(11,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_INFO_BOARD_DUAL,
+    tile(_RUKSS_UK_INFO_BOARD_DUAL_1,
+      ground(1012)
+      regular(84, xyz(0,0,0),dxdydz(16,5,7))
+      regular(85, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(86, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(87, xyz(11,0,0),dxdydz(5,16,7))
+    )
+	tile(_RUKSS_UK_INFO_BOARD_DUAL_2,
+      ground(1012)
+      regular(88, xyz(0,0,0),dxdydz(16,5,7))
+      regular(89, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(90, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(91, xyz(11,0,0),dxdydz(5,16,7))
+    )
+	tile(_RUKSS_UK_INFO_BOARD_DUAL_3,
+      ground(1012)
+      regular(92, xyz(0,0,0),dxdydz(16,5,7))
+      regular(93, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(94, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(95, xyz(11,0,0),dxdydz(5,16,7))
+    )
+	tile(_RUKSS_UK_INFO_BOARD_DUAL_4,
+      ground(1012)
+      regular(96, xyz(0,0,0),dxdydz(16,5,7))
+      regular(97, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(98, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(99, xyz(11,0,0),dxdydz(5,16,7))
+    )
+layout(RUKSS_UK_INFO_BOARD_BACK,
+    tile(_RUKSS_UK_INFO_BOARD_BACK_1,
+      ground(1012)
+      regular(100, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(101, xyz(0,0,0),dxdydz(5,16,7))
+    )
+	tile(_RUKSS_UK_INFO_BOARD_BACK_2,
+      ground(1012)
+      regular(102, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(103, xyz(0,0,0),dxdydz(5,16,7))
+    )
+	tile(_RUKSS_UK_INFO_BOARD_BACK_3,
+      ground(1012)
+      regular(104, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(105, xyz(0,0,0),dxdydz(5,16,7))
+    )
+	tile(_RUKSS_UK_INFO_BOARD_BACK_4,
+      ground(1012)
+      regular(106, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(107, xyz(0,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_INFO_BOARD_FRONT,
+    tile(_RUKSS_UK_INFO_BOARD_FRONT_1,
+      ground(1012)
+      regular(108, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(109, xyz(0,0,0),dxdydz(5,16,7))
+    )
+	tile(_RUKSS_UK_INFO_BOARD_FRONT_2,
+      ground(1012)
+      regular(110, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(111, xyz(0,0,0),dxdydz(5,16,7))
+    )
+	tile(_RUKSS_UK_INFO_BOARD_FRONT_3,
+      ground(1012)
+      regular(112, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(113, xyz(0,0,0),dxdydz(5,16,7))
+    )
+	tile(_RUKSS_UK_INFO_BOARD_FRONT_4,
+      ground(1012)
+      regular(114, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(115, xyz(0,0,0),dxdydz(5,16,7))
+    )
+)
+
 def(2) callback(
 	reftile(_RUKSS_UK_BASIC_DUAL) if(CB_LAYOUT) // tile layout
 	ref(1) else		     // graphics chain
@@ -564,6 +823,65 @@ def(19) callback(
 	ref(1) else		     // graphics chain
 )
 
+def(20) callback(
+	reftile(_RUKSS_UK_OLD_BACK_FENCE_DUAL) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(21) callback(
+	reftile(_RUKSS_UK_OLD_BACK_FENCE_BACK) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(22) callback(
+	reftile(_RUKSS_UK_OLD_BACK_FENCE_FRONT) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(23) anim_frame(
+	reftile(_RUKSS_UK_INFO_BOARD_DUAL_1) if(0)
+	reftile(_RUKSS_UK_INFO_BOARD_DUAL_2) if(1)
+	reftile(_RUKSS_UK_INFO_BOARD_DUAL_3) if(2)
+	reftile(_RUKSS_UK_INFO_BOARD_DUAL_4) else
+)
+
+def(24) anim_trigger(
+animcontrol(A_START) if(BUILT)
+animcontrol(A_NOP) else
+)
+
+def(25) callback(
+	ref(23) if(CB_LAYOUT)
+	ref(24) if(CB_ACONTROL)
+	ref(1) else
+)
+
+def(26) anim_frame(
+	reftile(_RUKSS_UK_INFO_BOARD_BACK_1) if(0)
+	reftile(_RUKSS_UK_INFO_BOARD_BACK_2) if(1)
+	reftile(_RUKSS_UK_INFO_BOARD_BACK_3) if(2)
+	reftile(_RUKSS_UK_INFO_BOARD_BACK_4) else
+)
+
+def(27) callback(
+	ref(26) if(CB_LAYOUT)
+	ref(24) if(CB_ACONTROL)
+	ref(1) else
+)
+
+def(28) anim_frame(
+	reftile(_RUKSS_UK_INFO_BOARD_FRONT_1) if(0)
+	reftile(_RUKSS_UK_INFO_BOARD_FRONT_2) if(1)
+	reftile(_RUKSS_UK_INFO_BOARD_FRONT_3) if(2)
+	reftile(_RUKSS_UK_INFO_BOARD_FRONT_4) else
+)
+
+def(29) callback(
+	ref(28) if(CB_LAYOUT)
+	ref(24) if(CB_ACONTROL)
+	ref(1) else
+)
+
 makestation(RUKSS_UK_BASIC_DUAL,
 	default(ref(2))
 )
@@ -634,4 +952,28 @@ makestation(RUKSS_UK_FENCE_BACK_FAR,
 
 makestation(RUKSS_UK_FENCE_BACK_NEAR,
 	default(ref(19))
+)
+
+makestation(RUKSS_UK_OLD_BACK_FENCE_DUAL,
+	default(ref(20))
+)
+
+makestation(RUKSS_UK_OLD_BACK_FENCE_BACK,
+	default(ref(21))
+)
+
+makestation(RUKSS_UK_OLD_BACK_FENCE_FRONT,
+	default(ref(22))
+)
+
+makestation(RUKSS_UK_INFO_BOARD_DUAL,
+	default(ref(25))
+)
+
+makestation(RUKSS_UK_INFO_BOARD_BACK,
+	default(ref(27))
+)
+
+makestation(RUKSS_UK_INFO_BOARD_FRONT,
+	default(ref(29))
 )

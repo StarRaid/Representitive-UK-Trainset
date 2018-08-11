@@ -55,14 +55,19 @@ __NUMBER * 9 02 04 FF 01 01 00 00 00 00
 
 
 
+
+
+
+
  //PLTF
  //DBPL
  //BLDN
  //EYCN
 
+
   
 __NUMBER * 0  00 04 03 01 00
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -71,7 +76,7 @@ __NUMBER * 0  00 04 03 01 00
 
   
 __NUMBER * 0  00 04 03 01 01
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -80,7 +85,7 @@ __NUMBER * 0  00 04 03 01 01
 
   
 __NUMBER * 0  00 04 03 01 02
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -89,7 +94,7 @@ __NUMBER * 0  00 04 03 01 02
 
   
 __NUMBER * 0  00 04 03 01 03
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -98,7 +103,7 @@ __NUMBER * 0  00 04 03 01 03
 
   
 __NUMBER * 0  00 04 03 01 04
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -107,7 +112,7 @@ __NUMBER * 0  00 04 03 01 04
 
   
 __NUMBER * 0  00 04 03 01 05
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -116,7 +121,7 @@ __NUMBER * 0  00 04 03 01 05
 
   
 __NUMBER * 0  00 04 03 01 06
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -125,7 +130,7 @@ __NUMBER * 0  00 04 03 01 06
 
   
 __NUMBER * 0  00 04 03 01 07
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -134,7 +139,7 @@ __NUMBER * 0  00 04 03 01 07
 
   
 __NUMBER * 0  00 04 03 01 08
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -143,7 +148,7 @@ __NUMBER * 0  00 04 03 01 08
 
   
 __NUMBER * 0  00 04 03 01 09
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -152,7 +157,7 @@ __NUMBER * 0  00 04 03 01 09
 
   
 __NUMBER * 0  00 04 03 01 0a
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -161,7 +166,7 @@ __NUMBER * 0  00 04 03 01 0a
 
   
 __NUMBER * 0  00 04 03 01 0b
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -170,7 +175,7 @@ __NUMBER * 0  00 04 03 01 0b
 
   
 __NUMBER * 0  00 04 03 01 0c
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -179,7 +184,7 @@ __NUMBER * 0  00 04 03 01 0c
 
   
 __NUMBER * 0  00 04 03 01 0d
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -188,7 +193,7 @@ __NUMBER * 0  00 04 03 01 0d
 
   
 __NUMBER * 0  00 04 03 01 0e
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -197,7 +202,7 @@ __NUMBER * 0  00 04 03 01 0e
 
   
 __NUMBER * 0  00 04 03 01 0f
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -206,7 +211,7 @@ __NUMBER * 0  00 04 03 01 0f
 
   
 __NUMBER * 0  00 04 03 01 10
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
@@ -215,14 +220,77 @@ __NUMBER * 0  00 04 03 01 10
 
   
 __NUMBER * 0  00 04 03 01 11
-        08 50 4c 54 46   
+        08 52 55 4B 53   
 	0B  02 
 	11 00  
 
  __NUMBER * 0  04 04 FF 01 11 C5 "Generic platform 1 - Rear Near Ramp with Barrier" 00    
 
 
-__NUMBER  * 0 01 04 01 48
+  
+__NUMBER * 0  00 04 03 01 12
+        08 52 55 4B 53   
+	0B  02 
+	11 00  
+
+ __NUMBER * 0  04 04 FF 01 12 C5 "Old style fenced platform" 00    
+
+
+  
+__NUMBER * 0  00 04 03 01 13
+        08 52 55 4B 53   
+	0B  02 
+	11 00  
+
+ __NUMBER * 0  04 04 FF 01 13 C5 "Old style fenced platform - Back" 00    
+
+
+  
+__NUMBER * 0  00 04 03 01 14
+        08 52 55 4B 53   
+	0B  02 
+	11 00  
+
+ __NUMBER * 0  04 04 FF 01 14 C5 "Old style fenced platform - Front" 00    
+
+
+  
+__NUMBER * 0  00 04 06 01 15
+        08 52 55 4B 53   
+	0B  02 
+	18  01 00 
+	11 00  
+	16 03 01  
+	17 04  
+
+ __NUMBER * 0  04 04 FF 01 15 C5 "Platform with Information Board" 00    
+
+
+  
+__NUMBER * 0  00 04 06 01 16
+        08 52 55 4B 53   
+	0B  02 
+	18  01 00 
+	11 00  
+	16 03 01  
+	17 04  
+
+ __NUMBER * 0  04 04 FF 01 16 C5 "Platform with Information Board - Back" 00    
+
+
+  
+__NUMBER * 0  00 04 06 01 17
+        08 52 55 4B 53   
+	0B  02 
+	18  01 00 
+	11 00  
+	16 03 01  
+	17 04  
+
+ __NUMBER * 0  04 04 FF 01 17 C5 "Platform with Information Board - Front" 00    
+
+
+__NUMBER  * 0 01 04 01 74
 ////Standard Platfoms Modern
 // 0..3, standard platforms
 	PATH/gfx/gwst1.png 0 0 09 122 64 -31 -91 
@@ -314,6 +382,65 @@ __NUMBER  * 0 01 04 01 48
 	PATH/gfx/gwst1.png 80 246 09 122 64 -53 -102 
 	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
 	PATH/gfx/gwst1.png 240 246 09 122 64 -9 -102 
+// 72..75, old fence
+	PATH/gfx/gwst1.png 640 246 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 720 246 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 800 246 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 880 246 09 122 64 -9 -102 
+// 76..79, old fence, back
+	PATH/gfx/gwst1.png 640 246 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+	PATH/gfx/gwst1.png 800 246 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+// 80..83, old fence, front
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+	PATH/gfx/gwst1.png 720 246 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+	PATH/gfx/gwst1.png 880 246 09 122 64 -9 -102 
+//84..87, info board [1/4]
+	PATH/gfx/gwst1.png 0 369 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 80 369 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 160 369 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 240 369 09 122 64 -9 -102 
+//88..91, info board [2/4]
+	PATH/gfx/gwst1.png 320 369 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 400 369 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 480 369 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 560 369 09 122 64 -9 -102 
+//92..95, info board [3/4]
+	PATH/gfx/gwst1.png 320 492 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 400 492 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 480 492 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 560 492 09 122 64 -9 -102 
+//96..99, info board [4/4]
+	PATH/gfx/gwst1.png 0 492 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 80 492 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 160 492 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 240 492 09 122 64 -9 -102 
+//100..101, info board back [1/4]
+	PATH/gfx/gwst1.png 0 369 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 160 369 09 122 64 -31 -91 
+//102..103, info board back [2/4]
+	PATH/gfx/gwst1.png 320 369 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 480 369 09 122 64 -31 -91 
+//104..105, info board back [3/4]
+	PATH/gfx/gwst1.png 320 492 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 480 492 09 122 64 -31 -91 
+//106..107, info board back [4/4]
+	PATH/gfx/gwst1.png 0 492 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 160 492 09 122 64 -31 -91 
+//108..109, info board front [1/4]
+	PATH/gfx/gwst1.png 80 369 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 240 369 09 122 64 -9 -102 
+//110..111, info board front [2/4]
+	PATH/gfx/gwst1.png 400 369 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 560 369 09 122 64 -9 -102 
+//112..113, info board front [3/4]
+	PATH/gfx/gwst1.png 400 492 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 560 492 09 122 64 -9 -102 
+//114..115, info board front [4/4]
+	PATH/gfx/gwst1.png 80 492 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 240 492 09 122 64 -9 -102 
 	 
    
 
@@ -535,182 +662,40 @@ __NUMBER * 0 00 04 01 01 11 09 02
 
   
 
-__NUMBER * 0 02 04 02  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
+__NUMBER * 0 00 04 01 01 12 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 75 04 00 00
+      00 0b 00 10 05 07 76 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 77 04 00 00
+      0b 00 00 05 10 07 78 04 00 00
+      80
+
+ 
+
+__NUMBER * 0 00 04 01 01 13 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 79 04 00 00
+      00 0b 00 10 05 07 7a 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 7b 04 00 00
+	  0b 00 00 05 10 07 7c 04 00 00
+      80
+
   
 
-__NUMBER * 0 02 04 03  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 04  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 05  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 06  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 07  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 08  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 09  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 0a  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 0b  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 0c  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 0d  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 0e  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 0f  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 10  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 11  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 12  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 02 04 13  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-  
-
-__NUMBER * 0 03 04 01 00 00
-	02 00
-
-
-
-__NUMBER * 0 03 04 01 01 00
-	03 00
-
-
-
-__NUMBER * 0 03 04 01 02 00
-	04 00
-
-
-
-__NUMBER * 0 03 04 01 03 00
-	05 00
-
-
-
-__NUMBER * 0 03 04 01 04 00
-	06 00
-
-
-
-__NUMBER * 0 03 04 01 05 00
-	07 00
-
-
-
-__NUMBER * 0 03 04 01 06 00
-	08 00
-
-
-
-__NUMBER * 0 03 04 01 07 00
-	09 00
-
-
-
-__NUMBER * 0 03 04 01 08 00
-	0a 00
-
-
-
-__NUMBER * 0 03 04 01 09 00
-	0b 00
-
-
-
-__NUMBER * 0 03 04 01 0a 00
-	0c 00
-
-
-
-__NUMBER * 0 03 04 01 0b 00
-	0d 00
-
-
-
-__NUMBER * 0 03 04 01 0c 00
-	0e 00
-
-
-
-__NUMBER * 0 03 04 01 0d 00
-	0f 00
-
-
-
-__NUMBER * 0 03 04 01 0e 00
-	10 00
-
-
-
-__NUMBER * 0 03 04 01 0f 00
-	11 00
-
-
-
-__NUMBER * 0 03 04 01 10 00
-	12 00
-
-
-
-__NUMBER * 0 03 04 01 11 00
-	13 00
+__NUMBER * 0 00 04 01 01 14 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 7d 04 00 00
+      00 0b 00 10 05 07 7e 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 7f 04 00 00
+	  0b 00 00 05 10 07 80 04 00 00
+      80
+
+ 
 
 
