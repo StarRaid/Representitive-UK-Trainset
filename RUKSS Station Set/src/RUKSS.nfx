@@ -1,6 +1,6 @@
 setfeature(_STATION)
 grfinit(52554B53,
-	grfname(ALL,"Representive UK Stations Set")
+	grfname(ALL,"Representative UK Stations Set - RUKSS")
 	grfdescription(ALL, "nothing here yet" 0D
 	"nothing here yet")
 	grfpalette(DOS)
@@ -20,6 +20,12 @@ define(RUKSS_UK_BASIC_BACK_NEAR,	010)
 define(RUKSS_UK_BASIC_SHELTER,		011)
 define(RUKSS_UK_BASIC_BACK_SHELTER,	012)
 define(RUKSS_UK_BASIC_FRONT_SHELTER,013)
+define(RUKSS_UK_FENCE_RAMP_FAR,		014)
+define(RUKSS_UK_FENCE_RAMP_NEAR,	015)
+define(RUKSS_UK_FENCE_FRONT_FAR,	016)
+define(RUKSS_UK_FENCE_FRONT_NEAR,	017)
+define(RUKSS_UK_FENCE_BACK_FAR,		020)
+define(RUKSS_UK_FENCE_BACK_NEAR,	021)
 
 
 
@@ -100,6 +106,42 @@ definestation(RUKSS_UK_BASIC_FRONT_SHELTER,"Generic platform 1 - Front Old Style
 	pylons(TTD_NONE)
 )
 
+definestation(RUKSS_UK_FENCE_RAMP_FAR,"Generic platform 1 - Far Ramp with Barrier",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_FENCE_RAMP_NEAR,"Generic platform 1 - Near Ramp with Barrier",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_FENCE_FRONT_FAR,"Generic platform 1 - Front Far Ramp with Barrier",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_FENCE_FRONT_NEAR,"Generic platform 1 - Front Near Ramp with Barrier",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_FENCE_BACK_FAR,"Generic platform 1 - Rear Far Ramp with Barrier",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
+definestation(RUKSS_UK_FENCE_BACK_NEAR,"Generic platform 1 - Rear Near Ramp with Barrier",
+	class(CLASS_PLATFORM)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_NONE)
+)
+
 spriteblock(
     set(
 ////Standard Platfoms Modern
@@ -163,7 +205,36 @@ spriteblock(
 	sprite(gfx/gwst1.png 400 123 09 122 64 -53 -102)
 	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
 	sprite(gfx/gwst1.png 560 123 09 122 64 -9 -102)
-	
+// 48..51, ramps with fence, far
+	sprite(gfx/gwst1.png 640 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 720 123 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 800 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 880 123 09 122 64 -9 -102)
+// 52..55, ramps with fence, near
+	sprite(gfx/gwst1.png 0 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 80 246 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 160 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 240 246 09 122 64 -9 -102)
+// 56..59, back ramps fence far
+	sprite(gfx/gwst1.png 640 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 800 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+// 60..63, back ramps fence near
+	sprite(gfx/gwst1.png 0 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 160 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+// 64..67, front ramps fence far
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 720 123 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 880 123 09 122 64 -9 -102)
+// 68..71, front ramps fence near
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)	
+	sprite(gfx/gwst1.png 80 246 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 0 123 09 122 64 -31 -91)	
+	sprite(gfx/gwst1.png 240 246 09 122 64 -9 -102)
 	)
 )
 
@@ -325,6 +396,84 @@ layout(RUKSS_UK_BASIC_FRONT_SHELTER,
     )
 ) 
 
+layout(RUKSS_UK_FENCE_RAMP_FAR,
+    tile(_RUKSS_UK_FENCE_RAMP_FAR,
+      ground(1012)
+      regular(48, xyz(0,0,0),dxdydz(16,5,7))
+      regular(49, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(50, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(51, xyz(11,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_FENCE_RAMP_NEAR,
+    tile(_RUKSS_UK_FENCE_RAMP_NEAR,
+      ground(1012)
+      regular(52, xyz(0,0,0),dxdydz(16,5,7))
+      regular(53, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(54, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(55, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_FENCE_FRONT_FAR,
+    tile(_RUKSS_UK_FENCE_FRONT_FAR,
+      ground(1012)
+      regular(56, xyz(0,0,0),dxdydz(16,5,7))
+      regular(57, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(58, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(59, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_FENCE_FRONT_NEAR,
+    tile(_RUKSS_UK_FENCE_FRONT_NEAR,
+      ground(1012)
+      regular(60, xyz(0,0,0),dxdydz(16,5,7))
+      regular(61, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(62, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(63, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_FENCE_BACK_FAR,
+    tile(_RUKSS_UK_FENCE_BACK_FAR,
+      ground(1012)
+      regular(64, xyz(0,0,0),dxdydz(16,5,7))
+      regular(65, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(66, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(67, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_FENCE_BACK_NEAR,
+    tile(_RUKSS_UK_FENCE_BACK_NEAR,
+      ground(1012)
+      regular(68, xyz(0,0,0),dxdydz(16,5,7))
+      regular(69, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(70, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(71, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
 def(2) callback(
 	reftile(_RUKSS_UK_BASIC_DUAL) if(CB_LAYOUT) // tile layout
 	ref(1) else		     // graphics chain
@@ -385,6 +534,36 @@ def(13) callback(
 	ref(1) else		     // graphics chain
 )
 
+def(14) callback(
+	reftile(_RUKSS_UK_FENCE_RAMP_FAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(15) callback(
+	reftile(_RUKSS_UK_FENCE_RAMP_NEAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(16) callback(
+	reftile(_RUKSS_UK_FENCE_FRONT_FAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(17) callback(
+	reftile(_RUKSS_UK_FENCE_FRONT_NEAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(18) callback(
+	reftile(_RUKSS_UK_FENCE_BACK_FAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
+def(19) callback(
+	reftile(_RUKSS_UK_FENCE_BACK_NEAR) if(CB_LAYOUT) // tile layout
+	ref(1) else		     // graphics chain
+)
+
 makestation(RUKSS_UK_BASIC_DUAL,
 	default(ref(2))
 )
@@ -431,4 +610,28 @@ makestation(RUKSS_UK_BASIC_BACK_SHELTER,
 
 makestation(RUKSS_UK_BASIC_FRONT_SHELTER,
 	default(ref(13))
+)
+
+makestation(RUKSS_UK_FENCE_RAMP_FAR,
+	default(ref(14))
+)
+
+makestation(RUKSS_UK_FENCE_RAMP_NEAR,
+	default(ref(15))
+)
+
+makestation(RUKSS_UK_FENCE_FRONT_FAR,
+	default(ref(16))
+)
+
+makestation(RUKSS_UK_FENCE_FRONT_NEAR,
+	default(ref(17))
+)
+
+makestation(RUKSS_UK_FENCE_BACK_FAR,
+	default(ref(18))
+)
+
+makestation(RUKSS_UK_FENCE_BACK_NEAR,
+	default(ref(19))
 )

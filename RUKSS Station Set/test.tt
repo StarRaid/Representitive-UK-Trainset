@@ -16,7 +16,7 @@ divert(2)
 
 __NUMBER * 0 14 "C" "INFO"
 "B" "NPAR" 01 00 00
-"T" "NAME" 7f "Representive UK Stations Set" 00 
+"T" "NAME" 7f "Representative UK Stations Set - RUKSS" 00 
 
 	"T" "DESC" 7f "nothing here yet" 0D
 	"nothing here yet" 00 
@@ -26,12 +26,18 @@ __NUMBER * 0 14 "C" "INFO"
 	"B" "MINV" 04 00 01 00 00 00
 
 00 00
-__NUMBER * 0 08 08 52554B53 "Representive UK Stations Set" 00 "nothing here yet" 0D
+__NUMBER * 0 08 08 52554B53 "Representative UK Stations Set - RUKSS" 00 "nothing here yet" 0D
 	"nothing here yet" 00
 __NUMBER * 0 0C "m4nfo header r113 27.05.2018"
 __NUMBER * 0 0C "m4nfo stations r28 16.05.2018"
 __NUMBER * 4 01 04 01 00
 __NUMBER * 9 02 04 FF 01 01 00 00 00 00
+
+
+
+
+
+
 
 
 
@@ -162,7 +168,61 @@ __NUMBER * 0  00 04 03 01 0b
  __NUMBER * 0  04 04 FF 01 0b C5 "Generic platform 1 - Front Old Style Shelter" 00    
 
 
-__NUMBER  * 0 01 04 01 30
+  
+__NUMBER * 0  00 04 03 01 0c
+        08 50 4c 54 46   
+	0B  02 
+	11 00  
+
+ __NUMBER * 0  04 04 FF 01 0c C5 "Generic platform 1 - Far Ramp with Barrier" 00    
+
+
+  
+__NUMBER * 0  00 04 03 01 0d
+        08 50 4c 54 46   
+	0B  02 
+	11 00  
+
+ __NUMBER * 0  04 04 FF 01 0d C5 "Generic platform 1 - Near Ramp with Barrier" 00    
+
+
+  
+__NUMBER * 0  00 04 03 01 0e
+        08 50 4c 54 46   
+	0B  02 
+	11 00  
+
+ __NUMBER * 0  04 04 FF 01 0e C5 "Generic platform 1 - Front Far Ramp with Barrier" 00    
+
+
+  
+__NUMBER * 0  00 04 03 01 0f
+        08 50 4c 54 46   
+	0B  02 
+	11 00  
+
+ __NUMBER * 0  04 04 FF 01 0f C5 "Generic platform 1 - Front Near Ramp with Barrier" 00    
+
+
+  
+__NUMBER * 0  00 04 03 01 10
+        08 50 4c 54 46   
+	0B  02 
+	11 00  
+
+ __NUMBER * 0  04 04 FF 01 10 C5 "Generic platform 1 - Rear Far Ramp with Barrier" 00    
+
+
+  
+__NUMBER * 0  00 04 03 01 11
+        08 50 4c 54 46   
+	0B  02 
+	11 00  
+
+ __NUMBER * 0  04 04 FF 01 11 C5 "Generic platform 1 - Rear Near Ramp with Barrier" 00    
+
+
+__NUMBER  * 0 01 04 01 48
 ////Standard Platfoms Modern
 // 0..3, standard platforms
 	PATH/gfx/gwst1.png 0 0 09 122 64 -31 -91 
@@ -224,7 +284,36 @@ __NUMBER  * 0 01 04 01 30
 	PATH/gfx/gwst1.png 400 123 09 122 64 -53 -102 
 	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
 	PATH/gfx/gwst1.png 560 123 09 122 64 -9 -102 
-	
+// 48..51, ramps with fence, far
+	PATH/gfx/gwst1.png 640 123 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 720 123 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 800 123 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 880 123 09 122 64 -9 -102 
+// 52..55, ramps with fence, near
+	PATH/gfx/gwst1.png 0 246 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 80 246 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 160 246 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 240 246 09 122 64 -9 -102 
+// 56..59, back ramps fence far
+	PATH/gfx/gwst1.png 640 123 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 800 123 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+// 60..63, back ramps fence near
+	PATH/gfx/gwst1.png 0 246 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 160 246 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+// 64..67, front ramps fence far
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 720 123 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+	PATH/gfx/gwst1.png 880 123 09 122 64 -9 -102 
+// 68..71, front ramps fence near
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+	PATH/gfx/gwst1.png 80 246 09 122 64 -53 -102 
+	PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+	PATH/gfx/gwst1.png 240 246 09 122 64 -9 -102 
 	 
    
 
@@ -374,6 +463,78 @@ __NUMBER * 0 00 04 01 01 0b 09 02
 
   
 
+__NUMBER * 0 00 04 01 01 0c 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 5d 04 00 00
+      00 0b 00 10 05 07 5e 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 5f 04 00 00
+	  0b 00 00 05 10 07 60 04 00 00
+      80
+
+ 
+
+__NUMBER * 0 00 04 01 01 0d 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 61 04 00 00
+      00 0b 00 10 05 07 62 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 63 04 00 00
+	  0b 00 00 05 10 07 64 04 00 00
+      80
+
+  
+
+__NUMBER * 0 00 04 01 01 0e 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 65 04 00 00
+      00 0b 00 10 05 07 66 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 67 04 00 00
+	  0b 00 00 05 10 07 68 04 00 00
+      80
+
+  
+
+__NUMBER * 0 00 04 01 01 0f 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 69 04 00 00
+      00 0b 00 10 05 07 6a 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 6b 04 00 00
+	  0b 00 00 05 10 07 6c 04 00 00
+      80
+
+  
+
+__NUMBER * 0 00 04 01 01 10 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 6d 04 00 00
+      00 0b 00 10 05 07 6e 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 6f 04 00 00
+	  0b 00 00 05 10 07 70 04 00 00
+      80
+
+  
+
+__NUMBER * 0 00 04 01 01 11 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 71 04 00 00
+      00 0b 00 10 05 07 72 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 73 04 00 00
+	  0b 00 00 05 10 07 74 04 00 00
+      80
+
+  
+
 __NUMBER * 0 02 04 02  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
@@ -430,6 +591,36 @@ __NUMBER * 0 02 04 0c  85 0C 00 FF FF 01
   
 
 __NUMBER * 0 02 04 0d  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 0e  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 0f  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 10  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 11  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 12  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 13  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
   
@@ -491,5 +682,35 @@ __NUMBER * 0 03 04 01 0a 00
 
 __NUMBER * 0 03 04 01 0b 00
 	0d 00
+
+
+
+__NUMBER * 0 03 04 01 0c 00
+	0e 00
+
+
+
+__NUMBER * 0 03 04 01 0d 00
+	0f 00
+
+
+
+__NUMBER * 0 03 04 01 0e 00
+	10 00
+
+
+
+__NUMBER * 0 03 04 01 0f 00
+	11 00
+
+
+
+__NUMBER * 0 03 04 01 10 00
+	12 00
+
+
+
+__NUMBER * 0 03 04 01 11 00
+	13 00
 
 
