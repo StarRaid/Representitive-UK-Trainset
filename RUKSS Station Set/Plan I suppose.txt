@@ -8,9 +8,9 @@ x = not done but will do
 Stations:
 
 ? - Bristol Temple Meads
-? - Crewe
-? - Clapham Junction
-? - London Broad Street
+x - Crewe
+x - Clapham Junction
+x - London Broad Street
 ? - London Paddington
 ? - Birmingham New Street (Modern)
 ? - Glasgow Central
@@ -18,6 +18,7 @@ Stations:
 ? - Shrewsbury 
 ? - Camden Road
 ? - Blackfriars
+x - Guildford
 
 
 Platform Decorations:
@@ -33,3 +34,5 @@ x - Victorian shelter with footbridge
 x - Footbridge (open)
 
 Non paltform decorations:
+
+x - BR Station Sign with subway staircase (Guildford style)
