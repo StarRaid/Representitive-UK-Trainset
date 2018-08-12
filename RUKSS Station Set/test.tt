@@ -64,10 +64,9 @@ __NUMBER * 9 02 04 FF 01 01 00 00 00 00
  //BLDN
  //EYCN
 
-
   
 __NUMBER * 0  00 04 03 01 00
-        08 52 55 4B 53   
+        08 50 4c 54 46   
 	0B  02 
 	11 00  
 
@@ -75,191 +74,170 @@ __NUMBER * 0  00 04 03 01 00
 
 
   
-__NUMBER * 0  00 04 03 01 01
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 01
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 01 C5 "Generic platform 1 - Back" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 02
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 02
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 02 C5 "Generic platform 1 - Front" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 03
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 03
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 03 C5 "Generic platform 1 - Far Ramp" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 04
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 04
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 04 C5 "Generic platform 1 - Near Ramp" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 05
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 05
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 05 C5 "Generic platform 1 - Front Far Ramp" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 06
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 06
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 06 C5 "Generic platform 1 - Front Near Ramp" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 07
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 07
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 07 C5 "Generic platform 1 - Rear Far Ramp" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 08
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 08
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 08 C5 "Generic platform 1 - Rear Near Ramp" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 09
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 09
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 09 C5 "Generic platform 1 - Old Style Shelter" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 0a
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 0a
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 0a C5 "Generic platform 1 - Rear Old Style Shelter" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 0b
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 0b
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 0b C5 "Generic platform 1 - Front Old Style Shelter" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 0c
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 0c
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 0c C5 "Generic platform 1 - Far Ramp with Barrier" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 0d
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 0d
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 0d C5 "Generic platform 1 - Near Ramp with Barrier" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 0e
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 0e
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 0e C5 "Generic platform 1 - Front Far Ramp with Barrier" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 0f
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 0f
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 0f C5 "Generic platform 1 - Front Near Ramp with Barrier" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 10
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 10
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 10 C5 "Generic platform 1 - Rear Far Ramp with Barrier" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 11
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 11
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 11 C5 "Generic platform 1 - Rear Near Ramp with Barrier" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 12
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 12
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 12 C5 "Old style fenced platform" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 13
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 13
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 13 C5 "Old style fenced platform - Back" 00    
 
 
   
-__NUMBER * 0  00 04 03 01 14
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 02 01 14
+        08 50 4c 54 46   
 	0B  02 
-	11 00  
 
  __NUMBER * 0  04 04 FF 01 14 C5 "Old style fenced platform - Front" 00    
 
 
   
-__NUMBER * 0  00 04 06 01 15
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 05 01 15
+        08 50 4c 54 46   
 	0B  02 
 	18  01 00 
-	11 00  
 	16 03 01  
 	17 04  
 
@@ -267,11 +245,10 @@ __NUMBER * 0  00 04 06 01 15
 
 
   
-__NUMBER * 0  00 04 06 01 16
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 05 01 16
+        08 50 4c 54 46   
 	0B  02 
 	18  01 00 
-	11 00  
 	16 03 01  
 	17 04  
 
@@ -279,16 +256,19 @@ __NUMBER * 0  00 04 06 01 16
 
 
   
-__NUMBER * 0  00 04 06 01 17
-        08 52 55 4B 53   
+__NUMBER * 0  00 04 05 01 17
+        08 50 4c 54 46   
 	0B  02 
 	18  01 00 
-	11 00  
 	16 03 01  
 	17 04  
 
  __NUMBER * 0  04 04 FF 01 17 C5 "Platform with Information Board - Front" 00    
 
+
+__NUMBER * 0 04 04 FF 01 00 c4 "RUK Platform Set"
+ 00
+ 
 
 __NUMBER  * 0 01 04 01 74
 ////Standard Platfoms Modern
@@ -697,5 +677,363 @@ __NUMBER * 0 00 04 01 01 14 09 02
       80
 
  
+
+__NUMBER * 0 00 04 01 01 15 09 08
+ f4 03 00 00
+      00 00 00 10 05 07 81 04 00 00
+      00 0b 00 10 05 07 82 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 83 04 00 00
+	  0b 00 00 05 10 07 84 04 00 00
+      80
+	 f4 03 00 00
+      00 00 00 10 05 07 85 04 00 00
+      00 0b 00 10 05 07 86 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 87 04 00 00
+	  0b 00 00 05 10 07 88 04 00 00
+      80
+	 f4 03 00 00
+      00 00 00 10 05 07 89 04 00 00
+      00 0b 00 10 05 07 8a 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 8b 04 00 00
+	  0b 00 00 05 10 07 8c 04 00 00
+      80
+	 f4 03 00 00
+      00 00 00 10 05 07 8d 04 00 00
+      00 0b 00 10 05 07 8e 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 8f 04 00 00
+	  0b 00 00 05 10 07 90 04 00 00
+      80
+
+ 
+__NUMBER * 0 00 04 01 01 16 09 08
+ f4 03 00 00
+      00 00 00 10 05 07 91 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 92 04 00 00
+      80
+	 f4 03 00 00
+      00 00 00 10 05 07 93 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 94 04 00 00
+      80
+	 f4 03 00 00
+      00 00 00 10 05 07 95 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 96 04 00 00
+      80
+	 f4 03 00 00
+      00 00 00 10 05 07 97 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 98 04 00 00
+      80
+
+ 
+
+__NUMBER * 0 00 04 01 01 17 09 08
+ f4 03 00 00
+      00 0b 00 10 05 07 99 04 00 00
+      80
+    f3 03 00 00
+      0b 00 00 05 10 07 9a 04 00 00
+      80
+	 f4 03 00 00
+      00 0b 00 10 05 07 9b 04 00 00
+      80
+    f3 03 00 00
+      0b 00 00 05 10 07 9c 04 00 00
+      80
+	 f4 03 00 00
+      00 0b 00 10 05 07 9d 04 00 00
+      80
+    f3 03 00 00
+      0b 00 00 05 10 07 9e 04 00 00
+      80
+	 f4 03 00 00
+      0b 00 00 10 05 07 9f 04 00 00
+      80
+    f3 03 00 00
+      0b 00 00 05 10 07 a0 04 00 00
+      80
+
+ 
+
+__NUMBER * 0 02 04 02  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 03  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 04  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 05  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 06  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 07  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 08  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 09  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 0a  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 0b  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 0c  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 0d  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 0e  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 0f  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 10  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 11  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 12  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 13  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 14  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 15  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 16  85 0C 00 FF FF 01
+ 00 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+  
+
+__NUMBER * 0 02 04 17  81 4A 00 FF 03
+ 00 80 00 00  
+	 02 80 01 01  
+	 04 80 02 02  
+	 06 80 
+  
+
+__NUMBER * 0 02 04 18  81 18 00 7F 01
+ fe 80 00 00  
+ fd 80 
+ 
+
+__NUMBER * 0 02 04 19  85 0C 00 FF FF 02
+17 00 14 00 14 00  
+	18 00 40 01 40 01  
+	01 00 
+  
+
+__NUMBER * 0 02 04 1a  81 4A 00 FF 03
+ 00 80 00 00  
+	 02 80 01 01  
+	 04 80 02 02  
+	 06 80 
+  
+
+__NUMBER * 0 02 04 1b  85 0C 00 FF FF 02
+1a 00 14 00 14 00  
+	18 00 40 01 40 01  
+	01 00 
+  
+
+__NUMBER * 0 02 04 1c  81 4A 00 FF 03
+ 00 80 00 00  
+	 02 80 01 01  
+	 04 80 02 02  
+	 06 80 
+  
+
+__NUMBER * 0 02 04 1d  85 0C 00 FF FF 02
+1c 00 14 00 14 00  
+	18 00 40 01 40 01  
+	01 00 
+  
+
+__NUMBER * 0 03 04 01 00 00
+	02 00
+
+
+
+__NUMBER * 0 03 04 01 01 00
+	03 00
+
+
+
+__NUMBER * 0 03 04 01 02 00
+	04 00
+
+
+
+__NUMBER * 0 03 04 01 03 00
+	05 00
+
+
+
+__NUMBER * 0 03 04 01 04 00
+	06 00
+
+
+
+__NUMBER * 0 03 04 01 05 00
+	07 00
+
+
+
+__NUMBER * 0 03 04 01 06 00
+	08 00
+
+
+
+__NUMBER * 0 03 04 01 07 00
+	09 00
+
+
+
+__NUMBER * 0 03 04 01 08 00
+	0a 00
+
+
+
+__NUMBER * 0 03 04 01 09 00
+	0b 00
+
+
+
+__NUMBER * 0 03 04 01 0a 00
+	0c 00
+
+
+
+__NUMBER * 0 03 04 01 0b 00
+	0d 00
+
+
+
+__NUMBER * 0 03 04 01 0c 00
+	0e 00
+
+
+
+__NUMBER * 0 03 04 01 0d 00
+	0f 00
+
+
+
+__NUMBER * 0 03 04 01 0e 00
+	10 00
+
+
+
+__NUMBER * 0 03 04 01 0f 00
+	11 00
+
+
+
+__NUMBER * 0 03 04 01 10 00
+	12 00
+
+
+
+__NUMBER * 0 03 04 01 11 00
+	13 00
+
+
+
+__NUMBER * 0 03 04 01 12 00
+	14 00
+
+
+
+__NUMBER * 0 03 04 01 13 00
+	15 00
+
+
+
+__NUMBER * 0 03 04 01 14 00
+	16 00
+
+
+
+__NUMBER * 0 03 04 01 15 00
+	19 00
+
+
+
+__NUMBER * 0 03 04 01 16 00
+	1b 00
+
+
+
+__NUMBER * 0 03 04 01 17 00
+	1d 00
 
 
