@@ -29,147 +29,279 @@ define(RUKSS_UK_FENCE_BACK_NEAR,	021)
 define(RUKSS_UK_OLD_BACK_FENCE_DUAL,	022)
 define(RUKSS_UK_OLD_BACK_FENCE_BACK,	023)
 define(RUKSS_UK_OLD_BACK_FENCE_FRONT,	024)
-define(RUKSS_UK_INFO_BOARD_DUAL,	025)
-define(RUKSS_UK_INFO_BOARD_BACK,	026)
-define(RUKSS_UK_INFO_BOARD_FRONT,	027)
+define(RUKSS_UK_INFO_BOARD_DUAL,		025)
+define(RUKSS_UK_INFO_BOARD_BACK,		026)
+define(RUKSS_UK_INFO_BOARD_FRONT,		027)
+define(RUKSS_UK_NEW_BACK_FENCE_DUAL,	030)
+define(RUKSS_UK_NEW_BACK_FENCE_BACK,	031)
+define(RUKSS_UK_NEW_BACK_FENCE_FRONT,	032)
+define(RUKSS_UK_OLD_BACK_FENCE_RAMP_FAR,		033)
+define(RUKSS_UK_OLD_BACK_FENCE_RAMP_NEAR,		034)
+define(RUKSS_UK_OLD_BACK_FENCE_FRONT_FAR,		035)
+define(RUKSS_UK_OLD_BACK_FENCE_FRONT_NEAR,		036)
+define(RUKSS_UK_OLD_BACK_FENCE_BACK_FAR,		037)
+define(RUKSS_UK_OLD_BACK_FENCE_BACK_NEAR,		040)
+define(RUKSS_UK_BASIC_NO_TRACK,			041)
+define(RUKSS_UK_BASIC_BUFFERS_NEAR,		042)
+define(RUKSS_UK_BASIC_BUFFERS_NEAR_BACK,042)
+define(RUKSS_UK_BASIC_BUFFERS_NEAR_FRONT,043)
 
-define(CLASS_PLATFORM,	50 4c 54 46) //PLTF
-define(CLASS_PLATFORMS,	44 42 50 4c) //DBPL
-define(CLASS_BUILDING,	42 4c 44 4e) //BLDN
-define(CLASS_EYECANDY,	45 59 43 44) //EYCN
+define(CLASS_DOUBLE_STD,	47 53 44 53) //GSDS
+define(CLASS_BACK_STD,	47 53 42 53) //GSBS
+define(CLASS_FRONT_STD,	47 53 46 53) //GSFS
+define(CLASS_NO_TRACK,	47 53 58 54) //GSXT
 
-definestation(RUKSS_UK_BASIC_DUAL,"Generic platform 1",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_DUAL,"Generic platform",
+	class(CLASS_DOUBLE_STD)
 	callbacks(CB_LAYOUT)
-	pylons(TTD_NONE)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_BACK,"Generic platform 1 - Back",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_BACK,"Generic platform - Back",
+	class(CLASS_BACK_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_FRONT,"Generic platform 1 - Front",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_FRONT,"Generic platform - Front",
+	class(CLASS_FRONT_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_RAMP_FAR,"Generic platform 1 - Far Ramp",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_RAMP_FAR,"Generic platform - Far Ramp",
+	class(CLASS_DOUBLE_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_RAMP_NEAR,"Generic platform 1 - Near Ramp",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_RAMP_NEAR,"Generic platform - Near Ramp",
+	class(CLASS_DOUBLE_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_FRONT_FAR,"Generic platform 1 - Front Far Ramp",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_FRONT_FAR,"Generic platform - Front Far Ramp",
+	class(CLASS_FRONT_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_FRONT_NEAR,"Generic platform 1 - Front Near Ramp",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_FRONT_NEAR,"Generic platform - Front Near Ramp",
+	class(CLASS_FRONT_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_BACK_FAR,"Generic platform 1 - Rear Far Ramp",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_BACK_FAR,"Generic platform - Rear Far Ramp",
+	class(CLASS_BACK_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_BACK_NEAR,"Generic platform 1 - Rear Near Ramp",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_BACK_NEAR,"Generic platform - Rear Near Ramp",
+	class(CLASS_BACK_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_SHELTER,"Generic platform 1 - Old Style Shelter",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_SHELTER,"Generic platform - Old Style Shelter",
+	class(CLASS_DOUBLE_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_BACK_SHELTER,"Generic platform 1 - Rear Old Style Shelter",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_BACK_SHELTER,"Generic platform - Rear Old Style Shelter",
+	class(CLASS_BACK_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_BASIC_FRONT_SHELTER,"Generic platform 1 - Front Old Style Shelter",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_BASIC_FRONT_SHELTER,"Generic platform - Front Old Style Shelter",
+	class(CLASS_FRONT_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_FENCE_RAMP_FAR,"Generic platform 1 - Far Ramp with Barrier",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_FENCE_RAMP_FAR,"Generic platform - Far Ramp with Barrier",
+	class(CLASS_DOUBLE_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_FENCE_RAMP_NEAR,"Generic platform 1 - Near Ramp with Barrier",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_FENCE_RAMP_NEAR,"Generic platform - Near Ramp with Barrier",
+	class(CLASS_DOUBLE_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_FENCE_FRONT_FAR,"Generic platform 1 - Front Far Ramp with Barrier",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_FENCE_FRONT_FAR,"Generic platform - Front Far Ramp with Barrier",
+	class(CLASS_FRONT_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_FENCE_FRONT_NEAR,"Generic platform 1 - Front Near Ramp with Barrier",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_FENCE_FRONT_NEAR,"Generic platform - Front Near Ramp with Barrier",
+	class(CLASS_FRONT_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_FENCE_BACK_FAR,"Generic platform 1 - Rear Far Ramp with Barrier",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_FENCE_BACK_FAR,"Generic platform - Rear Far Ramp with Barrier",
+	class(CLASS_BACK_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
-definestation(RUKSS_UK_FENCE_BACK_NEAR,"Generic platform 1 - Rear Near Ramp with Barrier",
-	class(CLASS_PLATFORM)
+definestation(RUKSS_UK_FENCE_BACK_NEAR,"Generic platform - Rear Near Ramp with Barrier",
+	class(CLASS_BACK_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
 definestation(RUKSS_UK_OLD_BACK_FENCE_DUAL,"Old style fenced platform",
-	class(CLASS_PLATFORM)
+	class(CLASS_DOUBLE_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
 definestation(RUKSS_UK_OLD_BACK_FENCE_BACK,"Old style fenced platform - Back",
-	class(CLASS_PLATFORM)
+	class(CLASS_BACK_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
 definestation(RUKSS_UK_OLD_BACK_FENCE_FRONT,"Old style fenced platform - Front",
-	class(CLASS_PLATFORM)
+	class(CLASS_FRONT_STD)
 	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
 )
 
 definestation(RUKSS_UK_INFO_BOARD_DUAL,"Platform with Information Board",
-	class(CLASS_PLATFORM)
+	class(CLASS_DOUBLE_STD)
 	callbacks(CB_LAYOUT)
 	anim_triggers(BUILT)
-	anim_info({4,LOOP})
+	anim_info({3,LOOP})
 	anim_speed(4)
+	pylons(TTD_ROOFBOTH)
 )
 
 definestation(RUKSS_UK_INFO_BOARD_BACK,"Platform with Information Board - Back",
-	class(CLASS_PLATFORM)
+	class(CLASS_BACK_STD)
 	callbacks(CB_LAYOUT)
 	anim_triggers(BUILT)
-	anim_info({4,LOOP})
+	anim_info({3,LOOP})
 	anim_speed(4)
+	pylons(TTD_ROOFBOTH)
 )
 
 definestation(RUKSS_UK_INFO_BOARD_FRONT,"Platform with Information Board - Front",
-	class(CLASS_PLATFORM)
+	class(CLASS_FRONT_STD)
 	callbacks(CB_LAYOUT)
 	anim_triggers(BUILT)
-	anim_info({4,LOOP})
+	anim_info({3,LOOP})
 	anim_speed(4)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_NEW_BACK_FENCE_DUAL,"New style fenced platform",
+	class(CLASS_DOUBLE_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_NEW_BACK_FENCE_BACK,"New style fenced platform - Back",
+	class(CLASS_BACK_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_NEW_BACK_FENCE_FRONT,"New style fenced platform - Front",
+	class(CLASS_FRONT_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_OLD_BACK_FENCE_RAMP_FAR,"Generic platform - Far Ramp with Barrier and Back Fence",
+	class(CLASS_DOUBLE_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_OLD_BACK_FENCE_RAMP_NEAR,"Generic platform - Near Ramp with Barrier and Back Fence",
+	class(CLASS_DOUBLE_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_OLD_BACK_FENCE_FRONT_FAR,"Generic platform - Front Far Ramp with Barrier and Back Fence",
+	class(CLASS_FRONT_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_OLD_BACK_FENCE_FRONT_NEAR,"Generic platform - Front Near Ramp with Barrier and Back Fence",
+	class(CLASS_FRONT_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_OLD_BACK_FENCE_BACK_FAR,"Generic platform - Rear Far Ramp with Barrier and Back Fence",
+	class(CLASS_BACK_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_OLD_BACK_FENCE_BACK_NEAR,"Generic platform - Rear Near Ramp with Barrier and Back Fence",
+	class(CLASS_BACK_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ROOFBOTH)
+)
+
+definestation(RUKSS_UK_OLD_BACK_FENCE_BACK_NEAR,"Generic platform without track",
+	class(CLASS_NO_TRACK)
+	callbacks(CB_LAYOUT)
+	nontrack(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_NO_TRACK,"Non-Track Station tile",
+	class(CLASS_NO_TRACK)
+	callbacks(CB_LAYOUT)
+	nontrack(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_BUFFERS_NEAR,"Buffers - Near",
+	class(CLASS_NO_TRACK)
+	callbacks(CB_LAYOUT)
+	nontrack(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_BUFFERS_NEAR_BACK,"Buffers - Near Back",
+	class(CLASS_NO_TRACK)
+	callbacks(CB_LAYOUT)
+	nontrack(TTD_NONE)
+)
+
+definestation(RUKSS_UK_BASIC_BUFFERS_NEAR_FRONT,"Buffers - Near Front",
+	class(CLASS_NO_TRACK)
+	callbacks(CB_LAYOUT)
+	nontrack(TTD_NONE)
 )
 
 classnames(RUKSS_UK_BASIC_DUAL,
-	{ALL, "RUK Platform Set"}
+	{ALL, "RUK Station Set - Double Sided Platforms"}
+)
+
+classnames(RUKSS_UK_INFO_BOARD_BACK,
+	{ALL, "RUK Station Set - Back Platforms"}
+)
+
+classnames(RUKSS_UK_INFO_BOARD_FRONT,
+	{ALL, "RUK Station Set - Front Platforms"}
+)
+
+classnames(RUKSS_UK_BASIC_NO_TRACK,
+	{ALL, "RUK Station Set - Non Track Tiles"}
 )
 
 spriteblock(
@@ -324,6 +456,51 @@ spriteblock(
 //114..115, info board front [4/4]
 	sprite(gfx/gwst1.png 80 492 09 122 64 -53 -102)
 	sprite(gfx/gwst1.png 240 492 09 122 64 -9 -102)
+// 116..119, new fence
+	sprite(gfx/gwst1.png 320 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 400 246 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 480 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 560 246 09 122 64 -9 -102)
+// 120..121, new fence, back
+	sprite(gfx/gwst1.png 320 246 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 480 246 09 122 64 -31 -91)
+// 122..123, new fence, front
+	sprite(gfx/gwst1.png 400 246 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 560 246 09 122 64 -9 -102)
+// 124..127, old fence end far
+	sprite(gfx/gwst1.png 640 369 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 720 369 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 800 369 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 880 369 09 122 64 -9 -102)
+// 128..129, old fence end far, back
+	sprite(gfx/gwst1.png 640 369 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 800 369 09 122 64 -31 -91)
+// 130..131, old fence end far, front
+	sprite(gfx/gwst1.png 720 369 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 880 369 09 122 64 -9 -102)
+// 132..135, old fence end near
+	sprite(gfx/gwst1.png 640 492 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 720 492 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 800 492 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 880 492 09 122 64 -9 -102)
+// 136..137, old fence end near, back
+	sprite(gfx/gwst1.png 640 492 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 800 492 09 122 64 -31 -91)
+// 138..139, old fence end near, front
+	sprite(gfx/gwst1.png 720 492 09 122 64 -53 -102)
+	sprite(gfx/gwst1.png 880 492 09 122 64 -9 -102)
+// 140..141, non track tiles
+	sprite(gfx/gwst1.png 960 0 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 1040 0 09 122 64 -31 -91)
+// 142..143, buffers near
+	sprite(gfx/gwst1.png 1120 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 1200 123 09 122 64 -31 -91)
+// 144..145, buffers near back
+	sprite(gfx/gwst1.png 960 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 1120 0 09 122 64 -31 -91)
+// 146..147, buffers near front
+	sprite(gfx/gwst1.png 1040 123 09 122 64 -31 -91)
+	sprite(gfx/gwst1.png 1200 0 09 122 64 -31 -91)
 	)
 )
 
@@ -511,8 +688,8 @@ layout(RUKSS_UK_FENCE_RAMP_NEAR,
     )
 ) 
 
-layout(RUKSS_UK_FENCE_FRONT_FAR,
-    tile(_RUKSS_UK_FENCE_FRONT_FAR,
+layout(RUKSS_UK_FENCE_BACK_FAR,
+    tile(_RUKSS_UK_FENCE_BACK_FAR,
       ground(1012)
       regular(56, xyz(0,0,0),dxdydz(16,5,7))
       regular(57, xyz(0,11,0),dxdydz(16,5,7))
@@ -524,8 +701,8 @@ layout(RUKSS_UK_FENCE_FRONT_FAR,
     )
 ) 
 
-layout(RUKSS_UK_FENCE_FRONT_NEAR,
-    tile(_RUKSS_UK_FENCE_FRONT_NEAR,
+layout(RUKSS_UK_FENCE_BACK_NEAR,
+    tile(_RUKSS_UK_FENCE_BACK_NEAR,
       ground(1012)
       regular(60, xyz(0,0,0),dxdydz(16,5,7))
       regular(61, xyz(0,11,0),dxdydz(16,5,7))
@@ -537,8 +714,8 @@ layout(RUKSS_UK_FENCE_FRONT_NEAR,
     )
 ) 
 
-layout(RUKSS_UK_FENCE_BACK_FAR,
-    tile(_RUKSS_UK_FENCE_BACK_FAR,
+layout(RUKSS_UK_FENCE_FRONT_FAR,
+    tile(_RUKSS_UK_FENCE_FRONT_FAR,
       ground(1012)
       regular(64, xyz(0,0,0),dxdydz(16,5,7))
       regular(65, xyz(0,11,0),dxdydz(16,5,7))
@@ -550,8 +727,8 @@ layout(RUKSS_UK_FENCE_BACK_FAR,
     )
 ) 
 
-layout(RUKSS_UK_FENCE_BACK_NEAR,
-    tile(_RUKSS_UK_FENCE_BACK_NEAR,
+layout(RUKSS_UK_FENCE_FRONT_NEAR,
+    tile(_RUKSS_UK_FENCE_FRONT_NEAR,
       ground(1012)
       regular(68, xyz(0,0,0),dxdydz(16,5,7))
       regular(69, xyz(0,11,0),dxdydz(16,5,7))
@@ -711,6 +888,155 @@ layout(RUKSS_UK_INFO_BOARD_FRONT,
     tile(
       ground(1011)
       regular(115, xyz(11,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_NEW_BACK_FENCE_DUAL,
+    tile(_RUKSS_UK_NEW_BACK_FENCE_DUAL,
+      ground(1012)
+      regular(116, xyz(0,0,0),dxdydz(16,5,7))
+      regular(117, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(118, xyz(0,0,0),dxdydz(5,16,7))
+      regular(119, xyz(11,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_NEW_BACK_FENCE_BACK,
+    tile(_RUKSS_UK_NEW_BACK_FENCE_BACK,
+      ground(1012)
+      regular(120, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(121, xyz(0,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_NEW_BACK_FENCE_FRONT,
+    tile(_RUKSS_UK_NEW_BACK_FENCE_FRONT,
+      ground(1012)
+      regular(122, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+	  regular(123, xyz(11,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_OLD_BACK_FENCE_RAMP_FAR,
+    tile(_RUKSS_UK_OLD_BACK_FENCE_RAMP_FAR,
+      ground(1012)
+      regular(124, xyz(0,0,0),dxdydz(16,5,7))
+      regular(125, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(126, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(127, xyz(11,0,0),dxdydz(5,16,7))
+    )
+)
+
+layout(RUKSS_UK_OLD_BACK_FENCE_RAMP_NEAR,
+    tile(_RUKSS_UK_OLD_BACK_FENCE_RAMP_NEAR,
+      ground(1012)
+      regular(132, xyz(0,0,0),dxdydz(16,5,7))
+      regular(133, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(134, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(135, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_OLD_BACK_FENCE_BACK_FAR,
+    tile(_RUKSS_UK_OLD_BACK_FENCE_BACK_FAR,
+      ground(1012)
+      regular(128, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(129, xyz(0,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_OLD_BACK_FENCE_BACK_NEAR,
+    tile(_RUKSS_UK_OLD_BACK_FENCE_BACK_NEAR,
+      ground(1012)
+      regular(136, xyz(0,0,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+      regular(137, xyz(0,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_OLD_BACK_FENCE_FRONT_FAR,
+    tile(_RUKSS_UK_OLD_BACK_FENCE_FRONT_FAR,
+      ground(1012)
+      regular(130, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+	  regular(131, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_OLD_BACK_FENCE_FRONT_NEAR,
+    tile(_RUKSS_UK_OLD_BACK_FENCE_FRONT_NEAR,
+      ground(1012)
+      regular(138, xyz(0,11,0),dxdydz(16,5,7))
+    )
+    tile(
+      ground(1011)
+	  regular(139, xyz(11,0,0),dxdydz(5,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_NO_TRACK,
+    tile(_RUKSS_UK_BASIC_NO_TRACK,
+      ground(3981)
+      regular(140, xyz(0,0,0),dxdydz(16,16,7))
+    )
+    tile(
+      ground(3981)
+	  regular(141, xyz(0,0,0),dxdydz(16,16,7))
+    )
+) 
+
+layout(RUKSS_UK_BASIC_BUFFERS_NEAR,
+    tile(_RUKSS_UK_BASIC_BUFFERS_NEAR,
+      ground(1012)
+      regular(142, xyz(0,0,0),dxdydz(16,16,7))
+    )
+    tile(
+      ground(1011)
+	  regular(143, xyz(0,0,0),dxdydz(16,16,7))
+    )
+)
+
+layout(RUKSS_UK_BASIC_BUFFERS_NEAR_BACK,
+    tile(_RUKSS_UK_BASIC_BUFFERS_NEAR_BACK,
+      ground(1012)
+      regular(144, xyz(0,0,0),dxdydz(16,16,7))
+    )
+    tile(
+      ground(1011)
+	  regular(145, xyz(0,0,0),dxdydz(16,16,7))
+    )
+)
+
+layout(RUKSS_UK_BASIC_BUFFERS_NEAR_FRONT,
+    tile(_RUKSS_UK_BASIC_BUFFERS_NEAR_FRONT,
+      ground(1012)
+      regular(146, xyz(0,0,0),dxdydz(16,16,7))
+    )
+    tile(
+      ground(1011)
+	  regular(147, xyz(0,0,0),dxdydz(16,16,7))
     )
 )
 
@@ -957,4 +1283,56 @@ makestation(RUKSS_UK_INFO_BOARD_BACK,
 
 makestation(RUKSS_UK_INFO_BOARD_FRONT,
 	default(ref(29))
+)
+
+makestation(RUKSS_UK_NEW_BACK_FENCE_DUAL,
+	default(ref(1))
+)
+
+makestation(RUKSS_UK_NEW_BACK_FENCE_BACK,
+	default(ref(1))
+)
+
+makestation(RUKSS_UK_NEW_BACK_FENCE_FRONT,
+	default(ref(1))
+)
+
+makestation(RUKSS_UK_OLD_BACK_FENCE_RAMP_FAR,
+	default(ref(14))
+)
+
+makestation(RUKSS_UK_OLD_BACK_FENCE_RAMP_NEAR,
+	default(ref(15))
+)
+
+makestation(RUKSS_UK_OLD_BACK_FENCE_FRONT_FAR,
+	default(ref(16))
+)
+
+makestation(RUKSS_UK_OLD_BACK_FENCE_FRONT_NEAR,
+	default(ref(17))
+)
+
+makestation(RUKSS_UK_OLD_BACK_FENCE_BACK_FAR,
+	default(ref(18))
+)
+
+makestation(RUKSS_UK_OLD_BACK_FENCE_BACK_NEAR,
+	default(ref(19))
+)
+
+makestation(RUKSS_UK_BASIC_NO_TRACK,
+	default(ref(1))
+)
+
+makestation(RUKSS_UK_BASIC_BUFFERS_NEAR,
+	default(ref(1))
+)
+
+makestation(RUKSS_UK_BASIC_BUFFERS_NEAR_FRONT,
+	default(ref(1))
+)
+
+makestation(RUKSS_UK_BASIC_BUFFERS_NEAR_BACK,
+	default(ref(1))
 )

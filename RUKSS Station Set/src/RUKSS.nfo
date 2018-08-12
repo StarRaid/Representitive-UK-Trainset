@@ -4,7 +4,7 @@
 // Escapes: 71 70 7= 7! 7< 7> 7G 7g 7gG 7GG 7gg 7c 7C
 // Escapes: D= = DR D+ = DF D- = DC Du* = DM D* = DnF Du<< = DnC D<< = DO D& D| Du/ D/ Du% D%
 // Format: spritenum pcxfile xpos ypos compression ysize xsize xrel yrel
-    0 * 4	 F9 00 00 00
+    0 * 4	 52 01 00 00
 
 
 
@@ -53,374 +53,594 @@
 
 
 
- //PLTF
- //DBPL
- //BLDN
- //EYCN
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //GSDS
+ //GSBS
+ //GSFS
+ //GSXT
 
 
     7 * 14	 00 04 03 01 00
-        08 50 4c 54 46   
+        08 47 53 44 53   
 	0B  02 
-	11 00  
+	11 f0  
 
-    8 * 25	 04 04 FF 01 00 C5 "Generic platform 1" 00    
+    8 * 23	 04 04 FF 01 00 C5 "Generic platform" 00    
 
 
 
-    9 * 12	 00 04 02 01 01
-        08 50 4c 54 46   
+    9 * 14	 00 04 03 01 01
+        08 47 53 42 53   
 	0B  02 
+	11 f0  
 
-   10 * 32	 04 04 FF 01 01 C5 "Generic platform 1 - Back" 00    
+   10 * 30	 04 04 FF 01 01 C5 "Generic platform - Back" 00    
 
 
 
-   11 * 12	 00 04 02 01 02
-        08 50 4c 54 46   
+   11 * 14	 00 04 03 01 02
+        08 47 53 46 53   
 	0B  02 
+	11 f0  
 
-   12 * 33	 04 04 FF 01 02 C5 "Generic platform 1 - Front" 00    
+   12 * 31	 04 04 FF 01 02 C5 "Generic platform - Front" 00    
 
 
 
-   13 * 12	 00 04 02 01 03
-        08 50 4c 54 46   
+   13 * 14	 00 04 03 01 03
+        08 47 53 44 53   
 	0B  02 
+	11 f0  
 
-   14 * 36	 04 04 FF 01 03 C5 "Generic platform 1 - Far Ramp" 00    
+   14 * 34	 04 04 FF 01 03 C5 "Generic platform - Far Ramp" 00    
 
 
 
-   15 * 12	 00 04 02 01 04
-        08 50 4c 54 46   
+   15 * 14	 00 04 03 01 04
+        08 47 53 44 53   
 	0B  02 
+	11 f0  
 
-   16 * 37	 04 04 FF 01 04 C5 "Generic platform 1 - Near Ramp" 00    
+   16 * 35	 04 04 FF 01 04 C5 "Generic platform - Near Ramp" 00    
 
 
 
-   17 * 12	 00 04 02 01 05
-        08 50 4c 54 46   
+   17 * 14	 00 04 03 01 05
+        08 47 53 46 53   
 	0B  02 
+	11 f0  
 
-   18 * 42	 04 04 FF 01 05 C5 "Generic platform 1 - Front Far Ramp" 00    
+   18 * 40	 04 04 FF 01 05 C5 "Generic platform - Front Far Ramp" 00    
 
 
 
-   19 * 12	 00 04 02 01 06
-        08 50 4c 54 46   
+   19 * 14	 00 04 03 01 06
+        08 47 53 46 53   
 	0B  02 
+	11 f0  
 
-   20 * 43	 04 04 FF 01 06 C5 "Generic platform 1 - Front Near Ramp" 00    
+   20 * 41	 04 04 FF 01 06 C5 "Generic platform - Front Near Ramp" 00    
 
 
 
-   21 * 12	 00 04 02 01 07
-        08 50 4c 54 46   
+   21 * 14	 00 04 03 01 07
+        08 47 53 42 53   
 	0B  02 
+	11 f0  
 
-   22 * 41	 04 04 FF 01 07 C5 "Generic platform 1 - Rear Far Ramp" 00    
+   22 * 39	 04 04 FF 01 07 C5 "Generic platform - Rear Far Ramp" 00    
 
 
 
-   23 * 12	 00 04 02 01 08
-        08 50 4c 54 46   
+   23 * 14	 00 04 03 01 08
+        08 47 53 42 53   
 	0B  02 
+	11 f0  
 
-   24 * 42	 04 04 FF 01 08 C5 "Generic platform 1 - Rear Near Ramp" 00    
+   24 * 40	 04 04 FF 01 08 C5 "Generic platform - Rear Near Ramp" 00    
 
 
 
-   25 * 12	 00 04 02 01 09
-        08 50 4c 54 46   
+   25 * 14	 00 04 03 01 09
+        08 47 53 44 53   
 	0B  02 
+	11 f0  
 
-   26 * 45	 04 04 FF 01 09 C5 "Generic platform 1 - Old Style Shelter" 00    
+   26 * 43	 04 04 FF 01 09 C5 "Generic platform - Old Style Shelter" 00    
 
 
 
-   27 * 12	 00 04 02 01 0a
-        08 50 4c 54 46   
+   27 * 14	 00 04 03 01 0a
+        08 47 53 42 53   
 	0B  02 
+	11 f0  
 
-   28 * 50	 04 04 FF 01 0a C5 "Generic platform 1 - Rear Old Style Shelter" 00    
+   28 * 48	 04 04 FF 01 0a C5 "Generic platform - Rear Old Style Shelter" 00    
 
 
 
-   29 * 12	 00 04 02 01 0b
-        08 50 4c 54 46   
+   29 * 14	 00 04 03 01 0b
+        08 47 53 46 53   
 	0B  02 
+	11 f0  
 
-   30 * 51	 04 04 FF 01 0b C5 "Generic platform 1 - Front Old Style Shelter" 00    
+   30 * 49	 04 04 FF 01 0b C5 "Generic platform - Front Old Style Shelter" 00    
 
 
 
-   31 * 12	 00 04 02 01 0c
-        08 50 4c 54 46   
+   31 * 14	 00 04 03 01 0c
+        08 47 53 44 53   
 	0B  02 
+	11 f0  
 
-   32 * 49	 04 04 FF 01 0c C5 "Generic platform 1 - Far Ramp with Barrier" 00    
+   32 * 47	 04 04 FF 01 0c C5 "Generic platform - Far Ramp with Barrier" 00    
 
 
 
-   33 * 12	 00 04 02 01 0d
-        08 50 4c 54 46   
+   33 * 14	 00 04 03 01 0d
+        08 47 53 44 53   
 	0B  02 
+	11 f0  
 
-   34 * 50	 04 04 FF 01 0d C5 "Generic platform 1 - Near Ramp with Barrier" 00    
+   34 * 48	 04 04 FF 01 0d C5 "Generic platform - Near Ramp with Barrier" 00    
 
 
 
-   35 * 12	 00 04 02 01 0e
-        08 50 4c 54 46   
+   35 * 14	 00 04 03 01 0e
+        08 47 53 46 53   
 	0B  02 
+	11 f0  
 
-   36 * 55	 04 04 FF 01 0e C5 "Generic platform 1 - Front Far Ramp with Barrier" 00    
+   36 * 53	 04 04 FF 01 0e C5 "Generic platform - Front Far Ramp with Barrier" 00    
 
 
 
-   37 * 12	 00 04 02 01 0f
-        08 50 4c 54 46   
+   37 * 14	 00 04 03 01 0f
+        08 47 53 46 53   
 	0B  02 
+	11 f0  
 
-   38 * 56	 04 04 FF 01 0f C5 "Generic platform 1 - Front Near Ramp with Barrier" 00    
+   38 * 54	 04 04 FF 01 0f C5 "Generic platform - Front Near Ramp with Barrier" 00    
 
 
 
-   39 * 12	 00 04 02 01 10
-        08 50 4c 54 46   
+   39 * 14	 00 04 03 01 10
+        08 47 53 42 53   
 	0B  02 
+	11 f0  
 
-   40 * 54	 04 04 FF 01 10 C5 "Generic platform 1 - Rear Far Ramp with Barrier" 00    
+   40 * 52	 04 04 FF 01 10 C5 "Generic platform - Rear Far Ramp with Barrier" 00    
 
 
 
-   41 * 12	 00 04 02 01 11
-        08 50 4c 54 46   
+   41 * 14	 00 04 03 01 11
+        08 47 53 42 53   
 	0B  02 
+	11 f0  
 
-   42 * 55	 04 04 FF 01 11 C5 "Generic platform 1 - Rear Near Ramp with Barrier" 00    
+   42 * 53	 04 04 FF 01 11 C5 "Generic platform - Rear Near Ramp with Barrier" 00    
 
 
 
-   43 * 12	 00 04 02 01 12
-        08 50 4c 54 46   
+   43 * 14	 00 04 03 01 12
+        08 47 53 44 53   
 	0B  02 
+	11 f0  
 
    44 * 32	 04 04 FF 01 12 C5 "Old style fenced platform" 00    
 
 
 
-   45 * 12	 00 04 02 01 13
-        08 50 4c 54 46   
+   45 * 14	 00 04 03 01 13
+        08 47 53 42 53   
 	0B  02 
+	11 f0  
 
    46 * 39	 04 04 FF 01 13 C5 "Old style fenced platform - Back" 00    
 
 
 
-   47 * 12	 00 04 02 01 14
-        08 50 4c 54 46   
+   47 * 14	 00 04 03 01 14
+        08 47 53 46 53   
 	0B  02 
+	11 f0  
 
    48 * 40	 04 04 FF 01 14 C5 "Old style fenced platform - Front" 00    
 
 
 
-   49 * 20	 00 04 05 01 15
-        08 50 4c 54 46   
+   49 * 22	 00 04 06 01 15
+        08 47 53 44 53   
 	0B  02 
 	18  01 00 
-	16 03 01  
+	16 02 01  
 	17 04  
+	11 f0  
 
    50 * 38	 04 04 FF 01 15 C5 "Platform with Information Board" 00    
 
 
 
-   51 * 20	 00 04 05 01 16
-        08 50 4c 54 46   
+   51 * 22	 00 04 06 01 16
+        08 47 53 42 53   
 	0B  02 
 	18  01 00 
-	16 03 01  
+	16 02 01  
 	17 04  
+	11 f0  
 
    52 * 45	 04 04 FF 01 16 C5 "Platform with Information Board - Back" 00    
 
 
 
-   53 * 20	 00 04 05 01 17
-        08 50 4c 54 46   
+   53 * 22	 00 04 06 01 17
+        08 47 53 46 53   
 	0B  02 
 	18  01 00 
-	16 03 01  
+	16 02 01  
 	17 04  
+	11 f0  
 
    54 * 46	 04 04 FF 01 17 C5 "Platform with Information Board - Front" 00    
 
 
-   55 * 23	 04 04 FF 01 00 c4 "RUK Platform Set"
+
+   55 * 14	 00 04 03 01 18
+        08 47 53 44 53   
+	0B  02 
+	11 f0  
+
+   56 * 32	 04 04 FF 01 18 C5 "New style fenced platform" 00    
+
+
+
+   57 * 14	 00 04 03 01 19
+        08 47 53 42 53   
+	0B  02 
+	11 f0  
+
+   58 * 39	 04 04 FF 01 19 C5 "New style fenced platform - Back" 00    
+
+
+
+   59 * 14	 00 04 03 01 1a
+        08 47 53 46 53   
+	0B  02 
+	11 f0  
+
+   60 * 40	 04 04 FF 01 1a C5 "New style fenced platform - Front" 00    
+
+
+
+   61 * 14	 00 04 03 01 1b
+        08 47 53 44 53   
+	0B  02 
+	11 f0  
+
+   62 * 62	 04 04 FF 01 1b C5 "Generic platform - Far Ramp with Barrier and Back Fence" 00    
+
+
+
+   63 * 14	 00 04 03 01 1c
+        08 47 53 44 53   
+	0B  02 
+	11 f0  
+
+   64 * 63	 04 04 FF 01 1c C5 "Generic platform - Near Ramp with Barrier and Back Fence" 00    
+
+
+
+   65 * 14	 00 04 03 01 1d
+        08 47 53 46 53   
+	0B  02 
+	11 f0  
+
+   66 * 68	 04 04 FF 01 1d C5 "Generic platform - Front Far Ramp with Barrier and Back Fence" 00    
+
+
+
+   67 * 14	 00 04 03 01 1e
+        08 47 53 46 53   
+	0B  02 
+	11 f0  
+
+   68 * 69	 04 04 FF 01 1e C5 "Generic platform - Front Near Ramp with Barrier and Back Fence" 00    
+
+
+
+   69 * 14	 00 04 03 01 1f
+        08 47 53 42 53   
+	0B  02 
+	11 f0  
+
+   70 * 67	 04 04 FF 01 1f C5 "Generic platform - Rear Far Ramp with Barrier and Back Fence" 00    
+
+
+
+   71 * 14	 00 04 03 01 20
+        08 47 53 42 53   
+	0B  02 
+	11 f0  
+
+   72 * 68	 04 04 FF 01 20 C5 "Generic platform - Rear Near Ramp with Barrier and Back Fence" 00    
+
+
+
+   73 * 14	 00 04 03 01 20
+        08 47 53 58 54   
+	0B  02 
+	15 00  
+
+   74 * 37	 04 04 FF 01 20 C5 "Generic platform without track" 00    
+
+
+
+   75 * 14	 00 04 03 01 21
+        08 47 53 58 54   
+	0B  02 
+	15 00  
+
+   76 * 29	 04 04 FF 01 21 C5 "Non-Track Station   80" 00    
+
+
+
+   77 * 14	 00 04 03 01 22
+        08 47 53 58 54   
+	0B  02 
+	15 00  
+
+   78 * 21	 04 04 FF 01 22 C5 "Buffers - Near" 00    
+
+
+
+   79 * 14	 00 04 03 01 22
+        08 47 53 58 54   
+	0B  02 
+	15 00  
+
+   80 * 26	 04 04 FF 01 22 C5 "Buffers - Near Back" 00    
+
+
+
+   81 * 14	 00 04 03 01 23
+        08 47 53 58 54   
+	0B  02 
+	15 00  
+
+   82 * 27	 04 04 FF 01 23 C5 "Buffers - Near Front" 00    
+
+
+   83 * 47	 04 04 FF 01 00 c4 "RUK Station Set - Double Sided Platforms"
  00
 
 
-   56 * 4	 01 04 01 74
+   84 * 39	 04 04 FF 01 16 c4 "RUK Station Set - Back Platforms"
+ 00
+
+
+   85 * 40	 04 04 FF 01 17 c4 "RUK Station Set - Front Platforms"
+ 00
+
+
+   86 * 40	 04 04 FF 01 21 c4 "RUK Station Set - Non Track Tiles"
+ 00
+
+
+   87 * 4	 01 04 01 94
 ////Standard Platfoms Modern
 // 0..3, standard platforms
-   57 PATH/gfx/gwst1.png 0 0 09 122 64 -31 -91 
-   58 PATH/gfx/gwst1.png 80 0 09 122 64 -53 -102 
-   59 PATH/gfx/gwst1.png 160 0 09 122 64 -31 -91 
-   60 PATH/gfx/gwst1.png 240 0 09 122 64 -9 -102 
+   88 PATH/gfx/gwst1.png 0 0 09 122 64 -31 -91 
+   89 PATH/gfx/gwst1.png 80 0 09 122 64 -53 -102 
+   90 PATH/gfx/gwst1.png 160 0 09 122 64 -31 -91 
+   91 PATH/gfx/gwst1.png 240 0 09 122 64 -9 -102 
 // 4..7, back platforms
-   61 PATH/gfx/gwst1.png 0 0 09 122 64 -31 -91 
-   62 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   63 PATH/gfx/gwst1.png 160 0 09 122 64 -31 -91 
-   64 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+   92 PATH/gfx/gwst1.png 0 0 09 122 64 -31 -91 
+   93 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+   94 PATH/gfx/gwst1.png 160 0 09 122 64 -31 -91 
+   95 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
 // 8..11, front platforms	
-   65 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   66 PATH/gfx/gwst1.png 80 0 09 122 64 -53 -102 
-   67 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   68 PATH/gfx/gwst1.png 240 0 09 122 64 -9 -102 
-// 12..15, standard end ramps (far)
-   69 PATH/gfx/gwst1.png 320 0 09 122 64 -31 -91 
-   70 PATH/gfx/gwst1.png 400 0 09 122 64 -53 -102 
-   71 PATH/gfx/gwst1.png 480 0 09 122 64 -31 -91 
-   72 PATH/gfx/gwst1.png 560 0 09 122 64 -9 -102 
-// 16..19, standard end ramps (near)
-   73 PATH/gfx/gwst1.png 640 0 09 122 64 -31 -91 
-   74 PATH/gfx/gwst1.png 720 0 09 122 64 -53 -102 
-   75 PATH/gfx/gwst1.png 800 0 09 122 64 -31 -91 
-   76 PATH/gfx/gwst1.png 880 0 09 122 64 -9 -102 
-// 20..23, front platforms (far)
-   77 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   78 PATH/gfx/gwst1.png 400 0 09 122 64 -53 -102 
-   79 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   80 PATH/gfx/gwst1.png 560 0 09 122 64 -9 -102 
-// 24..27, front platforms ramps (near)
-   81 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   82 PATH/gfx/gwst1.png 720 0 09 122 64 -53 -102 
-   83 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   84 PATH/gfx/gwst1.png 880 0 09 122 64 -9 -102 
-// 28..31, back platforms (far)
-   85 PATH/gfx/gwst1.png 320 0 09 122 64 -31 -91 
-   86 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   87 PATH/gfx/gwst1.png 480 0 09 122 64 -31 -91 
-   88 PATH/gfx/gwst1.png 0 123 09 122 64 -9 -91 
-// 32..35, back platforms (near)
-   89 PATH/gfx/gwst1.png 640 0 09 122 64 -31 -91 
-   90 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   91 PATH/gfx/gwst1.png 800 0 09 122 64 -31 -91 
-   92 PATH/gfx/gwst1.png 0 123 09 122 64 -9 -91 
-// 36..39, shelters
-   93 PATH/gfx/gwst1.png 320 123 09 122 64 -31 -91 
-   94 PATH/gfx/gwst1.png 400 123 09 122 64 -53 -102 
-   95 PATH/gfx/gwst1.png 480 123 09 122 64 -31 -91 
-   96 PATH/gfx/gwst1.png 560 123 09 122 64 -9 -102 
-// 40..43, back shelters 
-   97 PATH/gfx/gwst1.png 320 123 09 122 64 -31 -91 
+   96 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+   97 PATH/gfx/gwst1.png 80 0 09 122 64 -53 -102 
    98 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-   99 PATH/gfx/gwst1.png 480 123 09 122 64 -31 -91 
-  100 PATH/gfx/gwst1.png 0 123 09 122 64 -9 -91 
-// 44..47, front shelters
-  101 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-  102 PATH/gfx/gwst1.png 400 123 09 122 64 -53 -102 
-  103 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-  104 PATH/gfx/gwst1.png 560 123 09 122 64 -9 -102 
-// 48..51, ramps with fence, far
-  105 PATH/gfx/gwst1.png 640 123 09 122 64 -31 -91 
-  106 PATH/gfx/gwst1.png 720 123 09 122 64 -53 -102 
-  107 PATH/gfx/gwst1.png 800 123 09 122 64 -31 -91 
-  108 PATH/gfx/gwst1.png 880 123 09 122 64 -9 -102 
-// 52..55, ramps with fence, near
-  109 PATH/gfx/gwst1.png 0 246 09 122 64 -31 -91 
-  110 PATH/gfx/gwst1.png 80 246 09 122 64 -53 -102 
-  111 PATH/gfx/gwst1.png 160 246 09 122 64 -31 -91 
-  112 PATH/gfx/gwst1.png 240 246 09 122 64 -9 -102 
-// 56..59, back ramps fence far
-  113 PATH/gfx/gwst1.png 640 123 09 122 64 -31 -91 
+   99 PATH/gfx/gwst1.png 240 0 09 122 64 -9 -102 
+// 12..15, standard end ramps (far)
+  100 PATH/gfx/gwst1.png 320 0 09 122 64 -31 -91 
+  101 PATH/gfx/gwst1.png 400 0 09 122 64 -53 -102 
+  102 PATH/gfx/gwst1.png 480 0 09 122 64 -31 -91 
+  103 PATH/gfx/gwst1.png 560 0 09 122 64 -9 -102 
+// 16..19, standard end ramps (near)
+  104 PATH/gfx/gwst1.png 640 0 09 122 64 -31 -91 
+  105 PATH/gfx/gwst1.png 720 0 09 122 64 -53 -102 
+  106 PATH/gfx/gwst1.png 800 0 09 122 64 -31 -91 
+  107 PATH/gfx/gwst1.png 880 0 09 122 64 -9 -102 
+// 20..23, front platforms (far)
+  108 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  109 PATH/gfx/gwst1.png 400 0 09 122 64 -53 -102 
+  110 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  111 PATH/gfx/gwst1.png 560 0 09 122 64 -9 -102 
+// 24..27, front platforms ramps (near)
+  112 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  113 PATH/gfx/gwst1.png 720 0 09 122 64 -53 -102 
   114 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-  115 PATH/gfx/gwst1.png 800 123 09 122 64 -31 -91 
-  116 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-// 60..63, back ramps fence near
-  117 PATH/gfx/gwst1.png 0 246 09 122 64 -31 -91 
-  118 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-  119 PATH/gfx/gwst1.png 160 246 09 122 64 -31 -91 
-  120 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-// 64..67, front ramps fence far
+  115 PATH/gfx/gwst1.png 880 0 09 122 64 -9 -102 
+// 28..31, back platforms (far)
+  116 PATH/gfx/gwst1.png 320 0 09 122 64 -31 -91 
+  117 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  118 PATH/gfx/gwst1.png 480 0 09 122 64 -31 -91 
+  119 PATH/gfx/gwst1.png 0 123 09 122 64 -9 -91 
+// 32..35, back platforms (near)
+  120 PATH/gfx/gwst1.png 640 0 09 122 64 -31 -91 
   121 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-  122 PATH/gfx/gwst1.png 720 123 09 122 64 -53 -102 
-  123 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
-  124 PATH/gfx/gwst1.png 880 123 09 122 64 -9 -102 
+  122 PATH/gfx/gwst1.png 800 0 09 122 64 -31 -91 
+  123 PATH/gfx/gwst1.png 0 123 09 122 64 -9 -91 
+// 36..39, shelters
+  124 PATH/gfx/gwst1.png 320 123 09 122 64 -31 -91 
+  125 PATH/gfx/gwst1.png 400 123 09 122 64 -53 -102 
+  126 PATH/gfx/gwst1.png 480 123 09 122 64 -31 -91 
+  127 PATH/gfx/gwst1.png 560 123 09 122 64 -9 -102 
+// 40..43, back shelters 
+  128 PATH/gfx/gwst1.png 320 123 09 122 64 -31 -91 
+  129 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  130 PATH/gfx/gwst1.png 480 123 09 122 64 -31 -91 
+  131 PATH/gfx/gwst1.png 0 123 09 122 64 -9 -91 
+// 44..47, front shelters
+  132 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  133 PATH/gfx/gwst1.png 400 123 09 122 64 -53 -102 
+  134 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  135 PATH/gfx/gwst1.png 560 123 09 122 64 -9 -102 
+// 48..51, ramps with fence, far
+  136 PATH/gfx/gwst1.png 640 123 09 122 64 -31 -91 
+  137 PATH/gfx/gwst1.png 720 123 09 122 64 -53 -102 
+  138 PATH/gfx/gwst1.png 800 123 09 122 64 -31 -91 
+  139 PATH/gfx/gwst1.png 880 123 09 122 64 -9 -102 
+// 52..55, ramps with fence, near
+  140 PATH/gfx/gwst1.png 0 246 09 122 64 -31 -91 
+  141 PATH/gfx/gwst1.png 80 246 09 122 64 -53 -102 
+  142 PATH/gfx/gwst1.png 160 246 09 122 64 -31 -91 
+  143 PATH/gfx/gwst1.png 240 246 09 122 64 -9 -102 
+// 56..59, back ramps fence far
+  144 PATH/gfx/gwst1.png 640 123 09 122 64 -31 -91 
+  145 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  146 PATH/gfx/gwst1.png 800 123 09 122 64 -31 -91 
+  147 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+// 60..63, back ramps fence near
+  148 PATH/gfx/gwst1.png 0 246 09 122 64 -31 -91 
+  149 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  150 PATH/gfx/gwst1.png 160 246 09 122 64 -31 -91 
+  151 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+// 64..67, front ramps fence far
+  152 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  153 PATH/gfx/gwst1.png 720 123 09 122 64 -53 -102 
+  154 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 
+  155 PATH/gfx/gwst1.png 880 123 09 122 64 -9 -102 
 // 68..71, front ramps fence near
-  125 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
-  126 PATH/gfx/gwst1.png 80 246 09 122 64 -53 -102 
-  127 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
-  128 PATH/gfx/gwst1.png 240 246 09 122 64 -9 -102 
+  156 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+  157 PATH/gfx/gwst1.png 80 246 09 122 64 -53 -102 
+  158 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+  159 PATH/gfx/gwst1.png 240 246 09 122 64 -9 -102 
 // 72..75, old fence
-  129 PATH/gfx/gwst1.png 640 246 09 122 64 -31 -91 
-  130 PATH/gfx/gwst1.png 720 246 09 122 64 -53 -102 
-  131 PATH/gfx/gwst1.png 800 246 09 122 64 -31 -91 
-  132 PATH/gfx/gwst1.png 880 246 09 122 64 -9 -102 
+  160 PATH/gfx/gwst1.png 640 246 09 122 64 -31 -91 
+  161 PATH/gfx/gwst1.png 720 246 09 122 64 -53 -102 
+  162 PATH/gfx/gwst1.png 800 246 09 122 64 -31 -91 
+  163 PATH/gfx/gwst1.png 880 246 09 122 64 -9 -102 
 // 76..79, old fence, back
-  133 PATH/gfx/gwst1.png 640 246 09 122 64 -31 -91 
-  134 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
-  135 PATH/gfx/gwst1.png 800 246 09 122 64 -31 -91 
-  136 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+  164 PATH/gfx/gwst1.png 640 246 09 122 64 -31 -91 
+  165 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+  166 PATH/gfx/gwst1.png 800 246 09 122 64 -31 -91 
+  167 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
 // 80..83, old fence, front
-  137 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
-  138 PATH/gfx/gwst1.png 720 246 09 122 64 -53 -102 
-  139 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
-  140 PATH/gfx/gwst1.png 880 246 09 122 64 -9 -102 
+  168 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+  169 PATH/gfx/gwst1.png 720 246 09 122 64 -53 -102 
+  170 PATH/gfx/gwst1.png 0 123 09 122 64 -31 -91 	
+  171 PATH/gfx/gwst1.png 880 246 09 122 64 -9 -102 
 //84..87, info board [1/4]
-  141 PATH/gfx/gwst1.png 0 369 09 122 64 -31 -91 
-  142 PATH/gfx/gwst1.png 80 369 09 122 64 -53 -102 
-  143 PATH/gfx/gwst1.png 160 369 09 122 64 -31 -91 
-  144 PATH/gfx/gwst1.png 240 369 09 122 64 -9 -102 
+  172 PATH/gfx/gwst1.png 0 369 09 122 64 -31 -91 
+  173 PATH/gfx/gwst1.png 80 369 09 122 64 -53 -102 
+  174 PATH/gfx/gwst1.png 160 369 09 122 64 -31 -91 
+  175 PATH/gfx/gwst1.png 240 369 09 122 64 -9 -102 
 //88..91, info board [2/4]
-  145 PATH/gfx/gwst1.png 320 369 09 122 64 -31 -91 
-  146 PATH/gfx/gwst1.png 400 369 09 122 64 -53 -102 
-  147 PATH/gfx/gwst1.png 480 369 09 122 64 -31 -91 
-  148 PATH/gfx/gwst1.png 560 369 09 122 64 -9 -102 
+  176 PATH/gfx/gwst1.png 320 369 09 122 64 -31 -91 
+  177 PATH/gfx/gwst1.png 400 369 09 122 64 -53 -102 
+  178 PATH/gfx/gwst1.png 480 369 09 122 64 -31 -91 
+  179 PATH/gfx/gwst1.png 560 369 09 122 64 -9 -102 
 //92..95, info board [3/4]
-  149 PATH/gfx/gwst1.png 320 492 09 122 64 -31 -91 
-  150 PATH/gfx/gwst1.png 400 492 09 122 64 -53 -102 
-  151 PATH/gfx/gwst1.png 480 492 09 122 64 -31 -91 
-  152 PATH/gfx/gwst1.png 560 492 09 122 64 -9 -102 
+  180 PATH/gfx/gwst1.png 320 492 09 122 64 -31 -91 
+  181 PATH/gfx/gwst1.png 400 492 09 122 64 -53 -102 
+  182 PATH/gfx/gwst1.png 480 492 09 122 64 -31 -91 
+  183 PATH/gfx/gwst1.png 560 492 09 122 64 -9 -102 
 //96..99, info board [4/4]
-  153 PATH/gfx/gwst1.png 0 492 09 122 64 -31 -91 
-  154 PATH/gfx/gwst1.png 80 492 09 122 64 -53 -102 
-  155 PATH/gfx/gwst1.png 160 492 09 122 64 -31 -91 
-  156 PATH/gfx/gwst1.png 240 492 09 122 64 -9 -102 
+  184 PATH/gfx/gwst1.png 0 492 09 122 64 -31 -91 
+  185 PATH/gfx/gwst1.png 80 492 09 122 64 -53 -102 
+  186 PATH/gfx/gwst1.png 160 492 09 122 64 -31 -91 
+  187 PATH/gfx/gwst1.png 240 492 09 122 64 -9 -102 
 //100..101, info board back [1/4]
-  157 PATH/gfx/gwst1.png 0 369 09 122 64 -31 -91 
-  158 PATH/gfx/gwst1.png 160 369 09 122 64 -31 -91 
+  188 PATH/gfx/gwst1.png 0 369 09 122 64 -31 -91 
+  189 PATH/gfx/gwst1.png 160 369 09 122 64 -31 -91 
 //102..103, info board back [2/4]
-  159 PATH/gfx/gwst1.png 320 369 09 122 64 -31 -91 
-  160 PATH/gfx/gwst1.png 480 369 09 122 64 -31 -91 
+  190 PATH/gfx/gwst1.png 320 369 09 122 64 -31 -91 
+  191 PATH/gfx/gwst1.png 480 369 09 122 64 -31 -91 
 //104..105, info board back [3/4]
-  161 PATH/gfx/gwst1.png 320 492 09 122 64 -31 -91 
-  162 PATH/gfx/gwst1.png 480 492 09 122 64 -31 -91 
+  192 PATH/gfx/gwst1.png 320 492 09 122 64 -31 -91 
+  193 PATH/gfx/gwst1.png 480 492 09 122 64 -31 -91 
 //106..107, info board back [4/4]
-  163 PATH/gfx/gwst1.png 0 492 09 122 64 -31 -91 
-  164 PATH/gfx/gwst1.png 160 492 09 122 64 -31 -91 
+  194 PATH/gfx/gwst1.png 0 492 09 122 64 -31 -91 
+  195 PATH/gfx/gwst1.png 160 492 09 122 64 -31 -91 
 //108..109, info board front [1/4]
-  165 PATH/gfx/gwst1.png 80 369 09 122 64 -53 -102 
-  166 PATH/gfx/gwst1.png 240 369 09 122 64 -9 -102 
+  196 PATH/gfx/gwst1.png 80 369 09 122 64 -53 -102 
+  197 PATH/gfx/gwst1.png 240 369 09 122 64 -9 -102 
 //110..111, info board front [2/4]
-  167 PATH/gfx/gwst1.png 400 369 09 122 64 -53 -102 
-  168 PATH/gfx/gwst1.png 560 369 09 122 64 -9 -102 
+  198 PATH/gfx/gwst1.png 400 369 09 122 64 -53 -102 
+  199 PATH/gfx/gwst1.png 560 369 09 122 64 -9 -102 
 //112..113, info board front [3/4]
-  169 PATH/gfx/gwst1.png 400 492 09 122 64 -53 -102 
-  170 PATH/gfx/gwst1.png 560 492 09 122 64 -9 -102 
+  200 PATH/gfx/gwst1.png 400 492 09 122 64 -53 -102 
+  201 PATH/gfx/gwst1.png 560 492 09 122 64 -9 -102 
 //114..115, info board front [4/4]
-  171 PATH/gfx/gwst1.png 80 492 09 122 64 -53 -102 
-  172 PATH/gfx/gwst1.png 240 492 09 122 64 -9 -102 
+  202 PATH/gfx/gwst1.png 80 492 09 122 64 -53 -102 
+  203 PATH/gfx/gwst1.png 240 492 09 122 64 -9 -102 
+// 116..119, new fence
+  204 PATH/gfx/gwst1.png 320 246 09 122 64 -31 -91 
+  205 PATH/gfx/gwst1.png 400 246 09 122 64 -53 -102 
+  206 PATH/gfx/gwst1.png 480 246 09 122 64 -31 -91 
+  207 PATH/gfx/gwst1.png 560 246 09 122 64 -9 -102 
+// 120..121, new fence, back
+  208 PATH/gfx/gwst1.png 320 246 09 122 64 -31 -91 
+  209 PATH/gfx/gwst1.png 480 246 09 122 64 -31 -91 
+// 122..123, new fence, front
+  210 PATH/gfx/gwst1.png 400 246 09 122 64 -53 -102 
+  211 PATH/gfx/gwst1.png 560 246 09 122 64 -9 -102 
+// 124..127, old fence end far
+  212 PATH/gfx/gwst1.png 640 369 09 122 64 -31 -91 
+  213 PATH/gfx/gwst1.png 720 369 09 122 64 -53 -102 
+  214 PATH/gfx/gwst1.png 800 369 09 122 64 -31 -91 
+  215 PATH/gfx/gwst1.png 880 369 09 122 64 -9 -102 
+// 128..129, old fence end far, back
+  216 PATH/gfx/gwst1.png 640 369 09 122 64 -31 -91 
+  217 PATH/gfx/gwst1.png 800 369 09 122 64 -31 -91 
+// 130..131, old fence end far, front
+  218 PATH/gfx/gwst1.png 720 369 09 122 64 -53 -102 
+  219 PATH/gfx/gwst1.png 880 369 09 122 64 -9 -102 
+// 132..135, old fence end near
+  220 PATH/gfx/gwst1.png 640 492 09 122 64 -31 -91 
+  221 PATH/gfx/gwst1.png 720 492 09 122 64 -53 -102 
+  222 PATH/gfx/gwst1.png 800 492 09 122 64 -31 -91 
+  223 PATH/gfx/gwst1.png 880 492 09 122 64 -9 -102 
+// 136..137, old fence end near, back
+  224 PATH/gfx/gwst1.png 640 492 09 122 64 -31 -91 
+  225 PATH/gfx/gwst1.png 800 492 09 122 64 -31 -91 
+// 138..139, old fence end near, front
+  226 PATH/gfx/gwst1.png 720 492 09 122 64 -53 -102 
+  227 PATH/gfx/gwst1.png 880 492 09 122 64 -9 -102 
+// 140..141, non track tiles
+  228 PATH/gfx/gwst1.png 960 0 09 122 64 -31 -91 
+  229 PATH/gfx/gwst1.png 1040 0 09 122 64 -31 -91 
+// 142..143, buffers near
+  230 PATH/gfx/gwst1.png 1120 123 09 122 64 -31 -91 
+  231 PATH/gfx/gwst1.png 1200 123 09 122 64 -31 -91 
+// 144..145, buffers near back
+  232 PATH/gfx/gwst1.png 960 123 09 122 64 -31 -91 
+  233 PATH/gfx/gwst1.png 1120 0 09 122 64 -31 -91 
+// 146..147, buffers near front
+  234 PATH/gfx/gwst1.png 1040 123 09 122 64 -31 -91 
+  235 PATH/gfx/gwst1.png 1200 0 09 122 64 -31 -91 
 
 
 
-  173 * 9	 02 04 01  01 01  00 00  00 00 
+  236 * 9	 02 04 01  01 01  00 00  00 00 
 
-  174 * 57	 00 04 01 01 00 09 02
+//!!Fatal Error (64): Expected more data for prop 09. (1 bytes at 57.)
+  237 * 57	 00 04 01 01 00 09 03
  f4 03 00 00
       00 00 00 10 05 07 2d 04 00 00
       00 0b 00 10 05 07 2e 04 00 00
@@ -432,7 +652,7 @@
 
 
 
-  175 * 57	 00 04 01 01 01 09 02
+  238 * 57	 00 04 01 01 01 09 02
  f4 03 00 00
       00 00 00 10 05 07 31 04 00 00
       00 0b 00 10 05 07 32 04 00 00
@@ -444,7 +664,7 @@
 
 
 
-  176 * 57	 00 04 01 01 02 09 02
+  239 * 57	 00 04 01 01 02 09 02
  f4 03 00 00
       00 00 00 10 05 07 35 04 00 00
       00 0b 00 10 05 07 36 04 00 00
@@ -456,7 +676,7 @@
 
 
 
-  177 * 57	 00 04 01 01 03 09 02
+  240 * 57	 00 04 01 01 03 09 02
  f4 03 00 00
       00 00 00 10 05 07 39 04 00 00
       00 0b 00 10 05 07 3a 04 00 00
@@ -468,7 +688,7 @@
 
 
 
-  178 * 57	 00 04 01 01 04 09 02
+  241 * 57	 00 04 01 01 04 09 02
  f4 03 00 00
       00 00 00 10 05 07 3d 04 00 00
       00 0b 00 10 05 07 3e 04 00 00
@@ -480,7 +700,7 @@
 
 
 
-  179 * 57	 00 04 01 01 05 09 02
+  242 * 57	 00 04 01 01 05 09 02
  f4 03 00 00
       00 00 00 10 05 07 41 04 00 00
       00 0b 00 10 05 07 42 04 00 00
@@ -492,7 +712,7 @@
 
 
 
-  180 * 57	 00 04 01 01 06 09 02
+  243 * 57	 00 04 01 01 06 09 02
  f4 03 00 00
       00 00 00 10 05 07 45 04 00 00
       00 0b 00 10 05 07 46 04 00 00
@@ -504,7 +724,7 @@
 
 
 
-  181 * 57	 00 04 01 01 07 09 02
+  244 * 57	 00 04 01 01 07 09 02
  f4 03 00 00
       00 00 00 10 05 07 49 04 00 00
       00 0b 00 10 05 07 4a 04 00 00
@@ -516,7 +736,7 @@
 
 
 
-  182 * 57	 00 04 01 01 08 09 02
+  245 * 57	 00 04 01 01 08 09 02
  f4 03 00 00
       00 00 00 10 05 07 4d 04 00 00
       00 0b 00 10 05 07 4e 04 00 00
@@ -528,7 +748,7 @@
 
 
 
-  183 * 57	 00 04 01 01 09 09 02
+  246 * 57	 00 04 01 01 09 09 02
  f4 03 00 00
       00 00 00 10 05 07 51 04 00 00
       00 0b 00 10 05 07 52 04 00 00
@@ -540,7 +760,7 @@
 
 
 
-  184 * 57	 00 04 01 01 0a 09 02
+  247 * 57	 00 04 01 01 0a 09 02
  f4 03 00 00
       00 00 00 10 05 07 55 04 00 00
       00 0b 00 10 05 07 56 04 00 00
@@ -552,7 +772,7 @@
 
 
 
-  185 * 57	 00 04 01 01 0b 09 02
+  248 * 57	 00 04 01 01 0b 09 02
  f4 03 00 00
       00 00 00 10 05 07 59 04 00 00
       00 0b 00 10 05 07 5a 04 00 00
@@ -564,7 +784,7 @@
 
 
 
-  186 * 57	 00 04 01 01 0c 09 02
+  249 * 57	 00 04 01 01 0c 09 02
  f4 03 00 00
       00 00 00 10 05 07 5d 04 00 00
       00 0b 00 10 05 07 5e 04 00 00
@@ -576,7 +796,7 @@
 
 
 
-  187 * 57	 00 04 01 01 0d 09 02
+  250 * 57	 00 04 01 01 0d 09 02
  f4 03 00 00
       00 00 00 10 05 07 61 04 00 00
       00 0b 00 10 05 07 62 04 00 00
@@ -588,7 +808,7 @@
 
 
 
-  188 * 57	 00 04 01 01 0e 09 02
+  251 * 57	 00 04 01 01 10 09 02
  f4 03 00 00
       00 00 00 10 05 07 65 04 00 00
       00 0b 00 10 05 07 66 04 00 00
@@ -600,7 +820,7 @@
 
 
 
-  189 * 57	 00 04 01 01 0f 09 02
+  252 * 57	 00 04 01 01 11 09 02
  f4 03 00 00
       00 00 00 10 05 07 69 04 00 00
       00 0b 00 10 05 07 6a 04 00 00
@@ -612,7 +832,7 @@
 
 
 
-  190 * 57	 00 04 01 01 10 09 02
+  253 * 57	 00 04 01 01 0e 09 02
  f4 03 00 00
       00 00 00 10 05 07 6d 04 00 00
       00 0b 00 10 05 07 6e 04 00 00
@@ -624,7 +844,7 @@
 
 
 
-  191 * 57	 00 04 01 01 11 09 02
+  254 * 57	 00 04 01 01 0f 09 02
  f4 03 00 00
       00 00 00 10 05 07 71 04 00 00
       00 0b 00 10 05 07 72 04 00 00
@@ -636,7 +856,7 @@
 
 
 
-  192 * 57	 00 04 01 01 12 09 02
+  255 * 57	 00 04 01 01 12 09 02
  f4 03 00 00
       00 00 00 10 05 07 75 04 00 00
       00 0b 00 10 05 07 76 04 00 00
@@ -648,7 +868,7 @@
 
 
 
-  193 * 57	 00 04 01 01 13 09 02
+  256 * 57	 00 04 01 01 13 09 02
  f4 03 00 00
       00 00 00 10 05 07 79 04 00 00
       00 0b 00 10 05 07 7a 04 00 00
@@ -660,7 +880,7 @@
 
 
 
-  194 * 57	 00 04 01 01 14 09 02
+  257 * 57	 00 04 01 01 14 09 02
  f4 03 00 00
       00 00 00 10 05 07 7d 04 00 00
       00 0b 00 10 05 07 7e 04 00 00
@@ -672,7 +892,7 @@
 
 
 
-  195 * 207	 00 04 01 01 15 09 08
+  258 * 207	 00 04 01 01 15 09 08
  f4 03 00 00
       00 00 00 10 05 07 81 04 00 00
       00 0b 00 10 05 07 82 04 00 00
@@ -707,7 +927,7 @@
       80
 
 
-  196 * 127	 00 04 01 01 16 09 08
+  259 * 127	 00 04 01 01 16 09 08
  f4 03 00 00
       00 00 00 10 05 07 91 04 00 00
       80
@@ -735,7 +955,7 @@
 
 
 
-  197 * 127	 00 04 01 01 17 09 08
+  260 * 127	 00 04 01 01 17 09 08
  f4 03 00 00
       00 0b 00 10 05 07 99 04 00 00
       80
@@ -763,272 +983,474 @@
 
 
 
-  198 * 17	 02 04 02  85 0C 00 FF FF 01
+  261 * 57	 00 04 01 01 18 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 a1 04 00 00
+      00 0b 00 10 05 07 a2 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 a3 04 00 00
+      0b 00 00 05 10 07 a4 04 00 00
+      80
+
+
+
+  262 * 37	 00 04 01 01 19 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 a5 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 a6 04 00 00
+      80
+
+
+
+  263 * 37	 00 04 01 01 1a 09 02
+ f4 03 00 00
+      00 0b 00 10 05 07 a7 04 00 00
+      80
+    f3 03 00 00
+	  0b 00 00 05 10 07 a8 04 00 00
+      80
+
+
+
+  264 * 57	 00 04 01 01 1b 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 a9 04 00 00
+      00 0b 00 10 05 07 aa 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 ab 04 00 00
+	  0b 00 00 05 10 07 ac 04 00 00
+      80
+
+
+
+  265 * 57	 00 04 01 01 1c 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 b1 04 00 00
+      00 0b 00 10 05 07 b2 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 b3 04 00 00
+	  0b 00 00 05 10 07 b4 04 00 00
+      80
+
+
+
+  266 * 37	 00 04 01 01 1f 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 ad 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 ae 04 00 00
+      80
+
+
+
+  267 * 37	 00 04 01 01 20 09 02
+ f4 03 00 00
+      00 00 00 10 05 07 b5 04 00 00
+      80
+    f3 03 00 00
+      00 00 00 05 10 07 b6 04 00 00
+      80
+
+
+
+  268 * 37	 00 04 01 01 1d 09 02
+ f4 03 00 00
+      00 0b 00 10 05 07 af 04 00 00
+      80
+    f3 03 00 00
+	  0b 00 00 05 10 07 b0 04 00 00
+      80
+
+
+
+  269 * 37	 00 04 01 01 1e 09 02
+ f4 03 00 00
+      00 0b 00 10 05 07 b7 04 00 00
+      80
+    f3 03 00 00
+	  0b 00 00 05 10 07 b8 04 00 00
+      80
+
+
+
+  270 * 37	 00 04 01 01 21 09 02
+ 8d 0f 00 00
+      00 00 00 10 10 07 b9 04 00 00
+      80
+    8d 0f 00 00
+	  00 00 00 10 10 07 ba 04 00 00
+      80
+
+
+
+  271 * 37	 00 04 01 01 22 09 02
+ f4 03 00 00
+      00 00 00 10 10 07 bb 04 00 00
+      80
+    f3 03 00 00
+	  00 00 00 10 10 07 bc 04 00 00
+      80
+
+
+
+  272 * 37	 00 04 01 01 22 09 02
+ f4 03 00 00
+      00 00 00 10 10 07 bd 04 00 00
+      80
+    f3 03 00 00
+	  00 00 00 10 10 07 be 04 00 00
+      80
+
+
+
+  273 * 37	 00 04 01 01 23 09 02
+ f4 03 00 00
+      00 00 00 10 10 07 bf 04 00 00
+      80
+    f3 03 00 00
+	  00 00 00 10 10 07 c0 04 00 00
+      80
+
+
+
+  274 * 17	 02 04 02  85 0C 00 FF FF 01
+ 01 80 14 00 14 00   // tile layout
+	01 00 		     // graphics chain
+
+
+  275 * 17	 02 04 03  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  199 * 17	 02 04 03  85 0C 00 FF FF 01
+  276 * 17	 02 04 04  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  200 * 17	 02 04 04  85 0C 00 FF FF 01
+  277 * 17	 02 04 05  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  201 * 17	 02 04 05  85 0C 00 FF FF 01
+  278 * 17	 02 04 06  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  202 * 17	 02 04 06  85 0C 00 FF FF 01
+  279 * 17	 02 04 07  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  203 * 17	 02 04 07  85 0C 00 FF FF 01
+  280 * 17	 02 04 08  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  204 * 17	 02 04 08  85 0C 00 FF FF 01
+  281 * 17	 02 04 09  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  205 * 17	 02 04 09  85 0C 00 FF FF 01
+  282 * 17	 02 04 0a  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  206 * 17	 02 04 0a  85 0C 00 FF FF 01
+  283 * 17	 02 04 0b  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  207 * 17	 02 04 0b  85 0C 00 FF FF 01
+  284 * 17	 02 04 0c  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  208 * 17	 02 04 0c  85 0C 00 FF FF 01
+  285 * 17	 02 04 0d  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  209 * 17	 02 04 0d  85 0C 00 FF FF 01
+  286 * 17	 02 04 0e  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  210 * 17	 02 04 0e  85 0C 00 FF FF 01
+  287 * 17	 02 04 0f  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  211 * 17	 02 04 0f  85 0C 00 FF FF 01
+  288 * 17	 02 04 10  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  212 * 17	 02 04 10  85 0C 00 FF FF 01
+  289 * 17	 02 04 11  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  213 * 17	 02 04 11  85 0C 00 FF FF 01
+  290 * 17	 02 04 12  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  214 * 17	 02 04 12  85 0C 00 FF FF 01
+  291 * 17	 02 04 13  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  215 * 17	 02 04 13  85 0C 00 FF FF 01
+  292 * 17	 02 04 14  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  216 * 17	 02 04 14  85 0C 00 FF FF 01
+  293 * 17	 02 04 15  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  217 * 17	 02 04 15  85 0C 00 FF FF 01
+  294 * 17	 02 04 16  85 0C 00 FF FF 01
  00 80 14 00 14 00   // tile layout
 	01 00 		     // graphics chain
 
 
-  218 * 17	 02 04 16  85 0C 00 FF FF 01
- 00 80 14 00 14 00   // tile layout
-	01 00 		     // graphics chain
-
-
-  219 * 22	 02 04 17  81 4A 00 FF 03
+  295 * 22	 02 04 17  81 4A 00 FF 03
  00 80 00 00  
 	 02 80 01 01  
 	 04 80 02 02  
 	 06 80 
 
 
-  220 * 14	 02 04 18  81 18 00 7F 01
+  296 * 14	 02 04 18  81 18 00 7F 01
  fe 80 00 00  
  fd 80 
 
 
-  221 * 23	 02 04 19  85 0C 00 FF FF 02
+  297 * 23	 02 04 19  85 0C 00 FF FF 02
 17 00 14 00 14 00  
 	18 00 40 01 40 01  
 	01 00 
 
 
-  222 * 22	 02 04 1a  81 4A 00 FF 03
+  298 * 22	 02 04 1a  81 4A 00 FF 03
  00 80 00 00  
 	 02 80 01 01  
 	 04 80 02 02  
 	 06 80 
 
 
-  223 * 23	 02 04 1b  85 0C 00 FF FF 02
+  299 * 23	 02 04 1b  85 0C 00 FF FF 02
 1a 00 14 00 14 00  
 	18 00 40 01 40 01  
 	01 00 
 
 
-  224 * 22	 02 04 1c  81 4A 00 FF 03
+  300 * 22	 02 04 1c  81 4A 00 FF 03
  00 80 00 00  
 	 02 80 01 01  
 	 04 80 02 02  
 	 06 80 
 
 
-  225 * 23	 02 04 1d  85 0C 00 FF FF 02
+  301 * 23	 02 04 1d  85 0C 00 FF FF 02
 1c 00 14 00 14 00  
 	18 00 40 01 40 01  
 	01 00 
 
 
-  226 * 7	 03 04 01 00 00
+  302 * 7	 03 04 01 00 00
 	02 00
 
 
 
-  227 * 7	 03 04 01 01 00
+  303 * 7	 03 04 01 01 00
 	03 00
 
 
 
-  228 * 7	 03 04 01 02 00
+  304 * 7	 03 04 01 02 00
 	04 00
 
 
 
-  229 * 7	 03 04 01 03 00
+  305 * 7	 03 04 01 03 00
 	05 00
 
 
 
-  230 * 7	 03 04 01 04 00
+  306 * 7	 03 04 01 04 00
 	06 00
 
 
 
-  231 * 7	 03 04 01 05 00
+  307 * 7	 03 04 01 05 00
 	07 00
 
 
 
-  232 * 7	 03 04 01 06 00
+  308 * 7	 03 04 01 06 00
 	08 00
 
 
 
-  233 * 7	 03 04 01 07 00
+  309 * 7	 03 04 01 07 00
 	09 00
 
 
 
-  234 * 7	 03 04 01 08 00
+  310 * 7	 03 04 01 08 00
 	0a 00
 
 
 
-  235 * 7	 03 04 01 09 00
+  311 * 7	 03 04 01 09 00
 	0b 00
 
 
 
-  236 * 7	 03 04 01 0a 00
+  312 * 7	 03 04 01 0a 00
 	0c 00
 
 
 
-  237 * 7	 03 04 01 0b 00
+  313 * 7	 03 04 01 0b 00
 	0d 00
 
 
 
-  238 * 7	 03 04 01 0c 00
+  314 * 7	 03 04 01 0c 00
 	0e 00
 
 
 
-  239 * 7	 03 04 01 0d 00
+  315 * 7	 03 04 01 0d 00
 	0f 00
 
 
 
-  240 * 7	 03 04 01 0e 00
+  316 * 7	 03 04 01 0e 00
 	10 00
 
 
 
-  241 * 7	 03 04 01 0f 00
+  317 * 7	 03 04 01 0f 00
 	11 00
 
 
 
-  242 * 7	 03 04 01 10 00
+  318 * 7	 03 04 01 10 00
 	12 00
 
 
 
-  243 * 7	 03 04 01 11 00
+  319 * 7	 03 04 01 11 00
 	13 00
 
 
 
-  244 * 7	 03 04 01 12 00
+  320 * 7	 03 04 01 12 00
 	14 00
 
 
 
-  245 * 7	 03 04 01 13 00
+  321 * 7	 03 04 01 13 00
 	15 00
 
 
 
-  246 * 7	 03 04 01 14 00
+  322 * 7	 03 04 01 14 00
 	16 00
 
 
 
-  247 * 7	 03 04 01 15 00
+  323 * 7	 03 04 01 15 00
 	19 00
 
 
 
-  248 * 7	 03 04 01 16 00
+  324 * 7	 03 04 01 16 00
 	1b 00
 
 
 
-  249 * 7	 03 04 01 17 00
+  325 * 7	 03 04 01 17 00
 	1d 00
+
+
+
+  326 * 7	 03 04 01 18 00
+	01 00
+
+
+
+  327 * 7	 03 04 01 19 00
+	01 00
+
+
+
+  328 * 7	 03 04 01 1a 00
+	01 00
+
+
+
+  329 * 7	 03 04 01 1b 00
+	0e 00
+
+
+
+  330 * 7	 03 04 01 1c 00
+	0f 00
+
+
+
+  331 * 7	 03 04 01 1d 00
+	10 00
+
+
+
+  332 * 7	 03 04 01 1e 00
+	11 00
+
+
+
+  333 * 7	 03 04 01 1f 00
+	12 00
+
+
+
+  334 * 7	 03 04 01 20 00
+	13 00
+
+
+
+  335 * 7	 03 04 01 21 00
+	01 00
+
+
+
+  336 * 7	 03 04 01 22 00
+	01 00
+
+
+
+  337 * 7	 03 04 01 23 00
+	01 00
+
+
+
+  338 * 7	 03 04 01 22 00
+	01 00
+
 
 //!!For feature 4 the following cargoIDs have not been used since their most recent definition:
 //!!FF (last defined at sprite 6)
