@@ -496,7 +496,7 @@ switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_decider, colour_scheme_1){
 item (FEAT_TRAINS, item_325, 325) {
 	property {
 		name: 							string(STR_NAME_325);
-		climates_available: 			ALL_CLIMATES;
+		climates_available: 			NO_CLIMATE;
 		introduction_date:				date(1990, 1, 1);
 		model_life:						30;
 		retire_early:					1;

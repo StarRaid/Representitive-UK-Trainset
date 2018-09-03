@@ -52,4 +52,5 @@ disable_item(FEAT_TRAINS);
 #include "src/WAGON/narrow_coach_one.pnml"
 #include "src/WAGON/narrow_slate_wagon.pnml"
 #include "src/WAGON/narrow_plank_wagon.pnml"
+#include "src/DMU/class_165.pnml"
 #include "src/CODE/sort_purchase.pnml"
