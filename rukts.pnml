@@ -20,6 +20,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DIESEL_LOCO/Swindon_Type1.pnml"
 #include "src/DIESEL_LOCO/EE_Type3.pnml"
 #include "src/DIESEL_LOCO/EE_Type4.pnml"
+#include "src/DIESEL_LOCO/hoover.pnml"
 #include "src/DIESEL_LOCO/Brush_Peak.pnml"
 #include "src/DIESEL_LOCO/HST.pnml"
 #include "src/DIESEL_LOCO/GE_Powerhaul.pnml"

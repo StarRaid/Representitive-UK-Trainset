@@ -30,8 +30,8 @@ STR_LIVERY_INTERCITY			  : Intercity
 STR_LIVERY_INTERCITY_SWL		  : Intercity {GOLD}(Swallow)
 STR_LIVERY_REG_RAILWAYS			  : Regional Railways
 STR_LIVERY_NSE					  : Network South East
-STR_LIVERY_NSW					  : Network South East (White)
-STR_LIVERY_NSG					  : Network South East (Grey)
+STR_LIVERY_NSW					  : Network South East {GOLD}(White)
+STR_LIVERY_NSG					  : Network South East {GOLD}(Grey)
 STR_LIVERY_BR_SCOTRAIL            : Scotrail
 STR_LIVERY_RAILFREIGHT            : Railfreight Two-Tone Grey {STRING}
 STR_LIVERY_NCB                    : National Coal Board {GOLD}(Blue)
@@ -70,7 +70,7 @@ STR_LIVERY_SWT_REFURB			  : South West Trains (Refurbished)
 STR_LIVERY_SWT_HERITAGE			  : South West Trains {GOLD}(Heritage Blue)
 STR_LIVERY_N_SPIRIT               : Northern Spirit
 STR_LIVERY_NORTHERN               : Northern
-STR_LIVERY_NORTHERN_ARRIVA        : Northern (Arriva)
+STR_LIVERY_NORTHERN_ARRIVA        : Northern {GOLD}(Arriva)
 STR_LIVERY_THAMESLINK             : Thameslink
 STR_LIVERY_TLB		   		      : Thameslink Blue
 STR_LIVERY_ROG_EUROPHENIX         : Rail Operations Group {GOLD}(Europhenix)
@@ -85,8 +85,8 @@ STR_LIVERY_FIRST_FGW              : First Great Western {GOLD}(Corporate Blue) {
 STR_LIVERY_FIRST_TPE              : First TransPennine Express
 STR_LIVERY_FIRST_GWR              : Great Western Railway {STRING}
 STR_LIVERY_FIRST_SCOT_RAIL        : First Scot Rail {STRING}
-STR_LIVERY_SPT_ORANGE			  : Strathclyde Partnership for Transport (Orange) 
-STR_LIVERY_SPT_CARMINE_CREAM	  : Strathclyde Partnership for Transport (Carmine & Cream)
+STR_LIVERY_SPT_ORANGE			  : Strathclyde Partnership for Transport {GOLD}(Orange) 
+STR_LIVERY_SPT_CARMINE_CREAM	  : Strathclyde Partnership for Transport {GOLD}(Carmine & Cream)
 STR_LIVERY_SCOTRAIL				  : Scotrail "Saltaire"
 STR_LIVERY_ONE_ANGLIA			  : One Anglia
 STR_LIVERY_ABELLIO_GREATER_ANGLIA : Abellio Greater Anglia
@@ -98,7 +98,7 @@ STR_LIVERY_NETWORK_RAIL           : Network Rail
 STR_LIVERY_ATW                    : Arriva Trains Wales
 STR_LIVERY_ATW_REFURB             : Arriva Trains Wales {GOLD}(Refurbished)
 STR_LIVERY_ATW_EXEC               : Arriva Trains Wales {GOLD}(Executive)
-STR_LIVERY_GTR					  : GTR (Thameslink/Great Northern)
+STR_LIVERY_GTR					  : GTR {GOLD}(Thameslink/Great Northern)
 
 STR_LIVERY_SLEEPER              :{BLACK}(Sleeper)
 STR_LIVERY_EMPTY	            : 
@@ -129,6 +129,7 @@ STR_NAME_SWTYPE1             :Swindon Type 1 (Diesel)
 STR_NAME_EETYPE3			 :EE Type 3 (Diesel Electric) 
 STR_NAME_EETYPE4			 :EE Whistler (Diesel Electric)
 STR_NAME_BRUSH_PEAK          :Sulzer Type 4 (Diesel Electric)
+STR_NAME_EEHOOVER            :EE Hoover (Diesel Electric)
 STR_NAME_HST                 :BREL HST (Diesel Electric)
 STR_NAME_POWERHAUL			 :GE Powerhaul (Diesel Electric)
 STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
