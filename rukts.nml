@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 13 ;
+	version: 14 ;
 	min_compatible_version: 0 ;
 	param 0{
 		colour_scheme_1{
@@ -3398,6 +3398,194 @@ item (FEAT_TRAINS, item_eetype4, 40){
 
 if (vehicle_selection < 2){
 item (FEAT_TRAINS, item_eetype4, 40){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+# 1 "rukts.pnml" 2
+# 1 "src/DIESEL_LOCO/hoover.pnml" 1
+//Hoover
+
+//Spritesets
+
+spriteset(ee50_brblue_pre			, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double        (  0,  0) }
+spriteset(ee50_brblue_pre_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double_reverse(  0,  0) }
+spriteset(ee50_brblue_llg			, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double        (  0, 25) }
+spriteset(ee50_brblue_llg_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double_reverse(  0, 25) }
+spriteset(ee50_brblue_nse_o			, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double        (  0, 50) }
+spriteset(ee50_brblue_nse_o_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double_reverse(  0, 50) }
+spriteset(ee50_brblue_nse_r			, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double        (  0, 75) }
+spriteset(ee50_brblue_nse_r_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double_reverse(  0, 75) }
+
+spriteset(ee50_purchase_brblue	, "gfx/DIESEL_LOCO/class_50.png"){ template_purchase_short(178, 50) }
+spriteset(ee50_purchase_brllg	, "gfx/DIESEL_LOCO/class_50.png"){ template_purchase_short(178, 75) }
+spriteset(ee50_purchase_nse_o	, "gfx/DIESEL_LOCO/class_50.png"){ template_purchase_short(178,100) }
+spriteset(ee50_purchase_nse_r	, "gfx/DIESEL_LOCO/class_50.png"){ template_purchase_short(178,125) }
+
+spriteset(ee50_headlights		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double( 178,  0) }
+spriteset(ee50_taillights		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double( 178, 25) }
+
+
+
+//Grahpics switches
+
+switch(FEAT_TRAINS, PARENT, sw_ee50_brblue_pre_rev_check, vehicle_is_reversed){ 1 : ee50_brblue_pre_rev ; ee50_brblue_pre ; }
+switch(FEAT_TRAINS, PARENT, sw_ee50_brblue_llg_rev_check, vehicle_is_reversed){ 1 : ee50_brblue_llg_rev ; ee50_brblue_llg ; }
+switch(FEAT_TRAINS, PARENT, sw_ee50_brblue_nse_o_rev_check, vehicle_is_reversed){ 1 : ee50_brblue_nse_o_rev ; ee50_brblue_nse_o ; }
+switch(FEAT_TRAINS, PARENT, sw_ee50_brblue_nse_r_rev_check, vehicle_is_reversed){ 1 : ee50_brblue_nse_r_rev ; ee50_brblue_nse_r ; }
+
+
+random_switch(FEAT_TRAINS, SELF, sw_ee50_nse_random, TRIGGER_VEHICLE_SERVICE){
+	1 : sw_ee50_brblue_nse_o_rev_check ;
+	1 : sw_ee50_brblue_nse_r_rev_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_ee50_auto, current_year){
+	1948..1979 : sw_ee50_brblue_pre_rev_check ;
+	1980..1986 : sw_ee50_brblue_llg_rev_check ;
+	1987..1994 : sw_ee50_nse_random ;
+	sw_ee50_brblue_pre_rev_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_manual, cargo_subtype){
+	0 : sw_ee50_brblue_pre_rev_check ;
+	1 : sw_ee50_brblue_llg_rev_check ;
+	2 : sw_ee50_nse_random ;
+	sw_ee50_brblue_pre_rev_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_manual_check, livery_choice){
+	1 : sw_ee50_manual ;
+	sw_ee50_auto ;
+}
+
+
+//Lights
+
+switch(FEAT_TRAINS, SELF, sw_ee50_taillights, position_in_consist){ 0 : ee50_taillights ; }
+switch(FEAT_TRAINS, SELF, sw_ee50_headlights, position_in_consist){ 0 : ee50_headlights ; }
+
+switch(FEAT_TRAINS, SELF, sw_ee50_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_ee50_manual_check ;
+	1 : sw_ee50_headlights ;
+	2 : sw_ee50_taillights ;
+}
+
+//Purchase sprite
+
+switch(FEAT_TRAINS, SELF, sw_ee50_purchase, current_year){
+	1948..1979 : ee50_purchase_brblue ;
+	1980..1986 : ee50_purchase_brllg ;
+	1987..1994 : ee50_purchase_nse_r ;
+	ee50_purchase_brllg ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_purchase_colours, current_year){
+	1948..1979 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1980..1986 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1987..1994 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_purchase_colours_check, colour_scheme_1){
+	1 : sw_ee50_purchase_colours ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_ee50_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_BRBLUE) ;
+	1 : string(STR_LIVERY_BRBLUE_LOGO) ;
+	2 : string(STR_LIVERY_NSE) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_refit_text_check, livery_choice){
+	1 : sw_ee50_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_ee50_colours_auto, current_year){
+	1948..1979 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1980..1986 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1987..1994 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_ee50_colours_manual_check, livery_choice){
+	1 : sw_ee50_colours_manual ;
+	sw_ee50_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_colours_2cc_check, colour_scheme_1){
+	1 : sw_ee50_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Item
+
+item(FEAT_TRAINS, item_hoover, 50){
+	property{
+		name                           : string(STR_NAME_EEHOOVER) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1968,1,1) ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : 18 ;
+		vehicle_life                   : 50 ;
+		reliability_decay              : 6 ;
+		cost_factor                    : 72 ;
+		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_factor            : 222 ;
+		speed                          : 100 mph ;
+		track_type                     : RAIL ;
+		power                          : 2010 kW ;
+		weight                         : 115 ton ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		tractive_effort_coefficient    : 0.2 ;
+		air_drag_coefficient           : 0.2 ;
+		length                         : 8 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : sw_ee50_sprite_stack ;
+		colour_mapping                 : sw_ee50_colours_2cc_check ;
+		purchase                       : sw_ee50_purchase ;
+		purchase_colour_mapping        : sw_ee50_purchase_colours_check ;
+		sound_effect                   : sw_sfx_diesel_loco_ee ;
+		create_effect                  : vfx_diesel_default ;
+		cargo_subtype_text             : sw_ee50_refit_text_check ;
+		cargo_capacity                 : return 0 ;
+		can_attach_wagon               : sw_all_but_MU90 ;
+		running_cost_factor            : return(current_speed == 0 ? 50 : 222) ;
+		purchase_running_cost_factor   : 222 ;
+	}
+}
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_hoover, 50){
 	property{
 		climates_available             : NO_CLIMATE ;
 	}
