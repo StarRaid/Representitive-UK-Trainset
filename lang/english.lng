@@ -12,7 +12,7 @@ STR_PARAM_COACHMAIL_DESC			:Coaches that have brake compartments can load mail a
 STR_PARAM_LIVERY_CHOICE_NAME		:Choose liveries manually
 STR_PARAM_LIVERY_CHOICE_DESC		:Liveries are chosen through the cargo refit menu instead of them changing depending on year
 
-STR_PARAM_ALT_NAMES_NAME			:Use class anmes
+STR_PARAM_ALT_NAMES_NAME			:Use class names
 STR_PARAM_ALT_NAMES_DESC			:Use the names of the classes of train instead of the manufacturers name.
 
 
@@ -222,8 +222,8 @@ STR_NAME_POWERHAUL_ALT	:GE 70 (Diesel Electric)
 STR_NAME_UKLIGHT_ALT	:Stadler 68 (Diesel Electric)
 STR_NAME_EURODUAL_ALT 	:Stadler 88 (Electro Diesel)
 
-STR_NAME_142					:Leyland 142/143/144 (Diesel)
-STR_NAME_205					:BR 205/207 (Diesel Electric)
+STR_NAME_142_ALT				:Leyland 142/143/144 (Diesel)
+STR_NAME_205_ALT				:BR 205/207 (Diesel Electric)
 STR_NAME_EXPRESS_SPRINTER_ALT	:BREL 158/159 (Diesel)
 STR_NAME_TURBOSTAR_ALT			:Bombardier 168/172 (Diesel)
 STR_NAME_VOYAGER_ALT			:Bombardier 220/221 (Diesel Electric)
@@ -238,7 +238,7 @@ STR_NAME_325_ALT			:Metro-Cammel 325/365/465 (Dual Volatge)
 STR_NAME_365_ALT			:Metro-Cammel 365 (Dual Volatge)
 STR_NAME_350_ALT			:Siemens 350 (Dual Volatge)
 STR_NAME_375_ALT			:Bombardier 375/377/387 (Dual Volatge)
-STR_NAME_411_ALT			:BR 411/421/423 (3rd rail)
+STR_NAME_411_ALT			:BR 421 (3rd rail)
 STR_NAME_415_ALT			:BR 415 (3rd rail)
 STR_NAME_442_ALT			:BREL 442 (3rd rail)
 STR_NAME_444_ALT			:Siemens 444/450 (3rd rail)

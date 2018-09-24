@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 14 ;
+	version: 15 ;
 	min_compatible_version: 0 ;
 	param 0{
 		colour_scheme_1{
@@ -43,8 +43,17 @@ grf{
 				3 : string(STR_PARAM_VEH_SELEC_CHOICE_FOUR ) ;
 			} ;
 		}
+	} 
+	param 2{
+		alt_names{
+			type      : bool ;
+			name      : string(STR_PARAM_ALT_NAMES_NAME) ;
+			desc      : string(STR_PARAM_ALT_NAMES_DESC) ;
+			bit		  : 1 ;
+			}
+		}
 	}
-}
+
 
 train_width_32_px  = 1 ;
 traininfo_y_offset = 2 ;
@@ -2457,6 +2466,15 @@ item(FEAT_TRAINS, item_swtype1, 14){
 		purchase_running_cost_factor   : 80 ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_swtype1, 14){
+	property{
+		name                           : string(STR_NAME_SWTYPE1_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/EE_Type3.pnml" 1
 //EE Type 3
@@ -3187,6 +3205,15 @@ item (FEAT_TRAINS, item_eetype3, 37){
 		running_cost_factor            : return(current_speed == 0 ? 42 : 170) ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_eetype3, 37){
+	property{
+		name                           : string(STR_NAME_EETYPE3_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/EE_Type4.pnml" 1
 //Defining EE Type 4 specific template
@@ -3403,6 +3430,15 @@ item (FEAT_TRAINS, item_eetype4, 40){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_eetype4, 40){
+	property{
+		name                           : string(STR_NAME_EETYPE4_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/hoover.pnml" 1
 //Hoover
@@ -3591,6 +3627,15 @@ item (FEAT_TRAINS, item_hoover, 50){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_hoover, 50){
+	property{
+		name                           : string(STR_NAME_EEHOOVER_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/Brush_Peak.pnml" 1
 //Brush Peak
@@ -3772,6 +3817,15 @@ item(FEAT_TRAINS, item_bshpeak, 46){
 		can_attach_wagon               : sw_all_but_MU90;
 		running_cost_factor            : return(current_speed == 0 ? 57 : 230) ;
 	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_bshpeak, 46){
+	property{
+		name                           : string(STR_NAME_BRUSH_PEAK_ALT) ;
+	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/HST.pnml" 1
@@ -4064,6 +4118,15 @@ item(FEAT_TRAINS, item_hst, 43){
 		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_hst, 43){
+	property{
+		name                           : string(STR_NAME_HST_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/GE_Powerhaul.pnml" 1
 //GE Powerhaul
@@ -4272,6 +4335,15 @@ item (FEAT_TRAINS, item_powerhaul, 70){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_powerhaul, 70){
+	property{
+		name                           : string(STR_NAME_POWERHAUL_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/DIESEL_LOCO/UKLight.pnml" 1
 //UK Light
@@ -4447,6 +4519,15 @@ item (FEAT_TRAINS, item_uklight, 68){
 		can_attach_wagon        : sw_all_but_MU90;
 		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
 	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_uklight, 68){
+	property{
+		name                           : string(STR_NAME_UKLIGHT_ALT) ;
+	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/ELECTRIC_LOCO/BR_Class87.pnml" 1
@@ -4741,6 +4822,15 @@ item (FEAT_TRAINS, item_br87, 87){
 		cargo_subtype_text      : sw_mk3_refit_text_check ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_br87, 87){
+	property{
+		name                           : string(STR_NAME_87_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/ELECTRIC_LOCO/class_92.pnml" 1
 ///Brush/ABB 92
@@ -4953,6 +5043,15 @@ item (FEAT_TRAINS, item_abb92, 92){
 		running_cost_factor     : return(current_speed == 0 ? 55 : 225) ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_abb92, 92){
+	property{
+		name                           : string(STR_NAME_92_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/ELECTRIC_LOCO/EuroDual.pnml" 1
 //Class 88
@@ -5082,6 +5181,15 @@ if (vehicle_selection < 1){
 item (FEAT_TRAINS, item_eurodual, 88){
 	property{
 		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_eurodual, 88){
+	property{
+		name                           : string(STR_NAME_EURODUAL_ALT) ;
 	}
 }
 }
@@ -5738,6 +5846,15 @@ item (FEAT_TRAINS, item_dbso, 9025){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_dbso, 9025){
+	property{
+		name                           : string(STR_NAME_DBSO_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/WAGON/DVT.pnml" 1
 //DVT Item
@@ -6185,6 +6302,15 @@ item (FEAT_TRAINS, item_142, 142){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_142, 142){
+	property{
+		name                           : string(STR_NAME_142_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/DMU/expr_sprint.pnml" 1
 //Express Sprinter
@@ -6390,6 +6516,15 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		weight                      : 38 ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_expsprint, 158){
+	property{
+		name                           : string(STR_NAME_EXPRESS_SPRINTER_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/DMU/turbostar.pnml" 1
 //TURBOSTAR
@@ -6586,6 +6721,15 @@ if (vehicle_selection < 2){
 item (FEAT_TRAINS, item_cl168, 168){
 	property{
 		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_cl168, 168){
+	property{
+		name                           : string(STR_NAME_TURBOSTAR_ALT) ;
 	}
 }
 }
@@ -6889,6 +7033,15 @@ item (FEAT_TRAINS, item_205, 205) {
 		cargo_subtype_text: sw_205_refit_text_decider ;
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_205, 205){
+	property{
+		name                           : string(STR_NAME_205_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/DEMU/voyager.pnml" 1
 //Voyager
@@ -7087,6 +7240,14 @@ item(FEAT_TRAINS, item_voyager, 220){
 		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_DIESEL ;
 		create_effect					: vfx_diesel_default ;
 	}
+}
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_voyager, 220){
+	property{
+		name                           : string(STR_NAME_VOYAGER_ALT) ;
+	}
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_313.pnml" 1
@@ -8237,6 +8398,15 @@ item (FEAT_TRAINS, item_313, 313){
 }
 
 
+if (alt_names == 1){
+item (FEAT_TRAINS, item_313, 313){
+	property{
+		name                           : string(STR_NAME_313_ALT) ;
+	}
+}
+}
+
+
 item (FEAT_TRAINS, item_314, 314) {
 	property {
 		name: 							string(STR_NAME_314);
@@ -8289,6 +8459,16 @@ item (FEAT_TRAINS, item_314, 314) {
 		colour_mapping:	sw_314_colour_mapping_decider;
 		cargo_subtype_text: sw_314_refit_text_decider ;
 		weight: 30;
+}
+}
+
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_314, 314){
+	property{
+		name                           : string(STR_NAME_314_ALT) ;
+	}
 }
 }
 # 1 "rukts.pnml" 2
@@ -8812,6 +8992,15 @@ if (vehicle_selection < 3){
 item (FEAT_TRAINS, item_319, 319){
 	property{
 		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_319, 319){
+	property{
+		name                           : string(STR_NAME_319_ALT) ;
 	}
 }
 }
@@ -9373,6 +9562,15 @@ item (FEAT_TRAINS, item_325, 325){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_325, 325){
+	property{
+		name                           : string(STR_NAME_325_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 //#include "src/EMU/class_334.pnml"
 # 1 "src/EMU/class_411.pnml" 1
@@ -9761,6 +9959,16 @@ item (FEAT_TRAINS, item_411, 411){
 	}
 }
 }
+
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_411, 411){
+	property{
+		name                           : string(STR_NAME_411_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_415.pnml" 1
 //415 SR (415/1) DMBSO
@@ -10053,6 +10261,15 @@ item (FEAT_TRAINS, item_415, 415) {
 		cargo_subtype_text: sw_415_refit_text_decider ;
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_415, 415){
+	property{
+		name                           : string(STR_NAME_415_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_442.pnml" 1
 //442 Driving
@@ -10237,6 +10454,15 @@ item (FEAT_TRAINS, item_442, 442) {
 		default: sw_442_default_t;
 		colour_mapping:	sw_442_colour_mapping_decider;
 		cargo_subtype_text: sw_442_refit_text_decider ;
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_442, 442){
+	property{
+		name                           : string(STR_NAME_442_ALT) ;
+	}
 }
 }
 # 1 "rukts.pnml" 2
@@ -10426,6 +10652,15 @@ if (vehicle_selection < 1){
 item (FEAT_TRAINS, item_444, 444){
 	property{
 		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_444, 444){
+	property{
+		name                           : string(STR_NAME_444_ALT) ;
 	}
 }
 }
@@ -10692,6 +10927,15 @@ if (vehicle_selection < 2){
 item (FEAT_TRAINS, item_350, 350){
 	property{
 		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_350, 350){
+	property{
+		name                           : string(STR_NAME_350_ALT) ;
 	}
 }
 }
@@ -11069,6 +11313,15 @@ item (FEAT_TRAINS, item_375, 375){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_375, 375){
+	property{
+		name                           : string(STR_NAME_375_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_455.pnml" 1
 //BR Blue/grey
@@ -11395,6 +11648,15 @@ item (FEAT_TRAINS, item_455, 455){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_455, 455){
+	property{
+		name                           : string(STR_NAME_455_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_700.pnml" 1
 spriteset(spriteset_700_tl_f, "gfx/EMU/class_707.png") {
@@ -11613,6 +11875,15 @@ item (FEAT_TRAINS, item_700, 700) {
 		weight:	34;
 		colour_mapping:	sw_700_colour_mapping;
 		cargo_subtype_text: sw_700_refit_text_decider;
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_700, 700){
+	property{
+		name                           : string(STR_NAME_700_ALT) ;
+	}
 }
 }
 # 1 "rukts.pnml" 2
@@ -12621,6 +12892,16 @@ item (FEAT_TRAINS, item_365, 365){
 }
 }
 
+if (alt_names == 1){
+item (FEAT_TRAINS, item_365, 365){
+	property{
+		name                           : string(STR_NAME_365_ALT) ;
+	}
+}
+}
+
+
+
 item (FEAT_TRAINS, item_465, 465) {
 	property {
 		name: 							string(STR_NAME_465);
@@ -12679,6 +12960,15 @@ if (vehicle_selection < 3){
 item (FEAT_TRAINS, item_465, 465){
 	property{
 		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_465, 465){
+	property{
+		name                           : string(STR_NAME_465_ALT) ;
 	}
 }
 }
