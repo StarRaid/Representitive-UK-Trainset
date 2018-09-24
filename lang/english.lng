@@ -1,16 +1,21 @@
 ##grflangid 0x01
 
-STR_GRF_NAME                      :Representative UK Train Set - RUKTS
-STR_GRF_DESC                      :{GOLD}A representative collection of various UK trains! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
+STR_GRF_NAME	:Representative UK Train Set - RUKTS
+STR_GRF_DESC	:{GOLD}A representative collection of various UK trains! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
 
-STR_PARAM_COLOURSCHEME_NAME       :Real liveries
-STR_PARAM_COLOURSCHEME_DESC       :Use real life colours instead of company colours
+STR_PARAM_COLOURSCHEME_NAME			:Real liveries
+STR_PARAM_COLOURSCHEME_DESC			:Use real life colours instead of company colours
 
-STR_PARAM_COACHMAIL_NAME          :Coaches can take mail
-STR_PARAM_COACHMAIL_DESC          :Coaches that have brake compartments can load mail as well as passengers (turn off if you don't want cluttered mail around your network)
+STR_PARAM_COACHMAIL_NAME			:Coaches can take mail
+STR_PARAM_COACHMAIL_DESC			:Coaches that have brake compartments can load mail as well as passengers (turn off if you don't want cluttered mail around your network)
 
-STR_PARAM_LIVERY_CHOICE_NAME      :Choose liveries manually
-STR_PARAM_LIVERY_CHOICE_DESC      :Liveries are chosen through the cargo refit menu instead of them changing depending on year
+STR_PARAM_LIVERY_CHOICE_NAME		:Choose liveries manually
+STR_PARAM_LIVERY_CHOICE_DESC		:Liveries are chosen through the cargo refit menu instead of them changing depending on year
+
+STR_PARAM_ALT_NAMES_NAME			:Use class anmes
+STR_PARAM_ALT_NAMES_DESC			:Use the names of the classes of train instead of the manufacturers name.
+
+
 
 STR_PARAM_VEH_SELEC_NAME          :Vehicle selection
 STR_PARAM_VEH_SELEC_DESC          :Choose the selection of vehicles that will appear in game.
@@ -144,7 +149,7 @@ STR_NAME_VOYAGER             :Bombardier Voyager (Diesel Electric)
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_313				 :BREL Second Generation EMU (Dual Voltage)
 STR_NAME_314				 :BREL Second Generation EMU (Electric)
-STR_NAME_317				 :AC Express "Bed Pan" (Electric)
+STR_NAME_317				 :BREL AC Express "Bed Pan" (Electric)
 STR_NAME_319                 :BREL Thameslink Classic (Dual Voltage)
 STR_NAME_321                 :BREL AC Express (Electric)
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
@@ -200,3 +205,45 @@ STR_NAAN_NAME         :Narrow Gauge Rails
 STR_NAAN_BUILD_NAME   :Narrow Gauge Construction
 STR_NAAN_REPLACE_NAME :Replace with Narrow Gauge
 STR_NAAN_NEW_TRAIN    :Looksie here! A new train built for Narrow Gauge!
+
+
+
+STR_NAME_DBSO_ALT		:BREL DBSO
+
+STR_NAME_87_ALT			:BREL 87 (Electric)
+STR_NAME_92_ALT			:Brush/ABB 92 (Dual Voltage)
+STR_NAME_SWTYPE1_ALT	:Swindon 14 (Diesel)
+STR_NAME_EETYPE3_ALT	:EE 37 (Diesel Electric) 
+STR_NAME_EETYPE4_ALT	:EE 40 (Diesel Electric)
+STR_NAME_BRUSH_PEAK_ALT	:Sulzer 44/45/46 (Diesel Electric)
+STR_NAME_EEHOOVER_ALT	:EE 50 (Diesel Electric)
+STR_NAME_HST_ALT		:BREL 43 (Diesel Electric)
+STR_NAME_POWERHAUL_ALT	:GE 70 (Diesel Electric)
+STR_NAME_UKLIGHT_ALT	:Stadler 68 (Diesel Electric)
+STR_NAME_EURODUAL_ALT 	:Stadler 88 (Electro Diesel)
+
+STR_NAME_142					:Leyland 142/143/144 (Diesel)
+STR_NAME_205					:BR 205/207 (Diesel Electric)
+STR_NAME_EXPRESS_SPRINTER_ALT	:BREL 158/159 (Diesel)
+STR_NAME_TURBOSTAR_ALT			:Bombardier 168/172 (Diesel)
+STR_NAME_VOYAGER_ALT			:Bombardier 220/221 (Diesel Electric)
+
+STR_NAME_PEP_ALT			:PEP 1972 Design EMU (Dual Voltage)
+STR_NAME_313_ALT			:BREL 313/507/508 (Dual Voltage)
+STR_NAME_314_ALT			:BREL 314/315 (Electric)
+STR_NAME_317_ALT			:BREL 317 (Electric)
+STR_NAME_319_ALT			:BREL 319 (Dual Voltage)
+STR_NAME_321_ALT            :BREL 320/321/322 (Electric)
+STR_NAME_325_ALT			:Metro-Cammel 325/365/465 (Dual Volatge)
+STR_NAME_365_ALT			:Metro-Cammel 365 (Dual Volatge)
+STR_NAME_350_ALT			:Siemens 350 (Dual Volatge)
+STR_NAME_375_ALT			:Bombardier 375/377/387 (Dual Volatge)
+STR_NAME_411_ALT			:BR 411/421/423 (3rd rail)
+STR_NAME_415_ALT			:BR 415 (3rd rail)
+STR_NAME_442_ALT			:BREL 442 (3rd rail)
+STR_NAME_444_ALT			:Siemens 444/450 (3rd rail)
+STR_NAME_455_ALT			:BREL 455 (3rd rail)
+STR_NAME_465_ALT			:Metro-Cammel 465 (3rd rail)
+STR_NAME_700_ALT			:Siemens 700/707 (Dual Volatge)
+
+

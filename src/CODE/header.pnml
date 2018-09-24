@@ -40,6 +40,15 @@ grf{
 				3 : string(STR_PARAM_VEH_SELEC_CHOICE_FOUR ) ;
 			} ;
 		}
+	} 
+	param 2{
+		alt_names{
+			type      : bool ;
+			name      : string(STR_PARAM_ALT_NAMES_NAME) ;
+			desc      : string(STR_PARAM_ALT_NAMES_DESC) ;
+			bit		  : 1 ;
+			} ;
+		}
 	}
 }
 

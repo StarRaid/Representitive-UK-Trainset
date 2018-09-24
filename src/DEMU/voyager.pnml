@@ -195,3 +195,11 @@ item(FEAT_TRAINS, item_voyager, 220){
 		create_effect					: vfx_diesel_default ;
 	}
 }
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_voyager, 220){
+	property{
+		name                           : string(STR_NAME_VOYAGER_ALT) ;
+	}
+}
+}

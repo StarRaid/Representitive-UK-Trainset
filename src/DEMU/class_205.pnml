@@ -296,3 +296,12 @@ item (FEAT_TRAINS, item_205, 205) {
 		cargo_subtype_text: sw_205_refit_text_decider ;
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_205, 205){
+	property{
+		name                           : string(STR_NAME_205_ALT) ;
+	}
+}
+}
