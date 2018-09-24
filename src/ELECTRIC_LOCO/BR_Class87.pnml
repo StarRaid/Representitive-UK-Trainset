@@ -289,3 +289,12 @@ item (FEAT_TRAINS, item_br87, 87){
 		cargo_subtype_text      : sw_mk3_refit_text_check ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_br87, 87){
+	property{
+		name                           : string(STR_NAME_87_ALT) ;
+	}
+}
+}

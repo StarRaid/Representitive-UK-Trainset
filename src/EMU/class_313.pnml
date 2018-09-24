@@ -1145,6 +1145,15 @@ item (FEAT_TRAINS, item_313, 313){
 }
 
 
+if (alt_names == 1){
+item (FEAT_TRAINS, item_313, 313){
+	property{
+		name                           : string(STR_NAME_313_ALT) ;
+	}
+}
+}
+
+
 item (FEAT_TRAINS, item_314, 314) {
 	property {
 		name: 							string(STR_NAME_314);
@@ -1197,5 +1206,15 @@ item (FEAT_TRAINS, item_314, 314) {
 		colour_mapping:	sw_314_colour_mapping_decider;
 		cargo_subtype_text: sw_314_refit_text_decider ;
 		weight: 30;
+}
+}
+
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_314, 314){
+	property{
+		name                           : string(STR_NAME_314_ALT) ;
+	}
 }
 }

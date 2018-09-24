@@ -232,7 +232,7 @@ switch(FEAT_TRAINS, SELF, sw_317_trailer, position_in_vehid_chain){
 	sw_317_t_year;
 }
 
-item (FEAT_TRAINS, item_317) {
+item (FEAT_TRAINS, item_317, 317) {
 	property {
 		name: 							string(STR_NAME_317);
 		climates_available: 			ALL_CLIMATES;
@@ -277,5 +277,14 @@ item (FEAT_TRAINS, item_317) {
 		livery_override (item_Mk3) {
 		cargo_capacity: 80;
 		default: sw_317_trailer;
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_317, 317){
+	property{
+		name                           : string(STR_NAME_317_ALT) ;
+	}
 }
 }

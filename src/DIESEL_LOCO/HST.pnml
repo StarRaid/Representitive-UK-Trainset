@@ -287,3 +287,12 @@ item(FEAT_TRAINS, item_hst, 43){
 		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_hst, 43){
+	property{
+		name                           : string(STR_NAME_HST_ALT) ;
+	}
+}
+}

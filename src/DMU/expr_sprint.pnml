@@ -201,3 +201,12 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		weight                      : 38 ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_expsprint, 158){
+	property{
+		name                           : string(STR_NAME_EXPRESS_SPRINTER_ALT) ;
+	}
+}
+}

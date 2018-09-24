@@ -726,3 +726,12 @@ item (FEAT_TRAINS, item_eetype3, 37){
 		running_cost_factor            : return(current_speed == 0 ? 42 : 170) ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_eetype3, 37){
+	property{
+		name                           : string(STR_NAME_EETYPE3_ALT) ;
+	}
+}
+}

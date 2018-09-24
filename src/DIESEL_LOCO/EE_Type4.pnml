@@ -212,3 +212,12 @@ item (FEAT_TRAINS, item_eetype4, 40){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_eetype4, 40){
+	property{
+		name                           : string(STR_NAME_EETYPE4_ALT) ;
+	}
+}
+}

@@ -204,3 +204,12 @@ item (FEAT_TRAINS, item_powerhaul, 70){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_powerhaul, 70){
+	property{
+		name                           : string(STR_NAME_POWERHAUL_ALT) ;
+	}
+}
+}

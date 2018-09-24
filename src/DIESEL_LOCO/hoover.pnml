@@ -184,3 +184,12 @@ item (FEAT_TRAINS, item_hoover, 50){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_hoover, 50){
+	property{
+		name                           : string(STR_NAME_EEHOOVER_ALT) ;
+	}
+}
+}

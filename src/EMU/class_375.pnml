@@ -370,3 +370,12 @@ item (FEAT_TRAINS, item_375, 375){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_375, 375){
+	property{
+		name                           : string(STR_NAME_375_ALT) ;
+	}
+}
+}

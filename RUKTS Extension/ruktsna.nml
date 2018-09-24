@@ -2,7 +2,7 @@ grf{
 	grfid                  : "RTNA" ;
 	name                   : string(STR_GRF_NAME) ;
 	desc                   : string(STR_GRF_DESC) ;
-	version                : 2 ;
+	version                : 3 ;
 	min_compatible_version : 0 ;
 }
 
@@ -43,9 +43,9 @@ item(FEAT_CARGOS, cargo_uranium, 30){
 		type_abbreviation         : string(STR_URAN_ABBREV) ;
 		sprite                    : NEW_CARGO_SPRITE ;
 		weight                    : 7 ;
-		penalty_lowerbound        : 5 ;
-		single_penalty_length     : 255 ;
-		price_factor              : 4000 ;
+		penalty_lowerbound        : 60 ;
+		single_penalty_length     : 200 ;
+		price_factor              : 3000 ;
 		station_list_colour       : 205 ;
 		cargo_payment_list_colour : 205 ;
 		is_freight                : 1 ;
@@ -68,9 +68,9 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 		type_abbreviation         : string(STR_NWST_ABBREV) ;
 		sprite                    : NEW_CARGO_SPRITE ;
 		weight                    : 5 ;
-		penalty_lowerbound        : 5 ;
-		single_penalty_length     : 255 ;
-		price_factor              : 6000 ;
+		penalty_lowerbound        : 60 ;
+		single_penalty_length     : 200 ;
+		price_factor              : 4000 ;
 		station_list_colour       : 208 ;
 		cargo_payment_list_colour : 208 ;
 		is_freight                : 1 ;

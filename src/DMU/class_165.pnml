@@ -409,6 +409,16 @@ item (FEAT_TRAINS, item_365, 365){
 }
 }
 
+if (alt_names == 1){
+item (FEAT_TRAINS, item_365, 365){
+	property{
+		name                           : string(STR_NAME_365_ALT) ;
+	}
+}
+}
+
+
+
 item (FEAT_TRAINS, item_465, 465) {
 	property {
 		name: 							string(STR_NAME_465);
@@ -467,6 +477,15 @@ if (vehicle_selection < 3){
 item (FEAT_TRAINS, item_465, 465){
 	property{
 		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_465, 465){
+	property{
+		name                           : string(STR_NAME_465_ALT) ;
 	}
 }
 }

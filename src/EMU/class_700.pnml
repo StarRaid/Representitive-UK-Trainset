@@ -216,3 +216,12 @@ item (FEAT_TRAINS, item_700, 700) {
 		cargo_subtype_text: sw_700_refit_text_decider;
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_700, 700){
+	property{
+		name                           : string(STR_NAME_700_ALT) ;
+	}
+}
+}

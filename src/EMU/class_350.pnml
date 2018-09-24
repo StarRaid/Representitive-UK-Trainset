@@ -262,3 +262,12 @@ item (FEAT_TRAINS, item_350, 350){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_350, 350){
+	property{
+		name                           : string(STR_NAME_350_ALT) ;
+	}
+}
+}

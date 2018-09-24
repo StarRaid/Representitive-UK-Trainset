@@ -172,3 +172,12 @@ item (FEAT_TRAINS, item_uklight, 68){
 		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_uklight, 68){
+	property{
+		name                           : string(STR_NAME_UKLIGHT_ALT) ;
+	}
+}
+}

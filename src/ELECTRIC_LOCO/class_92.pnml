@@ -208,3 +208,12 @@ item (FEAT_TRAINS, item_abb92, 92){
 		running_cost_factor     : return(current_speed == 0 ? 55 : 225) ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_abb92, 92){
+	property{
+		name                           : string(STR_NAME_92_ALT) ;
+	}
+}
+}

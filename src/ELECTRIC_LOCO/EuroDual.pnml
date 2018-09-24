@@ -128,3 +128,12 @@ item (FEAT_TRAINS, item_eurodual, 88){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_eurodual, 88){
+	property{
+		name                           : string(STR_NAME_EURODUAL_ALT) ;
+	}
+}
+}

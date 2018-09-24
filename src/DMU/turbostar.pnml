@@ -195,3 +195,12 @@ item (FEAT_TRAINS, item_cl168, 168){
 	}
 }
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_cl168, 168){
+	property{
+		name                           : string(STR_NAME_TURBOSTAR_ALT) ;
+	}
+}
+}

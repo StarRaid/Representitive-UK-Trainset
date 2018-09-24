@@ -178,3 +178,12 @@ item(FEAT_TRAINS, item_bshpeak, 46){
 		running_cost_factor            : return(current_speed == 0 ? 57 : 230) ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_bshpeak, 46){
+	property{
+		name                           : string(STR_NAME_BRUSH_PEAK_ALT) ;
+	}
+}
+}

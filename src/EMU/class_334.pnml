@@ -425,15 +425,18 @@ switch(FEAT_TRAINS, SELF, sw_458_coupling_restrictions, vehicle_type_id) {
 switch(FEAT_TRAINS, SELF, sw_juniper_start_stop_1, current_railtype) {
     SAAE: return CB_RESULT_NO_TEXT;
     return string(STR_WRONG_JUNIPER_CANNOT_START);
+}
 	
 switch(FEAT_TRAINS, SELF, sw_juniper_start_stop_2, current_railtype) {
     SAA3: return CB_RESULT_NO_TEXT;
     return string(STR_WRONG_JUNIPER_CANNOT_START);
+}
 	
 switch(FEAT_TRAINS, SELF, sw_juniper_start_stop_auto, cargo_subtype) {
     1: return sw_juniper_start_stop_1;
 	2: return sw_juniper_start_stop_2;
     return string(STR_WRONG_JUNIPER_CANNOT_START);
+}
 	
 switch(FEAT_TRAINS, SELF, sw_juniper_start_stop_manual, cargo_subtype) {
     0: return sw_juniper_start_stop_1;
@@ -442,6 +445,7 @@ switch(FEAT_TRAINS, SELF, sw_juniper_start_stop_manual, cargo_subtype) {
 	3: return sw_juniper_start_stop_2;
 	4: return sw_juniper_start_stop_2;
     return string(STR_WRONG_JUNIPER_CANNOT_START);
+}
 	
 switch(FEAT_TRAINS, PARENT, sw_juniper_start_stop, livery_choice){
 	1 : sw_juniper_start_stop_manual ;
@@ -507,6 +511,16 @@ if (vehicle_selection < 4){
 item (FEAT_TRAINS, item_458, 458){
 	property{
 		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_458, 458){
+	property{
+		name                           : string(STR_NAME_458_ALT) ;
 	}
 }
 }
