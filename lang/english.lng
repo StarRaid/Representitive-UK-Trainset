@@ -25,6 +25,7 @@ STR_PARAM_VEH_SELEC_CHOICE_THREE  :Normal
 STR_PARAM_VEH_SELEC_CHOICE_FOUR   :Extended
 
 STR_LIVERY_BRGREEN                : British Railways {GOLD}(Green)
+STR_LIVERY_BRELECTRIC             : British Railways {GOLD}(Electric Blue)
 STR_LIVERY_BRBLUE				  : British Railways {GOLD}(Blue)
 STR_LIVERY_BRBLUEGREY			  : British Railways {GOLD}(Blue and Grey)
 STR_LIVERY_BRBLUE_SPT			  : British Railways Strathclyde Partnership for Transport
@@ -39,6 +40,7 @@ STR_LIVERY_NSW					  : Network South East {GOLD}(White)
 STR_LIVERY_NSG					  : Network South East {GOLD}(Grey)
 STR_LIVERY_BR_SCOTRAIL            : Scotrail
 STR_LIVERY_RAILFREIGHT            : Railfreight Two-Tone Grey {STRING}
+STR_LIVERY_RAIL_EXPRESS           : Rail Express Systems
 STR_LIVERY_NCB                    : National Coal Board {GOLD}(Blue)
 STR_LIVERY_BSC                    : British Steel Corporation
 STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
@@ -128,6 +130,7 @@ STR_NAME_FLASK      			:Nuclear Flask Wagon
 STR_NAME_INTERMODAL             :Intermodal Container Wagon
 
 
+STR_NAME_AL6				 :EE AL6 (Electric)
 STR_NAME_87                  :BREL 87 (Electric)
 STR_NAME_92                  :Brush/ABB "92" (Dual Voltage)
 STR_NAME_SWTYPE1             :Swindon Type 1 (Diesel)
@@ -210,40 +213,41 @@ STR_NAAN_NEW_TRAIN    :Looksie here! A new train built for Narrow Gauge!
 
 STR_NAME_DBSO_ALT		:BREL DBSO
 
-STR_NAME_87_ALT			:Class 87 (Electric)
-STR_NAME_92_ALT			:Class 92 (Dual Voltage)
-STR_NAME_SWTYPE1_ALT	:Class 14 (Diesel)
-STR_NAME_EETYPE3_ALT	:Class 37 (Diesel Electric) 
-STR_NAME_EETYPE4_ALT	:Class 40 (Diesel Electric)
-STR_NAME_BRUSH_PEAK_ALT	:Class 44/45/46 (Diesel Electric)
-STR_NAME_EEHOOVER_ALT	:Class 50 (Diesel Electric)
-STR_NAME_HST_ALT		:Class 43 (Diesel Electric)
-STR_NAME_POWERHAUL_ALT	:Class 70 (Diesel Electric)
-STR_NAME_UKLIGHT_ALT	:Class 68 (Diesel Electric)
-STR_NAME_EURODUAL_ALT 	:Class 88 (Electro Diesel)
+STR_NAME_AL6_ALT		:BR Class 86 (Electric)
+STR_NAME_87_ALT			:BR Class 87 (Electric)
+STR_NAME_92_ALT			:BR Class 92 (Dual Voltage)
+STR_NAME_SWTYPE1_ALT	:BR Class 14 (Diesel)
+STR_NAME_EETYPE3_ALT	:BR Class 37 (Diesel Electric) 
+STR_NAME_EETYPE4_ALT	:BR Class 40 (Diesel Electric)
+STR_NAME_BRUSH_PEAK_ALT	:BR Class 44/45/46 (Diesel Electric)
+STR_NAME_EEHOOVER_ALT	:BR Class 50 (Diesel Electric)
+STR_NAME_HST_ALT		:BR Class 43 (Diesel Electric)
+STR_NAME_POWERHAUL_ALT	:BR Class 70 (Diesel Electric)
+STR_NAME_UKLIGHT_ALT	:BR Class 68 (Diesel Electric)
+STR_NAME_EURODUAL_ALT 	:BR Class 88 (Electro Diesel)
 
-STR_NAME_142_ALT				:Class 142/143/144 (Diesel)
-STR_NAME_205_ALT				:Class 205/207 (Diesel Electric)
-STR_NAME_EXPRESS_SPRINTER_ALT	:Class 158/159 (Diesel)
-STR_NAME_TURBOSTAR_ALT			:Class 168/172 (Diesel)
-STR_NAME_VOYAGER_ALT			:Class 220/221 (Diesel Electric)
+STR_NAME_142_ALT				:BR Class 142/143/144 (Diesel)
+STR_NAME_205_ALT				:BR Class 205/207 (Diesel Electric)
+STR_NAME_EXPRESS_SPRINTER_ALT	:BR Class 158/159 (Diesel)
+STR_NAME_TURBOSTAR_ALT			:BR Class 168/172 (Diesel)
+STR_NAME_VOYAGER_ALT			:BR Class 220/221 (Diesel Electric)
 
 STR_NAME_PEP_ALT			:PEP 1972 Design EMU (Dual Voltage)
-STR_NAME_313_ALT			:Class 313/507/508 (Dual Voltage)
-STR_NAME_314_ALT			:Class 314/315 (Electric)
-STR_NAME_317_ALT			:Class 317 (Electric)
-STR_NAME_319_ALT			:Class 319 (Dual Voltage)
-STR_NAME_321_ALT            :Class 320/321/322 (Electric)
-STR_NAME_325_ALT			:Class 325/365/465 (Dual Volatge)
-STR_NAME_365_ALT			:Class 365 (Dual Volatge)
-STR_NAME_350_ALT			:Class 350 (Dual Volatge)
-STR_NAME_375_ALT			:Class 375/377/387 (Dual Volatge)
-STR_NAME_411_ALT			:Class 421 (3rd rail)
-STR_NAME_415_ALT			:Class 415 (3rd rail)
-STR_NAME_442_ALT			:Class 442 (3rd rail)
-STR_NAME_444_ALT			:Class 444/450 (3rd rail)
-STR_NAME_455_ALT			:Class 455 (3rd rail)
-STR_NAME_465_ALT			:Class 465 (3rd rail)
-STR_NAME_700_ALT			:Class 700/707 (Dual Volatge)
+STR_NAME_313_ALT			:BR Class 313/507/508 (Dual Voltage)
+STR_NAME_314_ALT			:BR Class 314/315 (Electric)
+STR_NAME_317_ALT			:BR Class 317 (Electric)
+STR_NAME_319_ALT			:BR Class 319 (Dual Voltage)
+STR_NAME_321_ALT            :BR Class 320/321/322 (Electric)
+STR_NAME_325_ALT			:BR Class 325/365/465 (Dual Volatge)
+STR_NAME_365_ALT			:BR Class 365 (Dual Volatge)
+STR_NAME_350_ALT			:BR Class 350 (Dual Volatge)
+STR_NAME_375_ALT			:BR Class 375/377/387 (Dual Volatge)
+STR_NAME_411_ALT			:BR Class 421 (3rd rail)
+STR_NAME_415_ALT			:BR Class 415 (3rd rail)
+STR_NAME_442_ALT			:BR Class 442 (3rd rail)
+STR_NAME_444_ALT			:BR Class 444/450 (3rd rail)
+STR_NAME_455_ALT			:BR Class 455 (3rd rail)
+STR_NAME_465_ALT			:BR Class 465 (3rd rail)
+STR_NAME_700_ALT			:BR Class 700/707 (Dual Volatge)
 
 

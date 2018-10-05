@@ -1,7 +1,7 @@
 //DBSO Source
 
 #define DBSO_CHECK vehicle_is_reversed && (count_veh_id(9025) > 0)
-#define DBSO_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 40 | vehicle_type_id == 68 | vehicle_type_id == 87 | vehicle_type_id == 88)
+#define DBSO_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 40 | vehicle_type_id == 68 | vehicle_type_id == 86 | vehicle_type_id == 87 | vehicle_type_id == 88 | vehicle_type_id == 92)
 
 //Spritesets
 
@@ -30,7 +30,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_generic_rev_check, DBSO_REVERSE_CHECK){ 1 : 
 
 //Automatic gfx
 
-switch(FEAT_TRAINS, SELF, sw_dbso_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_dbso_auto, current_year){
 	ERA_BRTOPS        : sw_dbso_scotrail_rev_check ;
 	ERA_SECTORISATION : sw_dbso_intercity_rev_check ;
 	sw_dbso_directrail_rev_check ;
@@ -51,9 +51,16 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_manual_br87, cargo_subtype){
 	sw_dbso_directrail_rev_check ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_dbso_manual_al6, cargo_subtype){
+	2..4 : sw_dbso_intercity_rev_check ;
+	7 : sw_dbso_generic_rev_check ;
+	sw_dbso_directrail_rev_check ;
+}
+
 switch(FEAT_TRAINS, PARENT, sw_dbso_manual, vehicle_type_id){
 	37 : sw_dbso_manual_ee3 ;
 	40 : sw_dbso_scotrail_rev_check ;
+	86 : sw_dbso_manual_al6 ;
 	87 : sw_dbso_manual_br87 ;
 	sw_dbso_directrail_rev_check ;
 }
@@ -85,7 +92,7 @@ switch(FEAT_TRAINS, SELF, sw_dbso_sprite_stack, SPR_STACK){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, PARENT, sw_dbso_colours_auto, build_year){
+switch(FEAT_TRAINS, PARENT, sw_dbso_colours_auto, current_year){
 	ERA_BRTOPS        : palette_2cc(COLOUR_GREY, COLOUR_DARK_BLUE) ;
 	ERA_SECTORISATION : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
@@ -105,9 +112,16 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_colours_br87, cargo_subtype){
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_dbso_colours_al6, cargo_subtype){
+	2..4 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	7 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
+
 switch(FEAT_TRAINS, PARENT, sw_dbso_colours_manual, vehicle_type_id){
 	37 : sw_dbso_colours_ee3 ;
 	40 : palette_2cc(COLOUR_GREY, COLOUR_DARK_BLUE) ;
+	86 : sw_dbso_manual_al6 ;
 	87 : sw_dbso_colours_br87 ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
