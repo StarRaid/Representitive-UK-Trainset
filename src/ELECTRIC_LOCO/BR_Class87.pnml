@@ -38,7 +38,7 @@ switch(FEAT_TRAINS, PARENT, sw_br87_gfx_privatised, most_common_cargo_type){
 	sw_br87_gfx_gbrf_reverse_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_br87_gfx_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_br87_gfx_auto, current_year){
 	ERA_BRTOPS : sw_br87_gfx_brblue_reverse_check ;
 	ERA_SECTORISATION : sw_br87_gfx_intercity_reverse_check ;
 	ERA_PRIVATE_TWO : sw_br87_gfx_privatised ;
@@ -121,7 +121,7 @@ switch(FEAT_TRAINS, PARENT, sw_br87_privatised_colours, most_common_cargo_type){
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_br87_colours_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_br87_colours_auto, current_year){
 	ERA_BRTOPS     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	ERA_SECTORISATION  : sw_br87_sectorised_colours_dbso_check ;
 	ERA_PRIVATE_TWO : sw_br87_privatised_colours ;

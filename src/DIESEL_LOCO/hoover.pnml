@@ -57,7 +57,7 @@ switch(FEAT_TRAINS, SELF, sw_ee50_manual_check, livery_choice){
 
 //Lights
 
-switch(FEAT_TRAINS, SELF, sw_ee50_taillights, position_in_consist){ 0 : ee50_taillights ; }
+switch(FEAT_TRAINS, SELF, sw_ee50_taillights, position_in_consist_from_end){ 0 : ee50_taillights ; }
 switch(FEAT_TRAINS, SELF, sw_ee50_headlights, position_in_consist){ 0 : ee50_headlights ; }
 
 switch(FEAT_TRAINS, SELF, sw_ee50_sprite_stack, SPR_STACK){

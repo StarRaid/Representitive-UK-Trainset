@@ -7,6 +7,7 @@
 #include "src/WAGON/DBSO/uklight.pnml"
 #include "src/WAGON/DBSO/br87.pnml"
 #include "src/WAGON/DBSO/class_92.pnml"
+#include "src/WAGON/DBSO/al6.pnml"
 
 
 
@@ -36,6 +37,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_gfx_parent_id_check, vehicle_type_id){
 	37 :sw_ee3_dbso_spritestack  ;
 	40 : sw_ee40_spritestack_dbso ;
 	68 : sw_uklight_spritestack_dbso ;
+	86 : sw_al6_sprite_stack_dbso ;
 	87 : sw_br87_sprite_stack_dbso ;
 	88 : sw_eurodual_spritestack ;
 	92 : sw_abb92_spritestack_dbso ;
@@ -56,6 +58,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_colours_parent_id_check, vehicle_type_id){
 	37 : sw_ee3_dbso_colours_2cc_check ;
 	40 : sw_ee40_colours_2cc_check_dbso ;
 	68 : sw_uklight_colours_2cc_check_dbso ;
+	86 : sw_al6_colours_2cc_check_dbso ;
 	87 : sw_br87_colours_2cc_check_dbso ;
 	88 : sw_eurodual_colours ;
 	92 : sw_abb92_colours_2cc_check_dbso ;
@@ -97,6 +100,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_vfx_parent_id_check, vehicle_type_id){
 	37 : vfx_diesel_default ;
 	40 : vfx_diesel_default ;
 	68 : vfx_diesel_default ;
+	86 : vfx_ohle ;
 	87 : vfx_ohle ;
 	88 : sw_eurodual_effect_decider ;
 	92 : sw_abb92_vfx_dbso_dvt_check ;
@@ -115,6 +119,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_effect_parent_id_check, vehicle_type_id){
 	37 : EFFECT_SPAWN_MODEL_DIESEL ;
 	40 : EFFECT_SPAWN_MODEL_DIESEL ;
 	68 : EFFECT_SPAWN_MODEL_DIESEL ;
+	86 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	87 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	88 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	92 : EFFECT_SPAWN_MODEL_ELECTRIC ;
@@ -133,6 +138,7 @@ switch(FEAT_TRAINS, SELF, sw_dbso_attach_pos_check, vehicle_type_id){
 	37 : return CB_RESULT_ATTACH_ALLOW  ;
 	40 : return CB_RESULT_ATTACH_ALLOW  ;
 	68 : return CB_RESULT_ATTACH_ALLOW  ;
+	86 : return CB_RESULT_ATTACH_ALLOW  ;
 	87 : return CB_RESULT_ATTACH_ALLOW  ;
 	88 : return CB_RESULT_ATTACH_ALLOW  ;
 	9020 : return CB_RESULT_ATTACH_ALLOW  ;
@@ -145,6 +151,7 @@ switch(FEAT_TRAINS, SELF, sw_dbso_attach_parent_id_check, vehicle_type_id){
 	37 : sw_dbso_attach_pos_check ;
 	40 : sw_dbso_attach_pos_check ;
 	68 : sw_dbso_attach_pos_check ;
+	86 : sw_dbso_attach_pos_check ;
 	87 : sw_dbso_attach_pos_check ;
 	88 : sw_dbso_attach_pos_check ;
 	9025 : sw_dbso_attach_pos_check ;
