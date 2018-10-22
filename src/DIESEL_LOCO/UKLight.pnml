@@ -18,10 +18,10 @@ spriteset (gfx_uklight_tpe_purchase, "gfx/DIESEL_LOCO/class_68.png"){template_pu
 
 //Graphics
 
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_drs_reverse_check, vehicle_is_reversed){ 1 : gfx_ulight_drs_reverse ; gfx_ulight_drs ; }
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_tpe_reverse_check, vehicle_is_reversed){ 1 : gfx_ulight_tpe_reverse ; gfx_ulight_tpe ; }
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_scot_reverse_check, vehicle_is_reversed){ 1 : gfx_ulight_scot_reverse ; gfx_ulight_scot ; }
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_chr_reverse_check, vehicle_is_reversed){ 1 : gfx_ulight_chr_reverse ; gfx_ulight_chr ; }
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_drs_reverse_check, vehicle_is_reversed){ 1 : gfx_uklight_drs_reverse ; gfx_uklight_drs ; }
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_tpe_reverse_check, vehicle_is_reversed){ 1 : gfx_uklight_tpe_reverse ; gfx_uklight_tpe ; }
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_scot_reverse_check, vehicle_is_reversed){ 1 : gfx_uklight_scot_reverse ; gfx_uklight_scot ; }
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_chr_reverse_check, vehicle_is_reversed){ 1 : gfx_uklight_chr_reverse ; gfx_uklight_chr ; }
 
 
 //Automatic
@@ -100,17 +100,11 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_colours_passenger_dvt_check, count_veh_id
 }
 
 switch(FEAT_TRAINS, PARENT, sw_uklight_colours_passenger_check, most_common_cargo_type){
-	PASS : sw_uklight_gfx_passenger_dvt_check ;
+	PASS : sw_uklight_colours_passenger_dvt_check ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_uklight_colours_passenger_check_2, most_common_cargo_type){
-	PASS : sw_uklight_gfx_tpe_reverse_check ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-}
-
-
-switch(FEAT_TRAINS, PARENT, sw_uklight_colours_passenger_decider, most_common_cargo_type){
 	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }

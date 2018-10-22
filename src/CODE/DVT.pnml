@@ -133,7 +133,7 @@ switch(FEAT_TRAINS, SELF, sw_dvt_sprite_stack, SPR_STACK){
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_auto, current_year){
 	ERA_SECTORISATION : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	2014..4096 : sw_dvt_chiltern_rev_check ;
+	2014..4096 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 

@@ -219,6 +219,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_colours_manual, cargo_subtype){
 	13     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;    //First Barbie
 	14     : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;         //Network Rail
 	15     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	16     : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;              //Virgin
 }
 
