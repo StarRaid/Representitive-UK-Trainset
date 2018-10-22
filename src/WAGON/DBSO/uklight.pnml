@@ -3,9 +3,10 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_passenger_check_dbso, most_common_car
 	sw_uklight_gfx_drs_reverse_check ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_auto_dbso, build_year){
-	2013..2018 : sw_uklight_gfx_drs_reverse_check ;
-	sw_uklight_gfx_passenger_check_dbso ;
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_auto_dbso, current_year){
+	2013 : sw_uklight_gfx_drs_reverse_check ;
+	2014..2018 : sw_uklight_gfx_passenger_check ;
+	sw_uklight_gfx_passenger_check_2 ;
 }
 
 //Manual
@@ -34,14 +35,10 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_spritestack_dbso, [STORE_TEMP((getbits(ex
 
 
 
-switch(FEAT_TRAINS, PARENT, sw_uklight_colours_passenger_decider_dbso, most_common_cargo_type){
-	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-}
-
-switch(FEAT_TRAINS, PARENT, sw_uklight_colours_auto_dbso, build_year){
-	2013..2018 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	sw_uklight_colours_passenger_decider_dbso ;
+switch(FEAT_TRAINS, PARENT, sw_uklight_colours_auto_dbso, current_year){
+	2013 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	2014..2018 : sw_uklight_colours_passenger_check ;
+	sw_uklight_colours_passenger_check_2 ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_uklight_colours_manual_dbso, cargo_subtype){

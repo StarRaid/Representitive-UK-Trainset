@@ -10,10 +10,10 @@ Liveries needed
 
 Intercity
 Virgin Trains
-Greater Anglia
+Greater Anglia  - !!
 Arriva Trains Wales
 Network Rail
-Chiltern Railways
+Chiltern Railways  - !!
 
 Mark 4
 
@@ -34,6 +34,8 @@ spriteset(gfx_dvt_virgin        , "gfx/WAGON/dvt.png"){ template_Mk2_double(  0,
 spriteset(gfx_dvt_virgin_rev    , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0, 50) }
 spriteset(gfx_dvt_atw_exec      , "gfx/WAGON/dvt.png"){ template_Mk2_double(  0, 75)         }
 spriteset(gfx_dvt_atw_exec_rev  , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0, 75) }
+spriteset(gfx_dvt_chiltern      , "gfx/WAGON/dvt.png"){ template_Mk2_double(  0,100)         }
+spriteset(gfx_dvt_chiltern_rev  , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0,100) }
 
 spriteset(gfx_dvt_taillights    , "gfx/WAGON/dvt.png"){ template_Mk2_double(259,  0)         }
 spriteset(gfx_dvt_headlights    , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(259, 25) }
@@ -50,6 +52,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_generic_rev_check, DVT_REVERSE_CHECK){ 1 : gf
 switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_intercity_rev ; gfx_dvt_intercity ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_virgin_rev ; gfx_dvt_virgin ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_atw_exec_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_atw_exec_rev ; gfx_dvt_atw_exec ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_chiltern_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_chiltern_rev ; gfx_dvt_chiltern ; }
 
 
 
@@ -57,6 +60,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_atw_exec_rev_check, DVT_REVERSE_CHECK){ 1 : g
 
 switch(FEAT_TRAINS, SELF, sw_dvt_auto, current_year){
 	ERA_SECTORISATION : sw_dvt_intercity_rev_check ;
+	2014..4096 : sw_dvt_chiltern_rev_check ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -74,7 +78,8 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_al6, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_manual_uklight, cargo_subtype){
-	0 : sw_dvt_atw_exec_rev_check ;
+	1 : sw_dvt_atw_exec_rev_check ;
+	3 : sw_dvt_chiltern_rev_check ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -128,6 +133,7 @@ switch(FEAT_TRAINS, SELF, sw_dvt_sprite_stack, SPR_STACK){
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_auto, current_year){
 	ERA_SECTORISATION : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	2014..4096 : sw_dvt_chiltern_rev_check ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
@@ -143,7 +149,8 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_al6, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_uklight, cargo_subtype){
-	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	3 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
@@ -175,7 +182,12 @@ switch(FEAT_TRAINS, SELF, sw_dvt_colours_manual_check, livery_choice){
 	sw_dvt_colours_auto ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_dvt_colours_2cc, current_year){
+	2014..4096 : palette_2cc(company_colour2, company_colour1) ; //Inverted company colours so that it works with the rest of the carriages
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_dvt_colours_2cc_check, colour_scheme_1){
 	1 : sw_dvt_colours_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	sw_dvt_colours_2cc ;
 }

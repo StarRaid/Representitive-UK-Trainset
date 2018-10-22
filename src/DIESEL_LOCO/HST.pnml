@@ -87,12 +87,13 @@ switch(FEAT_TRAINS, SELF, sw_hst_emt_backcheck          , position_in_consist){ 
 
 //Automatic liveries
 
-switch(FEAT_TRAINS, SELF, sw_hst_gfx_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_hst_gfx_auto, current_year){
 	ERA_BRTOPS : sw_hst_brblue_backcheck ;
 	1983..1986 : sw_hst_ic125_backcheck ;
 	1987..1995 : sw_hst_icswallow_backcheck ;
 	//1996..2005 :  ;
-	2005..2016 : sw_hst_mml_backcheck ;
+	2005..2009 : sw_hst_mml_backcheck ;
+	2010..2016 : sw_hst_emt_backcheck ;
 	//2017..4096 :  ;
 	sw_hst_virgin_backcheck ;
 }
@@ -123,7 +124,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_gfx_manual_check, livery_choice){
 
 //Lights deciders
 
-switch(FEAT_TRAINS, SELF, sw_gfx_hst_taillight_decider_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_gfx_hst_taillight_decider_auto, current_year){
 	gfx_hst_taillight ;
 }
 
@@ -205,12 +206,13 @@ switch(FEAT_TRAINS, SELF, sw_hst_purchase_sprite_colours_2cc_check, colour_schem
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_hst_colours_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_hst_colours_auto, current_year){
 	ERA_BRTOPS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	1983..1986 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	1987..1995 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	//1996..2005 :  ;
-	2005..2016 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
+	2005..2009 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
+	2010..2016 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
 	//2017..4096 :  ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }

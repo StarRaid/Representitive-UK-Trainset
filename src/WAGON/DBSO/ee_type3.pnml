@@ -61,7 +61,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_privatisation2_decider, most_common_carg
 	sw_ee3_rog_reverse_check ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_gfx_auto, build_year){
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_gfx_auto, current_year){
 	ERA_BRCREST : sw_ee3_brgreen_reverse_check ;
 	1967..1982  : sw_ee3_brblue_reverse_check ;
 	1987..1995  : sw_ee3_dbso_sector_gfx_decider ;
@@ -165,7 +165,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_colours_privatisation2_decider, most_com
 	palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_colours_auto, build_year){
+switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_colours_auto, current_year){
 	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 	1967..1982  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	1983..1986  : sw_ee3_largelogo_colours ;

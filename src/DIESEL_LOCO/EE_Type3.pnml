@@ -223,7 +223,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_privatisation2_decider, most_common_cargo_typ
 	sw_ee3_rog_reverse_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfx_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_ee3_gfx_auto, current_year){
 	ERA_BRCREST : sw_ee3_brgreen_reverse_check ;
 	1967..1982  : sw_ee3_brblue_reverse_check ;
 	1987..1995  : sw_ee3_sector_gfx_decider ;
@@ -350,7 +350,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_privatisation2_decider, most_common_car
 }
 
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_auto, current_year){
 	ERA_BRCREST : sw_ee3_gfxhc_brgreen_random ;
 	1983..1986  : sw_ee3_gfxhc_largelogo ;
 	1987..1995  : sw_ee3_gfxhc_sector_decider ;
@@ -475,7 +475,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_privatisation2_decider, most_common_car
 }
 
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_auto, current_year){
 	ERA_BRCREST : sw_ee3_gfxlt_brgreen_random ;
 	1983..1986  : sw_ee3_gfxlt_largelogo ;
 	1987..1995  : sw_ee3_gfxlt_sector_decider ;
@@ -622,7 +622,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_colours_privatisation2_decider, most_common_c
 	palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_ee3_colours_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_ee3_colours_auto, current_year){
 	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 	1967..1982  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	1983..1986  : sw_ee3_largelogo_colours ;

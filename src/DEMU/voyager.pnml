@@ -46,7 +46,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_arriva_front_check, position_in_consist){
 
 //Liveries
 
-switch(FEAT_TRAINS, SELF, sw_voyager_auto, build_year < 2009){
+switch(FEAT_TRAINS, SELF, sw_voyager_auto, current_year < 2009){
 	1 : sw_voyager_virgin_front_check ;
 	sw_voyager_arriva_front_check ;
 }
@@ -64,7 +64,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_manual_check, livery_choice){
 
 //Intermediate carriages
 
-switch(FEAT_TRAINS, SELF, sw_voyager_middle_auto, build_year < 2009){
+switch(FEAT_TRAINS, SELF, sw_voyager_middle_auto, current_year < 2009){
 	1 : gfx_voyager_virgin_middle ;
 	gfx_voyager_arriva_middle ;
 }
@@ -82,7 +82,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_middle_manual_check, livery_choice){
 
 //Colour Mapping
 
-switch(FEAT_TRAINS, SELF, sw_voyager_colours_auto, build_year < 2009){
+switch(FEAT_TRAINS, SELF, sw_voyager_colours_auto, current_year < 2009){
 	1 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 	palette_2cc(COLOUR_PINK, COLOUR_RED) ;
 }
