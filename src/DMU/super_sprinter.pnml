@@ -7,25 +7,25 @@
 spriteset(gfx_cl156_base				, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0,   0 ) }
 spriteset(gfx_cl156_base_mid			, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259,   0 ) }
 spriteset(gfx_cl156_rr					, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0,  25 ) }
-spriteset(gfx_cl156_rr_mid				, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259,  25 ) }
+spriteset(gfx_cl156_rr_mid				, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259,  25 ) }
 spriteset(gfx_cl156_emt					, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0,  50 ) }
-spriteset(gfx_cl156_emt_mid				, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259,  50 ) }
+spriteset(gfx_cl156_emt_mid				, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259,  50 ) }
 spriteset(gfx_cl156_spt					, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0,  75 ) }
-spriteset(gfx_cl156_spt_mid				, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259,  75 ) }
+spriteset(gfx_cl156_spt_mid				, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259,  75 ) }
 spriteset(gfx_cl156_central				, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0, 100 ) }
-spriteset(gfx_cl156_central_mid			, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259, 100 ) }
+spriteset(gfx_cl156_central_mid			, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259, 100 ) }
 spriteset(gfx_cl156_anglia				, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0, 125 ) }
-spriteset(gfx_cl156_anglia_mid			, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259, 125 ) }
+spriteset(gfx_cl156_anglia_mid			, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259, 125 ) }
 spriteset(gfx_cl156_one					, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0, 150 ) }
-spriteset(gfx_cl156_one_mid				, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259, 150 ) }
+spriteset(gfx_cl156_one_mid				, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259, 150 ) }
 spriteset(gfx_cl156_first_scot			, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0, 175 ) }
-spriteset(gfx_cl156_first_scot_mid		, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259, 175 ) }
+spriteset(gfx_cl156_first_scot_mid		, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259, 175 ) }
 spriteset(gfx_cl156_scot_salt			, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0, 200 ) }
-spriteset(gfx_cl156_scot_salt_mid		, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259, 200 ) }
+spriteset(gfx_cl156_scot_salt_mid		, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259, 200 ) }
 spriteset(gfx_cl156_northern			, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0, 225 ) }
-spriteset(gfx_cl156_northern_mid		, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259, 225 ) }
+spriteset(gfx_cl156_northern_mid		, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259, 225 ) }
 spriteset(gfx_cl156_northern_new		, "gfx/DMU/class_156.png")	{ template_Mk2_double	(   0, 250 ) }
-spriteset(gfx_cl156_northern_new_mid	, "gfx/DMU/class_156.png")	{ template_Mk2_double	( 259, 250 ) }
+spriteset(gfx_cl156_northern_new_mid	, "gfx/DMU/class_156.png")	{ template_Mk2_single	( 259, 250 ) }
 
 spriteset(gfx_cl156_purchase_rr			, "gfx/DMU/class_156.png")	{template_dualhead_purchase	( 178,  25 ) }
 spriteset(gfx_cl156_purchase_spt		, "gfx/DMU/class_156.png")	{template_dualhead_purchase	( 178,  75 ) }
@@ -214,23 +214,25 @@ item(FEAT_TRAINS, item_supsprint, 155){
 		dual_headed                    : 1 ;
 	}
 	graphics{
-		default                 : sw_expsprint_gfx_manual_check ;
-		purchase                : sw_expsprint_purchase_sprite ;
-		sound_effect            : sw_sfx_dmu_one ;
-		create_effect           : vfx_diesel_default ;
-		colour_mapping          : sw_expsprint_colours_2cc_check ;
-		purchase_colour_mapping : sw_expsprint_purchase_sprite_colours_2cc_check ;
-		cargo_subtype_text      : sw_expsprint_refit_text_check ;
-		can_attach_wagon        : sw_expsprint_attach ;
-		running_cost_factor     : return(current_speed == 0 ? 10 : 40) ;
+		default                 		: sw_cl156_gfx_sprite_stack ;
+		purchase                		: sw_supsprint_purchase_sprite ;
+		sound_effect            		: sw_sfx_dmu_one ;
+		create_effect           		: vfx_diesel_default ;
+		colour_mapping          		: sw_cl156_colours_2cc_check ;
+		purchase_colour_mapping 		: sw_supsprint_purchase_colours_2cc_check ;
+		cargo_subtype_text      		: sw_cl156_refit_text_check ;
+		can_attach_wagon        		: sw_supsprint_attach ;
+		running_cost_factor    			: return(current_speed == 0 ? 10 : 40) ;
+		purchase_running_cost_factor	: 40 ;
 	}
 	livery_override (9030){
-		default                     : sw_expsprint_gfx_manual_check ;
-		colour_mapping              : sw_expsprint_colours_2cc_check ;
-		cargo_capacity              : 90 ;
-		power                       : 500 ;
-		cargo_subtype_text          : sw_expsprint_refit_text_check ;
-		weight                      : 38 ;
+		default                     : sw_cl156_gfx_sprite_stack ;
+		colour_mapping              : sw_cl156_colours_2cc_check ;
+		cargo_capacity              : 95 ;
+		power                       : 213 ;
+		cargo_subtype_text          : sw_cl156_refit_text_check ;
+		weight                      : 39 ;
+		create_effect           	: vfx_diesel_default ;
 	}
 }
 
