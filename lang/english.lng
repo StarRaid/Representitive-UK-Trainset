@@ -46,7 +46,8 @@ STR_LIVERY_BSC                    : British Steel Corporation
 STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
 STR_LIVERY_ARRIVA_XC			  : Arriva Cross Country
 STR_LIVERY_MIDLAND_MAINLINE_BLUE  : Midland Mainline {GOLD}(Blue)
-STR_LIVERY_EMT                    : East Midlands trains
+STR_LIVERY_EMT                    : East Midlands Trains
+STR_LIVERY_CENTRAL                : Central Trains
 STR_LIVERY_CONNEX				  : Connex
 STR_LIVERY_DRS					  : Direct Rail Services
 STR_LIVERY_DRS_COMPASS            : Direct Rail Services {GOLD}(Compass)
@@ -94,7 +95,7 @@ STR_LIVERY_FIRST_GWR              : Great Western Railway {STRING}
 STR_LIVERY_FIRST_SCOT_RAIL        : First Scot Rail {STRING}
 STR_LIVERY_SPT_ORANGE			  : Strathclyde Partnership for Transport {GOLD}(Orange) 
 STR_LIVERY_SPT_CARMINE_CREAM	  : Strathclyde Partnership for Transport {GOLD}(Carmine & Cream)
-STR_LIVERY_SCOTRAIL				  : Scotrail "Saltaire"
+STR_LIVERY_SCOTRAIL				  : Scotrail "Saltire"
 STR_LIVERY_ONE_ANGLIA			  : One Anglia
 STR_LIVERY_ABELLIO_GREATER_ANGLIA : Abellio Greater Anglia
 STR_LIVERY_TFL					  : TfL Rail
@@ -145,6 +146,7 @@ STR_NAME_EURODUAL            :Stadler Euro Dual (Electro Diesel)
 
 STR_NAME_142				 :Leyland "Pacer" (Diesel)
 STR_NAME_205				 :BR Southern DEMU "Thumper" (Diesel Electric)
+STR_NAME_SUPER_SPRINTER		 :Metro-Cammel Super Sprinter (Diesel)
 STR_NAME_EXPRESS_SPRINTER    :BREL Express Sprinter (Diesel)
 STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
 STR_NAME_VOYAGER             :Bombardier Voyager (Diesel Electric)
@@ -184,6 +186,7 @@ STR_COLOUR_GREY     :Grey
 STR_DBSO_NO_COUPLE: You may only couple a DBSO/DVT at the back of another passenger locomotive from the "RUKTS" GRF!
 STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another Leyland "Pacer"!
 STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
+STR_155_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another Metro-Cammel Super Sprinter!
 STR_158_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Express Sprinter!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
 STR_220_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Voyager!
@@ -228,6 +231,7 @@ STR_NAME_EURODUAL_ALT 	:BR Class 88 (Electro Diesel)
 
 STR_NAME_142_ALT				:BR Class 142/143/144 (Diesel)
 STR_NAME_205_ALT				:BR Class 205/207 (Diesel Electric)
+STR_NAME_SUPER_SPRINTER_ALT		:BR Class 155/156 (Diesel)
 STR_NAME_EXPRESS_SPRINTER_ALT	:BR Class 158/159 (Diesel)
 STR_NAME_TURBOSTAR_ALT			:BR Class 168/172 (Diesel)
 STR_NAME_VOYAGER_ALT			:BR Class 220/221 (Diesel Electric)
