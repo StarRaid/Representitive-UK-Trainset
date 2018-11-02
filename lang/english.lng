@@ -133,6 +133,7 @@ STR_NAME_INTERMODAL             :Intermodal Container Wagon
 
 STR_NAME_AL6				 :EE AL6 (Electric)
 STR_NAME_87                  :BREL 87 (Electric)
+STR_NAME_90                  :BREL 90 (Electric)
 STR_NAME_92                  :Brush/ABB "92" (Dual Voltage)
 STR_NAME_SWTYPE1             :Swindon Type 1 (Diesel)
 STR_NAME_EETYPE3			 :EE Type 3 (Diesel Electric) 
@@ -157,17 +158,17 @@ STR_NAME_314				 :BREL Second Generation EMU (Electric)
 STR_NAME_317				 :BREL AC Express "Bed Pan" (Electric)
 STR_NAME_319                 :BREL Thameslink Classic (Dual Voltage)
 STR_NAME_321                 :BREL AC Express (Electric)
-STR_NAME_325				 :Metro-Cammel "Networker" (Dual Volatge)
-STR_NAME_365				 :Metro-Cammel "Networker Express" (Dual Volatge)
-STR_NAME_350				 :Siemens "Desiro" (Dual Volatge)
-STR_NAME_375				 :Bombardier "Electrostar" (Dual Volatge)
+STR_NAME_325				 :Metro-Cammel "Networker" (Dual Voltage)
+STR_NAME_365				 :Metro-Cammel "Networker Express" (Dual Voltage)
+STR_NAME_350				 :Siemens "Desiro" (Dual Voltage)
+STR_NAME_375				 :Bombardier "Electrostar" (Dual Voltage)
 STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
 STR_NAME_415				 :BR Compartment EMU (3rd rail)
 STR_NAME_442				 :BREL "Wessex Express" (3rd rail)
 STR_NAME_444				 :Siemens "Desiro" (3rd rail)
 STR_NAME_455				 :BREL Suburban EMU (3rd rail)
 STR_NAME_465				 :Metro-Cammel "Networker" (3rd rail)
-STR_NAME_700				 :Siemens "Desiro City" (Dual Volatge)
+STR_NAME_700				 :Siemens "Desiro City" (Dual Voltage)
 
 STR_NAME_NRWGARRATT :Beyer-Garratt 2-4-2+2-4-2 (Steam)
 STR_NAME_FAIRLIE    :Double Fairlie 0-4-0+0-4-0 (Steam)
@@ -192,12 +193,12 @@ STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or anothe
 STR_220_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Voyager!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
 STR_319_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Thameslink Classic!
-STR_375_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier "Electrostar" (Dual Volatge)!
+STR_375_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier "Electrostar" (Dual Voltage)!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Mark 1 EMU (3rd rail)!
 STR_415_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Compartment EMU (3rd rail)!
 STR_442_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL "Wessex Express"!
 STR_444_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro" (3rd rail)!
-STR_350_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro" (Dual Volatge)!
+STR_350_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro" (Dual Voltage)!
 STR_455_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Suburban EMU (3rd rail)
 STR_458_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Alstom "Juniper"!
 STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
@@ -218,6 +219,7 @@ STR_NAME_DBSO_ALT		:BREL DBSO
 
 STR_NAME_AL6_ALT		:BR Class 86 (Electric)
 STR_NAME_87_ALT			:BR Class 87 (Electric)
+STR_NAME_90_ALT			:BR Class 90 (Electric)
 STR_NAME_92_ALT			:BR Class 92 (Dual Voltage)
 STR_NAME_SWTYPE1_ALT	:BR Class 14 (Diesel)
 STR_NAME_EETYPE3_ALT	:BR Class 37 (Diesel Electric) 
@@ -242,16 +244,16 @@ STR_NAME_314_ALT			:BR Class 314/315 (Electric)
 STR_NAME_317_ALT			:BR Class 317 (Electric)
 STR_NAME_319_ALT			:BR Class 319 (Dual Voltage)
 STR_NAME_321_ALT            :BR Class 320/321/322 (Electric)
-STR_NAME_325_ALT			:BR Class 325/365/465 (Dual Volatge)
-STR_NAME_365_ALT			:BR Class 365 (Dual Volatge)
-STR_NAME_350_ALT			:BR Class 350 (Dual Volatge)
-STR_NAME_375_ALT			:BR Class 375/377/387 (Dual Volatge)
+STR_NAME_325_ALT			:BR Class 325/365/465 (Dual Voltage)
+STR_NAME_365_ALT			:BR Class 365 (Dual Voltage)
+STR_NAME_350_ALT			:BR Class 350 (Dual Voltage)
+STR_NAME_375_ALT			:BR Class 375/377/387 (Dual Voltage)
 STR_NAME_411_ALT			:BR Class 421 (3rd rail)
 STR_NAME_415_ALT			:BR Class 415 (3rd rail)
 STR_NAME_442_ALT			:BR Class 442 (3rd rail)
 STR_NAME_444_ALT			:BR Class 444/450 (3rd rail)
 STR_NAME_455_ALT			:BR Class 455 (3rd rail)
 STR_NAME_465_ALT			:BR Class 465 (3rd rail)
-STR_NAME_700_ALT			:BR Class 700/707 (Dual Volatge)
+STR_NAME_700_ALT			:BR Class 700/707 (Dual Voltage)
 
 

@@ -1,0 +1,41 @@
+//Manual
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_cl90_gfx_manual, cargo_subtype){
+	0 : sw_cl90_gfx_rev_check_intercity ;
+	sw_cl90_gfx_rev_check_railfreight ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_dbso_cl90_gfx_manual_check, livery_choice){
+	1 : sw_dbso_cl90_gfx_manual ;
+	sw_cl90_gfx_auto ;
+}
+
+
+//Sprite stacking
+
+switch(FEAT_TRAINS, SELF, sw_dbso_cl90_gfx_sprite_stack, SPR_STACK){
+	0 : sw_dbso_cl90_gfx_manual_check ;
+	1 : sw_cl90_gfx_panto_check ;
+	2 : sw_cl90_gfx_headlights_check ;
+	3 : sw_cl90_gfx_taillights_check ;
+}
+
+
+//Manual
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_cl90_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_dbso_cl90_colours_manual_check, livery_choice){
+	1 : sw_dbso_cl90_colours_manual ;
+	sw_cl90_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_dbso_cl90_colours_2cc_check, colour_scheme_1){
+	1 : sw_dbso_cl90_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
