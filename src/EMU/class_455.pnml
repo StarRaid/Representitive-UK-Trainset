@@ -288,7 +288,7 @@ item (FEAT_TRAINS, item_455, 455) {
 		weight:							30 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
 		tractive_effort_coefficient:	0.85;
-		air_drag_coefficient:			0.4;
+		air_drag_coefficient:			0.34;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
 		bitmask_vehicle_info:			0;
