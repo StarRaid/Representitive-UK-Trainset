@@ -17,9 +17,10 @@
 spriteset(gfx_dbso_purchase_scotrail  , "gfx/WAGON/mark_2_dbso.png"){ template_purchase (178, 50) }
 spriteset(gfx_dbso_purchase_intercity , "gfx/WAGON/mark_2_dbso.png"){ template_purchase (178, 75) }
 spriteset(gfx_dbso_purchase_directrail, "gfx/WAGON/mark_2_dbso.png"){ template_purchase (178,100) }
+spriteset(gfx_dbso_purchase_brblue, "gfx/WAGON/mark_2_dbso.png"){ template_purchase (267,50) }
 
 switch(FEAT_TRAINS, SELF, sw_dbso_purchase_sprite, current_year){
-	ERA_BRTOPS        : gfx_dbso_purchase_scotrail ;
+	ERA_BRTOPS        : gfx_dbso_purchase_brblue ;
 	ERA_SECTORISATION : gfx_dbso_purchase_intercity ;
 	gfx_dbso_purchase_directrail ;
 }
