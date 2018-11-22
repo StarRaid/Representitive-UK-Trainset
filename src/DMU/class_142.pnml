@@ -87,7 +87,7 @@ switch(FEAT_TRAINS, SELF, sw_142_passenger_livery_decider_a, current_year){
 	sw_142_northern;
 }
 
-switch(FEAT_TRAINS, SELF, sw_142_passenger_livery_decider, build_year){
+switch(FEAT_TRAINS, SELF, sw_142_passenger_livery_decider, current_year){
 	0 .. 1985: sw_140;
 	1986 .. 3000: sw_142_passenger_livery_decider_a;
 }
@@ -99,7 +99,7 @@ switch(FEAT_TRAINS, SELF, sw_142_passenger_livery_decider_a_t, current_year){
 	sw_142_northern_t;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_142_passenger_livery_decider_t, build_year){
+switch(FEAT_TRAINS, PARENT, sw_142_passenger_livery_decider_t, current_year){
 	0 .. 1985: sw_140_t;
 	1986 .. 3000: sw_142_passenger_livery_decider_a_t;
 }
@@ -112,7 +112,7 @@ switch(FEAT_TRAINS, SELF, sw_142_manual_livery_decider_a, cargo_subtype){
 	2: sw_142_northern;
 }
 
-switch(FEAT_TRAINS, SELF, sw_142_manual_livery_decider, build_year){
+switch(FEAT_TRAINS, SELF, sw_142_manual_livery_decider, current_year){
 	0 .. 1985: sw_140;
 	1986 .. 3000: sw_142_manual_livery_decider_a;
 }
@@ -123,7 +123,7 @@ switch(FEAT_TRAINS, SELF, sw_142_manual_livery_decider_a_t, cargo_subtype){
 	2: sw_142_northern_t;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_142_manual_livery_decider_t, build_year){
+switch(FEAT_TRAINS, PARENT, sw_142_manual_livery_decider_t, current_year){
 	0 .. 1985: sw_140_t;
 	sw_142_manual_livery_decider_a_t;
 }
@@ -147,7 +147,7 @@ switch(FEAT_TRAINS, SELF, sw_142_refit_text_a, cargo_subtype){
 	return CB_RESULT_NO_TEXT;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_142_refit_text, build_year){
+switch(FEAT_TRAINS, PARENT, sw_142_refit_text, current_year){
 	0 .. 1985: return CB_RESULT_NO_TEXT ; 
 	sw_142_refit_text_a ;
 }
@@ -199,7 +199,7 @@ switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_auto_a, current_year){
 	sw_142_northern_colour_mapping;
 }
 
-switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_auto, current_year){
 	0 .. 1985: sw_140_colour_mapping ; 
 	sw_142_colour_mapping_auto_a ;
 }
@@ -211,7 +211,7 @@ switch(FEAT_TRAINS, SELF, sw_142_colour_mapping_manual_a, cargo_subtype){
 	return CB_RESULT_NO_TEXT;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_142_colour_mapping_manual, build_year){
+switch(FEAT_TRAINS, PARENT, sw_142_colour_mapping_manual, current_year){
 	0 .. 1985: sw_140_colour_mapping ; 
 	sw_142_colour_mapping_manual_a ;
 }

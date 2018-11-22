@@ -132,6 +132,55 @@ switch(FEAT_TRAINS, SELF, sw_ee50_colours_2cc_check, colour_scheme_1){
 }
 
 
+
+
+//Mark 2 override
+
+
+//Graphics
+
+switch(FEAT_TRAINS, SELF, sw_ee50_mk2_graphics, current_year){
+	ERA_BRBLUE        : sw_mk2a_brblue ;
+    ERA_BRTOPS     : sw_mk2a_brblue ;
+	ERA_SECTORISATION : sw_mk2a_nse_back ;
+	ERA_PRIVATE_ONE   : sw_mk2f_virgin ;
+	ERA_PRIVATE_TWO   : sw_mk2a_brblue ;
+	sw_mk2a_brblue ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_mk2_livery_choice_decider, livery_choice){
+	1 : sw_mk2_livery_decider ; 
+	sw_ee50_mk2_graphics ;
+}
+
+
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_ee50_mk2_colour_mapping_auto, current_year){
+	ERA_BRBLUE         : sw_mk2_brblue_colour_mapping ;
+    ERA_BRTOPS     : sw_mk2_brblue_colour_mapping ;
+    ERA_SECTORISATION  : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+    ERA_PRIVATE_ONE : sw_mk2_virgin_colour_mapping ;
+    ERA_PRIVATE_TWO : sw_mk2_brblue_colour_mapping ;
+	sw_mk2_intercity_colour_mapping ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_mk2_colour_mapping_manual_check, livery_choice){
+	1 : sw_mk2_colour_mapping_manual ;
+	sw_ee50_mk2_colour_mapping_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee50_mk2_colour_mapping_decider, colour_scheme_1){
+	1 : sw_ee50_mk2_colour_mapping_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+
 //Item
 
 item(FEAT_TRAINS, item_hoover, 50){
@@ -174,6 +223,11 @@ item(FEAT_TRAINS, item_hoover, 50){
 		can_attach_wagon               : sw_all_but_MU90 ;
 		running_cost_factor            : return(current_speed == 0 ? 50 : 222) ;
 		purchase_running_cost_factor   : 222 ;
+	}
+	livery_override(9020){
+		default                 : sw_ee50_mk2_livery_choice_decider ;
+		cargo_subtype_text      : sw_mk2_refit_text_decider ;
+		colour_mapping          : sw_ee50_mk2_colour_mapping_decider ;
 	}
 }
 

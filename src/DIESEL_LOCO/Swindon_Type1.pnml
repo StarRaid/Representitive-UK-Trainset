@@ -38,7 +38,7 @@ random_switch(FEAT_TRAINS, SELF, sw_swtype1_brblue_random, TRIGGER_VEHICLE_SERVI
 	1 : sw_swtype1_standard_rev_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_swtype1_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_swtype1_auto, current_year){
 	1967..1982 : sw_swtype1_brblue_random ;
 	1983..1995 : sw_swtype1_brll_rev_check ;
 	sw_swtype1_standard_rev_check ;
@@ -109,7 +109,7 @@ random_switch(FEAT_TRAINS, SELF, sw_swtype1_sector_colours, TRIGGER_VEHICLE_SERV
 	1 : palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_swtype1_colours_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_swtype1_colours_auto, current_year){
 	1967..1982 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	1983..1995 : sw_swtype1_sector_colours ;
 	palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;

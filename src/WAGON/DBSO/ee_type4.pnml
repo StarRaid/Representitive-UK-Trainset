@@ -1,6 +1,6 @@
 //Graphics switches
 
-switch(FEAT_TRAINS, PARENT, sw_ee40_gfx_auto_dbso, build_year){
+switch(FEAT_TRAINS, PARENT, sw_ee40_gfx_auto_dbso, current_year){
 	ERA_BRCREST : sw_ee40_gfx_brgreen_reverse_check ;
 	1967..1982  : sw_ee40_gfx_brblue_reverse_check ;
 	sw_ee40_gfx_brblue_logo_reverse_check ;
@@ -31,7 +31,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee40_spritestack_dbso, [STORE_TEMP((getbits(extra
 
 //Colours
 
-switch(FEAT_TRAINS, PARENT, sw_ee40_colours_auto_dbso, build_year){
+switch(FEAT_TRAINS, PARENT, sw_ee40_colours_auto_dbso, current_year){
 	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
 }

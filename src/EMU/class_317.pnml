@@ -147,7 +147,7 @@ random_switch (FEAT_TRAINS, SELF, sw_317_late){
 	1: return sw_317_new_livery_A;
 }
 
-switch(FEAT_TRAINS, SELF, sw_317_year_A, build_year){
+switch(FEAT_TRAINS, SELF, sw_317_year_A, current_year){
 	1970..1983: sw_317_old_livery_A;
 	1984..1986: sw_317_new_livery_A;
 	sw_317_late;
@@ -172,7 +172,7 @@ random_switch (FEAT_TRAINS, SELF, sw_317_late_b){
 	1: return sw_317_new_livery_B;
 }
 
-switch(FEAT_TRAINS, SELF, sw_317_year_B, build_year){
+switch(FEAT_TRAINS, SELF, sw_317_year_B, current_year){
 	1970..1983: sw_317_old_livery_B;
 	1984..1986: sw_317_new_livery_B;
 	sw_317_late_b;
@@ -197,7 +197,7 @@ random_switch (FEAT_TRAINS, SELF, sw_317_late_o){
 	1: return sw_317_new_livery_O;
 }
 
-switch(FEAT_TRAINS, SELF, sw_317_year_O, build_year){
+switch(FEAT_TRAINS, SELF, sw_317_year_O, current_year){
 	1970..1983: sw_317_old_livery_O;
 	1984..1986: sw_317_new_livery_O;
 	sw_317_late_o;

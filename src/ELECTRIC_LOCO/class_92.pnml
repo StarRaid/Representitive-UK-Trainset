@@ -40,7 +40,7 @@ switch(FEAT_TRAINS, PARENT, sw_abb92_private_2_decider, most_common_cargo_type){
 	sw_abb92_gbrf_rev_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_abb92_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_abb92_auto, current_year){
 	1995..2007 : sw_abb92_ews_rev_check ;
 	2008..2012 : sw_abb92_dbcargo_rev_check ;
 	2013..4096 : sw_abb92_private_2_decider ;
@@ -125,7 +125,7 @@ switch(FEAT_TRAINS, PARENT, sw_abb92_colours_private_2_decider, most_common_carg
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_abb92_colours_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_abb92_colours_auto, current_year){
 	1995..2012 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	2013..4096 : sw_abb92_colours_private_2_decider ;
 	palette_2cc(COLOUR_GREY, COLOUR_GREY) ;

@@ -1,4 +1,4 @@
-switch(FEAT_TRAINS, PARENT, sw_abb92_auto_dbso, build_year){
+switch(FEAT_TRAINS, PARENT, sw_abb92_auto_dbso, current_year){
 	1995..2007 : sw_abb92_ews_rev_check ;
 	2008..2012 : sw_abb92_dbcargo_rev_check ;
 	2013..4096 : sw_abb92_private_2_decider ;
@@ -32,7 +32,7 @@ switch(FEAT_TRAINS, SELF, sw_abb92_spritestack_dbso, SPR_STACK){
 
 
 
-switch(FEAT_TRAINS, PARENT, sw_abb92_colours_auto_dbso, build_year){
+switch(FEAT_TRAINS, PARENT, sw_abb92_colours_auto_dbso, current_year){
 	1995..2012 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	2013..4096 : sw_abb92_colours_private_2_decider ;
 	palette_2cc(COLOUR_GREY, COLOUR_GREY) ;

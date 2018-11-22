@@ -45,7 +45,7 @@ switch(FEAT_TRAINS, SELF, sw_flask_spritestack, [STORE_TEMP((getbits(extra_callb
 	2 : sw_flask_light_decider ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_flask_colours_auto, build_year){
+switch(FEAT_TRAINS, SELF, sw_flask_colours_auto, current_year){
 	1960..1995 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_WHITE, COLOUR_WHITE) ;
 }

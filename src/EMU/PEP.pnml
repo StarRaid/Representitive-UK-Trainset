@@ -113,7 +113,7 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_A, current_year){
 	ERA_SECTORISATION: spriteset_PEP_proto_A_med;
 }
 
-switch(FEAT_TRAINS, SELF, sw_PEP_year_A, build_year){
+switch(FEAT_TRAINS, SELF, sw_PEP_year_A, current_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_A;
 	ERA_SECTORISATION: sw_PEP_livery_A;
 	ERA_PRIVATISATION: sw_PEP_livery_A;
@@ -130,7 +130,7 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_B, current_year){
 	ERA_SECTORISATION: spriteset_PEP_proto_B_med;
 }
 
-switch(FEAT_TRAINS, SELF, sw_PEP_year_B, build_year){
+switch(FEAT_TRAINS, SELF, sw_PEP_year_B, current_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_B;
 	ERA_SECTORISATION: sw_PEP_livery_B;
 	ERA_PRIVATISATION: sw_PEP_livery_B;
@@ -147,7 +147,7 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_x, current_year){
 	ERA_SECTORISATION: spriteset_PEP_proto_x_med;
 }
 
-switch(FEAT_TRAINS, SELF, sw_PEP_year_x, build_year){
+switch(FEAT_TRAINS, SELF, sw_PEP_year_x, current_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_x;
 	ERA_SECTORISATION: sw_PEP_livery_x;
 	ERA_PRIVATISATION: sw_PEP_livery_x;
@@ -165,7 +165,7 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_T, current_year){
 	ERA_SECTORISATION: spriteset_PEP_proto_T_med;
 }
 
-switch(FEAT_TRAINS, SELF, sw_PEP_year_T, build_year){
+switch(FEAT_TRAINS, SELF, sw_PEP_year_T, current_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_T;
 	ERA_SECTORISATION: sw_PEP_livery_T;
 	ERA_PRIVATISATION: sw_PEP_livery_T;
@@ -182,7 +182,7 @@ switch(FEAT_TRAINS, SELF, sw_PEP_proto_livery_P, current_year){
 	ERA_SECTORISATION: spriteset_PEP_proto_P_med;
 }
 
-switch(FEAT_TRAINS, SELF, sw_PEP_year_P, build_year){
+switch(FEAT_TRAINS, SELF, sw_PEP_year_P, current_year){
 	ERA_BRBLUETOPS: sw_PEP_proto_livery_P;
 	ERA_SECTORISATION: sw_PEP_livery_P;
 	ERA_PRIVATISATION: sw_PEP_livery_P;

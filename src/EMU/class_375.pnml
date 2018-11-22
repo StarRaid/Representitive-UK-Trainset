@@ -300,7 +300,7 @@ switch(FEAT_TRAINS, SELF, sw_375_coupling_restrictions, vehicle_type_id) {
     return string(STR_375_NO_COUPLE);
 }
 
-switch(FEAT_TRAINS, SELF, sw_375_speed, build_year) {
+switch(FEAT_TRAINS, SELF, sw_375_speed, current_year) {
     0 .. 2015: 160;
 	176;
 }
