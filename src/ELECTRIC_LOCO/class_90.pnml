@@ -76,13 +76,13 @@ switch(FEAT_TRAINS, SELF, sw_cl90_gfx_sprite_stack, SPR_STACK){
 	3 : sw_cl90_gfx_taillights_check ;
 }
 
-//Graphics DVT check
+/* //Graphics DVT check
 
 switch(FEAT_TRAINS, SELF, sw_cl90_gfx_dvt_check, DVT_CHECK){
 	1 : sw_dvt_sprite_stack ;
 	sw_cl90_gfx_sprite_stack ;
 }
-
+ */
 
 
 //Colours
@@ -118,12 +118,12 @@ switch(FEAT_TRAINS, SELF, sw_cl90_colours_2cc_check, colour_scheme_1){
 }
 
 
-//Colours DVT check
+/* //Colours DVT check
 
 switch(FEAT_TRAINS, SELF, sw_cl90_colours_dvt_check, DVT_CHECK){
 	1 : sw_dvt_colours_2cc_check ;
 	sw_cl90_colours_2cc_check ;
-}
+} */
 
 
 
@@ -191,11 +191,11 @@ item(FEAT_TRAINS, item_cl90, 90){
 		dual_headed						: 0 ;
 	}
 		graphics{
-			default			                : sw_cl90_gfx_dvt_check ;
+			default			                : sw_cl90_gfx_sprite_stack ;
 			purchase			            : sw_cl90_purchase ;
 			sound_effect			        : sw_sfx_electric_loco_old ;
 			create_effect			        : sw_br87_vfx_dbso_dvt_check ;
-			colour_mapping			        : sw_cl90_colours_dvt_check ;
+			colour_mapping			        : sw_cl90_colours_2cc_check ;
 			purchase_colour_mapping			: sw_cl90_purchase_colours_2cc_check ;
 			cargo_subtype_text			    : sw_cl90_refit_text_check ;
 			purchase_cargo_capacity			: 0 ;

@@ -97,10 +97,10 @@ switch(FEAT_TRAINS, SELF, sw_al6_refit_text, cargo_subtype){
 	1 : string(STR_LIVERY_BRBLUE) ;
 	2 : string(STR_LIVERY_INTERCITY) ;
 	3 : return(string(STR_LIVERY_RAILFREIGHT,string(STR_SECTOR_GENERAL))) ;
-	4 : string(STR_LIVERY_RAIL_EXPRESS) ;
-	5 : string(STR_LIVERY_VIRGIN_TRAINS) ;
-	6 : string(STR_LIVERY_FREIGHTLINER) ;
-	7 : string(STR_LIVERY_COLAS) ;
+	//4 : string(STR_LIVERY_RAIL_EXPRESS) ;
+	//5 : string(STR_LIVERY_VIRGIN_TRAINS) ;
+	//6 : string(STR_LIVERY_FREIGHTLINER) ;
+	//7 : string(STR_LIVERY_COLAS) ;
 	CB_RESULT_NO_TEXT ;
 }
 

@@ -1,7 +1,9 @@
 //DVT Source
 
 #define DVT_CHECK vehicle_is_reversed && (count_veh_id(9035) > 0)
-#define DVT_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 86 | vehicle_type_id == 87 | vehicle_type_id == 88 | vehicle_type_id == 90 | vehicle_type_id == 92)
+#define DVT_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 68 | vehicle_type_id == 86 | vehicle_type_id == 87 | vehicle_type_id == 88 | vehicle_type_id == 92 )
+
+// | vehicle_type_id == 92)
 
 
 /*
