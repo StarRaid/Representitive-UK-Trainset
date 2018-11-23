@@ -161,7 +161,7 @@ switch(FEAT_TRAINS, SELF, sw_ee50_mk2_livery_choice_decider, livery_choice){
 switch(FEAT_TRAINS, SELF, sw_ee50_mk2_colour_mapping_auto, current_year){
 	ERA_BRBLUE         : sw_mk2_brblue_colour_mapping ;
     ERA_BRTOPS     : sw_mk2_brblue_colour_mapping ;
-    ERA_SECTORISATION  : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+    ERA_SECTORISATION  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
     ERA_PRIVATE_ONE : sw_mk2_virgin_colour_mapping ;
     ERA_PRIVATE_TWO : sw_mk2_brblue_colour_mapping ;
 	sw_mk2_intercity_colour_mapping ;
