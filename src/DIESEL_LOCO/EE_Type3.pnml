@@ -676,8 +676,12 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_purchase, current_year){
 	2009..4096  : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
+/*
+switch(FEAT_TRAINS, SELF sw_ee3_vfx_dvt_check, DVT_CHECK){
+	0 : vfx_diesel_default ;
+}*/
 
-switch(FEAT_TRAINS, SELF, sw_ee3_vfx_dbso_check, DBSO_CHECK | DVT_CHECK){
+switch(FEAT_TRAINS, SELF, sw_ee3_vfx_dbso_check, (DBSO_CHECK) | (DVT_CHECK)){
 	0 : vfx_diesel_default ;
 }
 

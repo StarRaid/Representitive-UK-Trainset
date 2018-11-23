@@ -3270,8 +3270,12 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_purchase, current_year){
 	2009..4096  : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
+/*
+switch(FEAT_TRAINS, SELF sw_ee3_vfx_dvt_check, vehicle_is_reversed && (count_veh_id(9035) > 0)){
+	0 : vfx_diesel_default ;
+}*/
 
-switch(FEAT_TRAINS, SELF, sw_ee3_vfx_dbso_check, vehicle_is_reversed && (count_veh_id(9025) > 0) | vehicle_is_reversed && (count_veh_id(9035) > 0)){
+switch(FEAT_TRAINS, SELF, sw_ee3_vfx_dbso_check, (vehicle_is_reversed && (count_veh_id(9025) > 0)) | (vehicle_is_reversed && (count_veh_id(9035) > 0))){
 	0 : vfx_diesel_default ;
 }
 
