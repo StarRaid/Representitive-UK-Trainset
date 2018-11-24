@@ -45,11 +45,13 @@ define(RUKSS_UK_BASIC_NO_TRACK,			041)
 define(RUKSS_UK_BASIC_BUFFERS_NEAR,		042)
 define(RUKSS_UK_BASIC_BUFFERS_NEAR_BACK,042)
 define(RUKSS_UK_BASIC_BUFFERS_NEAR_FRONT,043)
+define(RUKSS_UK_BFR,			045)
 
 define(CLASS_DOUBLE_STD,	47 53 44 53) //GSDS
 define(CLASS_BACK_STD,	47 53 42 53) //GSBS
 define(CLASS_FRONT_STD,	47 53 46 53) //GSFS
 define(CLASS_NO_TRACK,	47 53 58 54) //GSXT
+//define(CLASS_REAL_STATIONS,	47 53 01 01) //GSRE
 
 definestation(RUKSS_UK_BASIC_DUAL,"Generic platform",
 	class(CLASS_DOUBLE_STD)
@@ -261,25 +263,33 @@ definestation(RUKSS_UK_OLD_BACK_FENCE_BACK_NEAR,"Generic platform - Rear Near Ra
 definestation(RUKSS_UK_BASIC_NO_TRACK,"Non-Track Station tile",
 	class(CLASS_NO_TRACK)
 	callbacks(CB_LAYOUT)
-	nontrack(TTD_ALLTILES)
+	nontrack({0,1,2,3,4,5,6,7})
 )
 
 definestation(RUKSS_UK_BASIC_BUFFERS_NEAR,"Buffers - Near",
 	class(CLASS_NO_TRACK)
 	callbacks(CB_LAYOUT)
-	nontrack(TTD_ALLTILES)
+	nontrack({0,1,2,3,4,5,6,7})
 )
 
 definestation(RUKSS_UK_BASIC_BUFFERS_NEAR_BACK,"Buffers - Near Back",
 	class(CLASS_NO_TRACK)
 	callbacks(CB_LAYOUT)
-	nontrack(TTD_ALLTILES)
+	nontrack({0,1,2,3,4,5,6,7})
 )
 
 definestation(RUKSS_UK_BASIC_BUFFERS_NEAR_FRONT,"Buffers - Near Front",
 	class(CLASS_NO_TRACK)
 	callbacks(CB_LAYOUT)
-	nontrack(TTD_ALLTILES)
+	nontrack({0,1,2,3,4,5,6,7})
+)
+
+definestation(RUKSS_UK_BFR,"Blackfriars Station",
+	class(CLASS_DOUBLE_STD)
+	callbacks(CB_LAYOUT)
+	pylons(TTD_ALLTILES)
+	include_widths(2)
+	include_lengths(6)
 )
 
 classnames(RUKSS_UK_BASIC_DUAL,
@@ -495,6 +505,98 @@ spriteblock(
 // 146..147, buffers near front
 	sprite(gfx/gwst1.png 1040 123 09 122 64 -31 -91)
 	sprite(gfx/gwst1.png 1200 0 09 122 64 -31 -91)
+// 148..159, blackfriars front platforms
+	sprite(gfx/gwst2_8bpp.png 1149 468 09 122 64 -53 -102)
+	sprite(gfx/gwst2_8bpp.png 1069 591 09 122 64 -6 -53)
+	sprite(gfx/gwst2_8bpp.png 1149 468 09 122 64 -53 -102)
+	sprite(gfx/gwst2_8bpp.png 1069 591 09 122 64 -6 -53)
+	sprite(gfx/gwst2_8bpp.png 1149 468 09 122 64 -53 -102)
+	sprite(gfx/gwst2_8bpp.png 1069 591 09 122 64 -6 -53)
+	sprite(gfx/gwst2_8bpp.png 1149 468 09 122 64 -53 -102)
+	sprite(gfx/gwst2_8bpp.png 1069 591 09 122 64 -6 -53)
+	sprite(gfx/gwst2_8bpp.png 1149 468 09 122 64 -53 -102)
+	sprite(gfx/gwst2_8bpp.png 1069 591 09 122 64 -6 -53)
+	sprite(gfx/gwst2_8bpp.png 1149 468 09 122 64 -53 -102)
+	sprite(gfx/gwst2_8bpp.png 1069 591 09 122 64 -6 -53)
+// 160..171, blackfriars back platforms
+	sprite(gfx/gwst2_8bpp.png 1069 468 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1149 591 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1069 468 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1149 591 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1069 468 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1149 591 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1069 468 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1149 591 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1069 468 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1149 591 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1069 468 09 122 64 -31 -91)
+	sprite(gfx/gwst2_8bpp.png 1149 591 09 122 64 -31 -91)
+// 172..177, blackfriars bridge parts (near arch raising)
+	sprite(gfx/gwst2_8bpp.png 1295 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1215 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1295 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1215 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1295 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1215 591 09 122 64 -55 -86)
+// 178..183, blackfriars bridge parts (far arch descending)
+	sprite(gfx/gwst2_8bpp.png 1441 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1361 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1441 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1361 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1441 591 09 122 64 -55 -86)
+	sprite(gfx/gwst2_8bpp.png 1361 591 09 122 64 -55 -86)
+// 184..195, blackfriars roof near
+	sprite(gfx/gwst2_8bpp.png 1339 515 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1258 455 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1339 515 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1258 455 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1339 515 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1258 455 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1339 515 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1258 455 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1339 515 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1258 455 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1339 515 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 1258 455 09 42 64 -32 -4)
+// 196..207, blackfriars roof far
+	sprite(gfx/gwst2_8bpp.png 1259 520 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1339 460 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1259 520 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1339 460 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1259 520 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1339 460 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1259 520 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1339 460 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1259 520 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1339 460 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1259 520 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 1339 460 09 38 63 -32 -7) 
+// 208..219, blackfriars glass near
+	sprite(gfx/gwst2_8bpp.png 959 657 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 878 597 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 959 657 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 878 597 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 959 657 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 878 597 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 959 657 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 878 597 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 959 657 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 878 597 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 959 657 09 42 64 -32 -4)
+	sprite(gfx/gwst2_8bpp.png 878 597 09 42 64 -32 -4)
+// 220..231, blackfriars glass far
+	sprite(gfx/gwst2_8bpp.png 879 662 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 959 602 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 879 662 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 959 602 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 879 662 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 959 602 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 879 662 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 959 602 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 879 662 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 959 602 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 879 662 09 38 63 -32 -7) 
+	sprite(gfx/gwst2_8bpp.png 959 602 09 38 63 -32 -7) 
 	)
 )
 
@@ -1034,6 +1136,167 @@ layout(RUKSS_UK_BASIC_BUFFERS_NEAR_FRONT,
     )
 )
 
+layout(RUKSS_UK_BFR,
+    tile(_BFR_0_0,
+      ground(1012)
+      regular(148, xyz(0,11,0),dxdydz(16,5,7))
+	  regular(172, xyz(0,12,0),dxdydz(16,1,4))
+	  regular(184, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(208, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(149, xyz(11,0,0),dxdydz(5,16,7))
+	  regular(173, xyz(12,0,0),dxdydz(1,16,4))
+	  regular(185, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(209, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_1_0,
+      ground(1012)
+      regular(150, xyz(0,11,0),dxdydz(16,5,7))
+	  regular(178, xyz(0,12,0),dxdydz(16,1,4))
+	  regular(186, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(210, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(151, xyz(11,0,0),dxdydz(5,16,7))
+	  regular(179, xyz(12,0,0),dxdydz(1,16,4))
+	  regular(187, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(211, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_2_0,
+      ground(1012)
+      regular(152, xyz(0,11,0),dxdydz(16,5,7))
+	  regular(174, xyz(0,12,0),dxdydz(16,1,4))
+	  regular(188, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(212, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(153, xyz(11,0,0),dxdydz(5,16,7))
+	  regular(175, xyz(12,0,0),dxdydz(1,16,4))
+	  regular(189, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(213, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_3_0,
+      ground(1012)
+      regular(154, xyz(0,11,0),dxdydz(16,5,7))
+	  regular(180, xyz(0,12,0),dxdydz(16,1,4))
+	  regular(190, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(214, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(155, xyz(11,0,0),dxdydz(5,16,7))
+	  regular(181, xyz(12,0,0),dxdydz(1,16,4))
+	  regular(191, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(215, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_4_0,
+      ground(1012)
+      regular(156, xyz(0,11,0),dxdydz(16,5,7))
+	  regular(176, xyz(0,12,0),dxdydz(16,1,4))
+	  regular(192, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(216, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(157, xyz(11,0,0),dxdydz(5,16,7))
+	  regular(177, xyz(12,0,0),dxdydz(1,16,4))
+	  regular(193, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(217, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_5_0,
+      ground(1012)
+      regular(158, xyz(0,11,0),dxdydz(16,5,7))
+	  regular(182, xyz(0,12,0),dxdydz(16,1,4))
+	  regular(194, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(218, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(159, xyz(11,0,0),dxdydz(5,16,7))
+	  regular(183, xyz(12,0,0),dxdydz(1,16,4))
+	  regular(195, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(219, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	
+	
+	tile(_BFR_0_1,
+      ground(1012)
+      regular(160, xyz(0,0,0),dxdydz(16,5,7))
+	  regular(196, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(220, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(161, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(197, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(221, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_1_1,
+      ground(1012)
+      regular(162, xyz(0,0,0),dxdydz(16,5,7))
+	  regular(198, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(222, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(163, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(199, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(223, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_2_1,
+      ground(1012)
+      regular(164, xyz(0,0,0),dxdydz(16,5,7))
+	  regular(200, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(224, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(165, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(201, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(225, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_3_1,
+      ground(1012)
+      regular(166, xyz(0,0,0),dxdydz(16,5,7))
+	  regular(202, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(226, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(167, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(203, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(227, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_4_1,
+      ground(1012)
+      regular(168, xyz(0,0,0),dxdydz(16,5,7))
+	  regular(204, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(228, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(169, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(205, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(229, xyz(0,0,8),dxdydz(16,16,1))
+    )
+	tile(_BFR_5_1,
+      ground(1012)
+      regular(170, xyz(0,0,0),dxdydz(16,5,7))
+	  regular(206, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(230, xyz(0,0,8),dxdydz(16,16,1))
+    )
+    tile(
+      ground(1011)
+	  regular(171, xyz(0,0,0),dxdydz(5,16,7))
+	  regular(207, xyz(0,0,8),dxdydz(16,16,1))
+	  glass(231, xyz(0,0,8),dxdydz(16,16,1))
+    )
+) 
+
 def(2) anim_frame(
 	reftile(_RUKSS_UK_INFO_BOARD_DUAL_1) if(0)
 	reftile(_RUKSS_UK_INFO_BOARD_DUAL_2) if(1)
@@ -1078,6 +1341,37 @@ def(8) callback(
 	ref(1) else
 )
 
+def(9) plt_pos(
+    self(
+        reftile(_BFR_5_1) if(0)
+        reftile(_BFR_4_1) if(1)
+        reftile(_BFR_3_1) if(2)
+        reftile(_BFR_2_1) if(3)
+        reftile(_BFR_1_1) if(4)
+        reftile(_BFR_0_1) else
+    )
+)
+def(10) plt_pos(
+    self(
+        reftile(_BFR_5_0) if(0)
+        reftile(_BFR_4_0) if(1)
+        reftile(_BFR_3_0) if(2)
+        reftile(_BFR_2_0) if(3)
+        reftile(_BFR_1_0) if(4)
+        reftile(_BFR_0_0) else
+    )
+)
+
+def(11) plt_num(
+	ref(9) if(0)
+	ref(10) else
+)
+
+def(12) callback(
+	ref(11) if(CB_LAYOUT)
+	ref(1) else
+)
+	
 makestation(RUKSS_UK_BASIC_DUAL,
 	default(ref(1))
 )
@@ -1224,4 +1518,8 @@ makestation(RUKSS_UK_BASIC_BUFFERS_NEAR_FRONT,
 
 makestation(RUKSS_UK_BASIC_BUFFERS_NEAR_BACK,
 	default(ref(1))
+)
+
+makestation(RUKSS_UK_BFR,
+	default(ref(12))
 )

@@ -25,6 +25,7 @@ STR_PARAM_VEH_SELEC_CHOICE_THREE  :Normal
 STR_PARAM_VEH_SELEC_CHOICE_FOUR   :Extended
 
 STR_LIVERY_BRGREEN                : British Railways {GOLD}(Green)
+STR_LIVERY_BRGREEN_YELLOW         : British Railways {GOLD}(Green with Yellow Panel)
 STR_LIVERY_BRELECTRIC             : British Railways {GOLD}(Electric Blue)
 STR_LIVERY_BRBLUE				  : British Railways {GOLD}(Blue)
 STR_LIVERY_BRBLUEGREY			  : British Railways {GOLD}(Blue and Grey)
@@ -108,6 +109,7 @@ STR_LIVERY_ATW                    : Arriva Trains Wales
 STR_LIVERY_ATW_REFURB             : Arriva Trains Wales {GOLD}(Refurbished)
 STR_LIVERY_ATW_EXEC               : Arriva Trains Wales {GOLD}(Executive)
 STR_LIVERY_GTR					  : GTR {GOLD}(Thameslink/Great Northern)
+STR_LIVERY_WYPTE				  : West Yorkshire Passenger Transport Executive
 
 STR_LIVERY_SLEEPER              :{BLACK}(Sleeper)
 STR_LIVERY_EMPTY	            : 
@@ -154,6 +156,7 @@ STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
 STR_NAME_VOYAGER             :Bombardier Voyager (Diesel Electric)
 
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
+STR_NAME_307				 :BREL Eastern Region Suburan EMU (Electric)
 STR_NAME_313				 :BREL Second Generation EMU (Dual Voltage)
 STR_NAME_314				 :BREL Second Generation EMU (Electric)
 STR_NAME_317				 :BREL AC Express "Bed Pan" (Electric)
@@ -192,11 +195,12 @@ STR_155_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or anot
 STR_158_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Express Sprinter!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
 STR_220_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Voyager!
+STR_307_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BREL Eastern Region Suburan EMU (Electric)!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
 STR_319_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Thameslink Classic!
 STR_375_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier "Electrostar" (Dual Voltage)!
-STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Mark 1 EMU (3rd rail)!
-STR_415_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Compartment EMU (3rd rail)!
+STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage",  BR Compartment EMU (3rd rail) or another BR Mark 1 EMU (3rd rail)!
+STR_415_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage", BR Mark 1 EMU (3rd rail) or another BR Compartment EMU (3rd rail)!
 STR_442_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL "Wessex Express"!
 STR_444_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro" (3rd rail)!
 STR_350_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro" (Dual Voltage)!
@@ -240,6 +244,7 @@ STR_NAME_TURBOSTAR_ALT			:BR Class 168/172 (Diesel)
 STR_NAME_VOYAGER_ALT			:BR Class 220/221 (Diesel Electric)
 
 STR_NAME_PEP_ALT			:PEP 1972 Design EMU (Dual Voltage)
+STR_NAME_307_ALT			:BR Class 307 (Electric)
 STR_NAME_313_ALT			:BR Class 313/507/508 (Dual Voltage)
 STR_NAME_314_ALT			:BR Class 314/315 (Electric)
 STR_NAME_317_ALT			:BR Class 317 (Electric)

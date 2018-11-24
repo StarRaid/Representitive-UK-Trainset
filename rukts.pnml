@@ -38,6 +38,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DMU/turbostar.pnml"
 #include "src/DEMU/class_205.pnml"
 #include "src/DEMU/voyager.pnml"
+#include "src/EMU/class_307.pnml"
 #include "src/EMU/class_313.pnml"
 //#include "src/EMU/class_317.pnml"
 #include "src/EMU/class_319.pnml"
