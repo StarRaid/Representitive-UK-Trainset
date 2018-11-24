@@ -145,6 +145,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_type_decider_2, current_year){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_mk2_type_decider_1, vehicle_type_id){
+	86 : sw_mk2f_livery_decider ;
 	87 : sw_mk2f_livery_decider ;
 	sw_mk2_type_decider_2 ;
 }
@@ -240,6 +241,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_checker_two, current_year){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_mk2_colour_mapping_auto_checker_one, vehicle_type_id){
+	86 : sw_mk2_colour_mapping_auto_f ;
 	87 : sw_mk2_colour_mapping_auto_f ;
 	sw_mk2_colour_mapping_auto_checker_two ;
 }

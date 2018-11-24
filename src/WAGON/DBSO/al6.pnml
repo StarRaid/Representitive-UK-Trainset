@@ -5,6 +5,10 @@ switch(FEAT_TRAINS, PARENT, sw_al6_gfx_manual_dbso, cargo_subtype){
 	1 : sw_al6_gfx_brblue_reverse_check ;
 	2 : sw_al6_gfx_intercity_reverse_check ;
 	3 : sw_al6_gfx_railfreight_reverse_check ;
+	4 : sw_al6_gfx_railexpress_reverse_check ;
+	5 : sw_al6_gfx_virgin_reverse_check ;
+	6 : sw_al6_gfx_freightliner_reverse_check ;
+	7 : sw_al6_gfx_colasrail_reverse_check ;
 	sw_al6_gfx_brblue_reverse_check ;
 }
 
@@ -31,8 +35,8 @@ switch(FEAT_TRAINS, PARENT, sw_al6_colours_manual_dbso, cargo_subtype){
 	3 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
 	4 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 	5 : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
-	6 : palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
-	7 : palette_2cc(COLOUR_ORANGE, COLOUR_YELLOW) ;
+	6 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	7 : palette_2cc(COLOUR_YELLOW, company_colour2) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
