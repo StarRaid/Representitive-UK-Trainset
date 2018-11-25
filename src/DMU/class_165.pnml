@@ -464,6 +464,7 @@ item (FEAT_TRAINS, item_465, 465) {
 		purchase_colour_mapping:			sw_465_colour_mapping_auto ;
 		sound_effect:						sw_sfx_electric_loco_modern ;
 		running_cost_factor:				return(current_speed == 0 ? 11 : 45) ;
+		purchase_running_cost_factor:		45 ;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 100;

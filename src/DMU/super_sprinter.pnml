@@ -222,8 +222,8 @@ item(FEAT_TRAINS, item_supsprint, 155){
 		purchase_colour_mapping 		: sw_supsprint_purchase_colours_2cc_check ;
 		cargo_subtype_text      		: sw_cl156_refit_text_check ;
 		can_attach_wagon        		: sw_supsprint_attach ;
-		running_cost_factor    			: return(current_speed == 0 ? 10 : 40) ;
-		purchase_running_cost_factor	: 40 ;
+		running_cost_factor    			: return(current_speed == 0 ? 10 : 35) ;
+		purchase_running_cost_factor	: 35 ;
 	}
 	livery_override (9030){
 		default                     : sw_cl156_gfx_sprite_stack ;

@@ -177,11 +177,12 @@ item (FEAT_TRAINS, item_cl168, 168){
 		create_effect           : vfx_diesel_default ;
 		cargo_subtype_text      : sw_168_refit_text_check ;
 		running_cost_factor     : return(current_speed == 0 ? 12 : 46) ;
+		purchase_running_cost_factor : 46 ;
 	}
 	livery_override (item_MU90){
 		default                     : sw_168_gfx_trailer_manual_check ;
 		colour_mapping              : sw_168_colours_2cc_check ;
-		power                       : 700;
+		power                       : 450;
 		cargo_capacity              : 75 ;
 		cargo_subtype_text          : sw_168_refit_text_check ;
 		weight                      : 45 ;
