@@ -161,13 +161,13 @@ item(FEAT_TRAINS, item_voyager, 220){
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 70 ;
-		loading_speed                  : 20 ;
+		loading_speed                  : 17 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
 		speed                          : 125 mph ;
 		power                          : 1120 kW ;
 		weight                         : 50 ton ;
-		tractive_effort_coefficient    : 0.45 ;
+		tractive_effort_coefficient    : 0.15 ;
 		air_drag_coefficient           : 0.06 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
@@ -187,7 +187,7 @@ item(FEAT_TRAINS, item_voyager, 220){
 	livery_override (item_MU90){
 		default							: sw_voyager_middle_manual_check ;
 		colour_mapping					: sw_voyager_colours_2cc_check ;
-		cargo_capacity					: 80 ;
+		cargo_capacity					: 70 ;
 		power							: 560 ;
 		cargo_subtype_text				: sw_voyager_refit_text_check ;
 		weight							: 45 ;

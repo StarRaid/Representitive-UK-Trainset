@@ -173,7 +173,7 @@ item(FEAT_TRAINS, item_cl90, 90){
 		model_life		                : 25 ;
 		vehicle_life		            : 40 ;
 		reliability_decay		        : 6 ;
-		cost_factor		                : 55 ;
+		cost_factor		                : 60 ;
 		running_cost_base		        : RUNNING_COST_ELECTRIC ;
 		running_cost_factor		        : 255 ;
 		refit_cost		                : 0 ;
@@ -185,7 +185,7 @@ item(FEAT_TRAINS, item_cl90, 90){
 		speed		                    : 110 mph ;
 		power		                    : 3700 kW ;
 		weight		                    : 84.5 ton ;
-		tractive_effort_coefficient		: 0.31 ;
+		tractive_effort_coefficient		: 0.34 ;
 		air_drag_coefficient		    : 0.08 ;
 		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed						: 0 ;

@@ -181,8 +181,8 @@ item(FEAT_TRAINS, item_dbso, 9025){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 40 ;
-		loading_speed                  : 10 ;
+		cargo_capacity                 : 30 ;
+		loading_speed                  : 8 ;
 		track_type                     : RAIL ;
 		speed                          : 100 mph ;
 		power                          : 0 hp ;

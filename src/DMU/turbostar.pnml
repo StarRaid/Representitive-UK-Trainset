@@ -146,19 +146,19 @@ item (FEAT_TRAINS, item_cl168, 168){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 75 ;
+		cargo_capacity                 : 80 ;
 		model_life                     : 18 ;
 		vehicle_life                   : 25 ;
 		reliability_decay              : 10 ;
 		cost_factor                    : 56 ;
 		running_cost_base              : RUNNING_COST_DIESEL ;
-		running_cost_factor            : 46 ;
+		running_cost_factor            : 56 ;
 		speed                          : 100 mph ;
 		track_type                     : RAIL ;
 		power                          : 700 kW ;
 		weight                         : 45 ton ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
-		tractive_effort_coefficient    : 0.4 ;
+		tractive_effort_coefficient    : 0.1 ;
 		air_drag_coefficient           : 0.08 ;
 		length                         : 8 ;
 		misc_flags                     : bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC) ;
@@ -183,7 +183,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		default                     : sw_168_gfx_trailer_manual_check ;
 		colour_mapping              : sw_168_colours_2cc_check ;
 		power                       : 450;
-		cargo_capacity              : 75 ;
+		cargo_capacity              : 80 ;
 		cargo_subtype_text          : sw_168_refit_text_check ;
 		weight                      : 45 ;
 	}
