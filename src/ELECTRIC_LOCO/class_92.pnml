@@ -206,6 +206,7 @@ item (FEAT_TRAINS, item_abb92, 92){
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;
 		running_cost_factor     : return(current_speed == 0 ? 55 : 225) ;
+		purchase_running_cost_factor : 225 ;
 	}
 }
 

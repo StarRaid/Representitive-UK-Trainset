@@ -287,6 +287,7 @@ item(FEAT_TRAINS, item_hst, 43){
 		cargo_subtype_text      : sw_hst_refit_text_check ;
 		can_attach_wagon        : sw_all_but_MU90;
 		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
+		purchase_running_cost_factor : 240 ;
 	}
 }
 

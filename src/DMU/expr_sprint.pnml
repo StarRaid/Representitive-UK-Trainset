@@ -206,18 +206,18 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		reliability_decay              : 7 ;
 		cost_factor                    : 65 ;
 		running_cost_base              : RUNNING_COST_DIESEL ;
-		running_cost_factor            : 40 ;
+		running_cost_factor            : 44 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 90 ;
-		loading_speed                  : 20 ;
+		cargo_capacity                 : 75 ;
+		loading_speed                  : 19 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
 		speed                          : 90 mph ;
 		power                          : 522 kW ;
 		weight                         : 38.5 ton ;
-		tractive_effort_coefficient    : 0.475 ;
+		tractive_effort_coefficient    : 0.175 ;
 		air_drag_coefficient           : 0.09 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
@@ -231,13 +231,14 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		purchase_colour_mapping : sw_expsprint_purchase_sprite_colours_2cc_check ;
 		cargo_subtype_text      : sw_expsprint_refit_text_check ;
 		can_attach_wagon        : sw_expsprint_attach ;
-		running_cost_factor     : return(current_speed == 0 ? 10 : 40) ;
+		running_cost_factor     : return(current_speed == 0 ? 11 : 44) ;
+		purchase_running_cost_factor : 44 ;
 	}
 	livery_override (9030){
 		default                     : sw_expsprint_gfx_manual_check ;
 		colour_mapping              : sw_expsprint_colours_2cc_check ;
-		cargo_capacity              : 90 ;
-		power                       : 500 ;
+		cargo_capacity              : 75 ;
+		power                       : 261 ;
 		cargo_subtype_text          : sw_expsprint_refit_text_check ;
 		weight                      : 38 ;
 	}

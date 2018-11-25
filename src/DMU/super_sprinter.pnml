@@ -201,14 +201,14 @@ item(FEAT_TRAINS, item_supsprint, 155){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 95 ;
-		loading_speed                  : 22 ;
+		cargo_capacity                 : 85 ;
+		loading_speed                  : 21 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
 		speed                          : 75 mph ;
 		power                          : 416 kW ;
 		weight                         : 39 ton ;
-		tractive_effort_coefficient    : 0.525 ;
+		tractive_effort_coefficient    : 0.2 ;
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
@@ -222,13 +222,13 @@ item(FEAT_TRAINS, item_supsprint, 155){
 		purchase_colour_mapping 		: sw_supsprint_purchase_colours_2cc_check ;
 		cargo_subtype_text      		: sw_cl156_refit_text_check ;
 		can_attach_wagon        		: sw_supsprint_attach ;
-		running_cost_factor    			: return(current_speed == 0 ? 10 : 40) ;
-		purchase_running_cost_factor	: 40 ;
+		running_cost_factor    			: return(current_speed == 0 ? 10 : 35) ;
+		purchase_running_cost_factor	: 35 ;
 	}
 	livery_override (9030){
 		default                     : sw_cl156_gfx_sprite_stack ;
 		colour_mapping              : sw_cl156_colours_2cc_check ;
-		cargo_capacity              : 95 ;
+		cargo_capacity              : 85 ;
 		power                       : 213 ;
 		cargo_subtype_text          : sw_cl156_refit_text_check ;
 		weight                      : 39 ;

@@ -125,7 +125,7 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		refittable_cargo_classes       : 0 ;
 		cargo_allow_refit              : [MAIL] ;
 		cargo_capacity                 : 40 ;
-		loading_speed                  : 10 ;
+		loading_speed                  : 9 ;
 		track_type                     : RAIL ;
 		speed                          : 110 mph ;
 		power                          : 0 hp ;
@@ -145,10 +145,10 @@ item(FEAT_TRAINS, item_dvt, 9035){
 	}
 }
 
-if (vehicle_selection < 2){
+/*if (vehicle_selection < 2){
 item (FEAT_TRAINS, item_dvt, 9035){
 	property{
 		climates_available             : NO_CLIMATE ;
 	}
 }
-}
+}*/

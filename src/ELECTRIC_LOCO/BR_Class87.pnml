@@ -282,6 +282,7 @@ item (FEAT_TRAINS, item_br87, 87){
 		cargo_capacity          : return 0 ;
 		can_attach_wagon        : sw_all_but_MU90;
 		running_cost_factor     : return(current_speed == 0 ? 65 : 250) ;
+		purchase_running_cost_factor : 250 ;
 	}
 	livery_override(9030){
 		default                 : sw_br87_mk3_override_gfx_check ;
