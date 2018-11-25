@@ -34,9 +34,9 @@ spriteset(spriteset_307_r, "gfx/EMU/class_307.png") {template_8_8_networker(537,
 
 switch(FEAT_TRAINS, SELF, sw_307_purchase, current_year){
 	0..1970: spriteset_307_purchase_brb;
+	1971..1982: spriteset_307_purchase_bre;
 	1983 .. 1991: spriteset_307_purchase_nse;
-	1992 .. 1995: spriteset_307_purchase_wyt;
-	spriteset_307_purchase_bre;
+	 spriteset_307_purchase_wyt;
 }
 
 //HEADLIGHT SWITCHES
@@ -301,7 +301,7 @@ item (FEAT_TRAINS, item_307, 307) {
 		create_effect:						vfx_dual_voltage;
 		colour_mapping:						sw_307_colour_mapping;
 		cargo_subtype_text:					sw_307_refit_text_decider;
-		purchase_colour_mapping:			sw_307_purchase_colours_check;
+		purchase_colour_mapping:			sw_307_recolour_selection_auto;
 		running_cost_factor:				return(current_speed == 0 ? 4 : 12) ;
 		purchase_running_cost_factor:		12;
 }

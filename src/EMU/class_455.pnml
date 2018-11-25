@@ -303,7 +303,7 @@ item (FEAT_TRAINS, item_455, 455) {
 		cargo_subtype_text:					sw_455_refit_text_decider ;
 		colour_mapping:						sw_455_colour_mapping_choice_decider ;
 		sound_effect:						sw_sfx_emu_gec ;
-		purchase_colour_mapping:			sw_455_colour_mapping_choice_decider;
+		purchase_colour_mapping:			sw_455_colour_mapping_year_decider;
 		running_cost_factor:				return(current_speed == 0 ? 6 : 23) ;
 		purchase_running_cost_factor:		23;
 }

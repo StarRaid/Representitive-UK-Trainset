@@ -365,7 +365,7 @@ item (FEAT_TRAINS, item_411, 411) {
 		create_effect:						vfx_3rd;
 		cargo_subtype_text:					sw_411_refit_text_decider ;
 		colour_mapping:						sw_411_colour_mapping_decider;
-		purchase_colour_mapping: 			sw_411_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_411_colour_mapping_auto;
 		running_cost_factor:				return(current_speed == 0 ? 5 : 20) ;
 		purchase_running_cost_factor:		20;
 		sound_effect:						sw_sfx_emu_gec ;

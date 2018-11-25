@@ -288,7 +288,7 @@ item (FEAT_TRAINS, item_205, 205) {
 		purchase_colour_mapping: 			sw_205_colour_mapping_auto;
 		sound_effect:                   	sw_sfx_diesel_loco_small;
 		running_cost_factor: 				return(current_speed == 0 ? 7 : 16) ;
-		purchase_running_cost_factor:		
+		purchase_running_cost_factor:		16;
 }
 		livery_override (9010) {
 		cargo_capacity: 65;
