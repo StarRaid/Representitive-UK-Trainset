@@ -279,6 +279,7 @@ item (FEAT_TRAINS, item_al6, 86){
 		can_attach_wagon        : sw_all_but_MU90;
 		running_cost_factor     : return(current_speed == 0 ? 40 : 235) ;
 		purchase_power          : 3013 ;
+		purchase_running_cost_factor : 235 ;
 	}
 }
 

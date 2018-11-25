@@ -117,7 +117,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		power                   : sw_eurodual_power_decider;
 		can_attach_wagon        : sw_all_but_MU90;
 		running_cost_factor     : return(current_speed == 0 ? 60 : 250) ;
-	
+		purchase_running_cost_factor : 250 ;
 	}
 }
 
