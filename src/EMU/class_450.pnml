@@ -136,9 +136,9 @@ item (FEAT_TRAINS, item_444, 444) {
 		reliability_decay:				7;
 		refittable_cargo_classes:		CC_PASSENGERS;
 		cargo_allow_refit:				[PASS, TOUR];
-		loading_speed:					35;
-		cost_factor:					75;
-		running_cost_factor:			60;
+		loading_speed:					23;
+		cost_factor:					59;
+		running_cost_factor:			32;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -167,10 +167,11 @@ item (FEAT_TRAINS, item_444, 444) {
 		cargo_subtype_text:					sw_444_refit_text_decider;
 		purchase_colour_mapping:			sw_444_colour_mapping;
 		sound_effect:						sw_sfx_emu_desiro;
-		running_cost_factor:				return(current_speed == 0 ? 18 : 60) ;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 32) ;
+		purchase_running_cost_factor : 32;
 }
 		livery_override (item_MU90) {
-		cargo_capacity: 75;
+		cargo_capacity: 90;
 		default: sw_444_trailer;
 		weight:	34;
 		colour_mapping:	sw_444_colour_mapping;

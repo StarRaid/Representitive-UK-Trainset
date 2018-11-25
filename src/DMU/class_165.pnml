@@ -359,9 +359,9 @@ item (FEAT_TRAINS, item_365, 365) {
 		reliability_decay:				7;
 		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
 		cargo_allow_refit:				[PASS, TOUR];
-		loading_speed:					35;
-		cost_factor:					55;
-		running_cost_factor:			45;
+		loading_speed:					25;
+		cost_factor:					53;
+		running_cost_factor:			30;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -372,10 +372,10 @@ item (FEAT_TRAINS, item_365, 365) {
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
-		cargo_capacity:					68;
+		cargo_capacity:					80;
 		weight:							40 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.4;
+		tractive_effort_coefficient:	0.09;
 		air_drag_coefficient:			0.1;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -391,10 +391,11 @@ item (FEAT_TRAINS, item_365, 365) {
 		colour_mapping:						sw_365_colour_mapping_decider ;
 		purchase_colour_mapping:			sw_365_colour_mapping_auto ;
 		sound_effect:						sw_sfx_electric_loco_modern ;
-		running_cost_factor:				return(current_speed == 0 ? 11 : 45) ;
+		running_cost_factor:				return(current_speed == 0 ? 7 : 30) ;
+		purchase_running_cost_factor : 30;
 }
 		livery_override (item_MU90) {
-		cargo_capacity: 66;
+		cargo_capacity: 85;
 		default: sw_365_default_t;
 		colour_mapping:	sw_365_colour_mapping_decider;
 		cargo_subtype_text: sw_365_refit_text_decider ;
@@ -431,8 +432,8 @@ item (FEAT_TRAINS, item_465, 465) {
 		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
 		cargo_allow_refit:				[PASS, TOUR];
 		loading_speed:					40;
-		cost_factor:					50;
-		running_cost_factor:			45;
+		cost_factor:					45;
+		running_cost_factor:			27;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							75 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -443,10 +444,10 @@ item (FEAT_TRAINS, item_465, 465) {
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
-		cargo_capacity:					90;
+		cargo_capacity:					95;
 		weight:							40 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.4;
+		tractive_effort_coefficient:	0.18;
 		air_drag_coefficient:			0.1;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -463,8 +464,8 @@ item (FEAT_TRAINS, item_465, 465) {
 		colour_mapping:						sw_465_colour_mapping_decider ;
 		purchase_colour_mapping:			sw_465_colour_mapping_auto ;
 		sound_effect:						sw_sfx_electric_loco_modern ;
-		running_cost_factor:				return(current_speed == 0 ? 11 : 45) ;
-		purchase_running_cost_factor:		45 ;
+		running_cost_factor:				return(current_speed == 0 ? 7 : 27) ;
+		purchase_running_cost_factor:		27 ;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 100;

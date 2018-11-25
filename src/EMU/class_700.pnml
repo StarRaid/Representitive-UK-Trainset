@@ -174,9 +174,9 @@ item (FEAT_TRAINS, item_700, 700) {
 		reliability_decay:				7;
 		refittable_cargo_classes:		CC_PASSENGERS;
 		cargo_allow_refit:				[PASS, TOUR];
-		loading_speed:					35;
+		loading_speed:					32;
 		cost_factor:					75;
-		running_cost_factor:			60;
+		running_cost_factor:			40;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
@@ -187,10 +187,10 @@ item (FEAT_TRAINS, item_700, 700) {
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
-		cargo_capacity:					90;
+		cargo_capacity:					110;
 		weight:							34 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.11;
+		tractive_effort_coefficient:	0.2;
 		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -205,10 +205,11 @@ item (FEAT_TRAINS, item_700, 700) {
 		cargo_subtype_text:					sw_700_refit_text_decider;
 		purchase_colour_mapping:			sw_700_colour_mapping;
 		sound_effect:						sw_sfx_emu_desiro;
-		running_cost_factor:				return(current_speed == 0 ? 19 : 60) ;
+		running_cost_factor:				return(current_speed == 0 ? 19 : 40) ;
+		purchase_running_cost_factor : 40;
 }
 		livery_override (item_MU90) {
-		cargo_capacity: 90;
+		cargo_capacity: 125;
 		power: 200;
 		default: sw_700_trailer;
 		weight:	34;

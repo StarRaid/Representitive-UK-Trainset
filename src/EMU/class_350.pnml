@@ -213,9 +213,9 @@ item (FEAT_TRAINS, item_350, 350) {
 		reliability_decay:				7;
 		refittable_cargo_classes:		CC_PASSENGERS;
 		cargo_allow_refit:				[PASS, TOUR];
-		loading_speed:					35;
-		cost_factor:					75;
-		running_cost_factor:			60;
+		loading_speed:					25;
+		cost_factor:					63;
+		running_cost_factor:			30;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							110 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -226,7 +226,7 @@ item (FEAT_TRAINS, item_350, 350) {
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
-		cargo_capacity:					80;
+		cargo_capacity:					75;
 		weight:							48 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
 		tractive_effort_coefficient:	0.11;
@@ -244,10 +244,11 @@ item (FEAT_TRAINS, item_350, 350) {
 		cargo_subtype_text:					sw_350_refit_text_decider;
 		purchase_colour_mapping:			sw_350_purchase_colours_check;
 		sound_effect:						sw_sfx_emu_desiro;
-		running_cost_factor:				return(current_speed == 0 ? 15 : 60) ;
+		running_cost_factor:				return(current_speed == 0 ? 7 : 30) ;
+		purchase_running_cost_factor : 30;
 }
 		livery_override (item_MU90) {
-		cargo_capacity: 75;
+		cargo_capacity: 80;
 		default: sw_350_trailer;
 		weight:	34;
 		colour_mapping:	sw_350_colour_mapping;

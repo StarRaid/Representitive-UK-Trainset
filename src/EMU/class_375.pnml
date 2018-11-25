@@ -316,9 +316,9 @@ item (FEAT_TRAINS, item_375, 375) {
 		reliability_decay:				7;
 		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
 		cargo_allow_refit:				[PASS, TOUR];
-		loading_speed:					35;
-		cost_factor:					35;
-		running_cost_factor:			30;
+		loading_speed:					26;
+		cost_factor:					55;
+		running_cost_factor:			34;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -329,9 +329,9 @@ item (FEAT_TRAINS, item_375, 375) {
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
-		cargo_capacity:					60;
+		cargo_capacity:					85;
 		weight:							40 ton;
-		tractive_effort_coefficient:	0.49;
+		tractive_effort_coefficient:	0.09;
 		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -351,9 +351,10 @@ item (FEAT_TRAINS, item_375, 375) {
 		speed:								sw_375_speed;
 		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
 		sound_effect:						sw_sfx_electric_loco_modern ;
+		purchase_running_cost_factor : 32;
 }
 		livery_override (9090) {
-		cargo_capacity: 85;
+		cargo_capacity: 95;
 		default: sw_375_t_default;
 		colour_mapping:	sw_375_recolour;
 		cargo_subtype_text: sw_375_livery_decider ;

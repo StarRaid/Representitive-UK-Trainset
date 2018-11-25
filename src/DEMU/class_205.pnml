@@ -254,9 +254,9 @@ item (FEAT_TRAINS, item_205, 205) {
 		reliability_decay:				7;
 		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
 		cargo_allow_refit:				[PASS, TOUR];
-		loading_speed:					25;
-		cost_factor:					35;
-		running_cost_factor:			28;
+		loading_speed:					18;
+		cost_factor:					27;
+		running_cost_factor:			16;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							75 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -267,9 +267,9 @@ item (FEAT_TRAINS, item_205, 205) {
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
-		cargo_capacity:					64;
+		cargo_capacity:					55;
 		weight:							44 ton;
-		tractive_effort_coefficient:	0.49;
+		tractive_effort_coefficient:	0.05;
 		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_DIESEL;
@@ -285,12 +285,13 @@ item (FEAT_TRAINS, item_205, 205) {
 		create_effect:						sw_205_visual_effect;
 		cargo_subtype_text:					sw_205_refit_text_decider ;
 		colour_mapping:						sw_205_colour_mapping_decider;
-		purchase_colour_mapping: 			sw_205_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_205_colour_mapping_auto;
 		sound_effect:                   	sw_sfx_diesel_loco_small;
-		running_cost_factor: 				return(current_speed == 0 ? 7 : 28) ;
+		running_cost_factor: 				return(current_speed == 0 ? 7 : 16) ;
+		purchase_running_cost_factor:		
 }
 		livery_override (9010) {
-		cargo_capacity: 95;
+		cargo_capacity: 65;
 		default: sw_205_default_t;
 		colour_mapping:	sw_205_colour_mapping_decider;
 		cargo_subtype_text: sw_205_refit_text_decider ;
