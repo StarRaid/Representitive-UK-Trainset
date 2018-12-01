@@ -110,8 +110,8 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_dirt, age_in_days){
 
 switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_ee3_dbso_gfx_manual_check ;    //Base
-	1 : gfx_ee3_headcode_centre ;  //Headcodes
-	2 : sw_ee3_lights_centre_front ;  //Lights
+	1 : sw_ee3_gfxhc_dbso_check ;  //Headcodes
+	2 : sw_ee3_gfxlt_dbso_check ;  //Lights
 	//3 : sw_ee3_dbso_dirt ;                //Dirt
 }
 

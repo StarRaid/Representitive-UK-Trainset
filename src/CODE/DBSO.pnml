@@ -62,8 +62,10 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_manual_al6, cargo_subtype){
 
 switch(FEAT_TRAINS, PARENT, sw_dbso_manual, vehicle_type_id){
 	37 : sw_dbso_manual_ee3 ;
+	68 : sw_dbso_directrail_rev_check ;
 	86 : sw_dbso_manual_al6 ;
 	87 : sw_dbso_manual_br87 ;
+	88 : sw_dbso_directrail_rev_check ;
 	sw_dbso_brblue_rev_check ;
 }
 
@@ -122,8 +124,10 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_colours_al6, cargo_subtype){
 
 switch(FEAT_TRAINS, PARENT, sw_dbso_colours_manual, vehicle_type_id){
 	37 : sw_dbso_colours_ee3 ;
+	68 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 	86 : sw_dbso_colours_al6 ;
 	87 : sw_dbso_colours_br87 ;
+	88 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 

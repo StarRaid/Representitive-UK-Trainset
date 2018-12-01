@@ -2,8 +2,8 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 23 ;
-	min_compatible_version: 22 ;
+	version: 24 ;
+	min_compatible_version: 24 ;
 	param 0{
 		colour_scheme_1{
 			type    : bool ;

@@ -26,9 +26,9 @@ switch(FEAT_TRAINS, PARENT, sw_container_double_full_rev_check, vehicle_is_rever
 	gfx_container_double_full ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_container_double_load_check, cargo_count){
+switch(FEAT_TRAINS, SELF, sw_container_double_load_check, 100 * (cargo_capacity / cargo_count)){
 	0     : gfx_container_empty ;
-	1..15  : sw_container_double_rev_check ;
+	1..50  : sw_container_double_rev_check ;
 	gfx_container_double_full ;
 }
 
@@ -152,8 +152,8 @@ item (FEAT_TRAINS, item_container, 10002){
 		power                        : 0 hp ;
 		dual_headed                  : 0 ;
 		default_cargo_type           : GOOD ;
-		cargo_capacity               : 30 ;
-		weight                       : 25 ton ;
+		cargo_capacity               : 40 ;
+		weight                       : 20 ton ;
 		length                       : 8 ;
 	}
 	graphics{

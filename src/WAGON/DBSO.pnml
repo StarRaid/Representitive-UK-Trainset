@@ -2,7 +2,7 @@
 
 //Over ride headers
 
-#include "src/WAGON/DBSO/ee_type3.pnml"
+// #include "src/WAGON/DBSO/ee_type3.pnml"
 #include "src/WAGON/DBSO/ee_type4.pnml"
 #include "src/WAGON/DBSO/uklight.pnml"
 #include "src/WAGON/DBSO/br87.pnml"
@@ -36,7 +36,7 @@ switch(FEAT_TRAINS, SELF, sw_dbso_purchase_colours_2cc_check, colour_scheme_1){
 //Graphics checks
 
 switch(FEAT_TRAINS, PARENT, sw_dbso_gfx_parent_id_check, vehicle_type_id){
-	37 :sw_ee3_dbso_spritestack  ;
+	37 : sw_ee3_spritestack  ;
 	40 : sw_ee40_spritestack_dbso ;
 	68 : sw_uklight_spritestack_dbso ;
 	86 : sw_al6_sprite_stack_dbso ;
@@ -57,7 +57,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_gfx_reverse_check, vehicle_is_reversed){
 //Colours checks
 
 switch(FEAT_TRAINS, PARENT, sw_dbso_colours_parent_id_check, vehicle_type_id){
-	37 : sw_ee3_dbso_colours_2cc_check ;
+	37 : sw_ee3_colours_2cc_check ;
 	40 : sw_ee40_colours_2cc_check_dbso ;
 	68 : sw_uklight_colours_2cc_check_dbso ;
 	86 : sw_al6_colours_2cc_check_dbso ;

@@ -54,7 +54,7 @@ switch(FEAT_TRAINS, PARENT, sw_sfx_gec_run, current_speed){
 
 switch(FEAT_TRAINS, PARENT, sw_ee_coast_decider, current_speed){
 	0..18 : sound("sfx/ee_2_coast_low.wav") ;
-	sound("sfx/ee_2_coast_high.wav", 90) ;
+	sound("sfx/ee_2_coast_high.wav", 70) ;
 }
 
 
@@ -112,7 +112,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee, getbits(extra_callback_info1, 0
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : sound("sfx/ee_2_idle.wav",90) ;
-	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_2_run.wav",90) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_2_run.wav",70) ;
 	SOUND_EVENT_RUNNING_16    : sw_ee_coast_decider ;
 	SOUND_EVENT_START         : sound("sfx/horn_3.wav",90) ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
