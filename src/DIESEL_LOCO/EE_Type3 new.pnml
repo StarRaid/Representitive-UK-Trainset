@@ -53,11 +53,6 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_largelogo_colours, TRIGGER_VEHICLE_SERVI
 	1 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
 }
 
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_largelogo_colours){
-	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
-}
-
 
 //Spritesets
 
@@ -309,8 +304,13 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfx_dbso_manual_check, livery_choice){
 
 //GFX DBSO check
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfx_dbso_check, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & ((position_in_consist == 0) | (position_in_consist_from_end == 0))){
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfx_dbso_check_2, (count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)){
 	1 : sw_ee3_gfx_dbso_manual_check ;
+	sw_ee3_gfx_manual_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee3_gfx_dbso_check, position_in_consist == 0){
+	1 : sw_ee3_gfx_dbso_check_2 ;
 	sw_ee3_gfx_manual_check ;
 }
 
@@ -436,68 +436,18 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_manual_check, livery_choice){
 
 //DBSO headcodes
 
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_brgreen_random){
-	2 : gfx_ee3_headcode_brgreen_split ;
-	1 : gfx_ee3_headcode_brgreen_centre ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_standard_random){
-	2 : gfx_ee3_headcode_split ;
-	1 : gfx_ee3_headcode_centre ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_standard_3){
-	1 : gfx_ee3_headcode_none ;
-	1 : gfx_ee3_headcode_centre ;
-	1 : gfx_ee3_headcode_split ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_standard_any){
-	1 : gfx_ee3_headcode_split ;
-	1 : gfx_ee3_headcode_centre ;
-	1 : gfx_ee3_headcode_none ;
-	1 : gfx_ee3_headcode_none_newlights ;
-	1 : gfx_ee3_headcode_centre_newlights ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_newlights_random){
-	1 : gfx_ee3_headcode_none_newlights ;
-	1 : gfx_ee3_headcode_centre_newlights ;
-}
-
-
-
-//Auto
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_largelogo){
-	dependent : sw_ee3_dbso_largelogo_colours ;
-	2 : sw_ee3_gfxhc_dbso_standard_random ;
-	1 : sw_ee3_gfxhc_dbso_standard_3 ;
-}
-
-
 switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_auto, current_year){
-	ERA_BRCREST : sw_ee3_gfxhc_dbso_brgreen_random ;
-	1983..1986  : sw_ee3_gfxhc_dbso_largelogo ;
-	1987..1995  : gfx_ee3_headcode_centre ;
-	1996..2008  : sw_ee3_gfxhc_dbso_standard_any ;
-	2009..4096  : sw_ee3_gfxhc_dbso_standard_any ;
-	sw_ee3_gfxhc_dbso_standard_random ;
+	ERA_BRCREST : gfx_ee3_headcode_brgreen_centre ;
+	gfx_ee3_headcode_centre ;
 }
-
 
 
 //Manual
 
 switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_manual, cargo_subtype){
-	0    : sw_ee3_gfxhc_dbso_brgreen_random ;
-	4    : gfx_ee3_headcode_centre ;
-	5..7 : sw_ee3_gfxhc_dbso_standard_3 ;
-	8..9 : sw_ee3_gfxhc_dbso_standard_any ;
-	10   : sw_ee3_gfxhc_dbso_standard_3 ;
-	11   : sw_ee3_gfxhc_dbso_newlights_random ;
-	12   : sw_ee3_gfxhc_dbso_standard_3 ;
-	sw_ee3_gfxhc_dbso_standard_random ;
+	0    : gfx_ee3_headcode_brgreen_centre ;
+	11   : gfx_ee3_headcode_centre_newlights ;
+	gfx_ee3_headcode_centre ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_manual_check, livery_choice){
@@ -508,8 +458,13 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_manual_check, livery_choice){
 
 //DBSO headcodes check
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_dbso_check, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & ((position_in_consist == 0) | (position_in_consist_from_end == 0))){
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_check_2, (count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)){
 	1 : sw_ee3_gfxhc_dbso_manual_check ;
+	sw_ee3_gfxhc_manual_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_dbso_check, position_in_consist == 0){
+	1 : sw_ee3_gfxhc_dbso_check_2 ;
 	sw_ee3_gfxhc_manual_check ;
 }
 
@@ -641,56 +596,12 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_manual_check, livery_choice){
 
 //DBSO lights
 
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_brgreen_random){
-	dependent : sw_ee3_gfxhc_dbso_brgreen_random ;
-	2 : sw_ee3_lights_split_front ;
-	1 : sw_ee3_lights_centre_front ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_standard_random){
-	dependent : sw_ee3_gfxhc_dbso_standard_random ;
-	2 : sw_ee3_lights_split_front ;
-	1 : sw_ee3_lights_centre_front ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_standard_3){
-	dependent : sw_ee3_gfxhc_dbso_standard_3 ;
-	1 : sw_ee3_lights_centre_front ;
-	1 : sw_ee3_lights_centre_front ;
-	1 : sw_ee3_lights_split_front ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_standard_any){
-	dependent : sw_ee3_gfxhc_dbso_standard_any ;
-	1 : sw_ee3_lights_split_front ;
-	1 : sw_ee3_lights_centre_front ;
-	1 : sw_ee3_lights_centre_front ;
-	1 : sw_ee3_lights_new_front ;
-	1 : sw_ee3_lights_new_front ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_newlights){
-	dependent : sw_ee3_gfxhc_dbso_newlights_random ;
-	1 : sw_ee3_lights_new_front ;
-	1 : sw_ee3_lights_new_front ;
-}
-
 
 //Auto
 
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_largelogo){
-	dependent : sw_ee3_dbso_largelogo_colours ;
-	2 : sw_ee3_gfxlt_dbso_standard_random ;
-	1 : sw_ee3_gfxlt_dbso_standard_3 ;
-}
-
 switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_auto, current_year){
-	ERA_BRCREST : sw_ee3_gfxlt_dbso_brgreen_random ;
-	1983..1986  : sw_ee3_gfxlt_dbso_largelogo ;
-	1987..1995  : sw_ee3_lights_centre_front ;
-	1996..2008  : sw_ee3_gfxlt_dbso_standard_any ;
-	2009..4096  : sw_ee3_gfxlt_dbso_standard_any ;
-	sw_ee3_gfxlt_dbso_standard_random ;
+	ERA_BRCREST : sw_ee3_lights_centre_front ;
+	sw_ee3_lights_centre_front ;
 }
 
 
@@ -698,14 +609,9 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_auto, current_year){
 //Manual
 
 switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_manual, cargo_subtype){
-	0    : sw_ee3_gfxlt_dbso_brgreen_random ;
-	4    : sw_ee3_lights_centre_front ;
-	5..7 : sw_ee3_gfxlt_dbso_standard_3 ;
-	8..9 : sw_ee3_gfxlt_dbso_standard_any ;
-	10   : sw_ee3_gfxlt_dbso_standard_3 ;
-	11   : sw_ee3_gfxlt_dbso_newlights ;
-	12   : sw_ee3_gfxlt_dbso_standard_3 ;
-	sw_ee3_gfxlt_dbso_standard_random ;
+	0    : sw_ee3_lights_centre_front ;
+	11   : sw_ee3_lights_new_front ;
+	sw_ee3_lights_centre_front ;
 }
 
 
@@ -718,8 +624,13 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_manual_check, livery_choice){
 
 //DBSO lights check
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_dbso_check, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & ((position_in_consist == 0) | (position_in_consist_from_end == 0))){
+switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_check_2, (count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)){
 	1 : sw_ee3_gfxlt_dbso_manual_check ;
+	sw_ee3_gfxlt_manual_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_dbso_check, position_in_consist == 0){
+	1 : sw_ee3_gfxlt_dbso_check_2 ;
 	sw_ee3_gfxlt_manual_check ;
 }
 
@@ -871,7 +782,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_manual_check, livery_choice){
 switch(FEAT_TRAINS, PARENT, sw_ee3_colours_dbso_auto, current_year){
 	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 	1967..1982  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1983..1986  : sw_ee3_dbso_largelogo_colours ;
+	1983..1986  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	1987..1995  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
 	1996..2008  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 	2009..4096  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
@@ -902,8 +813,13 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_colours_dbso_manual_check, livery_choice){
 
 //DBSO colours check
 
-switch(FEAT_TRAINS, SELF, sw_ee3_colours_dbso_check_2, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & ((position_in_consist == 0) | (position_in_consist_from_end == 0))){
+switch(FEAT_TRAINS, PARENT, sw_ee3_colours_dbso_check_3, (count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)){
 	1 : sw_ee3_colours_dbso_manual_check ;
+	sw_ee3_colours_manual_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ee3_colours_dbso_check_2, position_in_consist == 0){
+	1 : sw_ee3_colours_dbso_check_3 ;
 	sw_ee3_colours_manual_check ;
 }
 

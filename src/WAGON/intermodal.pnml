@@ -26,10 +26,10 @@ switch(FEAT_TRAINS, PARENT, sw_container_double_full_rev_check, vehicle_is_rever
 	gfx_container_double_full ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_container_double_load_check, 100 * (cargo_capacity / cargo_count)){
-	0     : gfx_container_empty ;
-	1..50  : sw_container_double_rev_check ;
-	gfx_container_double_full ;
+switch(FEAT_TRAINS, SELF, sw_container_double_load_check, cargo_count * (100 / cargo_capacity)){
+	1..49 : sw_container_double_rev_check ;
+	50..100  : gfx_container_double_full ;
+	gfx_container_empty ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_container_single_load_check, cargo_count){
@@ -40,7 +40,7 @@ switch(FEAT_TRAINS, SELF, sw_container_single_load_check, cargo_count){
 
 //Livery checks
 
-random_switch(FEAT_TRAINS, SELF, sw_container_auto, TRIGGER_VEHICLE_UNLOAD_ALL){
+random_switch(FEAT_TRAINS, SELF, sw_container_auto, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
 	2 : sw_container_double_load_check ;
 	1 : sw_container_single_load_check ;
 }
@@ -59,13 +59,13 @@ switch(FEAT_TRAINS, SELF, sw_container_manual_check, livery_choice){
 
 //Colours
 
-random_switch(FEAT_TRAINS, PARENT, sw_container_colours_single){
+random_switch(FEAT_TRAINS, SELF, sw_container_colours_single, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
 	2 : palette_1cc(COLOUR_DARK_BLUE) ;
 	1 : palette_1cc(COLOUR_RED) ;
 	1 : palette_1cc(COLOUR_DARK_GREEN) ;
 }
 
-random_switch(FEAT_TRAINS, SELF, sw_container_colours_double, TRIGGER_VEHICLE_UNLOAD_ALL){
+random_switch(FEAT_TRAINS, SELF, sw_container_colours_double, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
 	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	1 : palette_2cc(COLOUR_RED, COLOUR_ORANGE) ;
 	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_BLUE) ;
@@ -91,14 +91,14 @@ COLOUR_GREY
 
 
 
-random_switch(FEAT_TRAINS, SELF, sw_container_colours_auto, TRIGGER_VEHICLE_UNLOAD_ALL){
+random_switch(FEAT_TRAINS, SELF, sw_container_colours_auto, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
 	dependent : sw_container_auto ;
 	2 : sw_container_colours_double ;
 	1 : sw_container_colours_single ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_container_colours_manual, cargo_subtype){
-	1 : sw_container_colours_single ;
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	2 : sw_container_colours_double ;
 	sw_container_colours_auto ;
 }

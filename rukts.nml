@@ -1898,10 +1898,10 @@ switch(FEAT_TRAINS, PARENT, sw_container_double_full_rev_check, vehicle_is_rever
 	gfx_container_double_full ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_container_double_load_check, 100 * (cargo_capacity / cargo_count)){
-	0     : gfx_container_empty ;
-	1..50  : sw_container_double_rev_check ;
-	gfx_container_double_full ;
+switch(FEAT_TRAINS, SELF, sw_container_double_load_check, cargo_count * (100 / cargo_capacity)){
+	1..49 : sw_container_double_rev_check ;
+	50..100  : gfx_container_double_full ;
+	gfx_container_empty ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_container_single_load_check, cargo_count){
@@ -1912,7 +1912,7 @@ switch(FEAT_TRAINS, SELF, sw_container_single_load_check, cargo_count){
 
 //Livery checks
 
-random_switch(FEAT_TRAINS, SELF, sw_container_auto, TRIGGER_VEHICLE_UNLOAD_ALL){
+random_switch(FEAT_TRAINS, SELF, sw_container_auto, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
 	2 : sw_container_double_load_check ;
 	1 : sw_container_single_load_check ;
 }
@@ -1931,13 +1931,13 @@ switch(FEAT_TRAINS, SELF, sw_container_manual_check, livery_choice){
 
 //Colours
 
-random_switch(FEAT_TRAINS, PARENT, sw_container_colours_single){
+random_switch(FEAT_TRAINS, SELF, sw_container_colours_single, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
 	2 : palette_1cc(COLOUR_DARK_BLUE) ;
 	1 : palette_1cc(COLOUR_RED) ;
 	1 : palette_1cc(COLOUR_DARK_GREEN) ;
 }
 
-random_switch(FEAT_TRAINS, SELF, sw_container_colours_double, TRIGGER_VEHICLE_UNLOAD_ALL){
+random_switch(FEAT_TRAINS, SELF, sw_container_colours_double, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
 	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	1 : palette_2cc(COLOUR_RED, COLOUR_ORANGE) ;
 	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_BLUE) ;
@@ -1963,14 +1963,14 @@ COLOUR_GREY
 
 
 
-random_switch(FEAT_TRAINS, SELF, sw_container_colours_auto, TRIGGER_VEHICLE_UNLOAD_ALL){
+random_switch(FEAT_TRAINS, SELF, sw_container_colours_auto, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
 	dependent : sw_container_auto ;
 	2 : sw_container_colours_double ;
 	1 : sw_container_colours_single ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_container_colours_manual, cargo_subtype){
-	1 : sw_container_colours_single ;
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	2 : sw_container_colours_double ;
 	sw_container_colours_auto ;
 }
@@ -2660,7 +2660,7 @@ random_switch(FEAT_TRAINS, SELF, sw_ee3_largelogo_colours, TRIGGER_VEHICLE_SERVI
 	1 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
 }
 
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_largelogo_colours, TRIGGER_VEHICLE_SERVICE){
+random_switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_largelogo_colours){
 	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	1 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
 }
@@ -2875,72 +2875,12 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfx_manual_check, livery_choice){
 
 //DBSO GFX
 
-
-switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_sector_gfx_decider, most_common_cargo_type){
-	PASS : sw_ee3_regional_reverse_check ;
-	COAL : sw_ee3_railfreight_black_reverse_check ;
-	OIL_ : sw_ee3_railfreight_blue_reverse_check ;
-	STEL : sw_ee3_railfreight_blue_reverse_check ;
-	PLAS : sw_ee3_railfreight_blue_reverse_check ;
-	BRCK : sw_ee3_railfreight_blue_reverse_check ;
-	CMNT : sw_ee3_railfreight_blue_reverse_check ;
-	GOLD : sw_ee3_railfreight_blue_reverse_check ;
-	BDMT : sw_ee3_railfreight_blue_reverse_check ;
-	GLAS : sw_ee3_railfreight_blue_reverse_check ;
-	PETR : sw_ee3_railfreight_blue_reverse_check ;
-	RFPR : sw_ee3_railfreight_blue_reverse_check ;
-	SAND : sw_ee3_railfreight_blue_reverse_check ;
-	ENSP : sw_ee3_railfreight_blue_reverse_check ;
-	GRVL : sw_ee3_railfreight_blue_reverse_check ;
-	MNSP : sw_ee3_railfreight_blue_reverse_check ;
-	SCMT : sw_ee3_railfreight_blue_reverse_check ;
-	COPR : sw_ee3_railfreight_blue_reverse_check ;
-	sw_ee3_railfreight_reverse_check ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_privatisation1_random){
-	2 : sw_ee3_drs_reverse_check ;
-	1 : sw_ee3_ews_reverse_check ;
-}
-
-switch(FEAT_TRAINS, PARENT, sw_ee3_dbso_privatisation2_decider, most_common_cargo_type){
-	PASS : sw_ee3_drscompass_reverse_check ;
-	URAN : sw_ee3_drscompass_reverse_check ;
-	NWST : sw_ee3_drscompass_reverse_check ;
-	GOOD : sw_ee3_drscompass_reverse_check ;
-	MAIL : sw_ee3_drscompass_reverse_check ;
-	VALU : sw_ee3_drscompass_reverse_check ;
-	GOLD : sw_ee3_drscompass_reverse_check ;
-	FOOD : sw_ee3_drscompass_reverse_check ;
-	STEL : sw_ee3_colasrailfreight_reverse_check ;
-	COAL : sw_ee3_colasrailfreight_reverse_check ;
-	IORE : sw_ee3_colasrailfreight_reverse_check ;
-	LVST : sw_ee3_colasrailfreight_reverse_check ;
-	OIL_ : sw_ee3_colasrailfreight_reverse_check ;
-	PAPR : sw_ee3_colasrailfreight_reverse_check ;
-	WOOD : sw_ee3_colasrailfreight_reverse_check ;
-	CORE : sw_ee3_colasrailfreight_reverse_check ;
-	AORE : sw_ee3_colasrailfreight_reverse_check ;
-	BDMT : sw_ee3_colasrailfreight_reverse_check ;
-	BRCK : sw_ee3_colasrailfreight_reverse_check ;
-	CMNT : sw_ee3_colasrailfreight_reverse_check ;
-	GLAS : sw_ee3_colasrailfreight_reverse_check ;
-	PETR : sw_ee3_colasrailfreight_reverse_check ;
-	PLAS : sw_ee3_colasrailfreight_reverse_check ;
-	RFPR : sw_ee3_colasrailfreight_reverse_check ;
-	SAND : sw_ee3_colasrailfreight_reverse_check ;
-	CLAY : sw_ee3_colasrailfreight_reverse_check ;
-	GRVL : sw_ee3_colasrailfreight_reverse_check ;
-	COPR : sw_ee3_colasrailfreight_reverse_check ;
-	sw_ee3_rog_reverse_check ;
-}
-
 switch(FEAT_TRAINS, PARENT, sw_ee3_gfx_dbso_auto, current_year){
 	1948 .. 1966 : sw_ee3_brgreen_reverse_check ;
 	1967..1982  : sw_ee3_brblue_reverse_check ;
-	1987..1995  : sw_ee3_dbso_sector_gfx_decider ;
-	1996..2008  : sw_ee3_dbso_privatisation1_random ;
-	2009..4096  : sw_ee3_privatisation2_decider ;
+	1987..1995  : sw_ee3_regional_reverse_check ;
+	1996..2008  : sw_ee3_drs_reverse_check ;
+	2009..4096  : sw_ee3_drscompass_reverse_check ;
 	sw_ee3_brlargelogo_reverse_check ;
 }
 
@@ -2976,7 +2916,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfx_dbso_manual_check, livery_choice){
 
 //GFX DBSO check
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfx_dbso_check, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & (position_in_consist == 0)){
+switch(FEAT_TRAINS, SELF, sw_ee3_gfx_dbso_check, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & ((position_in_consist == 0) | (position_in_consist_from_end == 0))){
 	1 : sw_ee3_gfx_dbso_manual_check ;
 	sw_ee3_gfx_manual_check ;
 }
@@ -3142,58 +3082,16 @@ random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_largelogo){
 	1 : sw_ee3_gfxhc_dbso_standard_3 ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_sector_decider, most_common_cargo_type){
-	PASS : gfx_ee3_headcode_centre ;
-	sw_ee3_gfxhc_dbso_standard_3 ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_privatisation1_decider){
-	dependent : sw_ee3_dbso_privatisation1_random ;
-	2 : sw_ee3_gfxhc_dbso_standard_any ;
-	1 : sw_ee3_gfxhc_dbso_standard_3 ;
-}
-
-switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_privatisation2_decider, most_common_cargo_type){
-	PASS : sw_ee3_gfxhc_dbso_standard_any ;
-	URAN : sw_ee3_gfxhc_dbso_standard_any ;
-	NWST : sw_ee3_gfxhc_dbso_standard_any ;
-	GOOD : sw_ee3_gfxhc_dbso_standard_any ;
-	MAIL : sw_ee3_gfxhc_dbso_standard_any ;
-	VALU : sw_ee3_gfxhc_dbso_standard_any ;
-	GOLD : sw_ee3_gfxhc_dbso_standard_any ;
-	FOOD : sw_ee3_gfxhc_dbso_standard_any ;
-	STEL : sw_ee3_gfxhc_dbso_standard_3 ;
-	COAL : sw_ee3_gfxhc_dbso_standard_3 ;
-	IORE : sw_ee3_gfxhc_dbso_standard_3 ;
-	LVST : sw_ee3_gfxhc_dbso_standard_3 ;
-	OIL_ : sw_ee3_gfxhc_dbso_standard_3 ;
-	PAPR : sw_ee3_gfxhc_dbso_standard_3 ;
-	WOOD : sw_ee3_gfxhc_dbso_standard_3 ;
-	CORE : sw_ee3_gfxhc_dbso_standard_3 ;
-	AORE : sw_ee3_gfxhc_dbso_standard_3 ;
-	BDMT : sw_ee3_gfxhc_dbso_standard_3 ;
-	BRCK : sw_ee3_gfxhc_dbso_standard_3 ;
-	CMNT : sw_ee3_gfxhc_dbso_standard_3 ;
-	GLAS : sw_ee3_gfxhc_dbso_standard_3 ;
-	PETR : sw_ee3_gfxhc_dbso_standard_3 ;
-	PLAS : sw_ee3_gfxhc_dbso_standard_3 ;
-	RFPR : sw_ee3_gfxhc_dbso_standard_3 ;
-	SAND : sw_ee3_gfxhc_dbso_standard_3 ;
-	CLAY : sw_ee3_gfxhc_dbso_standard_3 ;
-	GRVL : sw_ee3_gfxhc_dbso_standard_3 ;
-	COPR : sw_ee3_gfxhc_dbso_standard_3 ;
-	sw_ee3_gfxhc_dbso_newlights_random ;
-}
-
 
 switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_auto, current_year){
 	1948 .. 1966 : sw_ee3_gfxhc_dbso_brgreen_random ;
 	1983..1986  : sw_ee3_gfxhc_dbso_largelogo ;
-	1987..1995  : sw_ee3_gfxhc_dbso_sector_decider ;
-	1996..2008  : sw_ee3_gfxhc_dbso_privatisation1_decider ;
-	2009..4096  : sw_ee3_gfxhc_dbso_privatisation2_decider ;
+	1987..1995  : gfx_ee3_headcode_centre ;
+	1996..2008  : sw_ee3_gfxhc_dbso_standard_any ;
+	2009..4096  : sw_ee3_gfxhc_dbso_standard_any ;
 	sw_ee3_gfxhc_dbso_standard_random ;
 }
+
 
 
 //Manual
@@ -3217,7 +3115,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_manual_check, livery_choice){
 
 //DBSO headcodes check
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_dbso_check, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & (position_in_consist == 0)){
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_dbso_check, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & ((position_in_consist == 0) | (position_in_consist_from_end == 0))){
 	1 : sw_ee3_gfxhc_dbso_manual_check ;
 	sw_ee3_gfxhc_manual_check ;
 }
@@ -3393,56 +3291,12 @@ random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_largelogo){
 	1 : sw_ee3_gfxlt_dbso_standard_3 ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_sector_decider, most_common_cargo_type){
-	PASS : sw_ee3_lights_centre_front ;
-	sw_ee3_gfxlt_dbso_standard_3 ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_privatisation1_decider){
-	dependent : sw_ee3_dbso_privatisation1_random ;
-	2 : sw_ee3_gfxlt_dbso_standard_any ;
-	1 : sw_ee3_gfxlt_dbso_standard_3 ;
-}
-
-switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_privatisation2_decider, most_common_cargo_type){
-	PASS : sw_ee3_gfxlt_dbso_standard_any ;
-	URAN : sw_ee3_gfxlt_dbso_standard_any ;
-	NWST : sw_ee3_gfxlt_dbso_standard_any ;
-	GOOD : sw_ee3_gfxlt_dbso_standard_any ;
-	MAIL : sw_ee3_gfxlt_dbso_standard_any ;
-	VALU : sw_ee3_gfxlt_dbso_standard_any ;
-	GOLD : sw_ee3_gfxlt_dbso_standard_any ;
-	FOOD : sw_ee3_gfxlt_dbso_standard_any ;
-	STEL : sw_ee3_gfxlt_dbso_standard_3 ;
-	COAL : sw_ee3_gfxlt_dbso_standard_3 ;
-	IORE : sw_ee3_gfxlt_dbso_standard_3 ;
-	LVST : sw_ee3_gfxlt_dbso_standard_3 ;
-	OIL_ : sw_ee3_gfxlt_dbso_standard_3 ;
-	PAPR : sw_ee3_gfxlt_dbso_standard_3 ;
-	WOOD : sw_ee3_gfxlt_dbso_standard_3 ;
-	CORE : sw_ee3_gfxlt_dbso_standard_3 ;
-	AORE : sw_ee3_gfxlt_dbso_standard_3 ;
-	BDMT : sw_ee3_gfxlt_dbso_standard_3 ;
-	BRCK : sw_ee3_gfxlt_dbso_standard_3 ;
-	CMNT : sw_ee3_gfxlt_dbso_standard_3 ;
-	GLAS : sw_ee3_gfxlt_dbso_standard_3 ;
-	PETR : sw_ee3_gfxlt_dbso_standard_3 ;
-	PLAS : sw_ee3_gfxlt_dbso_standard_3 ;
-	RFPR : sw_ee3_gfxlt_dbso_standard_3 ;
-	SAND : sw_ee3_gfxlt_dbso_standard_3 ;
-	CLAY : sw_ee3_gfxlt_dbso_standard_3 ;
-	GRVL : sw_ee3_gfxlt_dbso_standard_3 ;
-	COPR : sw_ee3_gfxlt_dbso_standard_3 ;
-	sw_ee3_gfxlt_dbso_newlights ;
-}
-
-
 switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_auto, current_year){
 	1948 .. 1966 : sw_ee3_gfxlt_dbso_brgreen_random ;
 	1983..1986  : sw_ee3_gfxlt_dbso_largelogo ;
-	1987..1995  : sw_ee3_gfxlt_dbso_sector_decider ;
-	1996..2008  : sw_ee3_gfxlt_dbso_privatisation1_decider ;
-	2009..4096  : sw_ee3_gfxlt_dbso_privatisation2_decider ;
+	1987..1995  : sw_ee3_lights_centre_front ;
+	1996..2008  : sw_ee3_gfxlt_dbso_standard_any ;
+	2009..4096  : sw_ee3_gfxlt_dbso_standard_any ;
 	sw_ee3_gfxlt_dbso_standard_random ;
 }
 
@@ -3471,7 +3325,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_manual_check, livery_choice){
 
 //DBSO lights check
 
-switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_dbso_check, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & (position_in_consist == 0)){
+switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_dbso_check, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & ((position_in_consist == 0) | (position_in_consist_from_end == 0))){
 	1 : sw_ee3_gfxlt_dbso_manual_check ;
 	sw_ee3_gfxlt_manual_check ;
 }
@@ -3621,57 +3475,13 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_manual_check, livery_choice){
 
 //DBSO colours
 
-
-switch(FEAT_TRAINS, PARENT, sw_ee3_colours_dbso_sectorised, most_common_cargo_type){
-	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
-	palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
-}
-
-random_switch(FEAT_TRAINS, PARENT, sw_ee3_colours_dbso_privatisation1_decider){
-	dependent : sw_ee3_dbso_privatisation1_random ;
-	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	1 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
-}
-
-switch(FEAT_TRAINS, PARENT, sw_ee3_colours_dbso_privatisation2_decider, most_common_cargo_type){
-	PASS : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	URAN : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	NWST : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	GOOD : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	MAIL : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	VALU : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	GOLD : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	FOOD : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
-	STEL : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	COAL : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	IORE : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	LVST : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	OIL_ : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	PAPR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	WOOD : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	CORE : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	AORE : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	BDMT : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	BRCK : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	CMNT : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	GLAS : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	PETR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	PLAS : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	RFPR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	SAND : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	CLAY : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	GRVL : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	COPR : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
-	palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-}
-
 switch(FEAT_TRAINS, PARENT, sw_ee3_colours_dbso_auto, current_year){
 	1948 .. 1966 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 	1967..1982  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1983..1986  : sw_ee3_largelogo_colours ;
-	1987..1995  : sw_ee3_colours_dbso_sectorised ;
-	1996..2008  : sw_ee3_colours_dbso_privatisation1_decider ;
-	2009..4096  : sw_ee3_colours_dbso_privatisation2_decider ;
+	1983..1986  : sw_ee3_dbso_largelogo_colours ;
+	1987..1995  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	1996..2008  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	2009..4096  : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
 
 
@@ -3699,7 +3509,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_colours_dbso_manual_check, livery_choice){
 
 //DBSO colours check
 
-switch(FEAT_TRAINS, SELF, sw_ee3_colours_dbso_check_2, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & (position_in_consist == 0)){
+switch(FEAT_TRAINS, SELF, sw_ee3_colours_dbso_check_2, ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & ((position_in_consist == 0) | (position_in_consist_from_end == 0))){
 	1 : sw_ee3_colours_dbso_manual_check ;
 	sw_ee3_colours_manual_check ;
 }
