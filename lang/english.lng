@@ -17,99 +17,104 @@ STR_PARAM_ALT_NAMES_DESC			:Use the names of the classes of train instead of the
 
 
 
-STR_PARAM_VEH_SELEC_NAME          :Vehicle selection
-STR_PARAM_VEH_SELEC_DESC          :Choose the selection of vehicles that will appear in game.
-STR_PARAM_VEH_SELEC_CHOICE_ONE    :Transport Tycoon Style
-STR_PARAM_VEH_SELEC_CHOICE_TWO    :Limited
-STR_PARAM_VEH_SELEC_CHOICE_THREE  :Normal
-STR_PARAM_VEH_SELEC_CHOICE_FOUR   :Extended
+STR_PARAM_VEH_SELEC_NAME         		 :Vehicle selection
+STR_PARAM_VEH_SELEC_DESC         		 :Choose the selection of vehicles that will appear in game.
+STR_PARAM_VEH_SELEC_CHOICE_ONE   		 :Transport Tycoon Style
+STR_PARAM_VEH_SELEC_CHOICE_TWO   		 :Limited
+STR_PARAM_VEH_SELEC_CHOICE_THREE 		 :Normal
+STR_PARAM_VEH_SELEC_CHOICE_FOUR  		 :Extended
 
-STR_LIVERY_BRGREEN                : British Railways {GOLD}(Green)
-STR_LIVERY_BRGREEN_YELLOW         : British Railways {GOLD}(Green with Yellow Panel)
-STR_LIVERY_BRELECTRIC             : British Railways {GOLD}(Electric Blue)
-STR_LIVERY_BRBLUE				  : British Railways {GOLD}(Blue)
-STR_LIVERY_BRBLUEGREY			  : British Railways {GOLD}(Blue and Grey)
-STR_LIVERY_BRBLUE_SPT			  : British Railways Strathclyde Partnership for Transport
-STR_LIVERY_BRBLUE_LOGO            : British Railways Large Logo {GOLD}(Blue)
-STR_LIVERY_BRRAILFREIGHT_LOGO     : British Railways Large Logo {GOLD}(Railfreight Grey)
-STR_LIVERY_BRBLUE_SUBTYPE		  : British Railways Blue {STRING}
-STR_LIVERY_INTERCITY			  : Intercity
-STR_LIVERY_INTERCITY_SWL		  : Intercity {GOLD}(Swallow)
-STR_LIVERY_REG_RAILWAYS			  : Regional Railways
-STR_LIVERY_NSE					  : Network South East
-STR_LIVERY_NSW					  : Network South East {GOLD}(White)
-STR_LIVERY_NSG					  : Network South East {GOLD}(Grey)
-STR_LIVERY_BR_SCOTRAIL            : Scotrail
-STR_LIVERY_RAILFREIGHT            : Railfreight Two-Tone Grey {STRING}
-STR_LIVERY_RAIL_EXPRESS           : Rail Express Systems
-STR_LIVERY_NCB                    : National Coal Board {GOLD}(Blue)
-STR_LIVERY_BSC                    : British Steel Corporation
-STR_LIVERY_VIRGIN_TRAINS		  : Virgin Trains
-STR_LIVERY_ARRIVA_XC			  : Arriva Cross Country
-STR_LIVERY_MIDLAND_MAINLINE_BLUE  : Midland Mainline {GOLD}(Blue)
-STR_LIVERY_EMT                    : East Midlands Trains
-STR_LIVERY_CENTRAL                : Central Trains
-STR_LIVERY_CONNEX				  : Connex
-STR_LIVERY_DRS					  : Direct Rail Services
-STR_LIVERY_DRS_COMPASS            : Direct Rail Services {GOLD}(Compass)
-STR_LIVERY_EWS                    : English, Welsh & Scottish {GOLD}(EWS)
-STR_LIVERY_DBSCHENKER             : DB Schenker Rail UK
-STR_LIVERY_DBCARGO                : DB Cargo UK
-STR_LIVERY_TPE_NEW				  : TransPennine Express
-STR_LIVERY_CAL_SLEEPER			  : Caledonian Sleeper
-STR_LIVERY_GBRF					  : First GBRf
-STR_LIVERY_LONDON_MIDLAND		  : London Midland
-STR_LIVERY_CHILTERN				  : Chiltern Railways
-STR_LIVERY_FREIGHTLINER           : Frieghtliner
-STR_LIVERY_FREIGHTLINER_POWERHAUL : Frieghtliner {GOLD}(Powerhaul)
-STR_LIVERY_COLAS				  : Colas Rail
-STR_LIVERY_GATEX				  : Gatwick Express
-STR_LIVERY_SE_BLUE				  : Southeastern {GOLD}(Blue)
-STR_LIVERY_SE_YELLOW			  : Southeastern {GOLD}(Yellow)
-STR_LIVERY_SE_YELLOW_GREY		  : Southeastern {GOLD}(Yellow with Stripe)
-STR_LIVERY_SE_REFURB			  : Southeastern {BLUE}(Refurbished)
-STR_LIVERY_WCRC					  : West Coast Railway Company
-STR_LIVERY_CRIMSON_CREAM		  : British Railways "Crimson Lake"
-STR_LIVERY_MAROON				  : British Railways Maroon
-STR_LIVERY_SWR					  : South Western Railway
-STR_LIVERY_SWT					  : South West Trains
-STR_LIVERY_SWT_STR				  : South West Trains {STRING}
-STR_444							  :Class 444
-STR_450							  :Class 450
-STR_LIVERY_SWT_REFURB			  : South West Trains (Refurbished)
-STR_LIVERY_SWT_HERITAGE			  : South West Trains {GOLD}(Heritage Blue)
-STR_LIVERY_N_SPIRIT               : Northern Spirit
-STR_LIVERY_NORTHERN               : Northern
-STR_LIVERY_NORTHERN_ARRIVA        : Northern {GOLD}(Arriva)
-STR_LIVERY_THAMESLINK             : Thameslink
-STR_LIVERY_TLB		   		      : Thameslink Blue
-STR_LIVERY_ROG_EUROPHENIX         : Rail Operations Group {GOLD}(Europhenix)
-STR_LIVERY_SILVERLINK	          : Silverlink
-STR_LIVERY_WAGN		              : West Anglia Great Northern
-STR_LIVERY_SOUTHERN	              : Southern
-STR_LIVERY_FCC  	              : First Capital Connect
-STR_LIVERY_FGE					  : First Great Eastern
-STR_LIVERY_FIRST_FAG              : First Great Western {GOLD}(Fag) {STRING}
-STR_LIVERY_FIRST_BARBIE           : First Great Western {GOLD}(Barbie) {STRING}
-STR_LIVERY_FIRST_FGW              : First Great Western {GOLD}(Corporate Blue) {STRING}
-STR_LIVERY_FIRST_TPE              : First TransPennine Express
-STR_LIVERY_FIRST_GWR              : Great Western Railway {STRING}
-STR_LIVERY_FIRST_SCOT_RAIL        : First Scot Rail {STRING}
-STR_LIVERY_SPT_ORANGE			  : Strathclyde Partnership for Transport {GOLD}(Orange) 
-STR_LIVERY_SPT_CARMINE_CREAM	  : Strathclyde Partnership for Transport {GOLD}(Carmine & Cream)
-STR_LIVERY_SCOTRAIL				  : Scotrail "Saltire"
-STR_LIVERY_ONE_ANGLIA			  : One Anglia
-STR_LIVERY_ABELLIO_GREATER_ANGLIA : Abellio Greater Anglia
-STR_LIVERY_TFL					  : TfL Rail
-STR_LIVERY_C2C					  : c2c
-STR_LIVERY_MERSEYRAIL			  : Merseyrail
-STR_LIVERY_MERSEYRAIL_REFERB	  : Merseyrail {GOLD}(Refurbished)
-STR_LIVERY_NETWORK_RAIL           : Network Rail
-STR_LIVERY_ATW                    : Arriva Trains Wales
-STR_LIVERY_ATW_REFURB             : Arriva Trains Wales {GOLD}(Refurbished)
-STR_LIVERY_ATW_EXEC               : Arriva Trains Wales {GOLD}(Executive)
-STR_LIVERY_GTR					  : GTR {GOLD}(Thameslink/Great Northern)
-STR_LIVERY_WYPTE				  : West Yorkshire Passenger Transport Executive
+STR_LIVERY_BRGREEN               		 : British Railways {GOLD}(Green)
+STR_LIVERY_BRGREEN_YELLOW        		 : British Railways {GOLD}(Green with Yellow Panel)
+STR_LIVERY_BRELECTRIC            		 : British Railways {GOLD}(Electric Blue)
+STR_LIVERY_BRBLUE				 		 : British Railways {GOLD}(Blue)
+STR_LIVERY_BRBLUEGREY			 		 : British Railways {GOLD}(Blue and Grey)
+STR_LIVERY_BRBLUE_SPT			 		 : British Railways Strathclyde Partnership for Transport
+STR_LIVERY_BRBLUE_LOGO           		 : British Railways Large Logo {GOLD}(Blue)
+STR_LIVERY_BRRAILFREIGHT_LOGO    		 : British Railways Large Logo {GOLD}(Railfreight Grey)
+STR_LIVERY_BRBLUE_SUBTYPE		 		 : British Railways Blue {STRING}
+STR_LIVERY_INTERCITY			 		 : Intercity
+STR_LIVERY_INTERCITY_SWL		 		 : Intercity {GOLD}(Swallow)
+STR_LIVERY_REG_RAILWAYS			 		 : Regional Railways
+STR_LIVERY_NSE					 		 : Network South East
+STR_LIVERY_NSW					 		 : Network South East {GOLD}(White)
+STR_LIVERY_NSG					 		 : Network South East {GOLD}(Grey)
+STR_LIVERY_BR_SCOTRAIL           		 : Scotrail
+STR_LIVERY_RAILFREIGHT           		 : Railfreight Two-Tone Grey {STRING}
+STR_LIVERY_RAIL_EXPRESS          		 : Rail Express Systems
+STR_LIVERY_NCB                   		 : National Coal Board {GOLD}(Blue)
+STR_LIVERY_BSC                   		 : British Steel Corporation
+STR_LIVERY_VIRGIN_TRAINS		 		 : Virgin Trains
+STR_LIVERY_ARRIVA_XC			 		 : Arriva Cross Country
+STR_LIVERY_MIDLAND_MAINLINE_BLUE 		 : Midland Mainline {GOLD}(Blue)
+STR_LIVERY_EMT                   		 : East Midlands Trains
+STR_LIVERY_CENTRAL               		 : Central Trains
+STR_LIVERY_CONNEX				 		 : Connex
+STR_LIVERY_DRS					 		 : Direct Rail Services
+STR_LIVERY_DRS_COMPASS           		 : Direct Rail Services {GOLD}(Compass)
+STR_LIVERY_EWS                   		 : English, Welsh & Scottish {GOLD}(EWS)
+STR_LIVERY_DBSCHENKER            		 : DB Schenker Rail UK
+STR_LIVERY_DBCARGO               		 : DB Cargo UK
+STR_LIVERY_TPE_NEW				 		 : TransPennine Express
+STR_LIVERY_CAL_SLEEPER			 		 : Caledonian Sleeper
+STR_LIVERY_GBRF					 		 : First GBRf
+STR_LIVERY_LONDON_MIDLAND		 		 : London Midland
+STR_LIVERY_LONDON_MIDLAND_STRING 		 : London Midland {STRING}
+STR_LIVERY_WEST_MIDLANDS_RAILWAY 		 : West Midlands Railway
+STR_LIVERY_WEST_MIDLANDS_RAILWAY_STRING	 : West Midlands Railway {STRING}
+STR_170									 :(Class 170)
+STR_172									 :(Class 172)
+STR_LIVERY_CHILTERN				 		 : Chiltern Railways
+STR_LIVERY_FREIGHTLINER          		 : Frieghtliner
+STR_LIVERY_FREIGHTLINER_POWERHAUL		 : Frieghtliner {GOLD}(Powerhaul)
+STR_LIVERY_COLAS				 		 : Colas Rail
+STR_LIVERY_GATEX				 		 : Gatwick Express
+STR_LIVERY_SE_BLUE				 		 : Southeastern {GOLD}(Blue)
+STR_LIVERY_SE_YELLOW			 		 : Southeastern {GOLD}(Yellow)
+STR_LIVERY_SE_YELLOW_GREY		 		 : Southeastern {GOLD}(Yellow with Stripe)
+STR_LIVERY_SE_REFURB			 		 : Southeastern {BLUE}(Refurbished)
+STR_LIVERY_WCRC					 		 : West Coast Railway Company
+STR_LIVERY_CRIMSON_CREAM		 		 : British Railways "Crimson Lake"
+STR_LIVERY_MAROON				 		 : British Railways Maroon
+STR_LIVERY_SWR					 		 : South Western Railway
+STR_LIVERY_SWT					 		 : South West Trains
+STR_LIVERY_SWT_STR				 		 : South West Trains {STRING}
+STR_444							 		 :Class 444
+STR_450							 		 :Class 450
+STR_LIVERY_SWT_REFURB			 		 : South West Trains (Refurbished)
+STR_LIVERY_SWT_HERITAGE			 		 : South West Trains {GOLD}(Heritage Blue)
+STR_LIVERY_N_SPIRIT              		 : Northern Spirit
+STR_LIVERY_NORTHERN              		 : Northern
+STR_LIVERY_NORTHERN_ARRIVA       		 : Northern {GOLD}(Arriva)
+STR_LIVERY_THAMESLINK            		 : Thameslink
+STR_LIVERY_TLB		   		     		 : Thameslink Blue
+STR_LIVERY_ROG_EUROPHENIX        		 : Rail Operations Group {GOLD}(Europhenix)
+STR_LIVERY_SILVERLINK	         		 : Silverlink
+STR_LIVERY_WAGN		             		 : West Anglia Great Northern
+STR_LIVERY_SOUTHERN	             		 : Southern
+STR_LIVERY_FCC  	             		 : First Capital Connect
+STR_LIVERY_FGE					 		 : First Great Eastern
+STR_LIVERY_FIRST_FAG             		 : First Great Western {GOLD}(Fag) {STRING}
+STR_LIVERY_FIRST_BARBIE          		 : First Great Western {GOLD}(Barbie) {STRING}
+STR_LIVERY_FIRST_FGW             		 : First Great Western {GOLD}(Corporate Blue) {STRING}
+STR_LIVERY_FIRST_TPE             		 : First TransPennine Express
+STR_LIVERY_FIRST_GWR             		 : Great Western Railway {STRING}
+STR_LIVERY_FIRST_SCOT_RAIL       		 : First Scot Rail {STRING}
+STR_LIVERY_SPT_ORANGE			 		 : Strathclyde Partnership for Transport {GOLD}(Orange) 
+STR_LIVERY_SPT_CARMINE_CREAM	 		 : Strathclyde Partnership for Transport {GOLD}(Carmine & Cream)
+STR_LIVERY_SCOTRAIL				 		 : Scotrail "Saltire"
+STR_LIVERY_ONE_ANGLIA			 		 : One Anglia
+STR_LIVERY_ABELLIO_GREATER_ANGLIA		 : Abellio Greater Anglia
+STR_LIVERY_TFL					 		 : TfL Rail
+STR_LIVERY_C2C					 		 : c2c
+STR_LIVERY_MERSEYRAIL			 		 : Merseyrail
+STR_LIVERY_MERSEYRAIL_REFERB	 		 : Merseyrail {GOLD}(Refurbished)
+STR_LIVERY_NETWORK_RAIL          		 : Network Rail
+STR_LIVERY_ATW                   		 : Arriva Trains Wales
+STR_LIVERY_ATW_REFURB            		 : Arriva Trains Wales {GOLD}(Refurbished)
+STR_LIVERY_ATW_EXEC              		 : Arriva Trains Wales {GOLD}(Executive)
+STR_LIVERY_GTR					 		 : GTR {GOLD}(Thameslink/Great Northern)
+STR_LIVERY_WYPTE				 		 : West Yorkshire Passenger Transport Executive
 
 STR_LIVERY_SLEEPER              :{BLACK}(Sleeper)
 STR_LIVERY_EMPTY	            : 
@@ -240,7 +245,7 @@ STR_NAME_142_ALT				:BR Class 142/143/144 (Diesel)
 STR_NAME_205_ALT				:BR Class 205/207 (Diesel Electric)
 STR_NAME_SUPER_SPRINTER_ALT		:BR Class 155/156 (Diesel)
 STR_NAME_EXPRESS_SPRINTER_ALT	:BR Class 158/159 (Diesel)
-STR_NAME_TURBOSTAR_ALT			:BR Class 168/172 (Diesel)
+STR_NAME_TURBOSTAR_ALT			:BR Class 168/170/172 (Diesel)
 STR_NAME_VOYAGER_ALT			:BR Class 220/221 (Diesel Electric)
 
 STR_NAME_PEP_ALT			:PEP 1972 Design EMU (Dual Voltage)

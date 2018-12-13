@@ -7794,6 +7794,17 @@ item (FEAT_TRAINS, item_expsprint, 158){
 //TURBOSTAR
 
 
+//00 - Chiltern Railways - a
+//01 - Central Trains
+//02 - Cross Country - a
+//03 - TransPennine Express
+//04 - First Scot RAIL
+//05 - ScotRail Saltaire
+//06 - Southern
+//dd  - London Midland (170) - a
+//08 - West Midlands Railway (170) - a
+//09 - London Midland (172) - a
+//10 - West Midlands Railway (172) - a
 
 template template_turbo_single(x,y){
 	[x+0,y,8,24,-3,-11] //North
@@ -7818,67 +7829,97 @@ template template_turbo_double(x,y){
 spriteset (cl168_cm_front, "gfx/DMU/class_168.png"){template_turbo_double(0,0) }
 spriteset (cl168_cm_back,  "gfx/DMU/class_168.png"){template_turbo_double(0,26)}
 spriteset (cl168_cm_mid,   "gfx/DMU/class_168.png"){template_turbo_single(0,52)}
-spriteset (cl172_lm_front, "gfx/DMU/class_172.png"){template_turbo_double(0,0) }
-spriteset (cl172_lm_back,  "gfx/DMU/class_172.png"){template_turbo_double(0,26)}
-spriteset (cl172_lm_mid,   "gfx/DMU/class_172.png"){template_turbo_single(0,52)}
+//spriteset (cl172_lm_front, "gfx/DMU/class_172.png"){template_turbo_double(0,0) }
+//spriteset (cl172_lm_back,  "gfx/DMU/class_172.png"){template_turbo_double(0,26)}
+//spriteset (cl172_lm_mid,   "gfx/DMU/class_172.png"){template_turbo_single(0,52)}
 
 spriteset (cl168_purchase, "gfx/DMU/class_168.png"){template_dualhead_purchase(88,52)}
-spriteset (cl172_purchase, "gfx/DMU/class_172.png"){template_dualhead_purchase(88,52)}
+//spriteset (cl172_purchase, "gfx/DMU/class_172.png"){template_dualhead_purchase(88,52)}
+
+spriteset (turbostar_lm_170				, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 050)}
+spriteset (turbostar_lm_170_mid			, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 075)}
+spriteset (turbostar_lm_172				, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 000)}
+spriteset (turbostar_lm_172_mid			, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 025)}
+spriteset (turbostar_wmr_172			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 050)}
+spriteset (turbostar_wmr_172_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 075)}
+
+spriteset (turbostar_headlight			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 100)}
+spriteset (turbostar_taillight			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 125)}
+
+spriteset (turbostar_purchase_lm_170	, "gfx/DMU/turbostar.png"){template_dualhead_purchase	( 269, 075)}
+spriteset (turbostar_purchase_lm_172	, "gfx/DMU/turbostar.png"){template_dualhead_purchase	( 090, 025)}
+spriteset (turbostar_purchase_wmr_172	, "gfx/DMU/turbostar.png"){template_dualhead_purchase	( 090, 075)}
+
 
 //Graphics
 
-switch(FEAT_TRAINS, SELF, sw_168_decider, position_in_consist_from_end){
+switch(FEAT_TRAINS, SELF, sw_168_old_2, position_in_consist_from_end){
 	0 : cl168_cm_back ;
 	cl168_cm_front ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_172_decider, position_in_consist_from_end){
-	0 : cl172_lm_back ;
-	cl172_lm_front ;
+switch(FEAT_TRAINS, SELF, sw_168_old_1, vehicle_type_id){ 9090 : cl168_cm_mid ; sw_168_old_2 ;}
+
+switch(FEAT_TRAINS, SELF, sw_170_lm_id_check	, vehicle_type_id ){ 9090 : turbostar_lm_170_mid ; turbostar_lm_170 ;}
+switch(FEAT_TRAINS, SELF, sw_172_lm_id_check	, vehicle_type_id ){ 9090 : turbostar_lm_172_mid ; turbostar_lm_172 ;}
+switch(FEAT_TRAINS, SELF, sw_172_wmr_id_check	, vehicle_type_id ){ 9090 : turbostar_wmr_172_mid ; turbostar_wmr_172 ;}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_168_auto, current_year){
+	0000..2006 : sw_168_old_1 ;
+	2018..4096 : sw_170_lm_id_check ;
+	sw_170_lm_id_check ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_168_gfx_auto, build_year){
-	1996..2009 : sw_168_decider ;
-	sw_172_decider ;
+switch(FEAT_TRAINS, SELF, sw_172_auto, current_year){
+	2018..4096 : sw_172_wmr_id_check ;
+	sw_172_lm_id_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_168_gfx_auto_year_check, build_year){
+	0000..2009 : sw_168_auto ;
+	sw_172_auto ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_168_gfx_manual, cargo_subtype){
-	0 : sw_168_decider ;
-	sw_172_decider ;
+	0	: sw_168_old_1 ;
+	9	: sw_172_lm_id_check ;
+	10	: sw_172_wmr_id_check ;
+	sw_170_lm_id_check ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_168_gfx_manual_check, livery_choice){
 	1 : sw_168_gfx_manual ;
-	sw_168_gfx_auto ;
+	sw_168_gfx_auto_year_check ;
 }
 
 
+//Sprite stack
 
-switch(FEAT_TRAINS, SELF, sw_168_gfx_trailer_auto, build_year){
-	1996..2009 : cl168_cm_mid ;
-	cl172_lm_mid ;
+switch(FEAT_TRAINS, SELF, sw_168_headlights, position_in_consist){ 0 : turbostar_headlight ;}
+switch(FEAT_TRAINS, SELF, sw_168_taillights, position_in_consist_from_end){ 0 : turbostar_taillight ;}
+
+switch(FEAT_TRAINS, SELF, sw_168_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_168_gfx_manual_check ;
+	1 : sw_168_headlights ;
+	2 : sw_168_taillights ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_168_gfx_trailer_manual, cargo_subtype){
-	0 : cl168_cm_mid ;
-	cl172_lm_mid ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_168_gfx_trailer_manual_check, livery_choice){
-	1 : sw_168_gfx_trailer_manual ;
-	sw_168_gfx_trailer_auto ;
-}
 
 //Purchase
 
 switch(FEAT_TRAINS, SELF, sw_168_purchase, current_year){
-	1996..2009 : cl168_purchase ;
-	cl172_purchase ;
+	0000..2006 : cl168_purchase ;
+	2007..2009 : turbostar_purchase_lm_170 ;
+	2010..2017 : turbostar_purchase_lm_172 ;
+	turbostar_purchase_wmr_172 ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_168_purchase_colours, current_year){
-	1996..2009 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
-	palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
+	1996..2006 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	2007..2017 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
+	palette_2cc(COLOUR_ORANGE, COLOUR_MAUVE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_168_purchase_2cc_check, colour_scheme_1){
@@ -7890,9 +7931,31 @@ switch(FEAT_TRAINS, SELF, sw_168_purchase_2cc_check, colour_scheme_1){
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_168_refit_text, cargo_subtype){
-	0 : string(STR_LIVERY_CHILTERN) ;
-	1 : string(STR_LIVERY_LONDON_MIDLAND) ;
+	0	: string(STR_LIVERY_CHILTERN) ;
+	1	: string(STR_LIVERY_CENTRAL) ;
+	2	: string(STR_LIVERY_ARRIVA_XC) ;
+	3	: string(STR_LIVERY_FIRST_TPE) ;
+	4	: string(STR_LIVERY_FIRST_SCOT_RAIL) ;
+	5	: string(STR_LIVERY_SCOTRAIL) ;
+	6	: string(STR_LIVERY_SOUTHERN) ;
+	7	: string(STR_LIVERY_LONDON_MIDLAND_STRING, string(STR_170)) ;
+	8	: string(STR_LIVERY_WEST_MIDLANDS_RAILWAY_STRING, string(STR_170)) ;
+	9	: string(STR_LIVERY_LONDON_MIDLAND_STRING, string(STR_172)) ;
+	10	: string(STR_LIVERY_WEST_MIDLANDS_RAILWAY_STRING, string(STR_172)) ;
+	CB_RESULT_NO_TEXT ;
 }
+
+//00 - Chiltern Railways - a
+//01 - Central Trains
+//02 - Cross Country - a
+//03 - TransPennine Express
+//04 - First Scot RAIL
+//05 - ScotRail Saltaire
+//06 - Southern
+//dd  - London Midland (170) - a
+//08 - West Midlands Railway (170) - a
+//09 - London Midland (172) - a
+//10 - West Midlands Railway (172) - a
 
 switch(FEAT_TRAINS, SELF, sw_168_refit_text_check, livery_choice){
 	1 : sw_168_refit_text ;
@@ -7901,13 +7964,22 @@ switch(FEAT_TRAINS, SELF, sw_168_refit_text_check, livery_choice){
 
 //Colour mapping
 
-switch(FEAT_TRAINS, SELF, sw_168_colours_auto, build_year){
-	1996..2009 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+switch(FEAT_TRAINS, SELF, sw_168_colours_auto, current_year){
+	1996..2006 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	2018..4096 : palette_2cc(COLOUR_ORANGE, COLOUR_MAUVE) ;
 	palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_168_colours_manual, cargo_subtype){
-	0 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	0	: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	1	: palette_2cc(COLOUR_GREEN, COLOUR_DARK_BLUE) ;
+	2	: palette_2cc(COLOUR_PINK, COLOUR_RED) ;
+	3	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	4	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	5	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	6	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	8	: palette_2cc(COLOUR_ORANGE, COLOUR_MAUVE) ;
+	10	: palette_2cc(COLOUR_ORANGE, COLOUR_MAUVE) ;
 	palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
 }
 
@@ -7954,7 +8026,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		tractive_effort_coefficient    : 0.1 ;
 		air_drag_coefficient           : 0.08 ;
 		length                         : 8 ;
-		misc_flags                     : bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		dual_headed                    : 1 ;
@@ -7962,7 +8034,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 	}
 	graphics{
 		can_attach_wagon:		sw_168_coupling_restrictions;
-		default                 : sw_168_gfx_manual_check ;
+		default                 : sw_168_sprite_stack ;
 		colour_mapping          : sw_168_colours_2cc_check ;
 		purchase                : sw_168_purchase ;
 		purchase_colour_mapping : sw_168_purchase_2cc_check ;
@@ -7973,7 +8045,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		purchase_running_cost_factor : 46 ;
 	}
 	livery_override (item_MU90){
-		default                     : sw_168_gfx_trailer_manual_check ;
+		default                     : sw_168_gfx_manual_check ;
 		colour_mapping              : sw_168_colours_2cc_check ;
 		power                       : 450;
 		cargo_capacity              : 80 ;
