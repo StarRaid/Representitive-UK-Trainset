@@ -1,0 +1,188 @@
+//Uranium mine
+
+spriteset(gfx_uran_mine_shaft_1				, "gfx/uran_mine.png"){[ 264,   0,  64, 122, -32, -89]}
+spriteset(gfx_uran_mine_shaft_2				, "gfx/uran_mine.png"){[ 334,   0,  64, 122, -32, -89]}
+spriteset(gfx_uran_mine_shaft_3				, "gfx/uran_mine.png"){[ 404,   0,  64, 122, -32, -89]}
+spriteset(gfx_uran_mine_building_1			, "gfx/uran_mine.png"){[ 132,   0,  64, 122, -58, -81]}
+spriteset(gfx_uran_mine_building_2			, "gfx/uran_mine.png"){[ 198,   0,  64, 122, -31, -74]}
+spriteset(gfx_uran_mine_chimney_building	, "gfx/uran_mine.png"){[ 0  ,   0,  64, 85 , -31, -54]}
+spriteset(gfx_uran_mine_sphere_tank			, "gfx/uran_mine.png"){[ 66 , 58 ,  64, 64 , -31, -33]}
+spriteset(gfx_uran_mine_shed				, "gfx/uran_mine.png"){[ 0  , 155,  67, 51 , -32, -20]}
+spriteset(gfx_uran_mine_empty_tile			, "gfx/uran_mine.png"){[ 0  , 208,  64, 40 , -31,  -9]}
+
+
+//Sprite layouts
+
+// 0, 0
+spritelayout spritelayout_uran_mine_shaft_1 {
+	ground {	sprite : gfx_fence_n ; }
+	building {	sprite : gfx_uran_mine_shaft_1 ; }
+}
+
+spritelayout spritelayout_uran_mine_shaft_2 {
+	ground {	sprite : gfx_fence_n ; }
+	building {	sprite : gfx_uran_mine_shaft_2 ; }
+}
+
+spritelayout spritelayout_uran_mine_shaft_3 {
+	ground {	sprite : gfx_fence_n ; }
+	building {	sprite : gfx_uran_mine_shaft_3 ; }
+}
+
+// 0, 1
+spritelayout spritelayout_uran_mine_building_1 {
+	ground {	sprite : gfx_fence_ne ; }
+	building {	sprite : gfx_uran_mine_building_2 ; }
+}
+// 1, 1
+spritelayout spritelayout_uran_mine_building_2 {
+	ground {	sprite : gfx_uran_mine_empty_tile ; }
+	building {	sprite : gfx_uran_mine_building_1 ; }
+}
+
+
+// 0, 2
+spritelayout spritelayout_uran_mine_chimeny_building {
+	ground {	sprite : gfx_fence_e ; }
+	building {	sprite : gfx_uran_mine_chimney_building ; }
+}
+
+// 1, 0
+spritelayout spritelayout_uran_mine_tank {
+	ground {	sprite : gfx_fence_nw ; }
+	building {	sprite : gfx_uran_mine_sphere_tank ; }
+}
+
+// 2, 0
+spritelayout spritelayout_uran_mine_shed {
+	ground {	sprite : gfx_uran_mine_empty_tile ; }
+	building {	sprite : gfx_uran_mine_shed ; }
+}
+
+// 1, 2
+spritelayout spritelayout_uran_mine_1_2 {
+	ground {	sprite : gfx_fence_se ; }
+}
+
+// 2, 2
+spritelayout spritelayout_uran_mine_2_2 {
+	ground {	sprite : gfx_fence_s ; }
+	building {	sprite : gfx_fence_s ; }
+}
+
+
+
+//Switches
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_uran_mine_gfx_decider, relative_pos){
+	relative_coord(1,0) : spritelayout_uran_mine_tank ;
+	relative_coord(2,0) : spritelayout_uran_mine_shed ;
+	relative_coord(0,1) : spritelayout_uran_mine_building_1 ;
+	relative_coord(1,1) : spritelayout_uran_mine_building_2 ;
+	relative_coord(2,1) : spritelayout_uran_mine_shed ;
+	relative_coord(0,2) : spritelayout_uran_mine_chimeny_building ;
+	relative_coord(1,2) : spritelayout_uran_mine_1_2 ;
+	relative_coord(2,2) : spritelayout_uran_mine_2_2 ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_uran_mine_shaft_animation, animation_frame){
+	1 : spritelayout_uran_mine_shaft_2 ;
+	2 : spritelayout_uran_mine_shaft_3 ;
+	4 : spritelayout_uran_mine_shaft_2 ;
+	5 : spritelayout_uran_mine_shaft_3 ;
+	spritelayout_uran_mine_shaft_1 ;
+}
+
+
+//Tiles
+
+item(FEAT_INDUSTRYTILES, uran_mine_tile){
+	property{
+		substitute			: 0 ;
+		land_shape_flags	: bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+	}
+	graphics{
+		default				: sw_uran_mine_gfx_decider ;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_uran_mine_shaft_next_frame, animation_frame){
+	0..6 : CB_RESULT_NEXT_FRAME ;
+	CB_RESULT_STOP_ANIMATION ;
+}
+
+item(FEAT_INDUSTRYTILES, uran_mine_shaft_tile){
+	property{
+		substitute			: 0 ;
+		land_shape_flags	: bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+		animation_info		: [ANIMATION_NON_LOOPING, 6] ;
+		animation_speed		: 2 ;
+		animation_triggers	: bitmask(ANIM_TRIGGER_INDTILE_DISTRIBUTES_CARGO) ;
+	}
+	graphics{
+		default				: sw_uran_mine_shaft_animation ;
+		anim_next_frame		: sw_uran_mine_shaft_next_frame ;
+	}
+}
+
+
+
+//Tile layout
+
+tilelayout tilelayout_uran_mine{
+	0,0 : uran_mine_shaft_tile ;
+	0,1 : uran_mine_tile ;
+	0,2 : uran_mine_tile ;
+	
+	1,0 : uran_mine_tile ;
+	1,1 : uran_mine_tile ;
+	1,2 : uran_mine_tile ;
+	
+	2,0 : uran_mine_tile ;
+	2,1 : uran_mine_tile ;
+	2,2 : uran_mine_tile ;
+}
+
+switch (FEAT_INDUSTRIES, SELF, uran_mine_water_check, water_distance){
+	0..64 : CB_RESULT_LOCATION_ALLOW ;
+	return string(STR_ERROR_NOT_NEAR_WATER) ;
+}
+
+switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change, transported_last_month_1){
+	0 : STORE_PERM(0x00, LOAD_PERM(0x00) - 1) ;
+	STORE_PERM(0x00, LOAD_PERM(0x00) + 1) ;
+}
+
+switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change_check, production_rate_1){
+	1..8 : sw_uran_monthly_change ;
+	0 : CB_RESULT_IND_PROD_MULTIPLY_BY_4 ;
+	CB_RESULT_IND_PROD_NO_CHANGE ;
+}
+
+produce(uran_mine_produce_monthly, 0, 0, 0, LOAD_PERM(0x00), 0);
+
+item(FEAT_INDUSTRIES, uran_mine){
+	property {
+		substitute            : 0x01 ;
+		layouts               : [tilelayout_uran_mine] ;
+		life_type             : IND_LIFE_TYPE_EXTRACTIVE ;
+		fund_cost_multiplier  : 37 ;
+		prod_cargo_types      : [cargotype("URAN")] ;
+		accept_cargo_types    : [] ;
+		conflicting_ind_types : [0x01] ;
+		prod_multiplier       : [8] ;
+		prob_random           : 3 ;
+		prob_in_game          : 2 ;
+		map_colour            : 255 ;
+		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
+		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
+		name                  : string(STR_URANMINE_NAME) ;
+		nearby_station_name   : string(STR_URANMINE_STATION_NAME) ;
+	}
+	graphics {
+		produce_256_ticks     : uran_mine_produce_monthly ;
+		location_check        : uran_mine_water_check ;
+		monthly_prod_change   : sw_uran_monthly_change_check ;
+		//random_prod_change    : nucrep_random_prod_change_switch ;
+	}
+}

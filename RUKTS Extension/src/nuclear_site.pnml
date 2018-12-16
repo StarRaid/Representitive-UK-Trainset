@@ -1,0 +1,332 @@
+//Graphics
+
+spriteset(gfx_nucrep_empty_tile         , "gfx/nuclear_reprocessing_site.png"){[ 0  , 208, 64, 40 , -31, -9  ]}
+spriteset(gfx_nucrep_empty_tile_loaded  , "gfx/nuclear_reprocessing_site.png"){[ 66 , 208, 64, 40 , -31, -10 ]}
+spriteset(gfx_nucrep_forklift           , "gfx/nuclear_reprocessing_site.png"){[ 156, 124, 64, 41 , -31, -9  ]}
+spriteset(gfx_nucrep_forklift_loaded    , "gfx/nuclear_reprocessing_site.png"){[ 156, 167, 64, 41 , -31, -10 ]}
+spriteset(gfx_nucrep_overpass           , "gfx/nuclear_reprocessing_site.png"){[ 69 , 124, 85, 60 , -31, -29 ]}
+spriteset(gfx_nucrep_shed               , "gfx/nuclear_reprocessing_site.png"){[ 0  , 155, 67, 51 , -32, -20 ]}
+spriteset(gfx_nucrep_sphere_tank        , "gfx/nuclear_reprocessing_site.png"){[ 66 , 58 , 64, 64 , -31, -33 ]}
+spriteset(gfx_nucrep_road_overlay       , "gfx/nuclear_reprocessing_site.png"){[ 111, 0  , 96, 47 , -31, -16 ]}
+spriteset(gfx_nucrep_cooling_tower      , "gfx/nuclear_reprocessing_site.png"){[ 66 , 0  , 43, 56 , -21, -32 ]}
+spriteset(gfx_nucrep_chimney_building_1 , "gfx/nuclear_reprocessing_site.png"){[ 342, 110, 64, 138, -31, -107]}
+spriteset(gfx_nucrep_chimney_building_2 , "gfx/nuclear_reprocessing_site.png"){[ 408, 110, 64, 138, -31, -107]}
+spriteset(gfx_nucrep_chimney_building_3 , "gfx/nuclear_reprocessing_site.png"){[ 474, 110, 64, 138, -31, -107]}
+spriteset(gfx_nucrep_chimney_building_4 , "gfx/nuclear_reprocessing_site.png"){[ 540, 110, 64, 138, -31, -107]}
+spriteset(gfx_nucrep_generic_building   , "gfx/nuclear_reprocessing_site.png"){[ 0  , 87 , 64, 66 , -31, -35 ]}
+
+
+//Sprite layouts
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_nucrep_container_colour_check, current_year){ 1960..1995 : palette_1cc(COLOUR_YELLOW) ; palette_1cc(COLOUR_WHITE) ; }
+
+spritelayout spritelayout_cooling_tower {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_cooling_tower ; }
+}
+
+spritelayout spritelayout_empty_tile {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	//building { sprite : gfx_nucrep_empty_tile ; }
+}
+
+spritelayout spritelayout_empty_tile_cargo {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_empty_tile_loaded ; recolour_mode : RECOLOUR_REMAP ; palette : palette_1cc(COLOUR_YELLOW) ; }
+}
+
+spritelayout spritelayout_forklift {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_forklift ; }
+}
+
+spritelayout spritelayout_forklift_cargo {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_forklift_loaded ; recolour_mode : RECOLOUR_REMAP ; palette : palette_1cc(COLOUR_YELLOW) ; }
+}
+
+spritelayout spritelayout_overpass {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_overpass ; }
+}
+
+spritelayout spritelayout_shed {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_shed ; recolour_mode : RECOLOUR_REMAP ; palette : palette_1cc(COLOUR_YELLOW) ; }
+}
+
+spritelayout spritelayout_sphere_tank {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_sphere_tank ; }
+}
+
+spritelayout spritelayout_road_overlay {
+	ground { sprite : gfx_nucrep_road_overlay ; }
+	//building { sprite : gfx_nucrep_road_overlay ; }
+}
+
+spritelayout spritelayout_chimney_building_1 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_chimney_building_1 ; }
+}
+
+spritelayout spritelayout_chimney_building_2 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_chimney_building_2 ; }
+}
+
+spritelayout spritelayout_chimney_building_3 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_chimney_building_3 ; }
+}
+
+spritelayout spritelayout_chimney_building_4 {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_chimney_building_4 ; }
+}
+
+spritelayout spritelayout_generic_building {
+	ground { sprite : gfx_nucrep_empty_tile ; }
+	building { sprite : gfx_nucrep_generic_building ; }
+}
+
+//Sprite layout switches
+
+switch(FEAT_INDUSTRYTILES, PARENT, sw_nucrep_empty_cargo_decider, waiting_cargo_1 > 0){
+	1 : spritelayout_empty_tile_cargo ;
+	spritelayout_empty_tile ;
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, sw_nucrep_forklift_cargo_decider, waiting_cargo_1 > 0){
+	1 : spritelayout_forklift_cargo ;
+	spritelayout_forklift ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_nucrep_chimney_animation_decider, animation_frame){
+	0 : spritelayout_chimney_building_1 ;
+	1 : spritelayout_chimney_building_2 ;
+	2 : spritelayout_chimney_building_3 ;
+	spritelayout_chimney_building_4 ;
+}
+
+
+
+//Tile graphics decider
+
+switch(FEAT_INDUSTRYTILES, SELF, nucrep_tile_gfx_decider, relative_pos){
+	relative_coord(0,0) : spritelayout_cooling_tower ;
+	relative_coord(0,1) : spritelayout_sphere_tank ;
+	relative_coord(0,2) : spritelayout_generic_building ;
+	relative_coord(0,3) : spritelayout_generic_building ;
+	relative_coord(0,4) : spritelayout_generic_building ;
+	relative_coord(0,5) : spritelayout_sphere_tank ;
+	
+	relative_coord(1,0) : spritelayout_cooling_tower ;
+	relative_coord(1,1) : spritelayout_shed ;
+	relative_coord(1,2) : spritelayout_shed ;
+	relative_coord(1,3) : spritelayout_shed ;
+	relative_coord(1,4) : spritelayout_shed ;
+	relative_coord(1,5) : sw_nucrep_forklift_cargo_decider ;
+	//Skip a row
+	relative_coord(3,0) : spritelayout_cooling_tower ;
+	relative_coord(3,1) : spritelayout_chimney_building_1 ;
+	relative_coord(3,2) : sw_nucrep_forklift_cargo_decider ;
+	relative_coord(3,3) : spritelayout_overpass ;
+	relative_coord(3,4) : sw_nucrep_empty_cargo_decider ;
+	relative_coord(3,5) : sw_nucrep_empty_cargo_decider ;
+	
+	relative_coord(4,0) : spritelayout_cooling_tower ;
+	relative_coord(4,1) : spritelayout_chimney_building_1 ;
+	relative_coord(4,2) : sw_nucrep_empty_cargo_decider ;
+	relative_coord(4,3) : spritelayout_shed ;
+	relative_coord(4,4) : spritelayout_chimney_building_1 ;
+	relative_coord(4,5) : sw_nucrep_forklift_cargo_decider ;
+	//Skip a row
+	relative_coord(6,0) : spritelayout_road_overlay ;
+	relative_coord(6,1) : spritelayout_road_overlay ;
+	relative_coord(6,2) : spritelayout_road_overlay ;
+	relative_coord(6,3) : spritelayout_road_overlay ;
+	relative_coord(6,4) : spritelayout_road_overlay ;
+	relative_coord(6,5) : spritelayout_road_overlay ;
+}
+
+
+//Industry tiles
+
+item(FEAT_INDUSTRYTILES, nucrep_tile){
+	property{
+		substitute       : 0 ;
+		accepted_cargos  : [[NWST, 8]] ;
+		land_shape_flags : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+	}
+	graphics{
+		default : nucrep_tile_gfx_decider ;
+	}
+}
+
+/*
+item(FEAT_INDUSTRYTILES, nucrep_cooling_tower){
+	property{
+		substitute         : 0 ;
+		accepted_cargos    : [] ;
+		land_shape_flags   : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+	}
+	graphics{
+		default      : nucrep_tile_gfx_decider ;
+	}
+}
+*/
+
+switch (FEAT_INDUSTRYTILES, SELF, nucrep_chimney_animation, animation_frame) {
+	0..2 : CB_RESULT_NEXT_FRAME ;
+	return 0 ;
+}
+
+item(FEAT_INDUSTRYTILES, nucrep_chimney){
+	property{
+		substitute       : 0x07 ;
+		accepted_cargos  : [[NWST, 8]] ;
+		land_shape_flags : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+		animation_info     : [ANIMATION_LOOPING, 4] ;
+		animation_speed    : 2 ;
+		animation_triggers : bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP) ;
+	}
+	graphics{
+		default         : sw_nucrep_chimney_animation_decider ;
+		anim_next_frame : nucrep_chimney_animation ;
+		//anim_control    : CB_RESULT_START_ANIMATION ;
+	}
+}
+
+
+//Tile layout
+
+tilelayout tilelayout_nucrep_site_big{
+	0,0 : nucrep_tile ;
+	0,1 : nucrep_tile ;
+	0,2 : nucrep_tile ;
+	0,3 : nucrep_tile ;
+
+	1,0 : nucrep_tile ;
+	1,1 : nucrep_tile ;
+	1,2 : nucrep_tile ;
+	1,3 : nucrep_tile ;
+
+	3,0 : nucrep_tile ;
+	3,1 : nucrep_chimney ;  //chimney
+	3,2 : nucrep_tile ;
+	3,3 : nucrep_tile ;
+      
+	4,0 : nucrep_tile ;
+	4,1 : nucrep_chimney ; //chimney
+	4,2 : nucrep_tile ;
+	4,3 : nucrep_tile ;
+	  
+	6,0 : nucrep_tile ;
+	6,1 : nucrep_tile ;
+	6,2 : nucrep_tile ;
+	6,3 : nucrep_tile ;
+}
+
+tilelayout tilelayout_nucrep_site_medium{
+	0,0 : nucrep_tile ;
+	0,1 : nucrep_tile ;
+	0,2 : nucrep_tile ;
+	0,3 : nucrep_tile ;
+	0,4 : nucrep_tile ;
+	0,5 : nucrep_tile ;
+
+	1,0 : nucrep_tile ;
+	1,1 : nucrep_tile ;
+	1,2 : nucrep_tile ;
+	1,3 : nucrep_tile ;
+	1,4 : nucrep_tile ;
+	1,5 : nucrep_tile ;
+
+	3,0 : nucrep_tile ;
+	3,1 : nucrep_chimney ; //chimney
+	3,2 : nucrep_tile ;
+	3,3 : nucrep_tile ;
+	3,4 : nucrep_tile ;
+	3,5 : nucrep_tile ;
+      
+	4,0 : nucrep_tile ;
+	4,1 : nucrep_chimney ; //chimney
+	4,2 : nucrep_tile ;
+	4,3 : nucrep_tile ;
+	4,4 : nucrep_chimney ; //chimney
+	4,5 : nucrep_tile ;
+}
+
+tilelayout tilelayout_nucrep_site_small{
+	0,0 : nucrep_tile ;
+	0,1 : nucrep_tile ;
+	0,2 : nucrep_tile ;
+	0,3 : nucrep_tile ;
+	0,4 : nucrep_tile ;
+	0,5 : nucrep_tile ;
+
+	1,0 : nucrep_tile ;
+	1,1 : nucrep_tile ;
+	1,2 : nucrep_tile ;
+	1,3 : nucrep_tile ;
+	1,4 : nucrep_tile ;
+	1,5 : nucrep_tile ;
+}
+
+ /* Every month, the counter is increased. The counter is reset to zero whenever the power plant
+    receives cargo. When the counter reaches 61, the industry will close when the random production
+    change callback is called. */
+ 
+ /* When we receive cargo, the counter is reset. */
+ produce(nucrep_cargo_arrive_produce, 0, 0, 0, 0, STORE_PERM(0, 0x00));
+ 
+ /* Every month the counter is increased. */
+ switch (FEAT_INDUSTRIES, SELF, sw_nucrep_monthly_prod_change_switch, STORE_PERM(LOAD_PERM(0x00) + 1, 0x00)) {
+ 	return CB_RESULT_IND_PROD_NO_CHANGE;
+ }
+ 
+ switch (FEAT_INDUSTRIES, SELF, sw_nucrep_monthly_prod_change_check, waiting_cargo_1){
+	0 : sw_nucrep_monthly_prod_change_switch ;
+	CB_RESULT_IND_PROD_NO_CHANGE ;
+ }
+ 
+ /* Only check industry closure if the counter is greater than 60. */
+ switch (FEAT_INDUSTRIES, SELF, sw_nucrep_random_prod_change_switch, LOAD_PERM(0x00)) {
+ 	0..60: return CB_RESULT_IND_PROD_NO_CHANGE;
+ 	return CB_RESULT_IND_PROD_CLOSE;
+ }
+
+switch (FEAT_INDUSTRIES, SELF, sw_nucrep_water_check, water_distance){
+	0..32 : CB_RESULT_LOCATION_ALLOW ;
+	return string(STR_ERROR_NOT_NEAR_WATER) ;
+}
+
+produce(nucrep_produce_monthly, 2, 0, 0, 0, 0);
+
+item(FEAT_INDUSTRIES, nuclear_reprocessing_site, 0){
+	property {
+		substitute            : 0x01 ;
+		layouts               : [tilelayout_nucrep_site_big, tilelayout_nucrep_site_medium, tilelayout_nucrep_site_small] ;
+		life_type             : IND_LIFE_TYPE_BLACK_HOLE ;
+		fund_cost_multiplier  : 255 ;
+		prod_cargo_types      : [] ;
+		accept_cargo_types    : [cargotype("NWST")] ;
+		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
+		prob_map_gen           : 3 ;
+		prob_in_game          : 1 ;
+		map_colour            : 208 ;
+		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
+		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
+		name                  : string(STR_NUCPROC_NAME) ;
+		nearby_station_name   : string(STR_NUCPROC_STATION_NAME) ;
+	}
+	graphics {
+		produce_cargo_arrival : nucrep_cargo_arrive_produce ;
+		produce_256_ticks     : nucrep_produce_monthly ;
+		location_check        : sw_nucrep_water_check ;
+		monthly_prod_change   : sw_nucrep_monthly_prod_change_check ;
+		random_prod_change    : sw_nucrep_random_prod_change_switch ;
+		//colour                : sw_nucrep_colour_check ;
+	}
+}

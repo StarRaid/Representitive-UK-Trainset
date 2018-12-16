@@ -1,0 +1,110 @@
+grf{
+	grfid                  : "RTNA" ;
+	name                   : string(STR_GRF_NAME) ;
+	desc                   : string(STR_GRF_DESC) ;
+	version                : 4 ;
+	min_compatible_version : 4 ;
+}
+
+//Cargo table
+
+cargotable {
+//Default cargos
+   PASS, MAIL, COAL, FOOD, GOLD, GOOD, GRAI, IORE, LVST, OIL_, PAPR, STEL, VALU, WHEA, WOOD,
+
+//Tropical cargos
+   CORE, DIAM, FRUT, MAIZ, RUBR, WATR, 
+
+//ECS
+   AORE, BDMT, BRCK, CERA, CERE, CMNT, DYES, FERT, FICR, FISH, GLAS, LIME, OLSD, PETR, PLAS, POTA, RFPR, SAND, SULP, TOUR, VEHI, WDPR, WOOL, 
+   
+//FIRS
+   BEER, CLAY, ENSP, FMSP, FRVG, GRVL, MILK, MNSP, PHOS, PORE, RCYC, SCMT, SGBT, SGCN, JAVA, COPR, SUGR,
+   
+//Nuclear stuff
+	URAN, NWST
+}
+
+//Rail-type table
+
+railtypetable {
+    RAIL, 
+	ELRL,
+	SAA3: ["3RDR", ELRL],
+	SAAZ: ["3RDC", ELRL],
+	SAA4: [SAA3, ELRL],
+	NAAN: [NAAN, NRGL, RAIL]
+}
+
+
+
+//Uranium cargo
+
+spriteset(gfx_nwst_cargo_icon, "gfx/nuclear_reprocessing_site.png"){[69, 186, 10, 10, 0, 0]}
+
+
+item(FEAT_CARGOS, cargo_uranium, 30){
+	property{
+		number                    : 30 ;
+		type_name                 : string(STR_URAN_NAME) ;
+		unit_name                 : string(STR_URAN_NAME) ;
+		units_of_cargo            : TTD_STR_TONS ;
+		items_of_cargo            : string(STR_URAN_ITEMS_OF_CARGO) ;
+		type_abbreviation         : string(STR_URAN_ABBREV) ;
+		sprite                    : NEW_CARGO_SPRITE ;
+		weight                    : 4 ;
+		penalty_lowerbound        : 10 ;
+		single_penalty_length     : 2 ;
+		price_factor              : 190 ;
+		station_list_colour       : 205 ;
+		cargo_payment_list_colour : 205 ;
+		is_freight                : 1 ;
+		cargo_classes             : bitmask(CC_HAZARDOUS) ;
+		cargo_label               : "URAN" ;
+		capacity_multiplier       : 0.5 ;
+	}
+	graphics{
+		default : gfx_nwst_cargo_icon ;
+	}
+}
+
+
+//Nuclear waste cargo
+
+item(FEAT_CARGOS, cargo_nuclear_waste, 31){
+	property{
+		number                    : 31 ;
+		type_name                 : string(STR_NWST_NAME) ;
+		unit_name                 : string(STR_NWST_NAME) ;
+		units_of_cargo            : TTD_STR_TONS ;
+		items_of_cargo            : string(STR_NWST_ITEMS_OF_CARGO) ;
+		type_abbreviation         : string(STR_NWST_ABBREV) ;
+		sprite                    : NEW_CARGO_SPRITE ;
+		weight                    : 3 ;
+		penalty_lowerbound        : 6 ;
+		single_penalty_length     : 4 ;
+		price_factor              : 215 ;
+		station_list_colour       : 208 ;
+		cargo_payment_list_colour : 208 ;
+		is_freight                : 1 ;
+		cargo_classes             : bitmask(CC_HAZARDOUS) ;
+		cargo_label               : "NWST" ;
+		capacity_multiplier       : 0.5 ;
+	}
+	graphics{
+		default : gfx_nwst_cargo_icon ;
+	}
+}
+
+
+spriteset(gfx_fence_ne         , "gfx/base_tile.png"){[ 66 , 0  , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_se         , "gfx/base_tile.png"){[ 66 , 41 , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_sw         , "gfx/base_tile.png"){[ 0  , 41 , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_nw         , "gfx/base_tile.png"){[ 0  , 0  , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_e          , "gfx/base_tile.png"){[ 198, 0  , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_s          , "gfx/base_tile.png"){[ 198, 41 , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_w          , "gfx/base_tile.png"){[ 132, 41 , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_n          , "gfx/base_tile.png"){[ 132, 0  , 64, 40 , -31, -9  ]}
+
+
+

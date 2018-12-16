@@ -1,9 +1,12 @@
+# 1 "ruktsna.pnml"
+
+# 1 "src/header.pnml" 1
 grf{
 	grfid                  : "RTNA" ;
 	name                   : string(STR_GRF_NAME) ;
 	desc                   : string(STR_GRF_DESC) ;
-	version                : 3 ;
-	min_compatible_version : 0 ;
+	version                : 4 ;
+	min_compatible_version : 4 ;
 }
 
 //Cargo table
@@ -25,10 +28,20 @@ cargotable {
 	URAN, NWST
 }
 
+//Rail-type table
+
+railtypetable {
+    RAIL, 
+	ELRL,
+	SAA3: ["3RDR", ELRL],
+	SAAZ: ["3RDC", ELRL],
+	SAA4: [SAA3, ELRL],
+	NAAN: [NAAN, NRGL, RAIL]
+}
 
 
 
-//Nuclear waste cargo
+//Uranium cargo
 
 spriteset(gfx_nwst_cargo_icon, "gfx/nuclear_reprocessing_site.png"){[69, 186, 10, 10, 0, 0]}
 
@@ -42,21 +55,24 @@ item(FEAT_CARGOS, cargo_uranium, 30){
 		items_of_cargo            : string(STR_URAN_ITEMS_OF_CARGO) ;
 		type_abbreviation         : string(STR_URAN_ABBREV) ;
 		sprite                    : NEW_CARGO_SPRITE ;
-		weight                    : 7 ;
-		penalty_lowerbound        : 60 ;
-		single_penalty_length     : 200 ;
-		price_factor              : 3000 ;
+		weight                    : 4 ;
+		penalty_lowerbound        : 10 ;
+		single_penalty_length     : 2 ;
+		price_factor              : 190 ;
 		station_list_colour       : 205 ;
 		cargo_payment_list_colour : 205 ;
 		is_freight                : 1 ;
 		cargo_classes             : bitmask(CC_HAZARDOUS) ;
 		cargo_label               : "URAN" ;
-		capacity_multiplier       : 12 ;
+		capacity_multiplier       : 0.5 ;
 	}
 	graphics{
 		default : gfx_nwst_cargo_icon ;
 	}
 }
+
+
+//Nuclear waste cargo
 
 item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 	property{
@@ -67,16 +83,16 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 		items_of_cargo            : string(STR_NWST_ITEMS_OF_CARGO) ;
 		type_abbreviation         : string(STR_NWST_ABBREV) ;
 		sprite                    : NEW_CARGO_SPRITE ;
-		weight                    : 5 ;
-		penalty_lowerbound        : 60 ;
-		single_penalty_length     : 200 ;
-		price_factor              : 4000 ;
+		weight                    : 3 ;
+		penalty_lowerbound        : 6 ;
+		single_penalty_length     : 4 ;
+		price_factor              : 215 ;
 		station_list_colour       : 208 ;
 		cargo_payment_list_colour : 208 ;
 		is_freight                : 1 ;
 		cargo_classes             : bitmask(CC_HAZARDOUS) ;
 		cargo_label               : "NWST" ;
-		capacity_multiplier       : 10 ;
+		capacity_multiplier       : 0.5 ;
 	}
 	graphics{
 		default : gfx_nwst_cargo_icon ;
@@ -84,117 +100,122 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 }
 
 
+spriteset(gfx_fence_ne         , "gfx/base_tile.png"){[ 66 , 0  , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_se         , "gfx/base_tile.png"){[ 66 , 41 , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_sw         , "gfx/base_tile.png"){[ 0  , 41 , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_nw         , "gfx/base_tile.png"){[ 0  , 0  , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_e          , "gfx/base_tile.png"){[ 198, 0  , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_s          , "gfx/base_tile.png"){[ 198, 41 , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_w          , "gfx/base_tile.png"){[ 132, 41 , 64, 40 , -31, -9  ]}
+spriteset(gfx_fence_n          , "gfx/base_tile.png"){[ 132, 0  , 64, 40 , -31, -9  ]}
 
 
 
+# 1 "ruktsna.pnml" 2
+# 1 "src/narrow_gauge.pnml" 1
+//Narrow Gauge Tracks
 
+//Graphics
 
-//Power plant modification
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-produce(produce_power_plant_none   , 0, 0, 8 , 0 ,  0);
-produce(produce_power_plant_low    , 0, 0, 10, 4 ,  0);
-produce(produce_power_plant_medium , 0, 0, 12, 7 , 0);
-produce(produce_power_plant_high   , 0, 0, 14, 10, 0);
-produce(produce_power_plant_arrival, 9999, 9999, 0, 0, 0);
-
-switch(FEAT_INDUSTRIES, SELF, sw_power_plant_produce, waiting_cargo_3){
-	0       : produce_power_plant_none ;
-	1..40   : produce_power_plant_high ;
-	41..80  : produce_power_plant_medium ;
-	81..110 : produce_power_plant_low ;
+spriteset(gfx_narrow_track, "gfx/narrow_gauge.png"){
+	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
+	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
+	[ 100, 72 , 40 , 7  , -19,  4  ] //Horizontal Top
+	[ 150, 72 , 40 , 7  , -19, 20  ] //Horizontal Bottom
+	[ 200, 72 , 12 , 19 , 11 ,  6  ] //Vertical Right
+	[ 224, 72 , 12 , 19 , -21,  6  ] //Vertical Left
+	[ 259, 72 , 36 , 27 , -17, -2  ] //Slope NE
+	[ 342, 72 , 37 , 12 , -18,  6  ] //Slope SE
+	[ 383, 72 , 37 , 12 , -19,  6  ] //Slope SW
+	[ 299, 72 , 36 , 27 , -17, -2  ] //Slope NW
 }
 
-item(FEAT_INDUSTRIES, power_plant, 0x01){
+spriteset(gfx_narrow_trackbed, "gfx/narrow_gauge.png"){
+	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
+	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
+	[ 100, 72 , 40 , 7  , -19,  4  ] //Horizontal Top
+	[ 150, 72 , 40 , 7  , -19, 20  ] //Horizontal Bottom
+	[ 200, 72 , 12 , 19 , 11 ,  6  ] //Vertical Right
+	[ 224, 72 , 12 , 19 , -21,  6  ] //Vertical Left
+	[ 259, 72 , 36 , 27 , -17, -2  ] //Slope NE
+	[ 342, 72 , 37 , 12 , -18,  6  ] //Slope SE
+	[ 383, 72 , 37 , 12 , -19,  6  ] //Slope SW
+	[ 299, 72 , 36 , 27 , -17, -2  ] //Slope NW
+	[ 40 , 98 , 40 , 21 , -19, 5   ] //Cross over
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+}
+
+spriteset(gfx_narrow_bridges, "gfx/narrow_gauge.png"){
+	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
+	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
+	[ 259, 72 , 36 , 27 , -17, -2  ] //Slope NE
+	[ 342, 72 , 37 , 12 , -18,  6  ] //Slope SE
+	[ 383, 72 , 37 , 12 , -19,  6  ] //Slope SW
+	[ 299, 72 , 36 , 27 , -17, -2  ] //Slope NW
+	[ 40 , 98 , 40 , 21 , -19, 5   ] //Cross over
+}
+
+spriteset(gfx_narrow_tunnels, "gfx/narrow_gauge.png"){
+	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
+	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
+	[ 0  , 72 , 40 , 21 , -19,  5  ] //North East
+	[ 50 , 72 , 40 , 21 , -19,  5  ] //North West
+}
+
+spriteset(gfx_narrow_level_crossing, "gfx/narrow_gauge.png"){
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+	[ 0  , 72 , 1  , 1  , 0  , 0   ] 
+}
+
+/*
+spriteset(gfx_narrow_track_diag_y, "gfx/TRACKS/narrow_gauge.png"){}
+spriteset(gfx_narrow_track_hori_s, "gfx/TRACKS/narrow_gauge.png"){}
+spriteset(gfx_narrow_track_hori_n, "gfx/TRACKS/narrow_gauge.png"){}
+spriteset(gfx_narrow_track_vert_l, "gfx/TRACKS/narrow_gauge.png"){}
+spriteset(gfx_narrow_track_vert_r, "gfx/TRACKS/narrow_gauge.png"){}
+*/
+
+
+item(FEAT_RAILTYPES, narrow_rail, 5) {
 	property {
-		substitute          : 0x01 ;
-		override            : 0x01 ;
-		life_type           : IND_LIFE_TYPE_BLACK_HOLE ;
-		accept_cargo_types  : [cargotype("COAL"), cargotype("OIL_"), cargotype("URAN")];
-		prod_cargo_types    : [cargotype("NWST")] ;
-		nearby_station_name : string(STR_POWER_STATION_STATION_NAME) ;
-	}	
+		label                     : "NAAN" ;
+		name                      : string(STR_NAAN_NAME) ;
+		menu_text                 : string(STR_NAAN_NAME) ;
+		build_window_caption      : string(STR_NAAN_BUILD_NAME) ;
+		autoreplace_text          : string(STR_NAAN_REPLACE_NAME) ;
+		new_engine_text           : string(STR_NAAN_NEW_TRAIN) ;
+		compatible_railtype_list  : ["NAAN", "NRGL"] ;
+		powered_railtype_list     : ["NAAN", "NRGL"] ;
+		curve_speed_multiplier    : 1 ;
+		station_graphics          : RAILTYPE_STATION_NORMAL ;
+		construction_cost         : 40 ;
+		speed_limit               : 50 mph ;
+		acceleration_model        : ACC_MODEL_RAIL ;
+		railtype_flags            : bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		//introduction_date         : date(1869,1,1) ;
+	}
 	graphics {
-		produce_cargo_arrival : produce_power_plant_arrival ;
-		produce_256_ticks     : sw_power_plant_produce ;
+		track_overlay   : gfx_narrow_track ;
+		underlay        : gfx_narrow_trackbed ;
+		bridge_surfaces : gfx_narrow_bridges ;
+		tunnels         : gfx_narrow_tunnels ;
+		level_crossings : gfx_narrow_level_crossing ;
+		//depots          : 
+		//fences          : 
 	}
 }
-
-*/
-
-
-
-
-//Smoke effects
-
-spriteset(gfx_smoke_1, "gfx/smoke.png"){[ 0  , 0  , 50 , 60 , -25 , -40 ]}
-spriteset(gfx_smoke_2, "gfx/smoke.png"){[ 52 , 0  , 50 , 60 , -25 , -40 ]}
-spriteset(gfx_smoke_3, "gfx/smoke.png"){[ 104, 0  , 50 , 60 , -25 , -40 ]}
-spriteset(gfx_smoke_4, "gfx/smoke.png"){[ 156, 0  , 50 , 60 , -25 , -40 ]}
-spriteset(gfx_smoke_5, "gfx/smoke.png"){[ 208, 0  , 50 , 60 , -25 , -40 ]}
-spriteset(gfx_smoke_6, "gfx/smoke.png"){[ 260, 0  , 50 , 60 , -25 , -40 ]}
-spriteset(gfx_smoke_7, "gfx/smoke.png"){[ 312, 0  , 50 , 60 , -25 , -40 ]}
-spriteset(gfx_smoke_8, "gfx/smoke.png"){[ 364, 0  , 50 , 60 , -25 , -40 ]}
-
-/*
-spritelayout smoke_1 {
-	ground { sprite : gfx_nucrep_empty_tile ; }
-	building { sprite : gfx_smoke_1 ; }
-}
-
-spritelayout smoke_2 {
-	ground { sprite : gfx_nucrep_empty_tile ; }
-	building { sprite : gfx_smoke_2 ; }
-}
-
-spritelayout smoke_3 {
-	ground { sprite : gfx_nucrep_empty_tile ; }
-	building { sprite : gfx_smoke_3 ; }
-}
-
-spritelayout smoke_4 {
-	ground { sprite : gfx_nucrep_empty_tile ; }
-	building { sprite : gfx_smoke_4 ; }
-}
-
-
-switch(FEAT_INDUSTRYTILES, SELF, sw_smoke_medium, animation_frame){
-	1 : smoke_2 ;
-	2 : smoke_3 ;
-	3 : smoke_4 ;
-	smoke_1 ;
-}
-
-
-		animation_info     : [ANIMATION_LOOPING, 4] ;
-		animation_triggers : bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP) ;
-		
-		default         : sw_smoke_medium ;
-		anim_next_frame : sw_smoke_medium_next_frame ;
-*/
-
-
-
-
-
-
+# 1 "ruktsna.pnml" 2
+# 1 "src/nuclear_site.pnml" 1
 //Graphics
 
 spriteset(gfx_nucrep_empty_tile         , "gfx/nuclear_reprocessing_site.png"){[ 0  , 208, 64, 40 , -31, -9  ]}
@@ -527,15 +548,8 @@ item(FEAT_INDUSTRIES, nuclear_reprocessing_site, 0){
 		//colour                : sw_nucrep_colour_check ;
 	}
 }
-
-
-
-
-
-
-
-
-
+# 1 "ruktsna.pnml" 2
+# 1 "src/power_station.pnml" 1
 //Graphics
 
 template template_btrsea(x, y){ [ x  , y  , 64 , 122, -31 , -91] }
@@ -613,12 +627,33 @@ spritelayout spritelayout_btrsea_3_0_pig_2 { ground { sprite : gfx_nucrep_empty_
 spritelayout spritelayout_btrsea_3_0_pig_3 { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_pig_3 ; zextent : 80 ;} }
 spritelayout spritelayout_btrsea_3_0_pig_4 { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_3_0_pig_4 ; zextent : 80 ;} }
 
-spritelayout spritelayout_btrsea_coal_med  { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_coal_med ; } }
-spritelayout spritelayout_btrsea_coal_full { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_coal_full ; } }
-spritelayout spritelayout_btrsea_tank      { ground { sprite : gfx_nucrep_empty_tile ; } building { sprite : gfx_btrsea_tank ; } }
+spritelayout spritelayout_btrsea_coal_empty  { ground { sprite : gfx_fence_ne ; } }
+spritelayout spritelayout_btrsea_coal_med  { ground { sprite : gfx_fence_ne ; } building { sprite : gfx_btrsea_coal_med ; } }
+spritelayout spritelayout_btrsea_coal_full { ground { sprite : gfx_fence_ne ; } building { sprite : gfx_btrsea_coal_full ; } }
+spritelayout spritelayout_btrsea_tank      { ground { sprite : gfx_fence_n ; } building { sprite : gfx_btrsea_tank ; } }
 
 
+spritelayout spritelayout_btrsea_4_0 { ground { sprite : gfx_fence_w  ; } }
+spritelayout spritelayout_btrsea_4_1 { ground { sprite : gfx_fence_sw ; } }
+spritelayout spritelayout_btrsea_0_2 { ground { sprite : gfx_fence_e  ; } }
+spritelayout spritelayout_btrsea_1_2 { ground { sprite : gfx_fence_se ; } }
+spritelayout spritelayout_btrsea_4_2 { ground { sprite : gfx_fence_s  ; } }
 //Tiles
+
+//Base
+
+
+
+switch(FEAT_INDUSTRYTILES, SELF, btrsea_empty_gfx_decider, relative_pos){
+	relative_coord(4,0) : spritelayout_btrsea_4_0 ;
+	relative_coord(4,1) : spritelayout_btrsea_4_1 ;
+	relative_coord(0,2) : spritelayout_btrsea_0_2 ;
+	relative_coord(1,2) : spritelayout_btrsea_1_2 ;
+	relative_coord(2,2) : spritelayout_btrsea_1_2 ;
+	relative_coord(3,2) : spritelayout_btrsea_1_2 ;
+	relative_coord(4,2) : spritelayout_btrsea_4_2 ;
+}
+
 
 //Animations
 
@@ -671,7 +706,7 @@ switch(FEAT_INDUSTRYTILES, SELF, btrsea_chimney_gfx_non_animated, relative_pos){
 switch(FEAT_INDUSTRYTILES, SELF, btrsea_chimney_gfx_animated, relative_pos){
 	relative_coord(1, 0) : sw_btrsea_1_0_animation ;
 	relative_coord(3, 0) : sw_btrsea_3_0_animation ;
-	relative_coord(1, 1) : sw_btrsea_1_1_animation ;
+	relative_coord(1, 1) : spritelayout_btrsea_1_1 ;
 	relative_coord(3, 1) : sw_btrsea_3_1_animation ;
 	sw_btrsea_1_0_animation ;
 }
@@ -695,7 +730,7 @@ switch(FEAT_INDUSTRYTILES, SELF, btrsea_chimney_gfx_non_animated_pig, relative_p
 switch(FEAT_INDUSTRYTILES, SELF, btrsea_chimney_gfx_animated_pig, relative_pos){
 	relative_coord(1, 0) : sw_btrsea_1_0_animation ;
 	relative_coord(3, 0) : sw_btrsea_pig_animation ;
-	relative_coord(1, 1) : sw_btrsea_1_1_animation ;
+	relative_coord(1, 1) : spritelayout_btrsea_1_1 ;
 	relative_coord(3, 1) : sw_btrsea_3_1_animation ;
 	sw_btrsea_1_0_animation ;
 }
@@ -732,12 +767,23 @@ item(FEAT_INDUSTRYTILES, btrsea_chimney_tile){
 }
 
 
+item(FEAT_INDUSTRYTILES, btrsea_empty){
+	property{
+		substitute         : 0x08 ;
+		accepted_cargos    : [] ;
+		land_shape_flags   : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+	}
+	graphics{
+		default         : btrsea_empty_gfx_decider ;
+	}
+}
+
 
 
 switch(FEAT_INDUSTRYTILES, PARENT, sw_btrsea_coal_decider, waiting_cargo_1){
 	1..250     : spritelayout_btrsea_coal_med ;
 	250..65536 : spritelayout_btrsea_coal_full ;
-	spritelayout_empty_tile ;
+	spritelayout_btrsea_coal_empty ;
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, btrsea_building_gfx_decider, relative_pos){
@@ -767,18 +813,25 @@ tilelayout btrsea_tilelayout {
 	1, 0 : btrsea_chimney_tile ;
 	2, 0 : btrsea_building_tile ;
 	3, 0 : btrsea_chimney_tile ;
+	4, 0 : btrsea_empty ;
 	0, 1 : btrsea_building_tile ;
 	1, 1 : btrsea_chimney_tile ;
 	2, 1 : btrsea_building_tile ;
 	3, 1 : btrsea_chimney_tile ;
+	4, 1 : btrsea_empty ;
+	0, 2 : btrsea_empty ;
+	1, 2 : btrsea_empty ;
+	2, 2 : btrsea_empty ;
+	3, 2 : btrsea_empty ;
+	4, 2 : btrsea_empty ;
 }
 
 
-produce(produce_btrsea_none   , 68 , 68 , 8 , 0 , 0);
-produce(produce_btrsea_low    , 60 , 60 , 10, 6 , 0);
-produce(produce_btrsea_medium , 52 , 52 , 12, 9 , 0);
-produce(produce_btrsea_high   , 48 , 48 , 14, 12, 0);
-produce(produce_btrsea_arrival, 200, 200, 20 ,10 , 0);
+produce(produce_btrsea_none   , 68 , 68 , 3 , 0 , 0);
+produce(produce_btrsea_low    , 60 , 60 , 5, 3 , 0);
+produce(produce_btrsea_medium , 52 , 52 , 7, 5 , 0);
+produce(produce_btrsea_high   , 48 , 48 , 10, 7, 0);
+produce(produce_btrsea_arrival, 150, 150, 12 ,9 , 0);
 
 switch(FEAT_INDUSTRIES, SELF, sw_btrsea_produce, waiting_cargo_3){
 	0       : produce_btrsea_none ;
@@ -797,25 +850,159 @@ item(FEAT_INDUSTRIES, btrsea_power_station, 0x01){
 		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
 		prod_cargo_types      : [cargotype("NWST")] ;
 		nearby_station_name   : string(STR_POWER_STATION_STATION_NAME) ;
+		prob_map_gen          : 4 ;
+		prob_in_game          : 2 ;
 	}	
 	graphics {
 		//produce_cargo_arrival : produce_btrsea_arrival ;
 		produce_256_ticks     : sw_btrsea_produce ;
 	}
 }
-
-
-
-
+# 1 "ruktsna.pnml" 2
+# 1 "src/uranium_mine.pnml" 1
 //Uranium mine
+
+spriteset(gfx_uran_mine_shaft_1				, "gfx/uran_mine.png"){[ 264,   0,  64, 122, -32, -89]}
+spriteset(gfx_uran_mine_shaft_2				, "gfx/uran_mine.png"){[ 334,   0,  64, 122, -32, -89]}
+spriteset(gfx_uran_mine_shaft_3				, "gfx/uran_mine.png"){[ 404,   0,  64, 122, -32, -89]}
+spriteset(gfx_uran_mine_building_1			, "gfx/uran_mine.png"){[ 132,   0,  64, 122, -58, -81]}
+spriteset(gfx_uran_mine_building_2			, "gfx/uran_mine.png"){[ 198,   0,  64, 122, -31, -74]}
+spriteset(gfx_uran_mine_chimney_building	, "gfx/uran_mine.png"){[ 0  ,   0,  64, 85 , -31, -54]}
+spriteset(gfx_uran_mine_sphere_tank			, "gfx/uran_mine.png"){[ 66 , 58 ,  64, 64 , -31, -33]}
+spriteset(gfx_uran_mine_shed				, "gfx/uran_mine.png"){[ 0  , 155,  67, 51 , -32, -20]}
+spriteset(gfx_uran_mine_empty_tile			, "gfx/uran_mine.png"){[ 0  , 208,  64, 40 , -31,  -9]}
+
+
+//Sprite layouts
+
+// 0, 0
+spritelayout spritelayout_uran_mine_shaft_1 {
+	ground {	sprite : gfx_fence_n ; }
+	building {	sprite : gfx_uran_mine_shaft_1 ; }
+}
+
+spritelayout spritelayout_uran_mine_shaft_2 {
+	ground {	sprite : gfx_fence_n ; }
+	building {	sprite : gfx_uran_mine_shaft_2 ; }
+}
+
+spritelayout spritelayout_uran_mine_shaft_3 {
+	ground {	sprite : gfx_fence_n ; }
+	building {	sprite : gfx_uran_mine_shaft_3 ; }
+}
+
+// 0, 1
+spritelayout spritelayout_uran_mine_building_1 {
+	ground {	sprite : gfx_fence_ne ; }
+	building {	sprite : gfx_uran_mine_building_2 ; }
+}
+// 1, 1
+spritelayout spritelayout_uran_mine_building_2 {
+	ground {	sprite : gfx_uran_mine_empty_tile ; }
+	building {	sprite : gfx_uran_mine_building_1 ; }
+}
+
+
+// 0, 2
+spritelayout spritelayout_uran_mine_chimeny_building {
+	ground {	sprite : gfx_fence_e ; }
+	building {	sprite : gfx_uran_mine_chimney_building ; }
+}
+
+// 1, 0
+spritelayout spritelayout_uran_mine_tank {
+	ground {	sprite : gfx_fence_nw ; }
+	building {	sprite : gfx_uran_mine_sphere_tank ; }
+}
+
+// 2, 0
+spritelayout spritelayout_uran_mine_shed {
+	ground {	sprite : gfx_uran_mine_empty_tile ; }
+	building {	sprite : gfx_uran_mine_shed ; }
+}
+
+// 1, 2
+spritelayout spritelayout_uran_mine_1_2 {
+	ground {	sprite : gfx_fence_se ; }
+}
+
+// 2, 2
+spritelayout spritelayout_uran_mine_2_2 {
+	ground {	sprite : gfx_fence_s ; }
+	building {	sprite : gfx_fence_s ; }
+}
+
+
+
+//Switches
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_uran_mine_gfx_decider, relative_pos){
+	relative_coord(1,0) : spritelayout_uran_mine_tank ;
+	relative_coord(2,0) : spritelayout_uran_mine_shed ;
+	relative_coord(0,1) : spritelayout_uran_mine_building_1 ;
+	relative_coord(1,1) : spritelayout_uran_mine_building_2 ;
+	relative_coord(2,1) : spritelayout_uran_mine_shed ;
+	relative_coord(0,2) : spritelayout_uran_mine_chimeny_building ;
+	relative_coord(1,2) : spritelayout_uran_mine_1_2 ;
+	relative_coord(2,2) : spritelayout_uran_mine_2_2 ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, sw_uran_mine_shaft_animation, animation_frame){
+	1 : spritelayout_uran_mine_shaft_2 ;
+	2 : spritelayout_uran_mine_shaft_3 ;
+	4 : spritelayout_uran_mine_shaft_2 ;
+	5 : spritelayout_uran_mine_shaft_3 ;
+	spritelayout_uran_mine_shaft_1 ;
+}
+
+
+//Tiles
+
+item(FEAT_INDUSTRYTILES, uran_mine_tile){
+	property{
+		substitute			: 0 ;
+		land_shape_flags	: bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+	}
+	graphics{
+		default				: sw_uran_mine_gfx_decider ;
+	}
+}
+
+switch(FEAT_INDUSTRYTILES, PARENT, sw_uran_mine_shaft_next_frame, animation_frame){
+	0..6 : CB_RESULT_NEXT_FRAME ;
+	CB_RESULT_STOP_ANIMATION ;
+}
+
+item(FEAT_INDUSTRYTILES, uran_mine_shaft_tile){
+	property{
+		substitute			: 0 ;
+		land_shape_flags	: bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+		animation_info		: [ANIMATION_NON_LOOPING, 6] ;
+		animation_speed		: 2 ;
+		animation_triggers	: bitmask(ANIM_TRIGGER_INDTILE_DISTRIBUTES_CARGO) ;
+	}
+	graphics{
+		default				: sw_uran_mine_shaft_animation ;
+		anim_next_frame		: sw_uran_mine_shaft_next_frame ;
+	}
+}
+
+
+
 //Tile layout
 
 tilelayout tilelayout_uran_mine{
-	0,0 : nucrep_tile ;
-	0,1 : nucrep_tile ;
+	0,0 : uran_mine_shaft_tile ;
+	0,1 : uran_mine_tile ;
+	0,2 : uran_mine_tile ;
 	
-	1,0 : nucrep_tile ;
-	1,1 : nucrep_tile ;
+	1,0 : uran_mine_tile ;
+	1,1 : uran_mine_tile ;
+	1,2 : uran_mine_tile ;
+	
+	2,0 : uran_mine_tile ;
+	2,1 : uran_mine_tile ;
+	2,2 : uran_mine_tile ;
 }
 
 switch (FEAT_INDUSTRIES, SELF, uran_mine_water_check, water_distance){
@@ -845,7 +1032,7 @@ item(FEAT_INDUSTRIES, uran_mine){
 		prod_cargo_types      : [cargotype("URAN")] ;
 		accept_cargo_types    : [] ;
 		conflicting_ind_types : [0x01] ;
-		prod_multiplier       : [2] ;
+		prod_multiplier       : [8] ;
 		prob_random           : 3 ;
 		prob_in_game          : 2 ;
 		map_colour            : 255 ;
@@ -861,7 +1048,4 @@ item(FEAT_INDUSTRIES, uran_mine){
 		//random_prod_change    : nucrep_random_prod_change_switch ;
 	}
 }
-
-
-
-
+# 1 "ruktsna.pnml" 2
