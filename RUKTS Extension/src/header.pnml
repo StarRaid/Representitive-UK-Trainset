@@ -83,7 +83,7 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 		weight                    : 3 ;
 		penalty_lowerbound        : 6 ;
 		single_penalty_length     : 4 ;
-		price_factor              : 215 ;
+		price_factor              : 230 ;
 		station_list_colour       : 208 ;
 		cargo_payment_list_colour : 208 ;
 		is_freight                : 1 ;
@@ -106,5 +106,8 @@ spriteset(gfx_fence_s          , "gfx/base_tile.png"){[ 198, 41 , 64, 40 , -31, 
 spriteset(gfx_fence_w          , "gfx/base_tile.png"){[ 132, 41 , 64, 40 , -31, -9  ]}
 spriteset(gfx_fence_n          , "gfx/base_tile.png"){[ 132, 0  , 64, 40 , -31, -9  ]}
 
-
+switch(FEAT_INDUSTRIES, SELF, sw_nuclear_build_date_check, current_year < 1950){
+	1 : CB_RESULT_IND_NO_CONSTRUCTION ;
+	CB_RESULT_IND_PROBABILITY_FROM_PROPERTY ;
+}
 

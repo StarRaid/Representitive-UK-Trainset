@@ -86,7 +86,7 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 		weight                    : 3 ;
 		penalty_lowerbound        : 6 ;
 		single_penalty_length     : 4 ;
-		price_factor              : 215 ;
+		price_factor              : 230 ;
 		station_list_colour       : 208 ;
 		cargo_payment_list_colour : 208 ;
 		is_freight                : 1 ;
@@ -109,7 +109,10 @@ spriteset(gfx_fence_s          , "gfx/base_tile.png"){[ 198, 41 , 64, 40 , -31, 
 spriteset(gfx_fence_w          , "gfx/base_tile.png"){[ 132, 41 , 64, 40 , -31, -9  ]}
 spriteset(gfx_fence_n          , "gfx/base_tile.png"){[ 132, 0  , 64, 40 , -31, -9  ]}
 
-
+switch(FEAT_INDUSTRIES, SELF, sw_nuclear_build_date_check, current_year < 1950){
+	1 : CB_RESULT_IND_NO_CONSTRUCTION ;
+	CB_RESULT_IND_PROBABILITY_FROM_PROPERTY ;
+}
 
 # 1 "ruktsna.pnml" 2
 # 1 "src/narrow_gauge.pnml" 1
@@ -239,7 +242,7 @@ spriteset(gfx_nucrep_generic_building   , "gfx/nuclear_reprocessing_site.png"){[
 switch(FEAT_INDUSTRYTILES, SELF, sw_nucrep_container_colour_check, current_year){ 1960..1995 : palette_1cc(COLOUR_YELLOW) ; palette_1cc(COLOUR_WHITE) ; }
 
 spritelayout spritelayout_cooling_tower {
-	ground { sprite : gfx_nucrep_empty_tile ; }
+	ground { sprite : gfx_fence_nw ; }
 	building { sprite : gfx_nucrep_cooling_tower ; }
 }
 
@@ -274,7 +277,7 @@ spritelayout spritelayout_shed {
 }
 
 spritelayout spritelayout_sphere_tank {
-	ground { sprite : gfx_nucrep_empty_tile ; }
+	ground { sprite : gfx_fence_ne ; }
 	building { sprite : gfx_nucrep_sphere_tank ; }
 }
 
@@ -308,6 +311,15 @@ spritelayout spritelayout_generic_building {
 	building { sprite : gfx_nucrep_generic_building ; }
 }
 
+spritelayout spritelayout_nucrep_empty_e  { ground { sprite : gfx_fence_e  ; } }
+spritelayout spritelayout_nucrep_empty_se { ground { sprite : gfx_fence_se ; } }
+spritelayout spritelayout_nucrep_empty_s  { ground { sprite : gfx_fence_s  ; } }
+spritelayout spritelayout_nucrep_empty_sw { ground { sprite : gfx_fence_sw ; } }
+spritelayout spritelayout_nucrep_empty_w  { ground { sprite : gfx_fence_w  ; } }
+spritelayout spritelayout_nucrep_empty_nw { ground { sprite : gfx_fence_nw ; } }
+
+
+
 //Sprite layout switches
 
 switch(FEAT_INDUSTRYTILES, PARENT, sw_nucrep_empty_cargo_decider, waiting_cargo_1 > 0){
@@ -338,6 +350,7 @@ switch(FEAT_INDUSTRYTILES, SELF, nucrep_tile_gfx_decider, relative_pos){
 	relative_coord(0,3) : spritelayout_generic_building ;
 	relative_coord(0,4) : spritelayout_generic_building ;
 	relative_coord(0,5) : spritelayout_sphere_tank ;
+	relative_coord(0,6) : spritelayout_nucrep_empty_e ;
 	
 	relative_coord(1,0) : spritelayout_cooling_tower ;
 	relative_coord(1,1) : spritelayout_shed ;
@@ -345,13 +358,17 @@ switch(FEAT_INDUSTRYTILES, SELF, nucrep_tile_gfx_decider, relative_pos){
 	relative_coord(1,3) : spritelayout_shed ;
 	relative_coord(1,4) : spritelayout_shed ;
 	relative_coord(1,5) : sw_nucrep_forklift_cargo_decider ;
+	relative_coord(1,6) : spritelayout_nucrep_empty_se ;
+	
 	//Skip a row
+	
 	relative_coord(3,0) : spritelayout_cooling_tower ;
 	relative_coord(3,1) : spritelayout_chimney_building_1 ;
 	relative_coord(3,2) : sw_nucrep_forklift_cargo_decider ;
 	relative_coord(3,3) : spritelayout_overpass ;
 	relative_coord(3,4) : sw_nucrep_empty_cargo_decider ;
 	relative_coord(3,5) : sw_nucrep_empty_cargo_decider ;
+	relative_coord(3,6) : spritelayout_nucrep_empty_se ;
 	
 	relative_coord(4,0) : spritelayout_cooling_tower ;
 	relative_coord(4,1) : spritelayout_chimney_building_1 ;
@@ -359,13 +376,55 @@ switch(FEAT_INDUSTRYTILES, SELF, nucrep_tile_gfx_decider, relative_pos){
 	relative_coord(4,3) : spritelayout_shed ;
 	relative_coord(4,4) : spritelayout_chimney_building_1 ;
 	relative_coord(4,5) : sw_nucrep_forklift_cargo_decider ;
+	relative_coord(4,6) : spritelayout_nucrep_empty_se ;
+	
+	relative_coord(5,0) : spritelayout_nucrep_empty_w ;
+	relative_coord(5,1) : spritelayout_nucrep_empty_sw ;
+	relative_coord(5,2) : spritelayout_nucrep_empty_sw ;
+	relative_coord(5,3) : spritelayout_nucrep_empty_sw ;
+	relative_coord(5,4) : spritelayout_nucrep_empty_sw ;
+	relative_coord(5,5) : spritelayout_nucrep_empty_sw ;
+	relative_coord(5,6) : spritelayout_nucrep_empty_s ;
+}
+
+switch(FEAT_INDUSTRYTILES, SELF, nucrep_tile_gfx_decider_2, relative_pos){
+	relative_coord(0,0) : spritelayout_cooling_tower ;
+	relative_coord(0,1) : spritelayout_generic_building ;
+	relative_coord(0,2) : spritelayout_generic_building ;
+	relative_coord(0,3) : spritelayout_generic_building ;
+	relative_coord(0,4) : spritelayout_nucrep_empty_e ;
+	
+	relative_coord(1,0) : spritelayout_cooling_tower ;
+	relative_coord(1,1) : spritelayout_sphere_tank ;
+	relative_coord(1,2) : spritelayout_chimney_building_1 ;
+	relative_coord(1,3) : sw_nucrep_empty_cargo_decider ;
+	relative_coord(1,4) : spritelayout_nucrep_empty_se ;
+	
+	relative_coord(2,0) : spritelayout_nucrep_empty_nw ;
+	relative_coord(2,1) : sw_nucrep_forklift_cargo_decider ;
+	relative_coord(2,2) : sw_nucrep_empty_cargo_decider ;
+	relative_coord(2,3) : spritelayout_overpass ;
+	relative_coord(2,4) : spritelayout_nucrep_empty_se ;
+	
 	//Skip a row
-	relative_coord(6,0) : spritelayout_road_overlay ;
-	relative_coord(6,1) : spritelayout_road_overlay ;
-	relative_coord(6,2) : spritelayout_road_overlay ;
-	relative_coord(6,3) : spritelayout_road_overlay ;
-	relative_coord(6,4) : spritelayout_road_overlay ;
-	relative_coord(6,5) : spritelayout_road_overlay ;
+	
+	relative_coord(4,0) : spritelayout_shed ;
+	relative_coord(4,1) : spritelayout_shed ;
+	relative_coord(4,2) : sw_nucrep_empty_cargo_decider ;
+	relative_coord(4,3) : spritelayout_overpass ;
+	relative_coord(4,4) : spritelayout_nucrep_empty_se ;
+	
+	relative_coord(5,0) : spritelayout_shed ;
+	relative_coord(5,1) : spritelayout_shed ;
+	relative_coord(5,2) : spritelayout_chimney_building_1 ;
+	relative_coord(5,3) : sw_nucrep_empty_cargo_decider ;
+	relative_coord(5,4) : spritelayout_nucrep_empty_se ;
+	
+	relative_coord(6,0) : spritelayout_nucrep_empty_w ;
+	relative_coord(6,1) : spritelayout_nucrep_empty_sw ;
+	relative_coord(6,2) : spritelayout_nucrep_empty_sw ;
+	relative_coord(6,3) : spritelayout_nucrep_empty_sw ;
+	relative_coord(6,4) : spritelayout_nucrep_empty_s ;
 }
 
 
@@ -379,6 +438,17 @@ item(FEAT_INDUSTRYTILES, nucrep_tile){
 	}
 	graphics{
 		default : nucrep_tile_gfx_decider ;
+	}
+}
+
+item(FEAT_INDUSTRYTILES, nucrep_tile_2){
+	property{
+		substitute       : 0 ;
+		accepted_cargos  : [[NWST, 8]] ;
+		land_shape_flags : bitmask(LSF_ONLY_ON_FLAT_LAND) ;
+	}
+	graphics{
+		default : nucrep_tile_gfx_decider_2 ;
 	}
 }
 
@@ -419,7 +489,7 @@ item(FEAT_INDUSTRYTILES, nucrep_chimney){
 
 //Tile layout
 
-tilelayout tilelayout_nucrep_site_big{
+/*tilelayout tilelayout_nucrep_site_big{
 	0,0 : nucrep_tile ;
 	0,1 : nucrep_tile ;
 	0,2 : nucrep_tile ;
@@ -444,15 +514,16 @@ tilelayout tilelayout_nucrep_site_big{
 	6,1 : nucrep_tile ;
 	6,2 : nucrep_tile ;
 	6,3 : nucrep_tile ;
-}
+}*/
 
-tilelayout tilelayout_nucrep_site_medium{
+tilelayout tilelayout_nucrep_site_a{
 	0,0 : nucrep_tile ;
 	0,1 : nucrep_tile ;
 	0,2 : nucrep_tile ;
 	0,3 : nucrep_tile ;
 	0,4 : nucrep_tile ;
 	0,5 : nucrep_tile ;
+	0,6 : nucrep_tile ;
 
 	1,0 : nucrep_tile ;
 	1,1 : nucrep_tile ;
@@ -460,6 +531,7 @@ tilelayout tilelayout_nucrep_site_medium{
 	1,3 : nucrep_tile ;
 	1,4 : nucrep_tile ;
 	1,5 : nucrep_tile ;
+	1,6 : nucrep_tile ;
 
 	3,0 : nucrep_tile ;
 	3,1 : nucrep_chimney ; //chimney
@@ -467,6 +539,7 @@ tilelayout tilelayout_nucrep_site_medium{
 	3,3 : nucrep_tile ;
 	3,4 : nucrep_tile ;
 	3,5 : nucrep_tile ;
+	3,6 : nucrep_tile ;
       
 	4,0 : nucrep_tile ;
 	4,1 : nucrep_chimney ; //chimney
@@ -474,32 +547,63 @@ tilelayout tilelayout_nucrep_site_medium{
 	4,3 : nucrep_tile ;
 	4,4 : nucrep_chimney ; //chimney
 	4,5 : nucrep_tile ;
+	4,6 : nucrep_tile ;
+	
+	5,0 : nucrep_tile ;
+	5,1 : nucrep_tile ; //chimney
+	5,2 : nucrep_tile ;
+	5,3 : nucrep_tile ;
+	5,4 : nucrep_tile ;
+	5,5 : nucrep_tile ;
+	5,6 : nucrep_tile ;
 }
 
-tilelayout tilelayout_nucrep_site_small{
-	0,0 : nucrep_tile ;
-	0,1 : nucrep_tile ;
-	0,2 : nucrep_tile ;
-	0,3 : nucrep_tile ;
-	0,4 : nucrep_tile ;
-	0,5 : nucrep_tile ;
+tilelayout tilelayout_nucrep_site_b{
+	0,0 : nucrep_tile_2 ;
+	0,1 : nucrep_tile_2 ;
+	0,2 : nucrep_tile_2 ;
+	0,3 : nucrep_tile_2 ;
+	0,4 : nucrep_tile_2 ;
 
-	1,0 : nucrep_tile ;
-	1,1 : nucrep_tile ;
-	1,2 : nucrep_tile ;
-	1,3 : nucrep_tile ;
-	1,4 : nucrep_tile ;
-	1,5 : nucrep_tile ;
+	1,0 : nucrep_tile_2 ;
+	1,1 : nucrep_tile_2 ;
+	1,2 : nucrep_chimney ;
+	1,3 : nucrep_tile_2 ;
+	1,4 : nucrep_tile_2 ;
+
+	2,0 : nucrep_tile_2 ;
+	2,1 : nucrep_tile_2 ;
+	2,2 : nucrep_tile_2 ;
+	2,3 : nucrep_tile_2 ;
+	2,4 : nucrep_tile_2 ;
+
+	4,0 : nucrep_tile_2 ;
+	4,1 : nucrep_tile_2 ;
+	4,2 : nucrep_tile_2 ;
+	4,3 : nucrep_tile_2 ;
+	4,4 : nucrep_tile_2 ;
+
+	5,0 : nucrep_tile_2 ;
+	5,1 : nucrep_tile_2 ;
+	5,2 : nucrep_chimney ;
+	5,3 : nucrep_tile_2 ;
+	5,4 : nucrep_tile_2 ;
+
+	6,0 : nucrep_tile_2 ;
+	6,1 : nucrep_tile_2 ;
+	6,2 : nucrep_tile_2 ;
+	6,3 : nucrep_tile_2 ;
+	6,4 : nucrep_tile_2 ;
 }
 
  /* Every month, the counter is increased. The counter is reset to zero whenever the power plant
     receives cargo. When the counter reaches 61, the industry will close when the random production
     change callback is called. */
  
- /* When we receive cargo, the counter is reset. */
+ /* When we receive cargo, the counter is reset. 
  produce(nucrep_cargo_arrive_produce, 0, 0, 0, 0, STORE_PERM(0, 0x00));
  
- /* Every month the counter is increased. */
+ /* Every month the counter is increased. 
  switch (FEAT_INDUSTRIES, SELF, sw_nucrep_monthly_prod_change_switch, STORE_PERM(LOAD_PERM(0x00) + 1, 0x00)) {
  	return CB_RESULT_IND_PROD_NO_CHANGE;
  }
@@ -509,23 +613,23 @@ tilelayout tilelayout_nucrep_site_small{
 	CB_RESULT_IND_PROD_NO_CHANGE ;
  }
  
- /* Only check industry closure if the counter is greater than 60. */
+ /* Only check industry closure if the counter is greater than 60. 
  switch (FEAT_INDUSTRIES, SELF, sw_nucrep_random_prod_change_switch, LOAD_PERM(0x00)) {
  	0..60: return CB_RESULT_IND_PROD_NO_CHANGE;
  	return CB_RESULT_IND_PROD_CLOSE;
- }
+ }*/
 
 switch (FEAT_INDUSTRIES, SELF, sw_nucrep_water_check, water_distance){
 	0..32 : CB_RESULT_LOCATION_ALLOW ;
 	return string(STR_ERROR_NOT_NEAR_WATER) ;
 }
 
-produce(nucrep_produce_monthly, 2, 0, 0, 0, 0);
+produce(nucrep_produce_monthly, 5, 0, 0, 0, 0);
 
-item(FEAT_INDUSTRIES, nuclear_reprocessing_site, 0){
+item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 	property {
 		substitute            : 0x01 ;
-		layouts               : [tilelayout_nucrep_site_big, tilelayout_nucrep_site_medium, tilelayout_nucrep_site_small] ;
+		layouts               : [tilelayout_nucrep_site_a, tilelayout_nucrep_site_b] ;
 		life_type             : IND_LIFE_TYPE_BLACK_HOLE ;
 		fund_cost_multiplier  : 255 ;
 		prod_cargo_types      : [] ;
@@ -534,17 +638,18 @@ item(FEAT_INDUSTRIES, nuclear_reprocessing_site, 0){
 		prob_map_gen           : 3 ;
 		prob_in_game          : 1 ;
 		map_colour            : 208 ;
-		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
+		//spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
 		name                  : string(STR_NUCPROC_NAME) ;
 		nearby_station_name   : string(STR_NUCPROC_STATION_NAME) ;
 	}
 	graphics {
-		produce_cargo_arrival : nucrep_cargo_arrive_produce ;
-		produce_256_ticks     : nucrep_produce_monthly ;
-		location_check        : sw_nucrep_water_check ;
-		monthly_prod_change   : sw_nucrep_monthly_prod_change_check ;
-		random_prod_change    : sw_nucrep_random_prod_change_switch ;
+		//produce_cargo_arrival		: nucrep_cargo_arrive_produce ;
+		produce_256_ticks			: nucrep_produce_monthly ;
+		location_check				: sw_nucrep_water_check ;
+		//monthly_prod_change			: sw_nucrep_monthly_prod_change_check ;
+		//random_prod_change			: sw_nucrep_random_prod_change_switch ;
+		construction_probability	: sw_nuclear_build_date_check ;
 		//colour                : sw_nucrep_colour_check ;
 	}
 }
@@ -827,11 +932,11 @@ tilelayout btrsea_tilelayout {
 }
 
 
-produce(produce_btrsea_none   , 68 , 68 , 3 , 0 , 0);
-produce(produce_btrsea_low    , 60 , 60 , 5, 3 , 0);
-produce(produce_btrsea_medium , 52 , 52 , 7, 5 , 0);
-produce(produce_btrsea_high   , 48 , 48 , 10, 7, 0);
-produce(produce_btrsea_arrival, 150, 150, 12 ,9 , 0);
+produce(produce_btrsea_none   , 68 , 68 , 4 , 0 , 0);
+produce(produce_btrsea_low    , 60 , 60 , 6, 4 , 0);
+produce(produce_btrsea_medium , 52 , 52 , 9, 6 , 0);
+produce(produce_btrsea_high   , 48 , 48 , 15, 8, 0);
+produce(produce_btrsea_arrival, 150, 150, 15 ,9 , 0);
 
 switch(FEAT_INDUSTRIES, SELF, sw_btrsea_produce, waiting_cargo_3){
 	0       : produce_btrsea_none ;
@@ -840,10 +945,9 @@ switch(FEAT_INDUSTRIES, SELF, sw_btrsea_produce, waiting_cargo_3){
 	produce_btrsea_high ;
 }
 
-item(FEAT_INDUSTRIES, btrsea_power_station, 0x01){
+item(FEAT_INDUSTRIES, btrsea_power_station){
 	property {
 		substitute            : 0x01 ;
-		override              : 0x01 ;
 		layouts               : [btrsea_tilelayout] ;
 		life_type             : IND_LIFE_TYPE_PROCESSING ;
 		accept_cargo_types    : [cargotype("COAL"), cargotype("OIL_"), cargotype("URAN")];
@@ -968,18 +1072,18 @@ item(FEAT_INDUSTRYTILES, uran_mine_tile){
 	}
 }
 
-switch(FEAT_INDUSTRYTILES, PARENT, sw_uran_mine_shaft_next_frame, animation_frame){
-	0..6 : CB_RESULT_NEXT_FRAME ;
-	CB_RESULT_STOP_ANIMATION ;
+switch(FEAT_INDUSTRYTILES, SELF, sw_uran_mine_shaft_next_frame, animation_frame){
+	0..16 : CB_RESULT_NEXT_FRAME ;
+	return 0 ;
 }
 
 item(FEAT_INDUSTRYTILES, uran_mine_shaft_tile){
 	property{
 		substitute			: 0 ;
 		land_shape_flags	: bitmask(LSF_ONLY_ON_FLAT_LAND) ;
-		animation_info		: [ANIMATION_NON_LOOPING, 6] ;
+		animation_info		: [ANIMATION_LOOPING, 16] ;
 		animation_speed		: 2 ;
-		animation_triggers	: bitmask(ANIM_TRIGGER_INDTILE_DISTRIBUTES_CARGO) ;
+		animation_triggers	: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP) ;
 	}
 	graphics{
 		default				: sw_uran_mine_shaft_animation ;
@@ -1025,7 +1129,7 @@ produce(uran_mine_produce_monthly, 0, 0, 0, LOAD_PERM(0x00), 0);
 
 item(FEAT_INDUSTRIES, uran_mine){
 	property {
-		substitute            : 0x01 ;
+		substitute            : 0x00 ;
 		layouts               : [tilelayout_uran_mine] ;
 		life_type             : IND_LIFE_TYPE_EXTRACTIVE ;
 		fund_cost_multiplier  : 37 ;
@@ -1042,9 +1146,10 @@ item(FEAT_INDUSTRIES, uran_mine){
 		nearby_station_name   : string(STR_URANMINE_STATION_NAME) ;
 	}
 	graphics {
-		produce_256_ticks     : uran_mine_produce_monthly ;
-		location_check        : uran_mine_water_check ;
-		monthly_prod_change   : sw_uran_monthly_change_check ;
+		produce_256_ticks			: uran_mine_produce_monthly ;
+		location_check				: uran_mine_water_check ;
+		monthly_prod_change			: sw_uran_monthly_change_check ;
+		construction_probability	: sw_nuclear_build_date_check ;
 		//random_prod_change    : nucrep_random_prod_change_switch ;
 	}
 }

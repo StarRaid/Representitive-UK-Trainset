@@ -107,17 +107,17 @@ item(FEAT_INDUSTRYTILES, uran_mine_tile){
 }
 
 switch(FEAT_INDUSTRYTILES, SELF, sw_uran_mine_shaft_next_frame, animation_frame){
-	0..6 : CB_RESULT_NEXT_FRAME ;
-	CB_RESULT_STOP_ANIMATION ;
+	0..16 : CB_RESULT_NEXT_FRAME ;
+	return 0 ;
 }
 
 item(FEAT_INDUSTRYTILES, uran_mine_shaft_tile){
 	property{
 		substitute			: 0 ;
 		land_shape_flags	: bitmask(LSF_ONLY_ON_FLAT_LAND) ;
-		animation_info		: [ANIMATION_NON_LOOPING, 6] ;
+		animation_info		: [ANIMATION_LOOPING, 16] ;
 		animation_speed		: 2 ;
-		animation_triggers	: bitmask(ANIM_TRIGGER_INDTILE_DISTRIBUTES_CARGO) ;
+		animation_triggers	: bitmask(ANIM_TRIGGER_INDTILE_TILE_LOOP) ;
 	}
 	graphics{
 		default				: sw_uran_mine_shaft_animation ;
@@ -163,7 +163,7 @@ produce(uran_mine_produce_monthly, 0, 0, 0, LOAD_PERM(0x00), 0);
 
 item(FEAT_INDUSTRIES, uran_mine){
 	property {
-		substitute            : 0x01 ;
+		substitute            : 0x00 ;
 		layouts               : [tilelayout_uran_mine] ;
 		life_type             : IND_LIFE_TYPE_EXTRACTIVE ;
 		fund_cost_multiplier  : 37 ;
@@ -180,9 +180,10 @@ item(FEAT_INDUSTRIES, uran_mine){
 		nearby_station_name   : string(STR_URANMINE_STATION_NAME) ;
 	}
 	graphics {
-		produce_256_ticks     : uran_mine_produce_monthly ;
-		location_check        : uran_mine_water_check ;
-		monthly_prod_change   : sw_uran_monthly_change_check ;
+		produce_256_ticks			: uran_mine_produce_monthly ;
+		location_check				: uran_mine_water_check ;
+		monthly_prod_change			: sw_uran_monthly_change_check ;
+		construction_probability	: sw_nuclear_build_date_check ;
 		//random_prod_change    : nucrep_random_prod_change_switch ;
 	}
 }
