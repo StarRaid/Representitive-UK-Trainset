@@ -90,8 +90,8 @@ item(FEAT_TRAINS, item_nrwplank, 10004){
 		running_cost_base              : RUNNING_COST_NONE ;
 		running_cost_factor            : 50 ;
 		refit_cost                     : 0 ;
-		refittable_cargo_classes       : CC_BULK ;
-		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
+		refittable_cargo_classes       : bitmask(CC_BULK, CC_POWDERIZED) ;
+		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_NON_POURABLE) ;
 		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
 		cargo_capacity                 : 15 ;
 		loading_speed                  : 10 ;

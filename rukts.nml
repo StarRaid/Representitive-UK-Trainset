@@ -290,29 +290,33 @@ template template_7_4(x,y){
 template template_7_8_2(x,y){
     [ x, y, 8, 20, -3, -10] //N
     [ x+10, y, 18, 16, -11, -9] //NE
-    [ x+30, y, 29, 13, -13, -7] //E
+    [ x+30, y, 29, 13, -13, -9] //E
     [ x+61, y, 18, 16, -3, -8] //SE
     [ x+81, y, 8, 20, -3, -8] //S
     [ x+91, y, 18, 16, -11, -9] //SW
-    [ x+111, y, 29, 13, -17, -9] //W
+    [ x+111, y, 29, 13, -21, -9] //W
     [ x+142, y, 18, 16, -5, -9] //NW
 }
 
 template template_7_8_rev_2(x,y){
     [ x+81, y, 8, 20, -3, -8] //S
     [ x+91, y, 18, 16, -11, -9] //SW
-    [ x+111, y, 29, 13, -17, -9] //W
+    [ x+111, y, 29, 13, -21, -9] //W
     [ x+142, y, 18, 16, -5, -9] //NW
     [ x, y, 8, 20, -3, -10] //N
     [ x+10, y, 18, 16, -11, -9] //NE
-    [ x+30, y, 29, 13, -13, -7] //E
+    [ x+30, y, 29, 13, -13, -9] //E
     [ x+61, y, 18, 16, -3, -8] //SE
 }
 
 template template_7_4_2(x,y){
     [ x, y, 8, 20, -3, -10] //N
     [ x+10, y, 18, 16, -11, -9] //NE
-    [ x+30, y, 29, 13, -13, -7] //E
+    [ x+30, y, 29, 13, -13, -9] //E
+    [ x+61, y, 18, 16, -3, -8] //SE
+    [ x, y, 8, 20, -3, -10] //N
+    [ x+10, y, 18, 16, -11, -9] //NE
+    [ x+30, y, 29, 13, -13, -9] //E
     [ x+61, y, 18, 16, -3, -8] //SE
 }
 
@@ -1932,6 +1936,117 @@ item (FEAT_TRAINS, item_container, 10002){
 		purchase                : gfx_container_purchase ;
 		colour_mapping          : sw_container_colours_2cc_check ;
 		cargo_subtype_text      : sw_container_refit_text_check ;
+	}
+}
+# 1 "rukts.pnml" 2
+# 1 "src/WAGON/monster_box.pnml" 1
+//Monster box
+
+
+//Sprites
+
+spriteset(gfx_mbox			, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,   0)}
+spriteset(gfx_mbox_coal_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  25)}
+spriteset(gfx_mbox_coal_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  25)}
+spriteset(gfx_mbox_iron_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  50)}
+spriteset(gfx_mbox_iron_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  50)}
+spriteset(gfx_mbox_sand_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  75)}
+spriteset(gfx_mbox_sand_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  75)}
+spriteset(gfx_mbox_grey_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0, 100)}
+spriteset(gfx_mbox_grey_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81, 100)}
+
+spriteset(gfx_mbox_purchase	, "gfx/WAGON/monster_box.png"){ template_purchase ( 81 , 0)}
+
+
+//Switches
+
+switch(FEAT_TRAINS, SELF, sw_mbox_coal_cargo_check, cargo_count * (100 / cargo_capacity)){
+	1..50	: gfx_mbox_coal_h ;
+	51..100	: gfx_mbox_coal_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_iron_cargo_check, cargo_count * (100 / cargo_capacity)){
+	1..50	: gfx_mbox_iron_h ;
+	51..100	: gfx_mbox_iron_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_sand_cargo_check, cargo_count * (100 / cargo_capacity)){
+	1..50	: gfx_mbox_sand_h ;
+	51..100	: gfx_mbox_sand_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_grey_cargo_check, cargo_count * (100 / cargo_capacity)){
+	1..50	: gfx_mbox_grey_h ;
+	51..100	: gfx_mbox_grey_f ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_mbox_cargo_check, cargo_type_in_veh){
+	COAL : sw_mbox_coal_cargo_check ;
+	IORE : sw_mbox_iron_cargo_check ;
+	CORE : sw_mbox_iron_cargo_check ;
+	COPR : sw_mbox_iron_cargo_check ;
+	PORE : sw_mbox_iron_cargo_check ;
+	AORE : sw_mbox_iron_cargo_check ;
+	SAND : sw_mbox_sand_cargo_check ;
+	GOLD : sw_mbox_sand_cargo_check ;
+	CERA : sw_mbox_sand_cargo_check ;
+	sw_mbox_grey_cargo_check ;
+}
+
+//Sprite stack
+
+switch(FEAT_TRAINS, SELF, sw_mbox_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : gfx_mbox ;
+	1 : sw_mbox_cargo_check ;
+}
+
+
+//Colours
+
+random_switch(FEAT_TRAINS, PARENT, sw_mbox_colours_random){
+	2 : palette_2cc(COLOUR_DARK_GREEN , COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_RED , COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_colours_year_check, build_year <= 1995){
+	1 : palette_2cc(COLOUR_BROWN, COLOUR_BROWN) ;
+	sw_mbox_colours_random ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_colours_2cc_check, colour_scheme_1){
+	1 : sw_mbox_colours_year_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+item(FEAT_TRAINS, item_mbox, 10005){
+	property{
+		name						   : string(STR_NAME_MONSTER_BOX) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 7 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1980, 1, 1) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 40 ;
+		cost_factor                    : 50 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 100 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : bitmask(CC_BULK, CC_POWDERIZED) ;
+		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
+		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
+		cargo_capacity                 : 50 ;
+		loading_speed                  : 20 ;
+		track_type                     : RAIL ;
+		power                          : 0 hp ;
+		weight                         : 23 ton ;
+	}
+	graphics{
+		default			: sw_mbox_sprite_stack ;
+		purchase		: gfx_mbox_purchase ;
+		colour_mapping	: sw_mbox_colours_2cc_check ;
 	}
 }
 # 1 "rukts.pnml" 2
@@ -5727,7 +5842,7 @@ item(FEAT_TRAINS, item_cl90, 90){
 		misc_flags		                : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		sprite_id		                : SPRITE_ID_NEW_TRAIN ;
 		length		                    : 7 ;
-		climates_available		        : NO_CLIMATE ;
+		climates_available		        : ALL_CLIMATES ;
 		introduction_date		        : date(1987,1,1) ;
 		model_life		                : 25 ;
 		vehicle_life		            : 40 ;
@@ -14048,8 +14163,8 @@ item(FEAT_TRAINS, item_nrwplank, 10004){
 		running_cost_base              : RUNNING_COST_NONE ;
 		running_cost_factor            : 50 ;
 		refit_cost                     : 0 ;
-		refittable_cargo_classes       : CC_BULK ;
-		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
+		refittable_cargo_classes       : bitmask(CC_BULK, CC_POWDERIZED) ;
+		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_NON_POURABLE) ;
 		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
 		cargo_capacity                 : 15 ;
 		loading_speed                  : 10 ;

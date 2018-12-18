@@ -168,7 +168,7 @@ item(FEAT_TRAINS, item_cl90, 90){
 		misc_flags		                : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		sprite_id		                : SPRITE_ID_NEW_TRAIN ;
 		length		                    : 7 ;
-		climates_available		        : NO_CLIMATE ;
+		climates_available		        : ALL_CLIMATES ;
 		introduction_date		        : date(1987,1,1) ;
 		model_life		                : 25 ;
 		vehicle_life		            : 40 ;

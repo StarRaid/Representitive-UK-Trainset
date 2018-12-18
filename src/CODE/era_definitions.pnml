@@ -11,3 +11,4 @@
 #define SPR_STACK [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]
 #define RNING_COST_A return (speed == 0 ? 
 #define RNING_COST_B  / 5 : 
+#define PERCENT_FULL cargo_count * (100 / cargo_capacity)
