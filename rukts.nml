@@ -1737,12 +1737,12 @@ item (FEAT_TRAINS, flask_wagon, 10001){
 	property{
 		name                         : string(STR_NAME_FLASK) ;
 		climates_available           : ALL_CLIMATES ;
-		introduction_date            : date(1960,1,1) ;
+		introduction_date            : date(1949,1,1) ;
 		model_life                   : VEHICLE_NEVER_EXPIRES ;
 		refittable_cargo_classes     : bitmask(CC_HAZARDOUS, CC_COVERED) ;
 		non_refittable_cargo_classes : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_BULK, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
 		cargo_allow_refit            : [URAN, NWST, SULP] ;
-		loading_speed                : 3 ;
+		loading_speed                : 2 ;
 		cost_factor                  : 8 ;
 		running_cost_factor          : 15 ;
 		running_cost_base            : RUNNING_COST_NONE ;
@@ -1859,6 +1859,7 @@ COLOUR_BLUE
 COLOUR_GREY
 */
 
+//bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)
 
 
 random_switch(FEAT_TRAINS, SELF, sw_container_colours_auto, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){

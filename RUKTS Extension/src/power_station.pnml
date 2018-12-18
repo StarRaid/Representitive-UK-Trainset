@@ -298,7 +298,7 @@ item(FEAT_INDUSTRIES, btrsea_power_station){
 		prod_cargo_types      : [cargotype("NWST")] ;
 		nearby_station_name   : string(STR_POWER_STATION_STATION_NAME) ;
 		prob_map_gen          : 4 ;
-		prob_in_game          : 2 ;
+		prob_in_game          : 1 ;
 	}	
 	graphics {
 		//produce_cargo_arrival : produce_btrsea_arrival ;

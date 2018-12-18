@@ -172,7 +172,7 @@ item(FEAT_INDUSTRIES, uran_mine){
 		conflicting_ind_types : [0x01] ;
 		prod_multiplier       : [8] ;
 		prob_random           : 3 ;
-		prob_in_game          : 2 ;
+		prob_in_game          : 1 ;
 		map_colour            : 255 ;
 		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
