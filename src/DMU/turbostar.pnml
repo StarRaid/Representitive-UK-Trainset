@@ -3,15 +3,17 @@
 
 //00 - Chiltern Railways - a
 //01 - Central Trains
-//02 - Cross Country - a
-//03 - TransPennine Express
+//02 - Cross Country
+//03 - SPT
 //04 - First Scot RAIL
 //05 - ScotRail Saltaire
 //06 - Southern
-//dd  - London Midland (170) - a
+//dd - London Midland (170) - a
 //08 - West Midlands Railway (170) - a
 //09 - London Midland (172) - a
 //10 - West Midlands Railway (172) - a
+//11 - TransPennine Express
+//12 - Northern
 
 template template_turbo_single(x,y){
 	[x+0,y,8,24,-3,-11] //North
@@ -45,6 +47,8 @@ spriteset (cl168_purchase, "gfx/DMU/class_168.png"){template_dualhead_purchase(8
 
 spriteset (turbostar_lm_170				, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 050)}
 spriteset (turbostar_lm_170_mid			, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 075)}
+spriteset (turbostar_xc_170				, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 100)}
+spriteset (turbostar_xc_170_mid			, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 125)}
 spriteset (turbostar_lm_172				, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 000)}
 spriteset (turbostar_lm_172_mid			, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 025)}
 spriteset (turbostar_wmr_172			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 050)}
@@ -67,6 +71,7 @@ switch(FEAT_TRAINS, SELF, sw_168_old_2, position_in_consist_from_end){
 
 switch(FEAT_TRAINS, SELF, sw_168_old_1, vehicle_type_id){ 9090 : cl168_cm_mid ; sw_168_old_2 ;}
 
+switch(FEAT_TRAINS, SELF, sw_170_xc_id_check	, vehicle_type_id ){ 9090 : turbostar_xc_170_mid ; turbostar_xc_170 ;}
 switch(FEAT_TRAINS, SELF, sw_170_lm_id_check	, vehicle_type_id ){ 9090 : turbostar_lm_170_mid ; turbostar_lm_170 ;}
 switch(FEAT_TRAINS, SELF, sw_172_lm_id_check	, vehicle_type_id ){ 9090 : turbostar_lm_172_mid ; turbostar_lm_172 ;}
 switch(FEAT_TRAINS, SELF, sw_172_wmr_id_check	, vehicle_type_id ){ 9090 : turbostar_wmr_172_mid ; turbostar_wmr_172 ;}
@@ -91,6 +96,7 @@ switch(FEAT_TRAINS, SELF, sw_168_gfx_auto_year_check, build_year){
 
 switch(FEAT_TRAINS, SELF, sw_168_gfx_manual, cargo_subtype){
 	0	: sw_168_old_1 ;
+	2	: sw_170_xc_id_check ;
 	9	: sw_172_lm_id_check ;
 	10	: sw_172_wmr_id_check ;
 	sw_170_lm_id_check ;
