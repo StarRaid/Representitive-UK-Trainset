@@ -7,15 +7,14 @@
 	[x+150,y,18,15,-3,-8] //North West
 */
 
-//#define MK2_BRAKE_CHECK_FRONT (((vehicle_is_reversed == 0) && ((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) && (position_in_vehid_chain == 0)) | ((((count_veh_id(9025) == 0) && (count_veh_id(9035) == 0)) == 0) && vehicle_is_reversed && (position_in_vehid_chain == 0)))
-//#define MK2_BRAKE_CHECK_BACK  (((vehicle_is_reversed && ((count_veh_id(9025) == 0) && (count_veh_id(9035) == 0)) > 0) && (position_in_vehid_chain_from_end == 0)) | ((((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) > 0) == 0) && (vehicle_is_reversed == 0) && (position_in_vehid_chain_from_end == 0))
 
-//#define MK2_BRAKE_CHECK_FRONT ((((count_veh_id(9025) > 0) | (count_veh_id(9030) > 0)) && (vehicle_is_reversed == 0) && (position_in_vehid_chain == 0)) | (((count_veh_id(9025) == 0) && (count_veh_id(9030) == 0)) && (vehicle_is_reversed) && (position_in_vehid_chain == 0)))
-//#define MK2_BRAKE_CHECK_BACK  ((((count_veh_id(9025) > 0) | (count_veh_id(9030) > 0)) && (vehicle_is_reversed) && (position_in_vehid_chain_from_end == 0)) | (((count_veh_id(9025) == 0) && (count_veh_id(9030) == 0)) && (vehicle_is_reversed == 0) && (position_in_vehid_chain_from_end == 0)))
+//#define MK2_BRAKE_CHECK_FRONT ((count_veh_id(9025) == 1) | (count_veh_id(9035) == 1)) & (position_in_vehid_chain_from_end == 0)
 
-#define MK2_BRAKE_CHECK_FRONT ((((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & (vehicle_is_reversed == 0) & (position_in_vehid_chain == 0)) || (((count_veh_id(9025) == 0) & (count_veh_id(9035) == 0)) & (vehicle_is_reversed) & (position_in_vehid_chain == 0)))
+//#define MK2_BRAKE_CHECK_BACK (count_veh_id(9025) == 0) & (count_veh_id(9035) == 0) & (position_in_consist == 0)
 
-#define MK2_BRAKE_CHECK_BACK  ((((count_veh_id(9025) > 0) | (count_veh_id(9035) > 0)) & (vehicle_is_reversed) & (position_in_vehid_chain_from_end == 0)) || (((count_veh_id(9025) == 0) & (count_veh_id(9035) == 0)) & (vehicle_is_reversed == 0) & (position_in_vehid_chain_from_end == 0)))
+#define MK2_BRAKE_CHECK_BACK 0
+#define MK2_BRAKE_CHECK_FRONT 0
+
 
 //Templates
 
