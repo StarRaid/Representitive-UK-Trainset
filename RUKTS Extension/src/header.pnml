@@ -4,6 +4,22 @@ grf{
 	desc                   : string(STR_GRF_DESC) ;
 	version                : 4 ;
 	min_compatible_version : 4 ;
+	param 0{
+		nuclear_enabled{
+			type		: bool ;
+			name		: string(STR_NUCLEAR_ENABLED_NAME) ;
+			desc		: string(STR_NUCLEAR_ENABLED_DESC) ;
+			bit			: 1 ;
+			def_value	: 1 ;
+		}
+		narrow_gauge_enabled{
+			type		: bool ;
+			name		: string(STR_NARROW_GAUGE_ENABLED_NAME) ;
+			desc		: string(STR_NARROW_GAUGE_ENABLED_DESC) ;
+			bit			: 2 ;
+			def_value	: 1 ;
+		}
+	}
 }
 
 //Cargo table

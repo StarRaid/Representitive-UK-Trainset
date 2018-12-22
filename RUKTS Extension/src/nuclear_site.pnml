@@ -405,6 +405,7 @@ switch (FEAT_INDUSTRIES, SELF, sw_nucrep_water_check, water_distance){
 
 produce(nucrep_produce_monthly, 5, 0, 0, 0, 0);
 
+if(nuclear_enabled == 1){
 item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 	property {
 		substitute            : 0x01 ;
@@ -431,4 +432,5 @@ item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 		construction_probability	: sw_nuclear_build_date_check ;
 		//colour                : sw_nucrep_colour_check ;
 	}
+}
 }

@@ -288,6 +288,7 @@ switch(FEAT_INDUSTRIES, SELF, sw_btrsea_produce, waiting_cargo_3){
 	produce_btrsea_high ;
 }
 
+if(nuclear_enabled == 1){
 item(FEAT_INDUSTRIES, btrsea_power_station){
 	property {
 		substitute            : 0x01 ;
@@ -304,4 +305,5 @@ item(FEAT_INDUSTRIES, btrsea_power_station){
 		//produce_cargo_arrival : produce_btrsea_arrival ;
 		produce_256_ticks     : sw_btrsea_produce ;
 	}
+}
 }

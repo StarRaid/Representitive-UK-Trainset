@@ -161,6 +161,7 @@ switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change_check, production_rate_1){
 
 produce(uran_mine_produce_monthly, 0, 0, 0, LOAD_PERM(0x00), 0);
 
+if(nuclear_enabled == 1){
 item(FEAT_INDUSTRIES, uran_mine){
 	property {
 		substitute            : 0x00 ;
@@ -186,4 +187,5 @@ item(FEAT_INDUSTRIES, uran_mine){
 		construction_probability	: sw_nuclear_build_date_check ;
 		//random_prod_change    : nucrep_random_prod_change_switch ;
 	}
+}
 }

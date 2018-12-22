@@ -7,6 +7,22 @@ grf{
 	desc                   : string(STR_GRF_DESC) ;
 	version                : 4 ;
 	min_compatible_version : 4 ;
+	param 0{
+		nuclear_enabled{
+			type		: bool ;
+			name		: string(STR_NUCLEAR_ENABLED_NAME) ;
+			desc		: string(STR_NUCLEAR_ENABLED_DESC) ;
+			bit			: 1 ;
+			def_value	: 1 ;
+		}
+		narrow_gauge_enabled{
+			type		: bool ;
+			name		: string(STR_NARROW_GAUGE_ENABLED_NAME) ;
+			desc		: string(STR_NARROW_GAUGE_ENABLED_DESC) ;
+			bit			: 2 ;
+			def_value	: 1 ;
+		}
+	}
 }
 
 //Cargo table
@@ -115,6 +131,7 @@ switch(FEAT_INDUSTRIES, SELF, sw_nuclear_build_date_check, current_year < 1950){
 }
 
 # 1 "ruktsna.pnml" 2
+
 # 1 "src/narrow_gauge.pnml" 1
 //Narrow Gauge Tracks
 
@@ -189,6 +206,7 @@ spriteset(gfx_narrow_track_vert_r, "gfx/TRACKS/narrow_gauge.png"){}
 */
 
 
+if(narrow_gauge_enabled == 1){
 item(FEAT_RAILTYPES, narrow_rail, 5) {
 	property {
 		label                     : "NAAN" ;
@@ -217,7 +235,9 @@ item(FEAT_RAILTYPES, narrow_rail, 5) {
 		//fences          : 
 	}
 }
+}
 # 1 "ruktsna.pnml" 2
+
 # 1 "src/nuclear_site.pnml" 1
 //Graphics
 
@@ -626,6 +646,7 @@ switch (FEAT_INDUSTRIES, SELF, sw_nucrep_water_check, water_distance){
 
 produce(nucrep_produce_monthly, 5, 0, 0, 0, 0);
 
+if(nuclear_enabled == 1){
 item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 	property {
 		substitute            : 0x01 ;
@@ -652,6 +673,7 @@ item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 		construction_probability	: sw_nuclear_build_date_check ;
 		//colour                : sw_nucrep_colour_check ;
 	}
+}
 }
 # 1 "ruktsna.pnml" 2
 # 1 "src/power_station.pnml" 1
@@ -945,6 +967,7 @@ switch(FEAT_INDUSTRIES, SELF, sw_btrsea_produce, waiting_cargo_3){
 	produce_btrsea_high ;
 }
 
+if(nuclear_enabled == 1){
 item(FEAT_INDUSTRIES, btrsea_power_station){
 	property {
 		substitute            : 0x01 ;
@@ -955,12 +978,13 @@ item(FEAT_INDUSTRIES, btrsea_power_station){
 		prod_cargo_types      : [cargotype("NWST")] ;
 		nearby_station_name   : string(STR_POWER_STATION_STATION_NAME) ;
 		prob_map_gen          : 4 ;
-		prob_in_game          : 2 ;
+		prob_in_game          : 1 ;
 	}	
 	graphics {
 		//produce_cargo_arrival : produce_btrsea_arrival ;
 		produce_256_ticks     : sw_btrsea_produce ;
 	}
+}
 }
 # 1 "ruktsna.pnml" 2
 # 1 "src/uranium_mine.pnml" 1
@@ -1127,6 +1151,7 @@ switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change_check, production_rate_1){
 
 produce(uran_mine_produce_monthly, 0, 0, 0, LOAD_PERM(0x00), 0);
 
+if(nuclear_enabled == 1){
 item(FEAT_INDUSTRIES, uran_mine){
 	property {
 		substitute            : 0x00 ;
@@ -1138,7 +1163,7 @@ item(FEAT_INDUSTRIES, uran_mine){
 		conflicting_ind_types : [0x01] ;
 		prod_multiplier       : [8] ;
 		prob_random           : 3 ;
-		prob_in_game          : 2 ;
+		prob_in_game          : 1 ;
 		map_colour            : 255 ;
 		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
@@ -1152,5 +1177,6 @@ item(FEAT_INDUSTRIES, uran_mine){
 		construction_probability	: sw_nuclear_build_date_check ;
 		//random_prod_change    : nucrep_random_prod_change_switch ;
 	}
+}
 }
 # 1 "ruktsna.pnml" 2

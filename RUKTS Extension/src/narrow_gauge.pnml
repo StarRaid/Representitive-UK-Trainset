@@ -71,6 +71,7 @@ spriteset(gfx_narrow_track_vert_r, "gfx/TRACKS/narrow_gauge.png"){}
 */
 
 
+if(narrow_gauge_enabled == 1){
 item(FEAT_RAILTYPES, narrow_rail, 5) {
 	property {
 		label                     : "NAAN" ;
@@ -98,4 +99,5 @@ item(FEAT_RAILTYPES, narrow_rail, 5) {
 		//depots          : 
 		//fences          : 
 	}
+}
 }
