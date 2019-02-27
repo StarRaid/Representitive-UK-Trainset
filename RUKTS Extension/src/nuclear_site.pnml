@@ -415,8 +415,8 @@ item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 		prod_cargo_types      : [] ;
 		accept_cargo_types    : [cargotype("NWST")] ;
 		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
-		prob_map_gen           : 3 ;
-		prob_in_game          : 1 ;
+		prob_map_gen           : 10 ;
+		prob_in_game          : 50 ;
 		map_colour            : 208 ;
 		//spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;

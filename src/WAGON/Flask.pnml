@@ -82,7 +82,7 @@ item (FEAT_TRAINS, flask_wagon, 10001){
 		power                        : 0 hp ;
 		dual_headed                  : 0 ;
 		default_cargo_type           : NWST ;
-		cargo_capacity               : 15 ;
+		cargo_capacity               : 40 ;
 		weight                       : 20 ton ;
 		length                       : 6 ;
 	}

@@ -100,7 +100,7 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		track_type                     : RAIL ;
 		power                          : 0 hp ;
 		weight                         : 23 ton ;
-		max_speed					   : 75 mph ;
+		speed						   : 75 mph ;
 	}
 	graphics{
 		default			: sw_mbox_sprite_stack ;

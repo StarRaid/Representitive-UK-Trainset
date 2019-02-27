@@ -68,10 +68,10 @@ item(FEAT_CARGOS, cargo_uranium, 30){
 		items_of_cargo            : string(STR_URAN_ITEMS_OF_CARGO) ;
 		type_abbreviation         : string(STR_URAN_ABBREV) ;
 		sprite                    : NEW_CARGO_SPRITE ;
-		weight                    : 4 ;
-		penalty_lowerbound        : 10 ;
+		weight                    : 3 ;
+		penalty_lowerbound        : 30 ;
 		single_penalty_length     : 2 ;
-		price_factor              : 190 ;
+		price_factor              : 200 ;
 		station_list_colour       : 205 ;
 		cargo_payment_list_colour : 205 ;
 		is_freight                : 1 ;
@@ -96,10 +96,10 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 		items_of_cargo            : string(STR_NWST_ITEMS_OF_CARGO) ;
 		type_abbreviation         : string(STR_NWST_ABBREV) ;
 		sprite                    : NEW_CARGO_SPRITE ;
-		weight                    : 3 ;
-		penalty_lowerbound        : 6 ;
+		weight                    : 2 ;
+		penalty_lowerbound        : 18 ;
 		single_penalty_length     : 4 ;
-		price_factor              : 230 ;
+		price_factor              : 240 ;
 		station_list_colour       : 208 ;
 		cargo_payment_list_colour : 208 ;
 		is_freight                : 1 ;

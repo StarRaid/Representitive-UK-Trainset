@@ -81,6 +81,8 @@ spriteset(gfx_ee3_drscompass          , "gfx/DIESEL_LOCO/class_37.png"){template
 spriteset(gfx_ee3_drscompass_reverse  , "gfx/DIESEL_LOCO/class_37.png"){template_ee3_reverse(0,200)}
 spriteset(gfx_ee3_colasrail           , "gfx/DIESEL_LOCO/class_37.png"){template_ee3(0,225)}
 spriteset(gfx_ee3_colasrail_reverse   , "gfx/DIESEL_LOCO/class_37.png"){template_ee3_reverse(0,225)}
+spriteset(gfx_ee3_intercity       	  , "gfx/DIESEL_LOCO/class_37.png"){template_ee3(235,125)}
+spriteset(gfx_ee3_intercity_reverse	  , "gfx/DIESEL_LOCO/class_37.png"){template_ee3_reverse(235,125)}
 
 spriteset(gfx_ee3_headcode_brgreen_split          , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(0,0)}
 spriteset(gfx_ee3_headcode_brgreen_centre         , "gfx/FIXTURES/class_37_headcodes.png"){template_ee3(0,25)}
@@ -139,6 +141,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_brgreen_reverse_check		  , vehicle_is_reverse
 switch(FEAT_TRAINS, PARENT, sw_ee3_brblue_reverse_check			  , vehicle_is_reversed){ 1 : gfx_ee3_brblue_reverse ; gfx_ee3_brblue ; }
 switch(FEAT_TRAINS, PARENT, sw_ee3_brlargelogo_reverse_check	  , vehicle_is_reversed){ 1 : gfx_ee3_brlargelogo_reverse ; gfx_ee3_brlargelogo ; }
 switch(FEAT_TRAINS, PARENT, sw_ee3_regional_reverse_check         , vehicle_is_reversed){ 1 : gfx_ee3_regional_reverse ; gfx_ee3_regional ; }
+switch(FEAT_TRAINS, PARENT, sw_ee3_intercity_reverse_check         , vehicle_is_reversed){ 1 : gfx_ee3_intercity_reverse ; gfx_ee3_intercity ; }
 switch(FEAT_TRAINS, PARENT, sw_ee3_railfreight_reverse_check      , vehicle_is_reversed){ 1 : gfx_ee3_railfreight_reverse ; gfx_ee3_railfreight ; }
 switch(FEAT_TRAINS, PARENT, sw_ee3_drs_reverse_check              , vehicle_is_reversed){ 1 : gfx_ee3_drs_reverse ; gfx_ee3_drs ; }
 switch(FEAT_TRAINS, PARENT, sw_ee3_ews_reverse_check              , vehicle_is_reversed){ 1 : gfx_ee3_ews_reverse ; gfx_ee3_ews ; }
@@ -254,6 +257,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfx_manual, cargo_subtype){
 	10 : sw_ee3_ews_reverse_check ;
 	11 : sw_ee3_rog_reverse_check ;
 	12 : sw_ee3_colasrailfreight_reverse_check ;
+	13 : sw_ee3_intercity_reverse_check ;
 	sw_ee3_brlargelogo_reverse_check ;
 }
 
@@ -294,6 +298,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfx_dbso_manual, cargo_subtype){
 	10 : sw_ee3_ews_reverse_check ;
 	11 : sw_ee3_rog_reverse_check ;
 	12 : sw_ee3_colasrailfreight_reverse_check ;
+	13 : sw_ee3_intercity_reverse_check ;
 	sw_ee3_brlargelogo_reverse_check ;
 }
 
@@ -424,6 +429,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_manual, cargo_subtype){
 	10   : sw_ee3_gfxhc_standard_3 ;
 	11   : sw_ee3_gfxhc_newlights_random ;
 	12   : sw_ee3_gfxhc_standard_3 ;
+	13   : gfx_ee3_headcode_centre ;
 	sw_ee3_gfxhc_standard_random ;
 }
 
@@ -497,6 +503,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_manual, cargo_subtype){
 	10   : sw_ee3_gfxhc_dbso_standard_3 ;
 	11   : sw_ee3_gfxhc_dbso_newlights_random ;
 	12   : sw_ee3_gfxhc_dbso_standard_3 ;
+	13   : gfx_ee3_headcode_centre ;
 	sw_ee3_gfxhc_dbso_standard_random ;
 }
 
@@ -628,6 +635,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_manual, cargo_subtype){
 	10   : sw_ee3_gfxlt_standard_3 ;
 	11   : sw_ee3_gfxlt_newlights ;
 	12   : sw_ee3_gfxlt_standard_3 ;
+	13   : sw_ee3_lights_centre_front ;
 	sw_ee3_gfxlt_standard_random ;
 }
 
@@ -705,6 +713,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_manual, cargo_subtype){
 	10   : sw_ee3_gfxlt_dbso_standard_3 ;
 	11   : sw_ee3_gfxlt_dbso_newlights ;
 	12   : sw_ee3_gfxlt_dbso_standard_3 ;
+	13   : sw_ee3_lights_centre_front ;
 	sw_ee3_gfxlt_dbso_standard_random ;
 }
 
@@ -769,6 +778,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_refit_text, cargo_subtype){
 	10 : string(STR_LIVERY_EWS) ;
 	11 : string(STR_LIVERY_ROG_EUROPHENIX) ;
 	12 : string(STR_LIVERY_COLAS) ;
+	13 : string(STR_LIVERY_INTERCITY) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -856,6 +866,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_colours_manual, cargo_subtype){
 	10   : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	11   : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	12   : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	13   : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
@@ -889,6 +900,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_colours_dbso_manual, cargo_subtype){
 	10   : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	11   : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	12   : palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	13   : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
@@ -956,7 +968,7 @@ item (FEAT_TRAINS, item_eetype3, 37){
 		refittable_cargo_classes       : 0 ;
 		cargo_allow_refit              : [GOOD] ;
 		cargo_capacity                 : 1 ;
-		model_life                     : 30 ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 50 ;
 		reliability_decay              : 10 ;
 		cost_factor                    : 55 ;

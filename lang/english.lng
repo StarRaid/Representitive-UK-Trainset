@@ -15,6 +15,16 @@ STR_PARAM_LIVERY_CHOICE_DESC		:Liveries are chosen through the cargo refit menu 
 STR_PARAM_ALT_NAMES_NAME			:Use class names
 STR_PARAM_ALT_NAMES_DESC			:Use the names of the classes of train instead of the manufacturers name.
 
+STR_PARAM_PURCHASE_COST				:Purchase cost factor
+STR_PARAM_PURCHASE_COST_DESC		:Changes the cost of purchasing new trains from this GRF
+STR_PARAM_RUNNING_COST				:Running cost factor
+STR_PARAM_RUNNING_COST_DESC			:Changes the running cost of trains from this GRF
+
+STR_PARAM_LOW						:1/2
+STR_PARAM_MEDIUM					:Normal
+STR_PARAM_HIGH						:2x
+STR_PARAM_TOOMUCH					:4x
+
 
 
 STR_PARAM_VEH_SELEC_NAME         		 :Vehicle selection

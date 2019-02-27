@@ -2,8 +2,8 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 26 ;
-	min_compatible_version: 24 ;
+	version: 27 ;
+	min_compatible_version: 27 ;
 	param 0{
 		colour_scheme_1{
 			type    : bool ;
@@ -49,7 +49,39 @@ grf{
 			bit		  : 1 ;
 			}
 		}
+	param 3{
+		purchase_cost{
+			type		: int ;
+			name		: string(STR_PARAM_PURCHASE_COST) ;
+			desc		: string(STR_PARAM_PURCHASE_COST_DESC) ;
+			min_value	: 0 ;
+			max_value	: 3 ;
+			def_value	: 1 ;
+			names		: {
+				0	: string(STR_PARAM_LOW  ) ;
+				1	: string(STR_PARAM_MEDIUM  ) ;
+				2	: string(STR_PARAM_HIGH) ;
+				3	: string(STR_PARAM_TOOMUCH ) ;
+			} ;
+		}
 	}
+	param 4{
+		running_cost{
+			type		: int ;
+			name		: string(STR_PARAM_RUNNING_COST) ;
+			desc		: string(STR_PARAM_RUNNING_COST_DESC) ;
+			min_value	: 0 ;
+			max_value	: 3 ;
+			def_value	: 1 ;
+			names		: {
+				0	: string(STR_PARAM_LOW  ) ;
+				1	: string(STR_PARAM_MEDIUM  ) ;
+				2	: string(STR_PARAM_HIGH) ;
+				3	: string(STR_PARAM_TOOMUCH ) ;
+			} ;
+		}
+	}
+}
 
 
 train_width_32_px  = 1 ;
@@ -59,9 +91,9 @@ traininfo_y_offset = 2 ;
 //Modifying base costs
 
 basecost{
-	PR_BUILD_VEHICLE_TRAIN    : -1 ;
-	PR_BUILD_VEHICLE_WAGON    :  3 ;
-	PR_RUNNING_TRAIN_STEAM    :  2 ;
-	PR_RUNNING_TRAIN_DIESEL   :  2 ;
-	PR_RUNNING_TRAIN_ELECTRIC :  2 ;
+	PR_BUILD_VEHICLE_TRAIN    : (param[3] - 2) ;
+	PR_BUILD_VEHICLE_WAGON    : 3 ;
+	PR_RUNNING_TRAIN_STEAM    : param[4] ;
+	PR_RUNNING_TRAIN_DIESEL   : param[4] ;
+	PR_RUNNING_TRAIN_ELECTRIC : param[4] ;
 }
