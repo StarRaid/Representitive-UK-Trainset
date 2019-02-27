@@ -2,8 +2,8 @@ grf{
 	grfid                  : "RTNA" ;
 	name                   : string(STR_GRF_NAME) ;
 	desc                   : string(STR_GRF_DESC) ;
-	version                : 4 ;
-	min_compatible_version : 4 ;
+	version                : 6 ;
+	min_compatible_version : 5 ;
 	param 0{
 		nuclear_enabled{
 			type		: bool ;
@@ -68,7 +68,7 @@ item(FEAT_CARGOS, cargo_uranium, 30){
 		items_of_cargo            : string(STR_URAN_ITEMS_OF_CARGO) ;
 		type_abbreviation         : string(STR_URAN_ABBREV) ;
 		sprite                    : NEW_CARGO_SPRITE ;
-		weight                    : 3 ;
+		weight                    : 2 ;
 		penalty_lowerbound        : 30 ;
 		single_penalty_length     : 2 ;
 		price_factor              : 200 ;

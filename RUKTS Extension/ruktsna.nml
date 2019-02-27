@@ -5,8 +5,8 @@ grf{
 	grfid                  : "RTNA" ;
 	name                   : string(STR_GRF_NAME) ;
 	desc                   : string(STR_GRF_DESC) ;
-	version                : 4 ;
-	min_compatible_version : 4 ;
+	version                : 5 ;
+	min_compatible_version : 5 ;
 	param 0{
 		nuclear_enabled{
 			type		: bool ;
@@ -71,10 +71,10 @@ item(FEAT_CARGOS, cargo_uranium, 30){
 		items_of_cargo            : string(STR_URAN_ITEMS_OF_CARGO) ;
 		type_abbreviation         : string(STR_URAN_ABBREV) ;
 		sprite                    : NEW_CARGO_SPRITE ;
-		weight                    : 4 ;
-		penalty_lowerbound        : 10 ;
+		weight                    : 2 ;
+		penalty_lowerbound        : 30 ;
 		single_penalty_length     : 2 ;
-		price_factor              : 190 ;
+		price_factor              : 200 ;
 		station_list_colour       : 205 ;
 		cargo_payment_list_colour : 205 ;
 		is_freight                : 1 ;
@@ -99,10 +99,10 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 		items_of_cargo            : string(STR_NWST_ITEMS_OF_CARGO) ;
 		type_abbreviation         : string(STR_NWST_ABBREV) ;
 		sprite                    : NEW_CARGO_SPRITE ;
-		weight                    : 3 ;
-		penalty_lowerbound        : 6 ;
+		weight                    : 2 ;
+		penalty_lowerbound        : 18 ;
 		single_penalty_length     : 4 ;
-		price_factor              : 230 ;
+		price_factor              : 240 ;
 		station_list_colour       : 208 ;
 		cargo_payment_list_colour : 208 ;
 		is_freight                : 1 ;
@@ -656,8 +656,8 @@ item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 		prod_cargo_types      : [] ;
 		accept_cargo_types    : [cargotype("NWST")] ;
 		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
-		prob_map_gen           : 3 ;
-		prob_in_game          : 1 ;
+		prob_map_gen           : 10 ;
+		prob_in_game          : 50 ;
 		map_colour            : 208 ;
 		//spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
@@ -1161,9 +1161,9 @@ item(FEAT_INDUSTRIES, uran_mine){
 		prod_cargo_types      : [cargotype("URAN")] ;
 		accept_cargo_types    : [] ;
 		conflicting_ind_types : [0x01] ;
-		prod_multiplier       : [8] ;
-		prob_random           : 3 ;
-		prob_in_game          : 1 ;
+		prod_multiplier       : [16] ;
+		prob_random           : 7 ;
+		prob_in_game          : 30 ;
 		map_colour            : 255 ;
 		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
