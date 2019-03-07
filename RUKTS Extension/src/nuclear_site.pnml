@@ -377,31 +377,31 @@ tilelayout tilelayout_nucrep_site_b{
 
  /* Every month, the counter is increased. The counter is reset to zero whenever the power plant
     receives cargo. When the counter reaches 61, the industry will close when the random production
-    change callback is called. */
+    change callback is called. 
  
- /* When we receive cargo, the counter is reset. 
+ // When we receive cargo, the counter is reset. 
  produce(nucrep_cargo_arrive_produce, 0, 0, 0, 0, STORE_PERM(0, 0x00));
  
- /* Every month the counter is increased. 
+ // Every month the counter is increased. 
  switch (FEAT_INDUSTRIES, SELF, sw_nucrep_monthly_prod_change_switch, STORE_PERM(LOAD_PERM(0x00) + 1, 0x00)) {
  	return CB_RESULT_IND_PROD_NO_CHANGE;
  }
  
- switch (FEAT_INDUSTRIES, SELF, sw_nucrep_monthly_prod_change_check, waiting_cargo_1){
+ /* switch (FEAT_INDUSTRIES, SELF, sw_nucrep_monthly_prod_change_check, waiting_cargo_1){
 	0 : sw_nucrep_monthly_prod_change_switch ;
 	CB_RESULT_IND_PROD_NO_CHANGE ;
- }
+ } 
  
- /* Only check industry closure if the counter is greater than 60. 
+ // Only check industry closure if the counter is greater than 60. 
  switch (FEAT_INDUSTRIES, SELF, sw_nucrep_random_prod_change_switch, LOAD_PERM(0x00)) {
  	0..60: return CB_RESULT_IND_PROD_NO_CHANGE;
  	return CB_RESULT_IND_PROD_CLOSE;
- }*/
-
+ }
+/*
 switch (FEAT_INDUSTRIES, SELF, sw_nucrep_water_check, water_distance){
 	0..32 : CB_RESULT_LOCATION_ALLOW ;
 	return string(STR_ERROR_NOT_NEAR_WATER) ;
-}
+}*/
 
 produce(nucrep_produce_monthly, 5, 0, 0, 0, 0);
 
@@ -414,23 +414,23 @@ item(FEAT_INDUSTRIES, nuclear_reprocessing_site){
 		fund_cost_multiplier  : 255 ;
 		prod_cargo_types      : [] ;
 		accept_cargo_types    : [cargotype("NWST")] ;
-		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
-		prob_map_gen           : 10 ;
-		prob_in_game          : 50 ;
+		prob_map_gen          : 3 ;
+		prob_in_game          : 1 ;
 		map_colour            : 208 ;
-		//spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
 		name                  : string(STR_NUCPROC_NAME) ;
 		nearby_station_name   : string(STR_NUCPROC_STATION_NAME) ;
+		//conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
+		//spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
 	}
-	graphics {
-		//produce_cargo_arrival		: nucrep_cargo_arrive_produce ;
-		produce_256_ticks			: nucrep_produce_monthly ;
-		location_check				: sw_nucrep_water_check ;
-		//monthly_prod_change			: sw_nucrep_monthly_prod_change_check ;
-		//random_prod_change			: sw_nucrep_random_prod_change_switch ;
+	/*graphics {
+		produce_cargo_arrival		: nucrep_cargo_arrive_produce ;
+		//produce_256_ticks			: nucrep_produce_monthly ;
+		//location_check				: sw_nucrep_water_check ;
+		monthly_prod_change			: sw_nucrep_monthly_prod_change_switch ;
+		random_prod_change			: sw_nucrep_random_prod_change_switch ;
 		construction_probability	: sw_nuclear_build_date_check ;
 		//colour                : sw_nucrep_colour_check ;
-	}
+	}*/
 }
 }

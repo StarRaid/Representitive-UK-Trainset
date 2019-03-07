@@ -142,11 +142,11 @@ tilelayout tilelayout_uran_mine{
 	2,1 : uran_mine_tile ;
 	2,2 : uran_mine_tile ;
 }
-
+/*
 switch (FEAT_INDUSTRIES, SELF, uran_mine_water_check, water_distance){
 	0..64 : CB_RESULT_LOCATION_ALLOW ;
 	return string(STR_ERROR_NOT_NEAR_WATER) ;
-}
+}*/
 
 switch(FEAT_INDUSTRIES, SELF, sw_uran_monthly_change, transported_last_month_1){
 	0 : STORE_PERM(0x00, LOAD_PERM(0x00) - 1) ;
@@ -170,19 +170,19 @@ item(FEAT_INDUSTRIES, uran_mine){
 		fund_cost_multiplier  : 37 ;
 		prod_cargo_types      : [cargotype("URAN")] ;
 		accept_cargo_types    : [] ;
-		conflicting_ind_types : [0x01] ;
 		prod_multiplier       : [16] ;
-		prob_random           : 7 ;
-		prob_in_game          : 30 ;
+		prob_random           : 5 ;
+		prob_in_game          : 2 ;
 		map_colour            : 255 ;
-		spec_flags            : bitmask(IND_FLAG_BUILT_ONLY_AFTER_1960) ;
+		spec_flags            : bitmask(IND_FLAG_CAN_CAUSE_SUBSIDENCE) ;
 		new_ind_msg           : TTD_STR_NEWS_INDUSTRY_CONSTRUCTION ;
 		name                  : string(STR_URANMINE_NAME) ;
 		nearby_station_name   : string(STR_URANMINE_STATION_NAME) ;
+		//conflicting_ind_types : [0x01] ;
 	}
 	graphics {
 		produce_256_ticks			: uran_mine_produce_monthly ;
-		location_check				: uran_mine_water_check ;
+		//location_check				: uran_mine_water_check ;
 		monthly_prod_change			: sw_uran_monthly_change_check ;
 		construction_probability	: sw_nuclear_build_date_check ;
 		//random_prod_change    : nucrep_random_prod_change_switch ;

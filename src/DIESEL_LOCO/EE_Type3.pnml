@@ -429,7 +429,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxhc_manual, cargo_subtype){
 	10   : sw_ee3_gfxhc_standard_3 ;
 	11   : sw_ee3_gfxhc_newlights_random ;
 	12   : sw_ee3_gfxhc_standard_3 ;
-	13   : gfx_ee3_headcode_centre ;
+	13   : sw_ee3_gfxhc_standard_3 ;
 	sw_ee3_gfxhc_standard_random ;
 }
 
@@ -503,7 +503,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxhc_dbso_manual, cargo_subtype){
 	10   : sw_ee3_gfxhc_dbso_standard_3 ;
 	11   : sw_ee3_gfxhc_dbso_newlights_random ;
 	12   : sw_ee3_gfxhc_dbso_standard_3 ;
-	13   : gfx_ee3_headcode_centre ;
+	13   : sw_ee3_gfxhc_standard_3 ;
 	sw_ee3_gfxhc_dbso_standard_random ;
 }
 
@@ -635,7 +635,7 @@ switch(FEAT_TRAINS, SELF, sw_ee3_gfxlt_manual, cargo_subtype){
 	10   : sw_ee3_gfxlt_standard_3 ;
 	11   : sw_ee3_gfxlt_newlights ;
 	12   : sw_ee3_gfxlt_standard_3 ;
-	13   : sw_ee3_lights_centre_front ;
+	13   : sw_ee3_gfxlt_standard_3 ;
 	sw_ee3_gfxlt_standard_random ;
 }
 
@@ -713,7 +713,7 @@ switch(FEAT_TRAINS, PARENT, sw_ee3_gfxlt_dbso_manual, cargo_subtype){
 	10   : sw_ee3_gfxlt_dbso_standard_3 ;
 	11   : sw_ee3_gfxlt_dbso_newlights ;
 	12   : sw_ee3_gfxlt_dbso_standard_3 ;
-	13   : sw_ee3_lights_centre_front ;
+	13   : sw_ee3_gfxlt_standard_3 ;
 	sw_ee3_gfxlt_dbso_standard_random ;
 }
 

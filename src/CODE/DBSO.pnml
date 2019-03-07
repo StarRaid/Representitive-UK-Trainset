@@ -45,6 +45,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_manual_ee3, cargo_subtype){
 	0..1 : sw_dbso_brblue_rev_check ;
 	4    : sw_dbso_scotrail_rev_check ;
 	12   : sw_dbso_generic_rev_check ;
+	13   : sw_dbso_scotrail_rev_check ;
 	sw_dbso_directrail_rev_check ;
 }
 
@@ -107,6 +108,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_colours_ee3, cargo_subtype){
 	0..1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	4    : palette_2cc(COLOUR_GREY, COLOUR_DARK_BLUE) ;
 	12   : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	13   : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
 

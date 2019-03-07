@@ -275,7 +275,7 @@ tilelayout btrsea_tilelayout {
 }
 
 
-produce(produce_btrsea_none   , 68 , 68 , 4 , 0 , 0);
+/*produce(produce_btrsea_none   , 68 , 68 , 4 , 0 , 0);
 produce(produce_btrsea_low    , 60 , 60 , 6, 4 , 0);
 produce(produce_btrsea_medium , 52 , 52 , 9, 6 , 0);
 produce(produce_btrsea_high   , 48 , 48 , 15, 8, 0);
@@ -286,7 +286,7 @@ switch(FEAT_INDUSTRIES, SELF, sw_btrsea_produce, waiting_cargo_3){
 	1..40   : produce_btrsea_low ;
 	41..80  : produce_btrsea_medium ;
 	produce_btrsea_high ;
-}
+}*/
 
 if(nuclear_enabled == 1){
 item(FEAT_INDUSTRIES, btrsea_power_station){
@@ -295,15 +295,21 @@ item(FEAT_INDUSTRIES, btrsea_power_station){
 		layouts               : [btrsea_tilelayout] ;
 		life_type             : IND_LIFE_TYPE_PROCESSING ;
 		accept_cargo_types    : [cargotype("COAL"), cargotype("OIL_"), cargotype("URAN")];
-		conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
 		prod_cargo_types      : [cargotype("NWST")] ;
+		min_cargo_distr       : 10;
+		spec_flags            : bitmask(IND_FLAG_CAN_CAUSE_SUBSIDENCE) ;
 		nearby_station_name   : string(STR_POWER_STATION_STATION_NAME) ;
 		prob_map_gen          : 4 ;
 		prob_in_game          : 1 ;
+		//prod_multiplier       : [1];
+		//input_multiplier_1	  : [0];
+		//input_multiplier_2	  : [0];
+		//input_multiplier_3	  : [2];
+		//conflicting_ind_types : [industry_type(IND_TYPE_OLD, 0x01), industry_type(IND_TYPE_NEW, 0), industry_type(IND_TYPE_NEW, 1)] ;
 	}	
-	graphics {
+	//graphics {
 		//produce_cargo_arrival : produce_btrsea_arrival ;
-		produce_256_ticks     : sw_btrsea_produce ;
-	}
+		//produce_256_ticks     : sw_btrsea_produce ;
+	//}
 }
 }
