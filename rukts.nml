@@ -4186,6 +4186,9 @@ spriteset(gfx_brush2_ews_rev					, "gfx/DIESEL_LOCO/class_31.png")	{ template_7_
 spriteset(gfx_brush2_modern						, "gfx/DIESEL_LOCO/class_31.png")	{ template_7_8_2(	0,	200)	}
 spriteset(gfx_brush2_modern_rev					, "gfx/DIESEL_LOCO/class_31.png")	{ template_7_8_rev_2(	0,	200)}
 
+spriteset(gfx_brush2_taillights					, "gfx/DIESEL_LOCO/class_31.png")	{ template_7_8_2(	235,	0)	}
+spriteset(gfx_brush2_headlights					, "gfx/DIESEL_LOCO/class_31.png")	{ template_7_8_2(	235,	25)	}
+
 spriteset(gfx_brush2_purchase_brgreen			, "gfx/DIESEL_LOCO/class_31.png")	{ template_purchase_short(	178,	25)	}
 spriteset(gfx_brush2_purchase_brblue			, "gfx/DIESEL_LOCO/class_31.png")	{ template_purchase_short(	178,	50)	}
 spriteset(gfx_brush2_purchase_brlargelogo		, "gfx/DIESEL_LOCO/class_31.png")	{ template_purchase_short(	178,	75)	}
@@ -4264,8 +4267,14 @@ switch(FEAT_TRAINS, SELF, sw_brush2_gfx_manual_check, livery_choice){
 
 //Sprite stack
 
+switch(FEAT_TRAINS, SELF, sw_brush2_headlight_check, position_in_consist){ 0 : gfx_brush2_headlights ; }
+switch(FEAT_TRAINS, SELF, sw_brush2_taillight_check, position_in_consist_from_end){ 0 : gfx_brush2_taillights ; }
+
+
 switch(FEAT_TRAINS, SELF, sw_brush2_gfx_sprstack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_brush2_gfx_manual_check ;
+	1 : sw_brush2_headlight_check ;
+	2 : sw_brush2_taillight_check ;
 }
 
 
