@@ -78,6 +78,7 @@ spriteset(gfx_mk2_directrail_f_bso         , "gfx/WAGON/mark_2_2.png"){template_
 spriteset(gfx_mk2_directrail_f_bso_reverse , "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,325)}
 spriteset(gfx_mk2_generic_f_tso            , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,400)}
 spriteset(gfx_mk2_barbie_sleeper_f_tso     , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,450)}
+spriteset(gfx_mk2_fgw_fag_f_tso            , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,475)}
 
 spriteset(gfx_mk2_purchase_brblue          , "gfx/WAGON/mark_2_2.png"){template_purchase(89,50)}
 spriteset(gfx_mk2_purchase_regional        , "gfx/WAGON/mark_2_2.png"){template_purchase(89,150)}
@@ -173,6 +174,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_livery_decider, cargo_subtype){
 	7: sw_mk2f_directrail_back ;
 	8: gfx_mk2_barbie_sleeper_f_tso ;
 	9..10: gfx_mk2_generic_f_tso ;
+	11: gfx_mk2_fgw_fag_f_tso ;
 	sw_mk2a_brblue_back ;
 }
 
@@ -200,9 +202,10 @@ switch(FEAT_TRAINS, SELF, sw_mk2_refit_text, cargo_subtype){
 	5 : string(STR_LIVERY_NSE) ;
 	6 : string(STR_LIVERY_VIRGIN_TRAINS) ;
 	7 : string(STR_LIVERY_DRS) ;
-	8 : string(STR_LIVERY_FIRST_BARBIE, string(STR_LIVERY_SLEEPER)) ;
+	8 : string(STR_LIVERY_FIRST_SCOT_RAIL, string(STR_LIVERY_SLEEPER)) ;
 	9 : string(STR_LIVERY_WESSEX_TRAINS) ;
 	10 : string(STR_LIVERY_NETWORK_RAIL) ;
+	11 : string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_EMPTY)) ;
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -272,6 +275,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_manual, cargo_subtype){
 	8 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	9 : palette_2cc(COLOUR_PINK, COLOUR_WHITE) ;
 	10 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	11 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 

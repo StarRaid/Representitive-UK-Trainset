@@ -273,9 +273,9 @@ item(FEAT_TRAINS, item_brush2, 31){
 		cost_factor                    : 45 ;
 		running_cost_base              : RUNNING_COST_DIESEL ;
 		running_cost_factor            : 150 ;
-		speed                          : 90 mph ;
+		speed                          : 80 mph ;
 		track_type                     : RAIL ;
-		power                          : 1400 hp ;
+		power                          : 1044 kW ;
 		weight                         : 108 ton ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
 		tractive_effort_coefficient    : 0.14722222222222222222222222222222 ;

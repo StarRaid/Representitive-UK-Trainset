@@ -1,0 +1,81 @@
+//Manual
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_brush4_gfx_manual, cargo_subtype){
+	0		: sw_brush4_gfx_brgreen_revcheck ;
+	1		: sw_brush4_gfx_brblue_revcheck ;
+	4..5	: sw_brush4_gfx_intercity_revcheck ;
+	6		: sw_brush4_gfx_nse_revcheck ;
+	7..8	: sw_brush4_gfx_railfreight_revcheck ;
+	9		: sw_brush4_gfx_railexpress_revcheck ;
+	10		: sw_brush4_gfx_ews_revcheck ;
+	11		: sw_brush4_gfx_virgin_revcheck ;
+	12		: sw_brush4_gfx_first_fag_revcheck ;
+	13		: sw_brush4_gfx_drs_revcheck ;
+	14		: sw_brush4_gfx_colas_revcheck ;
+	sw_brush4_gfx_brlargelogo_revcheck ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_brush4_gfx_manual_check, livery_choice){
+	1 : sw_dbso_brush4_gfx_manual ;
+	sw_brush4_gfx_auto ;
+}
+
+
+
+random_switch(FEAT_TRAINS, PARENT, sw_brush4_random_headcode_dbso){ 1 : gfx_brush4_alternate_headcode ; 1 : return 0 ; }
+
+switch(FEAT_TRAINS, SELF, sw_brush4_gfx_headcode_auto_dbso, current_year){
+	0..1986 : return 0 ;
+	sw_brush4_random_headcode_dbso ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_brush4_gfx_headcode_manual_dbso, cargo_subtype){
+	4..14 : sw_brush4_random_headcode_dbso ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_brush4_gfx_headcode_manual_check_dbso, livery_choice){
+	1 : sw_brush4_gfx_headcode_manual_dbso ;
+	sw_brush4_gfx_headcode_auto_dbso ;
+}
+
+
+
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_brush4_gfx_sprstack, SPR_STACK){
+	0 : sw_dbso_brush4_gfx_manual_check ;
+	1 : sw_brush4_gfx_headcode_manual_check_dbso ;
+	2 : sw_brush4_headlight_check ;
+}
+
+
+
+
+//Manual
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_brush4_col_manual, cargo_subtype){
+	0	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	1..2: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	3	: palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
+	4	: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	5	: palette_2cc(COLOUR_GREY, COLOUR_DARK_BLUE) ;
+	6	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	7	: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	8	: palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	9	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	10	: palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	11	: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	12	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	14	: palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_brush4_col_manual_check, livery_choice){
+	1 : sw_dbso_brush4_col_manual ;
+	sw_brush4_col_auto ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dbso_brush4_col_2cc_check, colour_scheme_1){
+	1 : sw_dbso_brush4_col_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
