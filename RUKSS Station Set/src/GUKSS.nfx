@@ -1,0 +1,166 @@
+setfeature(_STATION)
+grfinit(52557573,
+	grfname(ALL,"Gwyd's Expanded UK Signal Set")
+	grfdescription(ALL, "Signal replacement, as well as new signal waypoints with additional features" 0D
+	"Signal replacement, as well as new signal waypoints with additional features")
+	grfpalette(DOS)
+	grfversion(1)
+	grfminversion(1)
+)
+
+define(GUKSS_FLASH_APPROACH_DOUBLE,			000)
+define(GUKSS_FLASH_APPROACH_SINGLE,			001)
+
+define(WAYP,			57 41 59 50)
+
+definestation(GUKSS_FLASH_APPROACH_DOUBLE,"Flashing double yellow - approach",
+	class(WAYP)
+	callbacks(CB_LAYOUT)
+	anim_triggers(BUILT)
+	anim_info({2,LOOP})
+	anim_speed(4)
+	pylons(TTD_ALLTILES)
+)
+
+definestation(GUKSS_FLASH_APPROACH_SINGLE,"Flashing single yellow - approach",
+	class(WAYP)
+	callbacks(CB_LAYOUT)
+	anim_triggers(BUILT)
+	anim_info({2,LOOP})
+	anim_speed(4)
+	pylons(TTD_ALLTILES)
+)
+
+spriteblock(
+    set(
+////Double Yellow Apporach stuff 0-6
+	sprite(gfx/gwst1.png 0 0 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 5 0 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 10 0 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 21 0 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 26 0 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 31 0 09 14 03 -0 -0)
+////Single Yellow Apporach stuff 7-12
+	sprite(gfx/gwst1.png 0 14 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 5 14 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 10 14 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 21 14 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 26 14 09 14 03 -0 -0)
+	sprite(gfx/gwst1.png 31 14 09 14 03 -0 -0)
+	)
+)
+
+
+def(1) spriteset(little(0),lots(0))
+
+layout(GUKSS_FLASH_APPROACH_DOUBLE,
+    tile(_GUKSS_FLASH_APPROACH_DOUBLE_R,
+      ground(1012)
+      regular(3, xyz(0,0,0),dxdydz(1,1,7))
+    )
+    tile(
+      ground(1011)
+      regular(4, xyz(0,0,0),dxdydz(1,1,7))
+    )
+	tile(_GUKSS_FLASH_APPROACH_DOUBLE_Y,
+      ground(1012)
+      regular(1, xyz(0,0,0),dxdydz(1,1,7))
+    )
+    tile(
+      ground(1011)
+      regular(6, xyz(0,0,0),dxdydz(1,1,7))
+    )
+	tile(_GUKSS_FLASH_APPROACH_DOUBLE_0,
+      ground(1012)
+      regular(2, xyz(0,0,0),dxdydz(1,1,7))
+    )
+	tile(
+      ground(1011)
+      regular(5, xyz(0,0,0),dxdydz(1,1,7))
+	  )
+)
+
+layout(GUKSS_FLASH_APPROACH_SINGLE,
+    tile(_GUKSS_FLASH_APPROACH_SINGLE_R,
+      ground(1012)
+      regular(9, xyz(0,0,0),dxdydz(1,1,7))
+    )
+    tile(
+      ground(1011)
+      regular(10, xyz(0,0,0),dxdydz(1,1,7))
+    )
+	tile(_GUKSS_FLASH_APPROACH_SINGLE_Y,
+      ground(1012)
+      regular(7, xyz(0,0,0),dxdydz(1,1,7))
+    )
+    tile(
+      ground(1011)
+      regular(12, xyz(0,0,0),dxdydz(1,1,7))
+    )
+	tile(_GUKSS_FLASH_APPROACH_SINGLE_0,
+      ground(1012)
+      regular(8, xyz(0,0,0),dxdydz(1,1,7))
+    )
+	tile(
+      ground(1011)
+      regular(11, xyz(0,0,0),dxdydz(1,1,7))
+	  )
+)
+
+def(2) anim_frame(
+	reftile(_GUKSS_FLASH_APPROACH_DOUBLE_R) if(0)
+	reftile(_GUKSS_FLASH_APPROACH_DOUBLE_R) else
+)
+
+def(3) anim_frame(
+	reftile(_GUKSS_FLASH_APPROACH_DOUBLE_Y) if(0)
+	reftile(_GUKSS_FLASH_APPROACH_DOUBLE_0) else
+)
+
+def(4) pbsinfo(
+	ref(3) if(PBSRESERVED)
+	ref(2) else
+
+def(5) anim_trigger(
+animcontrol(A_START) if(BUILT)
+animcontrol(A_NOP) else
+)
+
+def(6) callback(
+	ref(4) if(CB_LAYOUT)
+	ref(5) if(CB_ACONTROL)
+	ref(1) else
+)
+
+def(5) anim_frame(
+	reftile(_GUKSS_FLASH_APPROACH_DOUBLE_R) if(0)
+	reftile(_GUKSS_FLASH_APPROACH_DOUBLE_R) else
+)
+
+def(6) anim_frame(
+	reftile(_GUKSS_FLASH_APPROACH_DOUBLE_Y) if(0)
+	reftile(_GUKSS_FLASH_APPROACH_DOUBLE_0) else
+)
+
+def(7) pbsinfo(
+	ref(6) if(PBSRESERVED)
+	ref(5) else
+
+def(8) anim_trigger(
+animcontrol(A_START) if(BUILT)
+animcontrol(A_NOP) else
+)
+
+def(9) callback(
+	ref(7) if(CB_LAYOUT)
+	ref(8) if(CB_ACONTROL)
+	ref(1) else
+)
+
+makestation(GUKSS_FLASH_APPROACH_DOUBLE,
+	default(ref(6))
+)
+
+makestation(GUKSS_FLASH_APPROACH_DOUBLE,
+	default(ref(9))
+)
