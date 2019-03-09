@@ -76,13 +76,13 @@ switch(FEAT_TRAINS, SELF, sw_cl90_gfx_sprite_stack, SPR_STACK){
 	3 : sw_cl90_gfx_taillights_check ;
 }
 
-/* //Graphics DVT check
+//Graphics DVT check
 
 switch(FEAT_TRAINS, SELF, sw_cl90_gfx_dvt_check, DVT_CHECK){
-	1 : sw_dvt_sprite_stack ;
+	1 : sw_dvt_sprite_stack_7 ;
 	sw_cl90_gfx_sprite_stack ;
 }
- */
+
 
 
 //Colours
@@ -118,12 +118,12 @@ switch(FEAT_TRAINS, SELF, sw_cl90_colours_2cc_check, colour_scheme_1){
 }
 
 
-/* //Colours DVT check
+//Colours DVT check
 
 switch(FEAT_TRAINS, SELF, sw_cl90_colours_dvt_check, DVT_CHECK){
 	1 : sw_dvt_colours_2cc_check ;
 	sw_cl90_colours_2cc_check ;
-} */
+} 
 
 
 
@@ -133,6 +133,14 @@ switch(FEAT_TRAINS, SELF, sw_cl90_colours_dvt_check, DVT_CHECK){
 switch(FEAT_TRAINS, SELF, sw_cl90_refit_text, cargo_subtype){
 	0 : string(STR_LIVERY_INTERCITY) ;
 	1 : return(string(STR_LIVERY_RAILFREIGHT,string(STR_SECTOR_GENERAL))) ;
+	2 : string(STR_LIVERY_RAIL_EXPRESS) ;
+	3 : string(STR_LIVERY_VIRGIN_TRAINS) ;
+	4 : string(STR_LIVERY_ONE_ANGLIA) ;
+	5 : string(STR_LIVERY_ABELLIO_GREATER_ANGLIA) ;
+	6 : string(STR_LIVERY_FIRST_SCOT_RAIL, string(STR_LIVERY_EMPTY)) ;
+	7 : string(STR_LIVERY_FREIGHTLINER) ;
+	8 : string(STR_LIVERY_EWS) ;
+	9 : string(STR_LIVERY_DBCARGO) ;
 	CB_RESULT_NO_TEXT ;
 }
 
