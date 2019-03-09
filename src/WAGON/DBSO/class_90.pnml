@@ -1,0 +1,60 @@
+
+//Manual
+
+switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_manual_dvt, cargo_subtype){
+	0 : sw_cl90_gfx_rev_check_intercity ;
+	1 : sw_cl90_gfx_rev_check_railfreight ;
+	2 : sw_cl90_gfx_rev_check_railexpress ;
+	4 : sw_cl90_gfx_rev_check_one ;
+	5 : sw_cl90_gfx_rev_check_greateranglia ;
+	6 : sw_cl90_gfx_rev_check_firstscotrail ;
+	7 : sw_cl90_gfx_rev_check_freightliner ;
+	8 : sw_cl90_gfx_rev_check_ews ;
+	9 : sw_cl90_gfx_rev_check_dbcargo ;
+	sw_cl90_gfx_rev_check_virgin ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl90_gfx_manual_check_dvt, livery_choice){
+	1 : sw_cl90_gfx_manual_dvt ;
+	sw_cl90_gfx_auto ;
+}
+
+
+
+//Sprite stacking
+
+switch(FEAT_TRAINS, SELF, sw_cl90_gfx_sprite_stack_dvt, SPR_STACK){
+	0 : sw_cl90_gfx_manual_check_dvt ;
+	1 : sw_cl90_gfx_panto_check ;
+	2 : sw_cl90_gfx_headlights_check ;
+}
+
+
+
+//Colours
+
+
+//Manual
+
+switch(FEAT_TRAINS, PARENT, sw_cl90_colours_manual_dvt, cargo_subtype){
+	0 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	1 : palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
+	2 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	4 : palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;
+	5 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	6 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	7 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	8 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	9 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl90_colours_manual_check_dvt, livery_choice){
+	1 : sw_cl90_colours_manual_dvt ;
+	sw_cl90_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl90_colours_2cc_check_dvt, colour_scheme_1){
+	1 : sw_cl90_colours_manual_check_dvt ;
+	palette_2cc(company_colour1, company_colour2) ;
+}

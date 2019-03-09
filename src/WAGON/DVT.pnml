@@ -30,14 +30,14 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_gfx_parent_id_check, vehicle_type_id){
 	86 : sw_al6_sprite_stack_dbso ;
 	87 : sw_br87_sprite_stack_dbso ;
 	88 : sw_eurodual_spritestack ;
-	90 : sw_dbso_cl90_gfx_sprite_stack ;
+	90 : sw_cl90_gfx_sprite_stack_dvt ;
 	92 : sw_abb92_spritestack_dbso ;
 	sw_dvt_sprite_stack ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_gfx_reverse_check, vehicle_is_reversed){
 	1 : sw_dvt_gfx_parent_id_check ;
-	sw_dvt_sprite_stack ;
+	sw_dvt_length_check ;
 }
 
 
@@ -49,7 +49,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_parent_id_check, vehicle_type_id){
 	86 : sw_al6_colours_2cc_check_dbso ;
 	87 : sw_br87_colours_2cc_check_dbso ;
 	88 : sw_eurodual_colours ;
-	90 : sw_dbso_cl90_colours_2cc_check ;
+	90 : sw_cl90_colours_2cc_check_dvt ;
 	92 : sw_abb92_colours_2cc_check_dbso ;
 	sw_dvt_colours_2cc_check ;
 }
@@ -103,7 +103,10 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_effect_reverse_check, vehicle_is_reversed){
 
 
 
-
+switch(FEAT_TRAINS, PARENT, sw_dvt_90_check, vehicle_type_id ){
+	90 : return 7 ;
+	return 8 ;
+}
 
 
 //DVT Item
@@ -141,6 +144,7 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		can_attach_wagon               : sw_dbso_attach_parent_id_check ;
 		create_effect                  : sw_dvt_vfx_reverse_check ;
 		effect_spawn_model_and_powered : sw_dvt_effect_reverse_check ;
+		length						   : sw_dvt_90_check ;
 		//sound_effect                   : sw_dbso_sfx_reverse_check ;
 	}
 }
