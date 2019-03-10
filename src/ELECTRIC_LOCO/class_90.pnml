@@ -2,40 +2,40 @@
 
 //Sprite sets
 
-spriteset(gfx_cl90_intercity			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0,  25) }
-spriteset(gfx_cl90_intercity_rev		, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0,  25) }
-spriteset(gfx_cl90_railfreight			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0,  50) }
-spriteset(gfx_cl90_railfreight_rev		, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0,  50) }
-spriteset(gfx_cl90_railexpress			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0,  75) }
-spriteset(gfx_cl90_railexpress_rev		, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0,  75) }
-spriteset(gfx_cl90_virgin				, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0, 100) }
-spriteset(gfx_cl90_virgin_rev			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0, 100) }
-spriteset(gfx_cl90_one					, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0, 125) }
-spriteset(gfx_cl90_one_rev				, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0, 125) }
-spriteset(gfx_cl90_greateranglia		, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0, 150) }
-spriteset(gfx_cl90_greateranglia_rev	, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0, 150) }
-spriteset(gfx_cl90_firstscotrail		, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0, 175) }
-spriteset(gfx_cl90_firstscotrail_rev	, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0, 175) }
-spriteset(gfx_cl90_freightliner			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0, 200) }
-spriteset(gfx_cl90_freightliner_rev		, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0, 200) }
-spriteset(gfx_cl90_ews					, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0, 225) }
-spriteset(gfx_cl90_ews_rev				, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0, 225) }
-spriteset(gfx_cl90_dbcargo				, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		(   0, 250) }
-spriteset(gfx_cl90_dbcargo_rev			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	(   0, 250) }
+spriteset(gfx_cl90_intercity			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0,  25) }
+spriteset(gfx_cl90_intercity_rev		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0,  25) }
+spriteset(gfx_cl90_railfreight			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0,  50) }
+spriteset(gfx_cl90_railfreight_rev		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0,  50) }
+spriteset(gfx_cl90_railexpress			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0,  75) }
+spriteset(gfx_cl90_railexpress_rev		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0,  75) }
+spriteset(gfx_cl90_virgin				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 100) }
+spriteset(gfx_cl90_virgin_rev			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 100) }
+spriteset(gfx_cl90_one					, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 125) }
+spriteset(gfx_cl90_one_rev				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 125) }
+spriteset(gfx_cl90_greateranglia		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 150) }
+spriteset(gfx_cl90_greateranglia_rev	, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 150) }
+spriteset(gfx_cl90_firstscotrail		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 175) }
+spriteset(gfx_cl90_firstscotrail_rev	, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 175) }
+spriteset(gfx_cl90_freightliner			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 200) }
+spriteset(gfx_cl90_freightliner_rev		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 200) }
+spriteset(gfx_cl90_ews					, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 225) }
+spriteset(gfx_cl90_ews_rev				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 225) }
+spriteset(gfx_cl90_dbcargo				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 250) }
+spriteset(gfx_cl90_dbcargo_rev			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 250) }
 
-spriteset(gfx_cl90_purchase_intercity	, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_purchase	( 175,  25) }
-spriteset(gfx_cl90_purchase_virgin		, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_purchase	( 175, 100) }
-spriteset(gfx_cl90_purchase_one			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_purchase	( 175, 125) }
-spriteset(gfx_cl90_purchase_greaterangla, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_purchase	( 175, 150) }
+spriteset(gfx_cl90_purchase_intercity	, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178,  25) }
+spriteset(gfx_cl90_purchase_virgin		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178, 100) }
+spriteset(gfx_cl90_purchase_one			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178, 125) }
+spriteset(gfx_cl90_purchase_greaterangla, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178, 150) }
 
 
-spriteset(gfx_cl90_panto_up				, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		( 260,   0) }
-spriteset(gfx_cl90_panto_up_rev			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	( 260,   0) }
-spriteset(gfx_cl90_panto_down			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		( 260,  25) }
-spriteset(gfx_cl90_panto_down_rev		, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_rev_2	( 260,  25) }
+spriteset(gfx_cl90_panto_up				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			( 260,   0) }
+spriteset(gfx_cl90_panto_up_rev			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	( 260,   0) }
+spriteset(gfx_cl90_panto_down			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			( 260,  25) }
+spriteset(gfx_cl90_panto_down_rev		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	( 260,  25) }
 
-spriteset(gfx_cl90_headlight			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		( 260,  50) }
-spriteset(gfx_cl90_taillight			, "gfx/ELECTRIC_LOCO/class_90_new.png"){ template_7_8_2		( 260,  75) }
+spriteset(gfx_cl90_headlight			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double	( 260,  50) }
+spriteset(gfx_cl90_taillight			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double	( 260,  75) }
 
 
 //Graphics switches
@@ -140,7 +140,7 @@ switch(FEAT_TRAINS, SELF, sw_cl90_gfx_sprite_stack, SPR_STACK){
 //Graphics DVT check
 
 switch(FEAT_TRAINS, SELF, sw_cl90_gfx_dvt_check, DVT_CHECK){
-	1 : sw_dvt_sprite_stack_7 ;
+	1 : sw_dvt_sprite_stack ;
 	sw_cl90_gfx_sprite_stack ;
 }
 
@@ -272,7 +272,7 @@ item(FEAT_TRAINS, item_cl90, 90){
 		name		                    : string(STR_NAME_90) ;
 		misc_flags		                : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		sprite_id		                : SPRITE_ID_NEW_TRAIN ;
-		length		                    : 7 ;
+		length		                    : 8 ;
 		climates_available		        : ALL_CLIMATES ;
 		introduction_date		        : date(1987,1,1) ;
 		model_life		                : 25 ;

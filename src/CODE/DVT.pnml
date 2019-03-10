@@ -36,15 +36,19 @@ spriteset(gfx_dvt_virgin        , "gfx/WAGON/dvt.png"){ template_Mk2_double(  0,
 spriteset(gfx_dvt_virgin_rev    , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0, 50) }
 spriteset(gfx_dvt_atw_exec      , "gfx/WAGON/dvt.png"){ template_Mk2_double(  0, 75)         }
 spriteset(gfx_dvt_atw_exec_rev  , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0, 75) }
-spriteset(gfx_dvt_chiltern      , "gfx/WAGON/dvt.png"){ template_Mk2_double(  0,100)         }
-spriteset(gfx_dvt_chiltern_rev  , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0,100) }
+spriteset(gfx_dvt_chiltern     	, "gfx/WAGON/dvt.png"){ template_Mk2_double(  0,100)         }
+spriteset(gfx_dvt_chiltern_rev 	, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0,100) }
+spriteset(gfx_dvt_anglia      	, "gfx/WAGON/dvt.png"){ template_Mk2_double(  0,125)         }
+spriteset(gfx_dvt_anglia_rev  	, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(  0,125) }
 
+/*
 spriteset(gfx_dvt_7_intercity		, "gfx/WAGON/dvt.png"){	template_7_8_2(	348,	75)		}
 spriteset(gfx_dvt_7_intercity_rev	, "gfx/WAGON/dvt.png"){	template_7_8_rev_2(	348,	75)	}
 spriteset(gfx_dvt_7_virgin			, "gfx/WAGON/dvt.png"){	template_7_8_2(	348,	100)	}
 spriteset(gfx_dvt_7_virgin_rev		, "gfx/WAGON/dvt.png"){	template_7_8_rev_2(	348,	100)}
 spriteset(gfx_dvt_7_anglia			, "gfx/WAGON/dvt.png"){	template_7_8_2(	348,	125)	}
 spriteset(gfx_dvt_7_anglia_rev		, "gfx/WAGON/dvt.png"){	template_7_8_rev_2(	348,	125)}
+*/
 
 spriteset(gfx_dvt_7_taillights		, "gfx/WAGON/dvt.png"){	template_7_8_2(	348,	150)	}
 spriteset(gfx_dvt_7_headlights		, "gfx/WAGON/dvt.png"){	template_7_8_rev_2(	348,	175)}
@@ -65,11 +69,13 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check, DVT_REVERSE_CHECK){ 1 : 
 switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_virgin_rev ; gfx_dvt_virgin ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_atw_exec_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_atw_exec_rev ; gfx_dvt_atw_exec ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_chiltern_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_chiltern_rev ; gfx_dvt_chiltern ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_anglia_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_anglia_rev ; gfx_dvt_anglia ; }
 
+/*
 switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check_7, DVT_REVERSE_CHECK){ 1 : gfx_dvt_7_intercity_rev ; gfx_dvt_7_intercity ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check_7, DVT_REVERSE_CHECK){ 1 : gfx_dvt_7_virgin_rev ; gfx_dvt_7_virgin ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_anglia_rev_check_7, DVT_REVERSE_CHECK){ 1 : gfx_dvt_7_anglia_rev ; gfx_dvt_7_anglia ; }
-
+*/
 
 //Automatix GFX
 
@@ -77,6 +83,17 @@ switch(FEAT_TRAINS, SELF, sw_dvt_auto, current_year){
 	ERA_SECTORISATION : sw_dvt_intercity_rev_check ;
 	2014..4096 : sw_dvt_chiltern_rev_check ;
 	sw_dvt_virgin_rev_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_auto_90, current_year){
+	ERA_SECTORISATION : sw_dvt_intercity_rev_check ;
+	2004..4096 : sw_dvt_anglia_rev_check ;
+	sw_dvt_virgin_rev_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_dvt_auto_check, vehicle_type_id){
+	90 : sw_dvt_auto_90 ;
+	sw_dvt_auto ;
 }
 
 
@@ -93,7 +110,9 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_al6, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_manual_cl90, cargo_subtype){
-	0..1 : sw_dvt_intercity_rev_check ;
+	0..2 : sw_dvt_intercity_rev_check ;
+	4..5: sw_dvt_anglia_rev_check ;
+	8..9: sw_dvt_anglia_rev_check ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -149,7 +168,7 @@ switch(FEAT_TRAINS, SELF, sw_dvt_sprite_stack, SPR_STACK){
 }
 
 
-//Length 7 gfx
+/*Length 7 gfx
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_auto_7, current_year){
 	ERA_SECTORISATION : sw_dvt_intercity_rev_check_7 ;
@@ -184,7 +203,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_length_check, vehicle_type_id == 90){
 	sw_dvt_sprite_stack ;
 }
 
-
+*/
 
 //Colour mapping
 
@@ -201,8 +220,8 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_auto_90, current_year){
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_dvt_colours_auto_check, vehicle_type_id == 90){
-	1 : sw_dvt_colours_auto_90 ;
+switch(FEAT_TRAINS, PARENT, sw_dvt_colours_auto_check, vehicle_type_id){
+	90 : sw_dvt_colours_auto_90 ;
 	sw_dvt_colours_auto ;
 }
 
