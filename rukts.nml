@@ -2449,7 +2449,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual, vehicle_type_id){
 
 switch(FEAT_TRAINS, SELF, sw_dvt_manual_check, livery_choice){
 	1 : sw_dvt_manual ;
-	sw_dvt_auto ;
+	sw_dvt_auto_check ;
 }
 
 //Sprite stacking & lights deciders
