@@ -330,6 +330,12 @@ switch(FEAT_TRAINS, SELF, sw_iet_t_create_effect, current_railtype){
 	vfx_diesel_default ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_iet_te, current_railtype){
+	ELRL   : 0.55 ;
+	SAAZ   : 0.55 ;
+	0.35 ;
+}
+
 
 item (FEAT_TRAINS, item_800, 800) {
 	property {
@@ -378,6 +384,7 @@ item (FEAT_TRAINS, item_800, 800) {
 		purchase_running_cost_factor : 35;
 		start_stop:							sw_iet_start_stop;
 		create_effect:						sw_iet_create_effect;
+		tractive_effort_coefficient:	sw_iet_te;
 }
 		livery_override (item_MU90) {
 		cargo_capacity: 66;
