@@ -125,7 +125,7 @@ railtypetable {
 	ELRL,
 	SAA3: ["3RDR", ELRL],
 	SAAZ: ["3RDC", ELRL],
-	SAA4: [SAA3, ELRL],
+	SAA4: ["3RDR", SAA3, ELRL],
 	NAAN: [NAAN, NRGL, RAIL]
 }
 # 1 "rukts.pnml" 2
@@ -2107,6 +2107,68 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		default			: sw_mbox_sprite_stack ;
 		purchase		: gfx_mbox_purchase ;
 		colour_mapping	: sw_mbox_colours_2cc_check ;
+	}
+}
+# 1 "rukts.pnml" 2
+# 1 "src/WAGON/lul_coach.pnml" 1
+spriteset(gfx_lulcoach_grey_mid			, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0, 25)}
+spriteset(gfx_lulcoach_lulred_mid		, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0, 75)}
+spriteset(gfx_lulcoach_purchase_grey	, "gfx/EMU/lul_d78.png")	{template_purchase(90, 25)}
+spriteset(gfx_lulcoach_purchase_lulred	, "gfx/EMU/lul_d78.png")	{template_purchase(90, 75)}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_lulcoach_livery_decider, current_year){
+	0..1992 : gfx_lulcoach_grey_mid ;
+	gfx_lulcoach_lulred_mid ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lulcoach_purchase_sprite, current_year){
+	0..1992 : gfx_lulcoach_purchase_grey ;
+	gfx_lulcoach_purchase_lulred ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_lulcoach_attach, vehicle_type_id){
+	600..699 : CB_RESULT_ATTACH_ALLOW ;
+    return string(STR_LUL_NO_COUPLE);
+}
+
+item (FEAT_TRAINS, item_lulcoach, 600) {
+	property {
+		name: 							string(STR_NAME_600);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1978, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				11;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					35;
+		cost_factor:					38;
+		running_cost_factor:			20;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							60 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						SAA4;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				PASS;
+		cargo_capacity:					100;
+		weight:							18 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				115;
+	}
+	graphics {
+		default: 							sw_lulcoach_livery_decider;
+		purchase:							sw_lulcoach_purchase_sprite;
+		can_attach_wagon:					sw_lulcoach_attach;
 	}
 }
 # 1 "rukts.pnml" 2
@@ -8489,7 +8551,7 @@ switch(FEAT_TRAINS, SELF, sw_cl156_colours_manual_check, livery_choice){
 
 switch(FEAT_TRAINS, SELF, sw_cl156_colours_2cc_check, colour_scheme_1){
 	1 : sw_cl156_colours_manual_check ;
-	palette_2cc(company_colour1, company_colour1) ;
+	palette_2cc(company_colour1, company_colour2) ;
 }
 
 
@@ -8535,7 +8597,7 @@ switch(FEAT_TRAINS, SELF, sw_supsprint_purchase_colours, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_supsprint_purchase_colours_2cc_check, colour_scheme_1){
 	1 : sw_supsprint_purchase_colours ;
-	palette_2cc(company_colour1, company_colour1) ;
+	palette_2cc(company_colour1, company_colour2) ;
 }
 
 
@@ -8595,7 +8657,7 @@ item(FEAT_TRAINS, item_supsprint, 155){
 		default                     : sw_cl156_gfx_sprite_stack ;
 		colour_mapping              : sw_cl156_colours_2cc_check ;
 		cargo_capacity              : 85 ;
-		power                       : 213 ;
+		power                       : 100 ;
 		cargo_subtype_text          : sw_cl156_refit_text_check ;
 		weight                      : 39 ;
 		create_effect           	: vfx_diesel_default ;
@@ -14684,6 +14746,157 @@ item (FEAT_TRAINS, item_700, 700){
 }
 }
 # 1 "rukts.pnml" 2
+# 1 "src/EMU/lul_d78.pnml" 1
+//Spritesets
+
+spriteset(gfx_lul78_grey		, "gfx/EMU/lul_d78.png")	{template_8_8_networker(0, 0)}
+spriteset(gfx_lul78_grey_mid	, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0, 25)}
+spriteset(gfx_lul78_lulred		, "gfx/EMU/lul_d78.png")	{template_8_8_networker(0, 50)}
+spriteset(gfx_lul78_lulred_mid	, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0, 75)}
+
+spriteset(gfx_lul78_purchase_grey	, "gfx/EMU/lul_d78.png"){template_dualhead_purchase(90, 25)}
+spriteset(gfx_lul78_purchase_lulred	, "gfx/EMU/lul_d78.png"){template_dualhead_purchase(90, 75)}
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_lul78_grey_id_check	, vehicle_type_id) { 600 : gfx_lul78_grey_mid ; gfx_lul78_grey ; }
+switch(FEAT_TRAINS, SELF, sw_lul78_lulred_id_check	, vehicle_type_id) { 600 : gfx_lul78_lulred_mid ; gfx_lul78_lulred ; }
+
+
+//Automatic
+
+switch(FEAT_TRAINS, SELF, sw_lul78_auto, current_year){
+	0..1992 : sw_lul78_grey_id_check ;
+	sw_lul78_lulred_id_check ;
+}
+
+//Manual
+
+switch(FEAT_TRAINS, SELF, sw_lul78_manual, cargo_subtype){
+	0 : sw_lul78_grey_id_check ;
+	sw_lul78_lulred_id_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_lul78_manual_check, livery_choice){
+	1 : sw_lul78_manual ;
+	sw_lul78_auto ;
+}
+
+
+//Purchase sprites
+
+switch(FEAT_TRAINS, SELF, sw_lul78_purchase_gfx, current_year){
+	0..1992 : gfx_lul78_purchase_grey ;
+	gfx_lul78_purchase_lulred ;
+}
+
+
+
+//Colours
+
+//Automatic
+
+switch(FEAT_TRAINS, SELF, sw_lul78_colours_auto, current_year){
+	0..1992 : palette_1cc(COLOUR_GREY) ;
+	palette_1cc(COLOUR_DARK_BLUE) ;
+}
+
+//Manual
+
+switch(FEAT_TRAINS, SELF, sw_lul78_colours_manual, current_year){
+	0 : palette_1cc(COLOUR_GREY) ;
+	palette_1cc(COLOUR_DARK_BLUE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lul78_colours_manual_check, livery_choice){
+	1 : sw_lul78_colours_manual ;
+	sw_lul78_colours_auto ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_lul78_colours_2cc_check, colour_scheme_1){
+	1 : sw_lul78_colours_manual_check ;
+	palette_1cc(company_colour1) ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_lul78_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_LUL_GREY) ;
+	1 : string(STR_LIVERY_LUL_CORP) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lul78_refit_text_check, livery_choice){
+	1 : sw_lul78_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_lul78_attach, vehicle_type_id){
+	20	: return CB_RESULT_ATTACH_ALLOW ;
+	37	: return CB_RESULT_ATTACH_ALLOW ;
+	600	: return CB_RESULT_ATTACH_ALLOW ;
+	678	: return CB_RESULT_ATTACH_ALLOW ;
+    return string(STR_LUL78_NO_COUPLE);
+}
+
+
+item(FEAT_TRAINS, item_lul78, 678){
+	property{
+		name                           : string(STR_NAME_LUL78) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_MU);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1978,1,1) ;
+		model_life                     : 30 ;
+		vehicle_life                   : 40 ;
+		reliability_decay              : 11 ;
+		cost_factor                    : 27 ;
+		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_factor            : 17 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 95 ;
+		loading_speed                  : 30 ;
+		track_type                     : SAA4 ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		speed                          : 45 mph ;
+		power                          : 250 kW ;
+		weight                         : 39 ton ;
+		tractive_effort_coefficient    : 0.15 ;
+		air_drag_coefficient           : 0.1 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 1 ;
+	}
+	graphics{
+		default                 		: sw_lul78_manual_check ;
+		purchase                		: sw_lul78_purchase_gfx ;
+		sound_effect            		: sw_sfx_emu_gec ;
+		create_effect           		: vfx_3rd_only ;
+		colour_mapping          		: sw_lul78_colours_2cc_check ;
+		purchase_colour_mapping 		: sw_lul78_colours_auto ;
+		cargo_subtype_text      		: sw_lul78_refit_text_check ;
+		can_attach_wagon        		: sw_lul78_attach ;
+		running_cost_factor    			: return(current_speed == 0 ? 5 : 17) ;
+		purchase_running_cost_factor	: 17 ;
+	}
+	livery_override (600){
+		default                     : sw_lul78_manual_check ;
+		colour_mapping              : sw_lul78_colours_2cc_check ;
+		cargo_capacity              : 100 ;
+		cargo_subtype_text          : sw_lul78_refit_text_check ;
+		weight                      : 18 ;
+		create_effect           	: vfx_3rd_only ;
+	}
+}
+# 1 "rukts.pnml" 2
 # 1 "src/STEAM_LOCO/narrow_garratt.pnml" 1
 //Narrow Garrat
 
@@ -15783,7 +15996,7 @@ spriteset(spriteset_iet_d_lner, "gfx/EMU/class_395.png") {template_8_8_networker
 //Head car inside
 spriteset(spriteset_395_i, "gfx/EMU/class_395.png") {template_8_8_networker(0, 25)}
 spriteset(spriteset_iet_i_hitachi, "gfx/EMU/class_395.png") {template_8_8_networker(0, 100)}
-spriteset(spriteset_iet_i_gwr, "gfx/EMU/class_395.png") {template_8_8_networker(0, 125)}
+spriteset(spriteset_iet_i_gwr, "gfx/EMU/class_395.png") {template_8_8_networker(0, 175)}
 spriteset(spriteset_iet_i_tpe, "gfx/EMU/class_395.png") {template_8_8_networker(0, 250)}
 spriteset(spriteset_iet_i_vtec, "gfx/EMU/class_395.png") {template_8_8_networker(0, 325)}
 spriteset(spriteset_iet_i_lner, "gfx/EMU/class_395.png") {template_8_8_networker(0, 400)}
@@ -15916,7 +16129,7 @@ item (FEAT_TRAINS, item_395, 395) {
 		cargo_capacity:					40;
 		weight:							47 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.25;
+		tractive_effort_coefficient:	0.45;
 		air_drag_coefficient:			0.07;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
@@ -15963,16 +16176,243 @@ item (FEAT_TRAINS, item_395, 395){
 }
 }
 
+//IET code
+//Note: it is coded as a DMU because reasons
+switch(FEAT_TRAINS, SELF, sw_iet_d_manual, cargo_subtype){
+0: spriteset_iet_d_hitachi;
+1: spriteset_iet_d_gwr;
+2: spriteset_iet_d_vtec;
+3: spriteset_iet_d_lner;
+4: spriteset_iet_d_tpe;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_d, livery_choice){
+	1: sw_iet_d_manual;
+	return spriteset_iet_d_hitachi;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_i_manual, cargo_subtype){
+0: spriteset_iet_i_hitachi;
+1: spriteset_iet_i_gwr;
+2: spriteset_iet_i_vtec;
+3: spriteset_iet_i_lner;
+4: spriteset_iet_i_tpe;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_i, livery_choice){
+	1: sw_iet_i_manual;
+	return spriteset_iet_i_hitachi;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_t_manual, cargo_subtype){
+0: spriteset_iet_t_hitachi;
+1: spriteset_iet_t_gwr;
+2: spriteset_iet_t_vtec;
+3: spriteset_iet_t_lner;
+4: spriteset_iet_t_tpe;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_t, livery_choice){
+	1: sw_iet_t_manual;
+	return spriteset_iet_t_hitachi;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_coupling2, num_vehs_in_vehid_chain){
+1: sw_iet_d;
+sw_iet_i;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_coupling, (num_vehs_in_consist/count_veh_id(800))){
+1: sw_iet_d;
+sw_iet_coupling2;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_iet_start_stop2, count_veh_id(800)/num_vehs_in_consist){
+1: string(STR_MORE_CARRIAGES_NEEDED);
+CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_start_stop, num_vehs_in_vehid_chain){
+0..2: sw_iet_start_stop2;
+string(STR_MORE_CARRIAGES_NEEDED);
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_lights2, position_in_consist){
+0: spriteset_iet_lights_f;
+gfx_blank;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_lights, position_in_consist_from_end){
+0: spriteset_iet_lights_r;
+sw_iet_lights2;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 3 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0: return sw_iet_coupling;
+	1: return sw_iet_lights;
+	2: sw_hitachi_pan;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_refit_text, cargo_subtype){
+	0: string(STR_LIVERY_HITACHI);
+	1: string(STR_LIVERY_FIRST_GWR);
+	2: string(STR_LIVERY_VTEC);
+	3: string(STR_LIVERY_LNER);
+	4: string(STR_LIVERY_TPE_NEW);
+	return CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_livery_decider, livery_choice){
+	1: sw_iet_refit_text;
+	return CB_RESULT_NO_TEXT;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_iet_hitachi_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;}
+random_switch(FEAT_TRAINS, SELF, sw_iet_gwr_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREY) ;}
+random_switch(FEAT_TRAINS, SELF, sw_iet_tpe_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;}
+random_switch(FEAT_TRAINS, SELF, sw_iet_ec_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;}
+
+switch(FEAT_TRAINS, SELF, sw_iet_colour_auto, current_year){
+sw_iet_hitachi_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_colour_man, cargo_subtype){
+	0: sw_iet_hitachi_colour_mapping;
+	1: sw_iet_gwr_colour_mapping;
+	2..3: sw_iet_ec_colour_mapping;
+	sw_iet_tpe_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_colour_livery_decider, livery_choice){
+	1: sw_iet_colour_man;
+	sw_iet_colour_auto;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_recolour, colour_scheme_1){
+	1: sw_iet_colour_livery_decider;
+	palette_2cc(company_colour1, company_colour2);
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_coupling_restrictions, vehicle_type_id) {
+    9090: return CB_RESULT_ATTACH_ALLOW;
+	800: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_IET_NO_COUPLE);
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_speed, current_railtype) {
+    ELRL: 225;
+    SAAZ: 225;
+	200;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_create_effect, current_railtype){
+	ELRL   : vfx_ohle ;
+	SAAZ   : vfx_ohle ;
+	vfx_diesel_default ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_effect_model, current_railtype){
+	ELRL   : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	SAAZ   : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	EFFECT_SPAWN_MODEL_DIESEL ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_t_create_effect, current_railtype){
+	ELRL   : 0 ;
+	SAAZ   : 0 ;
+	vfx_diesel_default ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_iet_sfx_decider, current_railtype){
+	ELRL   : sw_sfx_electric_loco_modern ;
+	SAAZ   : sw_sfx_electric_loco_modern ;
+	sw_sfx_dmu_two ;
+}
+
+/* switch(FEAT_TRAINS, SELF, sw_iet_te, current_railtype){
+	ELRL   : return 0.55 ;
+	SAAZ   : return 0.55 ;
+	return 0.35 ;
+} */
 
 
+item (FEAT_TRAINS, item_800, 800) {
+	property {
+		name: 							string(STR_NAME_800);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(2016, 1, 1);
+		model_life:						20;
+		retire_early:					1;
+		vehicle_life:					30;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					20;
+		cost_factor:					60;
+		running_cost_factor:			35;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							140 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							1400 kW;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					40;
+		weight:							47 ton;
+		tractive_effort_coefficient:	0.55;
+		air_drag_coefficient:			0.07;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				250;
+		default_cargo_type:				PASS;
+	}
+	graphics {
+		can_attach_wagon:					sw_iet_coupling_restrictions;
+		default: 							sw_iet_default;
+		purchase:							spriteset_iet_purchase;
+		cargo_subtype_text:					sw_iet_livery_decider ;
+		colour_mapping:						sw_iet_recolour ;
+		purchase_colour_mapping:			sw_iet_recolour ;
+		sound_effect:						sw_iet_sfx_decider ;
+		speed:								sw_iet_speed;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 35) ;
+		purchase_running_cost_factor : 35;
+		start_stop:							sw_iet_start_stop;
+		create_effect:						sw_iet_create_effect;
+		effect_spawn_model_and_powered:		sw_iet_effect_model;
+		// tractive_effort_coefficient:	sw_iet_te;
+}
+		livery_override (item_MU90) {
+		cargo_capacity: 66;
+		default: sw_iet_t;
+		colour_mapping:	sw_iet_recolour;
+		cargo_subtype_text: sw_iet_livery_decider ;
+		weight:							45;
+		power:							700;
+		create_effect:						sw_iet_t_create_effect;
+}
+}
 
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_800, 800){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 
-
-
-
-
-
-
+if (alt_names == 1){
+item (FEAT_TRAINS, item_800, 800){
+	property{
+		name                           : string(STR_NAME_800_ALT) ;
+	}
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/CODE/sort_purchase.pnml" 1
 sort(FEAT_TRAINS,[
@@ -16003,6 +16443,7 @@ sort(FEAT_TRAINS,[
 168,
 43,
 220,
+800,
 307,
 314,
 321,
@@ -16012,14 +16453,18 @@ sort(FEAT_TRAINS,[
 319,
 325,
 375,
-395,
 700,
+395,
 415,
 455,
 465,
 411,
 442,
 444,
+662,
+678,
+672,
+692,
 10000,
 10001,
 10002,
@@ -16032,6 +16477,7 @@ sort(FEAT_TRAINS,[
 9040,
 9050,
 9090,
+600,
 1001,
 1000,
 9060,

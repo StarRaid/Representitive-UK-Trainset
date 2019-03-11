@@ -123,7 +123,7 @@ switch(FEAT_TRAINS, SELF, sw_cl156_colours_manual_check, livery_choice){
 
 switch(FEAT_TRAINS, SELF, sw_cl156_colours_2cc_check, colour_scheme_1){
 	1 : sw_cl156_colours_manual_check ;
-	palette_2cc(company_colour1, company_colour1) ;
+	palette_2cc(company_colour1, company_colour2) ;
 }
 
 
@@ -169,7 +169,7 @@ switch(FEAT_TRAINS, SELF, sw_supsprint_purchase_colours, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_supsprint_purchase_colours_2cc_check, colour_scheme_1){
 	1 : sw_supsprint_purchase_colours ;
-	palette_2cc(company_colour1, company_colour1) ;
+	palette_2cc(company_colour1, company_colour2) ;
 }
 
 
@@ -229,7 +229,7 @@ item(FEAT_TRAINS, item_supsprint, 155){
 		default                     : sw_cl156_gfx_sprite_stack ;
 		colour_mapping              : sw_cl156_colours_2cc_check ;
 		cargo_capacity              : 85 ;
-		power                       : 213 ;
+		power                       : 100 ;
 		cargo_subtype_text          : sw_cl156_refit_text_check ;
 		weight                      : 39 ;
 		create_effect           	: vfx_diesel_default ;

@@ -1,0 +1,60 @@
+spriteset(gfx_lulcoach_grey_mid			, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0, 25)}
+spriteset(gfx_lulcoach_lulred_mid		, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0, 75)}
+spriteset(gfx_lulcoach_purchase_grey	, "gfx/EMU/lul_d78.png")	{template_purchase(90, 25)}
+spriteset(gfx_lulcoach_purchase_lulred	, "gfx/EMU/lul_d78.png")	{template_purchase(90, 75)}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_lulcoach_livery_decider, current_year){
+	0..1992 : gfx_lulcoach_grey_mid ;
+	gfx_lulcoach_lulred_mid ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lulcoach_purchase_sprite, current_year){
+	0..1992 : gfx_lulcoach_purchase_grey ;
+	gfx_lulcoach_purchase_lulred ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_lulcoach_attach, vehicle_type_id){
+	600..699 : CB_RESULT_ATTACH_ALLOW ;
+    return string(STR_LUL_NO_COUPLE);
+}
+
+item (FEAT_TRAINS, item_lulcoach, 600) {
+	property {
+		name: 							string(STR_NAME_600);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1978, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				11;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					35;
+		cost_factor:					38;
+		running_cost_factor:			20;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							60 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						SAA4;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				PASS;
+		cargo_capacity:					100;
+		weight:							18 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				115;
+	}
+	graphics {
+		default: 							sw_lulcoach_livery_decider;
+		purchase:							sw_lulcoach_purchase_sprite;
+		can_attach_wagon:					sw_lulcoach_attach;
+	}
+}

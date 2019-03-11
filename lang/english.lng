@@ -133,6 +133,10 @@ STR_LIVERY_ATW_EXEC              		 : Arriva Trains Wales {GOLD}(Executive)
 STR_LIVERY_GTR					 		 : GTR {GOLD}(Thameslink/Great Northern)
 STR_LIVERY_WYPTE				 		 : West Yorkshire Passenger Transport Executive
 
+STR_LIVERY_LUL_MAROON					 : London Underground {RED}(Maroon)
+STR_LIVERY_LUL_GREY						 : London Underground {BLACK}(Grey)
+STR_LIVERY_LUL_CORP						 : London Underground {GOLD}(Corporate)
+
 STR_LIVERY_SLEEPER              :{BLACK}(Sleeper)
 STR_LIVERY_EMPTY	            : 
 STR_SECTOR_GENERAL              :{GOLD}(General, Distribution)
@@ -201,6 +205,9 @@ STR_NAME_465				 :Metro-Cammel "Networker" (3rd rail)
 STR_NAME_700				 :Siemens "Desiro City" (Dual Voltage)
 STR_NAME_800				 :Hitachi High Speed "Intercity Express Train" (Dual Mode)
 
+STR_NAME_600				 :London Underground MU Carriage
+STR_NAME_LUL78				 :Metro-Cammel D78 Stock
+
 STR_NAME_NRWGARRATT :Beyer-Garratt 2-4-2+2-4-2 (Steam)
 STR_NAME_FAIRLIE    :Double Fairlie 0-4-0+0-4-0 (Steam)
 
@@ -240,6 +247,8 @@ STR_465_NO_COUPLE: You may only couple this train to a "Modern MU car" or anothe
 STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro City"!
 STR_IET_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Hitachi High Speed "Intercity Express Train" (Dual Mode)!
 STR_MU90_NO_COUPLE: You may only couple this train to a correct MU!
+STR_LUL_NO_COUPLE: You may only couple this train to a correct London Underground MU!
+STR_LUL78_NO_COUPLE: You may only couple this train to a correct London Underground MU!
 STR_WRONG_JUNIPER_CANNOT_START: You need to refit this train to a correct version for the track type!
 STR_MORE_CARRIAGES_NEEDED: You need to add carriages before this train can leave (at least one between each pair of engines)!
 
@@ -294,6 +303,7 @@ STR_NAME_444_ALT			:BR Class 444/450 (3rd rail)
 STR_NAME_455_ALT			:BR Class 455 (3rd rail)
 STR_NAME_465_ALT			:BR Class 465 (3rd rail)
 STR_NAME_700_ALT			:BR Class 700/707 (Dual Voltage)
-STR_NAME_800_ALT            :BR Class 800 (Dual Mode)
+STR_NAME_800_ALT            :BR Class 800/802 (Dual Mode)
 
 
+STR_NAME_LUL78_ALT			:LU D78 Stock
