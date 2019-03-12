@@ -232,6 +232,42 @@ template template_uklight_reverse(x,y){
 }
 
 
+
+template template_4_4(x,y){
+	[x+000,  y ,  8 , 14 , -3 , -11] //North
+	[x+010,  y , 12 , 13 , -5 , -9 ] //North East
+	[x+024,  y , 17 , 13 , -1 , -9 ] //East
+	[x+043,  y , 12 , 13 ,  3 , -5 ] //South East
+	[x+000,  y ,  8 , 14 , -3 , -3 ] //South     
+	[x+010,  y , 12 , 13 , -13, -5 ] //South West
+	[x+024,  y , 17 , 13 , -17, -9 ] //West      
+	[x+043,  y , 12 , 13 , -5 , -9 ] //North West
+}
+
+template template_4_8(x,y){
+	[x+000,  y ,  8 , 14 , -3 , -11] //North
+	[x+010,  y , 12 , 13 , -5 , -9 ] //North East
+	[x+024,  y , 17 , 13 , -1 , -9 ] //East
+	[x+043,  y , 12 , 13 ,  3 , -5 ] //South East
+	[x+057,  y ,  8 , 14 , -3 , -3 ] //South     
+	[x+067,  y , 12 , 13 , -13, -5 ] //South West
+	[x+081,  y , 17 , 13 , -17, -9 ] //West      
+	[x+100,  y , 12 , 13 , -5 , -9 ] //North West
+}
+
+template template_4_8_rev(x,y){
+	[x+057,  y ,  8 , 14 , -3 , -11] //North
+	[x+067,  y , 12 , 13 , -5 , -9 ] //North East
+	[x+081,  y , 17 , 13 , -1 , -9 ] //East
+	[x+100,  y , 12 , 13 ,  3 , -5 ] //South East
+	[x+000,  y ,  8 , 14 , -3 , -3 ] //South     
+	[x+010,  y , 12 , 13 , -13, -5 ] //South West
+	[x+024,  y , 17 , 13 , -17, -9 ] //West      
+	[x+043,  y , 12 , 13 , -5 , -9 ] //North West
+}
+
+
+
 template template_5_4(x,y){
 	[x+000,  y ,  8 , 16 , -3 , -7 ] //North
 	[x+010,  y , 14 , 14 , -14, -5 ] //North East
@@ -263,6 +299,30 @@ template template_5_8_rev(x,y){
 	[x+010,  y , 14 , 14 , -13, -6 ] //North East
 	[x+026,  y , 21 , 13 , -17, -9 ] //East
 	[x+049,  y , 14 , 14 , -5 , -9 ] //South East
+}
+
+
+
+template template_6_4(x,y){
+	[x+0  , y, 8 , 18, -3 , -10] // NORTH	
+	[x+10 , y, 16, 15, -9,  -9 ] // NORTH EAST
+	[x+28 , y, 25, 13, -9,  -9 ] // EAST
+	[x+55 , y, 16, 15, -1,  -7 ] // SOUTH EAST
+	[x+0  , y, 8 , 18, -3 , -6 ] // SOUTH
+	[x+10 , y, 16, 15, -13, -7 ] // SOUTH WEST
+	[x+28 , y, 25, 13, -17, -9 ] // WEST
+	[x+55 , y, 16, 15, -5,  -9 ] // NORTH WEST
+}
+
+template template_6_8(x,y){
+	[x+0  , y, 8 , 18, -3 , -10] // NORTH	  
+	[x+10 , y, 16, 15, -9,  -9 ] // NORTH EAST
+	[x+28 , y, 25, 13, -9,  -9 ] // EAST
+	[x+55 , y, 16, 15, -1,  -7 ] // SOUTH EAST
+	[x+73 , y, 8 , 18, -3 , -6 ] // SOUTH
+	[x+83 , y, 16, 15, -13, -7 ] // SOUTH WEST
+	[x+101, y, 25, 13, -17, -9 ] // WEST
+	[x+128, y, 16, 15, -5,  -9 ] // NORTH WEST
 }
 
 
@@ -1733,37 +1793,78 @@ item (FEAT_TRAINS, item_WAGON_A, 10000) {
 }
 }
 # 1 "rukts.pnml" 2
+# 1 "src/WAGON/hoppers.pnml" 1
+//Spritesets
+
+
+
+spriteset(gfx_4_4, "gfx/TEMPLATES/base.png") {template_4_4(0,105)}
+spriteset(gfx_4_8, "gfx/TEMPLATES/base.png") {template_4_8(0,105)}
+spriteset(gfx_4_8_rev, "gfx/TEMPLATES/base.png"){template_4_8_rev(0,105)}
+
+switch(FEAT_TRAINS, PARENT, sw_4_8_rev, vehicle_is_reversed){
+	1 : gfx_4_8_rev ;
+	gfx_4_8 ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_4_8_gfx, cargo_subtype){
+	1 : sw_4_8_rev ;
+	gfx_4_4 ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_4_8_text, cargo_subtype){
+	0 : string(STR_SECTOR_GENERAL);
+	1 : string(STR_SECTOR_COAL);
+	CB_RESULT_NO_TEXT ;
+}
+
+item (FEAT_TRAINS, item_test_wagon, 10006) {
+	property {
+		name: 							string(STR_SECTOR_COAL);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1980, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_BULK, CC_NON_POURABLE);
+		non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE);
+		cargo_allow_refit:				[COAL, GRAI, IORE, WHEA, CORE, FRUT, MAIZ, AORE, CERA, CERE, CMNT, FERT, LIME, OLSD, POTA, SAND, GRVL, MNSP, PHOS, PORE, COPR, SUGR];
+		loading_speed:					10;
+		cost_factor:					2;
+		running_cost_factor:			5;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							70 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				COAL;
+		cargo_capacity:					12;
+		weight:							5 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							4;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 							sw_4_8_gfx;
+		cargo_subtype_text:					sw_4_8_text;
+		purchase:							spriteset_wagon_a_purchase;
+}
+}
+# 1 "rukts.pnml" 2
 # 1 "src/WAGON/Flask.pnml" 1
 //Nuclear flask
 
-//Templates
-
-template template_flask(x,y){
-	[x+0  , y, 8 , 18, -3 , -10] // NORTH	
-	[x+10 , y, 16, 14, -10, -8 ] // NORTH EAST
-	[x+28 , y, 25, 10, -9,  -5 ] // EAST
-	[x+55 , y, 16, 14, -1,  -6 ] // SOUTH EAST
-	[x+0  , y, 8 , 18, -3 , -6 ] // SOUTH
-	[x+10 , y, 16, 14, -14, -6 ] // SOUTH WEST
-	[x+28 , y, 25, 10, -17, -5 ] // WEST
-	[x+55 , y, 16, 14, -5,  -8 ] // NORTH WEST
-}
-
-template template_flask_double(x,y){
-	[x+0  , y, 8 , 18, -3 , -10] // NORTH	  
-	[x+10 , y, 16, 14, -10, -8 ] // NORTH EAST
-	[x+28 , y, 25, 10, -9,  -5 ] // EAST
-	[x+55 , y, 16, 14, -1,  -6 ] // SOUTH EAST
-	[x+73 , y, 8 , 18, -3 , -6 ] // SOUTH
-	[x+83 , y, 16, 14, -14, -6 ] // SOUTH WEST
-	[x+101, y, 25, 10, -17, -5 ] // WEST
-	[x+128, y, 16, 14, -5,  -8 ] // NORTH WEST
-}
 
 //Spritesets
-spriteset(gfx_flask           , "gfx/WAGON/flask.png"){template_flask(157,20)}
-spriteset(gfx_flask_container , "gfx/WAGON/flask.png"){template_flask(157,40)}
-spriteset(gfx_flask_light     , "gfx/WAGON/flask.png"){template_flask_double(157,60)}
+spriteset(gfx_flask           , "gfx/WAGON/flask.png"){template_6_4(157,20)}
+spriteset(gfx_flask_container , "gfx/WAGON/flask.png"){template_6_4(157,40)}
+spriteset(gfx_flask_light     , "gfx/WAGON/flask.png"){template_6_8(157,60)}
 spriteset(gfx_flask_purchase  , "gfx/WAGON/flask.png"){template_purchase_short(73,0)}
 
 switch(FEAT_TRAINS, SELF, sw_flask_container_decider, cargo_count > 0){
@@ -1973,7 +2074,7 @@ item (FEAT_TRAINS, item_container, 10002){
 		refittable_cargo_classes     : bitmask(CC_EXPRESS) ;
 		non_refittable_cargo_classes : bitmask(CC_PASSENGERS, CC_MAIL, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_BULK, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_HAZARDOUS, CC_COVERED) ;
 		cargo_allow_refit            : [GOOD, FOOD] ;
-		loading_speed                : 5 ;
+		loading_speed                : 8 ;
 		cost_factor                  : 8 ;
 		running_cost_factor          : 15 ;
 		running_cost_base            : RUNNING_COST_NONE ;
@@ -1986,7 +2087,7 @@ item (FEAT_TRAINS, item_container, 10002){
 		power                        : 0 hp ;
 		dual_headed                  : 0 ;
 		default_cargo_type           : GOOD ;
-		cargo_capacity               : 40 ;
+		cargo_capacity               : 55 ;
 		weight                       : 20 ton ;
 		length                       : 8 ;
 	}
@@ -2086,16 +2187,16 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date( 1980, 1, 1) ;
+		introduction_date              : date( 1985, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 40 ;
 		cost_factor                    : 50 ;
 		running_cost_base              : RUNNING_COST_NONE ;
 		running_cost_factor            : 100 ;
 		refit_cost                     : 0 ;
-		refittable_cargo_classes       : bitmask(CC_BULK, CC_POWDERIZED) ;
-		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
-		cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
+		refittable_cargo_classes       : bitmask(CC_BULK, CC_NON_POURABLE) ;
+		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_POWDERIZED) ;
+		//cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
 		cargo_capacity                 : 50 ;
 		loading_speed                  : 20 ;
 		track_type                     : RAIL ;
@@ -16446,6 +16547,7 @@ sort(FEAT_TRAINS,[
 800,
 307,
 314,
+317,
 321,
 365,
 350,
@@ -16469,6 +16571,7 @@ sort(FEAT_TRAINS,[
 10001,
 10002,
 10005,
+10006,
 9010,
 9020,
 9025,

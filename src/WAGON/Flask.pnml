@@ -1,33 +1,10 @@
 //Nuclear flask
 
-//Templates
-
-template template_flask(x,y){
-	[x+0  , y, 8 , 18, -3 , -10] // NORTH	
-	[x+10 , y, 16, 14, -10, -8 ] // NORTH EAST
-	[x+28 , y, 25, 10, -9,  -5 ] // EAST
-	[x+55 , y, 16, 14, -1,  -6 ] // SOUTH EAST
-	[x+0  , y, 8 , 18, -3 , -6 ] // SOUTH
-	[x+10 , y, 16, 14, -14, -6 ] // SOUTH WEST
-	[x+28 , y, 25, 10, -17, -5 ] // WEST
-	[x+55 , y, 16, 14, -5,  -8 ] // NORTH WEST
-}
-
-template template_flask_double(x,y){
-	[x+0  , y, 8 , 18, -3 , -10] // NORTH	  
-	[x+10 , y, 16, 14, -10, -8 ] // NORTH EAST
-	[x+28 , y, 25, 10, -9,  -5 ] // EAST
-	[x+55 , y, 16, 14, -1,  -6 ] // SOUTH EAST
-	[x+73 , y, 8 , 18, -3 , -6 ] // SOUTH
-	[x+83 , y, 16, 14, -14, -6 ] // SOUTH WEST
-	[x+101, y, 25, 10, -17, -5 ] // WEST
-	[x+128, y, 16, 14, -5,  -8 ] // NORTH WEST
-}
 
 //Spritesets
-spriteset(gfx_flask           , "gfx/WAGON/flask.png"){template_flask(157,20)}
-spriteset(gfx_flask_container , "gfx/WAGON/flask.png"){template_flask(157,40)}
-spriteset(gfx_flask_light     , "gfx/WAGON/flask.png"){template_flask_double(157,60)}
+spriteset(gfx_flask           , "gfx/WAGON/flask.png"){template_6_4(157,20)}
+spriteset(gfx_flask_container , "gfx/WAGON/flask.png"){template_6_4(157,40)}
+spriteset(gfx_flask_light     , "gfx/WAGON/flask.png"){template_6_8(157,60)}
 spriteset(gfx_flask_purchase  , "gfx/WAGON/flask.png"){template_purchase_short(73,0)}
 
 switch(FEAT_TRAINS, SELF, sw_flask_container_decider, cargo_count > 0){

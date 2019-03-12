@@ -71,7 +71,7 @@ item(FEAT_CARGOS, cargo_uranium, 30){
 		weight                    : 2 ;
 		penalty_lowerbound        : 30 ;
 		single_penalty_length     : 2 ;
-		price_factor              : 190 ;
+		price_factor              : 160 ;
 		station_list_colour       : 205 ;
 		cargo_payment_list_colour : 205 ;
 		is_freight                : 1 ;
@@ -99,7 +99,7 @@ item(FEAT_CARGOS, cargo_nuclear_waste, 31){
 		weight                    : 2 ;
 		penalty_lowerbound        : 18 ;
 		single_penalty_length     : 8 ;
-		price_factor              : 220 ;
+		price_factor              : 190 ;
 		station_list_colour       : 208 ;
 		cargo_payment_list_colour : 208 ;
 		is_freight                : 1 ;
