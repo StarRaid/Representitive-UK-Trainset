@@ -1,7 +1,203 @@
 //GUV
 
+spriteset(gfx_guv_blue,					"gfx/WAGON/wagons.png"){template_Mk2_single(250,25)}
+spriteset(gfx_guv_brblue,				"gfx/WAGON/wagons.png"){template_Mk2_single(250,50)}
+spriteset(gfx_guv_royalmail,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,75)}
+spriteset(gfx_guv_railexpress,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,100)}
+spriteset(gfx_guv_intercity,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,125)}
+spriteset(gfx_guv_first_fag,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,150)}
+
+spriteset(gfx_guv_purchase_blue,		"gfx/WAGON/wagons.png"){template_purchase(339,25)}
+spriteset(gfx_guv_purchase_brblue,		"gfx/WAGON/wagons.png"){template_purchase(339,50)}
+spriteset(gfx_guv_purchase_royalmail,	"gfx/WAGON/wagons.png"){template_purchase(339,75)}
+spriteset(gfx_guv_purchase_railexpress,	"gfx/WAGON/wagons.png"){template_purchase(339,100)}
+
+
+
+//Graphics
+
+switch(FEAT_TRAINS, SELF, sw_guc_gfx_sectorised, most_common_cargo_type){
+	PASS : gfx_guv_intercity ;
+	gfx_guv_railexpress ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_guv_gfx_auto, current_year){
+	1975..1983	: gfx_guv_brblue ;
+	1984..1996	: sw_guc_gfx_sectorised ;
+	1996..2004	: gfx_guv_royalmail ;
+	gfx_guv_blue ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_guv_gfx_manual, cargo_subtype){
+	2	: gfx_guv_brblue ;
+	3	: gfx_guv_intercity ;
+	4	: gfx_guv_railexpress ;
+	5	: gfx_guv_royalmail ;
+	6	: gfx_guv_first_fag ;
+	gfx_guv_blue ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_guv_gfx_manual_check, livery_choice){
+	1 : sw_guv_gfx_manual ;
+	sw_guv_gfx_auto ;
+}
+
+
+
+//Purchase
+
+switch(FEAT_TRAINS, SELF, sw_guv_purchase_gfx, current_year){
+	1975..1983	: gfx_guv_purchase_brblue ;
+	1984..1996	: gfx_guv_purchase_railexpress ;
+	1996..2004	: gfx_guv_purchase_royalmail ;
+	gfx_guv_purchase_blue ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_guv_purchase_colours, current_year){
+	1984..1996	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	1996..2004	: palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_guv_purchase_colours_2cc_check, colour_scheme_1){
+	1 : sw_guv_purchase_colours ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_guv_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_BRGREEN) ;
+	1 : string(STR_LIVERY_BRBLUE) ;
+	2 : string(STR_LIVERY_BRBLUEGREY) ;
+	3 : string(STR_LIVERY_INTERCITY) ;
+	4 : string(STR_LIVERY_RAIL_EXPRESS) ;
+	5 : string(STR_LIVERY_ROYAL_MAIL) ;
+	6 : string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_MOTORAIL)) ;
+	7 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_MOTORAIL)) ;
+	8 : string(STR_LIVERY_NETWORK_RAIL) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_guv_refit_text_check, livery_choice){
+	1 : sw_guv_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_guc_col_sectorised, most_common_cargo_type){
+	PASS : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_guv_col_auto, current_year){
+	0..1966		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	1984..1996	: sw_guc_col_sectorised ;
+	1996..2004	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_guv_col_manual, cargo_subtype){
+	0	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	3	: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	4	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	5	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	6	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	8 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_guv_col_manual_check, livery_choice){
+	1 : sw_guv_col_manual ;
+	sw_guv_col_auto ;
+}
+
+
+
+//Item
+
+
+item (FEAT_TRAINS, item_guv, 9001){
+	property{
+		name						   : string(STR_NAME_GUV) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1956, 1, 1) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 50 ;
+		cost_factor                    : 45 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 30 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
+		cargo_allow_refit              : [VEHI] ;
+		default_cargo_type			   : MAIL ;
+		cargo_capacity                 : 45 ;
+		loading_speed                  : 10 ;
+		track_type                     : RAIL ;
+		speed                          : 90 mph ;
+		power                          : 0 hp ;
+		weight                         : 30 ton ;
+	}
+	graphics{
+		default                 : sw_guv_gfx_manual_check ;
+		purchase                : sw_guv_purchase_gfx ;
+		purchase_colour_mapping : sw_guv_purchase_colours_2cc_check ;
+		cargo_subtype_text      : sw_guv_refit_text_check ;
+		colour_mapping          : sw_guv_col_manual_check ;
+	}
+}
+
+
+
+
+
 
 
 
 
 //NTX
+
+/*
+
+item (FEAT_TRAINS, item_ntx, 9002){
+	property{
+		name						   : string(STR_NAME_NTX) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1968, 1, 1) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 45 ;
+		cost_factor                    : 60 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 50 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
+		cargo_allow_refit              : [MAIL] ;
+		default_cargo_type			   : MAIL ;
+		cargo_capacity                 : 30 ;
+		loading_speed                  : 7 ;
+		track_type                     : RAIL ;
+		speed                          : 110 mph ;
+		power                          : 0 hp ;
+		weight                         : 38 ton ;
+	}
+	graphics{
+		default                 : sw_ntx_gfx_manual_check ;
+		purchase                : sw_ntx_purchase_gfx ;
+		purchase_colour_mapping : sw_ntx_purchase_colours_2cc_check ;
+		cargo_subtype_text      : sw_ntx_refit_text_check ;
+		colour_mapping          : sw_ntx_col_manual_check ;
+	}
+}
+
+*/

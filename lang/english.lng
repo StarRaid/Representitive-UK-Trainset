@@ -58,6 +58,7 @@ STR_LIVERY_CIVIL_ENGINEERS				 : Civil Engineer's "Dutch"
 STR_LIVERY_RAIL_EXPRESS          		 : Rail Express Systems
 STR_LIVERY_NCB                   		 : National Coal Board {GOLD}(Blue)
 STR_LIVERY_BSC                   		 : British Steel Corporation
+STR_LIVERY_ROYAL_MAIL					 : Royal Mail
 STR_LIVERY_VIRGIN_TRAINS		 		 : Virgin Trains
 STR_LIVERY_VTEC							: Virgin Trains East Coast
 STR_LIVERY_WESSEX_TRAINS				 : Wessex Trains
@@ -138,6 +139,7 @@ STR_LIVERY_LUL_GREY						 : London Underground {BLACK}(Grey)
 STR_LIVERY_LUL_CORP						 : London Underground {GOLD}(Corporate)
 
 STR_LIVERY_SLEEPER              :{BLACK}(Sleeper)
+STR_LIVERY_MOTORAIL				:{BLACK}(Motorail)
 STR_LIVERY_EMPTY	            : 
 STR_SECTOR_GENERAL              :{GOLD}(General, Distribution)
 STR_SECTOR_COAL                 :{GOLD}(Coal)
@@ -159,6 +161,8 @@ STR_NAME_WAGON_A                :BR Bulk Goods Wagon
 STR_NAME_FLASK      			:Nuclear Flask Wagon
 STR_NAME_INTERMODAL             :Intermodal Container Wagon
 STR_NAME_MONSTER_BOX			:Monster Box
+STR_NAME_ZDX					:30t Open Wagon
+STR_NAME_GUV					:General Utility Van
 
 
 STR_NAME_AL6				 :EE AL6 (Electric)
