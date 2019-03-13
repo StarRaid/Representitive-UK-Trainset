@@ -137,14 +137,14 @@ template template_4_8_rev(x,y){
 
 
 template template_5_4(x,y){
-	[x+000,  y ,  8 , 16 , -3 , -7 ] //North
-	[x+010,  y , 14 , 14 , -14, -5 ] //North East
-	[x+026,  y , 21 , 13 , -18, -8 ] //East
-	[x+049,  y , 14 , 14 , -7 , -10] //South East
-	[x+000,  y ,  8 , 16 , -3 , -7 ] //North
-	[x+010,  y , 14 , 14 , -14, -5 ] //North East
-	[x+026,  y , 21 , 13 , -18, -8 ] //East
-	[x+049,  y , 14 , 14 , -7 , -10] //South East
+	[x+000,  y ,  8 , 16 , -3 , -11] //North
+	[x+010,  y , 14 , 14 , -7 , -9 ] //North East
+	[x+026,  y , 21 , 13 , -5 , -9 ] //East
+	[x+049,  y , 14 , 14 ,  1 , -6 ] //South East
+	[x+000,  y ,  8 , 16 , -3 , -5 ] //North
+	[x+010,  y , 14 , 14 , -13, -6 ] //North East
+	[x+026,  y , 21 , 13 , -17, -9 ] //East
+	[x+049,  y , 14 , 14 , -5 , -9 ] //South East
 }
 
 template template_5_8(x,y){

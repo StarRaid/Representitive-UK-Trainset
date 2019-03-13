@@ -263,7 +263,7 @@ item (FEAT_TRAINS, item_br87, 87){
 		track_type                     : ELRL ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
 		speed                          : 110 mph ;
-		power                          : 5000 hp ;
+		power                          : 3700 kW ;
 		weight                         : 83 ton ;
 		tractive_effort_coefficient    : 0.3108433734939759 ;
 		air_drag_coefficient           : 0.0727272727272727 ;

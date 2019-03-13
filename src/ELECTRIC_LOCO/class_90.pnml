@@ -288,7 +288,7 @@ item(FEAT_TRAINS, item_cl90, 90){
 		track_type		                : ELRL ;
 		engine_class		            : ENGINE_CLASS_ELECTRIC ;
 		speed		                    : 110 mph ;
-		power		                    : 3700 kW ;
+		power		                    : 3730 kW ;
 		weight		                    : 84.5 ton ;
 		tractive_effort_coefficient		: 0.34 ;
 		air_drag_coefficient		    : 0.08 ;
@@ -308,7 +308,6 @@ item(FEAT_TRAINS, item_cl90, 90){
 			can_attach_wagon			    : sw_all_but_MU90 ;
 			running_cost_factor			    : return(current_speed == 0 ? 50 : 255) ;
 			purchase_running_cost_factor	: 255 ;
-			purchase_power					: 3700 ;
 		}
 }
 
