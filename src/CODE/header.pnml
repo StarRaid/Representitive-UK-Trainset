@@ -23,6 +23,7 @@ grf{
 			name : string(STR_PARAM_LIVERY_CHOICE_NAME) ;
 			desc : string(STR_PARAM_LIVERY_CHOICE_DESC) ;
 			bit  : 3 ;
+			def_value : 1 ;
 		}
 	}
 	param 1{

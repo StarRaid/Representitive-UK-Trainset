@@ -26,6 +26,7 @@ grf{
 			name : string(STR_PARAM_LIVERY_CHOICE_NAME) ;
 			desc : string(STR_PARAM_LIVERY_CHOICE_DESC) ;
 			bit  : 3 ;
+			def_value : 1 ;
 		}
 	}
 	param 1{
@@ -1167,8 +1168,10 @@ switch(FEAT_TRAINS, SELF, sw_mk2_type_decider_2, current_year){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_mk2_type_decider_1, vehicle_type_id){
+	47 : sw_mk2f_livery_decider ;
 	86 : sw_mk2f_livery_decider ;
 	87 : sw_mk2f_livery_decider ;
+	90 : sw_mk2f_livery_decider ;
 	sw_mk2_type_decider_2 ;
 }
 
@@ -1270,8 +1273,10 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_auto_checker_two, current_year){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_mk2_colour_mapping_auto_checker_one, vehicle_type_id){
+	47 : sw_mk2_colour_mapping_auto_f ;
 	86 : sw_mk2_colour_mapping_auto_f ;
 	87 : sw_mk2_colour_mapping_auto_f ;
+	90 : sw_mk2_colour_mapping_auto_f ;
 	sw_mk2_colour_mapping_auto_checker_two ;
 }
 
@@ -1744,7 +1749,7 @@ spriteset(gfx_guv_purchase_railexpress,	"gfx/WAGON/wagons.png"){template_purchas
 
 //Graphics
 
-switch(FEAT_TRAINS, SELF, sw_guc_gfx_sectorised, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_guc_gfx_sectorised, most_common_cargo_type){
 	PASS : gfx_guv_intercity ;
 	gfx_guv_railexpress ;
 }
@@ -1817,7 +1822,7 @@ switch(FEAT_TRAINS, SELF, sw_guv_refit_text_check, livery_choice){
 
 //Colours
 
-switch(FEAT_TRAINS, SELF, sw_guc_col_sectorised, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_guc_col_sectorised, most_common_cargo_type){
 	PASS : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 }
@@ -1893,7 +1898,112 @@ item (FEAT_TRAINS, item_guv, 9001){
 
 //NTX
 
-/*
+spriteset(gfx_ntx_brblue,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,225)}
+spriteset(gfx_ntx_railexpress,		"gfx/WAGON/wagons.png"){template_Mk2_single(250,250)}
+spriteset(gfx_ntx_intericty,		"gfx/WAGON/wagons.png"){template_Mk2_single(250,275)}
+spriteset(gfx_ntx_royalmail,		"gfx/WAGON/wagons.png"){template_Mk2_single(250,300)}
+
+spriteset(gfx_ntx_purch_brblue,		"gfx/WAGON/wagons.png"){template_purchase(339,225)}
+spriteset(gfx_ntx_purch_railexpress,"gfx/WAGON/wagons.png"){template_purchase(339,250)}
+spriteset(gfx_ntx_purch_royalmail,	"gfx/WAGON/wagons.png"){template_purchase(339,300)}
+
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, PARENT, sw_ntx_gfx_sectorised, most_common_cargo_type){
+	PASS : gfx_ntx_intericty ;
+	gfx_ntx_railexpress ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ntx_gfx_auto, current_year){
+	0..1982				: gfx_ntx_brblue ;
+	1983 .. 1995	: sw_ntx_gfx_sectorised ;
+	gfx_ntx_royalmail ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_ntx_gfx_manual, cargo_subtype){
+	0 : gfx_ntx_brblue ;
+	2 : gfx_ntx_intericty ;
+	3 : gfx_ntx_royalmail ;
+	gfx_ntx_railexpress ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ntx_gfx_manual_check, livery_choice){
+	1 : sw_ntx_gfx_manual ;
+	sw_ntx_gfx_auto ;
+}
+
+
+
+//Purchase sprite
+
+switch(FEAT_TRAINS, SELF, sw_ntx_purch_gfx, current_year){
+	0..1982				: gfx_ntx_purch_brblue ;
+	1983 .. 1995	: gfx_ntx_purch_railexpress ;
+	gfx_ntx_purch_royalmail ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ntx_purch_col, current_year){
+	0..1982				: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1983 .. 1995	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ntx_purch_col_2cc_check, colour_scheme_1){
+	1 : sw_ntx_purch_col ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_ntx_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_BRBLUE) ;
+	1 : string(STR_LIVERY_RAIL_EXPRESS) ;
+	2 : string(STR_LIVERY_INTERCITY) ;
+	3 : string(STR_LIVERY_ROYAL_MAIL) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ntx_refit_text_check, livery_choice){
+	1 : sw_ntx_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+//Colours
+
+switch(FEAT_TRAINS, PARENT, sw_ntx_col_sectorised, most_common_cargo_type){
+	PASS : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ntx_col_auto, current_year){
+	0..1982				: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1983 .. 1995	: sw_ntx_col_sectorised ;
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_ntx_col_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	2 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	3 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_ntx_col_manual_check, livery_choice){
+	1 : sw_ntx_col_manual ;
+	sw_ntx_col_auto ;
+}
+
+
+
+//Item
 
 item (FEAT_TRAINS, item_ntx, 9002){
 	property{
@@ -1909,7 +2019,7 @@ item (FEAT_TRAINS, item_ntx, 9002){
 		running_cost_base              : RUNNING_COST_NONE ;
 		running_cost_factor            : 50 ;
 		refit_cost                     : 0 ;
-		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED) ;
 		cargo_allow_refit              : [MAIL] ;
 		default_cargo_type			   : MAIL ;
 		cargo_capacity                 : 30 ;
@@ -1921,14 +2031,13 @@ item (FEAT_TRAINS, item_ntx, 9002){
 	}
 	graphics{
 		default                 : sw_ntx_gfx_manual_check ;
-		purchase                : sw_ntx_purchase_gfx ;
-		purchase_colour_mapping : sw_ntx_purchase_colours_2cc_check ;
+		purchase                : sw_ntx_purch_gfx ;
+		purchase_colour_mapping : sw_ntx_purch_col_2cc_check ;
 		cargo_subtype_text      : sw_ntx_refit_text_check ;
 		colour_mapping          : sw_ntx_col_manual_check ;
 	}
 }
 
-*/
 # 1 "rukts.pnml" 2
 # 1 "src/WAGON/Wagon_a.pnml" 1
 //Templates
@@ -7099,25 +7208,25 @@ switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_dbcargo, vehicle_is_reversed){
 //Automatic
 
 
-switch(FEAT_TRAINS, SELF, sw_cl90_auto_sectorised, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_cl90_auto_sectorised, most_common_cargo_type){
 	PASS : sw_cl90_gfx_rev_check_intercity ;
 	MAIL : sw_cl90_gfx_rev_check_railexpress ;
 	sw_cl90_gfx_rev_check_railfreight ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_cl90_auto_private1, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_cl90_auto_private1, most_common_cargo_type){
 	PASS : sw_cl90_gfx_rev_check_virgin ;
 	FOOD : sw_cl90_gfx_rev_check_freightliner ;
 	sw_cl90_gfx_rev_check_ews ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_cl90_auto_private2, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_cl90_auto_private2, most_common_cargo_type){
 	PASS : sw_cl90_gfx_rev_check_one ;
 	FOOD : sw_cl90_gfx_rev_check_freightliner ;
 	sw_cl90_gfx_rev_check_dbcargo ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_cl90_auto_private3, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_cl90_auto_private3, most_common_cargo_type){
 	PASS : sw_cl90_gfx_rev_check_greateranglia ;
 	FOOD : sw_cl90_gfx_rev_check_freightliner ;
 	sw_cl90_gfx_rev_check_dbcargo ;
@@ -7194,25 +7303,25 @@ switch(FEAT_TRAINS, SELF, sw_cl90_gfx_dvt_check, vehicle_is_reversed && (count_v
 
 //Automatic
 
-switch(FEAT_TRAINS, SELF, sw_cl90_colours_auto_sectorised, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_cl90_colours_auto_sectorised, most_common_cargo_type){
 	PASS : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	MAIL : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 	palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_cl90_colours_auto_private1, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_cl90_colours_auto_private1, most_common_cargo_type){
 	PASS : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 	FOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_cl90_colours_auto_private2, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_cl90_colours_auto_private2, most_common_cargo_type){
 	PASS : palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;
 	FOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_cl90_colours_auto_private3, most_common_cargo_type){
+switch(FEAT_TRAINS, PARENT, sw_cl90_colours_auto_private3, most_common_cargo_type){
 	PASS : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	FOOD : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
