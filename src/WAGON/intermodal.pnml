@@ -139,7 +139,7 @@ item (FEAT_TRAINS, item_container, 10002){
 		model_life                   : VEHICLE_NEVER_EXPIRES ;
 		refittable_cargo_classes     : bitmask(CC_EXPRESS, CC_COVERED) ;
 		non_refittable_cargo_classes : bitmask(CC_PASSENGERS, CC_MAIL, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_BULK, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_HAZARDOUS) ;
-		cargo_allow_refit            : [GOOD, FOOD] ;
+		cargo_allow_refit            : [GOOD, FOOD, VBOD, VPTS] ;
 		loading_speed                : 8 ;
 		cost_factor                  : 8 ;
 		running_cost_factor          : 15 ;

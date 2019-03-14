@@ -72,8 +72,8 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS];
 		cargo_disallow_refit:			[LVST] ;
 		loading_speed:					13;
-		cost_factor:					5;
-		running_cost_factor:			10;
+		cost_factor:					10;
+		running_cost_factor:			20;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							70 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
@@ -119,6 +119,7 @@ spriteset(gfx_mdo_ore_h,	"gfx/WAGON/wagons.png"){template_4_4(100,200)}
 spriteset(gfx_mdo_ore_f,	"gfx/WAGON/wagons.png"){template_4_4(157,200)}
 spriteset(gfx_mdo_coal_h,	"gfx/WAGON/wagons.png"){template_4_4(100,225)}
 spriteset(gfx_mdo_coal_f,	"gfx/WAGON/wagons.png"){template_4_4(157,225)}
+spriteset(gfx_mdo_cover,	"gfx/WAGON/wagons.png"){template_4_4(214,0)}
 
 spriteset(gfx_mdo_purchase,	"gfx/WAGON/wagons.png"){template_purchase(297,409)}
 
@@ -129,7 +130,12 @@ switch(FEAT_TRAINS, SELF, sw_mdo_cargo_check_h, cargo_type_in_veh){
 	PORE : gfx_mdo_ore_h ;
 	SAND : gfx_mdo_sand_h ;
 	SULP : gfx_mdo_sand_h ;
-	gfx_mdo_other_h ;
+	AORE : gfx_mdo_other_h ;
+	GRVL : gfx_mdo_other_h ;
+	LIME : gfx_mdo_other_h ;
+	MNO2 : gfx_mdo_other_h ;
+	NITR : gfx_mdo_other_h ;
+	gfx_mdo_cover ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_mdo_cargo_check_f, cargo_type_in_veh){
@@ -139,7 +145,12 @@ switch(FEAT_TRAINS, SELF, sw_mdo_cargo_check_f, cargo_type_in_veh){
 	PORE : gfx_mdo_ore_f ;
 	SAND : gfx_mdo_sand_f ;
 	SULP : gfx_mdo_sand_f ;
-	gfx_mdo_other_f ;
+	AORE : gfx_mdo_other_f ;
+	GRVL : gfx_mdo_other_f ;
+	LIME : gfx_mdo_other_f ;
+	MNO2 : gfx_mdo_other_f ;
+	NITR : gfx_mdo_other_f ;
+	gfx_mdo_cover ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_mdo_cargo_amount_check, PERCENT_FULL){
@@ -165,10 +176,10 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 		reliability_decay:				9;
 		refittable_cargo_classes:		bitmask(CC_BULK, CC_NON_POURABLE);
 		non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE);
-		cargo_allow_refit:				[COAL, IORE, AORE, COKE, FERT, GRVL, LIME, MNO2, NITR, PHOS, PORE, SCMT, SGBT, SGCN, SLAG, SULP];
+		cargo_allow_refit:				[COAL, IORE, AORE, COKE, FERT, GRVL, LIME, MNO2, NITR, PHOS, PORE, SCMT, SGBT, SGCN, SLAG, SULP, STEL, PAPR, BEER, BDMT, BOOM, BRCK, CERA, COPR, DYES, ENSP, FICR, FMSP, GLAS, IRON, JAVA, METL, MNSP, NICK, NUTS, PIPE, PLAS, RCYC, VPTS, WDPR, WOOL, SCRP, SCMT, RCYC];
 		loading_speed:					10;
-		cost_factor:					3;
-		running_cost_factor:			6;
+		cost_factor:					6;
+		running_cost_factor:			10;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							70 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
@@ -196,6 +207,54 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 
 
 
+//ZGO
+
+spriteset(gfx_zgo,			"gfx/WAGON/wagons.png"){template_4_4(157,0)}
+spriteset(gfx_zgo_purchase,	"gfx/WAGON/wagons.png"){template_purchase(297,353)}
+
+switch(FEAT_TRAINS, SELF, sw_zgo_sprite_stack, SPR_STACK){
+	0 : gfx_zgo ;
+	1 : sw_mdo_cargo_amount_check ;
+}
+
+
+item (FEAT_TRAINS, item_zgo, 10012) {
+	property {
+		name: 							string(STR_NAME_ZGO);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1950, 1, 1);
+		model_life:						20;
+		retire_early:					1;
+		vehicle_life:					25;
+		reliability_decay:				9;
+		refittable_cargo_classes:		bitmask(CC_BULK, CC_NON_POURABLE);
+		non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE);
+		cargo_allow_refit:				[COAL, IORE, AORE, COKE, FERT, GRVL, LIME, MNO2, NITR, PHOS, PORE, SCMT, SGBT, SGCN, SLAG, SULP, STEL, PAPR, BEER, BDMT, BOOM, BRCK, CERA, COPR, DYES, ENSP, FICR, FMSP, GLAS, IRON, JAVA, METL, MNSP, NICK, NUTS, PIPE, PLAS, RCYC, VPTS, WDPR, WOOL, SCRP, SCMT, RCYC];
+		loading_speed:					10;
+		cost_factor:					4;
+		running_cost_factor:			10;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							50 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				COAL;
+		cargo_capacity:					12;
+		weight:							9 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							4;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_zgo_sprite_stack;
+		purchase:						gfx_zgo_purchase;
+}
+}
 
 
 
