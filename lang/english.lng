@@ -54,6 +54,7 @@ STR_LIVERY_NSW					 		 : Network South East {GOLD}(White)
 STR_LIVERY_NSG					 		 : Network South East {GOLD}(Grey)
 STR_LIVERY_BR_SCOTRAIL           		 : Scotrail
 STR_LIVERY_RAILFREIGHT           		 : Railfreight Two-Tone Grey {STRING}
+STR_LIVERY_RAILFREIGHT2					 : Railfreight
 STR_LIVERY_CIVIL_ENGINEERS				 : Civil Engineer's "Dutch"
 STR_LIVERY_RAIL_EXPRESS          		 : Rail Express Systems
 STR_LIVERY_NCB                   		 : National Coal Board {GOLD}(Blue)
@@ -162,14 +163,18 @@ STR_NAME_FLASK      			:Nuclear Flask Wagon
 STR_NAME_INTERMODAL             :Intermodal Container Wagon
 STR_NAME_MONSTER_BOX			:Monster Box
 STR_NAME_ZDX					:30t Open Wagon
+STR_NAME_MTV					:Speedlink Open Wagon
 STR_NAME_ZGO					:Wood Open Wagon
 STR_NAME_MDO					:Steel Open Wagon
-STR_NAME_CGO					:CGO Riveted Covered Hopper
-STR_NAME_CHV					:CHV Welded Covered Hopper
-STR_NAME_HTO					:HTO Riveted Hopper
+STR_NAME_CGO					:Riveted Covered Hopper
+STR_NAME_CHV					:Welded Covered Hopper
+STR_NAME_HTO					:Riveted Hopper
 STR_NAME_HHA					:HHA Hopper
-STR_NAME_SSA					:SSA Scrap Hopper
+STR_NAME_SSA					:Scrap Hopper
 STR_NAME_PGA					:PGA Hopper
+STR_NAME_PCA					:PCA Tanker
+STR_NAME_QPV					:XP Luggage Van
+STR_NAME_RBX					:Speedlink Van
 STR_NAME_GUV					:General Utility Van
 STR_NAME_NTX					:Express Mail Coach
 
