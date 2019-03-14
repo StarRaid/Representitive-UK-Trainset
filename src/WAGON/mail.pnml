@@ -131,7 +131,7 @@ switch(FEAT_TRAINS, SELF, sw_guv_col_2cc_check, colour_scheme_1){
 item (FEAT_TRAINS, item_guv, 9001){
 	property{
 		name						   : string(STR_NAME_GUV) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
@@ -143,6 +143,7 @@ item (FEAT_TRAINS, item_guv, 9001){
 		running_cost_factor            : 30 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
+		non_refittable_cargo_classes   : bitmask(CC_PIECE_GOODS) ;
 		cargo_allow_refit              : [VEHI] ;
 		default_cargo_type			   : MAIL ;
 		cargo_capacity                 : 45 ;
@@ -298,7 +299,7 @@ item (FEAT_TRAINS, item_ntx, 9002){
 		running_cost_factor            : 50 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED) ;
-		cargo_allow_refit              : [MAIL] ;
+		cargo_allow_refit              : [MAIL, VALU, DIAM, GOLD] ;
 		default_cargo_type			   : MAIL ;
 		cargo_capacity                 : 30 ;
 		loading_speed                  : 7 ;
@@ -341,7 +342,7 @@ switch(FEAT_TRAINS, SELF, sw_qpv_col_2cc_check, colour_scheme_1){
 item (FEAT_TRAINS, item_qpv, 9003){
 	property{
 		name						   : string(STR_NAME_QPV) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 6 ;
 		climates_available             : ALL_CLIMATES ;
@@ -449,7 +450,7 @@ switch(FEAT_TRAINS, SELF, sw_rbx_purchase_gfx, current_year){
 item (FEAT_TRAINS, item_rbx, 9004){
 	property{
 		name						   : string(STR_NAME_RBX) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
 		climates_available             : ALL_CLIMATES ;
