@@ -15,6 +15,7 @@ disable_item(FEAT_TRAINS);
 #include "src/WAGON/mail.pnml"
 #include "src/WAGON/Wagon_a.pnml"
 #include "src/WAGON/open_wagons.pnml"
+#include "src/WAGON/hoppers.pnml"
 #include "src/WAGON/Flask.pnml"
 #include "src/WAGON/intermodal.pnml"
 #include "src/WAGON/monster_box.pnml"

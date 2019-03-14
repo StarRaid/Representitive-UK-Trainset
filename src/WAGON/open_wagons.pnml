@@ -69,7 +69,7 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 		reliability_decay:				11;
 		refittable_cargo_classes:		bitmask(CC_PIECE_GOODS, CC_NON_POURABLE, TRAIN_FLAG_AUTOREFIT);
 		non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED);
-		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP];
+		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS];
 		cargo_disallow_refit:			[LVST] ;
 		loading_speed:					13;
 		cost_factor:					5;
@@ -85,7 +85,7 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 		dual_headed:					0;
 		//default_cargo_type:				COAL;
 		cargo_capacity:					22;
-		weight:							13 ton;
+		weight:							16 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
 		length:							5;
@@ -106,29 +106,72 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 
 
 
-/*
+
 
 //MDO
+
+spriteset(gfx_mdo,			"gfx/WAGON/wagons.png"){template_4_4(157,25)}
+spriteset(gfx_mdo_other_h,	"gfx/WAGON/wagons.png"){template_4_4(100,150)}
+spriteset(gfx_mdo_other_f,	"gfx/WAGON/wagons.png"){template_4_4(157,150)}
+spriteset(gfx_mdo_sand_h,	"gfx/WAGON/wagons.png"){template_4_4(100,175)}
+spriteset(gfx_mdo_sand_f,	"gfx/WAGON/wagons.png"){template_4_4(157,175)}
+spriteset(gfx_mdo_ore_h,	"gfx/WAGON/wagons.png"){template_4_4(100,200)}
+spriteset(gfx_mdo_ore_f,	"gfx/WAGON/wagons.png"){template_4_4(157,200)}
+spriteset(gfx_mdo_coal_h,	"gfx/WAGON/wagons.png"){template_4_4(100,225)}
+spriteset(gfx_mdo_coal_f,	"gfx/WAGON/wagons.png"){template_4_4(157,225)}
+
+spriteset(gfx_mdo_purchase,	"gfx/WAGON/wagons.png"){template_purchase(297,409)}
+
+switch(FEAT_TRAINS, SELF, sw_mdo_cargo_check_h, cargo_type_in_veh){
+	COAL : gfx_mdo_coal_h ;
+	COKE : gfx_mdo_coal_h ;
+	IORE : gfx_mdo_ore_h ;
+	PORE : gfx_mdo_ore_h ;
+	SAND : gfx_mdo_sand_h ;
+	SULP : gfx_mdo_sand_h ;
+	gfx_mdo_other_h ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mdo_cargo_check_f, cargo_type_in_veh){
+	COAL : gfx_mdo_coal_f ;
+	COKE : gfx_mdo_coal_f ;
+	IORE : gfx_mdo_ore_f ;
+	PORE : gfx_mdo_ore_f ;
+	SAND : gfx_mdo_sand_f ;
+	SULP : gfx_mdo_sand_f ;
+	gfx_mdo_other_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mdo_cargo_amount_check, PERCENT_FULL){
+	1..50	: sw_mdo_cargo_check_h ;
+	51..100	: sw_mdo_cargo_check_f ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_mdo_sprite_stack, SPR_STACK){
+	0 : gfx_mdo ;
+	1 : sw_mdo_cargo_amount_check ;
+}
 
 
 item (FEAT_TRAINS, item_mdo, 10007) {
 	property {
-		name: 							string(STR_SECTOR_COAL);
+		name: 							string(STR_NAME_MDO);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1975, 1, 1);
 		model_life:						20;
 		retire_early:					1;
-		vehicle_life:					35;
+		vehicle_life:					25;
 		reliability_decay:				9;
 		refittable_cargo_classes:		bitmask(CC_BULK, CC_NON_POURABLE);
 		non_refittable_cargo_classes:	bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE);
-		//cargo_allow_refit:				[COAL, GRAI, IORE, WHEA, CORE, FRUT, MAIZ, AORE, CERA, CERE, CMNT, FERT, LIME, OLSD, POTA, SAND, GRVL, MNSP, PHOS, PORE, COPR, SUGR];
+		cargo_allow_refit:				[COAL, IORE, AORE, COKE, FERT, GRVL, LIME, MNO2, NITR, PHOS, PORE, SCMT, SGBT, SGCN, SLAG, SULP];
 		loading_speed:					10;
 		cost_factor:					3;
 		running_cost_factor:			6;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							55 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		speed:							70 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -136,19 +179,18 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		default_cargo_type:				COAL;
-		cargo_capacity:					20;
-		weight:							9 ton;
+		cargo_capacity:					16;
+		weight:							10 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
 		length:							4;
 		bitmask_vehicle_info:			0;
 	}
 	graphics {
-		default: 						sw_4_8_gfx;
-		purchase:						spriteset_wagon_a_purchase;
+		default: 						sw_mdo_sprite_stack;
+		purchase:						gfx_mdo_purchase;
 }
 }
-
 
 
 
@@ -164,6 +206,7 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 
 
 
+/*
 
 item (FEAT_TRAINS, item_mtv, 10008) {
 	property {
