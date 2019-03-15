@@ -43,12 +43,12 @@ switch(FEAT_TRAINS, SELF, sw_mbox_cargo_check, cargo_type_in_veh){
 	COAL : sw_mbox_coal_cargo_check ;
 	IORE : sw_mbox_iron_cargo_check ;
 	CORE : sw_mbox_iron_cargo_check ;
-	COPR : sw_mbox_iron_cargo_check ;
 	PORE : sw_mbox_iron_cargo_check ;
 	AORE : sw_mbox_iron_cargo_check ;
 	SAND : sw_mbox_sand_cargo_check ;
 	GOLD : sw_mbox_sand_cargo_check ;
 	CERA : sw_mbox_sand_cargo_check ;
+	CERE : sw_mbox_sand_cargo_check ;
 	sw_mbox_grey_cargo_check ;
 }
 
@@ -93,7 +93,7 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		running_cost_factor            : 100 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : bitmask(CC_BULK, CC_NON_POURABLE) ;
-		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_POWDERIZED) ;
+		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED, CC_PIECE_GOODS);
 		//cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
 		cargo_capacity                 : 50 ;
 		loading_speed                  : 20 ;

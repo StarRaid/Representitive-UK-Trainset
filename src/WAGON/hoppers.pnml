@@ -22,8 +22,8 @@ item (FEAT_TRAINS, item_cgo, 10008) {
 		vehicle_life:					25;
 		reliability_decay:				9;
 		refittable_cargo_classes:		bitmask(CC_POWDERIZED, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_NON_POURABLE);
-		cargo_allow_refit:				[BEAN, CERE, OLSD, POTA, QLME, RCYC, SASH, SULP, WOOL, GRAI, WHEA, MAIZ, FICR, CLAY];
+		non_refittable_cargo_classes:	bitmask(CC_NON_POURABLE, CC_PIECE_GOODS);
+		cargo_allow_refit:				[BEAN, CERE, OLSD, POTA, QLME, RCYC, SASH, SULP, WOOL, GRAI, WHEA, MAIZ, FICR];
 		loading_speed:					6;
 		cost_factor:					6;
 		running_cost_factor:			12;
@@ -65,8 +65,8 @@ item (FEAT_TRAINS, item_chv, 10009) {
 		vehicle_life:					30;
 		reliability_decay:				11;
 		refittable_cargo_classes:		bitmask(CC_POWDERIZED, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_NON_POURABLE);
-		cargo_allow_refit:				[BEAN, CERE, OLSD, POTA, QLME, RCYC, SASH, SULP, WOOL, GRAI, WHEA, MAIZ, FICR, CLAY];
+		non_refittable_cargo_classes:	bitmask(CC_NON_POURABLE, CC_PIECE_GOODS);
+		cargo_allow_refit:				[BEAN, CERE, OLSD, POTA, QLME, RCYC, SASH, SULP, WOOL, GRAI, WHEA, MAIZ, FICR];
 		loading_speed:					7;
 		cost_factor:					10;
 		running_cost_factor:			10;
@@ -169,8 +169,8 @@ item (FEAT_TRAINS, item_hto, 10010) {
 		retire_early:					1;
 		vehicle_life:					30;
 		reliability_decay:				11;
-		refittable_cargo_classes:		bitmask(CC_BULK, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED, CC_NON_POURABLE);
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED, CC_NON_POURABLE, CC_COVERED, CC_PIECE_GOODS);
 		cargo_allow_refit:				[COAL, IORE, AORE, BEAN, CASS, COKE, GRVL, LIME, MNO2, NITR, PHOS, PORE, SAND, SGBT, SGCN, SLAG];
 		loading_speed:					8;
 		cost_factor:					16;
@@ -238,7 +238,7 @@ item (FEAT_TRAINS, item_ssa, 10011) {
 		vehicle_life:					40;
 		reliability_decay:				13;
 		refittable_cargo_classes:		bitmask(CC_NON_POURABLE);
-		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED);
+		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED, CC_PIECE_GOODS);
 		cargo_allow_refit:				[SLAG, SCMT, SCRP, RCYC];
 		loading_speed:					10;
 		cost_factor:					20;
@@ -253,7 +253,7 @@ item (FEAT_TRAINS, item_ssa, 10011) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		default_cargo_type:				SCMT;
-		cargo_capacity:					26;
+		cargo_capacity:					32;
 		weight:							18 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
@@ -318,8 +318,8 @@ item (FEAT_TRAINS, item_pga, 10013) {
 		retire_early:					1;
 		vehicle_life:					25;
 		reliability_decay:				14;
-		refittable_cargo_classes:		bitmask(CC_BULK, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED, CC_NON_POURABLE);
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED, CC_NON_POURABLE, CC_COVERED, CC_PIECE_GOODS);
 		cargo_allow_refit:				[IORE, AORE, COKE, GRVL, LIME, MNO2, NITR, PHOS, PORE, SAND, SLAG];
 		loading_speed:					10;
 		cost_factor:					24;

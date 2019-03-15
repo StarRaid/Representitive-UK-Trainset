@@ -1,1 +1,63 @@
 //Tankers
+
+
+
+
+
+
+//PCA id 10015
+
+spriteset(gfx_pca,			"gfx/WAGON/wagons.png"){template_5_4(0,250)}
+spriteset(gfx_pca_purch,	"gfx/WAGON/wagons.png"){template_purchase(297,437)}
+
+random_switch(FEAT_TRAINS, PARENT, sw_pca_col_random){
+	3 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_YELLOW, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_pca_colours_2cc_check, colour_scheme_1){
+	1 : sw_pca_col_random ;
+	palette_2cc(company_colour1, COLOUR_DARK_GREEN) ;
+}
+
+item (FEAT_TRAINS, item_pca, 10015) {
+	property {
+		name: 							string(STR_NAME_PCA);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1975, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					35;
+		reliability_decay:				12;
+		refittable_cargo_classes:		bitmask(CC_LIQUID, CC_POWDERIZED, CC_COVERED);
+		//non_refittable_cargo_classes:	bitmask();
+		//cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
+		//cargo_disallow_refit:			[LVST] ;
+		loading_speed:					15;
+		cost_factor:					25;
+		running_cost_factor:			46;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							60 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		//default_cargo_type:				COAL;
+		cargo_capacity:					30;
+		weight:							15 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							5;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						gfx_pca;
+		purchase:						gfx_pca_purch;
+		colour_mapping:					sw_pca_colours_2cc_check;
+}
+}

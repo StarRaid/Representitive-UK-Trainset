@@ -1879,7 +1879,7 @@ item (FEAT_TRAINS, item_guv, 9001){
 		non_refittable_cargo_classes   : bitmask(CC_PIECE_GOODS) ;
 		cargo_allow_refit              : [VEHI] ;
 		default_cargo_type			   : MAIL ;
-		cargo_capacity                 : 45 ;
+		cargo_capacity                 : 40 ;
 		loading_speed                  : 10 ;
 		track_type                     : RAIL ;
 		speed                          : 90 mph ;
@@ -2089,7 +2089,7 @@ item (FEAT_TRAINS, item_qpv, 9003){
 		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
 		cargo_allow_refit              : [VBOD, VPTS, LVST, PLAS, JAVA, BEER] ;
 		default_cargo_type			   : MAIL ;
-		cargo_capacity                 : 30 ;
+		cargo_capacity                 : 28 ;
 		loading_speed                  : 6 ;
 		track_type                     : RAIL ;
 		speed                          : 60 mph ;
@@ -2197,7 +2197,7 @@ item (FEAT_TRAINS, item_rbx, 9004){
 		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
 		cargo_allow_refit              : [VBOD, VPTS, LVST, PLAS, JAVA, BEER] ;
 		default_cargo_type			   : MAIL ;
-		cargo_capacity                 : 50 ;
+		cargo_capacity                 : 45 ;
 		loading_speed                  : 8 ;
 		track_type                     : RAIL ;
 		speed                          : 70 mph ;
@@ -2351,7 +2351,7 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 	property {
 		name: 							string(STR_NAME_ZDX);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1958, 1, 1);
+		introduction_date:				date(1955, 1, 1);
 		model_life:						30;
 		retire_early:					1;
 		vehicle_life:					40;
@@ -2364,7 +2364,7 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 		cost_factor:					10;
 		running_cost_factor:			20;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							70 mph;
+		speed:							60 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
 		refit_cost:						0;
 		track_type:						RAIL;
@@ -2552,52 +2552,119 @@ item (FEAT_TRAINS, item_zgo, 10012) {
 
 //MTV
 
+spriteset(gfx_mtv,			"gfx/WAGON/wagons.png"){template_5_4(100,350)}
+spriteset(gfx_mtv_wood,		"gfx/WAGON/wagons.png"){template_5_4(165,350)}
+spriteset(gfx_mtv_purch,	"gfx/WAGON/wagons.png"){template_purchase(297,339)}
+
+switch(FEAT_TRAINS, SELF, sw_mtv_base_decider, cargo_type_in_veh){
+	WOOD : gfx_mtv_wood ;
+	gfx_mtv ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mtv_spr_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_mtv_base_decider ;
+	1 : sw_zdx_cargo_check ;
+}
 
 
-/*
-
-item (FEAT_TRAINS, item_mtv, 10008) {
+item (FEAT_TRAINS, item_mtv, 10014) {
 	property {
-		name: 							string(STR_SECTOR_COAL);
+		name: 							string(STR_NAME_MTV);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1958, 1, 1);
-		model_life:						30;
+		introduction_date:				date(1975, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
 		retire_early:					1;
-		vehicle_life:					40;
-		reliability_decay:				11;
+		vehicle_life:					35;
+		reliability_decay:				7;
 		refittable_cargo_classes:		bitmask(CC_PIECE_GOODS, CC_NON_POURABLE);
 		non_refittable_cargo_classes:	bitmask(CC_REFRIGERATED,CC_OVERSIZED);
 		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
 		cargo_disallow_refit:			[LVST] ;
-		loading_speed:					13;
-		cost_factor:					5;
-		running_cost_factor:			10;
+		loading_speed:					15;
+		cost_factor:					10;
+		running_cost_factor:			20;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							60 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		speed:							70 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
-		default_cargo_type:				COAL;
-		cargo_capacity:					25;
-		weight:							13 ton;
+		//default_cargo_type:				COAL;
+		cargo_capacity:					26;
+		weight:							15 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
 		length:							5;
 		bitmask_vehicle_info:			0;
 	}
 	graphics {
-		default: 						sw_4_8_gfx;
-		purchase:						spriteset_wagon_a_purchase;
+		default: 						sw_mtv_spr_stack;
+		purchase:						gfx_mtv_purch;
 }
 }
 
 
-*/
 
+
+//Habfis
+
+spriteset(gfx_hab_closed,	"gfx/WAGON/wagons.png"){template_Mk2_single(250,175)}
+spriteset(gfx_hab_open,		"gfx/WAGON/wagons.png"){template_Mk2_single(250,200)}
+spriteset(gfx_hab_purch,	"gfx/WAGON/wagons.png"){template_purchase(339,175)}
+
+
+spritegroup sprgrp_hab {
+	loading	: gfx_hab_open ;
+	loaded	: gfx_hab_closed ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_hab_col_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_RED, company_colour2) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+item (FEAT_TRAINS, item_hab, 10016) {
+	property {
+		name: 							string(STR_NAME_HAB);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1985, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					40;
+		reliability_decay:				6;
+		refittable_cargo_classes:		bitmask(CC_PIECE_GOODS, CC_NON_POURABLE);
+		//non_refittable_cargo_classes:	bitmask();
+		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
+		cargo_disallow_refit:			[LVST] ;
+		loading_speed:					15;
+		cost_factor:					45;
+		running_cost_factor:			70;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							70 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		//default_cargo_type:				COAL;
+		cargo_capacity:					50;
+		weight:							20 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sprgrp_hab;
+		purchase:						gfx_hab_purch;
+		colour_mapping:					sw_hab_col_2cc_check;
+}
+}
 # 1 "rukts.pnml" 2
 # 1 "src/WAGON/hoppers.pnml" 1
 //Hoppers
@@ -2624,8 +2691,8 @@ item (FEAT_TRAINS, item_cgo, 10008) {
 		vehicle_life:					25;
 		reliability_decay:				9;
 		refittable_cargo_classes:		bitmask(CC_POWDERIZED, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_NON_POURABLE);
-		cargo_allow_refit:				[BEAN, CERE, OLSD, POTA, QLME, RCYC, SASH, SULP, WOOL, GRAI, WHEA, MAIZ, FICR, CLAY];
+		non_refittable_cargo_classes:	bitmask(CC_NON_POURABLE, CC_PIECE_GOODS);
+		cargo_allow_refit:				[BEAN, CERE, OLSD, POTA, QLME, RCYC, SASH, SULP, WOOL, GRAI, WHEA, MAIZ, FICR];
 		loading_speed:					6;
 		cost_factor:					6;
 		running_cost_factor:			12;
@@ -2667,8 +2734,8 @@ item (FEAT_TRAINS, item_chv, 10009) {
 		vehicle_life:					30;
 		reliability_decay:				11;
 		refittable_cargo_classes:		bitmask(CC_POWDERIZED, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_NON_POURABLE);
-		cargo_allow_refit:				[BEAN, CERE, OLSD, POTA, QLME, RCYC, SASH, SULP, WOOL, GRAI, WHEA, MAIZ, FICR, CLAY];
+		non_refittable_cargo_classes:	bitmask(CC_NON_POURABLE, CC_PIECE_GOODS);
+		cargo_allow_refit:				[BEAN, CERE, OLSD, POTA, QLME, RCYC, SASH, SULP, WOOL, GRAI, WHEA, MAIZ, FICR];
 		loading_speed:					7;
 		cost_factor:					10;
 		running_cost_factor:			10;
@@ -2771,8 +2838,8 @@ item (FEAT_TRAINS, item_hto, 10010) {
 		retire_early:					1;
 		vehicle_life:					30;
 		reliability_decay:				11;
-		refittable_cargo_classes:		bitmask(CC_BULK, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED, CC_NON_POURABLE);
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED, CC_NON_POURABLE, CC_COVERED, CC_PIECE_GOODS);
 		cargo_allow_refit:				[COAL, IORE, AORE, BEAN, CASS, COKE, GRVL, LIME, MNO2, NITR, PHOS, PORE, SAND, SGBT, SGCN, SLAG];
 		loading_speed:					8;
 		cost_factor:					16;
@@ -2840,7 +2907,7 @@ item (FEAT_TRAINS, item_ssa, 10011) {
 		vehicle_life:					40;
 		reliability_decay:				13;
 		refittable_cargo_classes:		bitmask(CC_NON_POURABLE);
-		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED);
+		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED, CC_PIECE_GOODS);
 		cargo_allow_refit:				[SLAG, SCMT, SCRP, RCYC];
 		loading_speed:					10;
 		cost_factor:					20;
@@ -2855,7 +2922,7 @@ item (FEAT_TRAINS, item_ssa, 10011) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		default_cargo_type:				SCMT;
-		cargo_capacity:					26;
+		cargo_capacity:					32;
 		weight:							18 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
@@ -2920,8 +2987,8 @@ item (FEAT_TRAINS, item_pga, 10013) {
 		retire_early:					1;
 		vehicle_life:					25;
 		reliability_decay:				14;
-		refittable_cargo_classes:		bitmask(CC_BULK, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED, CC_NON_POURABLE);
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED, CC_NON_POURABLE, CC_COVERED, CC_PIECE_GOODS);
 		cargo_allow_refit:				[IORE, AORE, COKE, GRVL, LIME, MNO2, NITR, PHOS, PORE, SAND, SLAG];
 		loading_speed:					10;
 		cost_factor:					24;
@@ -2948,6 +3015,71 @@ item (FEAT_TRAINS, item_pga, 10013) {
 		purchase:						gfx_pga_purch;
 		colour_mapping:					sw_pga_col_check;
 	}
+}
+# 1 "rukts.pnml" 2
+# 1 "src/WAGON/tankers.pnml" 1
+//Tankers
+
+
+
+
+
+
+//PCA id 10015
+
+spriteset(gfx_pca,			"gfx/WAGON/wagons.png"){template_5_4(0,250)}
+spriteset(gfx_pca_purch,	"gfx/WAGON/wagons.png"){template_purchase(297,437)}
+
+random_switch(FEAT_TRAINS, PARENT, sw_pca_col_random){
+	3 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_YELLOW, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_pca_colours_2cc_check, colour_scheme_1){
+	1 : sw_pca_col_random ;
+	palette_2cc(company_colour1, COLOUR_DARK_GREEN) ;
+}
+
+item (FEAT_TRAINS, item_pca, 10015) {
+	property {
+		name: 							string(STR_NAME_PCA);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1975, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					35;
+		reliability_decay:				12;
+		refittable_cargo_classes:		bitmask(CC_LIQUID, CC_POWDERIZED, CC_COVERED);
+		//non_refittable_cargo_classes:	bitmask();
+		//cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
+		//cargo_disallow_refit:			[LVST] ;
+		loading_speed:					15;
+		cost_factor:					25;
+		running_cost_factor:			46;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							60 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		//default_cargo_type:				COAL;
+		cargo_capacity:					30;
+		weight:							15 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							5;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						gfx_pca;
+		purchase:						gfx_pca_purch;
+		colour_mapping:					sw_pca_colours_2cc_check;
+}
 }
 # 1 "rukts.pnml" 2
 # 1 "src/WAGON/Flask.pnml" 1
@@ -3165,7 +3297,7 @@ item (FEAT_TRAINS, item_container, 10002){
 		introduction_date            : date(1968,1,1) ;
 		model_life                   : VEHICLE_NEVER_EXPIRES ;
 		refittable_cargo_classes     : bitmask(CC_EXPRESS, CC_COVERED) ;
-		non_refittable_cargo_classes : bitmask(CC_PASSENGERS, CC_MAIL, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_BULK, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE, CC_HAZARDOUS) ;
+		non_refittable_cargo_classes : bitmask(CC_BULK) ;
 		cargo_allow_refit            : [GOOD, FOOD, VBOD, VPTS] ;
 		loading_speed                : 8 ;
 		cost_factor                  : 8 ;
@@ -3238,12 +3370,12 @@ switch(FEAT_TRAINS, SELF, sw_mbox_cargo_check, cargo_type_in_veh){
 	COAL : sw_mbox_coal_cargo_check ;
 	IORE : sw_mbox_iron_cargo_check ;
 	CORE : sw_mbox_iron_cargo_check ;
-	COPR : sw_mbox_iron_cargo_check ;
 	PORE : sw_mbox_iron_cargo_check ;
 	AORE : sw_mbox_iron_cargo_check ;
 	SAND : sw_mbox_sand_cargo_check ;
 	GOLD : sw_mbox_sand_cargo_check ;
 	CERA : sw_mbox_sand_cargo_check ;
+	CERE : sw_mbox_sand_cargo_check ;
 	sw_mbox_grey_cargo_check ;
 }
 
@@ -3288,7 +3420,7 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		running_cost_factor            : 100 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : bitmask(CC_BULK, CC_NON_POURABLE) ;
-		non_refittable_cargo_classes   : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_HAZARDOUS, CC_COVERED, CC_OVERSIZED, CC_POWDERIZED, CC_POWDERIZED) ;
+		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED, CC_PIECE_GOODS);
 		//cargo_allow_refit              : [COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
 		cargo_capacity                 : 50 ;
 		loading_speed                  : 20 ;
@@ -17665,6 +17797,8 @@ sort(FEAT_TRAINS,[
 10000,
 10001,
 10006,
+10014,
+10016,
 10002,
 10012,
 10007,
@@ -17672,6 +17806,7 @@ sort(FEAT_TRAINS,[
 10013,
 10005,
 10011,
+10015,
 10008,
 10009,
 9003,
