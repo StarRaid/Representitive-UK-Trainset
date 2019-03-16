@@ -1,0 +1,155 @@
+//Flat beds
+
+spriteset(gfx_pxa,			"gfx/WAGON/wagons.png"){template_6_4(0,450)}
+spriteset(gfx_pxa_high,		"gfx/WAGON/wagons.png"){template_6_4(0,475)}
+spriteset(gfx_pxa_low,		"gfx/WAGON/wagons.png"){template_6_4(73,475)}
+
+spriteset(gfx_pxa_vehicle,	"gfx/WAGON/wagons.png"){template_6_8(0,500)}
+spriteset(gfx_pxa_general,	"gfx/WAGON/wagons.png"){template_6_4(0,525)}
+spriteset(gfx_pxa_wood,		"gfx/WAGON/wagons.png"){template_6_4(0,550)}
+spriteset(gfx_pxa_steel,	"gfx/WAGON/wagons.png"){template_6_4(73,525)}
+spriteset(gfx_pxa_glass,	"gfx/WAGON/wagons.png"){template_6_4(73,550)}
+
+spriteset(gfx_pxa_purch,	"gfx/WAGON/wagons.png"){template_purchase(73,450)}
+
+
+
+random_switch(FEAT_TRAINS, SELF, sw_pxa_base_random, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
+	2 : gfx_pxa ;
+	2 : gfx_pxa ;
+	1 : gfx_pxa_low ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_pxa_base_decider, cargo_type_in_veh){
+	WOOD : gfx_pxa_high ;
+	STEL : gfx_pxa_low ;
+	COPR : gfx_pxa_low ;
+	METL : gfx_pxa_low ;
+	NICK : gfx_pxa_low ;
+	SCMT : gfx_pxa_low ;
+	ZINC : gfx_pxa_low ;
+	PIPE : gfx_pxa ;
+	GOOD : gfx_pxa ;
+	GLAS : gfx_pxa ;
+	WDPR : gfx_pxa ;
+	VEHI : gfx_pxa ;
+	VBOD : gfx_pxa ;
+	MNSP : gfx_pxa ;
+	ENSP : gfx_pxa ;
+	sw_pxa_base_random ;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, sw_pxa_cargo_random, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
+	dependent : sw_pxa_base_random ;
+	2 : gfx_pxa_general ;
+	2 : gfx_pxa_glass ;
+	1 : gfx_pxa_steel ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_pxa_cargo_type_check, cargo_type_in_veh){
+	WOOD : gfx_pxa_wood ;
+	STEL : gfx_pxa_steel ;
+	COPR : gfx_pxa_steel ;
+	METL : gfx_pxa_steel ;
+	NICK : gfx_pxa_steel ;
+	SCMT : gfx_pxa_steel ;
+	ZINC : gfx_pxa_steel ;
+	PIPE : gfx_pxa_general ;
+	GOOD : gfx_pxa_general ;
+	WDPR : gfx_pxa_general ;
+	GLAS : gfx_pxa_glass ;
+	VEHI : gfx_pxa_vehicle ;
+	VBOD : gfx_pxa_vehicle ;
+	MNSP : gfx_pxa_vehicle ;
+	ENSP : gfx_pxa_vehicle ;
+	sw_pxa_cargo_random ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_pxa_cargo_check, cargo_count > 0){
+	1 : sw_pxa_cargo_type_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_pxa_spr_stack, SPR_STACK){
+	0 : sw_pxa_base_decider ;
+	1 : sw_pxa_cargo_check ;
+}
+
+
+item (FEAT_TRAINS, item_rrv, 10017) {
+	property {
+		name: 							string(STR_NAME_RRV);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1955, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					40;
+		reliability_decay:				11;
+		refittable_cargo_classes:		bitmask(CC_PIECE_GOODS, CC_OVERSIZED);
+		non_refittable_cargo_classes:	bitmask(CC_REFRIGERATED, CC_NON_POURABLE, CC_BULK);
+		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, BEER, FERT, FMSP, PLAS, VPTS, ZINC, VBOD];
+		cargo_disallow_refit:			[LVST] ;
+		loading_speed:					10;
+		cost_factor:					18;
+		running_cost_factor:			26;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							65 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		cargo_capacity:					24;
+		weight:							18 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							6;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_pxa_spr_stack;
+		purchase:						gfx_pxa_purch;
+}
+}
+
+
+item (FEAT_TRAINS, item_pxa, 10018) {
+	property {
+		name: 							string(STR_NAME_PXA);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1972, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					40;
+		reliability_decay:				15;
+		refittable_cargo_classes:		bitmask(CC_PIECE_GOODS, CC_OVERSIZED);
+		non_refittable_cargo_classes:	bitmask(CC_REFRIGERATED, CC_NON_POURABLE, CC_BULK);
+		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, BEER, FERT, FMSP, PLAS, VPTS, ZINC, VBOD];
+		cargo_disallow_refit:			[LVST] ;
+		loading_speed:					12;
+		cost_factor:					24;
+		running_cost_factor:			30;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							80 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_AUTOREFIT);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		cargo_capacity:					28;
+		weight:							20 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							6;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_pxa_spr_stack;
+		purchase:						gfx_pxa_purch;
+}
+}

@@ -323,9 +323,9 @@ item (FEAT_TRAINS, item_mtv, 10014) {
 
 //Habfis
 
-spriteset(gfx_hab_closed,	"gfx/WAGON/wagons.png"){template_Mk2_single(250,175)}
-spriteset(gfx_hab_open,		"gfx/WAGON/wagons.png"){template_Mk2_single(250,200)}
-spriteset(gfx_hab_purch,	"gfx/WAGON/wagons.png"){template_purchase(339,175)}
+spriteset(gfx_hab_closed,	"gfx/WAGON/wagons.png"){template_Mk2_single(0,275)}
+spriteset(gfx_hab_open,		"gfx/WAGON/wagons.png"){template_Mk2_single(0,300)}
+spriteset(gfx_hab_purch,	"gfx/WAGON/wagons.png"){template_purchase(0,325)}
 
 
 spritegroup sprgrp_hab {

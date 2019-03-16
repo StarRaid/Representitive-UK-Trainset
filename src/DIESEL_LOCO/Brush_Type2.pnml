@@ -34,7 +34,7 @@ spriteset(gfx_brush2_purchase_modern			, "gfx/DIESEL_LOCO/class_31.png")	{ templ
 
 //Graphics switches
 
-switch(FEAT_TRAINS, PARENT, sw_brush2_generic_gery_revcheck, vehicle_is_reversed)		{ 1 : gfx_brush2_generic_grey_rev ;			gfx_brush2_generic_grey ; }
+//switch(FEAT_TRAINS, PARENT, sw_brush2_generic_grey_revcheck, vehicle_is_reversed)		{ 1 : gfx_brush2_generic_grey_rev ;			gfx_brush2_generic_grey ; }
 switch(FEAT_TRAINS, PARENT, sw_brush2_brgreen_revcheck, vehicle_is_reversed)			{ 1 : gfx_brush2_brgreen_rev ;				gfx_brush2_brgreen ; }
 switch(FEAT_TRAINS, PARENT, sw_brush2_brblue_revcheck, vehicle_is_reversed)				{ 1 : gfx_brush2_brblue_rev ;				gfx_brush2_brblue ; }
 switch(FEAT_TRAINS, PARENT, sw_brush2_brlargelogo_revcheck, vehicle_is_reversed)		{ 1 : gfx_brush2_brlargelogo_rev ;			gfx_brush2_brlargelogo ; }
