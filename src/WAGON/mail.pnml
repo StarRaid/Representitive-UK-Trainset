@@ -403,7 +403,7 @@ switch(FEAT_TRAINS, SELF, sw_rbx_gfx_manual_check, livery_choice){
 }
 
 
-switch(FEAT_TRAINS, SELF, sw_rbx_refit_text, livery_choice){
+switch(FEAT_TRAINS, SELF, sw_rbx_refit_text, cargo_subtype){
 	0 : string(STR_LIVERY_BRBLUE) ;
 	1 : string(STR_LIVERY_RAILFREIGHT2) ;
 	CB_RESULT_NO_TEXT ;
