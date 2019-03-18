@@ -53,7 +53,7 @@ switch(FEAT_TRAINS, SELF, sw_zdx_colours, current_year){
 	palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_zdx_colours_2cc_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_zdx_colours_2cc_check, colour_scheme_2){
 	1 : sw_zdx_colours ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
@@ -333,7 +333,7 @@ spritegroup sprgrp_hab {
 	loaded	: gfx_hab_closed ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_hab_col_2cc_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_hab_col_2cc_check, colour_scheme_2){
 	1 : palette_2cc(COLOUR_RED, company_colour2) ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
@@ -349,8 +349,8 @@ item (FEAT_TRAINS, item_hab, 10016) {
 		reliability_decay:				6;
 		refittable_cargo_classes:		bitmask(CC_PIECE_GOODS, CC_NON_POURABLE);
 		//non_refittable_cargo_classes:	bitmask();
-		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
-		cargo_disallow_refit:			[LVST] ;
+		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
+		cargo_disallow_refit:			[LVST, SCMT] ;
 		loading_speed:					15;
 		cost_factor:					45;
 		running_cost_factor:			70;

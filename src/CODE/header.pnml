@@ -12,11 +12,12 @@ grf{
 			bit     : 1 ;
 			def_value : 1 ;
 		}
-		coaches_take_mail{
+		colour_scheme_2{
 			type : bool ;
-			name : string(STR_PARAM_COACHMAIL_NAME) ;
-			desc : string(STR_PARAM_COACHMAIL_DESC) ;
+			name : string(STR_PARAM_WAGONCOLOURS_NAME) ;
+			desc : string(STR_PARAM_WAGONCOLOURS_DESC) ;
 			bit  : 2 ;
+			def_value : 1 ;
 		}
 		livery_choice{
 			type : bool ;

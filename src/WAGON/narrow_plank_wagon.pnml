@@ -69,7 +69,7 @@ random_switch(FEAT_TRAINS, PARENT, sw_nrwplank_random_colours){
 	1 : palette_1cc(COLOUR_RED) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_nrwplank_colours_2cc_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_nrwplank_colours_2cc_check, colour_scheme_2){
 	1 : sw_nrwplank_random_colours ;
 	palette_1cc(company_colour2) ;
 }

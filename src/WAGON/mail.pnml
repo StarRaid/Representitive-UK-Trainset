@@ -329,7 +329,7 @@ spriteset(gfx_qpv_purch,"gfx/WAGON/wagons.png"){template_purchase(181,425)}
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
 }*/
 
-switch(FEAT_TRAINS, SELF, sw_qpv_col_2cc_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_qpv_col_2cc_check, colour_scheme_2){
 	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
@@ -430,7 +430,7 @@ switch(FEAT_TRAINS, SELF, sw_rbx_col_manual_check, livery_choice){
 	sw_rbx_col_auto ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_rbx_col_2cc_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_rbx_col_2cc_check, colour_scheme_2){
 	1 : sw_rbx_col_manual_check ;
 	palette_2cc(company_colour1, company_colour2) ;
 }

@@ -7,7 +7,7 @@ spriteset(gfx_chv,		"gfx/WAGON/wagons.png"){template_5_4(165,250)}
 spriteset(gfx_chv_purch,"gfx/WAGON/wagons.png"){template_purchase(297,367)}
 
 
-switch(FEAT_TRAINS, SELF, sw_cgo_col_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_cgo_col_check, colour_scheme_2){
 	1 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
 	palette_2cc(company_colour1, COLOUR_DARK_GREEN) ;
 }
@@ -154,7 +154,7 @@ switch(FEAT_TRAINS, SELF, sw_hto_spr_stack, SPR_STACK){
 	1 : palette_2cc(COLOUR_YELLOW, COLOUR_DARK_GREEN) ;
 } */
 
-switch(FEAT_TRAINS, SELF, sw_hto_col_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_hto_col_check, colour_scheme_2){
 	1 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
 	palette_2cc(company_colour1, COLOUR_DARK_GREEN) ;
 }
@@ -165,7 +165,7 @@ item (FEAT_TRAINS, item_hto, 10010) {
 		name: 							string(STR_NAME_HTO);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1950, 1, 1);
-		model_life:						VEHICLE_NEVER_EXPIRES;
+		model_life:						35;
 		retire_early:					1;
 		vehicle_life:					30;
 		reliability_decay:				11;
@@ -223,7 +223,7 @@ switch(FEAT_TRAINS, SELF, sw_ssa_gfx_load_check, PERCENT_FULL){
 	gfx_ssa_e ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_ssa_col_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_ssa_col_check, colour_scheme_2){
 	1 : palette_2cc(COLOUR_RED, COLOUR_DARK_GREEN) ;
 	palette_2cc(company_colour1, COLOUR_DARK_GREEN) ;
 }
@@ -303,7 +303,7 @@ switch(FEAT_TRAINS, SELF, sw_pga_cargo_check, cargo_type_in_veh){
 
 
 
-switch(FEAT_TRAINS, SELF, sw_pga_col_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_pga_col_check, colour_scheme_2){
 	1 : palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;
 	palette_2cc(company_colour1, COLOUR_DARK_GREEN) ;
 }

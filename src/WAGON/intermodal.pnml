@@ -110,7 +110,7 @@ switch(FEAT_TRAINS, SELF, sw_container_colours_manual_check, livery_choice){
 	sw_container_colours_auto ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_container_colours_2cc_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_container_colours_2cc_check, colour_scheme_2){
 	1 : sw_container_colours_manual_check ;
 	palette_2cc(company_colour1, company_colour2) ;
 }

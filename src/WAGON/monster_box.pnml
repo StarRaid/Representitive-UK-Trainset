@@ -72,7 +72,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_colours_year_check, build_year <= 1995){
 	sw_mbox_colours_random ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_mbox_colours_2cc_check, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_mbox_colours_2cc_check, colour_scheme_2){
 	1 : sw_mbox_colours_year_check ;
 	palette_2cc(company_colour1, company_colour2) ;
 }

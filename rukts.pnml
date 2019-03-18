@@ -32,6 +32,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DIESEL_LOCO/Brush_Peak.pnml"
 #include "src/DIESEL_LOCO/Brush_Type4.pnml"
 #include "src/DIESEL_LOCO/HST.pnml"
+#include "src/DIESEL_LOCO/class_58.pnml"
 #include "src/DIESEL_LOCO/GE_Powerhaul.pnml"
 #include "src/DIESEL_LOCO/UKLight.pnml"
 #include "src/ELECTRIC_LOCO/BR_Class87.pnml"
