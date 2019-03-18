@@ -7,9 +7,9 @@ spriteset(gfx_flask_container , "gfx/WAGON/flask.png"){template_6_4(157,40)}
 spriteset(gfx_flask_light     , "gfx/WAGON/flask.png"){template_6_8(157,60)}
 spriteset(gfx_flask_purchase  , "gfx/WAGON/flask.png"){template_purchase_short(73,0)}
 
-switch(FEAT_TRAINS, SELF, sw_flask_container_decider, cargo_count > 0){
+/*switch(FEAT_TRAINS, SELF, sw_flask_container_decider, cargo_count > 0){
 	1 : gfx_flask_container ;
-}
+}*/
 
 switch(FEAT_TRAINS, SELF, sw_flask_light_decider, position_in_consist_from_end){
 	0 : gfx_flask_light ;
@@ -18,7 +18,7 @@ switch(FEAT_TRAINS, SELF, sw_flask_light_decider, position_in_consist_from_end){
 
 switch(FEAT_TRAINS, SELF, sw_flask_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : gfx_flask ;
-	1 : sw_flask_container_decider ;
+	1 : gfx_flask_container ;
 	2 : sw_flask_light_decider ;
 }
 
@@ -44,22 +44,22 @@ item (FEAT_TRAINS, flask_wagon, 10001){
 		introduction_date            : date(1949,1,1) ;
 		model_life                   : VEHICLE_NEVER_EXPIRES ;
 		refittable_cargo_classes     : bitmask(CC_HAZARDOUS, CC_COVERED) ;
-		non_refittable_cargo_classes : bitmask(CC_PASSENGERS, CC_MAIL, CC_EXPRESS, CC_ARMOURED, CC_BULK, CC_PIECE_GOODS, CC_LIQUID, CC_REFRIGERATED, CC_BULK, CC_OVERSIZED, CC_POWDERIZED, CC_NON_POURABLE) ;
+		non_refittable_cargo_classes : bitmask(CC_OVERSIZED, CC_NON_POURABLE, CC_BULK, CC_LIQUID) ;
 		cargo_allow_refit            : [URAN, NWST, SULP] ;
-		loading_speed                : 5 ;
-		cost_factor                  : 8 ;
-		running_cost_factor          : 15 ;
+		loading_speed                : 10 ;
+		cost_factor                  : 100 ;
+		running_cost_factor          : 150 ;
 		running_cost_base            : RUNNING_COST_NONE ;
 		sprite_id                    : SPRITE_ID_NEW_TRAIN ;
-		speed                        : 75 mph ;
+		speed                        : 60 mph ;
 		misc_flags                   : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
 		refit_cost                   : 0 ;
 		track_type                   : RAIL ;
 		ai_special_flag              : AI_FLAG_CARGO ;
 		power                        : 0 hp ;
 		dual_headed                  : 0 ;
-		default_cargo_type           : NWST ;
-		cargo_capacity               : 40 ;
+		default_cargo_type           : URAN ;
+		cargo_capacity               : 30 ;
 		weight                       : 20 ton ;
 		length                       : 6 ;
 	}
