@@ -59,7 +59,7 @@ item (FEAT_TRAINS, flask_wagon, 10001){
 		power                        : 0 hp ;
 		dual_headed                  : 0 ;
 		default_cargo_type           : URAN ;
-		cargo_capacity               : 30 ;
+		cargo_capacity               : 20 ;
 		weight                       : 20 ton ;
 		length                       : 6 ;
 	}

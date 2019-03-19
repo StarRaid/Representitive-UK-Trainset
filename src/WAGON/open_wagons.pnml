@@ -416,7 +416,7 @@ item (FEAT_TRAINS, item_haz, 10019) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		default_cargo_type:				URAN;
-		cargo_capacity:					50;
+		cargo_capacity:					40;
 		weight:							25 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;

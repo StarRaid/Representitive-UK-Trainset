@@ -149,8 +149,8 @@ item(FEAT_TRAINS, item_bone, 58){
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
 		can_attach_wagon               : sw_all_but_MU90;
-		running_cost_factor            : return(current_speed == 0 ? 65 : 242) ;
-		purchase_running_cost_factor : 242 ;
+		running_cost_factor            : return(current_speed == 0 ? 70 : 252) ;
+		purchase_running_cost_factor : 252 ;
 	}
 }
 
