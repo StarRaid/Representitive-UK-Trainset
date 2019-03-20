@@ -123,8 +123,10 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_uklight, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_manual_ee3, cargo_subtype){
-	10     : sw_dvt_atw_exec_rev_check ;
-	11..12 : sw_dvt_generic_rev_check ;
+	0..1	: sw_dvt_intercity_rev_check ;
+	4..6	: sw_dvt_intercity_rev_check ;
+	7		: sw_dvt_generic_rev_check ;
+	12..15	: sw_dvt_generic_rev_check ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -254,9 +256,12 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_uklight, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_ee3, cargo_subtype){
-	10     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
-	11..12 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	0..1	: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	4..6	: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	7		: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	12..15	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_abb92, cargo_subtype){

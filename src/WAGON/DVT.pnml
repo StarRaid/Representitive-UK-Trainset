@@ -25,7 +25,7 @@ switch(FEAT_TRAINS, SELF, sw_dvt_purchase_colours_2cc_check, colour_scheme_1){
 //Graphics checks
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_gfx_parent_id_check, vehicle_type_id){
-	37 : sw_ee3_spritestack  ;
+	37 : sw_37_gfx_spr_stack  ;
 	68 : sw_uklight_spritestack_dbso ;
 	86 : sw_al6_sprite_stack_dbso ;
 	87 : sw_br87_sprite_stack_dbso ;
@@ -44,7 +44,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_gfx_reverse_check, vehicle_is_reversed){
 //Colours checks
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_parent_id_check, vehicle_type_id){
-	37 : sw_ee3_colours_2cc_check ;
+	37 : sw_37_col_2cc_check ;
 	68 : sw_uklight_colours_2cc_check_dbso ;
 	86 : sw_al6_colours_2cc_check_dbso ;
 	87 : sw_br87_colours_2cc_check_dbso ;
