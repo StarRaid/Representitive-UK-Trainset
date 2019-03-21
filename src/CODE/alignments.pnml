@@ -193,6 +193,17 @@ template template_6_8(x,y){
 	[x+128, y, 16, 15, -5,  -9 ] // NORTH WEST
 }
 
+template template_6_8_rev(x,y){
+	[x+73 , y, 8 , 18, -3 , -10] // NORTH	  
+	[x+83 , y, 16, 15, -9,  -9 ] // NORTH EAST
+	[x+101, y, 25, 13, -9,  -9 ] // EAST
+	[x+128, y, 16, 15, -1,  -7 ] // SOUTH EAST
+	[x+0  , y, 8 , 18, -3 , -6 ] // SOUTH
+	[x+10 , y, 16, 15, -13, -7 ] // SOUTH WEST
+	[x+28 , y, 25, 13, -17, -9 ] // WEST
+	[x+55 , y, 16, 15, -5,  -9 ] // NORTH WEST
+}
+
 
 template template_8_8(x,y){
     [ x, y, 8, 24, -3, -12]

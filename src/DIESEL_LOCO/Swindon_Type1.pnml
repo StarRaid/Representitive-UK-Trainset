@@ -148,7 +148,7 @@ item(FEAT_TRAINS, item_swtype1, 14){
 		refittable_cargo_classes       : 0 ;
 		cargo_allow_refit              : [GOOD] ;
 		cargo_capacity                 : 1 ;
-		model_life                     : 20 ;
+		model_life                     : 26 ;
 		vehicle_life                   : 40 ;
 		reliability_decay              : 13 ;
 		cost_factor                    : 34 ;

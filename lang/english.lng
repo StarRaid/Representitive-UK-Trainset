@@ -28,8 +28,8 @@ STR_PARAM_TOOMUCH					:4x
 
 
 STR_PARAM_VEH_SELEC_NAME         		 :Vehicle selection
-STR_PARAM_VEH_SELEC_DESC         		 :Choose the selection of vehicles that will appear in game.
-STR_PARAM_VEH_SELEC_CHOICE_ONE   		 :Transport Tycoon Style
+STR_PARAM_VEH_SELEC_DESC         		 :Choose the selection of vehicles that will appear in game. Minimal reduces the purchase list to a basic list of vehicles, Extended includes some extras that are extensions to the normal set.
+STR_PARAM_VEH_SELEC_CHOICE_ONE   		 :Minimal
 STR_PARAM_VEH_SELEC_CHOICE_TWO   		 :Limited
 STR_PARAM_VEH_SELEC_CHOICE_THREE 		 :Normal
 STR_PARAM_VEH_SELEC_CHOICE_FOUR  		 :Extended
@@ -78,7 +78,7 @@ STR_LIVERY_DBCARGO               		 : DB Cargo UK
 STR_LIVERY_DCR_GREEN					 : Devon & Cornwall Railways {GREEN}(Green)
 STR_LIVERY_TPE_NEW				 		 : TransPennine Express
 STR_LIVERY_CAL_SLEEPER			 		 : Caledonian Sleeper
-STR_LIVERY_GBRF					 		 : First GBRf
+STR_LIVERY_GBRF					 		 : GBRf
 STR_LIVERY_LONDON_MIDLAND		 		 : London Midland
 STR_LIVERY_LONDON_MIDLAND_STRING 		 : London Midland {STRING}
 STR_LIVERY_WEST_MIDLANDS_RAILWAY 		 : West Midlands Railway
@@ -192,6 +192,7 @@ STR_NAME_87                  :BREL 87 (Electric)
 STR_NAME_90                  :BREL 90 (Electric)
 STR_NAME_92                  :Brush/ABB "92" (Dual Voltage)
 STR_NAME_SWTYPE1             :Swindon Type 1 (Diesel)
+STR_NAME_EETYPE1			 :EE Type 1 (Diesel Electric) 
 STR_NAME_EETYPE3			 :EE Type 3 (Diesel Electric) 
 STR_NAME_EETYPE4			 :EE Whistler (Diesel Electric)
 STR_NAME_DELTIC			 	 :EE Deltic (Diesel Electric)
@@ -296,6 +297,7 @@ STR_NAME_87_ALT			:BR Class 87 (Electric)
 STR_NAME_90_ALT			:BR Class 90 (Electric)
 STR_NAME_92_ALT			:BR Class 92 (Dual Voltage)
 STR_NAME_SWTYPE1_ALT	:BR Class 14 (Diesel)
+STR_NAME_EETYPE1_ALT	:BR Class 20 (Diesel Electric) 
 STR_NAME_EETYPE3_ALT	:BR Class 37 (Diesel Electric) 
 STR_NAME_EETYPE4_ALT	:BR Class 40 (Diesel Electric)
 STR_NAME_DELTIC_ALT		:BR Class 55 (Diesel Electric)

@@ -37,7 +37,7 @@ item (FEAT_TRAINS, item_cgo, 10008) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		default_cargo_type:				CERE;
-		cargo_capacity:					16;
+		cargo_capacity:					20;
 		weight:							12 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
@@ -80,7 +80,7 @@ item (FEAT_TRAINS, item_chv, 10009) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		default_cargo_type:				CERE;
-		cargo_capacity:					20;
+		cargo_capacity:					24;
 		weight:							16 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
@@ -321,6 +321,7 @@ item (FEAT_TRAINS, item_pga, 10013) {
 		refittable_cargo_classes:		bitmask(CC_BULK);
 		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED, CC_NON_POURABLE, CC_COVERED, CC_PIECE_GOODS);
 		cargo_allow_refit:				[IORE, AORE, COKE, GRVL, LIME, MNO2, NITR, PHOS, PORE, SAND, SLAG];
+		cargo_disallow_refit:			[GRAI, WHEA, MAIZ, CERE];
 		loading_speed:					10;
 		cost_factor:					24;
 		running_cost_factor:			40;

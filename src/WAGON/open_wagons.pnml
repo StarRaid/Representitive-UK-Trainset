@@ -349,8 +349,8 @@ item (FEAT_TRAINS, item_hab, 10016) {
 		reliability_decay:				6;
 		refittable_cargo_classes:		bitmask(CC_PIECE_GOODS, CC_NON_POURABLE);
 		//non_refittable_cargo_classes:	bitmask();
-		cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
-		cargo_disallow_refit:			[LVST, SCMT] ;
+		cargo_allow_refit:				[GOOD, STEL, PAPR, BOOM, BRCK, CERA, COPR, GLAS, METL, NICK, PIPE, WDPR, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
+		cargo_disallow_refit:			[LVST, SCMT, MNSP, ENSP, WOOD] ;
 		loading_speed:					15;
 		cost_factor:					45;
 		running_cost_factor:			70;
@@ -401,7 +401,7 @@ item (FEAT_TRAINS, item_haz, 10019) {
 		vehicle_life:					40;
 		reliability_decay:				6;
 		refittable_cargo_classes     : bitmask(CC_HAZARDOUS, CC_COVERED) ;
-		non_refittable_cargo_classes : bitmask(CC_NON_POURABLE, CC_BULK) ;
+		non_refittable_cargo_classes : bitmask(CC_BULK) ;
 		cargo_allow_refit            : [URAN, NWST, SULP] ;
 		loading_speed:					15;
 		cost_factor:					140;

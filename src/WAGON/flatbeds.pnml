@@ -5,6 +5,7 @@ spriteset(gfx_pxa_high,		"gfx/WAGON/wagons.png"){template_6_4(0,475)}
 spriteset(gfx_pxa_low,		"gfx/WAGON/wagons.png"){template_6_4(73,475)}
 
 spriteset(gfx_pxa_vehicle,	"gfx/WAGON/wagons.png"){template_6_8(0,500)}
+spriteset(gfx_pxa_vehicle_r,"gfx/WAGON/wagons.png"){template_6_8_rev(0,500)}
 spriteset(gfx_pxa_general,	"gfx/WAGON/wagons.png"){template_6_4(0,525)}
 spriteset(gfx_pxa_wood,		"gfx/WAGON/wagons.png"){template_6_4(0,550)}
 spriteset(gfx_pxa_steel,	"gfx/WAGON/wagons.png"){template_6_4(73,525)}
@@ -12,6 +13,8 @@ spriteset(gfx_pxa_glass,	"gfx/WAGON/wagons.png"){template_6_4(73,550)}
 
 spriteset(gfx_pxa_purch,	"gfx/WAGON/wagons.png"){template_purchase(73,450)}
 
+
+switch(FEAT_TRAINS, PARENT, sw_pxa_veh_rev_check, vehicle_is_reversed){ 1 : gfx_pxa_vehicle_r ; gfx_pxa_vehicle ; }
 
 
 random_switch(FEAT_TRAINS, SELF, sw_pxa_base_random, bitmask(TRIGGER_VEHICLE_UNLOAD_ALL, TRIGGER_VEHICLE_ANY_LOAD, TRIGGER_ALL_NEEDED)){
@@ -59,10 +62,10 @@ switch(FEAT_TRAINS, SELF, sw_pxa_cargo_type_check, cargo_type_in_veh){
 	GOOD : gfx_pxa_general ;
 	WDPR : gfx_pxa_general ;
 	GLAS : gfx_pxa_glass ;
-	VEHI : gfx_pxa_vehicle ;
-	VBOD : gfx_pxa_vehicle ;
-	MNSP : gfx_pxa_vehicle ;
-	ENSP : gfx_pxa_vehicle ;
+	VEHI : sw_pxa_veh_rev_check ;
+	VBOD : sw_pxa_veh_rev_check ;
+	MNSP : sw_pxa_veh_rev_check ;
+	ENSP : sw_pxa_veh_rev_check ;
 	sw_pxa_cargo_random ;
 }
 
