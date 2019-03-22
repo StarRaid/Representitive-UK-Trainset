@@ -163,7 +163,7 @@ item(FEAT_TRAINS, item_deltic, 55){
 		colour_mapping                 : sw_deltic_col_2cc_check ;
 		purchase                       : sw_deltic_purch_gfx ;
 		purchase_colour_mapping        : sw_deltic_purch_col_2cc_check ;
-		sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
+		sound_effect                   : sw_sfx_diesel_loco_deltic ;
 		create_effect                  : vfx_diesel_default ;
 		cargo_subtype_text             : sw_deltic_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
