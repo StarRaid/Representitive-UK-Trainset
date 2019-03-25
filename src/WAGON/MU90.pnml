@@ -40,6 +40,7 @@ switch(FEAT_TRAINS, SELF, sw_MU90_purchase, current_year){
 switch(FEAT_TRAINS, PARENT, sw_MU90_coupling_restrictions, vehicle_type_id) {
 	700: return CB_RESULT_ATTACH_ALLOW;
 	325: return CB_RESULT_ATTACH_ALLOW;
+	37: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_MU90_NO_COUPLE);
 }
 

@@ -639,7 +639,7 @@ item (FEAT_TRAINS, item_165, 165) {
 		default_cargo_type:				PASS;
 		cargo_capacity:					95;
 		weight:							37 ton;
-		engine_class:					ENGINE_CLASS_ELECTRIC;
+		engine_class:					ENGINE_CLASS_DIESEL;
 		tractive_effort_coefficient:	0.21;
 		air_drag_coefficient:			0.1;
 		length:							8;
