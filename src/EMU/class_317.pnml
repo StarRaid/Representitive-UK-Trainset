@@ -88,8 +88,8 @@ spriteset(spriteset_317a_pr_cac, "gfx/EMU/class_317_2.png") {template_8_8_networ
 spriteset(spriteset_317a_pr_car, "gfx/EMU/class_317_2.png") {template_8_8_networker_reverse(179, 125)}
 spriteset(spriteset_317a_pr_sct, "gfx/EMU/class_317_2.png") {template_8_8_networker_reverse(179, 175)}
 //Headlights
-spriteset(spriteset_317_hl, "gfx/EMU/class_317_2.png") {template_8_8_networker(179, 275)}
-spriteset(spriteset_317_rl, "gfx/EMU/class_317_2.png") {template_8_8_networker_reverse(179, 300)}
+spriteset(spriteset_317_rl, "gfx/EMU/class_317_2.png") {template_8_8_networker(179, 275)}
+spriteset(spriteset_317_hl, "gfx/EMU/class_317_2.png") {template_8_8_networker(179, 300)}
 //Purchase Sprite
 spriteset(spriteset_317a_purchase_brb, "gfx/EMU/class_317_2.png") {template_dualhead_purchase(90, 175)}
 spriteset(spriteset_317a_purchase_nse, "gfx/EMU/class_317_2.png") {template_dualhead_purchase(90, 325)}

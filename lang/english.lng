@@ -127,6 +127,7 @@ STR_LIVERY_SPT_CARMINE_CREAM	 		 : Strathclyde Partnership for Transport {GOLD}(
 STR_LIVERY_SCOTRAIL				 		 : Scotrail "Saltire"
 STR_LIVERY_ONE_ANGLIA			 		 : One Anglia
 STR_LIVERY_ABELLIO_GREATER_ANGLIA		 : Abellio Greater Anglia
+STR_LIVERY_GREATER_ANGLIA				 : Greater Anglia
 STR_LIVERY_TFL					 		 : TfL Rail
 STR_LIVERY_C2C					 		 : c2c
 STR_LIVERY_MERSEYRAIL			 		 : Merseyrail
@@ -137,6 +138,8 @@ STR_LIVERY_ATW_REFURB            		 : Arriva Trains Wales {GOLD}(Refurbished)
 STR_LIVERY_ATW_EXEC              		 : Arriva Trains Wales {GOLD}(Executive)
 STR_LIVERY_GTR					 		 : GTR {GOLD}(Thameslink/Great Northern)
 STR_LIVERY_WYPTE				 		 : West Yorkshire Passenger Transport Executive
+STR_LIVERY_NXEA							 : National Express East Anglia
+STR_LIVERY_LO							 : London Overground
 
 STR_LIVERY_LUL_MAROON					 : London Underground {RED}(Maroon)
 STR_LIVERY_LUL_GREY						 : London Underground {BLACK}(Grey)
@@ -264,6 +267,7 @@ STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or anothe
 STR_220_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Voyager!
 STR_307_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BREL Eastern Region Suburan EMU (Electric)!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
+STR_317_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL "Bed-Pan"!
 STR_319_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Thameslink Classic!
 STR_375_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier "Electrostar" (Dual Voltage)!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage",  BR Compartment EMU (3rd rail) or another BR Mark 1 EMU (3rd rail)!
