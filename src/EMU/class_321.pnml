@@ -124,12 +124,12 @@ ERA_SECTORISATION: spriteset_321_purchase_nse;
 spriteset_321_purchase_aga;
 }
 
-switch(FEAT_TRAINS, SELF, sw_321_tpfr_auto, vehicle_is_reversed){
+switch(FEAT_TRAINS, PARENT, sw_321_tpfr_auto, vehicle_is_reversed){
 1: sw_321_t_auto;
 sw_321_pf_auto;
 }
 
-switch(FEAT_TRAINS, SELF, sw_321_tprr_auto, vehicle_is_reversed){
+switch(FEAT_TRAINS, PARENT, sw_321_tprr_auto, vehicle_is_reversed){
 1: sw_321_pr_auto;
 sw_321_t_auto;
 }
@@ -266,12 +266,12 @@ switch(FEAT_TRAINS, PARENT, sw_321_f_man, count_veh_id(321)-count_veh_id(9030)){
 sw_321_4p_f_man;
 }
 
-switch(FEAT_TRAINS, SELF, sw_321_p4_man, vehicle_is_reversed){
+switch(FEAT_TRAINS, PARENT, sw_321_p4_man, vehicle_is_reversed){
 1: sw_321_t_man;
 sw_321_4p_pf_man;
 }
 
-switch(FEAT_TRAINS, SELF, sw_321_p4r_man, vehicle_is_reversed){
+switch(FEAT_TRAINS, PARENT, sw_321_p4r_man, vehicle_is_reversed){
 1: sw_321_4p_pr_man;
 sw_321_t_man;
 }
@@ -286,7 +286,7 @@ switch(FEAT_TRAINS, SELF, sw_321_t4b_man, position_in_vehid_chain_from_end){
 sw_321_t4_man;
 }
 
-switch(FEAT_TRAINS, SELF, sw_321_3p_man, vehicle_is_reversed){
+switch(FEAT_TRAINS, PARENT, sw_321_3p_man, vehicle_is_reversed){
 1: sw_321_3_pr_man;
 sw_321_3_pf_man;
 }
@@ -423,10 +423,10 @@ switch(FEAT_TRAINS, SELF, sw_321_colour_mapping, colour_scheme_1){
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_coupling_restrictions, vehicle_type_id) {
-317: return CB_RESULT_ATTACH_ALLOW;
+321: return CB_RESULT_ATTACH_ALLOW;
 9030: return CB_RESULT_ATTACH_ALLOW;
 37 : return CB_RESULT_ATTACH_ALLOW;
-return string(STR_317_NO_COUPLE);
+return string(STR_321_NO_COUPLE);
 }
 
 item (FEAT_TRAINS, item_321, 321) {
