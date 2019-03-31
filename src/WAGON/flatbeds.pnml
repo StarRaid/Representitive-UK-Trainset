@@ -118,6 +118,15 @@ item (FEAT_TRAINS, item_rrv, 10017) {
 }
 }
 
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_rrv, 10017){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
 
 item (FEAT_TRAINS, item_pxa, 10018) {
 	property {

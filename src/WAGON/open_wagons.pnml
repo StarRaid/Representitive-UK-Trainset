@@ -204,6 +204,13 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 }
 }
 
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_mdo, 10007){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 
 
 
@@ -318,6 +325,14 @@ item (FEAT_TRAINS, item_mtv, 10014) {
 }
 }
 
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_mtv, 10014){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 
 
 

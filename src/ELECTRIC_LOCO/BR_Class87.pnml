@@ -291,6 +291,14 @@ item (FEAT_TRAINS, item_br87, 87){
 	}
 }
 
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_br87, 87){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
 
 if (alt_names == 1){
 item (FEAT_TRAINS, item_br87, 87){

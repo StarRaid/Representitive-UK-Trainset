@@ -98,7 +98,6 @@ item (FEAT_TRAINS, item_chv, 10009) {
 
 
 
-
 //HTO
 
 spriteset(gfx_hto,			"gfx/WAGON/wagons.png"){template_5_4(100,250)}
@@ -268,6 +267,13 @@ item (FEAT_TRAINS, item_ssa, 10011) {
 }
 
 
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_ssa, 10011){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 
 
 //PGA
@@ -347,4 +353,12 @@ item (FEAT_TRAINS, item_pga, 10013) {
 		purchase:						gfx_pga_purch;
 		colour_mapping:					sw_pga_col_check;
 	}
+}
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_pga, 10013){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
 }

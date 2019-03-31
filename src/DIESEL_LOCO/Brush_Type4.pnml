@@ -347,11 +347,3 @@ item (FEAT_TRAINS, item_brush4, 47){
 	}
 }
 }
-
-if (vehicle_selection < 1){
-item (FEAT_TRAINS, item_brush4, 47){
-	property{
-		climates_available             : NO_CLIMATE ;
-	}
-}
-}

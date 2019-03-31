@@ -330,7 +330,7 @@ spriteset(gfx_qpv_purch,"gfx/WAGON/wagons.png"){template_purchase(181,425)}
 }*/
 
 switch(FEAT_TRAINS, SELF, sw_qpv_col_2cc_check, colour_scheme_2){
-	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_BROWN, COLOUR_BROWN) ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
