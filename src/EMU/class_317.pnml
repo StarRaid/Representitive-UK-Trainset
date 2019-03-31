@@ -285,9 +285,9 @@ switch(FEAT_TRAINS, PARENT, sw_318_p_auto, vehicle_is_reversed){
 sw_318_pr_auto;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_317_class_f_auto, 100*(count_veh_id(317)/num_vehs_in_consist)){0..32 : sw_318_f_auto ; sw_317_f_auto ;}
-switch(FEAT_TRAINS, PARENT, sw_317_class_t_auto, 100*(count_veh_id(317)/num_vehs_in_consist)){0..32 : sw_318_t_auto ; sw_317_t_auto ;}
-switch(FEAT_TRAINS, PARENT, sw_317_class_p_auto, 100*(count_veh_id(317)/num_vehs_in_consist)){0..32 : sw_318_p_auto ; sw_317_p_auto ;}
+switch(FEAT_TRAINS, PARENT, sw_317_class_f_auto, count_veh_id(317)-count_veh_id(9030)){1 : sw_318_f_auto ; sw_317_f_auto ;}
+switch(FEAT_TRAINS, PARENT, sw_317_class_t_auto, count_veh_id(317)-count_veh_id(9030)){1 : sw_318_t_auto ; sw_317_t_auto ;}
+switch(FEAT_TRAINS, PARENT, sw_317_class_p_auto, count_veh_id(317)-count_veh_id(9030)){1 : sw_318_p_auto ; sw_317_p_auto ;}
 
 switch(FEAT_TRAINS, SELF, sw_317_f_part_2, livery_choice){1 : sw_317_f_man ; sw_317_class_f_auto ;}
 switch(FEAT_TRAINS, SELF, sw_317_p_livery_param, livery_choice){1 : sw_317_p_man ; sw_317_class_t_auto ;}
@@ -450,7 +450,7 @@ switch(FEAT_TRAINS, PARENT, sw_317_start_stop2, count_veh_id(317)/num_vehs_in_co
 CB_RESULT_NO_TEXT;
 }
 
-switch(FEAT_TRAINS, SELF, sw_317_start_stop, num_vehs_in_vehid_chain){
+switch(FEAT_TRAINS, SELF, sw_317_start_stop, count_veh_id(317)){
 0..2: sw_317_start_stop2;
 string(STR_MORE_CARRIAGES_NEEDED);
 }
@@ -496,7 +496,7 @@ item (FEAT_TRAINS, item_317, 317) {
 		purchase:							sw_317_purchase_auto;
 		cargo_subtype_text:					sw_317_livery_decider ;
 		colour_mapping:						sw_317_recolour;
-		purchase_colour_mapping: 			sw_317_recolour;
+		purchase_colour_mapping: 			sw_317_colour_auto;
 		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
 		sound_effect:						sw_sfx_electric_loco_modern ;
 		start_stop:							sw_317_start_stop;
