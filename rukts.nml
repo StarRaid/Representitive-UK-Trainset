@@ -11480,6 +11480,11 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_purchase_sprite, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_expsprint_purchase_sprite_colours, current_year){
+	1987..1995 : palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;
+	1996..2003 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	2004..2011 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	2012..2017 : palette_2cc(COLOUR_BLUE, COLOUR_YELLOW) ;
+	2018..4096 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
 }
 
@@ -12639,8 +12644,8 @@ switch(FEAT_TRAINS, SELF, sw_307_refit_text_decider, livery_choice){
 switch(FEAT_TRAINS, PARENT, sw_307_recolour_selection_auto, current_year){
 	0..1960 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	1961..1965:palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
-	1966..1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY);
-	1971..1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY);
+	1966..1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	1971..1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 	1983..1991:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW);
 } 
@@ -12648,7 +12653,7 @@ switch(FEAT_TRAINS, PARENT, sw_307_recolour_selection_auto, current_year){
 switch(FEAT_TRAINS, SELF, sw_307_recolour_selection_manual, cargo_subtype){
 	0:palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	1:palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
-	2:palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY);
+	2:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 	3:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 	4:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
 	5:palette_2cc(COLOUR_RED, COLOUR_YELLOW);
@@ -17360,7 +17365,7 @@ item (FEAT_TRAINS, item_442, 442) {
 		create_effect:						vfx_3rd_only;
 		cargo_subtype_text:					sw_442_refit_text_decider ;
 		colour_mapping:						sw_442_colour_mapping_decider;
-		purchase_colour_mapping: 			sw_442_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_442_colour_mapping_auto;
 		sound_effect:						sw_sfx_emu_gec ;
 		running_cost_factor:				return(current_speed == 0 ? 9 : 36) ;
 		purchase_running_cost_factor:		36;
@@ -18276,7 +18281,7 @@ spriteset(spriteset_455_stn_t, "gfx/EMU/class_508.png") {template_8_8_networker(
 spriteset(spriteset_455_stn_f, "gfx/EMU/class_508.png") {template_8_8_networker(539, 425)}
 spriteset(spriteset_455_stn_r, "gfx/EMU/class_508.png") {template_8_8_networker(539, 450)}
 spriteset(spriteset_455_stn_o, "gfx/EMU/class_508.png") {template_8_8_networker(539, 475)}
-spriteset(spriteset_455_stn_purchase, "gfx/EMU/class_508.png") {template_dualhead_purchase(360, 500)}
+spriteset(spriteset_455_stn_purchase, "gfx/EMU/class_508.png") {template_dualhead_purchase(539, 500)}
 
 //SWT
 spriteset(spriteset_455_swt_t, "gfx/EMU/class_508.png") {template_8_8_networker(360, 550)}
@@ -19590,8 +19595,8 @@ spriteset(spriteset_465_nse_purchase, "gfx/EMU/networker2.png") {template_dualhe
 spriteset(spriteset_465_cnx_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(179, 413)}
 spriteset(spriteset_465_sey_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(179, 426)}
 spriteset(spriteset_465_seb_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(179, 439)}
-spriteset(spriteset_365_fcc_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(259, 413)}
-spriteset(spriteset_365_gtr_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(259, 426)}
+spriteset(spriteset_365_fcc_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(259, 426)}
+spriteset(spriteset_365_gtr_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(259, 439)}
 
 switch(FEAT_TRAINS, SELF, sw_465_purchase, current_year){
 	1983 .. 1995: spriteset_465_nse_purchase;
@@ -19828,7 +19833,7 @@ switch(FEAT_TRAINS, SELF, sw_365_colour_mapping_auto, current_year){
 	sw_365_gtr_colour_mapping;
 }
 
-switch(FEAT_TRAINS, SELF, sw_465_colour_mapping_auto, cargo_classes){
+switch(FEAT_TRAINS, SELF, sw_465_colour_mapping_auto, current_year){
 	1983 .. 1995: sw_465_nse_colour_mapping;
 	sw_465_cnx_colour_mapping;
 }

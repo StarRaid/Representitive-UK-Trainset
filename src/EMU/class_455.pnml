@@ -31,7 +31,7 @@ spriteset(spriteset_455_stn_t, "gfx/EMU/class_508.png") {template_8_8_networker(
 spriteset(spriteset_455_stn_f, "gfx/EMU/class_508.png") {template_8_8_networker(539, 425)}
 spriteset(spriteset_455_stn_r, "gfx/EMU/class_508.png") {template_8_8_networker(539, 450)}
 spriteset(spriteset_455_stn_o, "gfx/EMU/class_508.png") {template_8_8_networker(539, 475)}
-spriteset(spriteset_455_stn_purchase, "gfx/EMU/class_508.png") {template_dualhead_purchase(360, 500)}
+spriteset(spriteset_455_stn_purchase, "gfx/EMU/class_508.png") {template_dualhead_purchase(539, 500)}
 
 //SWT
 spriteset(spriteset_455_swt_t, "gfx/EMU/class_508.png") {template_8_8_networker(360, 550)}
