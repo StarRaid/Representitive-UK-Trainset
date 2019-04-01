@@ -498,7 +498,7 @@ item (FEAT_TRAINS, item_317, 317) {
 		colour_mapping:						sw_317_recolour;
 		purchase_colour_mapping: 			sw_317_colour_auto;
 		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		sound_effect:						sw_sfx_emu_gec ;
 		start_stop:							sw_317_start_stop;
 		purchase_running_cost_factor : 32;
 }

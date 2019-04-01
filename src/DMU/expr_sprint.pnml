@@ -185,6 +185,7 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_refit_text_check, livery_choice){
 switch(FEAT_TRAINS, SELF, sw_expsprint_attach, vehicle_type_id){
 	37   : return CB_RESULT_ATTACH_ALLOW  ;
 	150  : return CB_RESULT_ATTACH_ALLOW  ;
+	151  : return CB_RESULT_ATTACH_ALLOW  ;
 	153  : return CB_RESULT_ATTACH_ALLOW  ;
 	155  : return CB_RESULT_ATTACH_ALLOW  ;
 	158  : return CB_RESULT_ATTACH_ALLOW  ;
@@ -210,7 +211,7 @@ item(FEAT_TRAINS, item_expsprint, 158){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 75 ;
+		cargo_capacity                 : 70 ;
 		loading_speed                  : 19 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;

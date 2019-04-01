@@ -160,7 +160,7 @@ item(FEAT_TRAINS, item_voyager, 220){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 70 ;
+		cargo_capacity                 : 65 ;
 		loading_speed                  : 17 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;

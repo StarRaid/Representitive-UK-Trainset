@@ -176,6 +176,7 @@ switch(FEAT_TRAINS, SELF, sw_supsprint_purchase_colours_2cc_check, colour_scheme
 switch(FEAT_TRAINS, SELF, sw_supsprint_attach, vehicle_type_id){
 	37   : return CB_RESULT_ATTACH_ALLOW  ;
 	150  : return CB_RESULT_ATTACH_ALLOW  ;
+	151  : return CB_RESULT_ATTACH_ALLOW  ;
 	153  : return CB_RESULT_ATTACH_ALLOW  ;
 	155  : return CB_RESULT_ATTACH_ALLOW  ;
 	158  : return CB_RESULT_ATTACH_ALLOW  ;
@@ -201,7 +202,7 @@ item(FEAT_TRAINS, item_supsprint, 155){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 85 ;
+		cargo_capacity                 : 75 ;
 		loading_speed                  : 21 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
