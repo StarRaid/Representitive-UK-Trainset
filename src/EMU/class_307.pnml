@@ -221,8 +221,8 @@ switch(FEAT_TRAINS, SELF, sw_307_refit_text_decider, livery_choice){
 switch(FEAT_TRAINS, PARENT, sw_307_recolour_selection_auto, current_year){
 	0..1960 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	1961..1965:palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
-	1966..1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY);
-	1971..1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY);
+	1966..1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	1971..1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 	1983..1991:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW);
 } 
@@ -230,7 +230,7 @@ switch(FEAT_TRAINS, PARENT, sw_307_recolour_selection_auto, current_year){
 switch(FEAT_TRAINS, SELF, sw_307_recolour_selection_manual, cargo_subtype){
 	0:palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	1:palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
-	2:palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY);
+	2:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 	3:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 	4:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
 	5:palette_2cc(COLOUR_RED, COLOUR_YELLOW);

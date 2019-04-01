@@ -33,8 +33,8 @@ spriteset(spriteset_465_nse_purchase, "gfx/EMU/networker2.png") {template_dualhe
 spriteset(spriteset_465_cnx_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(179, 413)}
 spriteset(spriteset_465_sey_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(179, 426)}
 spriteset(spriteset_465_seb_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(179, 439)}
-spriteset(spriteset_365_fcc_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(259, 413)}
-spriteset(spriteset_365_gtr_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(259, 426)}
+spriteset(spriteset_365_fcc_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(259, 426)}
+spriteset(spriteset_365_gtr_purchase, "gfx/EMU/networker2.png") {template_dualhead_purchase(259, 439)}
 
 switch(FEAT_TRAINS, SELF, sw_465_purchase, current_year){
 	ERA_SECTORISATION: spriteset_465_nse_purchase;
@@ -271,7 +271,7 @@ switch(FEAT_TRAINS, SELF, sw_365_colour_mapping_auto, current_year){
 	sw_365_gtr_colour_mapping;
 }
 
-switch(FEAT_TRAINS, SELF, sw_465_colour_mapping_auto, cargo_classes){
+switch(FEAT_TRAINS, SELF, sw_465_colour_mapping_auto, current_year){
 	ERA_SECTORISATION: sw_465_nse_colour_mapping;
 	sw_465_cnx_colour_mapping;
 }
