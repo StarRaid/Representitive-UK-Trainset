@@ -6,7 +6,7 @@ grf{
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
 	version: 36 ;
-	min_compatible_version: 27 ;
+	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
 			type    : bool ;
@@ -13077,7 +13077,7 @@ item (FEAT_TRAINS, item_309, 309) {
 		cost_factor:					25;
 		running_cost_factor:			12;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							75 mph;
+		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						ELRL;
@@ -13086,14 +13086,16 @@ item (FEAT_TRAINS, item_309, 309) {
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
-		cargo_capacity:					65;
-		weight:							40 ton;
+		cargo_capacity:					55;
+		weight:							30 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.08;
-		air_drag_coefficient:			0.10;
+		tractive_effort_coefficient:	0.06;
+		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
 		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
 	}
 	graphics {
 		can_attach_wagon:					sw_309_coupling_restrictions;
@@ -13810,13 +13812,27 @@ switch(FEAT_TRAINS, SELF, sw_313_manual_livery_decider, cargo_subtype){
 	3: sw_313_wgn_select;
 	4: sw_313_fcc_select;
 	5: sw_313_stn_select;
+	6: sw_313_brb_select;
+	7: sw_313_mro_select;
+	8: sw_313_cnx_select;
+	9: sw_313_sey_select;
+	10: sw_313_seb_select;
+	11: sw_313_slk_select;
+	12: sw_313_mrn_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_select;
-	1: sw_313_spc_select;
-	2: sw_313_spn_select;
-	3: sw_313_scr_select;
+	1: sw_313_nse_select;
+	2: sw_313_wgn_select;
+	3: sw_313_fge_select;
+	4: sw_313_one_select;
+	5: sw_313_aga_select;
+	6: sw_313_tfl_select;
+	7: sw_313_brb_select;
+	8: sw_313_spc_select;
+	9: sw_313_spn_select;
+	10: sw_313_scr_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_315_manual_livery_decider, cargo_subtype){
@@ -13827,16 +13843,26 @@ switch(FEAT_TRAINS, SELF, sw_315_manual_livery_decider, cargo_subtype){
 	4: sw_313_one_select;
 	5: sw_313_aga_select;
 	6: sw_313_tfl_select;
+	7: sw_313_brb_select;
+	8: sw_313_spc_select;
+	9: sw_313_spn_select;
+	10: sw_313_scr_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_select;
-	1: sw_313_mro_select;
-	2: sw_313_cnx_select;
-	3: sw_313_sey_select;
-	4: sw_313_seb_select;
-	5: sw_313_slk_select;
-	6: sw_313_mrn_select;
+	1: sw_313_nse_select;
+	2: sw_313_slk_select;
+	3: sw_313_wgn_select;
+	4: sw_313_fcc_select;
+	5: sw_313_stn_select;
+	6: sw_313_brb_select;
+	7: sw_313_mro_select;
+	8: sw_313_cnx_select;
+	9: sw_313_sey_select;
+	10: sw_313_seb_select;
+	11: sw_313_slk_select;
+	12: sw_313_mrn_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_313_t_manual_livery_decider, cargo_subtype){
@@ -13846,14 +13872,29 @@ switch(FEAT_TRAINS, SELF, sw_313_t_manual_livery_decider, cargo_subtype){
 	3: sw_313_wgn_t_select;
 	4: sw_313_fcc_t_select;
 	5: sw_313_stn_t_select;
+	6: sw_313_brb_t_select;
+	7: sw_313_mro_t_select;
+	8: sw_313_cnx_t_select;
+	9: sw_313_sey_t_select;
+	10: sw_313_seb_t_select;
+	11: sw_313_slk_t_select;
+	12: sw_313_mrn_t_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_t_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_t_select;
-	1: sw_313_spc_t_select;
-	2: sw_313_spn_t_select;
-	3: sw_313_scr_t_select;
+	1: sw_313_nse_t_select;
+	2: sw_313_wgn_t_select;
+	3: sw_313_fge_t_select;
+	4: sw_313_one_t_select;
+	5: sw_313_aga_t_select;
+	6: sw_313_tfl_t_select;
+	7: sw_313_brb_t_select;
+	8: sw_313_spc_t_select;
+	9: sw_313_spn_t_select;
+	10: sw_313_scr_t_select;
 }
+
 
 switch(FEAT_TRAINS, SELF, sw_315_t_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_t_select;
@@ -13863,16 +13904,26 @@ switch(FEAT_TRAINS, SELF, sw_315_t_manual_livery_decider, cargo_subtype){
 	4: sw_313_one_t_select;
 	5: sw_313_aga_t_select;
 	6: sw_313_tfl_t_select;
+	7: sw_313_brb_t_select;
+	8: sw_313_spc_t_select;
+	9: sw_313_spn_t_select;
+	10: sw_313_scr_t_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_t_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_t_select;
-	1: sw_313_mro_t_select;
-	2: sw_313_cnx_t_select;
-	3: sw_313_sey_t_select;
-	4: sw_313_seb_t_select;
-	5: sw_313_slk_t_select;
-	6: sw_313_mrn_t_select;
+	1: sw_313_nse_t_select;
+	2: sw_313_slk_t_select;
+	3: sw_313_wgn_t_select;
+	4: sw_313_fcc_t_select;
+	5: sw_313_stn_t_select;
+	6: sw_313_brb_t_select;
+	7: sw_313_mro_t_select;
+	8: sw_313_cnx_t_select;
+	9: sw_313_sey_t_select;
+	10: sw_313_seb_t_select;
+	11: sw_313_slk_t_select;
+	12: sw_313_mrn_t_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_313_livery_choice_decider, livery_choice){
@@ -13944,14 +13995,28 @@ switch(FEAT_TRAINS, SELF, sw_313_refit_text, cargo_subtype){
 	3: return string(STR_LIVERY_WAGN);
 	4: return string(STR_LIVERY_FCC);
 	5: return string(STR_LIVERY_SOUTHERN);
+	6: return string(STR_LIVERY_BRBLUE);
+	7: return string(STR_LIVERY_MERSEYRAIL);
+	8: return string(STR_LIVERY_CONNEX);
+	9: return string(STR_LIVERY_SE_YELLOW);
+	10: return string(STR_LIVERY_SE_BLUE);
+	11: return string(STR_LIVERY_SILVERLINK);
+	12: return string(STR_LIVERY_MERSEYRAIL_REFERB);
 	return CB_RESULT_NO_TEXT ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_refit_text, cargo_subtype){
-	0: return string(STR_LIVERY_BRBLUE_SPT);
-	1: return string(STR_LIVERY_SPT_ORANGE);
-	2: return string(STR_LIVERY_SPT_CARMINE_CREAM);
-	3: return string(STR_LIVERY_SCOTRAIL);
+	0: return string(STR_LIVERY_BRBLUE);
+	1: return string(STR_LIVERY_NSE);
+	2: return string(STR_LIVERY_WAGN);
+	3: return string(STR_LIVERY_FGE);
+	4: return string(STR_LIVERY_ONE_ANGLIA);
+	5: return string(STR_LIVERY_ABELLIO_GREATER_ANGLIA);
+	6: return string(STR_LIVERY_TFL);
+	7: return string(STR_LIVERY_BRBLUE_SPT);
+	8: return string(STR_LIVERY_SPT_ORANGE);
+	9: return string(STR_LIVERY_SPT_CARMINE_CREAM);
+	10: return string(STR_LIVERY_SCOTRAIL);
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -13963,17 +14028,27 @@ switch(FEAT_TRAINS, SELF, sw_315_refit_text, cargo_subtype){
 	4: return string(STR_LIVERY_ONE_ANGLIA);
 	5: return string(STR_LIVERY_ABELLIO_GREATER_ANGLIA);
 	6: return string(STR_LIVERY_TFL);
+	7: return string(STR_LIVERY_BRBLUE_SPT);
+	8: return string(STR_LIVERY_SPT_ORANGE);
+	9: return string(STR_LIVERY_SPT_CARMINE_CREAM);
+	10: return string(STR_LIVERY_SCOTRAIL);
 	return CB_RESULT_NO_TEXT ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_refit_text, cargo_subtype){
 	0: return string(STR_LIVERY_BRBLUE);
-	1: return string(STR_LIVERY_MERSEYRAIL);
-	2: return string(STR_LIVERY_CONNEX);
-	3: return string(STR_LIVERY_SE_YELLOW);
-	4: return string(STR_LIVERY_SE_BLUE);
-	5: return string(STR_LIVERY_SILVERLINK);
-	6: return string(STR_LIVERY_MERSEYRAIL_REFERB);
+	1: return string(STR_LIVERY_NSE);
+	2: return string(STR_LIVERY_SILVERLINK);
+	3: return string(STR_LIVERY_WAGN);
+	4: return string(STR_LIVERY_FCC);
+	5: return string(STR_LIVERY_SOUTHERN);
+	6: return string(STR_LIVERY_BRBLUE);
+	7: return string(STR_LIVERY_MERSEYRAIL);
+	8: return string(STR_LIVERY_CONNEX);
+	9: return string(STR_LIVERY_SE_YELLOW);
+	10: return string(STR_LIVERY_SE_BLUE);
+	11: return string(STR_LIVERY_SILVERLINK);
+	12: return string(STR_LIVERY_MERSEYRAIL_REFERB);
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -14142,13 +14217,27 @@ switch(FEAT_TRAINS, SELF, sw_313_manual_colour_mapping_decider, cargo_subtype){
 	3: sw_313_wgn_colour_mapping;
 	4: sw_313_fcc_colour_mapping;
 	5: sw_313_stn_colour_mapping;
+	6: sw_313_brb_colour_mapping;
+	7: sw_313_mr_colour_mapping;
+	8: sw_313_se_colour_mapping;
+	9: sw_313_se_colour_mapping;
+	10: sw_313_se_colour_mapping;
+	11: sw_313_slk_colour_mapping;
+	12: sw_313_mr_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_manual_colour_mapping_decider, cargo_subtype){
 	0: sw_313_brb_colour_mapping;
-	1: sw_313_spn_colour_mapping;
-	2: sw_313_spn_colour_mapping;
-	3: sw_313_scr_colour_mapping;
+	1: sw_313_nse_colour_mapping;
+	2: sw_313_wgn_colour_mapping;
+	3: sw_313_fge_colour_mapping;
+	4: sw_313_one_colour_mapping;
+	5: sw_313_aga_colour_mapping;
+	6: sw_313_tfl_colour_mapping;
+	7: sw_313_brb_colour_mapping;
+	8: sw_313_spn_colour_mapping;
+	9: sw_313_spn_colour_mapping;
+	10: sw_313_scr_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_315_manual_colour_mapping_decider, cargo_subtype){
@@ -14159,16 +14248,26 @@ switch(FEAT_TRAINS, SELF, sw_315_manual_colour_mapping_decider, cargo_subtype){
 	4: sw_313_one_colour_mapping;
 	5: sw_313_aga_colour_mapping;
 	6: sw_313_tfl_colour_mapping;
+	7: sw_313_brb_colour_mapping;
+	8: sw_313_spn_colour_mapping;
+	9: sw_313_spn_colour_mapping;
+	10: sw_313_scr_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_manual_colour_mapping_decider, cargo_subtype){
 	0: sw_313_brb_colour_mapping;
-	1: sw_313_mr_colour_mapping;
-	2: sw_313_se_colour_mapping;
-	3: sw_313_se_colour_mapping;
-	4: sw_313_se_colour_mapping;
-	5: sw_313_slk_colour_mapping;
-	6: sw_313_mr_colour_mapping;
+	1: sw_313_nse_colour_mapping;
+	2: sw_313_slk_colour_mapping;
+	3: sw_313_wgn_colour_mapping;
+	4: sw_313_fcc_colour_mapping;
+	5: sw_313_stn_colour_mapping;
+	6: sw_313_brb_colour_mapping;
+	7: sw_313_mr_colour_mapping;
+	8: sw_313_se_colour_mapping;
+	9: sw_313_se_colour_mapping;
+	10: sw_313_se_colour_mapping;
+	11: sw_313_slk_colour_mapping;
+	12: sw_313_mr_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_313_colour_mapping_choice_decider, livery_choice){
@@ -14833,15 +14932,15 @@ item (FEAT_TRAINS, item_317, 317) {
 		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
-		track_type:						SAAZ;
+		track_type:						ELRL;
 		ai_special_flag:				AI_FLAG_CARGO;
-		power:							950 hp;
+		power:							1450 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
 		cargo_capacity:					85;
 		weight:							40 ton;
-		tractive_effort_coefficient:	0.09;
+		tractive_effort_coefficient:	0.16;
 		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
