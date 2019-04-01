@@ -224,6 +224,7 @@ STR_NAME_VOYAGER             :Bombardier Voyager (Diesel Electric)
 
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_307				 :BREL Eastern Region Suburan EMU (Electric)
+STR_NAME_309				 :BR Mark 1 EMU (Electric)
 STR_NAME_313				 :BREL Second Generation EMU (Dual Voltage)
 STR_NAME_314				 :BREL Second Generation EMU (Electric)
 STR_NAME_317				 :BREL AC Express "Bed Pan" (Electric)
@@ -269,6 +270,7 @@ STR_158_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or anot
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
 STR_220_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Voyager!
 STR_307_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BREL Eastern Region Suburan EMU (Electric)!
+STR_309_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Mark 1 EMU (Electric)!
 STR_313_NO_COUPLE: You may only couple this train to a "Mark 2 Carriage" or another BREL Second Gereration EMU!
 STR_317_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL "Bed-Pan"!
 STR_319_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Thameslink Classic!
@@ -331,6 +333,7 @@ STR_NAME_VOYAGER_ALT			:BR Class 220/221 (Diesel Electric)
 
 STR_NAME_PEP_ALT			:PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_307_ALT			:BR Class 307 (Electric)
+STR_NAME_309_ALT			:BR Class 309 (Electric)
 STR_NAME_313_ALT			:BR Class 313/507/508 (Dual Voltage)
 STR_NAME_314_ALT			:BR Class 314/315 (Electric)
 STR_NAME_317_ALT			:BR Class 317 (Electric)
