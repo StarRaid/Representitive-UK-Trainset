@@ -675,13 +675,27 @@ switch(FEAT_TRAINS, SELF, sw_313_manual_livery_decider, cargo_subtype){
 	3: sw_313_wgn_select;
 	4: sw_313_fcc_select;
 	5: sw_313_stn_select;
+	6: sw_313_brb_select;
+	7: sw_313_mro_select;
+	8: sw_313_cnx_select;
+	9: sw_313_sey_select;
+	10: sw_313_seb_select;
+	11: sw_313_slk_select;
+	12: sw_313_mrn_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_select;
-	1: sw_313_spc_select;
-	2: sw_313_spn_select;
-	3: sw_313_scr_select;
+	1: sw_313_nse_select;
+	2: sw_313_wgn_select;
+	3: sw_313_fge_select;
+	4: sw_313_one_select;
+	5: sw_313_aga_select;
+	6: sw_313_tfl_select;
+	7: sw_313_brb_select;
+	8: sw_313_spc_select;
+	9: sw_313_spn_select;
+	10: sw_313_scr_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_315_manual_livery_decider, cargo_subtype){
@@ -692,16 +706,26 @@ switch(FEAT_TRAINS, SELF, sw_315_manual_livery_decider, cargo_subtype){
 	4: sw_313_one_select;
 	5: sw_313_aga_select;
 	6: sw_313_tfl_select;
+	7: sw_313_brb_select;
+	8: sw_313_spc_select;
+	9: sw_313_spn_select;
+	10: sw_313_scr_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_select;
-	1: sw_313_mro_select;
-	2: sw_313_cnx_select;
-	3: sw_313_sey_select;
-	4: sw_313_seb_select;
-	5: sw_313_slk_select;
-	6: sw_313_mrn_select;
+	1: sw_313_nse_select;
+	2: sw_313_slk_select;
+	3: sw_313_wgn_select;
+	4: sw_313_fcc_select;
+	5: sw_313_stn_select;
+	6: sw_313_brb_select;
+	7: sw_313_mro_select;
+	8: sw_313_cnx_select;
+	9: sw_313_sey_select;
+	10: sw_313_seb_select;
+	11: sw_313_slk_select;
+	12: sw_313_mrn_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_313_t_manual_livery_decider, cargo_subtype){
@@ -711,14 +735,29 @@ switch(FEAT_TRAINS, SELF, sw_313_t_manual_livery_decider, cargo_subtype){
 	3: sw_313_wgn_t_select;
 	4: sw_313_fcc_t_select;
 	5: sw_313_stn_t_select;
+	6: sw_313_brb_t_select;
+	7: sw_313_mro_t_select;
+	8: sw_313_cnx_t_select;
+	9: sw_313_sey_t_select;
+	10: sw_313_seb_t_select;
+	11: sw_313_slk_t_select;
+	12: sw_313_mrn_t_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_t_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_t_select;
-	1: sw_313_spc_t_select;
-	2: sw_313_spn_t_select;
-	3: sw_313_scr_t_select;
+	1: sw_313_nse_t_select;
+	2: sw_313_wgn_t_select;
+	3: sw_313_fge_t_select;
+	4: sw_313_one_t_select;
+	5: sw_313_aga_t_select;
+	6: sw_313_tfl_t_select;
+	7: sw_313_brb_t_select;
+	8: sw_313_spc_t_select;
+	9: sw_313_spn_t_select;
+	10: sw_313_scr_t_select;
 }
+
 
 switch(FEAT_TRAINS, SELF, sw_315_t_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_t_select;
@@ -728,16 +767,26 @@ switch(FEAT_TRAINS, SELF, sw_315_t_manual_livery_decider, cargo_subtype){
 	4: sw_313_one_t_select;
 	5: sw_313_aga_t_select;
 	6: sw_313_tfl_t_select;
+	7: sw_313_brb_t_select;
+	8: sw_313_spc_t_select;
+	9: sw_313_spn_t_select;
+	10: sw_313_scr_t_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_t_manual_livery_decider, cargo_subtype){
 	0: sw_313_brb_t_select;
-	1: sw_313_mro_t_select;
-	2: sw_313_cnx_t_select;
-	3: sw_313_sey_t_select;
-	4: sw_313_seb_t_select;
-	5: sw_313_slk_t_select;
-	6: sw_313_mrn_t_select;
+	1: sw_313_nse_t_select;
+	2: sw_313_slk_t_select;
+	3: sw_313_wgn_t_select;
+	4: sw_313_fcc_t_select;
+	5: sw_313_stn_t_select;
+	6: sw_313_brb_t_select;
+	7: sw_313_mro_t_select;
+	8: sw_313_cnx_t_select;
+	9: sw_313_sey_t_select;
+	10: sw_313_seb_t_select;
+	11: sw_313_slk_t_select;
+	12: sw_313_mrn_t_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_313_livery_choice_decider, livery_choice){
@@ -809,14 +858,28 @@ switch(FEAT_TRAINS, SELF, sw_313_refit_text, cargo_subtype){
 	3: return string(STR_LIVERY_WAGN);
 	4: return string(STR_LIVERY_FCC);
 	5: return string(STR_LIVERY_SOUTHERN);
+	6: return string(STR_LIVERY_BRBLUE);
+	7: return string(STR_LIVERY_MERSEYRAIL);
+	8: return string(STR_LIVERY_CONNEX);
+	9: return string(STR_LIVERY_SE_YELLOW);
+	10: return string(STR_LIVERY_SE_BLUE);
+	11: return string(STR_LIVERY_SILVERLINK);
+	12: return string(STR_LIVERY_MERSEYRAIL_REFERB);
 	return CB_RESULT_NO_TEXT ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_refit_text, cargo_subtype){
-	0: return string(STR_LIVERY_BRBLUE_SPT);
-	1: return string(STR_LIVERY_SPT_ORANGE);
-	2: return string(STR_LIVERY_SPT_CARMINE_CREAM);
-	3: return string(STR_LIVERY_SCOTRAIL);
+	0: return string(STR_LIVERY_BRBLUE);
+	1: return string(STR_LIVERY_NSE);
+	2: return string(STR_LIVERY_WAGN);
+	3: return string(STR_LIVERY_FGE);
+	4: return string(STR_LIVERY_ONE_ANGLIA);
+	5: return string(STR_LIVERY_ABELLIO_GREATER_ANGLIA);
+	6: return string(STR_LIVERY_TFL);
+	7: return string(STR_LIVERY_BRBLUE_SPT);
+	8: return string(STR_LIVERY_SPT_ORANGE);
+	9: return string(STR_LIVERY_SPT_CARMINE_CREAM);
+	10: return string(STR_LIVERY_SCOTRAIL);
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -828,17 +891,27 @@ switch(FEAT_TRAINS, SELF, sw_315_refit_text, cargo_subtype){
 	4: return string(STR_LIVERY_ONE_ANGLIA);
 	5: return string(STR_LIVERY_ABELLIO_GREATER_ANGLIA);
 	6: return string(STR_LIVERY_TFL);
+	7: return string(STR_LIVERY_BRBLUE_SPT);
+	8: return string(STR_LIVERY_SPT_ORANGE);
+	9: return string(STR_LIVERY_SPT_CARMINE_CREAM);
+	10: return string(STR_LIVERY_SCOTRAIL);
 	return CB_RESULT_NO_TEXT ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_refit_text, cargo_subtype){
 	0: return string(STR_LIVERY_BRBLUE);
-	1: return string(STR_LIVERY_MERSEYRAIL);
-	2: return string(STR_LIVERY_CONNEX);
-	3: return string(STR_LIVERY_SE_YELLOW);
-	4: return string(STR_LIVERY_SE_BLUE);
-	5: return string(STR_LIVERY_SILVERLINK);
-	6: return string(STR_LIVERY_MERSEYRAIL_REFERB);
+	1: return string(STR_LIVERY_NSE);
+	2: return string(STR_LIVERY_SILVERLINK);
+	3: return string(STR_LIVERY_WAGN);
+	4: return string(STR_LIVERY_FCC);
+	5: return string(STR_LIVERY_SOUTHERN);
+	6: return string(STR_LIVERY_BRBLUE);
+	7: return string(STR_LIVERY_MERSEYRAIL);
+	8: return string(STR_LIVERY_CONNEX);
+	9: return string(STR_LIVERY_SE_YELLOW);
+	10: return string(STR_LIVERY_SE_BLUE);
+	11: return string(STR_LIVERY_SILVERLINK);
+	12: return string(STR_LIVERY_MERSEYRAIL_REFERB);
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -1007,13 +1080,27 @@ switch(FEAT_TRAINS, SELF, sw_313_manual_colour_mapping_decider, cargo_subtype){
 	3: sw_313_wgn_colour_mapping;
 	4: sw_313_fcc_colour_mapping;
 	5: sw_313_stn_colour_mapping;
+	6: sw_313_brb_colour_mapping;
+	7: sw_313_mr_colour_mapping;
+	8: sw_313_se_colour_mapping;
+	9: sw_313_se_colour_mapping;
+	10: sw_313_se_colour_mapping;
+	11: sw_313_slk_colour_mapping;
+	12: sw_313_mr_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_314_manual_colour_mapping_decider, cargo_subtype){
 	0: sw_313_brb_colour_mapping;
-	1: sw_313_spn_colour_mapping;
-	2: sw_313_spn_colour_mapping;
-	3: sw_313_scr_colour_mapping;
+	1: sw_313_nse_colour_mapping;
+	2: sw_313_wgn_colour_mapping;
+	3: sw_313_fge_colour_mapping;
+	4: sw_313_one_colour_mapping;
+	5: sw_313_aga_colour_mapping;
+	6: sw_313_tfl_colour_mapping;
+	7: sw_313_brb_colour_mapping;
+	8: sw_313_spn_colour_mapping;
+	9: sw_313_spn_colour_mapping;
+	10: sw_313_scr_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_315_manual_colour_mapping_decider, cargo_subtype){
@@ -1024,16 +1111,26 @@ switch(FEAT_TRAINS, SELF, sw_315_manual_colour_mapping_decider, cargo_subtype){
 	4: sw_313_one_colour_mapping;
 	5: sw_313_aga_colour_mapping;
 	6: sw_313_tfl_colour_mapping;
+	7: sw_313_brb_colour_mapping;
+	8: sw_313_spn_colour_mapping;
+	9: sw_313_spn_colour_mapping;
+	10: sw_313_scr_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_manual_colour_mapping_decider, cargo_subtype){
 	0: sw_313_brb_colour_mapping;
-	1: sw_313_mr_colour_mapping;
-	2: sw_313_se_colour_mapping;
-	3: sw_313_se_colour_mapping;
-	4: sw_313_se_colour_mapping;
-	5: sw_313_slk_colour_mapping;
-	6: sw_313_mr_colour_mapping;
+	1: sw_313_nse_colour_mapping;
+	2: sw_313_slk_colour_mapping;
+	3: sw_313_wgn_colour_mapping;
+	4: sw_313_fcc_colour_mapping;
+	5: sw_313_stn_colour_mapping;
+	6: sw_313_brb_colour_mapping;
+	7: sw_313_mr_colour_mapping;
+	8: sw_313_se_colour_mapping;
+	9: sw_313_se_colour_mapping;
+	10: sw_313_se_colour_mapping;
+	11: sw_313_slk_colour_mapping;
+	12: sw_313_mr_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_313_colour_mapping_choice_decider, livery_choice){
