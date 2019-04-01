@@ -94,6 +94,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_gfx_auto, current_year){
 	//1996..2005 :  ;
 	2005..2009 : sw_hst_mml_backcheck ;
 	2010..2016 : sw_hst_emt_backcheck ;
+	2017..2048 : sw_hst_gwr_backcheck ;
 	//2017..4096 :  ;
 	sw_hst_virgin_backcheck ;
 }
@@ -185,7 +186,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_purchase_sprite, current_year){
 	1987..1995 : gfx_hst_icswallow_purchase ;
 	//1996..2005 :  ;
 	2005..2016 : gfx_hst_mml_purchase ;
-	//2017..4096 :  ;
+	2017..4096 : gfx_hst_gwr_purchase ;
 	gfx_hst_virgin_purchase ;
 }
 
@@ -195,7 +196,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_purchase_sprite_colours, current_year){
 	1987..1995 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	//1996..2005 :  ;
 	2005..2016 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
-	//2017..4096 :  ;
+	2017..4096 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
@@ -213,7 +214,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_colours_auto, current_year){
 	//1996..2005 :  ;
 	2005..2009 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
 	2010..2016 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
-	//2017..4096 :  ;
+	2017..4096 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 

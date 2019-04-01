@@ -68,10 +68,10 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_effect_dbso_check, (DBSO_CHECK) | (DVT_CHE
 }
 
 switch(FEAT_TRAINS, SELF, sw_eurodual_power_decider, current_railtype){
-	ELRL   : 5364 ;
-	SAAZ   : 5364 ;
+	ELRL   : 5400 ;
+	SAAZ   : 5400 ;
 	//"3RDC" : 5364 ;
-	986 ;	
+	1000 ;	
 }
 
 //Item
@@ -97,7 +97,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
 		speed                          : 100 mph ;
-		power                          : 5364 hp ;
+		power                          : 4000 kW ;
 		weight                         : 86 ton ;
 		tractive_effort_coefficient    : 0.3686046511627907 ;
 		air_drag_coefficient           : 0.08 ;
@@ -111,13 +111,14 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		colour_mapping          : sw_eurodual_colours_dvt_check ;
 		sound_effect            : sw_eurodual_sfx_decider ;
 		create_effect           : sw_eurodual_effect_dbso_check ;
-		purchase_power          : 5364 ;
+		purchase_power          : 5400 ;
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
 		power                   : sw_eurodual_power_decider;
 		can_attach_wagon        : sw_all_but_MU90;
 		running_cost_factor     : return(current_speed == 0 ? 60 : 250) ;
 		purchase_running_cost_factor : 250 ;
+		additional_text			: string(STR_ADD_INFO_88) ;
 	}
 }
 

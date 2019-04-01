@@ -1440,6 +1440,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_gfx_auto, current_year){
 	1983 .. 1995 : gfx_mk3_intercity ;
 	2005..2009        : gfx_mk3_mml ;
 	2010..2016        : gfx_mk3_emt ;
+	2017..4096		  : gfx_mk3_gwr ;
 	gfx_mk3_virgin ;
 }
 
@@ -1588,7 +1589,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_colours_auto, current_year){
 	1983 .. 1995 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	2005..2009        : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
 	2010..2016        : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	2017..4096		  : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2017..4096		  : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
@@ -7365,6 +7366,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_gfx_auto, current_year){
 	//1996..2005 :  ;
 	2005..2009 : sw_hst_mml_backcheck ;
 	2010..2016 : sw_hst_emt_backcheck ;
+	2017..2048 : sw_hst_gwr_backcheck ;
 	//2017..4096 :  ;
 	sw_hst_virgin_backcheck ;
 }
@@ -7456,7 +7458,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_purchase_sprite, current_year){
 	1987..1995 : gfx_hst_icswallow_purchase ;
 	//1996..2005 :  ;
 	2005..2016 : gfx_hst_mml_purchase ;
-	//2017..4096 :  ;
+	2017..4096 : gfx_hst_gwr_purchase ;
 	gfx_hst_virgin_purchase ;
 }
 
@@ -7466,7 +7468,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_purchase_sprite_colours, current_year){
 	1987..1995 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	//1996..2005 :  ;
 	2005..2016 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
-	//2017..4096 :  ;
+	2017..4096 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
@@ -7484,7 +7486,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_colours_auto, current_year){
 	//1996..2005 :  ;
 	2005..2009 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
 	2010..2016 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
-	//2017..4096 :  ;
+	2017..4096 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
@@ -9448,10 +9450,10 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_effect_dbso_check, (vehicle_is_reversed &&
 }
 
 switch(FEAT_TRAINS, SELF, sw_eurodual_power_decider, current_railtype){
-	ELRL   : 5364 ;
-	SAAZ   : 5364 ;
+	ELRL   : 5400 ;
+	SAAZ   : 5400 ;
 	//"3RDC" : 5364 ;
-	986 ;	
+	1000 ;	
 }
 
 //Item
@@ -9477,7 +9479,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
 		speed                          : 100 mph ;
-		power                          : 5364 hp ;
+		power                          : 4000 kW ;
 		weight                         : 86 ton ;
 		tractive_effort_coefficient    : 0.3686046511627907 ;
 		air_drag_coefficient           : 0.08 ;
@@ -9491,13 +9493,14 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		colour_mapping          : sw_eurodual_colours_dvt_check ;
 		sound_effect            : sw_eurodual_sfx_decider ;
 		create_effect           : sw_eurodual_effect_dbso_check ;
-		purchase_power          : 5364 ;
+		purchase_power          : 5400 ;
 		purchase_cargo_capacity : 0 ;
 		cargo_capacity          : return 0 ;
 		power                   : sw_eurodual_power_decider;
 		can_attach_wagon        : sw_all_but_MU90;
 		running_cost_factor     : return(current_speed == 0 ? 60 : 250) ;
 		purchase_running_cost_factor : 250 ;
+		additional_text			: string(STR_ADD_INFO_88) ;
 	}
 }
 

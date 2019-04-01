@@ -62,6 +62,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_gfx_auto, current_year){
 	ERA_SECTORISATION : gfx_mk3_intercity ;
 	2005..2009        : gfx_mk3_mml ;
 	2010..2016        : gfx_mk3_emt ;
+	2017..4096		  : gfx_mk3_gwr ;
 	gfx_mk3_virgin ;
 }
 
@@ -210,7 +211,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_colours_auto, current_year){
 	ERA_SECTORISATION : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	2005..2009        : palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
 	2010..2016        : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	2017..4096		  : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2017..4096		  : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
