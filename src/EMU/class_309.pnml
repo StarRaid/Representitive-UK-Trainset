@@ -317,7 +317,7 @@ item (FEAT_TRAINS, item_309, 309) {
 		cost_factor:					25;
 		running_cost_factor:			12;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							75 mph;
+		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						ELRL;
@@ -326,14 +326,16 @@ item (FEAT_TRAINS, item_309, 309) {
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
-		cargo_capacity:					65;
-		weight:							40 ton;
+		cargo_capacity:					55;
+		weight:							30 ton;
 		engine_class:					ENGINE_CLASS_ELECTRIC;
-		tractive_effort_coefficient:	0.08;
-		air_drag_coefficient:			0.10;
+		tractive_effort_coefficient:	0.06;
+		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
 		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
 	}
 	graphics {
 		can_attach_wagon:					sw_309_coupling_restrictions;

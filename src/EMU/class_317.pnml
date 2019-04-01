@@ -473,15 +473,15 @@ item (FEAT_TRAINS, item_317, 317) {
 		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
-		track_type:						SAAZ;
+		track_type:						ELRL;
 		ai_special_flag:				AI_FLAG_CARGO;
-		power:							950 hp;
+		power:							1450 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
 		cargo_capacity:					85;
 		weight:							40 ton;
-		tractive_effort_coefficient:	0.09;
+		tractive_effort_coefficient:	0.16;
 		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
