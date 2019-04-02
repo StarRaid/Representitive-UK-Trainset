@@ -261,11 +261,13 @@ switch(FEAT_TRAINS, SELF, sw_150_1_col_2cc_check, colour_scheme_1){
 
 switch(FEAT_TRAINS, SELF, sw_150_attach, vehicle_type_id){
 	37   : return CB_RESULT_ATTACH_ALLOW  ;
+	142  : return CB_RESULT_ATTACH_ALLOW  ;
 	150  : return CB_RESULT_ATTACH_ALLOW  ;
 	151  : return CB_RESULT_ATTACH_ALLOW  ;
 	153  : return CB_RESULT_ATTACH_ALLOW  ;
 	155  : return CB_RESULT_ATTACH_ALLOW  ;
 	158  : return CB_RESULT_ATTACH_ALLOW  ;
+	168	 : return CB_RESULT_ATTACH_ALLOW  ;
 	9030 : return CB_RESULT_ATTACH_ALLOW  ;
 	return string(STR_150_NO_COUPLE) ;
 }
@@ -297,7 +299,7 @@ item(FEAT_TRAINS, item_sprinter, 150){
 		speed                          : 75 mph ;
 		power                          : 416 kW ;
 		weight                         : 36 ton ;
-		tractive_effort_coefficient    : 0.23 ;
+		tractive_effort_coefficient    : 0.28 ;
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
@@ -318,7 +320,7 @@ item(FEAT_TRAINS, item_sprinter, 150){
 		default                     : sw_150_2_spr_stack ;
 		colour_mapping              : sw_150_2_col_2cc_check ;
 		cargo_capacity              : 85 ;
-		power                       : 100 ;
+		power                       : 206 ;
 		cargo_subtype_text          : sw_150_2_refit_text_check ;
 		weight                      : 39 ;
 		create_effect           	: vfx_diesel_default ;
@@ -387,7 +389,8 @@ item(FEAT_TRAINS, item_sprinter_1, 151){
 		power                       : 100 ;
 		cargo_subtype_text          : sw_150_1_refit_text_check ;
 		weight                      : 39 ;
-		create_effect           	: vfx_diesel_default ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		create_effect           : vfx_diesel_default ;
 	}
 }
 
