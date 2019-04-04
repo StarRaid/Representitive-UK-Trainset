@@ -26,6 +26,13 @@ grf{
 			bit  : 3 ;
 			def_value : 1 ;
 		}
+		purchase_list_sort{
+			type : bool ;
+			name : string(STR_PARAM_PURCHASE_LIST_SORT_NAME) ;
+			desc : string(STR_PARAM_PURCHASE_LIST_SORT_DESC) ;
+			bit  : 4 ;
+			def_value : 0 ;
+		}
 	}
 	param 1{
 		vehicle_selection{

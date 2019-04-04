@@ -25,6 +25,8 @@ STR_PARAM_MEDIUM					:Normal
 STR_PARAM_HIGH						:2x
 STR_PARAM_TOOMUCH					:4x
 
+STR_PARAM_PURCHASE_LIST_SORT_NAME	:Sort by Class numbers
+STR_PARAM_PURCHASE_LIST_SORT_DESC	:Sort the purchase list by TOPS Class numbers instead of the classic sort
 
 
 STR_PARAM_VEH_SELEC_NAME         		 :Vehicle selection
@@ -220,6 +222,7 @@ STR_NAME_142				 :Leyland "Pacer" (Diesel)
 STR_NAME_205				 :BR Southern DEMU "Thumper" (Diesel Electric)
 STR_NAME_150_1				 :BREL Sprinter /0 & /1 (Diesel)
 STR_NAME_150_2				 :BREL Sprinter /2 (Diesel)
+STR_NAME_153				 :Leyland "Dogbox" (Diesel)
 STR_NAME_SUPER_SPRINTER		 :Metro-Cammel Super Sprinter (Diesel)
 STR_NAME_EXPRESS_SPRINTER    :BREL Express Sprinter (Diesel)
 STR_NAME_165				 :ABB "Networker Turbo" (Diesel)
@@ -270,6 +273,7 @@ STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or
 STR_165_NO_COUPLE: You may only couple this train to a "Modern MU car" or another ABB "Networker Turbo"!
 STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
 STR_150_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Sprinter!
+STR_153_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another Leyland Dogbox!
 STR_155_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another Metro-Cammel Super Sprinter!
 STR_158_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Express Sprinter!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
@@ -332,6 +336,7 @@ STR_NAME_142_ALT				:BR Class 142/143/144 (Diesel)
 STR_NAME_205_ALT				:BR Class 205/207 (Diesel Electric)
 STR_NAME_150_1_ALT				:BR Class 150/0 & 150/1 (Diesel)
 STR_NAME_150_2_ALT				:BR Class 150/2 (Diesel)
+STR_NAME_153_ALT			 	:BR Class 153 (Diesel)
 STR_NAME_SUPER_SPRINTER_ALT		:BR Class 155/156 (Diesel)
 STR_NAME_EXPRESS_SPRINTER_ALT	:BR Class 158/159 (Diesel)
 STR_NAME_165_ALT				:BR Class 165/166 (Diesel)
