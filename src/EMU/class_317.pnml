@@ -97,48 +97,48 @@ spriteset(spriteset_317a_purchase_wagn_aga, "gfx/EMU/class_317_2.png") {template
 spriteset(spriteset_317a_purchase_nxea, "gfx/EMU/class_317_2.png") {template_dualhead_purchase(90, 1075)}
 spriteset(spriteset_317a_purchase_ga, "gfx/EMU/class_317_2.png") {template_dualhead_purchase(90, 925)}
 
-random_switch(FEAT_TRAINS, SELF, sw_317_f_brb, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_f_brb; 1: spriteset_317b_f_brb;}
-random_switch(FEAT_TRAINS, SELF, sw_317_f_nse, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_f_nse; 1: spriteset_317b_f_nse;}
-random_switch(FEAT_TRAINS, SELF, sw_317_f_wagn_aga, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_f_wagn_aga; 1: spriteset_317b_f_wagn_aga;}
-random_switch(FEAT_TRAINS, SELF, sw_317_f_gablack, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_f_gablack; 1: spriteset_317b_f_gablack;}
-random_switch(FEAT_TRAINS, SELF, sw_317_f_lorol, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_f_lorol; 1: spriteset_317b_f_lorol;}
-random_switch(FEAT_TRAINS, SELF, sw_317_f_ga, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_f_ga; 1: spriteset_317b_f_ga;}
-random_switch(FEAT_TRAINS, SELF, sw_317_f_nxea, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_f_nxea; 1: spriteset_317b_f_nxea;}
-random_switch(FEAT_TRAINS, SELF, sw_317_f_one, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_f_one; 1: spriteset_317b_f_one;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_f_brb){1: spriteset_317a_f_brb; 1: spriteset_317b_f_brb;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_f_nse){1: spriteset_317a_f_nse; 1: spriteset_317b_f_nse;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_f_wagn_aga){1: spriteset_317a_f_wagn_aga; 1: spriteset_317b_f_wagn_aga;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_f_gablack){1: spriteset_317a_f_gablack; 1: spriteset_317b_f_gablack;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_f_lorol){1: spriteset_317a_f_lorol; 1: spriteset_317b_f_lorol;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_f_ga){1: spriteset_317a_f_ga; 1: spriteset_317b_f_ga;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_f_nxea){1: spriteset_317a_f_nxea; 1: spriteset_317b_f_nxea;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_f_one){1: spriteset_317a_f_one; 1: spriteset_317b_f_one;}
 
-random_switch(FEAT_TRAINS, SELF, sw_317_p_brb, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_p_brb; 1: spriteset_317b_p_brb;}
-random_switch(FEAT_TRAINS, SELF, sw_317_p_nse, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_p_nse; 1: spriteset_317b_p_nse;}
-random_switch(FEAT_TRAINS, SELF, sw_317_p_wagn_aga, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_p_wagn_aga; 1: spriteset_317b_p_wagn_aga;}
-random_switch(FEAT_TRAINS, SELF, sw_317_p_gablack, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_p_gablack; 1: spriteset_317b_p_gablack;}
-random_switch(FEAT_TRAINS, SELF, sw_317_p_lorol, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_p_lorol; 1: spriteset_317b_p_lorol;}
-random_switch(FEAT_TRAINS, SELF, sw_317_p_ga, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_p_ga; 1: spriteset_317b_p_ga;}
-random_switch(FEAT_TRAINS, SELF, sw_317_p_nxea, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_p_nxea; 1: spriteset_317b_p_nxea;}
-random_switch(FEAT_TRAINS, SELF, sw_317_p_one, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_p_one; 1: spriteset_317b_p_one;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_p_brb){1: spriteset_317a_p_brb; 1: spriteset_317b_p_brb;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_p_nse){1: spriteset_317a_p_nse; 1: spriteset_317b_p_nse;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_p_wagn_aga){1: spriteset_317a_p_wagn_aga; 1: spriteset_317b_p_wagn_aga;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_p_gablack){1: spriteset_317a_p_gablack; 1: spriteset_317b_p_gablack;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_p_lorol){1: spriteset_317a_p_lorol; 1: spriteset_317b_p_lorol;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_p_ga){1: spriteset_317a_p_ga; 1: spriteset_317b_p_ga;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_p_nxea){1: spriteset_317a_p_nxea; 1: spriteset_317b_p_nxea;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_p_one){1: spriteset_317a_p_one; 1: spriteset_317b_p_one;}
 
-random_switch(FEAT_TRAINS, SELF, sw_317_pr_brb, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_pr_brb; 1: spriteset_317b_pr_brb;}
-random_switch(FEAT_TRAINS, SELF, sw_317_pr_nse, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_pr_nse; 1: spriteset_317b_pr_nse;}
-random_switch(FEAT_TRAINS, SELF, sw_317_pr_wagn_aga, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_pr_wagn_aga; 1: spriteset_317b_pr_wagn_aga;}
-random_switch(FEAT_TRAINS, SELF, sw_317_pr_gablack, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_pr_gablack; 1: spriteset_317b_pr_gablack;}
-random_switch(FEAT_TRAINS, SELF, sw_317_pr_lorol, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_pr_lorol; 1: spriteset_317b_pr_lorol;}
-random_switch(FEAT_TRAINS, SELF, sw_317_pr_ga, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_pr_ga; 1: spriteset_317b_pr_ga;}
-random_switch(FEAT_TRAINS, SELF, sw_317_pr_nxea, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_pr_nxea; 1: spriteset_317b_pr_nxea;}
-random_switch(FEAT_TRAINS, SELF, sw_317_pr_one, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_pr_one; 1: spriteset_317b_pr_one;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_pr_brb){1: spriteset_317a_pr_brb; 1: spriteset_317b_pr_brb;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_pr_nse){1: spriteset_317a_pr_nse; 1: spriteset_317b_pr_nse;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_pr_wagn_aga){1: spriteset_317a_pr_wagn_aga; 1: spriteset_317b_pr_wagn_aga;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_pr_gablack){1: spriteset_317a_pr_gablack; 1: spriteset_317b_pr_gablack;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_pr_lorol){1: spriteset_317a_pr_lorol; 1: spriteset_317b_pr_lorol;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_pr_ga){1: spriteset_317a_pr_ga; 1: spriteset_317b_pr_ga;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_pr_nxea){1: spriteset_317a_pr_nxea; 1: spriteset_317b_pr_nxea;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_pr_one){1: spriteset_317a_pr_one; 1: spriteset_317b_pr_one;}
 
-random_switch(FEAT_TRAINS, SELF, sw_317_t_brb, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_t_brb; 1: spriteset_317b_t_brb;}
-random_switch(FEAT_TRAINS, SELF, sw_317_t_nse, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_t_nse; 1: spriteset_317b_t_nse;}
-random_switch(FEAT_TRAINS, SELF, sw_317_t_wagn_aga, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_t_wagn_aga; 1: spriteset_317b_t_wagn_aga;}
-random_switch(FEAT_TRAINS, SELF, sw_317_t_gablack, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_t_gablack; 1: spriteset_317b_t_gablack;}
-random_switch(FEAT_TRAINS, SELF, sw_317_t_lorol, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_t_lorol; 1: spriteset_317b_t_lorol;}
-random_switch(FEAT_TRAINS, SELF, sw_317_t_ga, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_t_ga; 1: spriteset_317b_t_ga;}
-random_switch(FEAT_TRAINS, SELF, sw_317_t_nxea, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_t_nxea; 1: spriteset_317b_t_nxea;}
-random_switch(FEAT_TRAINS, SELF, sw_317_t_one, TRIGGER_VEHICLE_SERVICE){1: spriteset_317a_t_one; 1: spriteset_317b_t_one;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_t_brb){1: spriteset_317a_t_brb; 1: spriteset_317b_t_brb;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_t_nse){1: spriteset_317a_t_nse; 1: spriteset_317b_t_nse;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_t_wagn_aga){1: spriteset_317a_t_wagn_aga; 1: spriteset_317b_t_wagn_aga;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_t_gablack){1: spriteset_317a_t_gablack; 1: spriteset_317b_t_gablack;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_t_lorol){1: spriteset_317a_t_lorol; 1: spriteset_317b_t_lorol;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_t_ga){1: spriteset_317a_t_ga; 1: spriteset_317b_t_ga;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_t_nxea){1: spriteset_317a_t_nxea; 1: spriteset_317b_t_nxea;}
+random_switch(FEAT_TRAINS, PARENT, sw_317_t_one){1: spriteset_317a_t_one; 1: spriteset_317b_t_one;}
 
 switch(FEAT_TRAINS, SELF, sw_317_f_auto, current_year){
 ERA_BRTOPS: sw_317_f_brb;
 ERA_SECTORISATION: sw_317_f_nse;
 ERA_PRIVATE_ONE: sw_317_f_wagn_aga;
 2005 .. 2008: sw_317_f_nxea;
-sw_317_f_ga;
+sw_317_f_wagn_aga;
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_pf_auto, current_year){
@@ -146,7 +146,7 @@ ERA_BRTOPS: sw_317_p_brb;
 ERA_SECTORISATION: sw_317_p_nse;
 ERA_PRIVATE_ONE: sw_317_p_wagn_aga;
 2005 .. 2008: sw_317_p_nxea;
-sw_317_p_ga;
+sw_317_p_wagn_aga;
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_pr_auto, current_year){
@@ -154,7 +154,7 @@ ERA_BRTOPS: sw_317_pr_brb;
 ERA_SECTORISATION: sw_317_pr_nse;
 ERA_PRIVATE_ONE: sw_317_pr_wagn_aga;
 2005 .. 2008: sw_317_pr_nxea;
-sw_317_p_ga;
+sw_317_pr_wagn_aga;
 }
 
 switch(FEAT_TRAINS, SELF, sw_317_t_auto, current_year){
@@ -162,7 +162,7 @@ ERA_BRTOPS: sw_317_t_brb;
 ERA_SECTORISATION: sw_317_t_nse;
 ERA_PRIVATE_ONE: sw_317_t_wagn_aga;
 2005 .. 2008: sw_317_t_nxea;
-sw_317_t_ga;
+sw_317_t_wagn_aga;
 }
 
 switch(FEAT_TRAINS, SELF, sw_318_f_auto, current_year){
@@ -212,7 +212,7 @@ switch(FEAT_TRAINS, SELF, sw_317_f_man, cargo_subtype){
 3: sw_317_f_one;
 4: sw_317_f_ga;
 5: sw_317_f_nxea;
-6: sw_317_f_gablack;
+6: sw_317_f_wagn_aga;
 7: sw_317_f_lorol;
 8: spriteset_317a_f_fcc;
 9: spriteset_317a_f_spt;
@@ -228,7 +228,7 @@ switch(FEAT_TRAINS, SELF, sw_317_t_man, cargo_subtype){
 3: sw_317_t_one;
 4: sw_317_t_ga;
 5: sw_317_t_nxea;
-6: sw_317_t_gablack;
+6: sw_317_t_wagn_aga;
 7: sw_317_t_lorol;
 8: spriteset_317a_t_fcc;
 9: spriteset_317a_t_spt;
@@ -244,7 +244,7 @@ switch(FEAT_TRAINS, SELF, sw_317_pf_man, cargo_subtype){
 3: sw_317_p_one;
 4: sw_317_p_ga;
 5: sw_317_p_nxea;
-6: sw_317_p_gablack;
+6: sw_317_p_wagn_aga;
 7: sw_317_p_lorol;
 8: spriteset_317a_p_fcc;
 9: spriteset_317a_p_spt;
@@ -260,7 +260,7 @@ switch(FEAT_TRAINS, SELF, sw_317_pr_man, cargo_subtype){
 3: sw_317_pr_one;
 4: sw_317_pr_ga;
 5: sw_317_pr_nxea;
-6: sw_317_pr_gablack;
+6: sw_317_pr_wagn_aga;
 7: sw_317_pr_lorol;
 8: spriteset_317a_pr_fcc;
 9: spriteset_317a_pr_spt;
@@ -391,7 +391,7 @@ random_switch(FEAT_TRAINS, SELF, sw_317_wgn_colour_mapping, TRIGGER_VEHICLE_SERV
 random_switch(FEAT_TRAINS, SELF, sw_317_one_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_LIGHT_BLUE) ;}
 random_switch(FEAT_TRAINS, SELF, sw_317_gan_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_BLUE) ;}
 random_switch(FEAT_TRAINS, SELF, sw_317_nxe_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;}
-random_switch(FEAT_TRAINS, SELF, sw_317_aga_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_aga_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;}
 random_switch(FEAT_TRAINS, SELF, sw_317_lo__colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;}
 random_switch(FEAT_TRAINS, SELF, sw_317_fcc_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;}
 random_switch(FEAT_TRAINS, SELF, sw_317_spt_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;}
@@ -445,14 +445,9 @@ switch(FEAT_TRAINS, SELF, sw_317_coupling_restrictions, vehicle_type_id) {
     return string(STR_317_NO_COUPLE);
 }
 
-switch(FEAT_TRAINS, PARENT, sw_317_start_stop2, count_veh_id(317)/num_vehs_in_consist){
-1: string(STR_MORE_CARRIAGES_NEEDED);
+switch(FEAT_TRAINS, PARENT, sw_317_start_stop, count_veh_id(317)-num_vehs_in_consist){
+0: string(STR_MORE_CARRIAGES_NEEDED);
 CB_RESULT_NO_TEXT;
-}
-
-switch(FEAT_TRAINS, SELF, sw_317_start_stop, count_veh_id(317)){
-0..2: sw_317_start_stop2;
-string(STR_MORE_CARRIAGES_NEEDED);
 }
 
 item (FEAT_TRAINS, item_317, 317) {
