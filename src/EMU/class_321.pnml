@@ -379,7 +379,7 @@ switch(FEAT_TRAINS, SELF, sw_321_3_manual_refit_text, cargo_subtype){
 8: string(STR_LIVERY_WYPTE);
 9: string(STR_LIVERY_NORTHERN);
 10: string(STR_LIVERY_STANSTEAD);
-11: string(STR_LIVERY_FGE_BARBIE);
+11: string(STR_LIVERY_FSR_BARBIE);
 12: string(STR_LIVERY_SPT_ORANGE);
 13: string(STR_LIVERY_SPT_CARMINE_CREAM);
 14: string(STR_LIVERY_SCOTRAIL);
