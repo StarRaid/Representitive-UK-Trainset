@@ -696,6 +696,7 @@ switch(FEAT_TRAINS, SELF, sw_314_manual_livery_decider, cargo_subtype){
 	8: sw_313_spc_select;
 	9: sw_313_spn_select;
 	10: sw_313_scr_select;
+	11: sw_313_tfl_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_315_manual_livery_decider, cargo_subtype){
@@ -710,6 +711,7 @@ switch(FEAT_TRAINS, SELF, sw_315_manual_livery_decider, cargo_subtype){
 	8: sw_313_spc_select;
 	9: sw_313_spn_select;
 	10: sw_313_scr_select;
+	11: sw_313_tfl_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_manual_livery_decider, cargo_subtype){
@@ -756,6 +758,7 @@ switch(FEAT_TRAINS, SELF, sw_314_t_manual_livery_decider, cargo_subtype){
 	8: sw_313_spc_t_select;
 	9: sw_313_spn_t_select;
 	10: sw_313_scr_t_select;
+	11: sw_313_tfl_t_select;
 }
 
 
@@ -771,6 +774,7 @@ switch(FEAT_TRAINS, SELF, sw_315_t_manual_livery_decider, cargo_subtype){
 	8: sw_313_spc_t_select;
 	9: sw_313_spn_t_select;
 	10: sw_313_scr_t_select;
+	11: sw_313_tfl_t_select;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_t_manual_livery_decider, cargo_subtype){
@@ -875,11 +879,12 @@ switch(FEAT_TRAINS, SELF, sw_314_refit_text, cargo_subtype){
 	3: return string(STR_LIVERY_FGE);
 	4: return string(STR_LIVERY_ONE_ANGLIA);
 	5: return string(STR_LIVERY_ABELLIO_GREATER_ANGLIA);
-	6: return string(STR_LIVERY_TFL);
+	6: return string(STR_LIVERY_LO);
 	7: return string(STR_LIVERY_BRBLUE_SPT);
 	8: return string(STR_LIVERY_SPT_ORANGE);
 	9: return string(STR_LIVERY_SPT_CARMINE_CREAM);
 	10: return string(STR_LIVERY_SCOTRAIL);
+	11: return string(STR_LIVERY_TFL);
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -890,11 +895,12 @@ switch(FEAT_TRAINS, SELF, sw_315_refit_text, cargo_subtype){
 	3: return string(STR_LIVERY_FGE);
 	4: return string(STR_LIVERY_ONE_ANGLIA);
 	5: return string(STR_LIVERY_ABELLIO_GREATER_ANGLIA);
-	6: return string(STR_LIVERY_TFL);
+	6: return string(STR_LIVERY_LO);
 	7: return string(STR_LIVERY_BRBLUE_SPT);
 	8: return string(STR_LIVERY_SPT_ORANGE);
 	9: return string(STR_LIVERY_SPT_CARMINE_CREAM);
 	10: return string(STR_LIVERY_SCOTRAIL);
+	11: return string(STR_LIVERY_TFL);
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -1101,6 +1107,7 @@ switch(FEAT_TRAINS, SELF, sw_314_manual_colour_mapping_decider, cargo_subtype){
 	8: sw_313_spn_colour_mapping;
 	9: sw_313_spn_colour_mapping;
 	10: sw_313_scr_colour_mapping;
+	11: palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_315_manual_colour_mapping_decider, cargo_subtype){
@@ -1115,6 +1122,7 @@ switch(FEAT_TRAINS, SELF, sw_315_manual_colour_mapping_decider, cargo_subtype){
 	8: sw_313_spn_colour_mapping;
 	9: sw_313_spn_colour_mapping;
 	10: sw_313_scr_colour_mapping;
+	11: palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_508_manual_colour_mapping_decider, cargo_subtype){

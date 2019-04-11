@@ -262,8 +262,7 @@ switch(FEAT_TRAINS, SELF, sw_321_t_man, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_321_f_man, count_veh_id(321)-count_veh_id(9030)){
-1: sw_321_3_f_man;
-sw_321_4p_f_man;
+sw_321_3_f_man;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_321_p4_man, vehicle_is_reversed){
@@ -292,8 +291,7 @@ sw_321_3_pf_man;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_321_tp_man, count_veh_id(321)-count_veh_id(9030)){
-1: sw_321_3p_man;
-sw_321_t4b_man;
+sw_321_3p_man;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_hl_1, position_in_consist){
@@ -403,8 +401,7 @@ return CB_RESULT_NO_TEXT;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_321_manual_refit_text, count_veh_id(321)-count_veh_id(9030)){
-1: sw_321_3_manual_refit_text;
-sw_321_4_manual_refit_text;
+sw_321_3_manual_refit_text;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_livery_text_decider, livery_choice){
