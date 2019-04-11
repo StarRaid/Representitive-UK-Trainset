@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 38 ;
+	version: 39 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -28,13 +28,6 @@ grf{
 			desc : string(STR_PARAM_LIVERY_CHOICE_DESC) ;
 			bit  : 3 ;
 			def_value : 1 ;
-		}
-		purchase_list_sort{
-			type : bool ;
-			name : string(STR_PARAM_PURCHASE_LIST_SORT_NAME) ;
-			desc : string(STR_PARAM_PURCHASE_LIST_SORT_DESC) ;
-			bit  : 4 ;
-			def_value : 0 ;
 		}
 	}
 	param 1{
@@ -91,6 +84,14 @@ grf{
 				2	: string(STR_PARAM_HIGH) ;
 				3	: string(STR_PARAM_TOOMUCH ) ;
 			} ;
+		}
+	}
+	param 5{
+		purchase_list_sort{
+			type : bool ;
+			name : string(STR_PARAM_PURCHASE_LIST_SORT_NAME) ;
+			desc : string(STR_PARAM_PURCHASE_LIST_SORT_DESC) ;
+			def_value : 0 ;
 		}
 	}
 }
