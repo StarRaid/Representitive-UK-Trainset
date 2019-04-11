@@ -146,6 +146,7 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		effect_spawn_model_and_powered : sw_dvt_effect_reverse_check ;
 		//length						   : sw_dvt_90_check ;
 		//sound_effect                   : sw_dbso_sfx_reverse_check ;
+		additional_text: string(STR_ADD_INFO_PUSHPULL) ;
 	}
 }
 

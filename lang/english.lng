@@ -78,6 +78,8 @@ STR_LIVERY_EWS                   		 : English, Welsh & Scottish {GOLD}(EWS)
 STR_LIVERY_DBSCHENKER            		 : DB Schenker Rail UK
 STR_LIVERY_DBCARGO               		 : DB Cargo UK
 STR_LIVERY_DCR_GREEN					 : Devon & Cornwall Railways {GREEN}(Green)
+STR_LIVERY_DCR_GREY						 : Devon & Cornwall Railways {GREEN}(Grey)
+STR_LIVERY_FASTLINE						 : Fastline
 STR_LIVERY_TPE_NEW				 		 : TransPennine Express
 STR_LIVERY_CAL_SLEEPER			 		 : Caledonian Sleeper
 STR_LIVERY_GBRF					 		 : GBRf
@@ -213,6 +215,7 @@ STR_NAME_BRUSH_5			 :Brush Type 5 (Diesel Electric)
 STR_NAME_BRUSH_PEAK          :Sulzer Type 4 (Diesel Electric)
 STR_NAME_EEHOOVER            :EE Hoover (Diesel Electric)
 STR_NAME_HST                 :BREL HST (Diesel Electric)
+STR_NAME_BREL56				 :BREL "56" (Diesel Electric)
 STR_NAME_BREL58				 :BREL "58" (Diesel Electric)
 STR_NAME_POWERHAUL			 :GE Powerhaul (Diesel Electric)
 STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
@@ -329,9 +332,10 @@ STR_NAME_BRUSH_PEAK_ALT	:BR Class 44/45/46 (Diesel Electric)
 STR_NAME_EEHOOVER_ALT	:BR Class 50 (Diesel Electric)
 STR_NAME_HST_ALT		:BR Class 43 (Diesel Electric)
 STR_NAME_BREL58_ALT		:BR Class 58 (Diesel Electric)
+STR_NAME_BREL56_ALT		:BR Class 56 (Diesel Electric)
 STR_NAME_POWERHAUL_ALT	:BR Class 70 (Diesel Electric)
 STR_NAME_UKLIGHT_ALT	:BR Class 68 (Diesel Electric)
-STR_NAME_EURODUAL_ALT 	:BR Class 88 (Electro Diesel)
+STR_NAME_EURODUAL_ALT 	:BR Class 88 (Dual Mode)
 
 STR_NAME_142_ALT				:BR Class 142/143/144 (Diesel)
 STR_NAME_205_ALT				:BR Class 205/207 (Diesel Electric)
@@ -371,3 +375,4 @@ STR_NAME_LUL78_ALT			:LU D78 Stock
 
 
 STR_ADD_INFO_88				:Power on diesel: {GOLD}746 kW / 1000 hp
+STR_ADD_INFO_PUSHPULL		:Add ONE of these to the end of your train to create a push/pull set (certain locomotives){}{RED}WARNING{BLACK}: Adding more than one of these to a consist may result in odd graphical behaviour and is not recommended.

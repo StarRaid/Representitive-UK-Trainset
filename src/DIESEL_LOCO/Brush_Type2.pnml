@@ -150,7 +150,7 @@ switch(FEAT_TRAINS, SELF, sw_brush2_refit_text, cargo_subtype){
 	3		: string(STR_LIVERY_BRRAILFREIGHT_LOGO) ;
 	4		: string(STR_LIVERY_REG_RAILWAYS) ;
 	5		: string(STR_LIVERY_INTERCITY) ;
-	6		: string(STR_LIVERY_RAILFREIGHT) ;
+	6		: string(STR_LIVERY_RAILFREIGHT, string(STR_LIVERY_EMPTY)) ;
 	7		: string(STR_LIVERY_CIVIL_ENGINEERS) ;
 	8		: string(STR_LIVERY_EWS) ;
 	9		: string(STR_LIVERY_WESSEX_TRAINS) ;
