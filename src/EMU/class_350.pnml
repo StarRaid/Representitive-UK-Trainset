@@ -34,6 +34,53 @@ spriteset(spriteset_350_ftp_t_p, "gfx/EMU/class_450.png") {
 	template_8_8_networker(718, 25)
 }
 
+spriteset(spriteset_360_ga, "gfx/EMU/class_360.png") {
+	template_8_8_networker(0, 0)
+}
+
+spriteset(spriteset_360_ga_t, "gfx/EMU/class_360.png") {
+	template_8_4_networker(0, 25)
+}
+
+spriteset(spriteset_360_ga_t_p, "gfx/EMU/class_360.png") {
+	template_8_8_networker(0, 50)
+}
+
+spriteset(spriteset_360_nxea, "gfx/EMU/class_360.png") {
+	template_8_8_networker(179, 0)
+}
+
+spriteset(spriteset_360_nxea_t, "gfx/EMU/class_360.png") {
+	template_8_4_networker(179, 25)
+}
+
+spriteset(spriteset_360_nxea_t_p, "gfx/EMU/class_360.png") {
+	template_8_8_networker(179, 50)
+}
+
+spriteset(spriteset_360_fge, "gfx/EMU/class_360.png") {
+	template_8_8_networker(358, 0)
+}
+
+spriteset(spriteset_360_fge_t, "gfx/EMU/class_360.png") {
+	template_8_4_networker(358, 25)
+}
+
+spriteset(spriteset_360_fge_t_p, "gfx/EMU/class_360.png") {
+	template_8_8_networker(358, 50)
+}
+
+spriteset(spriteset_360_heax, "gfx/EMU/class_360.png") {
+	template_8_8_networker(537, 0)
+}
+
+spriteset(spriteset_360_heax_t, "gfx/EMU/class_360.png") {
+	template_8_4_networker(537, 25)
+}
+
+spriteset(spriteset_360_heax_t_p, "gfx/EMU/class_360.png") {
+	template_8_8_networker(537, 50)
+}
 
 spriteset(spriteset_350_purchase_slv, "gfx/EMU/class_450.png") {
 	template_dualhead_purchase(718, 50)
@@ -96,6 +143,66 @@ switch(FEAT_TRAINS, PARENT, sw_350_t_panto_decider_ftp, vehicle_is_reversed){
 	sw_350_t_panto_decider_ftp_f ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_ga_f, position_in_vehid_chain){
+	0 : spriteset_360_ga_t_p ;
+	spriteset_360_ga_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_ga_b, position_in_vehid_chain_from_end){
+	0 : spriteset_360_ga_t_p ;
+	spriteset_360_ga_t ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_360_t_panto_decider_ga, vehicle_is_reversed){
+	1 : sw_360_t_panto_decider_ga_b ;
+	sw_360_t_panto_decider_ga_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_nxea_f, position_in_vehid_chain){
+	0 : spriteset_360_nxea_t_p ;
+	spriteset_360_nxea_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_nxea_b, position_in_vehid_chain_from_end){
+	0 : spriteset_360_nxea_t_p ;
+	spriteset_360_nxea_t ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_360_t_panto_decider_nxea, vehicle_is_reversed){
+	1 : sw_360_t_panto_decider_nxea_b ;
+	sw_360_t_panto_decider_nxea_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_fge_f, position_in_vehid_chain){
+	0 : spriteset_360_fge_t_p ;
+	spriteset_360_fge_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_fge_b, position_in_vehid_chain_from_end){
+	0 : spriteset_360_fge_t_p ;
+	spriteset_360_fge_t ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_360_t_panto_decider_fge, vehicle_is_reversed){
+	1 : sw_360_t_panto_decider_fge_b ;
+	sw_360_t_panto_decider_fge_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_heax_f, position_in_vehid_chain){
+	0 : spriteset_360_heax_t_p ;
+	spriteset_360_heax_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_heax_b, position_in_vehid_chain_from_end){
+	0 : spriteset_360_heax_t_p ;
+	spriteset_360_heax_t ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_360_t_panto_decider_heax, vehicle_is_reversed){
+	1 : sw_360_t_panto_decider_heax_b ;
+	sw_360_t_panto_decider_heax_f ;
+}
+
 //How the livery is selected
 
 switch(FEAT_TRAINS, SELF, sw_350_livery_selection_auto, current_year){
@@ -115,13 +222,21 @@ switch(FEAT_TRAINS, SELF, sw_350_livery_selection_auto_t, current_year){
 switch(FEAT_TRAINS, SELF, sw_350_livery_selection_manual, cargo_subtype){
 	0: spriteset_350_slv ;
 	1: spriteset_350_lml ;
-	spriteset_350_ftp ;
+	2: spriteset_350_ftp ;
+	3: spriteset_360_ga  ;
+	4: spriteset_360_nxea;
+	5: spriteset_360_fge ;
+	spriteset_360_heax   ;
 } 
 
 switch(FEAT_TRAINS, PARENT, sw_350_livery_selection_manual_t, cargo_subtype){
-	0: sw_350_t_panto_decider_svl;
-	1: sw_350_t_panto_decider_lml;
-	sw_350_t_panto_decider_ftp ;
+	0: sw_350_t_panto_decider_svl ;
+	1: sw_350_t_panto_decider_lml ;
+	2: sw_350_t_panto_decider_ftp ;
+	3: sw_360_t_panto_decider_ga  ;
+	4: sw_360_t_panto_decider_nxea;
+	5: sw_360_t_panto_decider_fge ;
+	sw_360_t_panto_decider_heax   ;
 } 
 
 switch(FEAT_TRAINS, SELF, sw_350_livery_selection, livery_choice){
@@ -149,6 +264,10 @@ switch(FEAT_TRAINS, SELF, sw_350_refit_text, cargo_subtype){
 	0: string(STR_LIVERY_SILVERLINK);
 	1: string(STR_LIVERY_LONDON_MIDLAND);
 	2: string(STR_LIVERY_FIRST_TPE);
+	3: string(STR_LIVERY_GREATER_ANGLIA);
+	4: string(STR_LIVERY_FGE);
+	5: string(STR_LIVERY_NXEA);
+	6: string(STR_LIVERY_HEATHROW_EXPRESS);
 	return CB_RESULT_NO_TEXT;
 }
 
@@ -168,7 +287,11 @@ switch(FEAT_TRAINS, PARENT, sw_350_recolour_selection_auto, current_year){
 switch(FEAT_TRAINS, SELF, sw_350_recolour_selection_manual, cargo_subtype){
 	0: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
 	1: palette_2cc(COLOUR_GREEN, COLOUR_DARK_GREEN) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	2: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	3: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	4: palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
+	5: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	 palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_350_recolour_livery_selection, livery_choice){
