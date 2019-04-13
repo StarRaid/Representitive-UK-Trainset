@@ -221,7 +221,8 @@ STR_NAME_BREL56				 :BREL "56" (Diesel Electric)
 STR_NAME_BREL58				 :BREL "58" (Diesel Electric)
 STR_NAME_POWERHAUL			 :GE Powerhaul (Diesel Electric)
 STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
-STR_NAME_EURODUAL            :Stadler Euro Dual (Electro Diesel)
+STR_NAME_EURODUAL            :Stadler Euro Dual (Dual Mode)
+STR_NAME_EE73				 :English Electric "JB" (Dual Mode)
 
 STR_NAME_142				 :Leyland "Pacer" (Diesel)
 STR_NAME_205				 :BR Southern DEMU "Thumper" (Diesel Electric)
@@ -339,6 +340,7 @@ STR_NAME_BREL56_ALT		:BR Class 56 (Diesel Electric)
 STR_NAME_POWERHAUL_ALT	:BR Class 70 (Diesel Electric)
 STR_NAME_UKLIGHT_ALT	:BR Class 68 (Diesel Electric)
 STR_NAME_EURODUAL_ALT 	:BR Class 88 (Dual Mode)
+STR_NAME_EE73_ALT		:BR Class 73 (Dual Mode)
 
 STR_NAME_142_ALT				:BR Class 142/143/144 (Diesel)
 STR_NAME_205_ALT				:BR Class 205/207 (Diesel Electric)
@@ -379,3 +381,4 @@ STR_NAME_LUL78_ALT			:LU D78 Stock
 
 STR_ADD_INFO_88				:Power on diesel: {GOLD}746 kW / 1000 hp
 STR_ADD_INFO_PUSHPULL		:Add ONE of these to the end of your train to create a push/pull set (certain locomotives){}{RED}WARNING{BLACK}: Adding more than one of these to a consist may result in odd graphical behaviour and is not recommended.
+STR_ADD_INFO_73				:Power on diesel: {GOLD}450 kW / 600 hp
