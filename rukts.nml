@@ -622,17 +622,17 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2, getbits(extra_callback_info1,
 	SOUND_EVENT_STOPPED       : sound("sfx/ee_2_idle.wav",90) ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_2_run.wav",70) ;
 	SOUND_EVENT_RUNNING_16    : sw_ee_coast_decider ;
-	SOUND_EVENT_START         : sound("sfx/horn_7.wav",90) ;
+	SOUND_EVENT_START         : sound("sfx/horn_7.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_7.wav",90) ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_7.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_deltic, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED			: sound("sfx/deltic_idle.wav") ;
 	SOUND_EVENT_RUNNING_16		: sound("sfx/deltic_coast.wav") ;
 	SOUND_EVENT_VISUAL_EFFECT	: sound("sfx/deltic_run.wav") ;
-	SOUND_EVENT_START			: sound("sfx/horn_7.wav", 90) ;
-	SOUND_EVENT_TUNNEL			: sound("sfx/horn_7.wav", 90) ;
+	SOUND_EVENT_START			: sound("sfx/horn_7.wav") ;
+	SOUND_EVENT_TUNNEL			: sound("sfx/horn_7.wav") ;
 	SOUND_EVENT_BREAKDOWN		: SOUND_TRAIN_BREAKDOWN ;
 }
 
@@ -640,36 +640,36 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small, getbits(extra_callback_info1
 	SOUND_EVENT_STOPPED       : sound("sfx/thump_idle.wav",60) ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/thump_coast.wav",60) ;
-	SOUND_EVENT_START         : sound("sfx/horn_8.wav",60) ;
+	SOUND_EVENT_START         : sound("sfx/horn_8.wav",) ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_8.wav",60) ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_8.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : sound("sfx/brush_idle.wav",90) ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/brush_run.wav",90) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/brush_coast.wav",90) ;
-	SOUND_EVENT_START         : sound("sfx/horn_3.wav",90) ;
+	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav",90) ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_emd, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : sound("sfx/emd_idle.wav",90) ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/emd_run.wav",90) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/emd_coast.wav",90) ;
-	SOUND_EVENT_START         : sound("sfx/horn_5.wav",90) ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav",90) ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_hst, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : sound("sfx/hst_idle.wav",90) ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/hst_run.wav",90) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/hst_coast.wav",90) ;
-	SOUND_EVENT_START         : sound("sfx/horn_3.wav",90) ;
+	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav",90) ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_emu_desiro, getbits(extra_callback_info1, 0, 8)){
@@ -685,9 +685,18 @@ switch(FEAT_TRAINS, SELF, sw_sfx_emu_gec, getbits(extra_callback_info1, 0, 8)){
 	//SOUND_EVENT_STOPPED       : sound("sfx/modern_electric_idle.wav") ;
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_gec_run ;
-	SOUND_EVENT_START         : sound("sfx/horn_6.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_1.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_6.wav") ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_tube_gec, getbits(extra_callback_info1, 0, 8)){
+	//SOUND_EVENT_STOPPED       : sound("sfx/modern_electric_idle.wav") ;
+	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
+	SOUND_EVENT_RUNNING_16    : sw_sfx_gec_run ;
+	SOUND_EVENT_START         : sound("sfx/thump_whistle.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav") ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, getbits(extra_callback_info1, 0, 8)){
@@ -10744,6 +10753,13 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_power_decider, current_railtype){
 	1000 ;	
 }
 
+switch(FEAT_TRAINS, SELF, sw_eurodual_effect_model, current_railtype){
+	ELRL   : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	SAAZ   : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	//"3RDC" : 5364 ;
+	EFFECT_SPAWN_MODEL_DIESEL ;	
+}
+
 //Item
 
 item (FEAT_TRAINS, item_eurodual, 88){
@@ -10789,6 +10805,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		running_cost_factor     : return(current_speed == 0 ? 60 : 250) ;
 		purchase_running_cost_factor : 250 ;
 		additional_text			: string(STR_ADD_INFO_88) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	}
 }
 
@@ -14474,6 +14491,7 @@ item (FEAT_TRAINS, item_307, 307) {
 		purchase_colour_mapping:			sw_307_recolour_selection_auto;
 		running_cost_factor:				return(current_speed == 0 ? 4 : 12) ;
 		purchase_running_cost_factor:		12;
+		sound_effect:						sw_sfx_emu_gec ;
 }
 		livery_override (9010) {
 		cargo_capacity: 75;
@@ -14851,6 +14869,7 @@ item (FEAT_TRAINS, item_309, 309) {
 		purchase_colour_mapping:			sw_309_recolour_selection_auto;
 		running_cost_factor:				return(current_speed == 0 ? 4 : 12) ;
 		purchase_running_cost_factor:		12;
+		sound_effect:						sw_sfx_emu_gec ;
 }
 		livery_override (9010) {
 		cargo_capacity: 75;
@@ -20914,7 +20933,7 @@ item(FEAT_TRAINS, item_lul78, 678){
 	graphics{
 		default                 		: sw_lul78_manual_check ;
 		purchase                		: sw_lul78_purchase_gfx ;
-		sound_effect            		: sw_sfx_emu_gec ;
+		sound_effect            		: sw_sfx_tube_gec ;
 		create_effect           		: vfx_3rd_only ;
 		colour_mapping          		: sw_lul78_colours_2cc_check ;
 		purchase_colour_mapping 		: sw_lul78_colours_auto ;

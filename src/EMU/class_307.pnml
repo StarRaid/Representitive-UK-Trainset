@@ -304,6 +304,7 @@ item (FEAT_TRAINS, item_307, 307) {
 		purchase_colour_mapping:			sw_307_recolour_selection_auto;
 		running_cost_factor:				return(current_speed == 0 ? 4 : 12) ;
 		purchase_running_cost_factor:		12;
+		sound_effect:						sw_sfx_emu_gec ;
 }
 		livery_override (9010) {
 		cargo_capacity: 75;
