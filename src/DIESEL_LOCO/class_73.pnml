@@ -218,17 +218,15 @@ switch(FEAT_TRAINS, SELF, sw_73_col_2cc_check, colour_scheme_1){
 //Sounds
 
 switch(FEAT_TRAINS, SELF, sw_73_sound_diesel, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : sound("sfx/thump_idle.wav",60) ;
-	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
-	SOUND_EVENT_RUNNING_16    : sound("sfx/thump_coast.wav",60) ;
-	SOUND_EVENT_START         : sound("sfx/horn_5.wav",60) ;
+	SOUND_EVENT_STOPPED       : sound("sfx/voyager_idle.wav") ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/voyager_run.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_8.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
-	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav",60) ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_8.wav") ;
 }
-
 switch(FEAT_TRAINS, SELF, sw_73_sound_diesel_check, (livery_choice == 1) & (cargo_subtype == 8)){
-	1 : sw_sfx_dmu_two ;
-	sw_73_sound_diesel ;
+	1 : sw_73_sound_diesel ;
+	sw_sfx_diesel_loco_small ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_73_sound_check, current_railtype){
