@@ -303,6 +303,7 @@ switch(FEAT_TRAINS, SELF, sw_pga_cargo_check, cargo_type_in_veh){
 	IORE : sw_pga_ore_load_check ;
 	PORE : sw_pga_ore_load_check ;
 	SAND : sw_pga_ore_load_check ;
+	SLAG : sw_pga_ore_load_check ;
 	sw_pga_stone_load_check ;
 }
 

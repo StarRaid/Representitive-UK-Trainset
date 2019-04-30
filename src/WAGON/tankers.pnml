@@ -14,7 +14,7 @@ random_switch(FEAT_TRAINS, SELF, sw_zrr_colours_random){
 }
 
 switch(FEAT_TRAINS, SELF, sw_zrr_colours_2cc_check, colour_scheme_2){
-	0 : sw_zrr_colours_random ;
+	1 : sw_zrr_colours_random ;
 	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
 }
 
