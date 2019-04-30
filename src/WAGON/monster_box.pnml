@@ -59,11 +59,9 @@ switch(FEAT_TRAINS, SELF, sw_mbox_cargo_check, cargo_type_in_veh){
 	GRAI : sw_mbox_sand_cargo_check ;
 	WHEA : sw_mbox_sand_cargo_check ;
 	MAIZ : sw_mbox_sand_cargo_check ;
-	TOFF : sw_mbox_scrap_cargo_check ;
 	BEAN : sw_mbox_scrap_cargo_check ;
 	SCMT : sw_mbox_scrap_cargo_check ;
 	SCRP : sw_mbox_scrap_cargo_check ;
-	WSTE : sw_mbox_scrap_cargo_check ;
 	SLAG : sw_mbox_scrap_cargo_check ;
 	sw_mbox_grey_cargo_check ;
 }

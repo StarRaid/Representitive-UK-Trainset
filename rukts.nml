@@ -3088,6 +3088,7 @@ switch(FEAT_TRAINS, SELF, sw_pga_cargo_check, cargo_type_in_veh){
 	IORE : sw_pga_ore_load_check ;
 	PORE : sw_pga_ore_load_check ;
 	SAND : sw_pga_ore_load_check ;
+	SLAG : sw_pga_ore_load_check ;
 	sw_pga_stone_load_check ;
 }
 
@@ -3165,7 +3166,7 @@ random_switch(FEAT_TRAINS, SELF, sw_zrr_colours_random){
 }
 
 switch(FEAT_TRAINS, SELF, sw_zrr_colours_2cc_check, colour_scheme_2){
-	0 : sw_zrr_colours_random ;
+	1 : sw_zrr_colours_random ;
 	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
 }
 
@@ -3788,6 +3789,8 @@ spriteset(gfx_mbox_sand_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  
 spriteset(gfx_mbox_sand_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  75)}
 spriteset(gfx_mbox_grey_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0, 100)}
 spriteset(gfx_mbox_grey_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81, 100)}
+spriteset(gfx_mbox_scrap_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0, 125)}
+spriteset(gfx_mbox_scrap_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81, 125)}
 
 spriteset(gfx_mbox_purchase	, "gfx/WAGON/monster_box.png"){ template_purchase ( 81 , 0)}
 
@@ -3814,6 +3817,11 @@ switch(FEAT_TRAINS, SELF, sw_mbox_grey_cargo_check, cargo_count * (100 / cargo_c
 	51..100	: gfx_mbox_grey_f ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_mbox_scrap_cargo_check, cargo_count * (100 / cargo_capacity)){
+	1..50	: gfx_mbox_scrap_h ;
+	51..100	: gfx_mbox_scrap_f ;
+}
+
 
 switch(FEAT_TRAINS, SELF, sw_mbox_cargo_check, cargo_type_in_veh){
 	COAL : sw_mbox_coal_cargo_check ;
@@ -3825,6 +3833,13 @@ switch(FEAT_TRAINS, SELF, sw_mbox_cargo_check, cargo_type_in_veh){
 	GOLD : sw_mbox_sand_cargo_check ;
 	CERA : sw_mbox_sand_cargo_check ;
 	CERE : sw_mbox_sand_cargo_check ;
+	GRAI : sw_mbox_sand_cargo_check ;
+	WHEA : sw_mbox_sand_cargo_check ;
+	MAIZ : sw_mbox_sand_cargo_check ;
+	BEAN : sw_mbox_scrap_cargo_check ;
+	SCMT : sw_mbox_scrap_cargo_check ;
+	SCRP : sw_mbox_scrap_cargo_check ;
+	SLAG : sw_mbox_scrap_cargo_check ;
 	sw_mbox_grey_cargo_check ;
 }
 
@@ -13165,9 +13180,9 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_colours_manual, cargo_subtype){
 	1 : palette_2cc(COLOUR_BLUE, COLOUR_YELLOW) ;
 	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	6 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	4 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	4 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	5 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
+	6 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
 	7 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
 	8 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	9 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
