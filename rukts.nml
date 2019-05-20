@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 40 ;
+	version: 41 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -646,9 +646,9 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small, getbits(extra_callback_info1
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : sound("sfx/brush_idle.wav",90) ;
-	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/brush_run.wav",90) ;
-	SOUND_EVENT_RUNNING_16    : sound("sfx/brush_coast.wav",90) ;
+	SOUND_EVENT_STOPPED       : sound("sfx/46_idle.wav",90) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",90) ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/46_coast.wav",90) ;
 	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
@@ -731,6 +731,63 @@ switch(FEAT_TRAINS, SELF, sw_sfx_steam, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_TUNNEL : sound("sfx/steam_whistle.wav", 70) ;
 	SOUND_EVENT_RUNNING_16 : sound("sfx/steam_run.wav", 80) ;
 }
+
+
+
+
+//RUKTS Extension sound check
+
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_08, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 2) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
+	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 3) ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_08_check, (grf_current_status("RTNA")) | (grf_future_status("RTNA"))){ 1 : sw_sfx_extension_08 ; sw_sfx_diesel_loco_small; }
+
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_25, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 4) ;
+	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 6) ;
+	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 5) ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_25_check, (grf_current_status("RTNA")) | (grf_future_status("RTNA"))){ 1 : sw_sfx_extension_25 ; sw_sfx_diesel_loco_ee_2; }
+
+
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_40, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 0) ;
+	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 1) ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/ee_coast.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_40_check, (grf_current_status("RTNA")) | (grf_future_status("RTNA"))){ 1 : sw_sfx_extension_40 ; sw_sfx_diesel_loco_ee; }
+
+
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_60, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 7) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",90) ;
+	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 8) ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_60_check, (grf_current_status("RTNA")) | (grf_future_status("RTNA"))){ 1 : sw_sfx_extension_60 ; sw_sfx_diesel_loco_heritage; }
+
+
 # 1 "rukts.pnml" 2
 # 1 "src/CODE/coupling_restrictions.pnml" 1
 switch(FEAT_TRAINS, SELF, sw_all_but_MU90, vehicle_type_id) {
@@ -4652,7 +4709,7 @@ item(FEAT_TRAINS, item_swtype1, 14){
 		colour_mapping                 : sw_swtype1_colours_2cc_check ;
 		purchase_colour_mapping        : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
 		purchase                       : gfx_swtype1_purchase ;
-		sound_effect                   : sw_sfx_diesel_loco_small ;
+		sound_effect                   : sw_sfx_extension_08_check ;
 		create_effect                  : vfx_diesel_default ;
 		cargo_subtype_text             : sw_swtype1_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
@@ -6002,7 +6059,7 @@ item (FEAT_TRAINS, item_eetype4, 40){
 		colour_mapping                 : sw_ee40_colours_dbso_check ;
 		purchase                       : sw_ee40_purchase ;
 		purchase_colour_mapping        : sw_ee40_colours_2cc_check ;
-		sound_effect                   : sw_sfx_diesel_loco_ee ;
+		sound_effect                   : sw_sfx_extension_40_check ;
 		create_effect                  : sw_ee40_vfx_dbso_check ;
 		cargo_subtype_text             : sw_ee40_refit_text_check ;
 		cargo_capacity                 : return 0 ;
@@ -7501,7 +7558,7 @@ item(FEAT_TRAINS, item_brush5, 60){
 		colour_mapping                 : sw_60_col_2cc_check ;
 		purchase                       : sw_60_purch_gfx ;
 		purchase_colour_mapping        : sw_60_col_auto ;
-		sound_effect                   : sw_sfx_diesel_loco_heritage ;
+		sound_effect                   : sw_sfx_extension_60_check ;
 		create_effect                  : vfx_diesel_default ;
 		cargo_subtype_text             : sw_60_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
@@ -10820,7 +10877,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		running_cost_factor     : return(current_speed == 0 ? 60 : 250) ;
 		purchase_running_cost_factor : 250 ;
 		additional_text			: string(STR_ADD_INFO_88) ;
-		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		effect_spawn_model_and_powered : sw_eurodual_effect_model ;
 	}
 }
 
@@ -12630,7 +12687,7 @@ switch(FEAT_TRAINS, SELF, sw_153_gfx_pos_check_a_lights_front, position_in_consi
 
 switch(FEAT_TRAINS, SELF, sw_153_spr_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_153_gfx_manual_check ;
-	1 : sw_153_gfx_rev_a_lights_back ;
+	1 : sw_153_gfx_lights_back_check ;
 	2 : sw_153_gfx_lights_front_check ;
 }
 

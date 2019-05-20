@@ -209,7 +209,7 @@ switch(FEAT_TRAINS, SELF, sw_153_gfx_pos_check_a_lights_front, position_in_consi
 
 switch(FEAT_TRAINS, SELF, sw_153_spr_stack, SPR_STACK){
 	0 : sw_153_gfx_manual_check ;
-	1 : sw_153_gfx_rev_a_lights_back ;
+	1 : sw_153_gfx_lights_back_check ;
 	2 : sw_153_gfx_lights_front_check ;
 }
 

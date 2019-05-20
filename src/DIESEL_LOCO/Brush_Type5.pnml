@@ -161,7 +161,7 @@ item(FEAT_TRAINS, item_brush5, 60){
 		colour_mapping                 : sw_60_col_2cc_check ;
 		purchase                       : sw_60_purch_gfx ;
 		purchase_colour_mapping        : sw_60_col_auto ;
-		sound_effect                   : sw_sfx_diesel_loco_heritage ;
+		sound_effect                   : sw_sfx_extension_60_check ;
 		create_effect                  : vfx_diesel_default ;
 		cargo_subtype_text             : sw_60_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;

@@ -138,9 +138,9 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small, getbits(extra_callback_info1
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : sound("sfx/brush_idle.wav",90) ;
-	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/brush_run.wav",90) ;
-	SOUND_EVENT_RUNNING_16    : sound("sfx/brush_coast.wav",90) ;
+	SOUND_EVENT_STOPPED       : sound("sfx/46_idle.wav",90) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",90) ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/46_coast.wav",90) ;
 	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
@@ -223,3 +223,60 @@ switch(FEAT_TRAINS, SELF, sw_sfx_steam, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_TUNNEL : sound("sfx/steam_whistle.wav", 70) ;
 	SOUND_EVENT_RUNNING_16 : sound("sfx/steam_run.wav", 80) ;
 }
+
+
+
+
+//RUKTS Extension sound check
+
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_08, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 2) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
+	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 3) ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_08_check, RUKTS_E_CHECK){ 1 : sw_sfx_extension_08 ; sw_sfx_diesel_loco_small; }
+
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_25, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 4) ;
+	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 6) ;
+	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 5) ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_25_check, RUKTS_E_CHECK){ 1 : sw_sfx_extension_25 ; sw_sfx_diesel_loco_ee_2; }
+
+
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_40, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 0) ;
+	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 1) ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/ee_coast.wav") ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_40_check, RUKTS_E_CHECK){ 1 : sw_sfx_extension_40 ; sw_sfx_diesel_loco_ee; }
+
+
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_60, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 7) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",90) ;
+	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 8) ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_60_check, RUKTS_E_CHECK){ 1 : sw_sfx_extension_60 ; sw_sfx_diesel_loco_heritage; }
+
+

@@ -1,0 +1,61 @@
+
+
+switch(FEAT_TRAINS, SELF, sfx_extra, getbits(extra_callback_info1, 0, 8)){
+	0	: sound("sfx/40_idle.wav") ;
+	1	: sound("sfx/40_run.wav") ;
+	2	: sound("sfx/08_idle.wav") ;
+	3	: sound("sfx/08_coast.wav") ;
+	4	: sound("sfx/25_idle.wav") ;
+	5	: sound("sfx/25_coast.wav") ;
+	6	: sound("sfx/25_run.wav") ;
+	7	: sound("sfx/60_idle.wav") ;
+	8	: sound("sfx/60_coast.wav") ;
+	SOUND_TRAIN_BREAKDOWN ;
+}
+
+
+spriteset(gfx_sfx_extra){
+	[0,0,1,1,0,0,"gfx/base_tile.png"] //North
+	[0,0,1,1,0,0,"gfx/base_tile.png"] //North East
+	[0,0,1,1,0,0,"gfx/base_tile.png"] //East
+	[0,0,1,1,0,0,"gfx/base_tile.png"] //South East
+	[0,0,1,1,0,0,"gfx/base_tile.png"] //South
+	[0,0,1,1,0,0,"gfx/base_tile.png"] //South West
+	[0,0,1,1,0,0,"gfx/base_tile.png"] //West
+	[0,0,1,1,0,0,"gfx/base_tile.png"] //North West
+}
+
+item(FEAT_TRAINS, item_sfx_extra){
+	property{
+		name                           : string(STR_NWST_NAME) ;  
+		climates_available             : NO_CLIMATE ;
+		introduction_date              : date(1,1,1) ;
+		refit_cost                     : 1 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : 1 ;
+		vehicle_life                   : 1 ;
+		reliability_decay              : 1 ;
+		cost_factor                    : 1 ;
+		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_factor            : 1 ;
+		speed                          : 1 mph ;
+		track_type                     : RAIL ;
+		power                          : 1 kW ;
+		weight                         : 1 ton ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		tractive_effort_coefficient    : 0.8 ;
+		air_drag_coefficient           : 0.01 ;
+		length                         : 1 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : gfx_sfx_extra ;
+		sound_effect                   : sfx_extra ;
+		purchase_cargo_capacity        : 0 ;
+		cargo_capacity                 : return 0 ;
+	}
+}

@@ -196,7 +196,7 @@ item (FEAT_TRAINS, item_eetype4, 40){
 		colour_mapping                 : sw_ee40_colours_dbso_check ;
 		purchase                       : sw_ee40_purchase ;
 		purchase_colour_mapping        : sw_ee40_colours_2cc_check ;
-		sound_effect                   : sw_sfx_diesel_loco_ee ;
+		sound_effect                   : sw_sfx_extension_40_check ;
 		create_effect                  : sw_ee40_vfx_dbso_check ;
 		cargo_subtype_text             : sw_ee40_refit_text_check ;
 		cargo_capacity                 : return 0 ;

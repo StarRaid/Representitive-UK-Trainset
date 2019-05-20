@@ -12,3 +12,4 @@
 #define RNING_COST_A return (speed == 0 ? 
 #define RNING_COST_B  / 5 : 
 #define PERCENT_FULL cargo_count * (100 / cargo_capacity)
+#define RUKTS_E_CHECK (grf_current_status("RTNA")) | (grf_future_status("RTNA"))

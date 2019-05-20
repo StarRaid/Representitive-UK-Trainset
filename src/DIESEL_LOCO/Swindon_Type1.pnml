@@ -172,7 +172,7 @@ item(FEAT_TRAINS, item_swtype1, 14){
 		colour_mapping                 : sw_swtype1_colours_2cc_check ;
 		purchase_colour_mapping        : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
 		purchase                       : gfx_swtype1_purchase ;
-		sound_effect                   : sw_sfx_diesel_loco_small ;
+		sound_effect                   : sw_sfx_extension_08_check ;
 		create_effect                  : vfx_diesel_default ;
 		cargo_subtype_text             : sw_swtype1_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
