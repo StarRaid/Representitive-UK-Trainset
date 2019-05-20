@@ -1,17 +1,25 @@
 
 
 switch(FEAT_TRAINS, SELF, sfx_extra, getbits(extra_callback_info1, 0, 8)){
-	0	: sound("sfx/40_idle.wav") ;
-	1	: sound("sfx/40_run.wav") ;
-	2	: sound("sfx/08_idle.wav") ;
-	3	: sound("sfx/08_coast.wav") ;
-	4	: sound("sfx/25_idle.wav") ;
-	5	: sound("sfx/25_coast.wav") ;
-	6	: sound("sfx/25_run.wav") ;
-	7	: sound("sfx/60_idle.wav") ;
-	8	: sound("sfx/60_coast.wav") ;
-	SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_STOPPED			: sound("sfx/40_idle.wav") ;	//0
+	SOUND_EVENT_VISUAL_EFFECT	: sound("sfx/40_run.wav") ;		//1
+	SOUND_EVENT_RUNNING_16		: sound("sfx/08_idle.wav") ;	//2
+	SOUND_EVENT_START			: sound("sfx/08_coast.wav") ;	//3
+	SOUND_EVENT_BREAKDOWN		: sound("sfx/25_idle.wav") ;	//4
+	SOUND_EVENT_TUNNEL			: sound("sfx/25_coast.wav") ;	//5
 }
+
+switch(FEAT_TRAINS, SELF, sfx_extra_1, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED			: sound("sfx/25_run.wav") ;		//6
+	SOUND_EVENT_VISUAL_EFFECT	: sound("sfx/60_idle.wav") ;	//7
+	SOUND_EVENT_RUNNING_16		: sound("sfx/60_coast.wav") ;	//8
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_extra, cargo_subtype){
+	1 : sfx_extra_1 ;
+	sfx_extra ;
+}
+
 
 
 spriteset(gfx_sfx_extra){
@@ -25,15 +33,13 @@ spriteset(gfx_sfx_extra){
 	[0,0,1,1,0,0,"gfx/base_tile.png"] //North West
 }
 
-item(FEAT_TRAINS, item_sfx_extra){
+item(FEAT_TRAINS, item_sfx_extra, 0){
 	property{
 		name                           : string(STR_NWST_NAME) ;  
-		climates_available             : NO_CLIMATE ;
+		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1,1,1) ;
 		refit_cost                     : 1 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
-		cargo_capacity                 : 1 ;
 		model_life                     : 1 ;
 		vehicle_life                   : 1 ;
 		reliability_decay              : 1 ;
@@ -54,8 +60,6 @@ item(FEAT_TRAINS, item_sfx_extra){
 	}
 	graphics{
 		default                        : gfx_sfx_extra ;
-		sound_effect                   : sfx_extra ;
-		purchase_cargo_capacity        : 0 ;
-		cargo_capacity                 : return 0 ;
+		sound_effect                   : sw_sfx_extra ;
 	}
 }

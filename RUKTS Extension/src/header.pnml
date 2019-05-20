@@ -61,9 +61,9 @@ railtypetable {
 spriteset(gfx_nwst_cargo_icon, "gfx/nuclear_reprocessing_site.png"){[69, 186, 10, 10, 0, 0]}
 
 
-item(FEAT_CARGOS, cargo_uranium){
+item(FEAT_CARGOS, cargo_uranium, 62){
 	property{
-		number                    : 30 ;
+		number                    : 62 ;
 		type_name                 : string(STR_URAN_NAME) ;
 		unit_name                 : string(STR_URAN_NAME) ;
 		units_of_cargo            : TTD_STR_TONS ;
@@ -89,9 +89,9 @@ item(FEAT_CARGOS, cargo_uranium){
 
 //Nuclear waste cargo
 
-item(FEAT_CARGOS, cargo_nuclear_waste){
+item(FEAT_CARGOS, cargo_nuclear_waste, 63){
 	property{
-		number                    : 31 ;
+		number                    : 63 ;
 		type_name                 : string(STR_NWST_NAME) ;
 		unit_name                 : string(STR_NWST_NAME) ;
 		units_of_cargo            : TTD_STR_TONS ;
