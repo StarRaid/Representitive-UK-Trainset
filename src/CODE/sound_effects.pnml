@@ -138,9 +138,9 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small, getbits(extra_callback_info1
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : sound("sfx/46_idle.wav",90) ;
-	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",90) ;
-	SOUND_EVENT_RUNNING_16    : sound("sfx/46_coast.wav",90) ;
+	SOUND_EVENT_STOPPED       : sound("sfx/46_idle.wav",80) ;
+	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",80) ;
+	SOUND_EVENT_RUNNING_16    : sound("sfx/46_coast.wav",80) ;
 	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
 	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;

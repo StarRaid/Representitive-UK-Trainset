@@ -145,7 +145,6 @@ sw_321_tprr_auto;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_3_f_man, cargo_subtype){
-0: spriteset_321_f_nse;
 1: spriteset_321_f_dut;
 2: spriteset_321_f_fge;
 3: spriteset_321_f_slk;
@@ -160,10 +159,10 @@ switch(FEAT_TRAINS, SELF, sw_321_3_f_man, cargo_subtype){
 12: spriteset_321_f_spt;
 13: spriteset_321_f_cac;
 14: spriteset_321_f_sct;
+spriteset_321_f_nse;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_4p_f_man, cargo_subtype){
-0: spriteset_321_f_nse;
 1: spriteset_321_f_dut;
 2: spriteset_321_f_fge;
 3: spriteset_321_f_slk;
@@ -179,7 +178,6 @@ spriteset_321_f_nse;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_3_pf_man, cargo_subtype){
-0: spriteset_321_pf_nse;
 1: spriteset_321_pf_dut;
 2: spriteset_321_pf_fge;
 3: spriteset_321_pf_slk;
@@ -194,10 +192,10 @@ switch(FEAT_TRAINS, SELF, sw_321_3_pf_man, cargo_subtype){
 12: spriteset_321_pf_spt;
 13: spriteset_321_pf_cac;
 14: spriteset_321_pf_sct;
+spriteset_321_pf_nse;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_4p_pf_man, cargo_subtype){
-0: spriteset_321_pf_nse;
 1: spriteset_321_pf_dut;
 2: spriteset_321_pf_fge;
 3: spriteset_321_pf_slk;
@@ -213,7 +211,6 @@ spriteset_321_pf_nse;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_3_pr_man, cargo_subtype){
-0: spriteset_321_pr_nse;
 1: spriteset_321_pr_dut;
 2: spriteset_321_pr_fge;
 3: spriteset_321_pr_slk;
@@ -228,10 +225,10 @@ switch(FEAT_TRAINS, SELF, sw_321_3_pr_man, cargo_subtype){
 12: spriteset_321_pr_spt;
 13: spriteset_321_pr_cac;
 14: spriteset_321_pr_sct;
+spriteset_321_pr_nse;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_4p_pr_man, cargo_subtype){
-0: spriteset_321_pr_nse;
 1: spriteset_321_pr_dut;
 2: spriteset_321_pr_fge;
 3: spriteset_321_pr_slk;
@@ -247,7 +244,6 @@ spriteset_321_pr_nse;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_t_man, cargo_subtype){
-0: spriteset_321_t_nse;
 1: spriteset_321_t_dut;
 2: spriteset_321_t_fge;
 3: spriteset_321_t_slk;
@@ -259,10 +255,12 @@ switch(FEAT_TRAINS, SELF, sw_321_t_man, cargo_subtype){
 9: spriteset_321_t_nor;
 10: spriteset_321_t_sta;
 11: spriteset_321_t_bar;
+spriteset_321_t_nse;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_321_f_man, count_veh_id(321)-count_veh_id(9030)){
-sw_321_3_f_man;
+1: sw_321_3_f_man;
+sw_321_4p_f_man;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_321_p4_man, vehicle_is_reversed){
@@ -291,7 +289,8 @@ sw_321_3_pf_man;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_321_tp_man, count_veh_id(321)-count_veh_id(9030)){
-sw_321_3p_man;
+1:sw_321_3p_man;
+sw_321_t4b_man;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_hl_1, position_in_consist){
@@ -348,7 +347,6 @@ sw_321_aga_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_manual_colour, cargo_subtype){
-0: sw_321_nse_colour_mapping;
 1: sw_321_dut_colour_mapping;
 2: sw_321_fge_colour_mapping;
 3: sw_321_slk_colour_mapping;
@@ -363,6 +361,7 @@ switch(FEAT_TRAINS, SELF, sw_321_manual_colour, cargo_subtype){
 12: sw_321_spt_colour_mapping;
 13: sw_321_cac_colour_mapping;
 14: sw_321_sct_colour_mapping;
+sw_321_nse_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_3_manual_refit_text, cargo_subtype){
@@ -401,7 +400,8 @@ return CB_RESULT_NO_TEXT;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_321_manual_refit_text, count_veh_id(321)-count_veh_id(9030)){
-sw_321_3_manual_refit_text;
+	1 : sw_321_3_manual_refit_text;
+	sw_321_4_manual_refit_text;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_livery_text_decider, livery_choice){
