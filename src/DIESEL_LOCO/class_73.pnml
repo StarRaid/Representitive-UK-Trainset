@@ -229,9 +229,8 @@ switch(FEAT_TRAINS, SELF, sw_73_sound_diesel_check, (livery_choice == 1) & (carg
 	sw_sfx_diesel_loco_small ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_73_sound_check, current_railtype){
-	SAA3 : sw_sfx_electric_loco_old ;
-	SAAZ : sw_sfx_electric_loco_old ;
+switch(FEAT_TRAINS, SELF, sw_73_sound_check, (STANDARD_GAUGE_CHECK_THIRD_ONLY)){
+	1 : sw_sfx_electric_loco_old ;
 	sw_73_sound_diesel_check ;
 }
 
@@ -240,14 +239,12 @@ switch(FEAT_TRAINS, SELF, sw_73_sound_check, current_railtype){
 //Item
 
 
-switch(FEAT_TRAINS, SELF, sw_73_effect_check, current_railtype){
-	SAA3 : vfx_3rd ;
-	SAAZ : vfx_3rd ;
+switch(FEAT_TRAINS, SELF, sw_73_effect_check, (STANDARD_GAUGE_CHECK_THIRD_ONLY)){
+	1 : vfx_3rd ;
 	vfx_diesel_default ;
 }
-switch(FEAT_TRAINS, SELF, sw_73_effect_2_check, current_railtype){
-	SAA3 : EFFECT_SPAWN_MODEL_ELECTRIC ;
-	SAAZ : EFFECT_SPAWN_MODEL_ELECTRIC ;
+switch(FEAT_TRAINS, SELF, sw_73_effect_2_check, (STANDARD_GAUGE_CHECK_THIRD_ONLY)){
+	1 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	EFFECT_SPAWN_MODEL_DIESEL ;
 }
 
@@ -258,9 +255,8 @@ switch(FEAT_TRAINS, SELF, sw_73_power_diesel, (livery_choice == 1) & (cargo_subt
 	600 ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_73_power_check, current_railtype){
-	SAA3 : 1600 ;
-	SAAZ : 1600 ;
+switch(FEAT_TRAINS, SELF, sw_73_power_check, (STANDARD_GAUGE_CHECK_THIRD_ONLY)){
+	1 : 1600 ;
 	sw_73_power_diesel ;
 }
 

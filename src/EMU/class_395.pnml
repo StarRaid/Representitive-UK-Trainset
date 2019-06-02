@@ -108,9 +108,8 @@ switch(FEAT_TRAINS, SELF, sw_395_coupling_restrictions, vehicle_type_id) {
     return string(STR_395_NO_COUPLE);
 }
 
-switch(FEAT_TRAINS, SELF, sw_395_speed, current_railtype) {
-    ELRL: 225;
-    SAAZ: 225;
+switch(FEAT_TRAINS, SELF, sw_395_speed, (STANDARD_GAUGE_CHECK_OHLE_ONLY)) {
+    1: 225;
 	160;
 }
 
@@ -312,37 +311,32 @@ switch(FEAT_TRAINS, SELF, sw_iet_coupling_restrictions, vehicle_type_id) {
     return string(STR_IET_NO_COUPLE);
 }
 
-switch(FEAT_TRAINS, SELF, sw_iet_speed, current_railtype) {
-    ELRL: 225;
-    SAAZ: 225;
+switch(FEAT_TRAINS, SELF, sw_iet_speed, (STANDARD_GAUGE_CHECK_OHLE_ONLY)) {
+    1: 225;
 	200;
 }
 
-switch(FEAT_TRAINS, SELF, sw_iet_create_effect, current_railtype){
-	ELRL   : vfx_ohle ;
-	SAAZ   : vfx_ohle ;
+switch(FEAT_TRAINS, SELF, sw_iet_create_effect, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
+	1: vfx_ohle ;
 	vfx_diesel_default ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_iet_effect_model, current_railtype){
-	ELRL   : EFFECT_SPAWN_MODEL_ELECTRIC ;
-	SAAZ   : EFFECT_SPAWN_MODEL_ELECTRIC ;
+switch(FEAT_TRAINS, SELF, sw_iet_effect_model, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
+	1: EFFECT_SPAWN_MODEL_ELECTRIC ;
 	EFFECT_SPAWN_MODEL_DIESEL ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_iet_t_create_effect, current_railtype){
-	ELRL   : 0 ;
-	SAAZ   : 0 ;
+switch(FEAT_TRAINS, SELF, sw_iet_t_create_effect, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
+	1: 0 ;
 	vfx_diesel_default ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_iet_sfx_decider, current_railtype){
-	ELRL   : sw_sfx_electric_loco_modern ;
-	SAAZ   : sw_sfx_electric_loco_modern ;
+switch(FEAT_TRAINS, SELF, sw_iet_sfx_decider, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
+	1: sw_sfx_electric_loco_modern ;
 	sw_sfx_dmu_two ;
 }
 
-/* switch(FEAT_TRAINS, SELF, sw_iet_te, current_railtype){
+/* switch(FEAT_TRAINS, SELF, sw_iet_te, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
 	ELRL   : return 0.55 ;
 	SAAZ   : return 0.55 ;
 	return 0.35 ;

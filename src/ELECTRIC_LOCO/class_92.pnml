@@ -66,7 +66,7 @@ switch(FEAT_TRAINS, SELF, sw_abb92_manual_check, livery_choice){
 //Sprite stacking
 
 switch(FEAT_TRAINS, PARENT, sw_abb92_panto_rev_check, vehicle_is_reversed){ 1 : gfx_abb92_pantograph_rev ; gfx_abb92_pantograph ; }
-switch(FEAT_TRAINS, SELF, sw_abb92_panto_check, current_railtype){ ELRL : sw_abb92_panto_rev_check ; SAAZ : sw_abb92_panto_rev_check ; gfx_blank ; }
+switch(FEAT_TRAINS, SELF, sw_abb92_panto_check, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){ 1 : sw_abb92_panto_rev_check ; gfx_blank ; }
 
 switch(FEAT_TRAINS, SELF, sw_abb92_taillight_check, position_in_consist_from_end){ 0 : gfx_abb92_taillight ; }
 switch(FEAT_TRAINS, SELF, sw_abb92_headlight_check, position_in_consist){ 0 : gfx_abb92_headlight ; sw_abb92_taillight_check ; }
@@ -152,7 +152,7 @@ switch(FEAT_TRAINS, SELF, sw_abb92_colours_2cc_check, colour_scheme_1){
 
 //Other switches
 
-switch(FEAT_TRAINS, SELF, sw_abb92_power, current_railtype){ SAA3 : return 5365 ; return 6705 ;}
+switch(FEAT_TRAINS, SELF, sw_abb92_power, (STANDARD_GAUGE_CHECK_3RD_RAIL || STANDARD_GAUGE_CHECK_4TH_RAIL)){ 1 : return 5365 ; return 6705 ;}
 
 switch(FEAT_TRAINS, SELF, sw_abb92_colours_dbso_check, DBSO_CHECK){ 1 : sw_dbso_colours_2cc_check ; sw_abb92_colours_2cc_check ;}
 switch(FEAT_TRAINS, SELF, sw_abb92_colours_dvt_check, DVT_CHECK){ 1 : sw_dvt_colours_2cc_check ; sw_abb92_colours_dbso_check ;}
@@ -184,7 +184,7 @@ item (FEAT_TRAINS, item_abb92, 92){
 		cargo_capacity                 : 1 ;
 		track_type                     : SAAZ ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
-		speed                          : 85 mph ;
+		speed                          : 140 km/h ;
 		power                          : 5000 kW ;
 		weight                         : 126 ton ;
 		tractive_effort_coefficient    : 0.2857142857142857 ;

@@ -49,16 +49,14 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_colours_dvt_check, DVT_CHECK){
 
 //Effects deciders
 
-switch(FEAT_TRAINS, SELF, sw_eurodual_sfx_decider, current_railtype){
-	ELRL   : sw_sfx_electric_loco_modern ;
-	SAAZ   : sw_sfx_electric_loco_modern ;
+switch(FEAT_TRAINS, SELF, sw_eurodual_sfx_decider, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
+	1   : sw_sfx_electric_loco_modern ;
 	//"3RDC" : sw_sfx_electric_loco_modern ;
 	sw_sfx_diesel_loco_modern ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_eurodual_effect_decider, current_railtype){
-	ELRL   : vfx_ohle ;
-	SAAZ   : vfx_ohle ;
+switch(FEAT_TRAINS, SELF, sw_eurodual_effect_decider, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
+	1   : vfx_ohle ;
 	//"3RDC" : vfx_ohle ;
 	vfx_diesel_default ;
 }
@@ -67,16 +65,14 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_effect_dbso_check, (DBSO_CHECK) | (DVT_CHE
 	0 : sw_eurodual_effect_decider ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_eurodual_power_decider, current_railtype){
-	ELRL   : 5400 ;
-	SAAZ   : 5400 ;
+switch(FEAT_TRAINS, SELF, sw_eurodual_power_decider, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
+	1   : 5400 ;
 	//"3RDC" : 5364 ;
 	1000 ;	
 }
 
-switch(FEAT_TRAINS, SELF, sw_eurodual_effect_model, current_railtype){
-	ELRL   : EFFECT_SPAWN_MODEL_ELECTRIC ;
-	SAAZ   : EFFECT_SPAWN_MODEL_ELECTRIC ;
+switch(FEAT_TRAINS, SELF, sw_eurodual_effect_model, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
+	1   : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	//"3RDC" : 5364 ;
 	EFFECT_SPAWN_MODEL_DIESEL ;	
 }

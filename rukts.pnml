@@ -1,9 +1,9 @@
 disable_item(FEAT_TRAINS);
 #include "src/CODE/header.pnml"
+#include "src/CODE/era_definitions.pnml"
 #include "src/CODE/cargo_table.pnml"
 #include "src/CODE/railtype_table.pnml"
 #include "src/CODE/alignments.pnml"
-#include "src/CODE/era_definitions.pnml"
 #include "src/CODE/visual_effects.pnml"
 #include "src/CODE/sound_effects.pnml"
 #include "src/CODE/coupling_restrictions.pnml"
