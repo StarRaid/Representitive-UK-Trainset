@@ -1,7 +1,51 @@
 To do:
-	/ TOP PRIORITY: Draw/code wagons to fit as many common cargo types as we know
-		- 6 Wheel GWR Tanker (1948)
-		- MGR/HHA Hopper
+	- Code Juniper
+	- Class 66 (s h e d)
+	- Class 03/04
+	- Class 390
+	- Class 91
+	- Redo 68
+	
+Optional:
+	- Class 419
+	- Class 323
+	- Class 195
+	- Class 331
+	- Class 397
+	- Redo pacer (include 143s/144s, and Welsh 142 liveries)
+	- Track set:
+		- Option for different tracks withs speed limits (via parameter), with additional parameters to define the speed limits
+		- Depending on speed limit, use different signal types (e.g. lower speed yard tracks use junction signals)
+	- Stations:
+		- Depots (e.g. Long Rock, the big shed at Victoria)
+		- Decorative waypoints (e.g. train wash)
+		- Basic/generic platform ideas:
+		- Station building ideas:
+		- Plopable/modular(?) station ideas:
+			Waterloo
+			Bristol Temple Meads
+			Glasgow Central
+
+New liveries list which are really unimportant:
+	- XC, Virgin EC, ScotRail HST
+	- ScotRail Mark 2 & 3s
+	- Scottish and Midland 170s
+	- EMT 222
+	
+! = done
+- = to do
+/ = In progress
+
+Old:
+	! Sleeper Mark 2s
+	! 153 xd
+	! Class 90
+	! Finish Class 150
+	! Finish Class 165/166
+	! Redo 37
+	! Class 57
+	! make a bigger variant of nuclear flask to be released later.
+	! Fix industries
 	! Do Class 20
 	! Finish 31
 	! Class 47
@@ -9,31 +53,7 @@ To do:
 	! Code 309
 	! Do class 317
 	! Finish/Code 320
-	- Fix 508 colours
-	! Fix industries
-	- Code Juniper
-	! make a bigger variant of nuclear flask to be released later.
-	
-Optional:
-	! Redo 37
-	! Class 57
-	- Redo 68
-	- Class 66 (s h e d)
-	- Class 03/04
-	! Class 90
-	! Finish Class 150
-	! Finish Class 165/166
-	- Class 419
-	- Do more liveries for existing things (158, 170, 222, Mark 2)
-	! 153 xd
-	
-New liveries list which are really unimportant:
-	- XC, Virgin EC, ScotRail HST
-	- ScotRail Mark 2 & 3s
-	! Sleeper Mark 2s
-	- Scottish and Midland 170s
-	- EMT 222
-	
-! = done
-- = to do
-/ = In progress
+	! Fix 508 colours
+	! Draw/code wagons to fit as many common cargo types as we know
+		- 6 Wheel GWR Tanker (1948)
+		- MGR/HHA Hopper
