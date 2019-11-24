@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 42 ;
+	version: 44 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -170,7 +170,13 @@ cargotable {
 
 
 railtypetable {
-    RAIL, RLOW, RMED, RHIG, SAAN, SABN, SACN, SBAN, SBBN, SBCN, SCAN, SCBN, SCCN, SDAN, SDBN, DBNN, DBHN, "_040", "_080", ELRL, ELOW, EMED, EHIG, HSTR, SAAE, SABE, SACE, SBAE, SBBE, SBCE, SCAE, SCBE, SCCE, SDAE, SDBE, SEAE, SEBE, DBNE, DBHE, DBHS, E040, E080, "3RDR", "3LOW", "3MED", SAA3, SAB3, SAC3, SBA3, SBB3, SBC3, SCA3, SCB3, SCC3 , "4RDR", "4LOW", "4MED", SAA4, SAB4, SAC4, SBA4, SBB4, SBC4, SCA4, SCB4, SCC4, MTRO, MTRC, MTRS, MTRU, MTRT, "3RDC", CLOW, CMED, SAAZ, SABZ, SACZ, SBAZ, SBBZ, SBCZ, SCAZ, SCBZ, SCCZ,  NGRL, NLOW, NHIG, NAAN, NRAN, NBAN, ELNG, ENLW, ENHI, NAAE, NRAE, NBAE
+    RAIL, RLOW, RMED, RHIG, SAAN, SABN, SACN, SBAN, SBBN, SBCN, SCAN, SCBN, SCCN, SDAN, SDBN, DBNN, DBHN, "_040", "_080", ELRL, ELOW, EMED, EHIG, HSTR, SAAE, SABE, SACE, SBAE, SBBE, SBCE, SCAE, SCBE, SCCE, SDAE, SDBE, SEAE, SEBE, DBNE, DBHE, DBHS, E040, E080,  NGRL, NLOW, NHIG, NAAN, NRAN, NBAN, ELNG, ENLW, ENHI, NAAE, NRAE, NBAE,
+	"3RDR", "3LOW", "3MED", SAB3, SAC3, SBA3, SBB3, SBC3, SCA3, SCB3, SCC3,									//Default third rail defined bellow
+	"4RDR", "4LOW", "4MED", SAB4, SAC4, SBA4, SBB4, SBC4, SCA4, SCB4, SCC4, MTRO, MTRC, MTRS, MTRU, MTRT,	//Default fourth rail defined bellow
+	"3RDC", CLOW, CMED, SABZ, SACZ, SBAZ, SBBZ, SBCZ, SCAZ, SCBZ, SCCZ,								//Default dual voltage defined bellow
+	SAA3: [SAA3, "3RDR", ELRL],
+	SAAZ: [SAAZ, "3RDC", ELRL],
+	SAA4: [SAA4, "4RDR", "3RDR", SAA3, ELRL]
 }
 
 /*
@@ -1539,6 +1545,7 @@ spriteset(gfx_mk3_gwr                 , "gfx/WAGON/mark_3.png"){ template_Mk2_si
 spriteset(gfx_mk3_emt                 , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,225) }
 spriteset(gfx_mk3_atw_exec            , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,250) }
 spriteset(gfx_mk3_chiltern            , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,275) }
+spriteset(gfx_mk3_gner                , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,325) }
 spriteset(gfx_mk3_first_scotrail      , "gfx/WAGON/mark_3.png"){ template_Mk2_single(170,150) }
 
 spriteset(gfx_mk3_purchase_brblue     , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89, 25) }
@@ -1585,6 +1592,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_gfx_manual, cargo_subtype){
 	16     : gfx_mk3_chiltern ;
 	17     : gfx_mk3_intercity ;
 	18..19 : gfx_mk3_generic ;
+	20     : gfx_mk3_gner ;
 	gfx_mk3_virgin ;
 }
 
@@ -1672,6 +1680,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_refit_text, cargo_subtype){
 	17 : string(STR_LIVERY_INTERCITY_SLEEPER) ;
 	18 : string(STR_LIVERY_ONE_ANGLIA) ;
 	19 : string(STR_LIVERY_ABELLIO_GREATER_ANGLIA) ;
+	20 : string(STR_LIVERY_GNER) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -1732,6 +1741,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_colours_manual, cargo_subtype){
 	17     : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;          //Intercity
 	18     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;     //One Anglia
 	19     : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;          //Greater Anglia
+	20     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;      //GNER
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;                   //Virgin
 }
 
@@ -7663,6 +7673,8 @@ spriteset(gfx_hst_gwr                , "gfx/DIESEL_LOCO/class_43.png" ){ templat
 spriteset(gfx_hst_gwr_rev            , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,200) }
 spriteset(gfx_hst_emt                , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double         (  0,225) }
 spriteset(gfx_hst_emt_rev            , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,225) }
+spriteset(gfx_hst_gner               , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double         (  0,250) }
+spriteset(gfx_hst_gner_rev           , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,250) }
 
 spriteset(gfx_hst_brblue_purchase    , "gfx/DIESEL_LOCO/class_43.png" ){ template_purchase (  178,  0) }
 spriteset(gfx_hst_ic125_purchase     , "gfx/DIESEL_LOCO/class_43.png" ){ template_purchase (  178, 25) }
@@ -7704,6 +7716,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_first_barbie_backcheck , position_in_consist){ 
 switch(FEAT_TRAINS, SELF, sw_hst_fgw_backcheck          , position_in_consist){ 0 : gfx_hst_fgw          ; gfx_hst_fgw_rev ;          }
 switch(FEAT_TRAINS, SELF, sw_hst_gwr_backcheck          , position_in_consist){ 0 : gfx_hst_gwr          ; gfx_hst_gwr_rev ;          }
 switch(FEAT_TRAINS, SELF, sw_hst_emt_backcheck          , position_in_consist){ 0 : gfx_hst_emt          ; gfx_hst_emt_rev ;          }
+switch(FEAT_TRAINS, SELF, sw_hst_gner_backcheck          , position_in_consist){ 0 : gfx_hst_gner          ; gfx_hst_gner_rev ;          }
 
 
 //Automatic liveries
@@ -7733,6 +7746,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_gfx_manual, cargo_subtype){
 	7 : sw_hst_first_barbie_backcheck ;
 	8 : sw_hst_fgw_backcheck ;
 	9 : sw_hst_gwr_backcheck ;
+	10: sw_hst_gner_backcheck ;
 	sw_hst_virgin_backcheck ;
 }
 
@@ -7790,6 +7804,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_refit_text, cargo_subtype){
 	7 : string(STR_LIVERY_FIRST_BARBIE, string(STR_LIVERY_EMPTY)) ;
 	8 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_EMPTY)) ;
 	9 : string(STR_LIVERY_FIRST_GWR, string(STR_LIVERY_EMPTY)) ;
+	10: string(STR_LIVERY_GNER) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -7849,6 +7864,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_colours_manual, cargo_subtype){
 	7 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;  //First Barbie
 	8 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;    //First Great Western
 	9 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;  //GWR
+	10: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;      //GNER
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;             //Virgin
 }
 

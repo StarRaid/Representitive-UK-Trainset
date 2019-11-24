@@ -46,7 +46,6 @@ STR_LIVERY_BRBLUE_LOGO           		 : British Railways Large Logo {GOLD}(Blue)
 STR_LIVERY_BRRAILFREIGHT_LOGO    		 : British Railways Large Logo {GOLD}(Railfreight Grey)
 STR_LIVERY_BRBLUE_SUBTYPE		 		 : British Railways Blue {STRING}
 STR_LIVERY_HITACHI						 : Hitachi
-STR_LIVERY_LNER							 : LNER
 STR_LIVERY_INTERCITY			 		 : Intercity
 STR_LIVERY_INTERCITY_SLEEPER			 : Intercity {BLACK}(Sleeper)
 STR_LIVERY_INTERCITY_SWL		 		 : Intercity {GOLD}(Swallow)
@@ -64,7 +63,10 @@ STR_LIVERY_NCB                   		 : National Coal Board {GOLD}(Blue)
 STR_LIVERY_BSC                   		 : British Steel Corporation
 STR_LIVERY_ROYAL_MAIL					 : Royal Mail
 STR_LIVERY_VIRGIN_TRAINS		 		 : Virgin Trains
-STR_LIVERY_VTEC							: Virgin Trains East Coast
+STR_LIVERY_GNER							 : Great North Eastern Railway
+STR_LIVERY_NXEC							 : National Express East Coast
+STR_LIVERY_VTEC							 : Virgin Trains East Coast
+STR_LIVERY_LNER							 : LNER
 STR_LIVERY_WESSEX_TRAINS				 : Wessex Trains
 STR_LIVERY_ARRIVA_XC			 		 : Arriva Cross Country
 STR_LIVERY_MIDLAND_MAINLINE_BLUE 		 : Midland Mainline {GOLD}(Blue)

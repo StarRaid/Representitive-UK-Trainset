@@ -42,6 +42,8 @@ spriteset(gfx_hst_gwr                , "gfx/DIESEL_LOCO/class_43.png" ){ templat
 spriteset(gfx_hst_gwr_rev            , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,200) }
 spriteset(gfx_hst_emt                , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double         (  0,225) }
 spriteset(gfx_hst_emt_rev            , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,225) }
+spriteset(gfx_hst_gner               , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double         (  0,250) }
+spriteset(gfx_hst_gner_rev           , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,250) }
 
 spriteset(gfx_hst_brblue_purchase    , "gfx/DIESEL_LOCO/class_43.png" ){ template_purchase (  178,  0) }
 spriteset(gfx_hst_ic125_purchase     , "gfx/DIESEL_LOCO/class_43.png" ){ template_purchase (  178, 25) }
@@ -83,6 +85,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_first_barbie_backcheck , position_in_consist){ 
 switch(FEAT_TRAINS, SELF, sw_hst_fgw_backcheck          , position_in_consist){ 0 : gfx_hst_fgw          ; gfx_hst_fgw_rev ;          }
 switch(FEAT_TRAINS, SELF, sw_hst_gwr_backcheck          , position_in_consist){ 0 : gfx_hst_gwr          ; gfx_hst_gwr_rev ;          }
 switch(FEAT_TRAINS, SELF, sw_hst_emt_backcheck          , position_in_consist){ 0 : gfx_hst_emt          ; gfx_hst_emt_rev ;          }
+switch(FEAT_TRAINS, SELF, sw_hst_gner_backcheck          , position_in_consist){ 0 : gfx_hst_gner          ; gfx_hst_gner_rev ;          }
 
 
 //Automatic liveries
@@ -112,6 +115,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_gfx_manual, cargo_subtype){
 	7 : sw_hst_first_barbie_backcheck ;
 	8 : sw_hst_fgw_backcheck ;
 	9 : sw_hst_gwr_backcheck ;
+	10: sw_hst_gner_backcheck ;
 	sw_hst_virgin_backcheck ;
 }
 
@@ -169,6 +173,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_refit_text, cargo_subtype){
 	7 : string(STR_LIVERY_FIRST_BARBIE, string(STR_LIVERY_EMPTY)) ;
 	8 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_EMPTY)) ;
 	9 : string(STR_LIVERY_FIRST_GWR, string(STR_LIVERY_EMPTY)) ;
+	10: string(STR_LIVERY_GNER) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -228,6 +233,7 @@ switch(FEAT_TRAINS, SELF, sw_hst_colours_manual, cargo_subtype){
 	7 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;  //First Barbie
 	8 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;    //First Great Western
 	9 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;  //GWR
+	10: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;      //GNER
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;             //Virgin
 }
 
