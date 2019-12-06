@@ -2,19 +2,27 @@ To do:
 	- Code Juniper
 	- Class 66 (s h e d)
 	- Class 03/04
+	/ Class 08/09
 	- Class 390
 	- Class 91 + Mark 4s
 	- Redo 68
-	- Fix rail type issues
+	/ Fix rail type issues
+	- First Gen DMUs
+	- Redo pacer (include 143s/144s, and Welsh 142 liveries)
+	- Convert DBSO/DVT functionality so that they can have independent liveries
 	
 Optional:
+	- Add parameter for reversal functionality on supported MUs
 	- Class 419
 	- Class 323
 	- Class 195
 	- Class 331
 	- Class 397
-	- Redo pacer (include 143s/144s, and Welsh 142 liveries)
+	- Redo Voyager/Merridian
 	- Mark 5s
+	- Class 13
+
+GRF extension ideas:
 	- Track set:
 		- Option for different tracks withs speed limits (via parameter), with additional parameters to define the speed limits
 		- Depending on speed limit, use different signal types (e.g. lower speed yard tracks use junction signals)
@@ -24,17 +32,15 @@ Optional:
 		- Basic/generic platform ideas:
 		- Station building ideas:
 		- Plopable/modular(?) station ideas:
-			Waterloo
-			Bristol Temple Meads
-			Glasgow Central
-			York
+			/ Waterloo
+			- Bristol Temple Meads
+			- Glasgow Central
+			- York
 
 New liveries list which are really unimportant:
 	- XC, Virgin EC, ScotRail HST
 	- ScotRail Mark 2 & 3s
 	- Scottish and Midland 170s
-	- EMT 222
-	- PAcer lvieirs
 	
 ! = done
 - = to do
