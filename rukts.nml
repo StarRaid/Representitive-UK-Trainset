@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 44 ;
+	version: 45 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -1212,35 +1212,38 @@ template template_Mk2_double_reverse(x,y){
 
 //Spritesets
 
-spriteset(gfx_mk2_brblue_f_tso             , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,0)}
-spriteset(gfx_mk2_brblue_f_bso             , "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,25)}
-spriteset(gfx_mk2_brblue_f_bso_reverse     , "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,25)}
-spriteset(gfx_mk2_brblue_a_tso             , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,50)}
-spriteset(gfx_mk2_brblue_a_bso             , "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,75)}
-spriteset(gfx_mk2_brblue_a_bso_reverse     , "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,75)}
-spriteset(gfx_mk2_intercity_f_tso          , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,100)}
-spriteset(gfx_mk2_intercity_f_bso          , "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,125)}
-//spriteset(gfx_mk2_intercity_f_dbso         , "gfx/WAGON/mark_2_dbso.png"){template_Mk2_double(0,0)}
-spriteset(gfx_mk2_intercity_f_bso_reverse  , "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,125)}
-spriteset(gfx_mk2_regional_a_tso           , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,150)}
-spriteset(gfx_mk2_regional_a_bso           , "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,175)}
-spriteset(gfx_mk2_regional_a_bso_reverse   , "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,175)}
-spriteset(gfx_mk2_nse_a_tso        		   , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,350)}
-spriteset(gfx_mk2_nse_a_bso        		   , "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,375)}
-spriteset(gfx_mk2_nse_a_bso_reverse		   , "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,375)}
-spriteset(gfx_mk2_virgin_f_tso             , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,200)}
-spriteset(gfx_mk2_virgin_f_bso             , "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,225)}
-spriteset(gfx_mk2_virgin_f_bso_reverse     , "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,225)}
-spriteset(gfx_mk2_generic_a_tso            , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,250)}
-spriteset(gfx_mk2_generic_a_bso            , "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,275)}
-spriteset(gfx_mk2_generic_a_bso_reverse    , "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,275)}
-spriteset(gfx_mk2_directrail_f_tso         , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,300)}
-spriteset(gfx_mk2_directrail_f_bso         , "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,325)}
-//spriteset(gfx_mk2_directrail_f_dbso        , "gfx/WAGON/mark_2_dbso.png"){template_Mk2_double(0,25)}
-spriteset(gfx_mk2_directrail_f_bso_reverse , "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,325)}
-spriteset(gfx_mk2_generic_f_tso            , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,400)}
-spriteset(gfx_mk2_barbie_sleeper_f_tso     , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,450)}
-spriteset(gfx_mk2_fgw_fag_f_tso            , "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,475)}
+spriteset(gfx_mk2_brblue_f_tso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,0)}
+spriteset(gfx_mk2_brblue_f_bso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,25)}
+spriteset(gfx_mk2_brblue_f_bso_reverse		, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,25)}
+spriteset(gfx_mk2_brblue_a_tso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,50)}
+spriteset(gfx_mk2_brblue_a_bso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,75)}
+spriteset(gfx_mk2_brblue_a_bso_reverse		, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,75)}
+spriteset(gfx_mk2_intercity_f_tso			, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,100)}
+spriteset(gfx_mk2_intercity_f_bso			, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,125)}
+//spriteset(gfx_mk2_intercity_f_dbso		, "gfx/WAGON/mark_2_dbso.png"){template_Mk2_double(0,0)}
+spriteset(gfx_mk2_intercity_f_bso_reverse	, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,125)}
+spriteset(gfx_mk2_regional_a_tso			, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,150)}
+spriteset(gfx_mk2_regional_a_bso			, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,175)}
+spriteset(gfx_mk2_regional_a_bso_reverse	, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,175)}
+spriteset(gfx_mk2_nse_a_tso					, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,350)}
+spriteset(gfx_mk2_nse_a_bso					, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,375)}
+spriteset(gfx_mk2_nse_a_bso_reverse			, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,375)}
+spriteset(gfx_mk2_virgin_f_tso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,200)}
+spriteset(gfx_mk2_virgin_f_bso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,225)}
+spriteset(gfx_mk2_virgin_f_bso_reverse		, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,225)}
+spriteset(gfx_mk2_generic_a_tso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,250)}
+spriteset(gfx_mk2_generic_a_bso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,275)}
+spriteset(gfx_mk2_generic_a_bso_reverse		, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,275)}
+spriteset(gfx_mk2_directrail_f_tso			, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,300)}
+spriteset(gfx_mk2_directrail_f_bso			, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,325)}
+//spriteset(gfx_mk2_directrail_f_dbso		, "gfx/WAGON/mark_2_dbso.png"){template_Mk2_double(0,25)}
+spriteset(gfx_mk2_directrail_f_bso_reverse	, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,325)}
+spriteset(gfx_mk2_generic_f_tso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,400)}
+spriteset(gfx_mk2_barbie_sleeper_f_tso		, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,450)}
+spriteset(gfx_mk2_fgw_fag_f_tso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,475)}
+spriteset(gfx_mk2_scr_f_tso					, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,500)}
+spriteset(gfx_mk2_scr_f_tso_end				, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,525)}
+spriteset(gfx_mk2_scr_f_tso_end_reverse		, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,525)}
 
 spriteset(gfx_mk2_purchase_brblue          , "gfx/WAGON/mark_2_2.png"){template_purchase(89,50)}
 spriteset(gfx_mk2_purchase_regional        , "gfx/WAGON/mark_2_2.png"){template_purchase(89,150)}
@@ -1295,6 +1298,9 @@ switch(FEAT_TRAINS, SELF, sw_mk2f_directrail_front, 0){ 1 : gfx_mk2_directrail_f
 switch(FEAT_TRAINS, SELF, sw_mk2f_directrail_back, 0){ 1 : gfx_mk2_directrail_f_bso ; sw_mk2f_directrail_front ;}
 //switch(FEAT_TRAINS, SELF, sw_mk2f_directrail_rear, position_in_consist_from_end){ 0 : gfx_mk2_directrail_f_dbso ; sw_mk2f_directrail_back ; }
 
+switch(FEAT_TRAINS, SELF, sw_mk2_scr_check_back, position_in_vehid_chain_from_end){ 0 : gfx_mk2_scr_f_tso_end ; gfx_mk2_scr_f_tso ; }
+switch(FEAT_TRAINS, SELF, sw_mk2_scr_check_front, position_in_vehid_chain){ 0 : gfx_mk2_scr_f_tso_end_reverse ; sw_mk2_scr_check_back ; }
+
 
 random_switch(FEAT_TRAINS, SELF, sw_mk2f_brblue    , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_brblue_back ;}
 random_switch(FEAT_TRAINS, SELF, sw_mk2f_intercity , TRIGGER_VEHICLE_SERVICE){ 1 : sw_mk2f_intercity_back ;}
@@ -1339,6 +1345,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_livery_decider, cargo_subtype){
 	8: gfx_mk2_barbie_sleeper_f_tso ;
 	9..10: gfx_mk2_generic_f_tso ;
 	11: gfx_mk2_fgw_fag_f_tso ;
+	12: sw_mk2_scr_check_front ;
 	sw_mk2a_brblue_back ;
 }
 
@@ -1370,6 +1377,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_refit_text, cargo_subtype){
 	9 : string(STR_LIVERY_WESSEX_TRAINS) ;
 	10 : string(STR_LIVERY_NETWORK_RAIL) ;
 	11 : string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_EMPTY)) ;
+	12 : string(STR_LIVERY_SCR) ;
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -1442,6 +1450,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_manual, cargo_subtype){
 	9 : palette_2cc(COLOUR_PINK, COLOUR_WHITE) ;
 	10 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
 	11 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	12 : palette_2cc(COLOUR_RED, COLOUR_ORANGE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
