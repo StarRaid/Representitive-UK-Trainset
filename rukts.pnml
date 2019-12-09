@@ -7,6 +7,15 @@ disable_item(FEAT_TRAINS);
 #include "src/CODE/visual_effects.pnml"
 #include "src/CODE/sound_effects.pnml"
 #include "src/CODE/coupling_restrictions.pnml"
+
+//Pre-link GFX
+#include "src/PRE/DVT.pnml"
+#include "src/PRE/DBSO.pnml"
+#include "src/PRE/class_37"
+#include "src/PRE/class_90"
+
+#include "src/link.pnml"
+
 //#include "src/TRACKS/narrow_gauge.pnml"
 #include "src/WAGON/Mk1.pnml"
 #include "src/WAGON/Mk2.pnml"
@@ -22,8 +31,8 @@ disable_item(FEAT_TRAINS);
 #include "src/WAGON/intermodal.pnml"
 #include "src/WAGON/monster_box.pnml"
 #include "src/WAGON/lul_coach.pnml"
-#include "src/CODE/DBSO.pnml"
-#include "src/CODE/DVT.pnml"
+#include "src/WAGON/DBSO.pnml"
+#include "src/WAGON/DVT.pnml"
 #include "src/DIESEL_LOCO/Swindon_Type1.pnml"
 //#include "src/DIESEL_LOCO/EE_Type3.pnml"
 #include "src/DIESEL_LOCO/EE_Type1.pnml"
@@ -47,8 +56,6 @@ disable_item(FEAT_TRAINS);
 #include "src/ELECTRIC_LOCO/class_90.pnml"
 #include "src/ELECTRIC_LOCO/class_92.pnml"
 #include "src/ELECTRIC_LOCO/EuroDual.pnml"
-#include "src/WAGON/DBSO.pnml"
-#include "src/WAGON/DVT.pnml"
 #include "src/DMU/class_142.pnml"
 #include "src/DMU/sprinter.pnml"
 #include "src/DMU/dogbox.pnml"
@@ -82,3 +89,4 @@ disable_item(FEAT_TRAINS);
 #include "src/DMU/class_165.pnml"
 #include "src/EMU/class_395.pnml"
 #include "src/CODE/sort_purchase.pnml"
+

@@ -1,0 +1,58 @@
+/*
+
+Links 
+
+DVT/DBSO locos:
+DVT
+DBSO
+37
+43
+47
+57
+66 !
+67 !
+68
+86
+87
+88
+91
+92
+
+
+Second Gen DMUs:
+150
+153
+154/156
+158/159
+168/170/171/172
+
+
+Pacers:
+141/142/143/144
+
+Coaches:
+Mark 1
+Mark 2
+Mark 3
+Mark 4
+GUV
+NTX
+
+*/
+
+switch(FEAT_TRAINS, SELF, sw_REV_ID_CHECK_GFX_LOCOS, [STORE_TEMP(position_in_consist_from_end-position_in_consist, 0x10F), var[0x61, 0, 0x0000FFFF, 0xC6]]){
+	9025: 		; //DBSO
+	9035: 		; //DVT
+	37	: 		;
+	43	: 		;
+	47	: 		;
+	57	: 		;
+	68	: 		;
+	86	: 		;
+	87	: 		;
+	88	: 		;
+	90	: 		;
+	91	: 		;
+	92	: 		;
+}
+

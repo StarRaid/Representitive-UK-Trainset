@@ -1,0 +1,65 @@
+//DVT
+
+
+
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_dvt_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_INTERCITY) ;
+	1 : string(STR_LIVERY_VIRGIN_TRAINS) ;
+	2 : string(STR_LIVERY_ONE_ANGLIA) ;
+	3 : string(STR_LIVERY_ABELLIO_GREATER_ANGLIA) ;
+	4 : string(STR_LIVERY_CHILTERN) ;
+	5 : string(STR_LIVERY_ATW) ;
+	6 : string(STR_LIVERY_NETWORK_RAIL) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_dvt_refit_text_check, livery_choice){
+	1 : sw_dvt_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+//Item
+
+item(FEAT_TRAINS, item_dvt, 9035){
+	property{
+		name						   : string(STR_NAME_DVT) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date( 1988, 1, 1) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 45 ;
+		cost_factor                    : 115 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 64 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [MAIL] ;
+		cargo_capacity                 : 40 ;
+		loading_speed                  : 9 ;
+		track_type                     : RAIL ;
+		speed                          : 110 mph ;
+		power                          : 0 hp ;
+		weight                         : 38 ton ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+	}
+	graphics{
+		default                        : sw_dvt_gfx_reverse_check ;
+		colour_mapping                 : sw_dvt_colours_reverse_check ;
+		purchase                       : sw_dvt_purchase_sprite ;
+		purchase_colour_mapping        : sw_dvt_purchase_colours_2cc_check ;
+		cargo_subtype_text             : sw_dvt_refit_text_check ;
+		can_attach_wagon               : sw_dbso_attach_parent_id_check ;
+		create_effect                  : sw_dvt_vfx_reverse_check ;
+		effect_spawn_model_and_powered : sw_dvt_effect_reverse_check ;
+		additional_text: string(STR_ADD_INFO_PUSHPULL) ;
+	}
+}
+
