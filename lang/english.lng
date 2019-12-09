@@ -29,6 +29,10 @@ STR_PARAM_PURCHASE_LIST_SORT_NAME	:Sort by Class numbers
 STR_PARAM_PURCHASE_LIST_SORT_DESC	:Sort the purchase list by TOPS Class numbers instead of the classic sort
 
 
+STR_PARAM_REVERSE_FUNCTION_NAME	:Trains won't flip
+STR_PARAM_REVERSE_FUNCTION_DESC	:Some trains won't flip around when reversed, simulating cab end changes or a locomotive running around to change ends.
+
+
 STR_PARAM_VEH_SELEC_NAME         		 :Vehicle selection
 STR_PARAM_VEH_SELEC_DESC         		 :Choose the selection of vehicles that will appear in game. Minimal reduces the purchase list to a basic list of vehicles, Extended includes some extras that are extensions to the normal set.
 STR_PARAM_VEH_SELEC_CHOICE_ONE   		 :Minimal

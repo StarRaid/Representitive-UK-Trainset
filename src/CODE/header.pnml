@@ -90,6 +90,12 @@ grf{
 			desc : string(STR_PARAM_PURCHASE_LIST_SORT_DESC) ;
 			def_value : 0 ;
 		}
+		reverse_function{
+			type : bool ;
+			name : string(STR_PARAM_REVERSE_FUNCTION_NAME) ;
+			desc : string(STR_PARAM_REVERSE_FUNCTION_DESC) ;
+			def_value : 0 ;
+		}
 	}
 }
 
