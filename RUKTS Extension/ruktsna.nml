@@ -5,7 +5,7 @@ grf{
 	grfid                  : "RTNA" ;
 	name                   : string(STR_GRF_NAME) ;
 	desc                   : string(STR_GRF_DESC) ;
-	version                : 8 ;
+	version                : 9 ;
 	min_compatible_version : 6 ;
 	param 0{
 		nuclear_enabled{
@@ -51,9 +51,9 @@ cargotable {
 railtypetable {
     RAIL, 
 	ELRL,
-	SAA3: ["3RDR", ELRL],
-	SAAZ: ["3RDC", ELRL],
-	SAA4: [SAA3, ELRL],
+	SAA3: ["3RDR", SAA3, ELRL],
+	SAAZ: ["3RDC", SAAZ, ELRL],
+	SAA4: ["4RDR", SAA4, "3RDR", SAA3, ELRL],
 	NAAN: [NAAN, NRGL, RAIL]
 }
 
@@ -199,6 +199,619 @@ item(FEAT_TRAINS, item_sfx_extra, 0){
 		default                        : gfx_sfx_extra ;
 		sound_effect                   : sw_sfx_extra ;
 	}
+}
+# 1 "ruktsna.pnml" 2
+# 1 "src/extra_gfx.pnml" 1
+//template_x_y where x is length and y is no. views
+
+template template_purchase(x,y){
+	[ x, y, 79, 12, -39, -6]
+}
+
+template template_purchase_short(x,y){
+	[ x, y, 55, 12, -39, -6]
+}
+
+template base_32bpp(){
+	[0,0,1,1,0,0,"gfx/blank.png"] //North
+	[0,0,1,1,0,0,"gfx/blank.png"] //North East
+	[0,0,1,1,0,0,"gfx/blank.png"] //East
+	[0,0,1,1,0,0,"gfx/blank.png"] //South East
+	[0,0,1,1,0,0,"gfx/blank.png"] //South
+	[0,0,1,1,0,0,"gfx/blank.png"] //South West
+	[0,0,1,1,0,0,"gfx/blank.png"] //West
+	[0,0,1,1,0,0,"gfx/blank.png"] //North West
+}
+
+spriteset(gfx_blank){base_32bpp()}
+
+template template_narrow_4_4(x, y){
+	[x+000, y  ,  8 , 14 , -3 , -11] //North
+	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
+	[x+024, y  , 17 , 13 , -0 , -9 ] //East
+	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
+	[x+000, y  ,  8 , 14 , -3 , -4 ] //South
+	[x+010, y  , 12 , 13 , -13, -5 ] //South West
+	[x+024, y  , 17 , 13 , -17, -9 ] //West
+	[x+043, y  , 12 , 13 , -5 , -9 ] //North West
+}
+
+template template_narrow_4_8(x, y){
+	[x+000, y  ,  8 , 14 , -3 , -11] //North
+	[x+010, y  , 12 , 13 , -5 , -9 ] //North East
+	[x+024, y  , 17 , 13 , -0 , -9 ] //East
+	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
+	[x+057, y  ,  8 , 14 , -3 , -4 ] //South
+	[x+067, y  , 12 , 13 , -13, -5 ] //South West
+	[x+081, y  , 17 , 13 , -17, -9 ] //West
+	[x+100, y  , 12 , 13 , -5 , -9 ] //North West
+}
+
+
+
+
+
+template template_dualhead_purchase(x,y){
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x, y, 78, 12, -54, -6]
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x+77, y+11, 1, 1, 0, 0]
+}
+
+template template_uklight(x,y){
+	[x+0,y,8,24,-3,-11] //North
+	[x+10,y,20,16,-14,-8] //North East
+	[x+32,y,32,13,-16,-9] //East
+	[x+66,y,20,16,-4,-8] //South East
+	[x+88,y,8,24,-3,-11] //South
+	[x+98,y,20,16,-14,-8] //South West
+	[x+120,y,32,13,-16,-9] //West
+	[x+154,y,20,16,-4,-8] //North West
+}
+
+template template_uklight_reverse(x,y){
+	[x+88,y,8,24,-3,-11] //South
+	[x+98,y,20,16,-14,-8] //South West
+	[x+120,y,32,13,-16,-9] //West
+	[x+154,y,20,16,-4,-8] //North West
+	[x+0,y,8,24,-3,-11] //North
+	[x+10,y,20,16,-14,-8] //North East
+	[x+32,y,32,13,-16,-9] //East
+	[x+66,y,20,16,-4,-8] //South East
+}
+
+template template_5_4(x,y){
+	[x+000,  y ,  8 , 16 , -3 , -7 ] //North
+	[x+010,  y , 14 , 14 , -14, -5 ] //North East
+	[x+026,  y , 21 , 13 , -18, -8 ] //East
+	[x+049,  y , 14 , 14 , -7 , -10] //South East
+	[x+000,  y ,  8 , 16 , -3 , -7 ] //North
+	[x+010,  y , 14 , 14 , -14, -5 ] //North East
+	[x+026,  y , 21 , 13 , -18, -8 ] //East
+	[x+049,  y , 14 , 14 , -7 , -10] //South East
+}
+
+template template_5_8(x,y){
+	[x+000,  y ,  8 , 16 , -3 , -11] //North
+	[x+010,  y , 14 , 14 , -7 , -9 ] //North East
+	[x+026,  y , 21 , 13 , -5 , -9 ] //East
+	[x+049,  y , 14 , 14 ,  1 , -6 ] //South East
+	[x+065,  y ,  8 , 16 , -3 , -5 ] //South     
+	[x+075,  y , 14 , 14 , -13, -6 ] //South West
+	[x+091,  y , 21 , 13 , -17, -9 ] //West      
+	[x+114,  y , 14 , 14 , -5 , -9 ] //North West
+}
+
+template template_5_8_rev(x,y){
+	[x+065,  y ,  8 , 16 , -3 , -11] //South     
+	[x+075,  y , 14 , 14 , -7 , -9 ] //South West
+	[x+091,  y , 21 , 13 , -5 , -9 ] //West      
+	[x+114,  y , 14 , 14 ,  1 , -6 ] //North West
+	[x+000,  y ,  8 , 16 , -3 , -5 ] //North
+	[x+010,  y , 14 , 14 , -13, -6 ] //North East
+	[x+026,  y , 21 , 13 , -17, -9 ] //East
+	[x+049,  y , 14 , 14 , -5 , -9 ] //South East
+}
+
+template template_8_8(x,y){
+    [ x, y, 8, 24, -3, -12]
+    [ x+10, y, 21, 17, -12, -10]
+    [ x+33, y, 32, 12, -16, -8]
+    [ x+67, y, 21, 17, -5, -10]
+    [ x+90, y, 8, 24, -3, -12]
+    [ x+100, y, 21, 17, -12, -10]
+    [ x+123, y, 32, 12, -16, -8]
+    [ x+157, y, 21, 17, -5, -10]
+}
+
+template template_8_4(x,y){
+    [ x, y, 8, 24, -3, -12]
+    [ x+10, y, 21, 17, -12, -10]
+    [ x+33, y, 32, 12, -16, -8]
+    [ x+67, y, 21, 17, -5, -10]
+}
+
+template template_7_8(x,y){
+    [ x, y, 8, 22, -3, -11]
+    [ x+10, y, 19, 17, -11, -10]
+    [ x+31, y, 28, 12, -14, -8]
+    [ x+61, y, 19, 17, -4, -9]
+    [ x+82, y, 8, 22, -3, -11]
+    [ x+92, y, 19, 17, -11, -10]
+    [ x+113, y, 28, 12, -14, -8]
+    [ x+143, y, 19, 17, -4, -9]
+}
+
+template template_7_4(x,y){
+    [ x, y, 8, 22, -3, -11]
+    [ x+10, y, 19, 17, -11, -10]
+    [ x+31, y, 28, 12, -14, -8]
+    [ x+61, y, 19, 17, -4, -9]
+}
+
+template template_8_8_networker(x,y){
+    [ x, y, 8, 24, -3, -12]
+    [ x+10, y, 21, 18, -13, -10]
+    [ x+33, y, 32, 12, -16, -8]
+    [ x+67, y, 21, 18, -6, -10]
+    [ x+90, y, 8, 24, -3, -12]
+    [ x+100, y, 21, 18, -13, -10]
+    [ x+123, y, 32, 12, -16, -8]
+    [ x+157, y, 21, 18, -6, -10]
+}
+
+template template_8_8_networker_reverse(x,y){
+    [ x+90, y, 8, 24, -3, -12]
+    [ x+100, y, 21, 18, -13, -10]
+    [ x+123, y, 32, 12, -16, -8]
+    [ x+157, y, 21, 18, -6, -10]
+    [ x, y, 8, 24, -3, -12]
+    [ x+10, y, 21, 18, -13, -10]
+    [ x+33, y, 32, 12, -16, -8]
+    [ x+67, y, 21, 18, -6, -10]
+}
+
+template template_8_4_networker(x,y){
+    [ x, y, 8, 24, -3, -12]
+    [ x+10, y, 21, 18, -13, -10]
+    [ x+33, y, 32, 12, -16, -8]
+    [ x+67, y, 21, 18, -6, -10]
+}
+switch (FEAT_TRAINS, SELF, vfx_mhle, [STORE_TEMP(create_effect(EFFECT_SPRITE_ELECTRIC, 0, 0, 10), 0x100)]) {
+    return 1;
+}
+
+switch (FEAT_TRAINS, SELF, vfx_3rd, [STORE_TEMP(create_effect(EFFECT_SPRITE_ELECTRIC, 0, 0, -7), 0x100)]) {
+    return 1;
+}
+
+switch (FEAT_TRAINS, SELF, vfx_diesel_default, [STORE_TEMP(create_effect(EFFECT_SPRITE_DIESEL, 0, 0, 10), 0x100)]) {
+    return 1;
+}
+
+switch(FEAT_TRAINS, SELF, vfx_dual_voltage, current_railtype){
+	SAA3: vfx_3rd;
+	vfx_mhle;
+}
+
+switch(FEAT_TRAINS, SELF, vfx_3rd_mnly, current_railtype){
+	SAA3: vfx_3rd;
+	return 0;
+}
+
+switch(FEAT_TRAINS, SELF, vfx_mhle_mnly, current_railtype){
+	ELRL: vfx_mhle;
+	SAAZ: vfx_mhle;
+	return 0;
+}
+
+switch(FEAT_TRAINS, SELF, vfx_steam, [STORE_TEMP(create_effect(EFFECT_SPRITE_STEAM, 0, 0, 10), 0x100)]) {
+    return 1;
+}
+//Sound deciding switches
+
+/*
+
+Rule of thumb: 4.5 m/s = 10 Mph = 16 Km/h
+Game will take these numbers in m/s
+To work out speed do 4.5 * (Speed in Mph / 10)
+
+*/
+
+
+spriteset(spriteset_456_nse_f, "gfx/class_508.png") {template_8_8_networker(718, 100)}
+spriteset(spriteset_456_nse_r, "gfx/class_508.png") {template_8_8_networker(718, 125)}
+spriteset(spriteset_456_nse_m, "gfx/class_508.png") {template_8_8_networker(718, 150)}
+
+spriteset(spriteset_456_cnx_f, "gfx/class_508.png") {template_8_8_networker(718, 200)}
+spriteset(spriteset_456_cnx_r, "gfx/class_508.png") {template_8_8_networker(718, 225)}
+spriteset(spriteset_456_cnx_m, "gfx/class_508.png") {template_8_8_networker(718, 250)}
+
+spriteset(spriteset_456_stn_f, "gfx/class_508.png") {template_8_8_networker(718, 300)}
+spriteset(spriteset_456_stn_r, "gfx/class_508.png") {template_8_8_networker(718, 325)}
+spriteset(spriteset_456_stn_m, "gfx/class_508.png") {template_8_8_networker(718, 350)}
+
+spriteset(spriteset_456_swt_f, "gfx/class_508.png") {template_8_8_networker(718, 400)}
+spriteset(spriteset_456_swt_r, "gfx/class_508.png") {template_8_8_networker(718, 425)}
+spriteset(spriteset_456_swt_m, "gfx/class_508.png") {template_8_8_networker(718, 450)}
+
+switch(FEAT_TRAINS, SELF, sw_456_nse_f, position_in_consist){0: spriteset_456_nse_f; spriteset_456_nse_m;}
+switch(FEAT_TRAINS, SELF, sw_456_nse, position_in_consist_from_end){0: spriteset_456_nse_r; sw_456_nse_f;}
+
+switch(FEAT_TRAINS, SELF, sw_456_cnx_f, position_in_consist){0: spriteset_456_cnx_f; spriteset_456_cnx_m;}
+switch(FEAT_TRAINS, SELF, sw_456_cnx, position_in_consist_from_end){0: spriteset_456_cnx_r; sw_456_cnx_f;}
+
+switch(FEAT_TRAINS, SELF, sw_456_stn_f, position_in_consist){0: spriteset_456_stn_f; spriteset_456_stn_m;}
+switch(FEAT_TRAINS, SELF, sw_456_stn, position_in_consist_from_end){0: spriteset_456_stn_r; sw_456_stn_f;}
+
+switch(FEAT_TRAINS, SELF, sw_456_swt_f, position_in_consist){0: spriteset_456_swt_f; spriteset_456_swt_m;}
+switch(FEAT_TRAINS, SELF, sw_456_swt, position_in_consist_from_end){0: spriteset_456_swt_r; sw_456_swt_f;}
+
+switch(FEAT_TRAINS, SELF, sw_456_refit_text, cargo_subtype){
+	0: return string(STR_LIVERY_NSE);
+	1: return string(STR_LIVERY_CONNEX);
+	2: return string(STR_LIVERY_SOUTHERN);
+	3: return string(STR_LIVERY_SWT);
+	4: return string(STR_LIVERY_NSE);
+	5: return string(STR_LIVERY_CONNEX);
+	6: return string(STR_LIVERY_SOUTHERN);
+	7: return string(STR_LIVERY_SWT);
+	return CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_456_default, cargo_subtype){
+	0: sw_456_nse;
+	1: sw_456_cnx;
+	2: sw_456_stn;
+	3: sw_456_swt;
+	4: sw_456_nse;
+	5: sw_456_cnx;
+	6: sw_456_stn;
+	7: sw_456_swt;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_455_nse_colour_mapping, TRIGGER_VEHICLE_SERVICE){
+	1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+ }
+ 
+random_switch(FEAT_TRAINS, SELF, sw_455_swt_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
+	1 : palette_2cc(COLOUR_RED, COLOUR_DARK_BLUE) ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_455_se_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_455_stn_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_455_manual_livery_decider, cargo_subtype){
+	0: sw_455_nse_colour_mapping;
+	1: sw_455_se_colour_mapping;
+	2: sw_455_stn_colour_mapping;
+	3: sw_455_swt_colour_mapping;
+	4 .. 7: palette_2cc(company_colour1, company_colour2);
+}
+
+item (FEAT_TRAINS, item_456, 456) {
+	property {
+		name: 							string(STR_NAME_456);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1990, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					38;
+		cost_factor:					43;
+		running_cost_factor:			30;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							75 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						SAA3;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							500 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					75;
+		weight:							35 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.85;
+		air_drag_coefficient:			0.32;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+	}
+	graphics {
+	default: 							sw_456_default;
+	create_effect:						vfx_3rd_mnly;
+	cargo_subtype_text:					sw_456_refit_text ;
+	colour_mapping:						sw_455_manual_livery_decider ;
+	//sound_effect:						sw_sfx_electric_networker;
+}
+}
+
+
+spriteset(spriteset_458_lr, "gfx/class_458.png") {template_8_8_networker(0, 0)}
+spriteset(spriteset_458_lf, "gfx/class_458.png") {template_8_8_networker(0, 25)}
+spriteset(spriteset_458_f, "gfx/class_458.png") {template_8_8_networker(0, 50)}
+spriteset(spriteset_458_m, "gfx/class_458.png") {template_8_8_networker(0, 75)}
+
+switch(FEAT_TRAINS, SELF, sw_electrostar_headlights_1, position_in_consist){
+0: spriteset_458_lf;
+gfx_blank;
+}
+
+switch(FEAT_TRAINS, SELF, sw_electrostar_headlights, position_in_consist_from_end){
+0: spriteset_458_lr;
+sw_electrostar_headlights_1;
+}
+
+switch(FEAT_TRAINS, SELF, sw_458gfx, position_in_articulated_veh){
+0: spriteset_458_f;
+4: spriteset_458_f;
+spriteset_458_m;
+}
+
+switch(FEAT_TRAINS, SELF, sw_458_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0: return sw_458gfx;
+	1: return sw_electrostar_headlights;
+}
+
+switch (FEAT_TRAINS, SELF, switch_articulated_BR350, extra_callback_info1) {
+	1..3: return item_458;
+	4: return (item_458 | CB_RESULT_REVERSED_VEHICLE);
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS; //stop adding vehicle parts
+}
+
+
+item (FEAT_TRAINS, item_458, 458) {
+	property {
+		name: 							string(STR_NAME_458);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1999, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					30;
+		cost_factor:					43;
+		running_cost_factor:			30;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							75 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						SAA3;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							434 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					0;
+		default_cargo_type:				PASS;
+		cargo_capacity:					60;
+		weight:							45 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.09;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+	}
+	graphics {
+	default: 							sw_458_default;
+	create_effect:						vfx_3rd_mnly;
+	colour_mapping:						palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+		articulated_part:					switch_articulated_BR350;
+}
+}
+
+
+spriteset(spriteset_378_lr, "gfx/networker19.png") {template_8_8_networker(456, 163)}
+spriteset(spriteset_378_lf, "gfx/networker19.png") {template_8_8_networker(456, 138)}
+spriteset(spriteset_378_f, "gfx/networker19.png") {template_8_8_networker(456, 88)}
+spriteset(spriteset_378_m, "gfx/networker19.png") {template_8_8_networker(456, 113)}
+
+switch(FEAT_TRAINS, SELF, sw_capitalstar_headlights_1, position_in_consist){
+0: spriteset_378_lf;
+gfx_blank;
+}
+
+switch(FEAT_TRAINS, SELF, sw_capitalstar_headlights, position_in_consist_from_end){
+0: spriteset_378_lr;
+sw_capitalstar_headlights_1;
+}
+
+switch(FEAT_TRAINS, SELF, sw_3785gfx, position_in_articulated_veh){
+0: spriteset_378_f;
+4: spriteset_378_f;
+spriteset_378_m;
+}
+
+switch(FEAT_TRAINS, SELF, sw_3784gfx, position_in_articulated_veh){
+0: spriteset_378_f;
+3: spriteset_378_f;
+spriteset_378_m;
+}
+
+switch(FEAT_TRAINS, SELF, sw_3783gfx, position_in_articulated_veh){
+0: spriteset_378_f;
+2: spriteset_378_f;
+spriteset_378_m;
+}
+
+switch(FEAT_TRAINS, SELF, sw_3783_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0: return sw_3783gfx;
+	1: return sw_capitalstar_headlights;
+}
+
+switch(FEAT_TRAINS, SELF, sw_3784_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0: return sw_3784gfx;
+	1: return sw_capitalstar_headlights;
+}
+
+switch(FEAT_TRAINS, SELF, sw_3785_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0: return sw_3785gfx;
+	1: return sw_capitalstar_headlights;
+}
+
+switch (FEAT_TRAINS, SELF, switch_articulated_BR3783, extra_callback_info1) {
+	1: return item_3783;
+	2: return (item_3783 | CB_RESULT_REVERSED_VEHICLE);
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS; //stop adding vehicle parts
+}
+
+switch (FEAT_TRAINS, SELF, switch_articulated_BR3784, extra_callback_info1) {
+	1..2: return item_3784;
+	3: return (item_3784 | CB_RESULT_REVERSED_VEHICLE);
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS; //stop adding vehicle parts
+}
+
+switch (FEAT_TRAINS, SELF, switch_articulated_BR3785, extra_callback_info1) {
+	1..3: return item_378;
+	4: return (item_378 | CB_RESULT_REVERSED_VEHICLE);
+    return CB_RESULT_NO_MORE_ARTICULATED_PARTS; //stop adding vehicle parts
+}
+
+item (FEAT_TRAINS, item_378, 378) {
+	property {
+		name: 							string(STR_NAME_378_5);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(2007, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					50;
+		cost_factor:					43;
+		running_cost_factor:			30;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							75 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						SAAZ;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							500 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					0;
+		default_cargo_type:				PASS;
+		cargo_capacity:					150;
+		weight:							45 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.4;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+	}
+	graphics {
+	default: 							sw_3785_default;
+	create_effect:						vfx_3rd_mnly;
+	colour_mapping:						palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+		articulated_part:					switch_articulated_BR3785;
+}
+}
+
+item (FEAT_TRAINS, item_3784, 3784) {
+	property {
+		name: 							string(STR_NAME_378_4);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(2007, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					50;
+		cost_factor:					43;
+		running_cost_factor:			30;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							75 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						SAAZ;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							500 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					0;
+		default_cargo_type:				PASS;
+		cargo_capacity:					150;
+		weight:							45 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.4;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+	}
+	graphics {
+	default: 							sw_3784_default;
+	create_effect:						vfx_3rd_mnly;
+	colour_mapping:						palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+		articulated_part:					switch_articulated_BR3784;
+}
+}
+
+item (FEAT_TRAINS, item_3783, 3783) {
+	property {
+		name: 							string(STR_NAME_378_3);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(2007, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					50;
+		cost_factor:					43;
+		running_cost_factor:			30;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							75 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						SAAZ;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							500 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					0;
+		default_cargo_type:				PASS;
+		cargo_capacity:					150;
+		weight:							45 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.4;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+	}
+	graphics {
+	default: 							sw_3783_default;
+	create_effect:						vfx_3rd_mnly;
+	colour_mapping:						palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+		articulated_part:					switch_articulated_BR3783;
+}
 }
 # 1 "ruktsna.pnml" 2
 

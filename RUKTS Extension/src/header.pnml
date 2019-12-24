@@ -2,7 +2,7 @@ grf{
 	grfid                  : "RTNA" ;
 	name                   : string(STR_GRF_NAME) ;
 	desc                   : string(STR_GRF_DESC) ;
-	version                : 8 ;
+	version                : 9 ;
 	min_compatible_version : 6 ;
 	param 0{
 		nuclear_enabled{
@@ -48,9 +48,9 @@ cargotable {
 railtypetable {
     RAIL, 
 	ELRL,
-	SAA3: ["3RDR", ELRL],
-	SAAZ: ["3RDC", ELRL],
-	SAA4: [SAA3, ELRL],
+	SAA3: ["3RDR", SAA3, ELRL],
+	SAAZ: ["3RDC", SAAZ, ELRL],
+	SAA4: ["4RDR", SAA4, "3RDR", SAA3, ELRL],
 	NAAN: [NAAN, NRGL, RAIL]
 }
 
