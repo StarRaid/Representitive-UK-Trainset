@@ -1,0 +1,36 @@
+grf{
+	grfid: "SUKT" ;
+	name: string(STR_GRF_NAME) ;
+	desc: string(STR_GRF_DESC) ;
+	version: 0 ;
+	min_compatible_version: 0 ;
+}
+
+railtypetable {
+    STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_CATENARY, NARROW_GAUGE_RAILTYPE_ALL,
+	"3RDR", "3LOW", "3MED", SAB3, SAC3, SBA3, SBB3, SBC3, SCA3, SCB3, SCC3,									//Default third rail defined bellow
+	"4RDR", "4LOW", "4MED", SAB4, SAC4, SBA4, SBB4, SBC4, SCA4, SCB4, SCC4, MTRO, MTRC, MTRS, MTRU, MTRT,	//Default fourth rail defined bellow
+	"3RDC", CLOW, CMED, SABZ, SACZ, SBAZ, SBBZ, SBCZ, SCAZ, SCBZ, SCCZ,								//Default dual voltage defined bellow
+	SAA3: ["3RDR", SAA3, ELRL],
+	SAAZ: ["3RDC", SAAZ, ELRL],
+	SAA4: ["4RDR", SAA4, "3RDR", SAA3, ELRL]
+}
+
+cargotable {
+//Default cargos
+   PASS, MAIL, COAL, FOOD, GOLD, GOOD, GRAI, IORE, LVST, OIL_, PAPR, STEL, VALU, WHEA, WOOD,
+
+//Tropical cargos
+   CORE, DIAM, FRUT, MAIZ, RUBR, WATR, 
+
+//ECS
+   AORE, BDMT, BRCK, CERA, CERE, CMNT, DYES, FERT, FICR, FISH, GLAS, LIME, OLSD, PETR, PLAS, POTA, RFPR, SAND, SULP, TOUR, VEHI, WDPR, WOOL, 
+   
+//FIRS
+   BEAN, BEER, BOOM, CLAY, CASS, COKE, ENSP, EOIL, FMSP, FRVG, GRVL, IRON, METL, MNO2, MILK, MNSP, NICK, NITR, NUTS, PHOS, PIPE, PORE, QLME, RCYC, SASH, SCMT, SGBT, SGCN, SLAG, VBOD, VPTS, JAVA, COPR, SUGR, ZINC,
+   
+   SCRP, //Old scrap metal
+   
+//Nuclear stuff
+	URAN, NWST
+}
