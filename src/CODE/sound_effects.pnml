@@ -284,137 +284,116 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_60_check_full, RUKTS_E_CHECK){ 1 : sw
 //Decide sound effects based on parameter settings, SOUND_TRAIN_HORN, 
 
 switch(FEAT_TRAINS, SELF, sw_sfx_0, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : return 0;
-	SOUND_EVENT_VISUAL_EFFECT : return 0;
-	SOUND_EVENT_RUNNING_16    : return 0;
+	SOUND_EVENT_STOPPED       : CB_RESULT_NO_SOUND;
+	SOUND_EVENT_VISUAL_EFFECT : CB_RESULT_NO_SOUND;
+	SOUND_EVENT_RUNNING_16    : CB_RESULT_NO_SOUND;
 	SOUND_EVENT_START         : SOUND_TRAIN_HORN;
-	SOUND_EVENT_BREAKDOWN     : return 0;
-	SOUND_EVENT_TUNNEL        : return 0;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : CB_RESULT_NO_SOUND;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_old, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_electric_loco_old_full;
+	1 : sw_sfx_electric_loco_old_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_modern, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_electric_loco_modern_full;
+	1 : sw_sfx_electric_loco_modern_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_modern, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_diesel_loco_modern_full;
+	1 : sw_sfx_diesel_loco_modern_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_diesel_loco_ee_full;
+	1 : sw_sfx_diesel_loco_ee_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_diesel_loco_ee_2_full;
+	1 : sw_sfx_diesel_loco_ee_2_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_deltic, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_diesel_loco_deltic_full;
+	1 : sw_sfx_diesel_loco_deltic_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_diesel_loco_small_full;
+	1 : sw_sfx_diesel_loco_small_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_diesel_loco_heritage_full;
+	1 : sw_sfx_diesel_loco_heritage_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_emd, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_diesel_loco_emd_full;
+	1 : sw_sfx_diesel_loco_emd_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_hst, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_hst_full;
+	1 : sw_sfx_hst_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_emu_desiro, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_emu_desiro_full;
+	1 : sw_sfx_emu_desiro_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_emu_gec, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_emu_gec_full;
+	1 : sw_sfx_emu_gec_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_tube_gec, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_tube_gec_full;
+	1 : sw_sfx_tube_gec_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_dmu_one_full;
+	1 : sw_sfx_dmu_one_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_two, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_dmu_two_full;
+	1 : sw_sfx_dmu_two_full;
 }
 
 /*switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_electric_networker_full;
+	1 : sw_sfx_electric_networker_full;
 }*/
 
 switch(FEAT_TRAINS, SELF, sw_sfx_steam, sound_control){
 	0 : return 0;
-	1 : return 0;
-	2 : sw_sfx_steam_full;
+	1 : sw_sfx_steam_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_extension_08_check, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_extension_08_check_full;
+	1 : sw_sfx_extension_08_check_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_extension_25_check, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_extension_25_check_full;
+	1 : sw_sfx_extension_25_check_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_extension_40_check, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_extension_40_check_full;
+	1 : sw_sfx_extension_40_check_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_extension_60_check, sound_control){
 	0 : sw_sfx_0;
-	1 : return 0;
-	2 : sw_sfx_extension_60_check_full;
+	1 : sw_sfx_extension_60_check_full;
 }
 

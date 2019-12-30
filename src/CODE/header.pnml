@@ -98,12 +98,11 @@ grf{
 			name		: string(STR_SOUND_CONTROL) ;
 			desc		: string(STR_SOUND_CONTROL_DESC) ;
 			min_value	: 0 ;
-			max_value	: 2 ;
-			def_value	: 2 ;
+			max_value	: 1 ;
+			def_value	: 1 ;
 			names		: {
-				0	: string(STR_PARAM_NONE   ) ;
-				1	: string(STR_PARAM_DEFAULT) ;
-				2	: string(STR_PARAM_CUSTOM ) ;
+				0	: string(STR_PARAM_DEFAULT) ;
+				1	: string(STR_PARAM_CUSTOM ) ;
 			} ;
 		}
 	}
