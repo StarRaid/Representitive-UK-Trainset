@@ -91,7 +91,6 @@ grf{
 			def_value : 0 ;
 			}
 		}
-	}
 	
 	param 6{
 		sound_control{
@@ -108,6 +107,7 @@ grf{
 			} ;
 		}
 	}
+}
 
 
 train_width_32_px  = 1 ;

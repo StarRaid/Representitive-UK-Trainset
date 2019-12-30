@@ -6,6 +6,8 @@ Rule of thumb: 4.5 m/s = 10 Mph = 16 Km/h
 Game will take these numbers in m/s
 To work out speed do 4.5 * (Speed in Mph / 10)
 
+	Note: Networker sounds commented out
+
 */
 
 
@@ -380,11 +382,11 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_two, sound_control){
 	2 : sw_sfx_dmu_two_full;
 }
 
-switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, sound_control){
+/*switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker, sound_control){
 	0 : sw_sfx_0;
 	1 : return 0;
 	2 : sw_sfx_electric_networker_full;
-}
+}*/
 
 switch(FEAT_TRAINS, SELF, sw_sfx_steam, sound_control){
 	0 : return 0;
