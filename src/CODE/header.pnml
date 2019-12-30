@@ -89,9 +89,25 @@ grf{
 			name : string(STR_PARAM_PURCHASE_LIST_SORT_NAME) ;
 			desc : string(STR_PARAM_PURCHASE_LIST_SORT_DESC) ;
 			def_value : 0 ;
+			}
 		}
 	}
-}
+	
+	param 6{
+		sound_control{
+			type		: int ;
+			name		: string(STR_SOUND_CONTROL) ;
+			desc		: string(STR_SOUND_CONTROL_DESC) ;
+			min_value	: 0 ;
+			max_value	: 2 ;
+			def_value	: 2 ;
+			names		: {
+				0	: string(STR_PARAM_NONE   ) ;
+				1	: string(STR_PARAM_DEFAULT) ;
+				2	: string(STR_PARAM_CUSTOM ) ;
+			} ;
+		}
+	}
 
 
 train_width_32_px  = 1 ;

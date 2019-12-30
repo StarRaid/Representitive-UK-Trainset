@@ -28,6 +28,13 @@ STR_PARAM_TOOMUCH					:4x
 STR_PARAM_PURCHASE_LIST_SORT_NAME	:Sort by Class numbers
 STR_PARAM_PURCHASE_LIST_SORT_DESC	:Sort the purchase list by TOPS Class numbers instead of the classic sort
 
+STR_SOUND_CONTROL					:Sound effects
+STR_SOUND_CONTROL_DESC				:Select the types of sounds used by trains in this set
+
+STR_PARAM_NONE						:No running sounds
+STR_PARAM_DEFAULT					:Default running sounds
+STR_PARAM_CUSTOM					:Fully replaced running sounds
+
 
 STR_PARAM_VEH_SELEC_NAME         		 :Vehicle selection
 STR_PARAM_VEH_SELEC_DESC         		 :Choose the selection of vehicles that will appear in game. Minimal reduces the purchase list to a basic list of vehicles, Extended includes some extras that are extensions to the normal set.
