@@ -72,6 +72,7 @@ STR_LIVERY_ROYAL_MAIL					 : Royal Mail
 STR_LIVERY_VIRGIN_TRAINS		 		 : Virgin Trains
 STR_LIVERY_GNER							 : Great North Eastern Railway
 STR_LIVERY_NXEC							 : National Express East Coast
+STR_LIVERY_ESCS							 : East Coast
 STR_LIVERY_VTEC							 : Virgin Trains East Coast
 STR_LIVERY_LNER							 : LNER
 STR_LIVERY_WESSEX_TRAINS				 : Wessex Trains
@@ -214,6 +215,7 @@ STR_NAME_NTX					:Express Mail Coach
 STR_NAME_AL6				 :EE AL6 (Electric)
 STR_NAME_87                  :BREL 87 (Electric)
 STR_NAME_90                  :BREL 90 (Electric)
+STR_NAME_91                  :GEC "Intercity 225" (Electric)
 STR_NAME_92                  :Brush/ABB "92" (Dual Voltage)
 STR_NAME_SWTYPE1             :Swindon Type 1 (Diesel)
 STR_NAME_EETYPE1			 :EE Type 1 (Diesel Electric) 
@@ -332,6 +334,7 @@ STR_NAME_DBSO_ALT		:BREL DBSO
 STR_NAME_AL6_ALT		:BR Class 86 (Electric)
 STR_NAME_87_ALT			:BR Class 87 (Electric)
 STR_NAME_90_ALT			:BR Class 90 (Electric)
+STR_NAME_91_ALT			:BR Class 91 (Electric)
 STR_NAME_92_ALT			:BR Class 92 (Dual Voltage)
 STR_NAME_SWTYPE1_ALT	:BR Class 14 (Diesel)
 STR_NAME_EETYPE1_ALT	:BR Class 20 (Diesel Electric) 

@@ -83,7 +83,7 @@ grf{
 }
 
 railtypetable {
-    RAIL, RLOW, RMED, RHIG, SAAN, SABN, SACN, SBAN, SBBN, SBCN, SCAN, SCBN, SCCN, SDAN, SDBN, DBNN, DBHN, "_040", "_080", ELRL, ELOW, EMED, EHIG, HSTR, SAAE, SABE, SACE, SBAE, SBBE, SBCE, SCAE, SCBE, SCCE, SDAE, SDBE, SEAE, SEBE, DBNE, DBHE, DBHS, E040, E080,  NGRL, NLOW, NHIG, NAAN, NRAN, NBAN, ELNG, ENLW, ENHI, NAAE, NRAE, NBAE,
+    "RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080",  "NGRL", "NLOW", "NHIG", "NAAN", "NRAN", "NBAN", "ELNG", "ENLW", "ENHI", "NAAE", "NRAE", "NBAE",
 	"3RDR", "3LOW", "3MED", SAB3, SAC3, SBA3, SBB3, SBC3, SCA3, SCB3, SCC3,									//Default third rail defined bellow
 	"4RDR", "4LOW", "4MED", SAB4, SAC4, SBA4, SBB4, SBC4, SCA4, SCB4, SCC4, MTRO, MTRC, MTRS, MTRU, MTRT,	//Default fourth rail defined bellow
 	"3RDC", CLOW, CMED, SABZ, SACZ, SBAZ, SBBZ, SBCZ, SCAZ, SCBZ, SCCZ,								//Default dual voltage defined bellow
@@ -124,14 +124,49 @@ spriteset(gfx_ballast, "gfx/tracks.png"){
 	[630,	70,		64,		41,		-31,	-10	]//Slope SW
 	[700,	70,		64,		41,		-31,	-10	]//Slope NW
 	[350,	35,		64,		31,		-31,	0	]//Cross over
-	[490,	35,		64,		31,		-31,	0 	]
-	[560,	35,		64,		31,		-31,	0	]
-	[630,	35,		64,		31,		-31,	0	]
-	[700,	35,		64,		31,		-31,	0	]
-	[420,	35,		64,		31,		-31,	0	]
+	[490,	35,		64,		31,		-31,	0 	]//Junction SW
+	[560,	35,		64,		31,		-31,	0	]//Junction NE
+	[630,	35,		64,		31,		-31,	0	]//Junction SE
+	[700,	35,		64,		31,		-31,	0	]//Junction NW
+	[420,	35,		64,		31,		-31,	0	]//Full tile
 }
 
-item(FEAT_RAILTYPES, rail_ballast) {
+spriteset(gfx_overlay_test_track, "gfx/tracks.png"){
+	[350,	120,	64,		31,		-31,	0	]//North East
+	[420,	120,	64,		31,		-31,	0	]//North West
+	[700,	120,	64,		31,		-31,	0	]//Horizontal Top
+	[630,	120,	64,		31,		-31,	0	]//Horizontal Bottom
+	[560,	120,	64,		31,		-31,	0	]//Vertical Right
+	[490,	120,	64,		31,		-31,	0	]//Vertical Left
+	[490,	160,	64,		41,		-31,	-10	]//Slope NE
+	[560,	160,	64,		41,		-31,	-10	]//Slope SE
+	[630,	160,	64,		41,		-31,	-10	]//Slope SW
+	[700,	160,	64,		41,		-31,	-10	]//Slope NW
+}
+
+spriteset(gfx_ballast_test_track, "gfx/tracks.png"){
+	[770,	120,	64,		31,		-31,	0	]//North East
+	[840,	120,	64,		31,		-31,	0	]//North West
+	[1120,	120,	64,		31,		-31,	0	]//Horizontal Top
+	[1050,	120,	64,		31,		-31,	0	]//Horizontal Bottom
+	[980,	120,	64,		31,		-31,	0	]//Vertical Right
+	[910,	120,	64,		31,		-31,	0	]//Vertical Left
+	[910,	160,	64,		41,		-31,	-10	]//Slope NE
+	[980,	160,	64,		41,		-31,	-10	]//Slope SE
+	[1050,	160,	64,		41,		-31,	-10	]//Slope SW
+	[1120,	160,	64,		41,		-31,	-10	]//Slope NW
+	[770,	160,	64,		31,		-31,	0	]//Cross over
+	[490,	35,		64,		31,		-31,	0 	]//Junction SW
+	[560,	35,		64,		31,		-31,	0	]//Junction NE
+	[630,	35,		64,		31,		-31,	0	]//Junction SE
+	[700,	35,		64,		31,		-31,	0	]//Junction NW
+	[420,	35,		64,		31,		-31,	0	]//Full tile
+}
+
+
+
+
+item(FEAT_RAILTYPES, rail_ballast, 2) {
 	property {
 		label						: "BLST" ;
 		name						: string(STR_BLST_NAME) ;
@@ -153,6 +188,73 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		track_overlay		: gfx_blank ;
 		underlay			: gfx_ballast ;
 		bridge_surfaces		: gfx_blank ;
+		tunnels				: gfx_blank ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+
+
+spriteset(gfx_overlay_RAIL, "gfx/tracks.png"){
+	[350,	210,	64,		31,		-31,	0	]//North East
+	[420,	210,	64,		31,		-31,	0	]//North West
+	[700,	210,	64,		31,		-31,	0	]//Horizontal Top
+	[630,	210,	64,		31,		-31,	0	]//Horizontal Bottom
+	[560,	210,	64,		31,		-31,	0	]//Vertical Right
+	[490,	210,	64,		31,		-31,	0	]//Vertical Left
+	[490,	250,	64,		41,		-31,	-10	]//Slope NE
+	[560,	250,	64,		41,		-31,	-10	]//Slope SE
+	[630,	250,	64,		41,		-31,	-10	]//Slope SW
+	[700,	250,	64,		41,		-31,	-10	]//Slope NW
+}
+
+spriteset(gfx_ballast_RAIL, "gfx/tracks.png"){
+	[770,	210,	64,		31,		-31,	0	]//North East
+	[840,	210,	64,		31,		-31,	0	]//North West
+	[1120,	210,	64,		31,		-31,	0	]//Horizontal Top
+	[1050,	210,	64,		31,		-31,	0	]//Horizontal Bottom
+	[980,	210,	64,		31,		-31,	0	]//Vertical Right
+	[910,	210,	64,		31,		-31,	0	]//Vertical Left
+	[910,	250,	64,		41,		-31,	-10	]//Slope NE
+	[980,	250,	64,		41,		-31,	-10	]//Slope SE
+	[1050,	250,	64,		41,		-31,	-10	]//Slope SW
+	[1120,	250,	64,		41,		-31,	-10	]//Slope NW
+	[770,	250,	64,		31,		-31,	0	]//Cross over
+	[490,	35,		64,		31,		-31,	0 	]//Junction SW
+	[560,	35,		64,		31,		-31,	0	]//Junction NE
+	[630,	35,		64,		31,		-31,	0	]//Junction SE
+	[700,	35,		64,		31,		-31,	0	]//Junction NW
+	[420,	35,		64,		31,		-31,	0	]//Full tile
+}
+
+
+item(FEAT_RAILTYPES, rail_RAIL, 0) {
+	property {
+		label						: "RAIL" ;
+		//name						: string(STR_RAIL_NAME) ;
+		//menu_text					: string(STR_RAIL_NAME) ;
+		//build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ"] ;
+		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080"] ;
+		curve_speed_multiplier		: 1 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 1 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_overlay_RAIL ;
+		underlay			: gfx_ballast_RAIL ;
+		bridge_surfaces		: gfx_overlay_RAIL ;
 		tunnels				: gfx_blank ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
