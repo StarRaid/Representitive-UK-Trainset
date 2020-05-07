@@ -11,6 +11,7 @@ disable_item(FEAT_TRAINS);
 #include "src/WAGON/Mk1.pnml"
 #include "src/WAGON/Mk2.pnml"
 #include "src/WAGON/MK3.pnml"
+#include "src/WAGON/MK4.pnml"
 #include "src/WAGON/MU90.pnml"
 #include "src/WAGON/mail.pnml"
 #include "src/WAGON/Wagon_a.pnml"

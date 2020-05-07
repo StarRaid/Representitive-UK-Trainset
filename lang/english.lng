@@ -74,6 +74,8 @@ STR_LIVERY_GNER							 : Great North Eastern Railway
 STR_LIVERY_NXEC							 : National Express East Coast
 STR_LIVERY_ESCS							 : East Coast
 STR_LIVERY_VTEC							 : Virgin Trains East Coast
+STR_LIVERY_VTEC_LNER					 : Virgin Trains East Coast/LNER
+STR_LIVERY_INTERCITY_VTEC		 		 : Intercity {GOLD}(Virgin Trains DVT)
 STR_LIVERY_LNER							 : LNER
 STR_LIVERY_WESSEX_TRAINS				 : Wessex Trains
 STR_LIVERY_ARRIVA_XC			 		 : Arriva Cross Country
@@ -184,6 +186,7 @@ STR_NAME_MK2					:BREL Mark 2 Carriage
 STR_NAME_MK2A					:{GOLD}(Mk2a)
 STR_NAME_MK2F					:{GOLD}(Mk2f)
 STR_NAME_Mk3					:BREL Mark 3 Carriage
+STR_NAME_Mk4					:BREL Mark 4 Carriage
 STR_NAME_MU90					:Modern MU car
 STR_NAME_WAGON_A                :BR Bulk Goods Wagon
 STR_NAME_FLASK      			:Nuclear Flask Wagon

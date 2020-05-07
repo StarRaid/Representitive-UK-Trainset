@@ -32,6 +32,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_gfx_parent_id_check, vehicle_type_id){
 	87 : sw_br87_sprite_stack_dbso ;
 	88 : sw_eurodual_spritestack ;
 	90 : sw_cl90_gfx_sprite_stack_dvt ;
+	91 : sw_cl91_gfx_sprite_stack_dvt ;
 	92 : sw_abb92_spritestack_dbso ;
 	sw_dvt_sprite_stack ;
 }
@@ -52,6 +53,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_parent_id_check, vehicle_type_id){
 	87 : sw_br87_colours_2cc_check_dbso ;
 	88 : sw_eurodual_colours ;
 	90 : sw_cl90_colours_2cc_check_dvt ;
+	91 : sw_cl91_colours_2cc_check_dvt ;
 	92 : sw_abb92_colours_2cc_check_dbso ;
 	sw_dvt_colours_2cc_check ;
 }
@@ -73,6 +75,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_vfx_parent_id_check, vehicle_type_id){
 	87 : vfx_ohle ;
 	88 : sw_eurodual_effect_decider ;
 	90 : vfx_ohle ;
+	91 : vfx_ohle ;
 	92 : sw_abb92_vfx_dbso_dvt_check  ;
 }
 
@@ -91,6 +94,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_effect_parent_id_check, vehicle_type_id){
 	87 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	88 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	90 : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	91 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	92 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 }
 
@@ -115,6 +119,11 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_90_check, vehicle_type_id ){
 
 //DVT Item
 
+switch(FEAT_TRAINS, PARENT, sw_dvt_speed_check, vehicle_type_id){
+	91 : return 225 ;
+	176 ;
+}
+
 item(FEAT_TRAINS, item_dvt, 9035){
 	property{
 		name						   : string(STR_NAME_DVT) ;
@@ -122,7 +131,7 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date( 1988, 1, 1) ;
+		introduction_date              : date( 1989, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 45 ;
 		cost_factor                    : 115 ;
@@ -151,6 +160,7 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		//length						   : sw_dvt_90_check ;
 		//sound_effect                   : sw_dbso_sfx_reverse_check ;
 		additional_text: string(STR_ADD_INFO_PUSHPULL) ;
+		speed							: sw_dvt_speed_check ;
 	}
 }
 

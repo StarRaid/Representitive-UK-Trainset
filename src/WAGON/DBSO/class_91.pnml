@@ -1,0 +1,54 @@
+
+//Manual
+
+switch(FEAT_TRAINS, PARENT, sw_cl91_gfx_manual_dvt, cargo_subtype){
+	0 : sw_cl91_gfx_intercity_pos_check_front ; // IC
+	2 : sw_cl91_gfx_nxec_pos_check_front ; // NXEC
+	3 : sw_cl91_gfx_east_coast_pos_check_front ; // EAST COAST
+	4 : sw_cl91_gfx_vtec_pos_check_front ; // VTEC/LNER
+	5 : sw_cl91_gfx_europheonix_pos_check_front ; // EUROPHEONIX
+	6 : sw_cl91_gfx_intercity_pos_check_front ; // IC + VTEC
+	sw_cl91_gfx_gner_pos_check_front ; //GNER
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl91_gfx_manual_check_dvt, livery_choice){
+	1 : sw_cl91_gfx_manual_dvt ;
+	sw_cl91_gfx_auto ;
+}
+
+
+
+//Sprite stacking
+
+switch(FEAT_TRAINS, SELF, sw_cl91_gfx_sprite_stack_dvt, SPR_STACK){
+	0 : sw_cl91_gfx_manual_check_dvt ;
+	1 : sw_cl91_gfx_panto_power_check ;
+	2 : sw_cl91_gfx_lights_pos_check_front ;
+}
+
+
+
+//Colours
+
+
+//Manual
+
+switch(FEAT_TRAINS, PARENT, sw_cl91_colours_manual_dvt, cargo_subtype){
+	0	: palette_2cc(COLOUR_GREY, COLOUR_RED) ; // IC
+	2	: palette_2cc(COLOUR_GREY, COLOUR_WHITE) ; // NXEC
+	3	: palette_2cc(COLOUR_WHITE, COLOUR_PINK) ; // EAST COAST
+	4	: palette_2cc(COLOUR_RED, COLOUR_WHITE) ; // VTEC/LNER
+	5	: palette_2cc(COLOUR_GREY, COLOUR_RED) ; // EUROPHEONIX
+	6	: palette_2cc(COLOUR_GREY, COLOUR_RED) ; // IC + VTEC
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl91_colours_manual_check_dvt, livery_choice){
+	1 : sw_cl91_colours_manual_dvt ;
+	sw_cl91_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl91_colours_2cc_check_dvt, colour_scheme_1){
+	1 : sw_cl91_colours_manual_check_dvt ;
+	palette_2cc(company_colour1, company_colour2) ;
+}

@@ -278,9 +278,9 @@ item(FEAT_TRAINS, item_cl90, 90){
 		model_life		                : 25 ;
 		vehicle_life		            : 40 ;
 		reliability_decay		        : 6 ;
-		cost_factor		                : 60 ;
+		cost_factor		                : 54 ;
 		running_cost_base		        : RUNNING_COST_ELECTRIC ;
-		running_cost_factor		        : 255 ;
+		running_cost_factor		        : 235 ;
 		refit_cost		                : 0 ;
 		refittable_cargo_classes		: 0 ;
 		cargo_allow_refit		        : [GOOD] ;
