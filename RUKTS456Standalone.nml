@@ -3,7 +3,7 @@ grf{
 	grfid: "R456" ;
 	name: string(STR_NAME_411) ;
 	desc: string(STR_NAME_411) ;
-	version: 900;
+	version: 901;
 	min_compatible_version: 0 ;
 param 1 {
 	dateparam {
@@ -399,10 +399,10 @@ item (FEAT_TRAINS, item_456, 456){
 }
 }
 
-spriteset(spriteset_458_lr, "gfx/class_458.png") {template_8_8_networker(0, 0)}
-spriteset(spriteset_458_lf, "gfx/class_458.png") {template_8_8_networker(0, 25)}
-spriteset(spriteset_458_f, "gfx/class_458.png") {template_8_8_networker(0, 50)}
-spriteset(spriteset_458_m, "gfx/class_458.png") {template_8_8_networker(0, 75)}
+spriteset(spriteset_458_lr, "RUKTS Extension/gfx/class_458.png") {template_8_8_networker(0, 0)}
+spriteset(spriteset_458_lf, "RUKTS Extension/gfx/class_458.png") {template_8_8_networker(0, 25)}
+spriteset(spriteset_458_f, "RUKTS Extension/gfx/class_458.png") {template_8_8_networker(0, 50)}
+spriteset(spriteset_458_m, "RUKTS Extension/gfx/class_458.png") {template_8_8_networker(0, 75)}
 
 switch(FEAT_TRAINS, SELF, sw_electrostar_headlights_1, position_in_consist){
 0: spriteset_458_lf;
@@ -486,10 +486,10 @@ item (FEAT_TRAINS, item_458, 458){
 
 }
 
-spriteset(spriteset_378_lr, "gfx/UNUSED & MIXED/networker19.png") {template_8_8_networker(456, 163)}
-spriteset(spriteset_378_lf, "gfx/UNUSED & MIXED/networker19.png") {template_8_8_networker(456, 138)}
-spriteset(spriteset_378_f, "gfx/UNUSED & MIXED/networker19.png") {template_8_8_networker(456, 88)}
-spriteset(spriteset_378_m, "gfx/UNUSED & MIXED/networker19.png") {template_8_8_networker(456, 113)}
+spriteset(spriteset_378_lr, "RUKTS Extension/gfx/networker19.png") {template_8_8_networker(456, 163)}
+spriteset(spriteset_378_lf, "RUKTS Extension/gfx/networker19.png") {template_8_8_networker(456, 138)}
+spriteset(spriteset_378_f, "RUKTS Extension/gfx/networker19.png") {template_8_8_networker(456, 88)}
+spriteset(spriteset_378_m, "RUKTS Extension/gfx/networker19.png") {template_8_8_networker(456, 113)}
 
 switch(FEAT_TRAINS, SELF, sw_capitalstar_headlights_1, position_in_consist){
 0: spriteset_378_lf;
