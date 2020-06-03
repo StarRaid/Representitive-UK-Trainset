@@ -20,8 +20,8 @@ spriteset(spriteset_700_pan_up_r, "gfx/FIXTURES/class_375_lights.png") {template
 spriteset(spriteset_700_pan_down_r, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker_reverse(0, 75)}
 //Purchase
 spriteset(spriteset_700_purchase, "gfx/EMU/class_717.png") {template_dualhead_purchase(179, 25)}
-spriteset(spriteset_700_swt_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 50)}
-spriteset(spriteset_700_gn_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 75)}
+spriteset(spriteset_700_swt_purchase, "gfx/EMU/class_717.png") {template_dualhead_purchase(179, 50)}
+spriteset(spriteset_700_gn_purchase, "gfx/EMU/class_717.png") {template_dualhead_purchase(179, 75)}
 
 //Switches
 
