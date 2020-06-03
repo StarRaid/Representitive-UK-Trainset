@@ -293,6 +293,11 @@ switch(FEAT_TRAINS, SELF, sw_375_recolour, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2);
 }
 
+switch(FEAT_TRAINS, SELF, sw_375_recolour_purchase, colour_scheme_1){
+	1: sw_electrostar_colour_auto;
+	palette_2cc(company_colour1, company_colour2);
+}
+
 switch(FEAT_TRAINS, SELF, sw_375_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	375: return CB_RESULT_ATTACH_ALLOW;
@@ -347,7 +352,7 @@ item (FEAT_TRAINS, item_375, 375) {
 		create_effect:						vfx_3rd_only;
 		cargo_subtype_text:					sw_375_livery_decider ;
 		colour_mapping:						sw_375_recolour;
-		purchase_colour_mapping: 			sw_375_recolour;
+		purchase_colour_mapping: 			sw_375_recolour_purchase;
 		speed:								sw_375_speed;
 		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
 		sound_effect:						sw_sfx_electric_loco_modern ;

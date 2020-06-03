@@ -101,6 +101,11 @@ STR_LIVERY_WEST_MIDLANDS_RAILWAY 		 : West Midlands Railway
 STR_LIVERY_WEST_MIDLANDS_RAILWAY_STRING	 : West Midlands Railway {STRING}
 STR_170									 :(Class 170)
 STR_172									 :(Class 172)
+STR_444							 		 :(Class 444)
+STR_450							 		 :(Class 450)
+STR_700							 		 :(Class 700)
+STR_707							 		 :(Class 707)
+STR_717							 		 :(Class 717)
 STR_LIVERY_CHILTERN				 		 : Chiltern Railways
 STR_LIVERY_FREIGHTLINER          		 : Frieghtliner
 STR_LIVERY_FREIGHTLINER_POWERHAUL		 : Frieghtliner {GOLD}(Powerhaul)
@@ -117,14 +122,13 @@ STR_LIVERY_SWR					 		 : South Western Railway
 STR_LIVERY_SWT					 		 : South West Trains
 STR_LIVERY_SWT_STR				 		 : South West Trains {STRING}
 STR_LIVERY_SCR					 		 : Stagecoach Rail
-STR_444							 		 :Class 444
-STR_450							 		 :Class 450
 STR_LIVERY_SWT_REFURB			 		 : South West Trains (Refurbished)
 STR_LIVERY_SWT_HERITAGE			 		 : South West Trains {GOLD}(Heritage Blue)
 STR_LIVERY_N_SPIRIT              		 : Northern Spirit
 STR_LIVERY_NORTHERN              		 : Northern Rail
 STR_LIVERY_NORTHERN_ARRIVA       		 : Northern {GOLD}(Arriva)
 STR_LIVERY_THAMESLINK            		 : Thameslink
+STR_LIVERY_THAMESLINK_STR       		 : Thameslink {STRING}
 STR_LIVERY_TLB		   		     		 : Thameslink Blue
 STR_LIVERY_ROG_EUROPHENIX        		 : Rail Operations Group {GOLD}(Europhenix)
 STR_LIVERY_SILVERLINK	         		 : Silverlink
@@ -156,6 +160,7 @@ STR_LIVERY_ATW                   		 : Arriva Trains Wales
 STR_LIVERY_ATW_REFURB            		 : Arriva Trains Wales {GOLD}(Refurbished)
 STR_LIVERY_ATW_EXEC              		 : Arriva Trains Wales {GOLD}(Executive)
 STR_LIVERY_GTR					 		 : GTR {GOLD}(Thameslink/Great Northern)
+STR_LIVERY_GN_STR				 		 : Great Northern {STRING}
 STR_LIVERY_WYPTE				 		 : West Yorkshire Passenger Transport Executive
 STR_LIVERY_NXEA							 : National Express East Anglia
 STR_LIVERY_LO							 : London Overground
