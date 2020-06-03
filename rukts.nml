@@ -8252,6 +8252,15 @@ switch(FEAT_TRAINS, SELF, sw_hst_refit_text, cargo_subtype){
 	8 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_EMPTY)) ;
 	9 : string(STR_LIVERY_FIRST_GWR, string(STR_LIVERY_EMPTY)) ;
 	10: string(STR_LIVERY_GNER) ;
+	11: string(STR_LIVERY_NXEC) ;
+	12: string(STR_LIVERY_ESCS) ;
+	13: string(STR_LIVERY_VTEC) ;
+	14: string(STR_LIVERY_LNER) ;
+	15: string(STR_LIVERY_ARRIVA_XC) ;
+	16: string(STR_LIVERY_GC_OG) ;
+	17: string(STR_LIVERY_GC) ;
+	18: string(STR_LIVERY_SCOTRAIL) ;
+	19: string(STR_LIVERY_NETWORK_RAIL) ;
 	CB_RESULT_NO_TEXT ;
 }
 

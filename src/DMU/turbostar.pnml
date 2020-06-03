@@ -3,7 +3,7 @@
 
 //00 - Chiltern Railways - a
 //01 - Central Trains
-//02 - Cross Country
+//02 - Cross Country - a
 //03 - SPT
 //04 - First Scot RAIL
 //05 - ScotRail Saltaire
@@ -14,6 +14,12 @@
 //10 - West Midlands Railway (172) - a
 //11 - TransPennine Express
 //12 - Northern
+//13 - EMR
+//14 - TfW/Greater Anglia
+//15 - NXEA
+//16 - Hull Trains
+//17 - Midland Mainline
+//18 - SWT
 
 template template_turbo_single(x,y){
 	[x+0,y,8,24,-3,-11] //North

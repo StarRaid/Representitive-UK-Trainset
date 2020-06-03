@@ -22,6 +22,10 @@ spriteset(gfx_cl90_ews					, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_d
 spriteset(gfx_cl90_ews_rev				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 225) }
 spriteset(gfx_cl90_dbcargo				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 250) }
 spriteset(gfx_cl90_dbcargo_rev			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 250) }
+//New freightliner
+//New freightliner
+//Grand Central
+//Grand Central
 
 spriteset(gfx_cl90_purchase_intercity	, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178,  25) }
 spriteset(gfx_cl90_purchase_virgin		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178, 100) }
