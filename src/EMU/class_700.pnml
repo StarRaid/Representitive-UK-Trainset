@@ -113,11 +113,6 @@ ELRL: spriteset_700_pan_up_r;
 spriteset_700_pan_down_r;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_700_pan, vehicle_is_reversed){
-0: sw_700_pan_f;
-sw_700_pan_r;
-}
-
 switch(FEAT_TRAINS, SELF, sw_700_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0: return sw_700_livery_param;
 	1: return sw_700_headlights;
@@ -134,12 +129,12 @@ sw_700_nd_livery_param_1;
 }
 
 switch(FEAT_TRAINS, SELF, sw_700_ndf_pan_switch, position_in_vehid_chain){
-0: sw_700_pan;
+0: sw_700_pan_f;
 gfx_blank;
 }
 
 switch(FEAT_TRAINS, SELF, sw_700_nd_pan_switch, position_in_vehid_chain_from_end){
-0: sw_700_pan;
+0: sw_700_pan_r;
 sw_700_ndf_pan_switch;
 }
 
