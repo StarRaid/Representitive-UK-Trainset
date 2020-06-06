@@ -146,7 +146,7 @@ item (FEAT_TRAINS, item_container, 10002){
 		running_cost_base            : RUNNING_COST_NONE ;
 		sprite_id                    : SPRITE_ID_NEW_TRAIN ;
 		speed                        : 90 mph ;
-		misc_flags                   : bitmask(TRAIN_FLAG_2CC) ;
+		misc_flags                   : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT) ;
 		refit_cost                   : 0 ;
 		track_type                   : RAIL ;
 		ai_special_flag              : AI_FLAG_CARGO ;
