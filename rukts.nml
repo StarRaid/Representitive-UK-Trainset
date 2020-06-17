@@ -18787,13 +18787,13 @@ spriteset(spriteset_331_t_nor, "gfx/UNUSED & MIXED/civity.png") {template_8_4_ne
 //Purchase
 spriteset(spriteset_331_purchase, "gfx/UNUSED & MIXED/civity.png") {template_dualhead_purchase(0, 225)}
 //Headlights
-spriteset(spriteset_331_hl, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 125)}
-spriteset(spriteset_331_rl, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 150)}
+spriteset(spriteset_331_hl, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 175)}
+spriteset(spriteset_331_rl, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 200)}
 //Pantograph
-spriteset(spriteset_331_pan_up, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 175)}
-spriteset(spriteset_331_pan_dn, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 200)}
-spriteset(spriteset_331_pan_up_r, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker_reverse(0, 175)}
-spriteset(spriteset_331_pan_dn_r, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker_reverse(0, 200)}
+spriteset(spriteset_331_pan_up, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 125)}
+spriteset(spriteset_331_pan_dn, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 150)}
+spriteset(spriteset_331_pan_up_r, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker_reverse(0, 125)}
+spriteset(spriteset_331_pan_dn_r, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker_reverse(0, 150)}
 
 switch(FEAT_TRAINS, SELF, sw_331_f_auto, current_year){
 spriteset_331_f_nor;
@@ -23965,6 +23965,7 @@ sort(FEAT_TRAINS,[
 314,
 317,
 321,
+331,
 365,
 350,
 313,
