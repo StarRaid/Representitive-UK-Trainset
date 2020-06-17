@@ -14,7 +14,7 @@ spriteset(spriteset_458_5_a, "gfx/EMU/class_458.png") {template_8_4_networker(17
 spriteset(spriteset_458_5_b, "gfx/EMU/class_458.png") {template_8_4_networker(0, 600)}
 //Pan
 spriteset(spriteset_458_0, "gfx/EMU/class_458.png") {template_8_8_networker(179, 0)}
-spriteset(spriteset_458_5, "gfx/EMU/class_458.png") {template_8_8_networker(0, 150)}
+//spriteset(spriteset_458_5, "gfx/EMU/class_458.png") {template_8_8_networker(0, 150)} -cba //////PANTOGRAPH DARK SPOTS//////
 spriteset(spriteset_334_sct, "gfx/EMU/class_458.png") {template_8_8_networker(179, 150)}
 spriteset(spriteset_334_spt, "gfx/EMU/class_458.png") {template_8_8_networker(0, 600)}
 //Purchase
