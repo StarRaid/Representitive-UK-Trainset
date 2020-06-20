@@ -19672,11 +19672,11 @@ switch(FEAT_TRAINS, PARENT, sw_334_p_decider, vehicle_is_reversed){
 	sw_334_tr_decider;
 }
 //Headlights
-switch(FEAT_TRAINS, SELF, sw_334_tl_decider, position_in_vehid_chain_from_end){
+switch(FEAT_TRAINS, SELF, sw_334_tl_decider, position_in_consist_from_end){
 	0: spriteset_334_rl;
 	gfx_blank;
 }
-switch(FEAT_TRAINS, SELF, sw_334_hl_decider, position_in_vehid_chain){
+switch(FEAT_TRAINS, SELF, sw_334_hl_decider, position_in_consist){
 	0: spriteset_334_hl;
 	sw_334_tl_decider;
 }
