@@ -1,22 +1,25 @@
-Ballast			- /								- Overgrown ballast										- B				=	B
-Overgrown		- 15 / Yard track				- Wooden sleeper, light grey rail, overgrown ballast	- R E 3	D 4		=	
-Very low speed	- 20 Yard/Station				- Wooden sleeper, dark grey rail, overgrown ballast		- R E 3 D 4		=	
-Low speed		- 40 Station approach/branch	- Wooden sleeper, grey rail								- R E 3 D 4		=	
-Medium speed	- 60 / Mainline/branch			- Wooden sleeper, light grey rail						- R E 3 D 4		=	
-Medium speed	- 75 Mainline					- Dark grey sleeper, grey rail							- R E 3			=	
-High speed		- 100 / Mainline				- Wooden sleeper, light grey rail						- R E 3			=	
-High speed		- 100 Mainline					- Dark grey sleeper, light grey rail					- R E 3			=	
-High speed		- 125 Mainline					- Light grey sleeper, grey rail							- R E			=	
-Very High Speed - 187 High Speed				- Light grey sleeper, light grey rail, concrete railbed	- E				=	
+Ballast			- /								- Overgrown ballast										- B				=	BLST
+Overgrown		- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		- N E 3	Z 4		=	SAAx
+Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	- N E 3 Z 4		=	SBAx
+Low speed		- 40 Station approach/branch	- Wooden sleeper, grey rail								- N E 3 Z 4		=	SCAx
+Medium speed	- 60 / Mainline/branch			- Wooden sleeper, light grey rail						- N E 3 Z 4		=	SDAx
+Medium speed	- 75 Mainline					- Dark grey sleeper, grey rail							- N E 3			=	RAIL, ELRL, SAA3
+High speed		- 100 / Mainline				- Wooden sleeper, light grey rail						- N E 3			=	SEAx
+High speed		- 100 Mainline					- Dark grey sleeper, light grey rail					- N E 3			=	SFAx
+High speed		- 125 Mainline					- Light grey sleeper, grey rail							- N E			=	SGAx
+Very High Speed - 187 High Speed				- Light grey sleeper, light grey rail, concrete railbed	- E				=	SHAE
 
-R = rail, E - overhead electrification, 3 = 3rd rail, D = dual powered 3rd/overhead, 4 = 4th rail, B = empty ballast
+R = rail, E - overhead electrification, 3 = 3rd rail, Z = dual powered 3rd/overhead, 4 = 4th rail, B = empty ballast
 / Decorative tracks
 
 Individual parameters to define the speed limit for each track type.
-
+Parameter to turn off speed limits
 
 Parameter for depots & fences:
 
 None (defined by other grfs)
 Dynamic (changes over time)
 Extensive (every track type has a different style of depot/fence)
+
+
+Buffer stop objects for each track type
