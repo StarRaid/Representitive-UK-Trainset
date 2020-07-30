@@ -17,20 +17,20 @@
 
 #define STANDARD_GAUGE_RAILTYPE_ALL STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_EVERY_ELEC
 
-#define STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED "RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080"
+#define STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED "RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN"
 
 #define STANDARD_GAUGE_RAILTYPE_EVERY_ELEC STANDARD_GAUGE_RAILTYPE_CATENARY, STANDARD_GAUGE_RAILTYPE_3RD_RAIL , STANDARD_GAUGE_RAILTYPE_4TH_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL
 
 #define STANDARD_GAUGE_RAILTYPE_OHLE_ONLY STANDARD_GAUGE_RAILTYPE_CATENARY, STANDARD_GAUGE_RAILTYPE_DUAL
 
-#define STANDARD_GAUGE_RAILTYPE_CATENARY "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080"
+#define STANDARD_GAUGE_RAILTYPE_CATENARY "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE"
 
-#define STANDARD_GAUGE_RAILTYPE_3RD_RAIL "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3"
+#define STANDARD_GAUGE_RAILTYPE_3RD_RAIL "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3"
 
-#define STANDARD_GAUGE_RAILTYPE_4TH_RAIL "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT"
+#define STANDARD_GAUGE_RAILTYPE_4TH_RAIL "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"
 
 
-#define STANDARD_GAUGE_RAILTYPE_DUAL "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ"
+#define STANDARD_GAUGE_RAILTYPE_DUAL "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"
 	
 	
 #define NARROW_GAUGE_RAILTYPE_ALL  NARROW_GAUGE_RAILTYPE_NOT_ELECTRIFIED, NARROW_GAUGE_RAILTYPE_CATENARY
@@ -43,7 +43,7 @@
 
 #define STANDARD_GAUGE_CHECK_ALL STANDARD_GAUGE_CHECK_NOT_ELECTRIFIED || STANDARD_GAUGE_CHECK_EVERY_ELEC
 
-#define STANDARD_GAUGE_CHECK_NOT_ELECTRIFIED (current_railtype == railtype("RAIL")) || (current_railtype == railtype("RLOW")) || (current_railtype == railtype("RMED")) || (current_railtype == railtype("RHIG")) || (current_railtype == railtype("SAAN")) || (current_railtype == railtype("SABN")) || (current_railtype == railtype("SACN")) || (current_railtype == railtype("SBAN")) || (current_railtype == railtype("SBBN")) || (current_railtype == railtype("SBCN")) || (current_railtype == railtype("SCAN")) || (current_railtype == railtype("SCBN")) || (current_railtype == railtype("SCCN")) || (current_railtype == railtype("SDAN")) || (current_railtype == railtype("SDBN")) || (current_railtype == railtype("DBNN")) || (current_railtype == railtype("DBHN")) || (current_railtype == railtype("_040")) || (current_railtype == railtype("_080"))
+#define STANDARD_GAUGE_CHECK_NOT_ELECTRIFIED (current_railtype == railtype("RAIL")) || (current_railtype == railtype("RLOW")) || (current_railtype == railtype("RMED")) || (current_railtype == railtype("RHIG")) || (current_railtype == railtype("SAAN")) || (current_railtype == railtype("SABN")) || (current_railtype == railtype("SACN")) || (current_railtype == railtype("SBAN")) || (current_railtype == railtype("SBBN")) || (current_railtype == railtype("SBCN")) || (current_railtype == railtype("SCAN")) || (current_railtype == railtype("SCBN")) || (current_railtype == railtype("SCCN")) || (current_railtype == railtype("SDAN")) || (current_railtype == railtype("SDBN")) || (current_railtype == railtype("DBNN")) || (current_railtype == railtype("DBHN")) || (current_railtype == railtype("_040")) || (current_railtype == railtype("_080")) || (current_railtype == railtype("SEAN")) || (current_railtype == railtype("SFAN")) || (current_railtype == railtype("SGAN"))
 
 #define STANDARD_GAUGE_CHECK_EVERY_ELEC STANDARD_GAUGE_CHECK_CATENARY || STANDARD_GAUGE_CHECK_3RD_RAIL || STANDARD_GAUGE_CHECK_4TH_RAIL || STANDARD_GAUGE_CHECK_DUAL
 
@@ -51,14 +51,14 @@
 
 #define STANDARD_GAUGE_CHECK_THIRD_ONLY STANDARD_GAUGE_CHECK_3RD_RAIL || STANDARD_GAUGE_CHECK_4TH_RAIL || STANDARD_GAUGE_CHECK_DUAL
 
-#define STANDARD_GAUGE_CHECK_CATENARY (current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080"))
+#define STANDARD_GAUGE_CHECK_CATENARY (current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE"))
 
-#define STANDARD_GAUGE_CHECK_3RD_RAIL (current_railtype == railtype("3RDR")) || (current_railtype == railtype("3LOW")) || (current_railtype == railtype("3MED")) || (current_railtype == railtype("SAA3")) || (current_railtype == railtype("SAB3")) || (current_railtype == railtype("SAC3")) || (current_railtype == railtype("SBA3")) || (current_railtype == railtype("SBB3")) || (current_railtype == railtype("SBC3")) || (current_railtype == railtype("SCA3")) || (current_railtype == railtype("SCB3")) || (current_railtype == railtype("SCC3"))
+#define STANDARD_GAUGE_CHECK_3RD_RAIL (current_railtype == railtype("3RDR")) || (current_railtype == railtype("3LOW")) || (current_railtype == railtype("3MED")) || (current_railtype == railtype("SAA3")) || (current_railtype == railtype("SAB3")) || (current_railtype == railtype("SAC3")) || (current_railtype == railtype("SBA3")) || (current_railtype == railtype("SBB3")) || (current_railtype == railtype("SBC3")) || (current_railtype == railtype("SCA3")) || (current_railtype == railtype("SCB3")) || (current_railtype == railtype("SCC3")) || (current_railtype == railtype("SDA3")) || (current_railtype == railtype("SEA3")) || (current_railtype == railtype("SFA3"))
 
-#define STANDARD_GAUGE_CHECK_4TH_RAIL (current_railtype == railtype("4RDR")) || (current_railtype == railtype("4LOW")) || (current_railtype == railtype("4MED")) || (current_railtype == railtype("SAA4")) || (current_railtype == railtype("SAB4")) || (current_railtype == railtype("SAC4")) || (current_railtype == railtype("SBA4")) || (current_railtype == railtype("SBB4")) || (current_railtype == railtype("SBC4")) || (current_railtype == railtype("SCA4")) || (current_railtype == railtype("SCB4")) || (current_railtype == railtype("SCC4")) || (current_railtype == railtype("MTRO")) || (current_railtype == railtype("MTRC")) || (current_railtype == railtype("MTRS")) || (current_railtype == railtype("MTRU")) || (current_railtype == railtype("MTRT"))
+#define STANDARD_GAUGE_CHECK_4TH_RAIL (current_railtype == railtype("4RDR")) || (current_railtype == railtype("4LOW")) || (current_railtype == railtype("4MED")) || (current_railtype == railtype("SAA4")) || (current_railtype == railtype("SAB4")) || (current_railtype == railtype("SAC4")) || (current_railtype == railtype("SBA4")) || (current_railtype == railtype("SBB4")) || (current_railtype == railtype("SBC4")) || (current_railtype == railtype("SCA4")) || (current_railtype == railtype("SCB4")) || (current_railtype == railtype("SCC4")) || (current_railtype == railtype("MTRO")) || (current_railtype == railtype("MTRC")) || (current_railtype == railtype("MTRS")) || (current_railtype == railtype("MTRU")) || (current_railtype == railtype("MTRT")) || (current_railtype == railtype("SDA4"))
 
 
-#define STANDARD_GAUGE_CHECK_DUAL (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ"))
+#define STANDARD_GAUGE_CHECK_DUAL (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ"))
 	
 	
 #define NARROW_GAUGE_CHECK_ALL  NARROW_GAUGE_CHECK_NOT_ELECTRIFIED || NARROW_GAUGE_CHECK_CATENARY
@@ -140,20 +140,20 @@ template template_overlay(x, y){
 	[x+350,	y+40,	64,		41,		-31,	-10	]//Slope NW
 }
 
-template template_underlay(x, y){
-	[770,	120,	64,		31,		-31,	0	]//North East
-	[840,	120,	64,		31,		-31,	0	]//North West
-	[1120,	120,	64,		31,		-31,	0	]//Horizontal Top
-	[1050,	120,	64,		31,		-31,	0	]//Horizontal Bottom
-	[980,	120,	64,		31,		-31,	0	]//Vertical Right
-	[910,	120,	64,		31,		-31,	0	]//Vertical Left
-	[910,	160,	64,		41,		-31,	-10	]//Slope NE
-	[980,	160,	64,		41,		-31,	-10	]//Slope SE
-	[1050,	160,	64,		41,		-31,	-10	]//Slope SW
-	[1120,	160,	64,		41,		-31,	-10	]//Slope NW
-	[770,	160,	64,		31,		-31,	0	]//Cross over
-	[490,	35,		64,		31,		-31,	0 	]//Junction SW
-	[560,	35,		64,		31,		-31,	0	]//Junction NE
-	[630,	35,		64,		31,		-31,	0	]//Junction SE
-	[700,	35,		64,		31,		-31,	0	]//Junction NW
-	[420,	35,		64,		31,		-31,	0	]//Full tile
+template template_underlay(x, y , x2){
+	[x+770,		y+0,	64,		31,		-31,	0	]//North East
+	[x+840,		y+0,	64,		31,		-31,	0	]//North West
+	[x+1120,	y+0,	64,		31,		-31,	0	]//Horizontal Top
+	[x+1050,	y+0,	64,		31,		-31,	0	]//Horizontal Bottom
+	[x+980,		y+0,	64,		31,		-31,	0	]//Vertical Right
+	[x+910,		y+0,	64,		31,		-31,	0	]//Vertical Left
+	[x+910,		y+40,	64,		41,		-31,	-10	]//Slope NE
+	[x+980,		y+40,	64,		41,		-31,	-10	]//Slope SE
+	[x+1050,	y+40,	64,		41,		-31,	-10	]//Slope SW
+	[x+1120,	y+40,	64,		41,		-31,	-10	]//Slope NW
+	[x2+770,	y+40,	64,		31,		-31,	0	]//Cross over
+	[x2+490,	35,		64,		31,		-31,	0 	]//Junction SW
+	[x2+560,	35,		64,		31,		-31,	0	]//Junction NE
+	[x2+630,	35,		64,		31,		-31,	0	]//Junction SE
+	[x2+700,	35,		64,		31,		-31,	0	]//Junction NW
+	[x2+420,	35,		64,		31,		-31,	0	]//Full tile
