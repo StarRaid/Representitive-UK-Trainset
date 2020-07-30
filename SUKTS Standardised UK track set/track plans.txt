@@ -2,10 +2,10 @@ Ballast			- /								- Overgrown ballast										- B				=	BLST
 Overgrown		- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		- N E 3	Z 4		=	SAAx
 Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	- N E 3 Z 4		=	SBAx
 Low speed		- 40 Station approach/branch	- Wooden sleeper, grey rail								- N E 3 Z 4		=	SCAx
-Medium speed	- 60 / Mainline/branch			- Wooden sleeper, light grey rail						- N E 3 Z 4		=	SDAx
-Medium speed	- 75 Mainline					- Dark grey sleeper, grey rail							- N E 3			=	RAIL, ELRL, SAA3
-High speed		- 100 / Mainline				- Wooden sleeper, light grey rail						- N E 3			=	SEAx
-High speed		- 100 Mainline					- Dark grey sleeper, light grey rail					- N E 3			=	SFAx
+Low speed		- 60 / Mainline/branch			- Wooden sleeper, light grey rail						- N E 3 Z 4		=	SDAx
+Medium speed	- 75 Mainline					- Dark grey sleeper, grey rail							- N E 3			=	RAIL, ELRL, 3RDR
+Medium speed	- 100 / Mainline				- Wooden sleeper, light grey rail						- N E 3			=	SEAx
+Medium speed	- 100 Mainline					- Dark grey sleeper, light grey rail					- N E 3			=	SFAx
 High speed		- 125 Mainline					- Light grey sleeper, grey rail							- N E			=	SGAx
 Very High Speed - 187 High Speed				- Light grey sleeper, light grey rail, concrete railbed	- E				=	SHAE
 

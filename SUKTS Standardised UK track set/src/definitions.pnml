@@ -106,3 +106,54 @@ spriteset(gfx_blank_tile, "gfx/tracks.png"){
 	[ 0,	0,		64,		31,		-31,	0	]
 	[ 0,	0,		64,		31,		-31,	0	]
 }
+
+
+template template_ballast(x, y){
+	[x+350,	y,		64,		31,		-31,	0	]//North East
+	[x+420,	y,		64,		31,		-31,	0	]//North West
+	[x+700,	y,		64,		31,		-31,	0	]//Horizontal Top
+	[x+630,	y,		64,		31,		-31,	0	]//Horizontal Bottom
+	[x+560,	y,		64,		31,		-31,	0	]//Vertical Right
+	[x+490,	y,		64,		31,		-31,	0	]//Vertical Left
+	[x+490,	y+70,	64,		41,		-31,	-10	]//Slope NE
+	[x+560,	y+70,	64,		41,		-31,	-10	]//Slope SE
+	[x+630,	y+70,	64,		41,		-31,	-10	]//Slope SW
+	[x+700,	y+70,	64,		41,		-31,	-10	]//Slope NW
+	[x+350,	y+35,	64,		31,		-31,	0	]//Cross over
+	[x+490,	y+35,	64,		31,		-31,	0 	]//Junction SW
+	[x+560,	y+35,	64,		31,		-31,	0	]//Junction NE
+	[x+630,	y+35,	64,		31,		-31,	0	]//Junction SE
+	[x+700,	y+35,	64,		31,		-31,	0	]//Junction NW
+	[x+420,	y+35,	64,		31,		-31,	0	]//Full tile
+}
+
+template template_overlay(x, y){
+	[x,		y,		64,		31,		-31,	0	]//North East
+	[x+70,	y,		64,		31,		-31,	0	]//North West
+	[x+350,	y,		64,		31,		-31,	0	]//Horizontal Top
+	[x+280,	y,		64,		31,		-31,	0	]//Horizontal Bottom
+	[x+210,	y,		64,		31,		-31,	0	]//Vertical Right
+	[x+140,	y,		64,		31,		-31,	0	]//Vertical Left
+	[x+140,	y+40,	64,		41,		-31,	-10	]//Slope NE
+	[x+210,	y+40,	64,		41,		-31,	-10	]//Slope SE
+	[x+280,	y+40,	64,		41,		-31,	-10	]//Slope SW
+	[x+350,	y+40,	64,		41,		-31,	-10	]//Slope NW
+}
+
+template template_underlay(x, y){
+	[770,	120,	64,		31,		-31,	0	]//North East
+	[840,	120,	64,		31,		-31,	0	]//North West
+	[1120,	120,	64,		31,		-31,	0	]//Horizontal Top
+	[1050,	120,	64,		31,		-31,	0	]//Horizontal Bottom
+	[980,	120,	64,		31,		-31,	0	]//Vertical Right
+	[910,	120,	64,		31,		-31,	0	]//Vertical Left
+	[910,	160,	64,		41,		-31,	-10	]//Slope NE
+	[980,	160,	64,		41,		-31,	-10	]//Slope SE
+	[1050,	160,	64,		41,		-31,	-10	]//Slope SW
+	[1120,	160,	64,		41,		-31,	-10	]//Slope NW
+	[770,	160,	64,		31,		-31,	0	]//Cross over
+	[490,	35,		64,		31,		-31,	0 	]//Junction SW
+	[560,	35,		64,		31,		-31,	0	]//Junction NE
+	[630,	35,		64,		31,		-31,	0	]//Junction SE
+	[700,	35,		64,		31,		-31,	0	]//Junction NW
+	[420,	35,		64,		31,		-31,	0	]//Full tile
