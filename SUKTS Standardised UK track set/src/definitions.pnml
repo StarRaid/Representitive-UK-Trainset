@@ -141,19 +141,21 @@ template template_overlay(x, y){
 }
 
 template template_underlay(x, y , x2){
-	[x+770,		y+0,	64,		31,		-31,	0	]//North East
-	[x+840,		y+0,	64,		31,		-31,	0	]//North West
-	[x+1120,	y+0,	64,		31,		-31,	0	]//Horizontal Top
-	[x+1050,	y+0,	64,		31,		-31,	0	]//Horizontal Bottom
-	[x+980,		y+0,	64,		31,		-31,	0	]//Vertical Right
-	[x+910,		y+0,	64,		31,		-31,	0	]//Vertical Left
-	[x+910,		y+40,	64,		41,		-31,	-10	]//Slope NE
-	[x+980,		y+40,	64,		41,		-31,	-10	]//Slope SE
-	[x+1050,	y+40,	64,		41,		-31,	-10	]//Slope SW
-	[x+1120,	y+40,	64,		41,		-31,	-10	]//Slope NW
-	[x+770,		y+40,	64,		31,		-31,	0	]//Cross over
+	[x+420,		y+0,	64,		31,		-31,	0	]//North East
+	[x+490,		y+0,	64,		31,		-31,	0	]//North West
+	[x+770,		y+0,	64,		31,		-31,	0	]//Horizontal Top
+	[x+700,		y+0,	64,		31,		-31,	0	]//Horizontal Bottom
+	[x+630,		y+0,	64,		31,		-31,	0	]//Vertical Right
+	[x+560,		y+0,	64,		31,		-31,	0	]//Vertical Left
+	[x+560,		y+40,	64,		41,		-31,	-10	]//Slope NE
+	[x+630,		y+40,	64,		41,		-31,	-10	]//Slope SE
+	[x+700,		y+40,	64,		41,		-31,	-10	]//Slope SW
+	[x+770,		y+40,	64,		41,		-31,	-10	]//Slope NW
+	[x+420,		y+40,	64,		31,		-31,	0	]//Cross over
 	[x2+140,	35,		64,		31,		-31,	0 	]//Junction SW
 	[x2+210,	35,		64,		31,		-31,	0	]//Junction NE
 	[x2+280,	35,		64,		31,		-31,	0	]//Junction SE
 	[x2+350,	35,		64,		31,		-31,	0	]//Junction NW
 	[x2+70,		35,		64,		31,		-31,	0	]//Full tile
+}
+

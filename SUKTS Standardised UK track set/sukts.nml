@@ -71,6 +71,59 @@ spriteset(gfx_blank_tile, "gfx/tracks.png"){
 	[ 0,	0,		64,		31,		-31,	0	]
 	[ 0,	0,		64,		31,		-31,	0	]
 }
+
+
+template template_ballast(x, y){
+	[x+350,	y,		64,		31,		-31,	0	]//North East
+	[x+420,	y,		64,		31,		-31,	0	]//North West
+	[x+700,	y,		64,		31,		-31,	0	]//Horizontal Top
+	[x+630,	y,		64,		31,		-31,	0	]//Horizontal Bottom
+	[x+560,	y,		64,		31,		-31,	0	]//Vertical Right
+	[x+490,	y,		64,		31,		-31,	0	]//Vertical Left
+	[x+490,	y+70,	64,		41,		-31,	-10	]//Slope NE
+	[x+560,	y+70,	64,		41,		-31,	-10	]//Slope SE
+	[x+630,	y+70,	64,		41,		-31,	-10	]//Slope SW
+	[x+700,	y+70,	64,		41,		-31,	-10	]//Slope NW
+	[x+350,	y+35,	64,		31,		-31,	0	]//Cross over
+	[x+490,	y+35,	64,		31,		-31,	0 	]//Junction SW
+	[x+560,	y+35,	64,		31,		-31,	0	]//Junction NE
+	[x+630,	y+35,	64,		31,		-31,	0	]//Junction SE
+	[x+700,	y+35,	64,		31,		-31,	0	]//Junction NW
+	[x+420,	y+35,	64,		31,		-31,	0	]//Full tile
+}
+
+template template_overlay(x, y){
+	[x,		y,		64,		31,		-31,	0	]//North East
+	[x+70,	y,		64,		31,		-31,	0	]//North West
+	[x+350,	y,		64,		31,		-31,	0	]//Horizontal Top
+	[x+280,	y,		64,		31,		-31,	0	]//Horizontal Bottom
+	[x+210,	y,		64,		31,		-31,	0	]//Vertical Right
+	[x+140,	y,		64,		31,		-31,	0	]//Vertical Left
+	[x+140,	y+40,	64,		41,		-31,	-10	]//Slope NE
+	[x+210,	y+40,	64,		41,		-31,	-10	]//Slope SE
+	[x+280,	y+40,	64,		41,		-31,	-10	]//Slope SW
+	[x+350,	y+40,	64,		41,		-31,	-10	]//Slope NW
+}
+
+template template_underlay(x, y , x2){
+	[x+420,		y+0,	64,		31,		-31,	0	]//North East
+	[x+490,		y+0,	64,		31,		-31,	0	]//North West
+	[x+770,		y+0,	64,		31,		-31,	0	]//Horizontal Top
+	[x+700,		y+0,	64,		31,		-31,	0	]//Horizontal Bottom
+	[x+630,		y+0,	64,		31,		-31,	0	]//Vertical Right
+	[x+560,		y+0,	64,		31,		-31,	0	]//Vertical Left
+	[x+560,		y+40,	64,		41,		-31,	-10	]//Slope NE
+	[x+630,		y+40,	64,		41,		-31,	-10	]//Slope SE
+	[x+700,		y+40,	64,		41,		-31,	-10	]//Slope SW
+	[x+770,		y+40,	64,		41,		-31,	-10	]//Slope NW
+	[x+420,		y+40,	64,		31,		-31,	0	]//Cross over
+	[x2+140,	35,		64,		31,		-31,	0 	]//Junction SW
+	[x2+210,	35,		64,		31,		-31,	0	]//Junction NE
+	[x2+280,	35,		64,		31,		-31,	0	]//Junction SE
+	[x2+350,	35,		64,		31,		-31,	0	]//Junction NW
+	[x2+70,		35,		64,		31,		-31,	0	]//Full tile
+}
+
 # 1 "sukts.pnml" 2
 
 # 1 "src/header.pnml" 1
@@ -78,18 +131,15 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 0 ;
+	version: 1 ;
 	min_compatible_version: 0 ;
 }
 
 railtypetable {
-    "RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080",  "NGRL", "NLOW", "NHIG", "NAAN", "NRAN", "NBAN", "ELNG", "ENLW", "ENHI", "NAAE", "NRAE", "NBAE",
-	"3RDR", "3LOW", "3MED", SAB3, SAC3, SBA3, SBB3, SBC3, SCA3, SCB3, SCC3,									//Default third rail defined bellow
-	"4RDR", "4LOW", "4MED", SAB4, SAC4, SBA4, SBB4, SBC4, SCA4, SCB4, SCC4, MTRO, MTRC, MTRS, MTRU, MTRT,	//Default fourth rail defined bellow
-	"3RDC", CLOW, CMED, SABZ, SACZ, SBAZ, SBBZ, SBCZ, SCAZ, SCBZ, SCCZ,								//Default dual voltage defined bellow
-	SAA3: ["3RDR", SAA3, ELRL],
-	SAAZ: ["3RDC", SAAZ, ELRL],
-	SAA4: ["4RDR", SAA4, "3RDR", SAA3, ELRL]
+    "RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ",  "NGRL", "NLOW", "NHIG", "NAAN", "NRAN", "NBAN", "ELNG", "ENLW", "ENHI", "NAAE", "NRAE", "NBAE",
+	THIRD_RAIL: [SAA3, "3RDR", ELRL],
+	DUAL_VOLT: [SAAZ, "3RDC", ELRL],
+	FOURTH_RAIL: [SAA4, "4RDR", "3RDR", SAA3, ELRL]
 }
 
 cargotable {
@@ -111,6 +161,7 @@ cargotable {
 	URAN, NWST
 }
 # 1 "sukts.pnml" 2
+
 # 1 "src/ballast.pnml" 1
 spriteset(gfx_ballast, "gfx/tracks.png"){
 	[350,	0,		64,		31,		-31,	0	]//North East
@@ -196,41 +247,37 @@ item(FEAT_RAILTYPES, rail_ballast, 2) {
 }
 
 
+# 1 "sukts.pnml" 2
+# 1 "src/standard.pnml" 1
+
+
+//Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAAN
 
 
 
 
-spriteset(gfx_overlay_RAIL, "gfx/tracks.png"){
-	[350,	210,	64,		31,		-31,	0	]//North East
-	[420,	210,	64,		31,		-31,	0	]//North West
-	[700,	210,	64,		31,		-31,	0	]//Horizontal Top
-	[630,	210,	64,		31,		-31,	0	]//Horizontal Bottom
-	[560,	210,	64,		31,		-31,	0	]//Vertical Right
-	[490,	210,	64,		31,		-31,	0	]//Vertical Left
-	[490,	250,	64,		41,		-31,	-10	]//Slope NE
-	[560,	250,	64,		41,		-31,	-10	]//Slope SE
-	[630,	250,	64,		41,		-31,	-10	]//Slope SW
-	[700,	250,	64,		41,		-31,	-10	]//Slope NW
-}
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBAN
 
-spriteset(gfx_ballast_RAIL, "gfx/tracks.png"){
-	[770,	210,	64,		31,		-31,	0	]//North East
-	[840,	210,	64,		31,		-31,	0	]//North West
-	[1120,	210,	64,		31,		-31,	0	]//Horizontal Top
-	[1050,	210,	64,		31,		-31,	0	]//Horizontal Bottom
-	[980,	210,	64,		31,		-31,	0	]//Vertical Right
-	[910,	210,	64,		31,		-31,	0	]//Vertical Left
-	[910,	250,	64,		41,		-31,	-10	]//Slope NE
-	[980,	250,	64,		41,		-31,	-10	]//Slope SE
-	[1050,	250,	64,		41,		-31,	-10	]//Slope SW
-	[1120,	250,	64,		41,		-31,	-10	]//Slope NW
-	[770,	250,	64,		31,		-31,	0	]//Cross over
-	[490,	35,		64,		31,		-31,	0 	]//Junction SW
-	[560,	35,		64,		31,		-31,	0	]//Junction NE
-	[630,	35,		64,		31,		-31,	0	]//Junction SE
-	[700,	35,		64,		31,		-31,	0	]//Junction NW
-	[420,	35,		64,		31,		-31,	0	]//Full tile
-}
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCAN
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDAN
+
+
+
+
+//Medium speed		- 75 Mainline				- Dark grey sleeper, grey rail								-	RAIL
+
+
+spriteset(gfx_overlay_RAIL, "gfx/tracks.png")	{template_overlay(350, 660)}
+
+
+spriteset(gfx_ballast_RAIL, "gfx/tracks.png")	{template_underlay(350, 660, 1610)}
 
 
 item(FEAT_RAILTYPES, rail_RAIL, 0) {
@@ -241,11 +288,11 @@ item(FEAT_RAILTYPES, rail_RAIL, 0) {
 		//build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
 		//autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
-		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ"] ;
-		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080"] ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN"] ;
 		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 1 ;
+		construction_cost			: 8 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
@@ -261,5 +308,152 @@ item(FEAT_RAILTYPES, rail_RAIL, 0) {
 		//fences          : 
 	}
 }
+
+
+
+
+
+
+//Medium speed		- 100 Mainline				- Wooden sleeper, light grey rail							-	SEAN
+
+
+
+
+//Medium speed		- 100 Mainline				- Dark grey sleeper, light grey rail						-	SFAN
+
+
+
+
+//High speed		- 125 Mainline				- Light grey sleeper, grey rail								-	SGAN
+
+# 1 "sukts.pnml" 2
+# 1 "src/overhead.pnml" 1
+
+
+//Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAAE
+
+
+
+
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBAE
+
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCAE
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDAE
+
+
+
+
+//Medium speed		- 75 Mainline				- Dark grey sleeper, grey rail								-	ELRL
+
+
+
+
+//Medium speed		- 100 Mainline				- Wooden sleeper, light grey rail							-	SEAE
+
+
+
+
+//Medium speed		- 100 Mainline				- Dark grey sleeper, light grey rail						-	SFAE
+
+
+
+
+//High speed		- 125 Mainline				- Light grey sleeper, grey rail								-	SGAE
+
+
+
+
+//Very High Speed	- 187 High Speed			- Light grey sleeper, light grey rail, concrete railbed		-	SHAE
+
+
+
+# 1 "sukts.pnml" 2
+# 1 "src/third_rail.pnml" 1
+
+
+//Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAA3
+
+
+
+
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBA3
+
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCA3
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDA3
+
+
+
+
+//Medium speed		- 75 Mainline				- Dark grey sleeper, grey rail								-	"3RDR"
+
+
+
+
+//Medium speed		- 100 Mainline				- Wooden sleeper, light grey rail							-	SEA3
+
+
+
+
+//Medium speed		- 100 Mainline				- Dark grey sleeper, light grey rail						-	SFA3
+
+
+
+# 1 "sukts.pnml" 2
+# 1 "src/dual_volt.pnml" 1
+
+//Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAAZ
+
+
+
+
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBAZ
+
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCAZ
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDAZ
+
+
+
+# 1 "sukts.pnml" 2
+# 1 "src/fourth_rail.pnml" 1
+
+//Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAA4
+
+
+
+
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBA4
+
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCA4
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDA4
+
+
 
 # 1 "sukts.pnml" 2
