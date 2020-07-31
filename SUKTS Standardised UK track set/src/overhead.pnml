@@ -18,7 +18,7 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		//autoreplace_text			: string(STR_SAAE_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SAAE_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;
@@ -59,7 +59,7 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		//autoreplace_text			: string(STR_SBAE_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SBAE_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;
@@ -100,7 +100,7 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		//autoreplace_text			: string(STR_SCAE_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SCAE_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;
@@ -141,7 +141,7 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		//autoreplace_text			: string(STR_SDAE_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SDAE_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;
@@ -182,7 +182,7 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 		//autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;
@@ -222,7 +222,7 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 		//autoreplace_text			: string(STR_SEAE_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SEAE_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;
@@ -263,7 +263,7 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 		//autoreplace_text			: string(STR_SFAE_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SFAE_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;
@@ -304,7 +304,7 @@ item(FEAT_RAILTYPES, rail_SGAE) {
 		//autoreplace_text			: string(STR_SGAE_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SGAE_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;
@@ -345,7 +345,7 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		//autoreplace_text			: string(STR_SHAE_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SHAE_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 12 ;

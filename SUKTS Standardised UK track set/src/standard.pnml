@@ -18,7 +18,7 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		//autoreplace_text			: string(STR_SAAN_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SAAN_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
@@ -59,7 +59,7 @@ item(FEAT_RAILTYPES, rail_SBAN) {
 		//autoreplace_text			: string(STR_SBAN_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SBAN_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
@@ -100,7 +100,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		//autoreplace_text			: string(STR_SCAN_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SCAN_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
@@ -141,7 +141,7 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		//autoreplace_text			: string(STR_SDAN_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SDAN_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
@@ -182,7 +182,7 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		//autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
@@ -222,7 +222,7 @@ item(FEAT_RAILTYPES, rail_SEAN) {
 		//autoreplace_text			: string(STR_SEAN_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SEAN_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
@@ -263,7 +263,7 @@ item(FEAT_RAILTYPES, rail_SFAN) {
 		//autoreplace_text			: string(STR_SFAN_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SFAN_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
@@ -304,7 +304,7 @@ item(FEAT_RAILTYPES, rail_SGAN) {
 		//autoreplace_text			: string(STR_SGAN_REPLACE_NAME) ;
 		//new_engine_text				: string(STR_SGAN_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
