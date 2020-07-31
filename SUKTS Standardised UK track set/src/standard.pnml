@@ -3,43 +3,23 @@
 //Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAAN
 
 
+spriteset(gfx_SAAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 390)}
 
+spriteset(gfx_SAAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 390, 770)}
 
-//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBAN
+spriteset(gfx_SAAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 390)}
 
-
-
-
-//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCAN
-
-
-
-
-//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDAN
-
-
-
-
-//Medium speed		- 75 Mainline				- Dark grey sleeper, grey rail								-	RAIL
-
-
-spriteset(gfx_overlay_RAIL, "gfx/tracks.png")	{template_overlay(350, 660)}
-
-
-spriteset(gfx_ballast_RAIL, "gfx/tracks.png")	{template_underlay(350, 660, 1610)}
-
-
-item(FEAT_RAILTYPES, rail_RAIL, 0) {
+item(FEAT_RAILTYPES, rail_SAAN) {
 	property {
-		label						: "RAIL" ;
-		//name						: string(STR_RAIL_NAME) ;
-		//menu_text					: string(STR_RAIL_NAME) ;
-		//build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		label						: "SAAN" ;
+		//name						: string(STR_SAAN_NAME) ;
+		//menu_text					: string(STR_SAAN_NAME) ;
+		//build_window_caption		: string(STR_SAAN_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_SAAN_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_SAAN_NEW_TRAIN) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
-		curve_speed_multiplier		: 1 ;
+		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 8 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
@@ -48,10 +28,10 @@ item(FEAT_RAILTYPES, rail_RAIL, 0) {
 		sort_order					: 0 ;
 	}
 	graphics {
-		track_overlay		: gfx_overlay_RAIL ;
-		underlay			: gfx_ballast_RAIL ;
-		bridge_surfaces		: gfx_overlay_RAIL ;
-		tunnels				: gfx_blank ;
+		track_overlay		: gfx_SAAN_overlay ;
+		underlay			: gfx_SAAN_ballast ;
+		bridge_surfaces		: gfx_SAAN_overlay ;
+		tunnels				: gfx_SAAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
@@ -61,9 +41,206 @@ item(FEAT_RAILTYPES, rail_RAIL, 0) {
 
 
 
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBAN
+
+
+spriteset(gfx_SBAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 480)}
+
+spriteset(gfx_SBAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 480, 770)}
+
+spriteset(gfx_SBAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 480)}
+
+item(FEAT_RAILTYPES, rail_SBAN) {
+	property {
+		label						: "SBAN" ;
+		//name						: string(STR_SBAN_NAME) ;
+		//menu_text					: string(STR_SBAN_NAME) ;
+		//build_window_caption		: string(STR_SBAN_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_SBAN_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_SBAN_NEW_TRAIN) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 8 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_SBAN_overlay ;
+		underlay			: gfx_SBAN_ballast ;
+		bridge_surfaces		: gfx_SBAN_overlay ;
+		tunnels				: gfx_SBAN_tunnel ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCAN
+
+
+spriteset(gfx_SCAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 570)}
+
+spriteset(gfx_SCAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 570, 350)}
+
+spriteset(gfx_SCAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 570)}
+
+item(FEAT_RAILTYPES, rail_SCAN) {
+	property {
+		label						: "SCAN" ;
+		//name						: string(STR_SCAN_NAME) ;
+		//menu_text					: string(STR_SCAN_NAME) ;
+		//build_window_caption		: string(STR_SCAN_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_SCAN_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_SCAN_NEW_TRAIN) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 8 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_SCAN_overlay ;
+		underlay			: gfx_SCAN_ballast ;
+		bridge_surfaces		: gfx_SCAN_overlay ;
+		tunnels				: gfx_SCAN_tunnel ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDAN
+
+
+spriteset(gfx_SDAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 300)}
+
+spriteset(gfx_SDAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 300, 350)}
+
+spriteset(gfx_SDAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 300)}
+
+item(FEAT_RAILTYPES, rail_SDAN) {
+	property {
+		label						: "SDAN" ;
+		//name						: string(STR_SDAN_NAME) ;
+		//menu_text					: string(STR_SDAN_NAME) ;
+		//build_window_caption		: string(STR_SDAN_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_SDAN_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_SDAN_NEW_TRAIN) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 8 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_SDAN_overlay ;
+		underlay			: gfx_SDAN_ballast ;
+		bridge_surfaces		: gfx_SDAN_overlay ;
+		tunnels				: gfx_SDAN_tunnel ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Medium speed		- 75 Mainline				- Dark grey sleeper, grey rail								-	RAIL
+
+
+spriteset(gfx_RAIL_overlay,	"gfx/tracks.png")	{template_overlay(350, 660)}
+
+spriteset(gfx_RAIL_ballast,	"gfx/tracks.png")	{template_underlay(350, 660, 1610)}
+
+spriteset(gfx_RAIL_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 660)}
+
+item(FEAT_RAILTYPES, rail_RAIL) {
+	property {
+		label						: "RAIL" ;
+		//name						: string(STR_RAIL_NAME) ;
+		//menu_text					: string(STR_RAIL_NAME) ;
+		//build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 8 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_RAIL_overlay ;
+		underlay			: gfx_RAIL_ballast ;
+		bridge_surfaces		: gfx_RAIL_overlay ;
+		tunnels				: gfx_RAIL_tunnel ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
 
 
 //Medium speed		- 100 Mainline				- Wooden sleeper, light grey rail							-	SEAN
+
+
+spriteset(gfx_SEAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 750)}
+
+spriteset(gfx_SEAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 750, 350)}
+
+spriteset(gfx_SEAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 750)}
+
+item(FEAT_RAILTYPES, rail_SEAN) {
+	property {
+		label						: "SEAN" ;
+		//name						: string(STR_SEAN_NAME) ;
+		//menu_text					: string(STR_SEAN_NAME) ;
+		//build_window_caption		: string(STR_SEAN_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_SEAN_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_SEAN_NEW_TRAIN) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 8 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_SEAN_overlay ;
+		underlay			: gfx_SEAN_ballast ;
+		bridge_surfaces		: gfx_SEAN_overlay ;
+		tunnels				: gfx_SEAN_tunnel ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
 
 
 
@@ -71,7 +248,79 @@ item(FEAT_RAILTYPES, rail_RAIL, 0) {
 //Medium speed		- 100 Mainline				- Dark grey sleeper, light grey rail						-	SFAN
 
 
+spriteset(gfx_SFAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 840)}
+
+spriteset(gfx_SFAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 840, 1610)}
+
+spriteset(gfx_SFAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 840)}
+
+item(FEAT_RAILTYPES, rail_SFAN) {
+	property {
+		label						: "SFAN" ;
+		//name						: string(STR_SFAN_NAME) ;
+		//menu_text					: string(STR_SFAN_NAME) ;
+		//build_window_caption		: string(STR_SFAN_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_SFAN_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_SFAN_NEW_TRAIN) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 8 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_SFAN_overlay ;
+		underlay			: gfx_SFAN_ballast ;
+		bridge_surfaces		: gfx_SFAN_overlay ;
+		tunnels				: gfx_SFAN_tunnel ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
 
 
 //High speed		- 125 Mainline				- Light grey sleeper, grey rail								-	SGAN
+
+
+spriteset(gfx_SGAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 930)}
+
+spriteset(gfx_SGAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 930, 1190)}
+
+spriteset(gfx_SGAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 930)}
+
+item(FEAT_RAILTYPES, rail_SGAN) {
+	property {
+		label						: "SGAN" ;
+		//name						: string(STR_SGAN_NAME) ;
+		//menu_text					: string(STR_SGAN_NAME) ;
+		//build_window_caption		: string(STR_SGAN_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_SGAN_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_SGAN_NEW_TRAIN) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		curve_speed_multiplier		: 1 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 8 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_SGAN_overlay ;
+		underlay			: gfx_SGAN_ballast ;
+		bridge_surfaces		: gfx_SGAN_overlay ;
+		tunnels				: gfx_SGAN_tunnel ;
+		//level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
 

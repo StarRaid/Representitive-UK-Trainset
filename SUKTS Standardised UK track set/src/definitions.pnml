@@ -159,3 +159,10 @@ template template_underlay(x, y , x2){
 	[x2+70,		35,		64,		31,		-31,	0	]//Full tile
 }
 
+
+template template_tunnel_tracks(x, y) {
+	[213,		y,	64,		31,		-31,	0	]
+	[x+420,		y,	64,		31,		-31,	0	]
+	[x+490,		y,	64,		31,		-31,	0	]
+	[283,		y,	64,		31,		-31,	0	]
+}

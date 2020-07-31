@@ -52,7 +52,7 @@ spriteset(gfx_ballast_test_track, "gfx/tracks.png"){
 
 
 
-item(FEAT_RAILTYPES, rail_ballast, 2) {
+item(FEAT_RAILTYPES, rail_ballast) {
 	property {
 		label						: "BLST" ;
 		name						: string(STR_BLST_NAME) ;
@@ -68,7 +68,7 @@ item(FEAT_RAILTYPES, rail_ballast, 2) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(0,1,1) ;
-		sort_order					: 250 ;
+		sort_order					: 6 ;
 	}
 	graphics {
 		track_overlay		: gfx_blank ;

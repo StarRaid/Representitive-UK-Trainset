@@ -2,6 +2,42 @@
 //Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAA4
 
 
+spriteset(gfx_XXXX_overlay,	"gfx/tracks.png")	{template_overlay(350, 660)}
+
+spriteset(gfx_XXXX_ballast,	"gfx/tracks.png")	{template_underlay(350, 660, 1610)}
+
+spriteset(gfx_XXXX_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 660)}
+
+item(FEAT_RAILTYPES, rail_XXXX) {
+	property {
+		label						: "XXXX" ;
+		//name						: string(STR_XXXX_NAME) ;
+		//menu_text					: string(STR_XXXX_NAME) ;
+		//build_window_caption		: string(STR_XXXX_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_XXXX_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_XXXX_NEW_TRAIN) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 8 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_XXXX_overlay ;
+		underlay			: gfx_XXXX_ballast ;
+		bridge_surfaces		: gfx_XXXX_overlay ;
+		tunnels				: gfx_XXXX_tunnel ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
 
 
 //Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBA4
