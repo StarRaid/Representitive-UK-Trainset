@@ -57,6 +57,7 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		label						: "BLST" ;
 		name						: string(STR_BLST_NAME) ;
 		menu_text					: string(STR_BLST_NAME) ;
+		toolbar_caption				: string(STR_BLST_NAME) ;
 		build_window_caption		: string(STR_BLST_BUILD_NAME) ;
 		autoreplace_text			: string(STR_BLST_REPLACE_NAME) ;
 		new_engine_text				: string(STR_BLST_NEW_TRAIN) ;

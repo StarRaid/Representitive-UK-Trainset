@@ -2,21 +2,15 @@
 
 //Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAAE
 
-
-spriteset(gfx_SAAE_overlay,	"gfx/tracks.png")	{template_overlay(350, 390)}
-
-spriteset(gfx_SAAE_ballast,	"gfx/tracks.png")	{template_underlay(350, 390, 770)}
-
-spriteset(gfx_SAAE_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 390)}
-
 item(FEAT_RAILTYPES, rail_SAAE) {
 	property {
 		label						: "SAAE" ;
-		//name						: string(STR_SAAE_NAME) ;
-		//menu_text					: string(STR_SAAE_NAME) ;
-		//build_window_caption		: string(STR_SAAE_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SAAE_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SAAE_NEW_TRAIN) ;
+		name						: string(STR_SAAE_NAME) ;
+		menu_text					: string(STR_SAAE_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
@@ -25,13 +19,13 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 60 ;
 	}
 	graphics {
-		track_overlay		: gfx_SAAE_overlay ;
-		underlay			: gfx_SAAE_ballast ;
-		bridge_surfaces		: gfx_SAAE_overlay ;
-		tunnels				: gfx_SAAE_tunnel ;
+		track_overlay		: gfx_SAAN_overlay ;
+		underlay			: gfx_SAAN_ballast ;
+		bridge_surfaces		: gfx_SAAN_overlay ;
+		tunnels				: gfx_SAAN_bridge ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
@@ -43,21 +37,15 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 
 //Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBAE
 
-
-spriteset(gfx_SBAE_overlay,	"gfx/tracks.png")	{template_overlay(350, 480)}
-
-spriteset(gfx_SBAE_ballast,	"gfx/tracks.png")	{template_underlay(350, 480, 770)}
-
-spriteset(gfx_SBAE_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 480)}
-
 item(FEAT_RAILTYPES, rail_SBAE) {
 	property {
 		label						: "SBAE" ;
-		//name						: string(STR_SBAE_NAME) ;
-		//menu_text					: string(STR_SBAE_NAME) ;
-		//build_window_caption		: string(STR_SBAE_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SBAE_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SBAE_NEW_TRAIN) ;
+		name						: string(STR_SBAE_NAME) ;
+		menu_text					: string(STR_SBAE_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
@@ -66,13 +54,13 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 61 ;
 	}
 	graphics {
-		track_overlay		: gfx_SBAE_overlay ;
-		underlay			: gfx_SBAE_ballast ;
-		bridge_surfaces		: gfx_SBAE_overlay ;
-		tunnels				: gfx_SBAE_tunnel ;
+		track_overlay		: gfx_SBAN_overlay ;
+		underlay			: gfx_SBAN_ballast ;
+		bridge_surfaces		: gfx_SBAN_bridge ;
+		tunnels				: gfx_SBAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
@@ -84,21 +72,15 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 
 //Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCAE
 
-
-spriteset(gfx_SCAE_overlay,	"gfx/tracks.png")	{template_overlay(350, 570)}
-
-spriteset(gfx_SCAE_ballast,	"gfx/tracks.png")	{template_underlay(350, 570, 350)}
-
-spriteset(gfx_SCAE_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 570)}
-
 item(FEAT_RAILTYPES, rail_SCAE) {
 	property {
 		label						: "SCAE" ;
-		//name						: string(STR_SCAE_NAME) ;
-		//menu_text					: string(STR_SCAE_NAME) ;
-		//build_window_caption		: string(STR_SCAE_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SCAE_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SCAE_NEW_TRAIN) ;
+		name						: string(STR_SCAE_NAME) ;
+		menu_text					: string(STR_SCAE_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
@@ -107,13 +89,13 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 62 ;
 	}
 	graphics {
-		track_overlay		: gfx_SCAE_overlay ;
-		underlay			: gfx_SCAE_ballast ;
-		bridge_surfaces		: gfx_SCAE_overlay ;
-		tunnels				: gfx_SCAE_tunnel ;
+		track_overlay		: gfx_SCAN_overlay ;
+		underlay			: gfx_SCAN_ballast ;
+		bridge_surfaces		: gfx_SCAN_bridge ;
+		tunnels				: gfx_SCAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
@@ -125,21 +107,15 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 
 //Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDAE
 
-
-spriteset(gfx_SDAE_overlay,	"gfx/tracks.png")	{template_overlay(350, 300)}
-
-spriteset(gfx_SDAE_ballast,	"gfx/tracks.png")	{template_underlay(350, 300, 350)}
-
-spriteset(gfx_SDAE_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 300)}
-
 item(FEAT_RAILTYPES, rail_SDAE) {
 	property {
 		label						: "SDAE" ;
-		//name						: string(STR_SDAE_NAME) ;
-		//menu_text					: string(STR_SDAE_NAME) ;
-		//build_window_caption		: string(STR_SDAE_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SDAE_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SDAE_NEW_TRAIN) ;
+		name						: string(STR_SDAE_NAME) ;
+		menu_text					: string(STR_SDAE_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
@@ -148,13 +124,13 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 63 ;
 	}
 	graphics {
-		track_overlay		: gfx_SDAE_overlay ;
-		underlay			: gfx_SDAE_ballast ;
-		bridge_surfaces		: gfx_SDAE_overlay ;
-		tunnels				: gfx_SDAE_tunnel ;
+		track_overlay		: gfx_SDAN_overlay ;
+		underlay			: gfx_SDAN_ballast ;
+		bridge_surfaces		: gfx_SDAN_bridge ;
+		tunnels				: gfx_SDAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
@@ -166,21 +142,15 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 
 //Medium speed		- 75 Mainline				- Dark grey sleeper, grey rail								-	ELRL
 
-
-spriteset(gfx_ELRL_overlay,	"gfx/tracks.png")	{template_overlay(350, 660)}
-
-spriteset(gfx_ELRL_ballast,	"gfx/tracks.png")	{template_underlay(350, 660, 1610)}
-
-spriteset(gfx_ELRL_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 660)}
-
 item(FEAT_RAILTYPES, rail_ELRL) {
 	property {
 		label						: "ELRL" ;
-		//name						: string(STR_ELRL_NAME) ;
-		//menu_text					: string(STR_ELRL_NAME) ;
-		//build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		name						: string(STR_ELRL_NAME) ;
+		menu_text					: string(STR_ELRL_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
@@ -189,13 +159,13 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 64 ;
 	}
 	graphics {
-		track_overlay		: gfx_ELRL_overlay ;
-		underlay			: gfx_ELRL_ballast ;
-		bridge_surfaces		: gfx_ELRL_overlay ;
-		tunnels				: gfx_ELRL_tunnel ;
+		track_overlay		: gfx_RAIL_overlay ;
+		underlay			: gfx_RAIL_ballast ;
+		bridge_surfaces		: gfx_RAIL_bridge ;
+		tunnels				: gfx_RAIL_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
@@ -206,21 +176,15 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 
 //Medium speed		- 100 Mainline				- Wooden sleeper, light grey rail							-	SEAE
 
-
-spriteset(gfx_SEAE_overlay,	"gfx/tracks.png")	{template_overlay(350, 750)}
-
-spriteset(gfx_SEAE_ballast,	"gfx/tracks.png")	{template_underlay(350, 750, 350)}
-
-spriteset(gfx_SEAE_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 750)}
-
 item(FEAT_RAILTYPES, rail_SEAE) {
 	property {
 		label						: "SEAE" ;
-		//name						: string(STR_SEAE_NAME) ;
-		//menu_text					: string(STR_SEAE_NAME) ;
-		//build_window_caption		: string(STR_SEAE_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SEAE_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SEAE_NEW_TRAIN) ;
+		name						: string(STR_SEAE_NAME) ;
+		menu_text					: string(STR_SEAE_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
@@ -229,13 +193,13 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 65 ;
 	}
 	graphics {
-		track_overlay		: gfx_SEAE_overlay ;
-		underlay			: gfx_SEAE_ballast ;
-		bridge_surfaces		: gfx_SEAE_overlay ;
-		tunnels				: gfx_SEAE_tunnel ;
+		track_overlay		: gfx_SEAN_overlay ;
+		underlay			: gfx_SEAN_ballast ;
+		bridge_surfaces		: gfx_SEAN_bridge ;
+		tunnels				: gfx_SEAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
@@ -247,21 +211,15 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 
 //Medium speed		- 100 Mainline				- Dark grey sleeper, light grey rail						-	SFAE
 
-
-spriteset(gfx_SFAE_overlay,	"gfx/tracks.png")	{template_overlay(350, 840)}
-
-spriteset(gfx_SFAE_ballast,	"gfx/tracks.png")	{template_underlay(350, 840, 1610)}
-
-spriteset(gfx_SFAE_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 840)}
-
 item(FEAT_RAILTYPES, rail_SFAE) {
 	property {
 		label						: "SFAE" ;
-		//name						: string(STR_SFAE_NAME) ;
-		//menu_text					: string(STR_SFAE_NAME) ;
-		//build_window_caption		: string(STR_SFAE_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SFAE_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SFAE_NEW_TRAIN) ;
+		name						: string(STR_SFAE_NAME) ;
+		menu_text					: string(STR_SFAE_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
@@ -270,13 +228,13 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 66 ;
 	}
 	graphics {
-		track_overlay		: gfx_SFAE_overlay ;
-		underlay			: gfx_SFAE_ballast ;
-		bridge_surfaces		: gfx_SFAE_overlay ;
-		tunnels				: gfx_SFAE_tunnel ;
+		track_overlay		: gfx_SFAN_overlay ;
+		underlay			: gfx_SFAN_ballast ;
+		bridge_surfaces		: gfx_SFAN_bridge ;
+		tunnels				: gfx_SFAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
@@ -288,21 +246,15 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 
 //High speed		- 125 Mainline				- Light grey sleeper, grey rail								-	SGAE
 
-
-spriteset(gfx_SGAE_overlay,	"gfx/tracks.png")	{template_overlay(350, 930)}
-
-spriteset(gfx_SGAE_ballast,	"gfx/tracks.png")	{template_underlay(350, 930, 1190)}
-
-spriteset(gfx_SGAE_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 930)}
-
 item(FEAT_RAILTYPES, rail_SGAE) {
 	property {
 		label						: "SGAE" ;
-		//name						: string(STR_SGAE_NAME) ;
-		//menu_text					: string(STR_SGAE_NAME) ;
-		//build_window_caption		: string(STR_SGAE_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SGAE_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SGAE_NEW_TRAIN) ;
+		name						: string(STR_SGAE_NAME) ;
+		menu_text					: string(STR_SGAE_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
@@ -311,13 +263,13 @@ item(FEAT_RAILTYPES, rail_SGAE) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 67 ;
 	}
 	graphics {
-		track_overlay		: gfx_SGAE_overlay ;
-		underlay			: gfx_SGAE_ballast ;
-		bridge_surfaces		: gfx_SGAE_overlay ;
-		tunnels				: gfx_SGAE_tunnel ;
+		track_overlay		: gfx_SGAN_overlay ;
+		underlay			: gfx_SGAN_ballast ;
+		bridge_surfaces		: gfx_SGAN_bridge ;
+		tunnels				: gfx_SGAN_tunnel ;
 		//level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
@@ -334,16 +286,19 @@ spriteset(gfx_SHAE_overlay,	"gfx/tracks.png")	{template_overlay(350, 1020)}
 
 spriteset(gfx_SHAE_ballast,	"gfx/tracks.png")	{template_underlay(350, 1020, 1190)}
 
+spriteset(gfx_SHAE_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 1020)}
+
 spriteset(gfx_SHAE_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 1020)}
 
 item(FEAT_RAILTYPES, rail_SHAE) {
 	property {
 		label						: "SHAE" ;
-		//name						: string(STR_SHAE_NAME) ;
-		//menu_text					: string(STR_SHAE_NAME) ;
-		//build_window_caption		: string(STR_SHAE_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SHAE_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SHAE_NEW_TRAIN) ;
+		name						: string(STR_SHAE_NAME) ;
+		menu_text					: string(STR_SHAE_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
@@ -352,12 +307,12 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 68 ;
 	}
 	graphics {
 		track_overlay		: gfx_SHAE_overlay ;
 		underlay			: gfx_SHAE_ballast ;
-		bridge_surfaces		: gfx_SHAE_overlay ;
+		bridge_surfaces		: gfx_SHAE_bridge ;
 		tunnels				: gfx_SHAE_tunnel ;
 		//level_crossings		: gfx_blank ;
 		//depots          : 

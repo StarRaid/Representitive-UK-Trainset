@@ -7,16 +7,19 @@ spriteset(gfx_SAAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 390)}
 
 spriteset(gfx_SAAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 390, 770)}
 
+spriteset(gfx_SAAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 390)}
+
 spriteset(gfx_SAAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 390)}
 
 item(FEAT_RAILTYPES, rail_SAAN) {
 	property {
 		label						: "SAAN" ;
-		//name						: string(STR_SAAN_NAME) ;
-		//menu_text					: string(STR_SAAN_NAME) ;
-		//build_window_caption		: string(STR_SAAN_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SAAN_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SAAN_NEW_TRAIN) ;
+		name						: string(STR_SAAN_NAME) ;
+		menu_text					: string(STR_SAAN_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
@@ -25,12 +28,12 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 50 ;
 	}
 	graphics {
 		track_overlay		: gfx_SAAN_overlay ;
 		underlay			: gfx_SAAN_ballast ;
-		bridge_surfaces		: gfx_SAAN_overlay ;
+		bridge_surfaces		: gfx_SAAN_bridge ;
 		tunnels				: gfx_SAAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
@@ -48,16 +51,19 @@ spriteset(gfx_SBAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 480)}
 
 spriteset(gfx_SBAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 480, 770)}
 
+spriteset(gfx_SBAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 480)}
+
 spriteset(gfx_SBAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 480)}
 
 item(FEAT_RAILTYPES, rail_SBAN) {
 	property {
 		label						: "SBAN" ;
-		//name						: string(STR_SBAN_NAME) ;
-		//menu_text					: string(STR_SBAN_NAME) ;
-		//build_window_caption		: string(STR_SBAN_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SBAN_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SBAN_NEW_TRAIN) ;
+		name						: string(STR_SBAN_NAME) ;
+		menu_text					: string(STR_SBAN_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
@@ -66,12 +72,12 @@ item(FEAT_RAILTYPES, rail_SBAN) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 51 ;
 	}
 	graphics {
 		track_overlay		: gfx_SBAN_overlay ;
 		underlay			: gfx_SBAN_ballast ;
-		bridge_surfaces		: gfx_SBAN_overlay ;
+		bridge_surfaces		: gfx_SBAN_bridge ;
 		tunnels				: gfx_SBAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
@@ -89,16 +95,19 @@ spriteset(gfx_SCAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 570)}
 
 spriteset(gfx_SCAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 570, 350)}
 
+spriteset(gfx_SCAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 570)}
+
 spriteset(gfx_SCAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 570)}
 
 item(FEAT_RAILTYPES, rail_SCAN) {
 	property {
 		label						: "SCAN" ;
-		//name						: string(STR_SCAN_NAME) ;
-		//menu_text					: string(STR_SCAN_NAME) ;
-		//build_window_caption		: string(STR_SCAN_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SCAN_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SCAN_NEW_TRAIN) ;
+		name						: string(STR_SCAN_NAME) ;
+		menu_text					: string(STR_SCAN_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
@@ -107,12 +116,12 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 52 ;
 	}
 	graphics {
 		track_overlay		: gfx_SCAN_overlay ;
 		underlay			: gfx_SCAN_ballast ;
-		bridge_surfaces		: gfx_SCAN_overlay ;
+		bridge_surfaces		: gfx_SCAN_bridge ;
 		tunnels				: gfx_SCAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
@@ -130,16 +139,19 @@ spriteset(gfx_SDAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 300)}
 
 spriteset(gfx_SDAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 300, 350)}
 
+spriteset(gfx_SDAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 300)}
+
 spriteset(gfx_SDAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 300)}
 
 item(FEAT_RAILTYPES, rail_SDAN) {
 	property {
 		label						: "SDAN" ;
-		//name						: string(STR_SDAN_NAME) ;
-		//menu_text					: string(STR_SDAN_NAME) ;
-		//build_window_caption		: string(STR_SDAN_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SDAN_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SDAN_NEW_TRAIN) ;
+		name						: string(STR_SDAN_NAME) ;
+		menu_text					: string(STR_SDAN_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
@@ -148,12 +160,12 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 53 ;
 	}
 	graphics {
 		track_overlay		: gfx_SDAN_overlay ;
 		underlay			: gfx_SDAN_ballast ;
-		bridge_surfaces		: gfx_SDAN_overlay ;
+		bridge_surfaces		: gfx_SDAN_bridge ;
 		tunnels				: gfx_SDAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
@@ -171,16 +183,19 @@ spriteset(gfx_RAIL_overlay,	"gfx/tracks.png")	{template_overlay(350, 660)}
 
 spriteset(gfx_RAIL_ballast,	"gfx/tracks.png")	{template_underlay(350, 660, 1610)}
 
+spriteset(gfx_RAIL_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 660)}
+
 spriteset(gfx_RAIL_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 660)}
 
 item(FEAT_RAILTYPES, rail_RAIL) {
 	property {
 		label						: "RAIL" ;
-		//name						: string(STR_RAIL_NAME) ;
-		//menu_text					: string(STR_RAIL_NAME) ;
-		//build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		name						: string(STR_RAIL_NAME) ;
+		menu_text					: string(STR_RAIL_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
@@ -189,12 +204,12 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 54 ;
 	}
 	graphics {
 		track_overlay		: gfx_RAIL_overlay ;
 		underlay			: gfx_RAIL_ballast ;
-		bridge_surfaces		: gfx_RAIL_overlay ;
+		bridge_surfaces		: gfx_RAIL_bridge ;
 		tunnels				: gfx_RAIL_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
@@ -211,16 +226,19 @@ spriteset(gfx_SEAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 750)}
 
 spriteset(gfx_SEAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 750, 350)}
 
+spriteset(gfx_SEAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 750)}
+
 spriteset(gfx_SEAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 750)}
 
 item(FEAT_RAILTYPES, rail_SEAN) {
 	property {
 		label						: "SEAN" ;
-		//name						: string(STR_SEAN_NAME) ;
-		//menu_text					: string(STR_SEAN_NAME) ;
-		//build_window_caption		: string(STR_SEAN_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SEAN_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SEAN_NEW_TRAIN) ;
+		name						: string(STR_SEAN_NAME) ;
+		menu_text					: string(STR_SEAN_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
@@ -229,12 +247,12 @@ item(FEAT_RAILTYPES, rail_SEAN) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 55 ;
 	}
 	graphics {
 		track_overlay		: gfx_SEAN_overlay ;
 		underlay			: gfx_SEAN_ballast ;
-		bridge_surfaces		: gfx_SEAN_overlay ;
+		bridge_surfaces		: gfx_SEAN_bridge ;
 		tunnels				: gfx_SEAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
@@ -252,16 +270,19 @@ spriteset(gfx_SFAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 840)}
 
 spriteset(gfx_SFAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 840, 1610)}
 
+spriteset(gfx_SFAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 840)}
+
 spriteset(gfx_SFAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 840)}
 
 item(FEAT_RAILTYPES, rail_SFAN) {
 	property {
 		label						: "SFAN" ;
-		//name						: string(STR_SFAN_NAME) ;
-		//menu_text					: string(STR_SFAN_NAME) ;
-		//build_window_caption		: string(STR_SFAN_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SFAN_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SFAN_NEW_TRAIN) ;
+		name						: string(STR_SFAN_NAME) ;
+		menu_text					: string(STR_SFAN_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
@@ -270,12 +291,12 @@ item(FEAT_RAILTYPES, rail_SFAN) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 56 ;
 	}
 	graphics {
 		track_overlay		: gfx_SFAN_overlay ;
 		underlay			: gfx_SFAN_ballast ;
-		bridge_surfaces		: gfx_SFAN_overlay ;
+		bridge_surfaces		: gfx_SFAN_bridge ;
 		tunnels				: gfx_SFAN_tunnel ;
 		level_crossings		: gfx_blank ;
 		//depots          : 
@@ -293,16 +314,19 @@ spriteset(gfx_SGAN_overlay,	"gfx/tracks.png")	{template_overlay(350, 930)}
 
 spriteset(gfx_SGAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 930, 1190)}
 
+spriteset(gfx_SGAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 930)}
+
 spriteset(gfx_SGAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 930)}
 
 item(FEAT_RAILTYPES, rail_SGAN) {
 	property {
 		label						: "SGAN" ;
-		//name						: string(STR_SGAN_NAME) ;
-		//menu_text					: string(STR_SGAN_NAME) ;
-		//build_window_caption		: string(STR_SGAN_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_SGAN_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_SGAN_NEW_TRAIN) ;
+		name						: string(STR_SGAN_NAME) ;
+		menu_text					: string(STR_SGAN_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 1 ;
@@ -311,12 +335,12 @@ item(FEAT_RAILTYPES, rail_SGAN) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		sort_order					: 57 ;
 	}
 	graphics {
 		track_overlay		: gfx_SGAN_overlay ;
 		underlay			: gfx_SGAN_ballast ;
-		bridge_surfaces		: gfx_SGAN_overlay ;
+		bridge_surfaces		: gfx_SGAN_bridge ;
 		tunnels				: gfx_SGAN_tunnel ;
 		//level_crossings		: gfx_blank ;
 		//depots          : 
