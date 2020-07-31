@@ -1,0 +1,104 @@
+
+
+//Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAAN
+
+
+
+
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBAN
+
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCAN
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDAN
+
+
+
+
+//Medium speed		- 75 Mainline				- Dark grey sleeper, grey rail								-	RAIL
+
+
+spriteset(gfx_overlay_RAIL, "gfx/tracks.png"){
+	[350,	210,	64,		31,		-31,	0	]//North East
+	[420,	210,	64,		31,		-31,	0	]//North West
+	[700,	210,	64,		31,		-31,	0	]//Horizontal Top
+	[630,	210,	64,		31,		-31,	0	]//Horizontal Bottom
+	[560,	210,	64,		31,		-31,	0	]//Vertical Right
+	[490,	210,	64,		31,		-31,	0	]//Vertical Left
+	[490,	250,	64,		41,		-31,	-10	]//Slope NE
+	[560,	250,	64,		41,		-31,	-10	]//Slope SE
+	[630,	250,	64,		41,		-31,	-10	]//Slope SW
+	[700,	250,	64,		41,		-31,	-10	]//Slope NW
+}
+
+spriteset(gfx_ballast_RAIL, "gfx/tracks.png"){
+	[770,	210,	64,		31,		-31,	0	]//North East
+	[840,	210,	64,		31,		-31,	0	]//North West
+	[1120,	210,	64,		31,		-31,	0	]//Horizontal Top
+	[1050,	210,	64,		31,		-31,	0	]//Horizontal Bottom
+	[980,	210,	64,		31,		-31,	0	]//Vertical Right
+	[910,	210,	64,		31,		-31,	0	]//Vertical Left
+	[910,	250,	64,		41,		-31,	-10	]//Slope NE
+	[980,	250,	64,		41,		-31,	-10	]//Slope SE
+	[1050,	250,	64,		41,		-31,	-10	]//Slope SW
+	[1120,	250,	64,		41,		-31,	-10	]//Slope NW
+	[770,	250,	64,		31,		-31,	0	]//Cross over
+	[490,	35,		64,		31,		-31,	0 	]//Junction SW
+	[560,	35,		64,		31,		-31,	0	]//Junction NE
+	[630,	35,		64,		31,		-31,	0	]//Junction SE
+	[700,	35,		64,		31,		-31,	0	]//Junction NW
+	[420,	35,		64,		31,		-31,	0	]//Full tile
+}
+
+
+item(FEAT_RAILTYPES, rail_RAIL, 0) {
+	property {
+		label						: "RAIL" ;
+		//name						: string(STR_RAIL_NAME) ;
+		//menu_text					: string(STR_RAIL_NAME) ;
+		//build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		//autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		//new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		curve_speed_multiplier		: 1 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 1 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1804,1,1) ;
+		sort_order					: 0 ;
+	}
+	graphics {
+		track_overlay		: gfx_overlay_RAIL ;
+		underlay			: gfx_ballast_RAIL ;
+		bridge_surfaces		: gfx_overlay_RAIL ;
+		tunnels				: gfx_blank ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+
+
+//Medium speed		- 100 Mainline				- Wooden sleeper, light grey rail							-	SEAN
+
+
+
+
+//Medium speed		- 100 Mainline				- Dark grey sleeper, light grey rail						-	SFAN
+
+
+
+
+//High speed		- 125 Mainline				- Light grey sleeper, grey rail								-	SGAN
+

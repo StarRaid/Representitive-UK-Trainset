@@ -2,4 +2,10 @@
 #include "src/definitions.pnml"
 
 #include "src/header.pnml"
+
 #include "src/ballast.pnml"
+#include "src/standard.pnml"
+#include "src/overhead.pnml"
+#include "src/third_rail.pnml"
+#include "src/dual_volt.pnml"
+#include "src/fourth_rail.pnml"

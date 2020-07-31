@@ -151,9 +151,9 @@ template template_underlay(x, y , x2){
 	[x+980,		y+40,	64,		41,		-31,	-10	]//Slope SE
 	[x+1050,	y+40,	64,		41,		-31,	-10	]//Slope SW
 	[x+1120,	y+40,	64,		41,		-31,	-10	]//Slope NW
-	[x2+770,	y+40,	64,		31,		-31,	0	]//Cross over
-	[x2+490,	35,		64,		31,		-31,	0 	]//Junction SW
-	[x2+560,	35,		64,		31,		-31,	0	]//Junction NE
-	[x2+630,	35,		64,		31,		-31,	0	]//Junction SE
-	[x2+700,	35,		64,		31,		-31,	0	]//Junction NW
-	[x2+420,	35,		64,		31,		-31,	0	]//Full tile
+	[x+770,		y+40,	64,		31,		-31,	0	]//Cross over
+	[x2+140,	35,		64,		31,		-31,	0 	]//Junction SW
+	[x2+210,	35,		64,		31,		-31,	0	]//Junction NE
+	[x2+280,	35,		64,		31,		-31,	0	]//Junction SE
+	[x2+350,	35,		64,		31,		-31,	0	]//Junction NW
+	[x2+70,		35,		64,		31,		-31,	0	]//Full tile
