@@ -15,10 +15,10 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 9 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 60 ;
 	}
 	graphics {
@@ -26,7 +26,7 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		underlay			: gfx_SAAN_ballast ;
 		bridge_surfaces		: gfx_SAAN_overlay ;
 		tunnels				: gfx_SAAN_bridge ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -50,10 +50,10 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 11 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 61 ;
 	}
 	graphics {
@@ -61,7 +61,7 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		underlay			: gfx_SBAN_ballast ;
 		bridge_surfaces		: gfx_SBAN_bridge ;
 		tunnels				: gfx_SBAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -85,10 +85,10 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 13 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 62 ;
 	}
 	graphics {
@@ -96,7 +96,7 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		underlay			: gfx_SCAN_ballast ;
 		bridge_surfaces		: gfx_SCAN_bridge ;
 		tunnels				: gfx_SCAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -120,10 +120,10 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 14 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 63 ;
 	}
 	graphics {
@@ -131,7 +131,7 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		underlay			: gfx_SDAN_ballast ;
 		bridge_surfaces		: gfx_SDAN_bridge ;
 		tunnels				: gfx_SDAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -155,10 +155,10 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 17 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 64 ;
 	}
 	graphics {
@@ -166,7 +166,7 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 		underlay			: gfx_RAIL_ballast ;
 		bridge_surfaces		: gfx_RAIL_bridge ;
 		tunnels				: gfx_RAIL_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_RAIL_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -189,10 +189,10 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 18 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 65 ;
 	}
 	graphics {
@@ -200,7 +200,7 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 		underlay			: gfx_SEAN_ballast ;
 		bridge_surfaces		: gfx_SEAN_bridge ;
 		tunnels				: gfx_SEAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SEAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -224,10 +224,10 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 20 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 66 ;
 	}
 	graphics {
@@ -235,7 +235,7 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 		underlay			: gfx_SFAN_ballast ;
 		bridge_surfaces		: gfx_SFAN_bridge ;
 		tunnels				: gfx_SFAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SFAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -257,12 +257,12 @@ item(FEAT_RAILTYPES, rail_SGAE) {
 		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
-		curve_speed_multiplier		: 0 ;
+		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 23 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 67 ;
 	}
 	graphics {
@@ -301,12 +301,12 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
-		curve_speed_multiplier		: 0 ;
+		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 28 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1960,1,1) ;
 		sort_order					: 68 ;
 	}
 	graphics {

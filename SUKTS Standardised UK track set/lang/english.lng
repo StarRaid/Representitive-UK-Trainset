@@ -4,7 +4,43 @@ STR_GRF_NAME	:Standardised UK Track Set - SUKTS
 STR_GRF_DESC	:{GOLD}A track set that adds a customisable roster of different track types that follow the standardised track scheme! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
 
 
+STR_PARAM_SPEEDLIMITS_NAME			:Speed limits
+STR_PARAM_SPEEDLIMITS_DESC			:Turn on track speed limits.
 
+STR_PARAM_DECORATION_NAME			:Extra tracks
+STR_PARAM_DECORATION_DESC			:Enable extra track types for extra speed limits or decorative purposes
+
+STR_PARAM_COSTS_BUILD_NAME			:Construction costs
+STR_PARAM_COSTS_BUILD_DESC			:Changes the cost of purchasing tracks from this GRF.
+
+STR_PARAM_COSTS_MAINT_NAME			:Maintenance costs
+STR_PARAM_COSTS_MAINT_DESC			:Changes the cost of maintaining tracks from this GRF.
+
+STR_PARAM_VVVLOW					:1/16
+STR_PARAM_VVLOW						:1/8
+STR_PARAM_VLOW						:1/4
+STR_PARAM_LOW						:1/2
+STR_PARAM_MEDIUM					:Normal
+STR_PARAM_HIGH						:2x
+STR_PARAM_TOOMUCH					:4x
+STR_PARAM_TOOTOOMUCH				:8x
+
+STR_PARAM_GFX_FENCE_NAME			:Fence graphics
+STR_PARAM_GFX_FENCE_DESC			:Changes the behaviour of fences.
+
+
+
+STR_PARAM_SPEED_DESC				:Speed in mph if speed limits are enabled (set to 0 to disable speed limit)
+
+STR_PARAM_SPEED_1					:Speed limit - Very low 1 (extra)
+STR_PARAM_SPEED_2					:Speed limit - Very low 2
+STR_PARAM_SPEED_3					:Speed limit - Low 1
+STR_PARAM_SPEED_4					:Speed limit - Low 2 (extra)
+STR_PARAM_SPEED_5					:Speed limit - Medium 1
+STR_PARAM_SPEED_6					:Speed limit - Medium 2 (extra)
+STR_PARAM_SPEED_7					:Speed limit - Medium 3
+STR_PARAM_SPEED_8					:Speed limit - High
+STR_PARAM_SPEED_9					:Speed limit - Very high
 
 
 
@@ -54,33 +90,34 @@ STR_SFAN_NAME				:Standard Gauge {GOLD}(Sleeper: Dark concrete, Rail: Light Grey
 STR_SGAN_NAME				:Standard Gauge {GOLD}(Sleeper: Light concrete, Rail: Grey)
 
 
-STR_SAAE_NAME				:Standard Gauge (25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown)
-STR_SBAE_NAME				:Standard Gauge (25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown)
-STR_SCAE_NAME				:Standard Gauge (25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Grey)
-STR_SDAE_NAME				:Standard Gauge (25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Light Grey)
-STR_ELRL_NAME				:Standard Gauge (25kv Overhead) {GOLD}(Sleeper: Dark concrete, Rail: Grey)
-STR_SEAE_NAME				:Standard Gauge (25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Light Grey)
-STR_SFAE_NAME				:Standard Gauge (25kv Overhead) {GOLD}(Sleeper: Dark concrete, Rail: Light Grey)
-STR_SGAE_NAME				:Standard Gauge (25kv Overhead) {GOLD}(Sleeper: Light concrete, Rail: Grey)
-STR_SHAE_NAME				:Standard Gauge (25kv Overhead) {GOLD}(Sleeper: Light concrete, Rail: Grey)
+STR_SAAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){ORANGE}
+STR_SBAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){ORANGE}
+STR_SCAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Grey){ORANGE}
+STR_SDAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Light Grey){ORANGE}
+STR_ELRL_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Dark concrete, Rail: Grey){ORANGE}
+STR_SEAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Light Grey){ORANGE}
+STR_SFAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Dark concrete, Rail: Light Grey){ORANGE}
+STR_SGAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Light concrete, Rail: Grey){ORANGE}
+STR_SHAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Light concrete, Rail: Grey){ORANGE}
 
 
-STR_SAA3_NAME				:Standard Gauge (750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown)
-STR_SBA3_NAME				:Standard Gauge (750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown)
-STR_SCA3_NAME				:Standard Gauge (750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Grey)
-STR_SDA3_NAME				:Standard Gauge (750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey)
-STR_3RDR_NAME				:Standard Gauge (750v 3rd Rail) {GOLD}(Sleeper: Dark concrete, Rail: Grey)
-STR_SEA3_NAME				:Standard Gauge (750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey)
-STR_SFA3_NAME				:Standard Gauge (750v 3rd Rail) {GOLD}(Sleeper: Dark concrete, Rail: Light Grey)
+STR_SAA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){ORANGE}
+STR_SBA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){ORANGE}
+STR_SCA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Grey){ORANGE}
+STR_SDA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey){ORANGE}
+STR_3RDR_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Dark concrete, Rail: Grey){ORANGE}
+STR_SEA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey){ORANGE}
+STR_SFA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Dark concrete, Rail: Light Grey){ORANGE}
 
 
-STR_SAA4_NAME				:Standard Gauge (630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown)
-STR_SBA4_NAME				:Standard Gauge (630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown)
-STR_SCA4_NAME				:Standard Gauge (630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Grey)
-STR_4RDR_NAME				:Standard Gauge (630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey)
+STR_SAA4_NAME				:Standard Gauge {LTBLUE}(630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){ORANGE}
+STR_SBA4_NAME				:Standard Gauge {LTBLUE}(630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){ORANGE}
+STR_SCA4_NAME				:Standard Gauge {LTBLUE}(630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Grey){ORANGE}
+STR_SDA4_NAME				:Standard Gauge {LTBLUE}(630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey){ORANGE}
 
 
-STR_SAAZ_NAME				:Standard Gauge (Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown)
-STR_SBAZ_NAME				:Standard Gauge (Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown)
-STR_SCAZ_NAME				:Standard Gauge (Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Grey)
-STR_3RDC_NAME				:Standard Gauge (Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Light Grey)
+STR_SAAZ_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){ORANGE}
+STR_SBAZ_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){ORANGE}
+STR_SCAZ_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Grey){ORANGE}
+STR_3RDC_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Light Grey){ORANGE}
+

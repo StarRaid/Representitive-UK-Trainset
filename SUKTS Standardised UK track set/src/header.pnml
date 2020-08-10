@@ -2,8 +2,134 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 1 ;
+	version: 4 ;
 	min_compatible_version: 0 ;
+	param 0{
+		toggle_limits{
+			type    : bool ;
+			name    : string(STR_PARAM_SPEEDLIMITS_NAME) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			bit     : 1 ;
+			def_value : 1 ;
+		}
+		extra_tracks{
+			type    : bool ;
+			name    : string(STR_PARAM_DECORATION_NAME) ;
+			desc    : string(STR_PARAM_DECORATION_DESC) ;
+			bit     : 2 ;
+			def_value : 1 ;
+		}
+	}
+	param 1{
+		cost_multiplier{
+			type    : int ;
+			name    : string(STR_PARAM_COSTS_BUILD_NAME) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 7 ;
+			def_value	: 4 ;
+			names		: {
+				0	: string(STR_PARAM_VVVLOW  ) ;
+				1	: string(STR_PARAM_VVLOW) ;
+				2	: string(STR_PARAM_VLOW) ;
+				3	: string(STR_PARAM_LOW ) ;
+				4	: string(STR_PARAM_MEDIUM ) ;
+				5	: string(STR_PARAM_HIGH ) ;
+				6	: string(STR_PARAM_TOOMUCH ) ;
+				7	: string(STR_PARAM_TOOTOOMUCH ) ;
+			} ;
+		}
+	}
+	param 2{
+		speed_1{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_1) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 3{
+		speed_2{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_2) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 4{
+		speed_3{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_3) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 5{
+		speed_4{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_4) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 6{
+		speed_5{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_5) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 7{
+		speed_6{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_6) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 8{
+		speed_7{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_7) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 9{
+		speed_8{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_8) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 10{
+		speed_9{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_9) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
 }
 
 railtypetable {
@@ -30,4 +156,10 @@ cargotable {
    
 //Nuclear stuff
 	URAN, NWST
+}
+
+
+
+basecost{
+	PR_BUILD_RAIL	: (param[1]-3) ;
 }

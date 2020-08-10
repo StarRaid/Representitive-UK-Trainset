@@ -1,37 +1,32 @@
 
+
 //Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAAZ
 
-
-spriteset(gfx_XXXX_overlay,	"gfx/tracks.png")	{template_overlay(350, 660)}
-
-spriteset(gfx_XXXX_ballast,	"gfx/tracks.png")	{template_underlay(350, 660, 1610)}
-
-spriteset(gfx_XXXX_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 660)}
-
-item(FEAT_RAILTYPES, rail_XXXX) {
+item(FEAT_RAILTYPES, rail_SAAZ) {
 	property {
-		label						: "XXXX" ;
-		//name						: string(STR_XXXX_NAME) ;
-		//menu_text					: string(STR_XXXX_NAME) ;
-		//build_window_caption		: string(STR_XXXX_BUILD_NAME) ;
-		//autoreplace_text			: string(STR_XXXX_REPLACE_NAME) ;
-		//new_engine_text				: string(STR_XXXX_NEW_TRAIN) ;
+		label						: "SAAZ" ;
+		name						: string(STR_SAAZ_NAME) ;
+		menu_text					: string(STR_SAAZ_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
 		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
-		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_NOT_ELECTRIFIED] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 10 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
-		railtype_flags				: bitmask() ;
-		introduction_date			: date(1804,1,1) ;
-		sort_order					: 0 ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		introduction_date			: date(1883,1,1) ;
+		sort_order					: 80 ;
 	}
 	graphics {
-		track_overlay		: gfx_XXXX_overlay ;
-		underlay			: gfx_XXXX_ballast ;
-		bridge_surfaces		: gfx_XXXX_overlay ;
-		tunnels				: gfx_XXXX_tunnel ;
-		level_crossings		: gfx_blank ;
+		track_overlay		: gfx_SAA3_overlay ;
+		underlay			: gfx_SAA3_ballast ;
+		bridge_surfaces		: gfx_SAA3_bridge ;
+		tunnels				: gfx_SAAN_tunnel ;
+		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -42,15 +37,105 @@ item(FEAT_RAILTYPES, rail_XXXX) {
 
 //Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBAZ
 
+item(FEAT_RAILTYPES, rail_SBAZ) {
+	property {
+		label						: "SBAZ" ;
+		name						: string(STR_SBAZ_NAME) ;
+		menu_text					: string(STR_SBAZ_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 12 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		introduction_date			: date(1883,1,1) ;
+		sort_order					: 80 ;
+	}
+	graphics {
+		track_overlay		: gfx_SBA3_overlay ;
+		underlay			: gfx_SBA3_ballast ;
+		bridge_surfaces		: gfx_SBA3_bridge ;
+		tunnels				: gfx_SBAN_tunnel ;
+		level_crossings		: sw_SBAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
 
 
 
 //Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCAZ
 
+item(FEAT_RAILTYPES, rail_SCAZ) {
+	property {
+		label						: "SCAZ" ;
+		name						: string(STR_SCAZ_NAME) ;
+		menu_text					: string(STR_SCAZ_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		introduction_date			: date(1883,1,1) ;
+		sort_order					: 80 ;
+	}
+	graphics {
+		track_overlay		: gfx_SCA3_overlay ;
+		underlay			: gfx_SCA3_ballast ;
+		bridge_surfaces		: gfx_SCA3_bridge ;
+		tunnels				: gfx_SCAN_tunnel ;
+		level_crossings		: sw_SCAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
 
 
 
-//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDAZ
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	3RDC
+
+item(FEAT_RAILTYPES, rail_3RDC) {
+	property {
+		label						: "3RDC" ;
+		name						: string(STR_3RDC_NAME) ;
+		menu_text					: string(STR_3RDC_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_EVERY_ELEC] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 15 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		introduction_date			: date(1883,1,1) ;
+		sort_order					: 80 ;
+	}
+	graphics {
+		track_overlay		: gfx_SDA3_overlay ;
+		underlay			: gfx_SDA3_ballast ;
+		bridge_surfaces		: gfx_SDA3_bridge ;
+		tunnels				: gfx_SDAN_tunnel ;
+		level_crossings		: sw_SDAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
 
 
 

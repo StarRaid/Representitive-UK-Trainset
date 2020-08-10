@@ -67,7 +67,7 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 1 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
-		railtype_flags				: bitmask() ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(0,1,1) ;
 		sort_order					: 6 ;
 	}
@@ -76,7 +76,7 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		underlay			: gfx_ballast ;
 		bridge_surfaces		: gfx_blank ;
 		tunnels				: gfx_blank ;
-		level_crossings		: gfx_blank ;
+		//level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
 	}

@@ -151,6 +151,23 @@ template template_tunnel_tracks(x, y) {
 	[x+490,		y,	64,		31,		-31,	0	]
 	[283,		y,	64,		31,		-31,	0	]
 }
+
+template template_lc_track(y){
+	[213,		y+40,		64,		31,		-31,	0	]//North East
+	[213+70,	y+40,		64,		31,		-31,	0	]//North West
+}
+
+template template_lc_decorations(x, y){
+	template_lc_track(y)
+	[ x  , 0 , 1 , 1 , 0,  0  ]
+	[ x  , 0 , 1 , 1 , 0,  0  ]
+	[ x  , 0 , 1 , 1 , 0,  0  ]
+	[ x  , 0 , 1 , 1 , 0,  0  ]
+	[ x  , 0 , 1 , 1 , 0,  0  ]
+	[ x  , 0 , 1 , 1 , 0,  0  ]
+	[ x  , 0 , 1 , 1 , 0,  0  ]
+	[ x  , 0 , 1 , 1 , 0,  0  ]
+}
 # 1 "sukts.pnml" 2
 
 # 1 "src/header.pnml" 1
@@ -158,8 +175,134 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 1 ;
+	version: 4 ;
 	min_compatible_version: 0 ;
+	param 0{
+		toggle_limits{
+			type    : bool ;
+			name    : string(STR_PARAM_SPEEDLIMITS_NAME) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			bit     : 1 ;
+			def_value : 1 ;
+		}
+		extra_tracks{
+			type    : bool ;
+			name    : string(STR_PARAM_DECORATION_NAME) ;
+			desc    : string(STR_PARAM_DECORATION_DESC) ;
+			bit     : 2 ;
+			def_value : 1 ;
+		}
+	}
+	param 1{
+		cost_multiplier{
+			type    : int ;
+			name    : string(STR_PARAM_COSTS_BUILD_NAME) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 7 ;
+			def_value	: 4 ;
+			names		: {
+				0	: string(STR_PARAM_VVVLOW  ) ;
+				1	: string(STR_PARAM_VVLOW) ;
+				2	: string(STR_PARAM_VLOW) ;
+				3	: string(STR_PARAM_LOW ) ;
+				4	: string(STR_PARAM_MEDIUM ) ;
+				5	: string(STR_PARAM_HIGH ) ;
+				6	: string(STR_PARAM_TOOMUCH ) ;
+				7	: string(STR_PARAM_TOOTOOMUCH ) ;
+			} ;
+		}
+	}
+	param 2{
+		speed_1{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_1) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 3{
+		speed_2{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_2) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 4{
+		speed_3{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_3) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 5{
+		speed_4{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_4) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 6{
+		speed_5{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_5) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 7{
+		speed_6{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_6) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 8{
+		speed_7{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_7) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 9{
+		speed_8{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_8) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
+	param 10{
+		speed_9{
+			type    : int ;
+			name    : string(STR_PARAM_SPEED_9) ;
+			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			min_value	: 0 ;
+			max_value	: 500 ;
+			def_value	: 15 ;
+		}
+	}
 }
 
 railtypetable {
@@ -186,6 +329,12 @@ cargotable {
    
 //Nuclear stuff
 	URAN, NWST
+}
+
+
+
+basecost{
+	PR_BUILD_RAIL	: (param[1]-3) ;
 }
 # 1 "sukts.pnml" 2
 
@@ -259,7 +408,7 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 1 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
-		railtype_flags				: bitmask() ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(0,1,1) ;
 		sort_order					: 6 ;
 	}
@@ -268,7 +417,7 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		underlay			: gfx_ballast ;
 		bridge_surfaces		: gfx_blank ;
 		tunnels				: gfx_blank ;
-		level_crossings		: gfx_blank ;
+		//level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
 	}
@@ -290,6 +439,26 @@ spriteset(gfx_SAAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 390)
 
 spriteset(gfx_SAAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 390)}
 
+spriteset(gfx_SAAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SAAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SAAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SAAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SAAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SAAN_lc_right_close;
+	gfx_SAAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SAAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SAAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SAAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SAAN_lc_left;
+	sw_SAAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SAAN) {
 	property {
 		label						: "SAAN" ;
@@ -303,7 +472,7 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 6 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
@@ -314,12 +483,9 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		underlay			: gfx_SAAN_ballast ;
 		bridge_surfaces		: gfx_SAAN_bridge ;
 		tunnels				: gfx_SAAN_tunnel ;
-		level_crossings		: gfx_blank ;
-		//depots          : 
-		//fences          : 
+		level_crossings		: sw_SAAN_lc_side_check ;
 	}
 }
-
 
 
 
@@ -333,6 +499,26 @@ spriteset(gfx_SBAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 480, 770)}
 spriteset(gfx_SBAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 480)}
 
 spriteset(gfx_SBAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 480)}
+
+spriteset(gfx_SBAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SBAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SBAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SBAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SBAN_lc_right_close;
+	gfx_SBAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SBAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SBAN_lc_left;
+	sw_SBAN_lc_right;
+}
 
 item(FEAT_RAILTYPES, rail_SBAN) {
 	property {
@@ -358,7 +544,7 @@ item(FEAT_RAILTYPES, rail_SBAN) {
 		underlay			: gfx_SBAN_ballast ;
 		bridge_surfaces		: gfx_SBAN_bridge ;
 		tunnels				: gfx_SBAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -378,6 +564,26 @@ spriteset(gfx_SCAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 570)
 
 spriteset(gfx_SCAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 570)}
 
+spriteset(gfx_SCAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SCAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SCAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SCAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SCAN_lc_right_close;
+	gfx_SCAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SCAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SCAN_lc_left;
+	sw_SCAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SCAN) {
 	property {
 		label						: "SCAN" ;
@@ -391,7 +597,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 10 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
@@ -402,7 +608,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		underlay			: gfx_SCAN_ballast ;
 		bridge_surfaces		: gfx_SCAN_bridge ;
 		tunnels				: gfx_SCAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -422,6 +628,26 @@ spriteset(gfx_SDAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 300)
 
 spriteset(gfx_SDAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 300)}
 
+spriteset(gfx_SDAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SDAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SDAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SDAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SDAN_lc_right_close;
+	gfx_SDAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SDAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SDAN_lc_left;
+	sw_SDAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SDAN) {
 	property {
 		label						: "SDAN" ;
@@ -435,7 +661,7 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 11 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
@@ -446,11 +672,12 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		underlay			: gfx_SDAN_ballast ;
 		bridge_surfaces		: gfx_SDAN_bridge ;
 		tunnels				: gfx_SDAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
 }
+
 
 
 
@@ -466,6 +693,26 @@ spriteset(gfx_RAIL_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 660)
 
 spriteset(gfx_RAIL_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 660)}
 
+spriteset(gfx_RAIL_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 660)}
+spriteset(gfx_RAIL_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(0	, 660)}
+spriteset(gfx_RAIL_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(0	, 660)}
+spriteset(gfx_RAIL_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(0	, 660)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_RAIL_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_RAIL_lc_right_close;
+	gfx_RAIL_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_RAIL_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_RAIL_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_RAIL_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_RAIL_lc_left;
+	sw_RAIL_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_RAIL) {
 	property {
 		label						: "RAIL" ;
@@ -479,10 +726,10 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 14 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 54 ;
 	}
 	graphics {
@@ -490,7 +737,7 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		underlay			: gfx_RAIL_ballast ;
 		bridge_surfaces		: gfx_RAIL_bridge ;
 		tunnels				: gfx_RAIL_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_RAIL_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -509,6 +756,26 @@ spriteset(gfx_SEAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 750)
 
 spriteset(gfx_SEAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 750)}
 
+spriteset(gfx_SEAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SEAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SEAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SEAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SEAN_lc_right_close;
+	gfx_SEAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SEAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SEAN_lc_left;
+	sw_SEAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SEAN) {
 	property {
 		label						: "SEAN" ;
@@ -522,7 +789,7 @@ item(FEAT_RAILTYPES, rail_SEAN) {
 		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 15 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
@@ -533,7 +800,7 @@ item(FEAT_RAILTYPES, rail_SEAN) {
 		underlay			: gfx_SEAN_ballast ;
 		bridge_surfaces		: gfx_SEAN_bridge ;
 		tunnels				: gfx_SEAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SEAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -553,6 +820,26 @@ spriteset(gfx_SFAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 840)
 
 spriteset(gfx_SFAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 840)}
 
+spriteset(gfx_SFAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SFAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SFAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SFAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SFAN_lc_right_close;
+	gfx_SFAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SFAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SFAN_lc_left;
+	sw_SFAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SFAN) {
 	property {
 		label						: "SFAN" ;
@@ -566,10 +853,10 @@ item(FEAT_RAILTYPES, rail_SFAN) {
 		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 17 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 56 ;
 	}
 	graphics {
@@ -577,7 +864,7 @@ item(FEAT_RAILTYPES, rail_SFAN) {
 		underlay			: gfx_SFAN_ballast ;
 		bridge_surfaces		: gfx_SFAN_bridge ;
 		tunnels				: gfx_SFAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SFAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -610,10 +897,10 @@ item(FEAT_RAILTYPES, rail_SGAN) {
 		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 20 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 57 ;
 	}
 	graphics {
@@ -646,10 +933,10 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 9 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 60 ;
 	}
 	graphics {
@@ -657,7 +944,7 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		underlay			: gfx_SAAN_ballast ;
 		bridge_surfaces		: gfx_SAAN_overlay ;
 		tunnels				: gfx_SAAN_bridge ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -681,10 +968,10 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 11 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 61 ;
 	}
 	graphics {
@@ -692,7 +979,7 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		underlay			: gfx_SBAN_ballast ;
 		bridge_surfaces		: gfx_SBAN_bridge ;
 		tunnels				: gfx_SBAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -716,10 +1003,10 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 13 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 62 ;
 	}
 	graphics {
@@ -727,7 +1014,7 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		underlay			: gfx_SCAN_ballast ;
 		bridge_surfaces		: gfx_SCAN_bridge ;
 		tunnels				: gfx_SCAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -751,10 +1038,10 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 14 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 63 ;
 	}
 	graphics {
@@ -762,7 +1049,7 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		underlay			: gfx_SDAN_ballast ;
 		bridge_surfaces		: gfx_SDAN_bridge ;
 		tunnels				: gfx_SDAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -786,10 +1073,10 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 17 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 64 ;
 	}
 	graphics {
@@ -797,7 +1084,7 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 		underlay			: gfx_RAIL_ballast ;
 		bridge_surfaces		: gfx_RAIL_bridge ;
 		tunnels				: gfx_RAIL_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_RAIL_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -820,10 +1107,10 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 18 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1883,1,1) ;
 		sort_order					: 65 ;
 	}
 	graphics {
@@ -831,7 +1118,7 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 		underlay			: gfx_SEAN_ballast ;
 		bridge_surfaces		: gfx_SEAN_bridge ;
 		tunnels				: gfx_SEAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SEAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -855,10 +1142,10 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 20 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 66 ;
 	}
 	graphics {
@@ -866,7 +1153,7 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 		underlay			: gfx_SFAN_ballast ;
 		bridge_surfaces		: gfx_SFAN_bridge ;
 		tunnels				: gfx_SFAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SFAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -888,12 +1175,12 @@ item(FEAT_RAILTYPES, rail_SGAE) {
 		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
-		curve_speed_multiplier		: 0 ;
+		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 23 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 67 ;
 	}
 	graphics {
@@ -932,12 +1219,12 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
 		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
 		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
-		curve_speed_multiplier		: 0 ;
+		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 12 ;
+		construction_cost			: 28 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1960,1,1) ;
 		sort_order					: 68 ;
 	}
 	graphics {
@@ -954,6 +1241,622 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 
 
 # 1 "sukts.pnml" 2
-//#include "src/third_rail.pnml"
-//#include "src/dual_volt.pnml"
-//#include "src/fourth_rail.pnml"
+# 1 "src/third_rail.pnml" 1
+
+
+//Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAA3
+
+
+spriteset(gfx_SAA3_overlay,	"gfx/tracks.png")	{template_overlay(1190, 390)}
+
+spriteset(gfx_SAA3_ballast,	"gfx/tracks.png")	{template_underlay(1190, 390, 770)}
+
+spriteset(gfx_SAA3_bridge,	"gfx/tracks.png")	{template_underlay_bridge(1190, 390)}
+
+item(FEAT_RAILTYPES, rail_SAA3) {
+	property {
+		label						: "SAA3" ;
+		name						: string(STR_SAA3_NAME) ;
+		menu_text					: string(STR_SAA3_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ", "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 8 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1880,1,1) ;
+		sort_order					: 70 ;
+		speed_limit					:  param[2] mph ;
+	}
+	graphics {
+		track_overlay		: gfx_SAA3_overlay ;
+		underlay			: gfx_SAA3_ballast ;
+		bridge_surfaces		: gfx_SAA3_bridge ;
+		tunnels				: gfx_SAAN_tunnel ;
+		level_crossings		: sw_SAAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+if(toggle_limits == 0){
+	item(FEAT_RAILTYPES, rail_SAA3) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+}
+
+
+
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBA3
+
+
+spriteset(gfx_SBA3_overlay,	"gfx/tracks.png")	{template_overlay(1190, 480)}
+
+spriteset(gfx_SBA3_ballast,	"gfx/tracks.png")	{template_underlay(1190, 480, 770)}
+
+spriteset(gfx_SBA3_bridge,	"gfx/tracks.png")	{template_underlay_bridge(1190, 480)}
+
+item(FEAT_RAILTYPES, rail_SBA3) {
+	property {
+		label						: "SBA3" ;
+		name						: string(STR_SBA3_NAME) ;
+		menu_text					: string(STR_SBA3_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ", "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 10 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1880,1,1) ;
+		sort_order					: 71 ;
+	}
+	graphics {
+		track_overlay		: gfx_SBA3_overlay ;
+		underlay			: gfx_SBA3_ballast ;
+		bridge_surfaces		: gfx_SBA3_bridge ;
+		tunnels				: gfx_SBAN_tunnel ;
+		level_crossings		: sw_SBAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCA3
+
+
+spriteset(gfx_SCA3_overlay,	"gfx/tracks.png")	{template_overlay(1190, 570)}
+
+spriteset(gfx_SCA3_ballast,	"gfx/tracks.png")	{template_underlay(1190, 570, 350)}
+
+spriteset(gfx_SCA3_bridge,	"gfx/tracks.png")	{template_underlay_bridge(1190, 570)}
+
+item(FEAT_RAILTYPES, rail_SCA3) {
+	property {
+		label						: "SCA3" ;
+		name						: string(STR_SCA3_NAME) ;
+		menu_text					: string(STR_SCA3_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ", "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 12 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1880,1,1) ;
+		sort_order					: 72 ;
+	}
+	graphics {
+		track_overlay		: gfx_SCA3_overlay ;
+		underlay			: gfx_SCA3_ballast ;
+		bridge_surfaces		: gfx_SCA3_bridge ;
+		tunnels				: gfx_SCAN_tunnel ;
+		level_crossings		: sw_SCAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDA3
+
+
+spriteset(gfx_SDA3_overlay,	"gfx/tracks.png")	{template_overlay(1190, 300)}
+
+spriteset(gfx_SDA3_ballast,	"gfx/tracks.png")	{template_underlay(1190, 300, 350)}
+
+spriteset(gfx_SDA3_bridge,	"gfx/tracks.png")	{template_underlay_bridge(1190, 300)}
+
+item(FEAT_RAILTYPES, rail_SDA3) {
+	property {
+		label						: "SDA3" ;
+		name						: string(STR_SDA3_NAME) ;
+		menu_text					: string(STR_SDA3_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ", "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 13 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1880,1,1) ;
+		sort_order					: 73;
+	}
+	graphics {
+		track_overlay		: gfx_SDA3_overlay ;
+		underlay			: gfx_SDA3_ballast ;
+		bridge_surfaces		: gfx_SDA3_bridge ;
+		tunnels				: gfx_SDAN_tunnel ;
+		level_crossings		: sw_SDAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Medium speed		- 75 Mainline				- Dark grey sleeper, grey rail								-	"3RDR"
+
+
+spriteset(gfx_3RDR_overlay,	"gfx/tracks.png")	{template_overlay(1190, 660)}
+
+spriteset(gfx_3RDR_ballast,	"gfx/tracks.png")	{template_underlay(1190, 660, 1610)}
+
+spriteset(gfx_3RDR_bridge,	"gfx/tracks.png")	{template_underlay_bridge(1190, 660)}
+
+item(FEAT_RAILTYPES, rail_3RDR) {
+	property {
+		label						: "3RDR" ;
+		name						: string(STR_3RDR_NAME) ;
+		menu_text					: string(STR_3RDR_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ", "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 16 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1935,1,1) ;
+		sort_order					: 74 ;
+	}
+	graphics {
+		track_overlay		: gfx_3RDR_overlay ;
+		underlay			: gfx_3RDR_ballast ;
+		bridge_surfaces		: gfx_3RDR_bridge ;
+		tunnels				: gfx_RAIL_tunnel ;
+		level_crossings		: sw_RAIL_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Medium speed		- 100 Mainline				- Wooden sleeper, light grey rail							-	SEA3
+
+
+spriteset(gfx_SEA3_overlay,	"gfx/tracks.png")	{template_overlay(1190, 750)}
+
+spriteset(gfx_SEA3_ballast,	"gfx/tracks.png")	{template_underlay(1190, 750, 350)}
+
+spriteset(gfx_SEA3_bridge,	"gfx/tracks.png")	{template_underlay_bridge(1190, 750)}
+
+item(FEAT_RAILTYPES, rail_SEA3) {
+	property {
+		label						: "SEA3" ;
+		name						: string(STR_SEA3_NAME) ;
+		menu_text					: string(STR_SEA3_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ", "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 17 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1880,1,1) ;
+		sort_order					: 75 ;
+	}
+	graphics {
+		track_overlay		: gfx_SEA3_overlay ;
+		underlay			: gfx_SEA3_ballast ;
+		bridge_surfaces		: gfx_SEA3_bridge ;
+		tunnels				: gfx_SEAN_tunnel ;
+		level_crossings		: sw_SEAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Medium speed		- 100 Mainline				- Dark grey sleeper, light grey rail						-	SFA3
+
+
+spriteset(gfx_SFA3_overlay,	"gfx/tracks.png")	{template_overlay(1190, 840)}
+
+spriteset(gfx_SFA3_ballast,	"gfx/tracks.png")	{template_underlay(1190, 840, 1610)}
+
+spriteset(gfx_SFA3_bridge,	"gfx/tracks.png")	{template_underlay_bridge(1190, 840)}
+
+item(FEAT_RAILTYPES, rail_SFA3) {
+	property {
+		label						: "SFA3" ;
+		name						: string(STR_SFA3_NAME) ;
+		menu_text					: string(STR_SFA3_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ", "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 19 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1935,1,1) ;
+		sort_order					: 76 ;
+	}
+	graphics {
+		track_overlay		: gfx_SFA3_overlay ;
+		underlay			: gfx_SFA3_ballast ;
+		bridge_surfaces		: gfx_SFA3_bridge ;
+		tunnels				: gfx_SFAN_tunnel ;
+		level_crossings		: sw_SFAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+# 1 "sukts.pnml" 2
+# 1 "src/dual_volt.pnml" 1
+
+
+//Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAAZ
+
+item(FEAT_RAILTYPES, rail_SAAZ) {
+	property {
+		label						: "SAAZ" ;
+		name						: string(STR_SAAZ_NAME) ;
+		menu_text					: string(STR_SAAZ_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 10 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		introduction_date			: date(1883,1,1) ;
+		sort_order					: 80 ;
+	}
+	graphics {
+		track_overlay		: gfx_SAA3_overlay ;
+		underlay			: gfx_SAA3_ballast ;
+		bridge_surfaces		: gfx_SAA3_bridge ;
+		tunnels				: gfx_SAAN_tunnel ;
+		level_crossings		: sw_SAAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBAZ
+
+item(FEAT_RAILTYPES, rail_SBAZ) {
+	property {
+		label						: "SBAZ" ;
+		name						: string(STR_SBAZ_NAME) ;
+		menu_text					: string(STR_SBAZ_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 12 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		introduction_date			: date(1883,1,1) ;
+		sort_order					: 80 ;
+	}
+	graphics {
+		track_overlay		: gfx_SBA3_overlay ;
+		underlay			: gfx_SBA3_ballast ;
+		bridge_surfaces		: gfx_SBA3_bridge ;
+		tunnels				: gfx_SBAN_tunnel ;
+		level_crossings		: sw_SBAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCAZ
+
+item(FEAT_RAILTYPES, rail_SCAZ) {
+	property {
+		label						: "SCAZ" ;
+		name						: string(STR_SCAZ_NAME) ;
+		menu_text					: string(STR_SCAZ_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		introduction_date			: date(1883,1,1) ;
+		sort_order					: 80 ;
+	}
+	graphics {
+		track_overlay		: gfx_SCA3_overlay ;
+		underlay			: gfx_SCA3_ballast ;
+		bridge_surfaces		: gfx_SCA3_bridge ;
+		tunnels				: gfx_SCAN_tunnel ;
+		level_crossings		: sw_SCAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	3RDC
+
+item(FEAT_RAILTYPES, rail_3RDC) {
+	property {
+		label						: "3RDC" ;
+		name						: string(STR_3RDC_NAME) ;
+		menu_text					: string(STR_3RDC_NAME) ;
+		build_window_caption		: string(STR_3RDC_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDC_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDC_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDC_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 15 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		introduction_date			: date(1883,1,1) ;
+		sort_order					: 80 ;
+	}
+	graphics {
+		track_overlay		: gfx_SDA3_overlay ;
+		underlay			: gfx_SDA3_ballast ;
+		bridge_surfaces		: gfx_SDA3_bridge ;
+		tunnels				: gfx_SDAN_tunnel ;
+		level_crossings		: sw_SDAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+# 1 "sukts.pnml" 2
+# 1 "src/fourth_rail.pnml" 1
+
+
+//Overgrown			- 15 / Yard track				- Wooden sleeper, dark grey rail, overgrown ballast		-	SAA4
+
+
+spriteset(gfx_SAA4_overlay,	"gfx/tracks.png")	{template_overlay(2030, 390)}
+
+spriteset(gfx_SAA4_ballast,	"gfx/tracks.png")	{template_underlay(2030, 390, 770)}
+
+spriteset(gfx_SAA4_bridge,	"gfx/tracks.png")	{template_underlay_bridge(2030, 390)}
+
+item(FEAT_RAILTYPES, rail_SAA4) {
+	property {
+		label						: "SAA4" ;
+		name						: string(STR_SAA4_NAME) ;
+		menu_text					: string(STR_SAA4_NAME) ;
+		build_window_caption		: string(STR_4RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_4RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_4RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_4RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 7 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1907,1,1) ;
+		sort_order					: 90 ;
+	}
+	graphics {
+		track_overlay		: gfx_SAA4_overlay ;
+		underlay			: gfx_SAA4_ballast ;
+		bridge_surfaces		: gfx_SAA4_bridge ;
+		tunnels				: gfx_SAAN_tunnel ;
+		level_crossings		: sw_SAAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Very low speed	- 20 Yard/Station				- Wooden sleeper, light grey rail, overgrown ballast	-	SBA4
+
+
+spriteset(gfx_SBA4_overlay,	"gfx/tracks.png")	{template_overlay(2030, 480)}
+
+spriteset(gfx_SBA4_ballast,	"gfx/tracks.png")	{template_underlay(2030, 480, 770)}
+
+spriteset(gfx_SBA4_bridge,	"gfx/tracks.png")	{template_underlay_bridge(2030, 480)}
+
+item(FEAT_RAILTYPES, rail_SBA4) {
+	property {
+		label						: "SBA4" ;
+		name						: string(STR_SBA4_NAME) ;
+		menu_text					: string(STR_SBA4_NAME) ;
+		build_window_caption		: string(STR_4RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_4RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_4RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_4RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 7 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1907,1,1) ;
+		sort_order					: 90 ;
+	}
+	graphics {
+		track_overlay		: gfx_SBA4_overlay ;
+		underlay			: gfx_SBA4_ballast ;
+		bridge_surfaces		: gfx_SBA4_bridge ;
+		tunnels				: gfx_SBAN_tunnel ;
+		level_crossings		: sw_SBAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Low speed			- 40 Station approach/branch	- Wooden sleeper, grey rail								-	SCA4
+
+
+spriteset(gfx_SCA4_overlay,	"gfx/tracks.png")	{template_overlay(2030, 570)}
+
+spriteset(gfx_SCA4_ballast,	"gfx/tracks.png")	{template_underlay(2030, 570, 350)}
+
+spriteset(gfx_SCA4_bridge,	"gfx/tracks.png")	{template_underlay_bridge(2030, 570)}
+
+item(FEAT_RAILTYPES, rail_SCA4) {
+	property {
+		label						: "SCA4" ;
+		name						: string(STR_SCA4_NAME) ;
+		menu_text					: string(STR_SCA4_NAME) ;
+		build_window_caption		: string(STR_4RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_4RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_4RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_4RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 7 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1907,1,1) ;
+		sort_order					: 90 ;
+	}
+	graphics {
+		track_overlay		: gfx_SCA4_overlay ;
+		underlay			: gfx_SCA4_ballast ;
+		bridge_surfaces		: gfx_SCA4_bridge ;
+		tunnels				: gfx_SCAN_tunnel ;
+		level_crossings		: sw_SCAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+
+//Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDA4
+
+
+spriteset(gfx_SDA4_overlay,	"gfx/tracks.png")	{template_overlay(2030, 570)}
+
+spriteset(gfx_SDA4_ballast,	"gfx/tracks.png")	{template_underlay(2030, 570, 350)}
+
+spriteset(gfx_SDA4_bridge,	"gfx/tracks.png")	{template_underlay_bridge(2030, 570)}
+
+item(FEAT_RAILTYPES, rail_SDA4) {
+	property {
+		label						: "SDA4" ;
+		name						: string(STR_SDA4_NAME) ;
+		menu_text					: string(STR_SDA4_NAME) ;
+		build_window_caption		: string(STR_4RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_4RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_4RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_4RDR_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 7 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1907,1,1) ;
+		sort_order					: 90 ;
+	}
+	graphics {
+		track_overlay		: gfx_SDA4_overlay ;
+		underlay			: gfx_SDA4_ballast ;
+		bridge_surfaces		: gfx_SDA4_bridge ;
+		tunnels				: gfx_SDAN_tunnel ;
+		level_crossings		: sw_SDAN_lc_side_check ;
+		//depots          : 
+		//fences          : 
+	}
+}
+
+
+
+# 1 "sukts.pnml" 2

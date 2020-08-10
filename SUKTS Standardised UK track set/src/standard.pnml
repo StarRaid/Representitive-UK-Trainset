@@ -11,6 +11,26 @@ spriteset(gfx_SAAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 390)
 
 spriteset(gfx_SAAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 390)}
 
+spriteset(gfx_SAAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SAAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SAAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SAAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SAAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SAAN_lc_right_close;
+	gfx_SAAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SAAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SAAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SAAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SAAN_lc_left;
+	sw_SAAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SAAN) {
 	property {
 		label						: "SAAN" ;
@@ -24,7 +44,7 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 6 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
@@ -35,12 +55,9 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		underlay			: gfx_SAAN_ballast ;
 		bridge_surfaces		: gfx_SAAN_bridge ;
 		tunnels				: gfx_SAAN_tunnel ;
-		level_crossings		: gfx_blank ;
-		//depots          : 
-		//fences          : 
+		level_crossings		: sw_SAAN_lc_side_check ;
 	}
 }
-
 
 
 
@@ -54,6 +71,26 @@ spriteset(gfx_SBAN_ballast,	"gfx/tracks.png")	{template_underlay(350, 480, 770)}
 spriteset(gfx_SBAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 480)}
 
 spriteset(gfx_SBAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 480)}
+
+spriteset(gfx_SBAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SBAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SBAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SBAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SBAN_lc_right_close;
+	gfx_SBAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SBAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SBAN_lc_left;
+	sw_SBAN_lc_right;
+}
 
 item(FEAT_RAILTYPES, rail_SBAN) {
 	property {
@@ -79,7 +116,7 @@ item(FEAT_RAILTYPES, rail_SBAN) {
 		underlay			: gfx_SBAN_ballast ;
 		bridge_surfaces		: gfx_SBAN_bridge ;
 		tunnels				: gfx_SBAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -99,6 +136,26 @@ spriteset(gfx_SCAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 570)
 
 spriteset(gfx_SCAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 570)}
 
+spriteset(gfx_SCAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SCAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SCAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SCAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SCAN_lc_right_close;
+	gfx_SCAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SCAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SCAN_lc_left;
+	sw_SCAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SCAN) {
 	property {
 		label						: "SCAN" ;
@@ -112,7 +169,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 10 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
@@ -123,7 +180,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		underlay			: gfx_SCAN_ballast ;
 		bridge_surfaces		: gfx_SCAN_bridge ;
 		tunnels				: gfx_SCAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -143,6 +200,26 @@ spriteset(gfx_SDAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 300)
 
 spriteset(gfx_SDAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 300)}
 
+spriteset(gfx_SDAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SDAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SDAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SDAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SDAN_lc_right_close;
+	gfx_SDAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SDAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SDAN_lc_left;
+	sw_SDAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SDAN) {
 	property {
 		label						: "SDAN" ;
@@ -156,7 +233,7 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 11 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
@@ -167,11 +244,12 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		underlay			: gfx_SDAN_ballast ;
 		bridge_surfaces		: gfx_SDAN_bridge ;
 		tunnels				: gfx_SDAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
 }
+
 
 
 
@@ -187,6 +265,26 @@ spriteset(gfx_RAIL_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 660)
 
 spriteset(gfx_RAIL_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 660)}
 
+spriteset(gfx_RAIL_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 660)}
+spriteset(gfx_RAIL_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(0	, 660)}
+spriteset(gfx_RAIL_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(0	, 660)}
+spriteset(gfx_RAIL_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(0	, 660)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_RAIL_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_RAIL_lc_right_close;
+	gfx_RAIL_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_RAIL_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_RAIL_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_RAIL_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_RAIL_lc_left;
+	sw_RAIL_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_RAIL) {
 	property {
 		label						: "RAIL" ;
@@ -200,10 +298,10 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 14 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 54 ;
 	}
 	graphics {
@@ -211,7 +309,7 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		underlay			: gfx_RAIL_ballast ;
 		bridge_surfaces		: gfx_RAIL_bridge ;
 		tunnels				: gfx_RAIL_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_RAIL_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -230,6 +328,26 @@ spriteset(gfx_SEAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 750)
 
 spriteset(gfx_SEAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 750)}
 
+spriteset(gfx_SEAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SEAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SEAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SEAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SEAN_lc_right_close;
+	gfx_SEAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SEAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SEAN_lc_left;
+	sw_SEAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SEAN) {
 	property {
 		label						: "SEAN" ;
@@ -243,7 +361,7 @@ item(FEAT_RAILTYPES, rail_SEAN) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 15 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1804,1,1) ;
@@ -254,7 +372,7 @@ item(FEAT_RAILTYPES, rail_SEAN) {
 		underlay			: gfx_SEAN_ballast ;
 		bridge_surfaces		: gfx_SEAN_bridge ;
 		tunnels				: gfx_SEAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SEAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -274,6 +392,26 @@ spriteset(gfx_SFAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 840)
 
 spriteset(gfx_SFAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 840)}
 
+spriteset(gfx_SFAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
+spriteset(gfx_SFAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
+spriteset(gfx_SFAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
+spriteset(gfx_SFAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SFAN_lc_right_close;
+	gfx_SFAN_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_SFAN_lc_left_close;
+	gfx_RAIL_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_SFAN_lc_left;
+	sw_SFAN_lc_right;
+}
+
 item(FEAT_RAILTYPES, rail_SFAN) {
 	property {
 		label						: "SFAN" ;
@@ -287,10 +425,10 @@ item(FEAT_RAILTYPES, rail_SFAN) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 0 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 17 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 56 ;
 	}
 	graphics {
@@ -298,7 +436,7 @@ item(FEAT_RAILTYPES, rail_SFAN) {
 		underlay			: gfx_SFAN_ballast ;
 		bridge_surfaces		: gfx_SFAN_bridge ;
 		tunnels				: gfx_SFAN_tunnel ;
-		level_crossings		: gfx_blank ;
+		level_crossings		: sw_SFAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
 	}
@@ -331,10 +469,10 @@ item(FEAT_RAILTYPES, rail_SGAN) {
 		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
 		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
-		construction_cost			: 8 ;
+		construction_cost			: 20 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
-		introduction_date			: date(1804,1,1) ;
+		introduction_date			: date(1935,1,1) ;
 		sort_order					: 57 ;
 	}
 	graphics {
