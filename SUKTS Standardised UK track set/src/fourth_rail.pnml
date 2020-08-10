@@ -27,6 +27,7 @@ item(FEAT_RAILTYPES, rail_SAA4) {
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1907,1,1) ;
 		sort_order					: 90 ;
+		speed_limit					: param[2] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SAA4_overlay ;
@@ -69,6 +70,7 @@ item(FEAT_RAILTYPES, rail_SBA4) {
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1907,1,1) ;
 		sort_order					: 90 ;
+		speed_limit					: param[3] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SBA4_overlay ;
@@ -111,6 +113,7 @@ item(FEAT_RAILTYPES, rail_SCA4) {
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1907,1,1) ;
 		sort_order					: 90 ;
+		speed_limit					: param[4] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SCA4_overlay ;
@@ -153,6 +156,7 @@ item(FEAT_RAILTYPES, rail_SDA4) {
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(1907,1,1) ;
 		sort_order					: 90 ;
+		speed_limit					: param[5] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SDA4_overlay ;
@@ -166,4 +170,30 @@ item(FEAT_RAILTYPES, rail_SDA4) {
 }
 
 
+
+if(toggle_limits == 0){
+	item(FEAT_RAILTYPES, rail_SAA4) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SBA4) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCA4) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SDA4) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+}
 

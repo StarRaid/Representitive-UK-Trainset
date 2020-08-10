@@ -44,7 +44,7 @@ grf{
 		speed_1{
 			type    : int ;
 			name    : string(STR_PARAM_SPEED_1) ;
-			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
 			def_value	: 15 ;
@@ -54,80 +54,80 @@ grf{
 		speed_2{
 			type    : int ;
 			name    : string(STR_PARAM_SPEED_2) ;
-			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 15 ;
+			def_value	: 20 ;
 		}
 	}
 	param 4{
 		speed_3{
 			type    : int ;
 			name    : string(STR_PARAM_SPEED_3) ;
-			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 15 ;
+			def_value	: 40 ;
 		}
 	}
 	param 5{
 		speed_4{
 			type    : int ;
 			name    : string(STR_PARAM_SPEED_4) ;
-			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 15 ;
+			def_value	: 60 ;
 		}
 	}
 	param 6{
 		speed_5{
 			type    : int ;
 			name    : string(STR_PARAM_SPEED_5) ;
-			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 15 ;
+			def_value	: 75 ;
 		}
 	}
 	param 7{
 		speed_6{
 			type    : int ;
 			name    : string(STR_PARAM_SPEED_6) ;
-			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 15 ;
+			def_value	: 100 ;
 		}
 	}
 	param 8{
 		speed_7{
 			type    : int ;
 			name    : string(STR_PARAM_SPEED_7) ;
-			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 15 ;
+			def_value	: 100 ;
 		}
 	}
 	param 9{
 		speed_8{
 			type    : int ;
 			name    : string(STR_PARAM_SPEED_8) ;
-			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 15 ;
+			def_value	: 125 ;
 		}
 	}
 	param 10{
 		speed_9{
 			type    : int ;
 			name    : string(STR_PARAM_SPEED_9) ;
-			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
+			desc    : string(STR_PARAM_SPEED_DESC) ;
 			min_value	: 0 ;
 			max_value	: 500 ;
-			def_value	: 15 ;
+			def_value	: 187 ;
 		}
 	}
 }

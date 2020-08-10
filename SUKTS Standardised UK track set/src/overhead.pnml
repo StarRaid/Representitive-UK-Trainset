@@ -20,6 +20,7 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 60 ;
+		speed_limit					: param[2] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SAAN_overlay ;
@@ -55,6 +56,7 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 61 ;
+		speed_limit					: param[3] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SBAN_overlay ;
@@ -90,6 +92,7 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 62 ;
+		speed_limit					: param[4] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SCAN_overlay ;
@@ -125,6 +128,7 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 63 ;
+		speed_limit					: param[5] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SDAN_overlay ;
@@ -160,6 +164,7 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 64 ;
+		speed_limit					: param[6] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_RAIL_overlay ;
@@ -194,6 +199,7 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
 		sort_order					: 65 ;
+		speed_limit					: param[7] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SEAN_overlay ;
@@ -229,6 +235,7 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 66 ;
+		speed_limit					: param[8] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SFAN_overlay ;
@@ -264,6 +271,7 @@ item(FEAT_RAILTYPES, rail_SGAE) {
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(1935,1,1) ;
 		sort_order					: 67 ;
+		speed_limit					: param[9] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SGAN_overlay ;
@@ -308,6 +316,7 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(1960,1,1) ;
 		sort_order					: 68 ;
+		speed_limit					: param[10] mph ;
 	}
 	graphics {
 		track_overlay		: gfx_SHAE_overlay ;
@@ -322,3 +331,60 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 
 
 
+
+
+if(toggle_limits == 0){
+	item(FEAT_RAILTYPES, rail_SAAE) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SBAE) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCAE) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SDAE) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_ELRL) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SEAE) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFAE) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SGAE) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SHAE) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+}
