@@ -12,13 +12,6 @@ grf{
 			bit     : 1 ;
 			def_value : 1 ;
 		}
-		extra_tracks{
-			type    : bool ;
-			name    : string(STR_PARAM_DECORATION_NAME) ;
-			desc    : string(STR_PARAM_DECORATION_DESC) ;
-			bit     : 2 ;
-			def_value : 1 ;
-		}
 	}
 	param 1{
 		cost_multiplier{
@@ -128,6 +121,21 @@ grf{
 			min_value	: 0 ;
 			max_value	: 500 ;
 			def_value	: 187 ;
+		}
+	}
+	param 11{
+		extra_tracks{
+			type    : int ;
+			name    : string(STR_PARAM_TRACK_LIST_NAME) ;
+			desc    : string(STR_PARAM_TRACK_LIST_DESC) ;
+			min_value	: 0 ;
+			max_value	: 2 ;
+			def_value	: 1 ;
+			names		: {
+				0	: string(STR_PARAM_TRACK_MIN ) ;
+				1	: string(STR_PARAM_TRACK_STANDARD ) ;
+				2	: string(STR_PARAM_TRACK_EXTRA ) ;
+			} ;
 		}
 	}
 }

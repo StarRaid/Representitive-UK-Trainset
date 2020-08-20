@@ -388,3 +388,44 @@ if(toggle_limits == 0){
 	}
 	}
 }
+
+
+if(extra_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_SBAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+if(extra_tracks < 2){
+	
+	item(FEAT_RAILTYPES, rail_SAAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	
+	item(FEAT_RAILTYPES, rail_ELRL) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+}
+

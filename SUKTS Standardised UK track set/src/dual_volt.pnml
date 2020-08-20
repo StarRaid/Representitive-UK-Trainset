@@ -169,3 +169,31 @@ if(toggle_limits == 0){
 	}
 }
 
+
+
+if(extra_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_SBAZ) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+if(extra_tracks < 2){
+	
+	item(FEAT_RAILTYPES, rail_SAAZ) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCAZ) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+}
+

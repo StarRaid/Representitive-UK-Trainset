@@ -185,13 +185,6 @@ grf{
 			bit     : 1 ;
 			def_value : 1 ;
 		}
-		extra_tracks{
-			type    : bool ;
-			name    : string(STR_PARAM_DECORATION_NAME) ;
-			desc    : string(STR_PARAM_DECORATION_DESC) ;
-			bit     : 2 ;
-			def_value : 1 ;
-		}
 	}
 	param 1{
 		cost_multiplier{
@@ -301,6 +294,21 @@ grf{
 			min_value	: 0 ;
 			max_value	: 500 ;
 			def_value	: 187 ;
+		}
+	}
+	param 11{
+		extra_tracks{
+			type    : int ;
+			name    : string(STR_PARAM_TRACK_LIST_NAME) ;
+			desc    : string(STR_PARAM_TRACK_LIST_DESC) ;
+			min_value	: 0 ;
+			max_value	: 2 ;
+			def_value	: 1 ;
+			names		: {
+				0	: string(STR_PARAM_TRACK_MIN ) ;
+				1	: string(STR_PARAM_TRACK_STANDARD ) ;
+				2	: string(STR_PARAM_TRACK_EXTRA ) ;
+			} ;
 		}
 	}
 }
@@ -978,6 +986,45 @@ if(toggle_limits == 0){
 	}
 }
 
+if(extra_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_SBAN) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFAN) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+if(extra_tracks < 2){
+	
+	item(FEAT_RAILTYPES, rail_SAAN) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCAN) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	
+	item(FEAT_RAILTYPES, rail_RAIL) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+}
+
 # 1 "sukts.pnml" 2
 # 1 "src/overhead.pnml" 1
 
@@ -1370,6 +1417,47 @@ if(toggle_limits == 0){
 	}
 	}
 }
+
+
+if(extra_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_SBAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+if(extra_tracks < 2){
+	
+	item(FEAT_RAILTYPES, rail_SAAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCAE) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	
+	item(FEAT_RAILTYPES, rail_ELRL) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+}
+
 # 1 "sukts.pnml" 2
 # 1 "src/third_rail.pnml" 1
 
@@ -1720,6 +1808,46 @@ if(toggle_limits == 0){
 }
 
 
+
+if(extra_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_SBA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+if(extra_tracks < 2){
+	
+	item(FEAT_RAILTYPES, rail_SAA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	
+	item(FEAT_RAILTYPES, rail_3RDR) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+}
+
 # 1 "sukts.pnml" 2
 # 1 "src/dual_volt.pnml" 1
 
@@ -1889,6 +2017,34 @@ if(toggle_limits == 0){
 	item(FEAT_RAILTYPES, rail_3RDC) {
 	property {
 		speed_limit : 0; 
+	}
+	}
+}
+
+
+
+if(extra_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_SBAZ) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+if(extra_tracks < 2){
+	
+	item(FEAT_RAILTYPES, rail_SAAZ) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCAZ) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 }
@@ -2090,6 +2246,34 @@ if(toggle_limits == 0){
 	item(FEAT_RAILTYPES, rail_SDA4) {
 	property {
 		speed_limit : 0; 
+	}
+	}
+}
+
+
+
+if(extra_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_SBA4) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+}
+
+
+if(extra_tracks < 2){
+	
+	item(FEAT_RAILTYPES, rail_SAA4) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCA4) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
 	}
 	}
 }

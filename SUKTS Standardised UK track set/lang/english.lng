@@ -7,8 +7,12 @@ STR_GRF_DESC	:{GOLD}A track set that adds a customisable roster of different tra
 STR_PARAM_SPEEDLIMITS_NAME			:Speed limits
 STR_PARAM_SPEEDLIMITS_DESC			:Turn on track speed limits.
 
-STR_PARAM_DECORATION_NAME			:Extra tracks
-STR_PARAM_DECORATION_DESC			:Enable extra track types for extra speed limits or decorative purposes
+STR_PARAM_TRACK_LIST_NAME			:Track selection
+STR_PARAM_TRACK_LIST_DESC			:Enable extra track types for extra speed limits or decorative purposes
+
+STR_PARAM_TRACK_MIN					:Minimal selection
+STR_PARAM_TRACK_STANDARD			:Standard selection
+STR_PARAM_TRACK_EXTRA				:Extra selection
 
 STR_PARAM_COSTS_BUILD_NAME			:Construction costs
 STR_PARAM_COSTS_BUILD_DESC			:Changes the cost of purchasing tracks from this GRF.
