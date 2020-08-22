@@ -453,7 +453,7 @@ item (FEAT_TRAINS, item_458, 458) {
 }
 }
 
-if (vehicle_selection < 4){
+if (vehicle_selection < 3){
 item (FEAT_TRAINS, item_458, 458){
 	property{
 		climates_available             : NO_CLIMATE ;
