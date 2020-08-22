@@ -52,8 +52,8 @@ spriteset(spriteset_375_pan_down_r, "gfx/FIXTURES/class_375_lights.png") {templa
 spriteset(spriteset_375_cnx_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 300)}
 spriteset(spriteset_375_sxs_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 325)}
 spriteset(spriteset_375_sgs_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 350)}
-spriteset(spriteset_375_ser_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 375)}
-spriteset(spriteset_375_gtr_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 400)}
+spriteset(spriteset_375_ser_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 400)}
+spriteset(spriteset_375_gtr_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 425)}
 
 switch(FEAT_TRAINS, SELF, sw_electrostar_front_auto, current_year){
 0 .. 2000: spriteset_375_f_cnx;

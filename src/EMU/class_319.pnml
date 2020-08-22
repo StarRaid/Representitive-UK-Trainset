@@ -447,7 +447,7 @@ switch(FEAT_TRAINS, PARENT, sw_319_colour_mapping_manual_check, livery_choice){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_319_colour_mapping_decider, colour_scheme_1){
-	1 : sw_319_colour_mapping_manual_check ;
+	1 : sw_319_colour_mapping_auto ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 

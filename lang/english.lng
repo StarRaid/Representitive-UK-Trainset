@@ -4,21 +4,21 @@ STR_GRF_NAME	:Representative UK Train Set - RUKTS
 STR_GRF_DESC	:{GOLD}A representative collection of various UK trains! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
 
 STR_PARAM_COLOURSCHEME_NAME			:Real livery colours
-STR_PARAM_COLOURSCHEME_DESC			:Use real life colours instead of company colours.
+STR_PARAM_COLOURSCHEME_DESC			:Use real life colours instead of company colours
 
 STR_PARAM_WAGONCOLOURS_NAME			:Wagons use real colours
 STR_PARAM_WAGONCOLOURS_DESC			:Non-passenger carrying wagons will use real life colours instead of company colours.
 
 STR_PARAM_LIVERY_CHOICE_NAME		:Choose liveries manually
-STR_PARAM_LIVERY_CHOICE_DESC		:Liveries are chosen through the cargo refit menu instead of them changing depending on year.
+STR_PARAM_LIVERY_CHOICE_DESC		:Liveries are chosen through the cargo refit menu instead of them changing depending on year
 
 STR_PARAM_ALT_NAMES_NAME			:Use class names
 STR_PARAM_ALT_NAMES_DESC			:Use the names of the classes of train instead of the manufacturers name.
 
 STR_PARAM_PURCHASE_COST				:Purchase cost factor
-STR_PARAM_PURCHASE_COST_DESC		:Changes the cost of purchasing new trains from this GRF.
+STR_PARAM_PURCHASE_COST_DESC		:Changes the cost of purchasing new trains from this GRF
 STR_PARAM_RUNNING_COST				:Running cost factor
-STR_PARAM_RUNNING_COST_DESC			:Changes the running cost of trains from this GRF.
+STR_PARAM_RUNNING_COST_DESC			:Changes the running cost of trains from this GRF
 
 STR_PARAM_LOW						:1/2
 STR_PARAM_MEDIUM					:Normal
@@ -26,10 +26,10 @@ STR_PARAM_HIGH						:2x
 STR_PARAM_TOOMUCH					:4x
 
 STR_PARAM_PURCHASE_LIST_SORT_NAME	:Sort by Class numbers
-STR_PARAM_PURCHASE_LIST_SORT_DESC	:Sort the purchase list by TOPS Class numbers instead of the classic sort.
+STR_PARAM_PURCHASE_LIST_SORT_DESC	:Sort the purchase list by TOPS Class numbers instead of the classic sort
 
 STR_SOUND_CONTROL					:Sound effects
-STR_SOUND_CONTROL_DESC				:Select the types of sounds used by trains in this set.
+STR_SOUND_CONTROL_DESC				:Select the types of sounds used by trains in this set
 
 STR_PARAM_NONE						:No running sounds
 STR_PARAM_DEFAULT					:Default running sounds
@@ -278,6 +278,7 @@ STR_NAME_415				 :BR Compartment EMU (3rd rail)
 STR_NAME_442				 :BREL "Wessex Express" (3rd rail)
 STR_NAME_444				 :Siemens "Desiro" (3rd rail)
 STR_NAME_455				 :BREL Suburban EMU (3rd rail)
+STR_NAME_334				 :Alstom "Juniper" (3rd rail)
 STR_NAME_465				 :Metro-Cammel "Networker" (3rd rail)
 STR_NAME_700				 :Siemens "Desiro City" (Dual Voltage)
 STR_NAME_800				 :Hitachi High Speed "Intercity Express Train" (Dual Mode)
@@ -401,6 +402,7 @@ STR_NAME_415_ALT			:BR Class 415 (3rd rail)
 STR_NAME_442_ALT			:BR Class 442 (3rd rail)
 STR_NAME_444_ALT			:BR Class 444/450 (3rd rail)
 STR_NAME_455_ALT			:BR Class 455 (3rd rail)
+STR_NAME_455_ALT			:BR Class 458 (3rd rail)
 STR_NAME_465_ALT			:BR Class 465 (3rd rail)
 STR_NAME_700_ALT			:BR Class 700/707/717 (Dual Voltage)
 STR_NAME_800_ALT            :BR Class 800/802 (Dual Mode)

@@ -179,8 +179,14 @@ switch(FEAT_TRAINS, SELF, sw_700_recolour, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2);
 }
 
+switch(FEAT_TRAINS, SELF, sw_700_recolour_purchase_1, colour_scheme_1){
+	0 .. 2016: sw_700_tsgn_colour_mapping;
+	2017 .. 2018: sw_700_swt_colour_mapping;
+	sw_700_tsgn_colour_mapping;
+}
+
 switch(FEAT_TRAINS, SELF, sw_700_recolour_purchase, colour_scheme_1){
-	1: sw_700_colour_auto;
+	1: sw_700_recolour_purchase_1;
 	palette_2cc(company_colour1, company_colour2);
 }
 
