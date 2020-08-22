@@ -447,7 +447,7 @@ switch(FEAT_TRAINS, PARENT, sw_319_colour_mapping_manual_check, livery_choice){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_319_colour_mapping_decider, colour_scheme_1){
-	1 : sw_319_colour_mapping_auto ;
+	1 : sw_319_colour_mapping_manual_check ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
@@ -500,7 +500,7 @@ item (FEAT_TRAINS, item_319, 319) {
 		create_effect:						vfx_3rd;
 		cargo_subtype_text:					sw_319_refit_text_decider ;
 		colour_mapping:						sw_319_colour_mapping_decider;
-		purchase_colour_mapping: 			sw_319_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_319_colour_mapping_auto;
 		running_cost_factor: return(current_speed == 0 ? 8 : 34) ;
 		purchase_running_cost_factor:		34;
 		sound_effect:						sw_sfx_emu_gec ;

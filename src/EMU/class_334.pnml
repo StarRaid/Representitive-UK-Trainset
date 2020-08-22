@@ -1,17 +1,17 @@
 //Front Cars
-spriteset(spriteset_458_0_f, "gfx/EMU/class_458.png") {template_8_8_networker(0, 200)}//
-spriteset(spriteset_460_f_pax, "gfx/EMU/class_458.png") {template_8_8_networker(358, 150)}//
-spriteset(spriteset_460_f_mail, "gfx/EMU/class_458.png") {template_8_8_networker(358, 200)}//
-spriteset(spriteset_458_5_f, "gfx/EMU/class_458.png") {template_8_8_networker(448, 225)}//
+spriteset(spriteset_458_0_f, "gfx/EMU/class_458.png") {template_8_8_networker(0, 200)}
+spriteset(spriteset_460_f_pax, "gfx/EMU/class_458.png") {template_8_8_networker(358, 150)}
+spriteset(spriteset_460_f_mail, "gfx/EMU/class_458.png") {template_8_8_networker(358, 175)}
+spriteset(spriteset_458_5_f, "gfx/EMU/class_458.png") {template_8_8_networker(448, 225)}
 spriteset(spriteset_334_f_sct, "gfx/EMU/class_458.png") {template_8_8_networker(0, 150)}
 spriteset(spriteset_334_f_spt, "gfx/EMU/class_458.png") {template_8_8_networker(179, 150)}
 //Med Driving
 spriteset(spriteset_458_0_c, "gfx/EMU/class_458.png") {template_8_8_networker(0, 225)} //_c indicates coupled//
 //Trailer
-spriteset(spriteset_458_0_t, "gfx/EMU/class_458.png") {template_8_4_networker(179, 0)}//
-spriteset(spriteset_460_t, "gfx/EMU/class_458.png") {template_8_4_networker(0, 150)}//
-spriteset(spriteset_458_5_t_a, "gfx/EMU/class_458.png") {template_8_4_networker(179, 150)}//
-spriteset(spriteset_458_5_t_b, "gfx/EMU/class_458.png") {template_8_4_networker(0, 600)}//
+spriteset(spriteset_458_0_t, "gfx/EMU/class_458.png") {template_8_4_networker(179, 225)}
+spriteset(spriteset_460_t, "gfx/EMU/class_458.png") {template_8_4_networker(358, 175)}
+spriteset(spriteset_458_5_t_a, "gfx/EMU/class_458.png") {template_8_4_networker(269, 225)}
+spriteset(spriteset_458_5_t_b, "gfx/EMU/class_458.png") {template_8_4_networker(359, 225)}
 spriteset(spriteset_334_t_sct, "gfx/EMU/class_458.png") {template_8_4_networker(358, 125)}
 spriteset(spriteset_334_t_spt, "gfx/EMU/class_458.png") {template_8_4_networker(448, 125)}
 //Pan
@@ -22,18 +22,18 @@ spriteset(spriteset_334_pr_spt, "gfx/EMU/class_458.png") {template_8_8_networker
 //Headlights
 spriteset(spriteset_334_hl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 125)}
 spriteset(spriteset_334_rl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 150)}
-spriteset(spriteset_458_0_hl, "gfx/EMU/class_458.png") {template_8_8_networker(0, 0)}//
-spriteset(spriteset_458_0_rl, "gfx/EMU/class_458.png") {template_8_8_networker(179, 150)}//
-spriteset(spriteset_458_5_hl, "gfx/EMU/class_458.png") {template_8_8_networker(0, 0)}//
-spriteset(spriteset_458_5_rl, "gfx/EMU/class_458.png") {template_8_8_networker(179, 150)}//
-spriteset(spriteset_460_hl, "gfx/EMU/class_458.png") {template_8_8_networker(0, 0)}//
-spriteset(spriteset_460_rl, "gfx/EMU/class_458.png") {template_8_8_networker(179, 150)}//
+spriteset(spriteset_458_0_hl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 50)}
+spriteset(spriteset_458_0_rl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 75)}
+spriteset(spriteset_458_5_hl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 0)}
+spriteset(spriteset_458_5_rl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 25)}
+spriteset(spriteset_460_hl, "gfx/EMU/class_458.png") {template_8_8_networker(358, 75)}
+spriteset(spriteset_460_rl, "gfx/EMU/class_458.png") {template_8_8_networker(358, 100)}
 //Purchase
 spriteset(spriteset_334_purchase_spt, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 101)}
 spriteset(spriteset_334_purchase_sct, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 114)}
-spriteset(spriteset_458_0_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(179, 275)}//
-spriteset(spriteset_458_5_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 725)}//
-spriteset(spriteset_460_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 425)}//
+spriteset(spriteset_458_0_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 88)}//
+spriteset(spriteset_458_5_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 75)}//
+spriteset(spriteset_460_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 127)}//
 //check coords
 	//Class 334
 //Purchase
@@ -309,12 +309,12 @@ switch(FEAT_TRAINS, SELF, sw_458_hl_auto, current_year){
 	spriteset_458_5_rl;
 }
 switch(FEAT_TRAINS, SELF, sw_458_tl_type_decider, livery_choice){
-	0: sw_458_f_auto;
-	sw_458_f_man;
+	0: sw_458_tl_auto;
+	sw_458_tl_man;
 }
 switch(FEAT_TRAINS, SELF, sw_458_hl_type_decider, livery_choice){
-	0: sw_458_f_auto;
-	sw_458_f_man;
+	0: sw_458_hl_auto;
+	sw_458_hl_man;
 }
 switch(FEAT_TRAINS, SELF, sw_458_tl_decider, position_in_consist_from_end){
 	0: sw_458_tl_type_decider;
@@ -346,7 +346,7 @@ random_switch(FEAT_TRAINS, SELF, sw_460_gax_colour_mapping, TRIGGER_VEHICLE_SERV
 switch(FEAT_TRAINS, SELF, sw_458_colour_mapping_manual, cargo_subtype){
 	0: sw_458_swt_colour_mapping;
 	1: sw_460_gax_colour_mapping;
-	2: sw_458_swt_colour_mapping
+	2: sw_458_swt_colour_mapping;
 }
 switch(FEAT_TRAINS, PARENT, sw_458_colour_mapping_manual_check, livery_choice){
 	1 : sw_458_colour_mapping_manual ;
@@ -387,15 +387,15 @@ switch(FEAT_TRAINS, SELF, sw_458_speed_decider, livery_choice){
 	sw_458_speed_man;
 }
 switch(FEAT_TRAINS, SELF, sw_458_te_man, cargo_subtype){
-	0: 0.49;
-	1: 0.49;
-	2: 0.65;
+	0: 125;
+	1: 125;
+	2: 166;
 }
 switch(FEAT_TRAINS, SELF, sw_458_te_decider, livery_choice){
-	0: 0.49;
+	0: 125;
 	sw_458_te_man;
 }
-/*
+
 item (FEAT_TRAINS, item_458, 458) {
 	property {
 		name: 							string(STR_NAME_458);
@@ -436,7 +436,7 @@ item (FEAT_TRAINS, item_458, 458) {
 		default: 							sw_458_default;
 		purchase:							sw_458_purchase;
 		create_effect:						vfx_3rd;
-		cargo_subtype_text:					sw_458_refit_text_decider ;
+		cargo_subtype_text:					sw_458_livery_text_decider;
 		colour_mapping:						sw_458_colour_mapping_decider;
 		purchase_colour_mapping: 			sw_458_colour_mapping_decider;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 31) ;
@@ -446,10 +446,10 @@ item (FEAT_TRAINS, item_458, 458) {
 }
 		livery_override (9030) {
 		cargo_capacity: 85;
-		default: sw_458_default_t;
+		default: sw_458_t_default;
 		colour_mapping:	sw_458_colour_mapping_decider;
-		cargo_subtype_text: sw_458_refit_text_decider ;
-		start_stop:                   sw_juniper_start_stop;
+		cargo_subtype_text: sw_458_livery_text_decider ;
+		start_stop:                   sw_458_start_stop;
 }
 }
 
@@ -469,4 +469,4 @@ item (FEAT_TRAINS, item_458, 458){
 		name                           : string(STR_NAME_458_ALT) ;
 	}
 }
-}*/
+}

@@ -18244,7 +18244,7 @@ item (FEAT_TRAINS, item_319, 319) {
 		create_effect:						vfx_3rd;
 		cargo_subtype_text:					sw_319_refit_text_decider ;
 		colour_mapping:						sw_319_colour_mapping_decider;
-		purchase_colour_mapping: 			sw_319_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_319_colour_mapping_auto;
 		running_cost_factor: return(current_speed == 0 ? 8 : 34) ;
 		purchase_running_cost_factor:		34;
 		sound_effect:						sw_sfx_emu_gec ;
@@ -19565,19 +19565,19 @@ item (FEAT_TRAINS, item_325, 325){
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_334.pnml" 1
 //Front Cars
-spriteset(spriteset_458_0_f, "gfx/EMU/class_458.png") {template_8_8_networker(0, 200)}//
-spriteset(spriteset_460_f_pax, "gfx/EMU/class_458.png") {template_8_8_networker(358, 150)}//
-spriteset(spriteset_460_f_mail, "gfx/EMU/class_458.png") {template_8_8_networker(358, 200)}//
-spriteset(spriteset_458_5_f, "gfx/EMU/class_458.png") {template_8_8_networker(448, 225)}//
+spriteset(spriteset_458_0_f, "gfx/EMU/class_458.png") {template_8_8_networker(0, 200)}
+spriteset(spriteset_460_f_pax, "gfx/EMU/class_458.png") {template_8_8_networker(358, 150)}
+spriteset(spriteset_460_f_mail, "gfx/EMU/class_458.png") {template_8_8_networker(358, 175)}
+spriteset(spriteset_458_5_f, "gfx/EMU/class_458.png") {template_8_8_networker(448, 225)}
 spriteset(spriteset_334_f_sct, "gfx/EMU/class_458.png") {template_8_8_networker(0, 150)}
 spriteset(spriteset_334_f_spt, "gfx/EMU/class_458.png") {template_8_8_networker(179, 150)}
 //Med Driving
 spriteset(spriteset_458_0_c, "gfx/EMU/class_458.png") {template_8_8_networker(0, 225)} //_c indicates coupled//
 //Trailer
-spriteset(spriteset_458_0_t, "gfx/EMU/class_458.png") {template_8_4_networker(179, 0)}//
-spriteset(spriteset_460_t, "gfx/EMU/class_458.png") {template_8_4_networker(0, 150)}//
-spriteset(spriteset_458_5_t_a, "gfx/EMU/class_458.png") {template_8_4_networker(179, 150)}//
-spriteset(spriteset_458_5_t_b, "gfx/EMU/class_458.png") {template_8_4_networker(0, 600)}//
+spriteset(spriteset_458_0_t, "gfx/EMU/class_458.png") {template_8_4_networker(179, 225)}
+spriteset(spriteset_460_t, "gfx/EMU/class_458.png") {template_8_4_networker(358, 175)}
+spriteset(spriteset_458_5_t_a, "gfx/EMU/class_458.png") {template_8_4_networker(269, 225)}
+spriteset(spriteset_458_5_t_b, "gfx/EMU/class_458.png") {template_8_4_networker(359, 225)}
 spriteset(spriteset_334_t_sct, "gfx/EMU/class_458.png") {template_8_4_networker(358, 125)}
 spriteset(spriteset_334_t_spt, "gfx/EMU/class_458.png") {template_8_4_networker(448, 125)}
 //Pan
@@ -19588,18 +19588,18 @@ spriteset(spriteset_334_pr_spt, "gfx/EMU/class_458.png") {template_8_8_networker
 //Headlights
 spriteset(spriteset_334_hl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 125)}
 spriteset(spriteset_334_rl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 150)}
-spriteset(spriteset_458_0_hl, "gfx/EMU/class_458.png") {template_8_8_networker(0, 0)}//
-spriteset(spriteset_458_0_rl, "gfx/EMU/class_458.png") {template_8_8_networker(179, 150)}//
-spriteset(spriteset_458_5_hl, "gfx/EMU/class_458.png") {template_8_8_networker(0, 0)}//
-spriteset(spriteset_458_5_rl, "gfx/EMU/class_458.png") {template_8_8_networker(179, 150)}//
-spriteset(spriteset_460_hl, "gfx/EMU/class_458.png") {template_8_8_networker(0, 0)}//
-spriteset(spriteset_460_rl, "gfx/EMU/class_458.png") {template_8_8_networker(179, 150)}//
+spriteset(spriteset_458_0_hl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 50)}
+spriteset(spriteset_458_0_rl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 75)}
+spriteset(spriteset_458_5_hl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 0)}
+spriteset(spriteset_458_5_rl, "gfx/EMU/class_458.png") {template_8_8_networker(537, 25)}
+spriteset(spriteset_460_hl, "gfx/EMU/class_458.png") {template_8_8_networker(358, 75)}
+spriteset(spriteset_460_rl, "gfx/EMU/class_458.png") {template_8_8_networker(358, 100)}
 //Purchase
 spriteset(spriteset_334_purchase_spt, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 101)}
 spriteset(spriteset_334_purchase_sct, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 114)}
-spriteset(spriteset_458_0_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(179, 275)}//
-spriteset(spriteset_458_5_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 725)}//
-spriteset(spriteset_460_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 425)}//
+spriteset(spriteset_458_0_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 88)}//
+spriteset(spriteset_458_5_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 75)}//
+spriteset(spriteset_460_purchase, "gfx/EMU/class_458.png") {template_dualhead_purchase(0, 127)}//
 //check coords
 	//Class 334
 //Purchase
@@ -19806,7 +19806,162 @@ item (FEAT_TRAINS, item_334, 334){
 	}
 }
 }
-/*
+
+	//Class 458/460
+//Purchase
+switch(FEAT_TRAINS, SELF, sw_458_purchase, current_year){
+	0..2012: spriteset_458_0_purchase;
+	spriteset_458_5_purchase;
+}
+//Main section for class 458/460
+switch(FEAT_TRAINS, SELF, sw_458_0_f_decider_1, position_in_consist_from_end){
+	0: spriteset_458_0_f;
+	spriteset_458_0_c;
+}
+switch(FEAT_TRAINS, SELF, sw_458_0_f_decider, position_in_consist){
+	0: spriteset_458_0_f;
+	sw_458_0_f_decider_1;
+}
+switch(FEAT_TRAINS, SELF, sw_458_f_man, cargo_subtype){
+	0: sw_458_0_f_decider;
+	1: spriteset_460_f_pax;
+	2: spriteset_458_5_f;
+}
+switch(FEAT_TRAINS, SELF, sw_458_f_mail_man, cargo_subtype){
+	0: spriteset_460_f_mail;
+}
+random_switch (FEAT_TRAINS, SELF, sw_458_5_t) {
+	2: spriteset_458_5_t_a;
+	1: spriteset_458_5_t_b;
+}
+switch(FEAT_TRAINS, SELF, sw_458_t_man, cargo_subtype){
+	0: spriteset_458_0_t;
+	1: spriteset_460_t;
+	2: sw_458_5_t;
+}
+switch(FEAT_TRAINS, SELF, sw_458_f_auto, current_year){
+	0..2012: sw_458_0_f_decider;
+	spriteset_458_5_f;
+}
+switch(FEAT_TRAINS, SELF, sw_458_t_auto, current_year){
+	0..2012: spriteset_458_0_t;
+	sw_458_5_t;
+}
+switch(FEAT_TRAINS, SELF, sw_458_f_decider, livery_choice){
+	0: sw_458_f_auto;
+	sw_458_f_man;
+}
+switch(FEAT_TRAINS, SELF, sw_458_t_decider, livery_choice){
+	0: sw_458_t_auto;
+	sw_458_t_man;
+}
+//Headlights
+switch(FEAT_TRAINS, SELF, sw_458_tl_man, cargo_subtype){
+	0: spriteset_458_0_rl;
+	1: spriteset_460_hl;
+	2: spriteset_458_5_rl;
+}
+switch(FEAT_TRAINS, SELF, sw_458_hl_man, cargo_subtype){
+	0: spriteset_458_0_hl;
+	1: spriteset_460_rl;
+	2: spriteset_458_5_hl;
+}
+switch(FEAT_TRAINS, SELF, sw_458_tl_auto, current_year){
+	0..2012: spriteset_458_0_hl;
+	spriteset_458_5_hl;
+}
+switch(FEAT_TRAINS, SELF, sw_458_hl_auto, current_year){
+	0..2012: spriteset_458_0_rl;
+	spriteset_458_5_rl;
+}
+switch(FEAT_TRAINS, SELF, sw_458_tl_type_decider, livery_choice){
+	0: sw_458_tl_auto;
+	sw_458_tl_man;
+}
+switch(FEAT_TRAINS, SELF, sw_458_hl_type_decider, livery_choice){
+	0: sw_458_hl_auto;
+	sw_458_hl_man;
+}
+switch(FEAT_TRAINS, SELF, sw_458_tl_decider, position_in_consist_from_end){
+	0: sw_458_tl_type_decider;
+	gfx_blank;
+}
+switch(FEAT_TRAINS, SELF, sw_458_hl_decider, position_in_consist){
+	0: sw_458_hl_type_decider;
+	sw_458_tl_decider;
+}
+
+switch(FEAT_TRAINS, SELF, sw_458_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : return sw_458_f_decider;
+	1 : return sw_458_hl_decider;
+}
+
+switch(FEAT_TRAINS, SELF, sw_458_t_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : return sw_458_t_decider;
+}
+
+//Recolour
+random_switch(FEAT_TRAINS, SELF, sw_458_swt_colour_mapping, TRIGGER_VEHICLE_SERVICE){
+	1: palette_2cc(COLOUR_RED, COLOUR_DARK_BLUE);
+}
+random_switch(FEAT_TRAINS, SELF, sw_460_gax_colour_mapping, TRIGGER_VEHICLE_SERVICE){
+	1: palette_2cc(COLOUR_RED, COLOUR_LIGHT_BLUE);
+}
+
+//Recolour Switches
+switch(FEAT_TRAINS, SELF, sw_458_colour_mapping_manual, cargo_subtype){
+	0: sw_458_swt_colour_mapping;
+	1: sw_460_gax_colour_mapping;
+	2: sw_458_swt_colour_mapping;
+}
+switch(FEAT_TRAINS, PARENT, sw_458_colour_mapping_manual_check, livery_choice){
+	1 : sw_458_colour_mapping_manual ;
+	sw_458_swt_colour_mapping ;
+}
+switch(FEAT_TRAINS, PARENT, sw_458_colour_mapping_decider, colour_scheme_1){
+	1 : sw_458_colour_mapping_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+switch(FEAT_TRAINS, SELF, sw_458_manual_refit_text, cargo_subtype){
+	0: string(STR_LIVERY_SWT);
+	1: string(STR_LIVERY_GATEX);
+	2: string(STR_LIVERY_SWT_REFURB);
+return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_TRAINS, SELF, sw_458_livery_text_decider, livery_choice){
+	1: sw_458_manual_refit_text;
+	CB_RESULT_NO_TEXT;
+}
+switch(FEAT_TRAINS, SELF, sw_458_start_stop, count_veh_id(9090)){
+0: string(STR_MORE_CARRIAGES_NEEDED);
+CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_458_coupling_restrictions, vehicle_type_id) {
+    9090: return CB_RESULT_ATTACH_ALLOW;
+	458: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_458_NO_COUPLE);
+}
+switch(FEAT_TRAINS, SELF, sw_458_speed_man, cargo_subtype){
+	0: 100;
+	1: 100;
+	2: 75;
+}
+switch(FEAT_TRAINS, SELF, sw_458_speed_decider, livery_choice){
+	0: 100;
+	sw_458_speed_man;
+}
+switch(FEAT_TRAINS, SELF, sw_458_te_man, cargo_subtype){
+	0: 125;
+	1: 125;
+	2: 166;
+}
+switch(FEAT_TRAINS, SELF, sw_458_te_decider, livery_choice){
+	0: 125;
+	sw_458_te_man;
+}
+
 item (FEAT_TRAINS, item_458, 458) {
 	property {
 		name: 							string(STR_NAME_458);
@@ -19825,7 +19980,7 @@ item (FEAT_TRAINS, item_458, 458) {
 		speed:							100 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
-		track_type:						SAAZ;
+		track_type:						SAA3;
 		ai_special_flag:				AI_FLAG_CARGO;
 		power:							1438 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
@@ -19847,18 +20002,20 @@ item (FEAT_TRAINS, item_458, 458) {
 		default: 							sw_458_default;
 		purchase:							sw_458_purchase;
 		create_effect:						vfx_3rd;
-		cargo_subtype_text:					sw_458_refit_text_decider ;
+		cargo_subtype_text:					sw_458_livery_text_decider;
 		colour_mapping:						sw_458_colour_mapping_decider;
 		purchase_colour_mapping: 			sw_458_colour_mapping_decider;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 31) ;
 		sound_effect:						sw_sfx_electric_loco_modern ;
+		speed:								sw_458_speed_decider;
+		tractive_effort_coefficient:		sw_458_te_decider;
 }
 		livery_override (9030) {
 		cargo_capacity: 85;
-		default: sw_458_default_t;
+		default: sw_458_t_default;
 		colour_mapping:	sw_458_colour_mapping_decider;
-		cargo_subtype_text: sw_458_refit_text_decider ;
-		start_stop:                   sw_juniper_start_stop;
+		cargo_subtype_text: sw_458_livery_text_decider ;
+		start_stop:                   sw_458_start_stop;
 }
 }
 
@@ -19878,7 +20035,7 @@ item (FEAT_TRAINS, item_458, 458){
 		name                           : string(STR_NAME_458_ALT) ;
 	}
 }
-}*/
+}
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_411.pnml" 1
 //Front Cars
@@ -21431,8 +21588,8 @@ spriteset(spriteset_375_pan_down_r, "gfx/FIXTURES/class_375_lights.png") {templa
 spriteset(spriteset_375_cnx_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 300)}
 spriteset(spriteset_375_sxs_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 325)}
 spriteset(spriteset_375_sgs_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 350)}
-spriteset(spriteset_375_ser_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 375)}
-spriteset(spriteset_375_gtr_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 400)}
+spriteset(spriteset_375_ser_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 400)}
+spriteset(spriteset_375_gtr_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(179, 425)}
 
 switch(FEAT_TRAINS, SELF, sw_electrostar_front_auto, current_year){
 0 .. 2000: spriteset_375_f_cnx;
@@ -22283,8 +22440,14 @@ switch(FEAT_TRAINS, SELF, sw_700_recolour, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2);
 }
 
+switch(FEAT_TRAINS, SELF, sw_700_recolour_purchase_1, colour_scheme_1){
+	0 .. 2016: sw_700_tsgn_colour_mapping;
+	2017 .. 2018: sw_700_swt_colour_mapping;
+	sw_700_tsgn_colour_mapping;
+}
+
 switch(FEAT_TRAINS, SELF, sw_700_recolour_purchase, colour_scheme_1){
-	1: sw_700_colour_auto;
+	1: sw_700_recolour_purchase_1;
 	palette_2cc(company_colour1, company_colour2);
 }
 
@@ -24275,6 +24438,7 @@ sort(FEAT_TRAINS,[
 395,
 415,
 455,
+458,
 465,
 411,
 442,
@@ -24382,6 +24546,7 @@ sort(FEAT_TRAINS,[
 442,
 444,
 455,
+458,
 465,
 700,
 800,
