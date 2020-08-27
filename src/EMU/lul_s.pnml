@@ -1,0 +1,106 @@
+//Spritesets
+
+spriteset(gfx_lulS_mid		, "gfx/EMU/tube_s.png")	{template_8_4_networker(0, 0)}
+spriteset(gfx_lulS_front	, "gfx/EMU/tube_s.png")	{template_8_8_networker(0, 25)}
+spriteset(gfx_lulS_back		, "gfx/EMU/tube_s.png")	{template_8_8_networker(0, 50)}
+spriteset(gfx_lulS			, "gfx/EMU/tube_s.png")	{template_8_8_networker(0, 75)}
+
+spriteset(gfx_lulS_purchase	, "gfx/EMU/tube_s.png"){template_dualhead_purchase(0, 100)}
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_lulS_check_back, position_in_consist_from_end){ 0: gfx_lulS_back ; gfx_lulS ;}
+switch(FEAT_TRAINS, SELF, sw_lulS_check_front, position_in_consist){ 0: gfx_lulS_front ; sw_lulS_check_back ;}
+
+switch(FEAT_TRAINS, SELF, sw_lulS_id_check	, vehicle_type_id) { 600 : gfx_lulS_mid ; sw_lulS_check_front ; }
+
+
+
+
+
+//Colours
+
+//Automatic
+
+switch(FEAT_TRAINS, SELF, sw_lulS_colours_auto, current_year){
+	0..1992 : palette_1cc(COLOUR_GREY) ;
+	palette_1cc(COLOUR_DARK_BLUE) ;
+}
+
+//Manual
+
+
+switch(FEAT_TRAINS, SELF, sw_lulS_colours_manual_check, livery_choice){
+	1 : palette_1cc(COLOUR_DARK_BLUE) ;
+	sw_lulS_colours_auto ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_lulS_colours_2cc_check, colour_scheme_1){
+	1 : sw_lulS_colours_manual_check ;
+	palette_1cc(company_colour1) ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_lulS_attach, vehicle_type_id){
+	20	: return CB_RESULT_ATTACH_ALLOW ;
+	37	: return CB_RESULT_ATTACH_ALLOW ;
+	600	: return CB_RESULT_ATTACH_ALLOW ;
+	612	: return CB_RESULT_ATTACH_ALLOW ;
+    return string(STR_LUL_NO_COUPLE);
+}
+
+
+item(FEAT_TRAINS, item_lulS, 612){
+	property{
+		name                           : string(STR_NAME_LULS) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_MU);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(2010,1,1) ;
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		vehicle_life                   : 35 ;
+		reliability_decay              : 8 ;
+		cost_factor                    : 30 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 14 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 100 ;
+		loading_speed                  : 40 ;
+		track_type                     : SAA4 ;
+		engine_class                   : ENGINE_CLASS_ELECTRIC ;
+		speed                          : 62 mph ;
+		power                          : 700 hp ;
+		extra_power_per_wagon          : 150 hp ;
+		weight                         : 30 ton ;
+		tractive_effort_coefficient    : 0.22 ;
+		air_drag_coefficient           : 0.1 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 1 ;
+	}
+	graphics{
+		default                 		: sw_lulS_id_check ;
+		purchase                		: gfx_lulS_purchase ;
+		sound_effect            		: sw_sfx_tube_gec ;
+		create_effect           		: vfx_3rd_only ;
+		colour_mapping          		: sw_lulS_colours_2cc_check ;
+		purchase_colour_mapping 		: sw_lulS_colours_2cc_check ;
+		//cargo_subtype_text      		: sw_lulS_refit_text_check ;
+		can_attach_wagon        		: sw_lulS_attach ;
+		running_cost_factor    			: return(current_speed == 0 ? 3 : 14) ;
+		purchase_running_cost_factor	: 14 ;
+	}
+	livery_override (600){
+		default                     : sw_lulS_id_check ;
+		colour_mapping              : sw_lulS_colours_2cc_check ;
+		cargo_capacity              : 105 ;
+		//cargo_subtype_text          : sw_lulS_refit_text_check ;
+		weight                      : 18 ;
+		create_effect           	: vfx_3rd_only ;
+	}
+}

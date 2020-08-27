@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 47 ;
+	version: 48 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -759,6 +759,15 @@ switch(FEAT_TRAINS, SELF, sw_sfx_tube_gec_full, getbits(extra_callback_info1, 0,
 	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav") ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_sfx_tube_modern_full, getbits(extra_callback_info1, 0, 8)){
+	//SOUND_EVENT_STOPPED       : sound("sfx/modern_electric_idle.wav") ;
+	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
+	SOUND_EVENT_RUNNING_16    : sw_sfx_electric_modern_running ;
+	SOUND_EVENT_START         : sound("sfx/thump_whistle.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav") ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one_full, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : sound("sfx/dmu_idle.wav",70) ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/dmu_run.wav", 80) ;
@@ -921,6 +930,11 @@ switch(FEAT_TRAINS, SELF, sw_sfx_emu_gec, sound_control){
 switch(FEAT_TRAINS, SELF, sw_sfx_tube_gec, sound_control){
 	0 : sw_sfx_0;
 	1 : sw_sfx_tube_gec_full;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_tube_modern, sound_control){
+	0 : sw_sfx_0;
+	1 : sw_sfx_tube_modern_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, sound_control){
@@ -4418,6 +4432,8 @@ switch(FEAT_TRAINS, SELF, sw_lulcoach_purchase_sprite, current_year){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_lulcoach_attach, vehicle_type_id){
+	20	: return CB_RESULT_ATTACH_ALLOW ;
+	37	: return CB_RESULT_ATTACH_ALLOW ;
 	600..699 : CB_RESULT_ATTACH_ALLOW ;
     return string(STR_LUL_NO_COUPLE);
 }
@@ -4437,7 +4453,7 @@ item (FEAT_TRAINS, item_lulcoach, 600) {
 		cost_factor:					38;
 		running_cost_factor:			20;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							60 mph;
+		speed:							70 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAA4;
@@ -22634,7 +22650,7 @@ item(FEAT_TRAINS, item_lul78, 678){
 		vehicle_life                   : 40 ;
 		reliability_decay              : 11 ;
 		cost_factor                    : 27 ;
-		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
 		running_cost_factor            : 17 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
@@ -22642,11 +22658,12 @@ item(FEAT_TRAINS, item_lul78, 678){
 		cargo_capacity                 : 95 ;
 		loading_speed                  : 30 ;
 		track_type                     : SAA4 ;
-		engine_class                   : ENGINE_CLASS_DIESEL ;
+		engine_class                   : ENGINE_CLASS_ELECTRIC ;
 		speed                          : 45 mph ;
-		power                          : 250 kW ;
-		weight                         : 39 ton ;
-		tractive_effort_coefficient    : 0.15 ;
+		power                          : 400 hp ;
+		extra_power_per_wagon          : 100 hp ;
+		weight                         : 27 ton ;
+		tractive_effort_coefficient    : 0.24 ;
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
@@ -22668,6 +22685,114 @@ item(FEAT_TRAINS, item_lul78, 678){
 		colour_mapping              : sw_lul78_colours_2cc_check ;
 		cargo_capacity              : 100 ;
 		cargo_subtype_text          : sw_lul78_refit_text_check ;
+		weight                      : 18 ;
+		create_effect           	: vfx_3rd_only ;
+	}
+}
+# 1 "rukts.pnml" 2
+# 1 "src/EMU/lul_s.pnml" 1
+//Spritesets
+
+spriteset(gfx_lulS_mid		, "gfx/EMU/tube_s.png")	{template_8_4_networker(0, 0)}
+spriteset(gfx_lulS_front	, "gfx/EMU/tube_s.png")	{template_8_8_networker(0, 25)}
+spriteset(gfx_lulS_back		, "gfx/EMU/tube_s.png")	{template_8_8_networker(0, 50)}
+spriteset(gfx_lulS			, "gfx/EMU/tube_s.png")	{template_8_8_networker(0, 75)}
+
+spriteset(gfx_lulS_purchase	, "gfx/EMU/tube_s.png"){template_dualhead_purchase(0, 100)}
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_lulS_check_back, position_in_consist_from_end){ 0: gfx_lulS_back ; gfx_lulS ;}
+switch(FEAT_TRAINS, SELF, sw_lulS_check_front, position_in_consist){ 0: gfx_lulS_front ; sw_lulS_check_back ;}
+
+switch(FEAT_TRAINS, SELF, sw_lulS_id_check	, vehicle_type_id) { 600 : gfx_lulS_mid ; sw_lulS_check_front ; }
+
+
+
+
+
+//Colours
+
+//Automatic
+
+switch(FEAT_TRAINS, SELF, sw_lulS_colours_auto, current_year){
+	0..1992 : palette_1cc(COLOUR_GREY) ;
+	palette_1cc(COLOUR_DARK_BLUE) ;
+}
+
+//Manual
+
+
+switch(FEAT_TRAINS, SELF, sw_lulS_colours_manual_check, livery_choice){
+	1 : palette_1cc(COLOUR_DARK_BLUE) ;
+	sw_lulS_colours_auto ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_lulS_colours_2cc_check, colour_scheme_1){
+	1 : sw_lulS_colours_manual_check ;
+	palette_1cc(company_colour1) ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_lulS_attach, vehicle_type_id){
+	20	: return CB_RESULT_ATTACH_ALLOW ;
+	37	: return CB_RESULT_ATTACH_ALLOW ;
+	600	: return CB_RESULT_ATTACH_ALLOW ;
+	612	: return CB_RESULT_ATTACH_ALLOW ;
+    return string(STR_LUL_NO_COUPLE);
+}
+
+
+item(FEAT_TRAINS, item_lulS, 612){
+	property{
+		name                           : string(STR_NAME_LULS) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_MU);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(2010,1,1) ;
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		vehicle_life                   : 35 ;
+		reliability_decay              : 8 ;
+		cost_factor                    : 30 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 14 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 100 ;
+		loading_speed                  : 40 ;
+		track_type                     : SAA4 ;
+		engine_class                   : ENGINE_CLASS_ELECTRIC ;
+		speed                          : 62 mph ;
+		power                          : 700 hp ;
+		extra_power_per_wagon          : 150 hp ;
+		weight                         : 30 ton ;
+		tractive_effort_coefficient    : 0.22 ;
+		air_drag_coefficient           : 0.1 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 1 ;
+	}
+	graphics{
+		default                 		: sw_lulS_id_check ;
+		purchase                		: gfx_lulS_purchase ;
+		sound_effect            		: sw_sfx_tube_gec ;
+		create_effect           		: vfx_3rd_only ;
+		colour_mapping          		: sw_lulS_colours_2cc_check ;
+		purchase_colour_mapping 		: sw_lulS_colours_2cc_check ;
+		//cargo_subtype_text      		: sw_lulS_refit_text_check ;
+		can_attach_wagon        		: sw_lulS_attach ;
+		running_cost_factor    			: return(current_speed == 0 ? 3 : 14) ;
+		purchase_running_cost_factor	: 14 ;
+	}
+	livery_override (600){
+		default                     : sw_lulS_id_check ;
+		colour_mapping              : sw_lulS_colours_2cc_check ;
+		cargo_capacity              : 105 ;
+		//cargo_subtype_text          : sw_lulS_refit_text_check ;
 		weight                      : 18 ;
 		create_effect           	: vfx_3rd_only ;
 	}
@@ -24438,15 +24563,21 @@ sort(FEAT_TRAINS,[
 395,
 415,
 455,
-458,
 465,
+458,
 411,
 442,
 444,
-662,
-678,
-672,
+660, //A stock
+669, //C stock
+678, //D stock
+612, //S Stock
+602,
+638,
+667,
 692,
+695,
+608,
 10000,
 10001,
 10019,
@@ -24550,10 +24681,16 @@ sort(FEAT_TRAINS,[
 465,
 700,
 800,
-662,
-672,
-678,
+660, //A stock
+669, //C stock
+678, //D stock
+612, //S Stock
+602,
+638,
+667,
 692,
+695,
+608,
 10000,
 10001,
 10019,

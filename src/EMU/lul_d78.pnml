@@ -109,7 +109,7 @@ item(FEAT_TRAINS, item_lul78, 678){
 		vehicle_life                   : 40 ;
 		reliability_decay              : 11 ;
 		cost_factor                    : 27 ;
-		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
 		running_cost_factor            : 17 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
@@ -117,11 +117,12 @@ item(FEAT_TRAINS, item_lul78, 678){
 		cargo_capacity                 : 95 ;
 		loading_speed                  : 30 ;
 		track_type                     : SAA4 ;
-		engine_class                   : ENGINE_CLASS_DIESEL ;
+		engine_class                   : ENGINE_CLASS_ELECTRIC ;
 		speed                          : 45 mph ;
-		power                          : 250 kW ;
-		weight                         : 39 ton ;
-		tractive_effort_coefficient    : 0.15 ;
+		power                          : 400 hp ;
+		extra_power_per_wagon          : 100 hp ;
+		weight                         : 27 ton ;
+		tractive_effort_coefficient    : 0.24 ;
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;

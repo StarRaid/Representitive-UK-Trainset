@@ -193,6 +193,15 @@ switch(FEAT_TRAINS, SELF, sw_sfx_tube_gec_full, getbits(extra_callback_info1, 0,
 	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav") ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_sfx_tube_modern_full, getbits(extra_callback_info1, 0, 8)){
+	//SOUND_EVENT_STOPPED       : sound("sfx/modern_electric_idle.wav") ;
+	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
+	SOUND_EVENT_RUNNING_16    : sw_sfx_electric_modern_running ;
+	SOUND_EVENT_START         : sound("sfx/thump_whistle.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav") ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one_full, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : sound("sfx/dmu_idle.wav",70) ;
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/dmu_run.wav", 80) ;
@@ -355,6 +364,11 @@ switch(FEAT_TRAINS, SELF, sw_sfx_emu_gec, sound_control){
 switch(FEAT_TRAINS, SELF, sw_sfx_tube_gec, sound_control){
 	0 : sw_sfx_0;
 	1 : sw_sfx_tube_gec_full;
+}
+
+switch(FEAT_TRAINS, SELF, sw_sfx_tube_modern, sound_control){
+	0 : sw_sfx_0;
+	1 : sw_sfx_tube_modern_full;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one, sound_control){

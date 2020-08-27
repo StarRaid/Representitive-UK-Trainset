@@ -16,6 +16,8 @@ switch(FEAT_TRAINS, SELF, sw_lulcoach_purchase_sprite, current_year){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_lulcoach_attach, vehicle_type_id){
+	20	: return CB_RESULT_ATTACH_ALLOW ;
+	37	: return CB_RESULT_ATTACH_ALLOW ;
 	600..699 : CB_RESULT_ATTACH_ALLOW ;
     return string(STR_LUL_NO_COUPLE);
 }
@@ -35,7 +37,7 @@ item (FEAT_TRAINS, item_lulcoach, 600) {
 		cost_factor:					38;
 		running_cost_factor:			20;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							60 mph;
+		speed:							70 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAA4;
