@@ -1,0 +1,161 @@
+//Spritesets
+
+spriteset(gfx_lul_a60_grey			, "gfx/EMU/lul_a60.png")	{template_8_8_networker(0, 0)}
+spriteset(gfx_lul_a60_grey_mid		, "gfx/EMU/lul_a60.png")	{template_8_4_networker(0, 25)}
+spriteset(gfx_lul_a60_lulred		, "gfx/EMU/lul_a60.png")	{template_8_8_networker(0, 50)}
+spriteset(gfx_lul_a60_lulred_mid	, "gfx/EMU/lul_a60.png")	{template_8_4_networker(0, 75)}
+
+spriteset(gfx_lul_a60_light_front	, "gfx/EMU/lul_a60.png")	{template_8_8_networker(180, 0)}
+spriteset(gfx_lul_a60_light_back	, "gfx/EMU/lul_a60.png")	{template_8_8_networker(180, 25)}
+
+spriteset(gfx_lul_a60_purchase_grey	, "gfx/EMU/lul_a60.png"){template_dualhead_purchase(90, 25)}
+spriteset(gfx_lul_a60_purchase_lulred	, "gfx/EMU/lul_a60.png"){template_dualhead_purchase(90, 75)}
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_grey_id_check	, vehicle_type_id) { 600 : gfx_lul_a60_grey_mid ; gfx_lul_a60_grey ; }
+switch(FEAT_TRAINS, SELF, sw_lul_a60_lulred_id_check	, vehicle_type_id) { 600 : gfx_lul_a60_lulred_mid ; gfx_lul_a60_lulred ; }
+
+
+//Automatic
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_auto, current_year){
+	0..1992 : sw_lul_a60_grey_id_check ;
+	sw_lul_a60_lulred_id_check ;
+}
+
+//Manual
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_manual, cargo_subtype){
+	0 : sw_lul_a60_grey_id_check ;
+	sw_lul_a60_lulred_id_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_manual_check, livery_choice){
+	1 : sw_lul_a60_manual ;
+	sw_lul_a60_auto ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_lights_check_back, position_in_consist_from_end){ 0 : gfx_lul_a60_light_back ; }
+switch(FEAT_TRAINS, SELF, sw_lul_a60_lights_check_front, position_in_consist){ 0 : gfx_lul_a60_light_front ; sw_lul_a60_lights_check_back ; }
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_spr_stack, SPR_STACK){
+	0 : sw_lul_a60_manual_check ;
+	1 : sw_lul_a60_lights_check_front ;
+}
+
+//Purchase sprites
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_purchase_gfx, current_year){
+	0..1992 : gfx_lul_a60_purchase_grey ;
+	gfx_lul_a60_purchase_lulred ;
+}
+
+
+
+//Colours
+
+//Automatic
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_colours_auto, current_year){
+	0..1992 : palette_1cc(COLOUR_GREY) ;
+	palette_1cc(COLOUR_DARK_BLUE) ;
+}
+
+//Manual
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_colours_manual, current_year){
+	0 : palette_1cc(COLOUR_GREY) ;
+	palette_1cc(COLOUR_DARK_BLUE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_colours_manual_check, livery_choice){
+	1 : sw_lul_a60_colours_manual ;
+	sw_lul_a60_colours_auto ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_colours_2cc_check, colour_scheme_1){
+	1 : sw_lul_a60_colours_manual_check ;
+	palette_1cc(company_colour1) ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_LUL_GREY) ;
+	1 : string(STR_LIVERY_LUL_CORP) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_refit_text_check, livery_choice){
+	1 : sw_lul_a60_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_lul_a60_attach, vehicle_type_id){
+	20	: return CB_RESULT_ATTACH_ALLOW ;
+	37	: return CB_RESULT_ATTACH_ALLOW ;
+	600	: return CB_RESULT_ATTACH_ALLOW ;
+	660	: return CB_RESULT_ATTACH_ALLOW ;
+    return string(STR_LUL_NO_COUPLE);
+}
+
+
+item(FEAT_TRAINS, item_lul_a60, 660){
+	property{
+		name                           : string(STR_NAME_LUL_A60) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_SPRITE_STACK);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1960,1,1) ;
+		model_life                     : 35 ;
+		vehicle_life                   : 55 ;
+		reliability_decay              : 10 ;
+		cost_factor                    : 30 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 19 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 85 ;
+		loading_speed                  : 27 ;
+		track_type                     : SAA4 ;
+		engine_class                   : ENGINE_CLASS_ELECTRIC ;
+		speed                          : 70 mph ;
+		power                          : 340 hp ;
+		//extra_power_per_wagon          : 85 hp ;
+		weight                         : 31 ton ;
+		tractive_effort_coefficient    : 0.21 ;
+		air_drag_coefficient           : 0.1 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 1 ;
+	}
+	graphics{
+		default                 		: sw_lul_a60_spr_stack ;
+		purchase                		: sw_lul_a60_purchase_gfx ;
+		sound_effect            		: sw_sfx_tube_gec ;
+		create_effect           		: vfx_3rd_only ;
+		colour_mapping          		: sw_lul_a60_colours_2cc_check ;
+		purchase_colour_mapping 		: sw_lul_a60_colours_auto ;
+		cargo_subtype_text      		: sw_lul_a60_refit_text_check ;
+		can_attach_wagon        		: sw_lul_a60_attach ;
+		running_cost_factor    			: return(current_speed == 0 ? 5 : 19) ;
+		purchase_running_cost_factor	: 19 ;
+	}
+	livery_override (600){
+		default                     : sw_lul_a60_manual_check ;
+		colour_mapping              : sw_lul_a60_colours_2cc_check ;
+		cargo_capacity              : 90 ;
+		cargo_subtype_text          : sw_lul_a60_refit_text_check ;
+		weight                      : 21 ;
+		create_effect           	: vfx_3rd_only ;
+	}
+}

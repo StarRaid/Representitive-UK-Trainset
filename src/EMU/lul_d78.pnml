@@ -5,6 +5,9 @@ spriteset(gfx_lul78_grey_mid	, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0,
 spriteset(gfx_lul78_lulred		, "gfx/EMU/lul_d78.png")	{template_8_8_networker(0, 50)}
 spriteset(gfx_lul78_lulred_mid	, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0, 75)}
 
+spriteset(gfx_lul78_light_front	, "gfx/EMU/lul_d78.png")	{template_8_8_networker(180, 0)}
+spriteset(gfx_lul78_light_back	, "gfx/EMU/lul_d78.png")	{template_8_8_networker(180, 25)}
+
 spriteset(gfx_lul78_purchase_grey	, "gfx/EMU/lul_d78.png"){template_dualhead_purchase(90, 25)}
 spriteset(gfx_lul78_purchase_lulred	, "gfx/EMU/lul_d78.png"){template_dualhead_purchase(90, 75)}
 
@@ -35,6 +38,14 @@ switch(FEAT_TRAINS, SELF, sw_lul78_manual_check, livery_choice){
 	sw_lul78_auto ;
 }
 
+
+switch(FEAT_TRAINS, SELF, sw_lul78_lights_check_back, position_in_consist_from_end){ 0 : gfx_lul78_light_back ; }
+switch(FEAT_TRAINS, SELF, sw_lul78_lights_check_front, position_in_consist){ 0 : gfx_lul78_light_front ; sw_lul78_lights_check_back ; }
+
+switch(FEAT_TRAINS, SELF, sw_lul78_spr_stack, SPR_STACK){
+	0 : sw_lul78_manual_check ;
+	1 : sw_lul78_lights_check_front ;
+}
 
 //Purchase sprites
 
@@ -100,7 +111,7 @@ switch(FEAT_TRAINS, SELF, sw_lul78_attach, vehicle_type_id){
 item(FEAT_TRAINS, item_lul78, 678){
 	property{
 		name                           : string(STR_NAME_LUL78) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_MU);
+		misc_flags                     : bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_SPRITE_STACK);
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
@@ -118,9 +129,9 @@ item(FEAT_TRAINS, item_lul78, 678){
 		loading_speed                  : 30 ;
 		track_type                     : SAA4 ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
-		speed                          : 45 mph ;
+		speed                          : 50 mph ;
 		power                          : 400 hp ;
-		extra_power_per_wagon          : 100 hp ;
+		//extra_power_per_wagon          : 100 hp ;
 		weight                         : 27 ton ;
 		tractive_effort_coefficient    : 0.24 ;
 		air_drag_coefficient           : 0.1 ;
@@ -128,7 +139,7 @@ item(FEAT_TRAINS, item_lul78, 678){
 		dual_headed                    : 1 ;
 	}
 	graphics{
-		default                 		: sw_lul78_manual_check ;
+		default                 		: sw_lul78_spr_stack ;
 		purchase                		: sw_lul78_purchase_gfx ;
 		sound_effect            		: sw_sfx_tube_gec ;
 		create_effect           		: vfx_3rd_only ;

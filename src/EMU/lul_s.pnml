@@ -86,7 +86,7 @@ item(FEAT_TRAINS, item_lulS, 612){
 	graphics{
 		default                 		: sw_lulS_id_check ;
 		purchase                		: gfx_lulS_purchase ;
-		sound_effect            		: sw_sfx_tube_gec ;
+		sound_effect            		: sw_sfx_tube_modern ;
 		create_effect           		: vfx_3rd_only ;
 		colour_mapping          		: sw_lulS_colours_2cc_check ;
 		purchase_colour_mapping 		: sw_lulS_colours_2cc_check ;

@@ -22,11 +22,23 @@ switch(FEAT_TRAINS, PARENT, sw_lulcoach_attach, vehicle_type_id){
     return string(STR_LUL_NO_COUPLE);
 }
 
+
+switch(FEAT_TRAINS, SELF, sw_lulcoach_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_LUL_GREY) ;
+	1 : string(STR_LIVERY_LUL_CORP) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lulcoach_refit_text_check, livery_choice){
+	1 : sw_lulcoach_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
 item (FEAT_TRAINS, item_lulcoach, 600) {
 	property {
 		name: 							string(STR_NAME_600);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1978, 1, 1);
+		introduction_date:				date(1960, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		retire_early:					1;
 		vehicle_life:					50;
@@ -58,5 +70,6 @@ item (FEAT_TRAINS, item_lulcoach, 600) {
 		default: 							sw_lulcoach_livery_decider;
 		purchase:							sw_lulcoach_purchase_sprite;
 		can_attach_wagon:					sw_lulcoach_attach;
+		cargo_subtype_text:					sw_lulcoach_refit_text_check ;
 	}
 }
