@@ -126,7 +126,7 @@ STR_LIVERY_SWT					 		 : South West Trains
 STR_LIVERY_SWT_STR				 		 : South West Trains {STRING}
 STR_LIVERY_SCR					 		 : Stagecoach Rail
 STR_LIVERY_SWT_REFURB			 		 : South West Trains (Refurbished)
-STR_LIVERY_SWT_HERITAGE			 		 : South West Trains {GOLD}(Heritage Blue)
+STR_LIVERY_SWT_HERITAGE			 		 : South West Trains {GOLD}(Heritage)
 STR_LIVERY_N_SPIRIT              		 : Northern Spirit
 STR_LIVERY_NORTHERN              		 : Northern Rail
 STR_LIVERY_NORTHERN_ARRIVA       		 : Northern {GOLD}(Arriva)
@@ -173,7 +173,13 @@ STR_LIVERY_HEATHROW_EXPRESS				 : Heathrow Express
 
 STR_LIVERY_LUL_MAROON					 : London Underground {RED}(Maroon)
 STR_LIVERY_LUL_GREY						 : London Underground {BLACK}(Grey)
+STR_LIVERY_LUL_ELL						 : London Underground {BLACK}(East London Line)
+STR_LIVERY_LUL_72_MKII					 : London Underground {BLACK}('72 grey)
+STR_LIVERY_LUL_72_STRAND				 : London Underground {BLACK}(Strand)
+STR_LIVERY_LUL_73						 : London Underground {BLACK}('73 grey)
+STR_LIVERY_LUL_73_CORP					 : London Underground {BLACK}('73 corporate)
 STR_LIVERY_LUL_CORP						 : London Underground {GOLD}(Corporate)
+STR_LIVERY_LUL_DEP						 : London Underground {GOLD}(Departmental)
 
 STR_LIVERY_SLEEPER              :{BLACK}(Sleeper)
 STR_LIVERY_MOTORAIL				:{BLACK}(Motorail)
@@ -284,9 +290,10 @@ STR_NAME_700				 :Siemens "Desiro City" (Dual Voltage)
 STR_NAME_800				 :Hitachi High Speed "Intercity Express Train" (Dual Mode)
 
 STR_NAME_600				 :London Underground MU Carriage
+STR_NAME_LUL38				 :Metro-Cammel 1938 Stock (4th rail)
 STR_NAME_LUL_A60			 :Cravens A60 Stock (4th rail)
 STR_NAME_LUL78				 :Metro-Cammel D78 Stock (4th rail)
-STR_NAME_LULS				 :Bombardier S Stock (4th rail)
+STR_NAME_LULS				 :Bombardier S Stock (3rd rail)
 
 STR_NAME_NRWGARRATT :Beyer-Garratt 2-4-2+2-4-2 (Steam)
 STR_NAME_FAIRLIE    :Double Fairlie 0-4-0+0-4-0 (Steam)
@@ -335,8 +342,7 @@ STR_465_NO_COUPLE: You may only couple this train to a "Modern MU car" or anothe
 STR_700_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro City"!
 STR_IET_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Hitachi High Speed "Intercity Express Train" (Dual Mode)!
 STR_MU90_NO_COUPLE: You may only couple this train to a correct MU!
-STR_LUL_NO_COUPLE: You may only couple this train to a correct London Underground MU!
-STR_LUL78_NO_COUPLE: You may only couple this train to a correct London Underground MU!
+STR_LUL_NO_COUPLE: You may only couple this train to a "London Underground MU Carriage", or London Underground MU of the same type!
 STR_WRONG_JUNIPER_CANNOT_START: You need to refit this train to a correct version for the track type!
 STR_MORE_CARRIAGES_NEEDED: You need to add carriages before this train can leave (at least one between each pair of engines)!
 

@@ -72,7 +72,7 @@ item(FEAT_TRAINS, item_lulS, 612){
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 100 ;
 		loading_speed                  : 40 ;
-		track_type                     : SAA4 ;
+		track_type                     : SAA3 ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
 		speed                          : 62 mph ;
 		power                          : 700 hp ;
@@ -104,3 +104,4 @@ item(FEAT_TRAINS, item_lulS, 612){
 		create_effect           	: vfx_3rd_only ;
 	}
 }
+

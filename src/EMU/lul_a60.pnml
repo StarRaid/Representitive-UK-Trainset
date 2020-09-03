@@ -4,6 +4,8 @@ spriteset(gfx_lul_a60_grey			, "gfx/EMU/lul_a60.png")	{template_8_8_networker(0,
 spriteset(gfx_lul_a60_grey_mid		, "gfx/EMU/lul_a60.png")	{template_8_4_networker(0, 25)}
 spriteset(gfx_lul_a60_lulred		, "gfx/EMU/lul_a60.png")	{template_8_8_networker(0, 50)}
 spriteset(gfx_lul_a60_lulred_mid	, "gfx/EMU/lul_a60.png")	{template_8_4_networker(0, 75)}
+spriteset(gfx_lul_a60_lulell		, "gfx/EMU/lul_a60.png")	{template_8_8_networker(180, 50)}
+spriteset(gfx_lul_a60_lulell_mid	, "gfx/EMU/lul_a60.png")	{template_8_4_networker(180, 75)}
 
 spriteset(gfx_lul_a60_light_front	, "gfx/EMU/lul_a60.png")	{template_8_8_networker(180, 0)}
 spriteset(gfx_lul_a60_light_back	, "gfx/EMU/lul_a60.png")	{template_8_8_networker(180, 25)}
@@ -16,6 +18,7 @@ spriteset(gfx_lul_a60_purchase_lulred	, "gfx/EMU/lul_a60.png"){template_dualhead
 
 switch(FEAT_TRAINS, SELF, sw_lul_a60_grey_id_check	, vehicle_type_id) { 600 : gfx_lul_a60_grey_mid ; gfx_lul_a60_grey ; }
 switch(FEAT_TRAINS, SELF, sw_lul_a60_lulred_id_check	, vehicle_type_id) { 600 : gfx_lul_a60_lulred_mid ; gfx_lul_a60_lulred ; }
+switch(FEAT_TRAINS, SELF, sw_lul_a60_lulell_id_check	, vehicle_type_id) { 600 : gfx_lul_a60_lulell_mid ; gfx_lul_a60_lulell ; }
 
 
 //Automatic
@@ -29,6 +32,7 @@ switch(FEAT_TRAINS, SELF, sw_lul_a60_auto, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_lul_a60_manual, cargo_subtype){
 	0 : sw_lul_a60_grey_id_check ;
+	1 : sw_lul_a60_lulell_id_check ;
 	sw_lul_a60_lulred_id_check ;
 }
 
@@ -88,7 +92,8 @@ switch(FEAT_TRAINS, SELF, sw_lul_a60_colours_2cc_check, colour_scheme_1){
 
 switch(FEAT_TRAINS, SELF, sw_lul_a60_refit_text, cargo_subtype){
 	0 : string(STR_LIVERY_LUL_GREY) ;
-	1 : string(STR_LIVERY_LUL_CORP) ;
+	1 : string(STR_LIVERY_LUL_ELL) ;
+	2 : string(STR_LIVERY_LUL_CORP) ;
 	CB_RESULT_NO_TEXT ;
 }
 

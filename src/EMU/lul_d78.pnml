@@ -104,7 +104,7 @@ switch(FEAT_TRAINS, SELF, sw_lul78_attach, vehicle_type_id){
 	37	: return CB_RESULT_ATTACH_ALLOW ;
 	600	: return CB_RESULT_ATTACH_ALLOW ;
 	678	: return CB_RESULT_ATTACH_ALLOW ;
-    return string(STR_LUL78_NO_COUPLE);
+    return string(STR_LUL_NO_COUPLE);
 }
 
 
@@ -159,3 +159,4 @@ item(FEAT_TRAINS, item_lul78, 678){
 		create_effect           	: vfx_3rd_only ;
 	}
 }
+
