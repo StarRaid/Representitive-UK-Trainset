@@ -11,11 +11,22 @@ To do:
 	G Redo pacer (include 143s/144s, and Welsh 142 liveries)
 	- Convert DBSO/DVT functionality so that they can have independent liveries
 	! Fix the colouring on a whole bunch of purchase sprites
-		-Class 319 connex
-		-Class 317 BR Blue
-		-Class 707 SWT
-		-Class 319 Northern
-		-SE/GWR class 375/387
+		- Class 319 connex
+		- Class 317 BR Blue
+		- Class 707 SWT
+		- Class 319 Northern
+		- SE/GWR class 375/387
+	/ Tube stock:
+		! A stock
+		- C stock
+		! D stock
+		! S stock
+		! 38 stock
+		/ 59 stock
+		- 67/72/73 stock
+		- 92 stock
+		- 95 stock
+		- 09 stock
 	
 Optional:
 	- Add parameter for reversal functionality on supported MUs
@@ -27,11 +38,15 @@ Optional:
 	/ Redo Voyager/Merridian
 	- Mark 5s
 	- Class 13
+	- Class 373
 
 GRF extension ideas:
 	/ Track set:
-		- Option for different tracks withs speed limits (via parameter), with additional parameters to define the speed limits
-		- Depending on speed limit, use different signal types (e.g. lower speed yard tracks use junction signals)
+		! Option for different tracks withs speed limits (via parameter), with additional parameters to define the speed limits
+		/ Depending on speed limit, use different signal types (e.g. lower speed yard tracks use junction signals)
+		- Source/draw depot sprites
+		- Level crossings
+		- Tunnel sprites
 	- Stations:
 		- Depots (e.g. Long Rock, the big shed at Victoria)
 		- Decorative waypoints (e.g. train wash)
@@ -44,7 +59,7 @@ GRF extension ideas:
 			- York
 
 New liveries list which are really unimportant:
-	- XC, Virgin EC, ScotRail HST
+	- XC, Virgin EC, ScotRail HST, Network Rail HST
 	- ScotRail Mark 2 & 3s
 	- Scottish and Midland 170s
 	

@@ -55,7 +55,7 @@ item(FEAT_RAILTYPES, rail_SBAZ) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
-		sort_order					: 80 ;
+		sort_order					: 81 ;
 		speed_limit					: param[3] mph ;
 	}
 	graphics {
@@ -91,7 +91,7 @@ item(FEAT_RAILTYPES, rail_SCAZ) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
-		sort_order					: 80 ;
+		sort_order					: 82 ;
 		speed_limit					: param[4] mph ;
 	}
 	graphics {
@@ -127,7 +127,7 @@ item(FEAT_RAILTYPES, rail_3RDC) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
 		introduction_date			: date(1883,1,1) ;
-		sort_order					: 80 ;
+		sort_order					: 83 ;
 		speed_limit					: param[5] mph ;
 	}
 	graphics {

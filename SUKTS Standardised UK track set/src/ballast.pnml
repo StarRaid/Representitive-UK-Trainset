@@ -51,6 +51,31 @@ spriteset(gfx_ballast_test_track, "gfx/tracks.png"){
 
 
 
+spriteset(gfx_BLST_ballast,	"gfx/tracks.png")	{template_underlay(2030, 120, 770)}
+
+spriteset(gfx_BLST_bridge,	"gfx/tracks.png")	{template_underlay_bridge(2030, 120)}
+
+spriteset(gfx_BLST_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(2030, 120)}
+
+spriteset(gfx_BLST_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 120)}
+spriteset(gfx_BLST_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 120)}
+spriteset(gfx_BLST_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 120)}
+spriteset(gfx_BLST_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 120)}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_BLST_lc_right, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_BLST_lc_right_close;
+	gfx_BLST_lc_right_open;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_BLST_lc_left, level_crossing_status) {
+	LEVEL_CROSSING_CLOSED: gfx_BLST_lc_left_close;
+	gfx_BLST_lc_left_open;
+}
+switch(FEAT_RAILTYPES, SELF, sw_BLST_lc_side_check, traffic_side) {
+	TRAFFIC_SIDE_LEFT: sw_BLST_lc_left;
+	sw_BLST_lc_right;
+}
 
 item(FEAT_RAILTYPES, rail_ballast) {
 	property {
@@ -67,18 +92,18 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 1 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
-		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		//railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(0,1,1) ;
 		sort_order					: 6 ;
 	}
 	graphics {
-		track_overlay		: gfx_blank ;
-		underlay			: gfx_ballast ;
-		bridge_surfaces		: gfx_blank ;
-		tunnels				: gfx_blank ;
-		//level_crossings		: gfx_blank ;
+		track_overlay		: gfx_BLST_ballast ;
+		underlay			: gfx_BLST_ballast ;
+		bridge_surfaces		: gfx_BLST_bridge ;
+		tunnels				: gfx_BLST_tunnel ;
+		level_crossings		: sw_BLST_lc_side_check ;
 		//depots          : 
-		//fences          : 
+		fences          : gfx_blank ;
 	}
 }
 

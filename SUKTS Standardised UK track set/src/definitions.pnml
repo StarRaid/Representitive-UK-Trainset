@@ -189,11 +189,12 @@ template template_tunnel_tracks(x, y) {
 
 template template_lc_track(y){
 	[213,		y+40,		64,		31,		-31,	0	]//North East
-	[213+70,	y+40,		64,		31,		-31,	0	]//North West
+	[283,		y+40,		64,		31,		-31,	0	]//North West
 }
 
 template template_lc_decorations(x, y){
-	template_lc_track(y)
+	[213,		y+40,		64,		31,		-31,	0	]//North East
+	[283,		y+40,		64,		31,		-31,	0	]//North West
 	[ x  , 0 , 1 , 1 , 0,  0  ]
 	[ x  , 0 , 1 , 1 , 0,  0  ]
 	[ x  , 0 , 1 , 1 , 0,  0  ]

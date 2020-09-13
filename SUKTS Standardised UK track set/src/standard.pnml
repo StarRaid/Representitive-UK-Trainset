@@ -24,7 +24,7 @@ switch(FEAT_RAILTYPES, SELF, sw_SAAN_lc_right, level_crossing_status) {
 
 switch(FEAT_RAILTYPES, SELF, sw_SAAN_lc_left, level_crossing_status) {
 	LEVEL_CROSSING_CLOSED: gfx_SAAN_lc_left_close;
-	gfx_RAIL_lc_left_open;
+	gfx_SAAN_lc_left_open;
 }
 switch(FEAT_RAILTYPES, SELF, sw_SAAN_lc_side_check, traffic_side) {
 	TRAFFIC_SIDE_LEFT: sw_SAAN_lc_left;
@@ -73,10 +73,10 @@ spriteset(gfx_SBAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 480)
 
 spriteset(gfx_SBAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 480)}
 
-spriteset(gfx_SBAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
-spriteset(gfx_SBAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
-spriteset(gfx_SBAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
-spriteset(gfx_SBAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+spriteset(gfx_SBAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 480)}
+spriteset(gfx_SBAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 480)}
+spriteset(gfx_SBAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 480)}
+spriteset(gfx_SBAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 480)}
 
 
 switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_right, level_crossing_status) {
@@ -86,7 +86,7 @@ switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_right, level_crossing_status) {
 
 switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_left, level_crossing_status) {
 	LEVEL_CROSSING_CLOSED: gfx_SBAN_lc_left_close;
-	gfx_RAIL_lc_left_open;
+	gfx_SBAN_lc_left_open;
 }
 switch(FEAT_RAILTYPES, SELF, sw_SBAN_lc_side_check, traffic_side) {
 	TRAFFIC_SIDE_LEFT: sw_SBAN_lc_left;
@@ -138,10 +138,10 @@ spriteset(gfx_SCAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 570)
 
 spriteset(gfx_SCAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 570)}
 
-spriteset(gfx_SCAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
-spriteset(gfx_SCAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
-spriteset(gfx_SCAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
-spriteset(gfx_SCAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+spriteset(gfx_SCAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 570)}
+spriteset(gfx_SCAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 570)}
+spriteset(gfx_SCAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 570)}
+spriteset(gfx_SCAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 570)}
 
 
 switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_right, level_crossing_status) {
@@ -151,7 +151,7 @@ switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_right, level_crossing_status) {
 
 switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_left, level_crossing_status) {
 	LEVEL_CROSSING_CLOSED: gfx_SCAN_lc_left_close;
-	gfx_RAIL_lc_left_open;
+	gfx_SCAN_lc_left_open;
 }
 switch(FEAT_RAILTYPES, SELF, sw_SCAN_lc_side_check, traffic_side) {
 	TRAFFIC_SIDE_LEFT: sw_SCAN_lc_left;
@@ -203,10 +203,10 @@ spriteset(gfx_SDAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 300)
 
 spriteset(gfx_SDAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 300)}
 
-spriteset(gfx_SDAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
-spriteset(gfx_SDAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
-spriteset(gfx_SDAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
-spriteset(gfx_SDAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+spriteset(gfx_SDAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 300)}
+spriteset(gfx_SDAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 300)}
+spriteset(gfx_SDAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 300)}
+spriteset(gfx_SDAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 300)}
 
 
 switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_right, level_crossing_status) {
@@ -216,7 +216,7 @@ switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_right, level_crossing_status) {
 
 switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_left, level_crossing_status) {
 	LEVEL_CROSSING_CLOSED: gfx_SDAN_lc_left_close;
-	gfx_RAIL_lc_left_open;
+	gfx_SDAN_lc_left_open;
 }
 switch(FEAT_RAILTYPES, SELF, sw_SDAN_lc_side_check, traffic_side) {
 	TRAFFIC_SIDE_LEFT: sw_SDAN_lc_left;
@@ -333,10 +333,10 @@ spriteset(gfx_SEAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 750)
 
 spriteset(gfx_SEAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 750)}
 
-spriteset(gfx_SEAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
-spriteset(gfx_SEAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
-spriteset(gfx_SEAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
-spriteset(gfx_SEAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+spriteset(gfx_SEAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 750)}
+spriteset(gfx_SEAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 750)}
+spriteset(gfx_SEAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 750)}
+spriteset(gfx_SEAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 750)}
 
 
 switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_right, level_crossing_status) {
@@ -346,7 +346,7 @@ switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_right, level_crossing_status) {
 
 switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_left, level_crossing_status) {
 	LEVEL_CROSSING_CLOSED: gfx_SEAN_lc_left_close;
-	gfx_RAIL_lc_left_open;
+	gfx_SEAN_lc_left_open;
 }
 switch(FEAT_RAILTYPES, SELF, sw_SEAN_lc_side_check, traffic_side) {
 	TRAFFIC_SIDE_LEFT: sw_SEAN_lc_left;
@@ -398,10 +398,10 @@ spriteset(gfx_SFAN_bridge,	"gfx/tracks.png")	{template_underlay_bridge(350, 840)
 
 spriteset(gfx_SFAN_tunnel,	"gfx/tracks.png")	{template_tunnel_tracks(350, 840)}
 
-spriteset(gfx_SFAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 390)}
-spriteset(gfx_SFAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 390)}
-spriteset(gfx_SFAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 390)}
-spriteset(gfx_SFAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 390)}
+spriteset(gfx_SFAN_lc_left_open, "gfx/tracks.png")		{template_lc_decorations(0	, 840)}
+spriteset(gfx_SFAN_lc_left_close, "gfx/tracks.png")		{template_lc_decorations(15	, 840)}
+spriteset(gfx_SFAN_lc_right_open, "gfx/tracks.png")		{template_lc_decorations(30	, 840)}
+spriteset(gfx_SFAN_lc_right_close, "gfx/tracks.png")	{template_lc_decorations(45	, 840)}
 
 
 switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_right, level_crossing_status) {
@@ -411,7 +411,7 @@ switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_right, level_crossing_status) {
 
 switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_left, level_crossing_status) {
 	LEVEL_CROSSING_CLOSED: gfx_SFAN_lc_left_close;
-	gfx_RAIL_lc_left_open;
+	gfx_SFAN_lc_left_open;
 }
 switch(FEAT_RAILTYPES, SELF, sw_SFAN_lc_side_check, traffic_side) {
 	TRAFFIC_SIDE_LEFT: sw_SFAN_lc_left;
