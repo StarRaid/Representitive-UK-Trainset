@@ -47,7 +47,7 @@ spriteset(gfx_mk4_purchase_gc			, "gfx/ELECTRIC_LOCO/class_91.png"){ template_pu
 
 spriteset(gfx_mk4_windows_normal		, "gfx/ELECTRIC_LOCO/class_91.png"){ template_Mk2_single		(  0, 25)	}
 spriteset(gfx_mk4_windows_buffet		, "gfx/ELECTRIC_LOCO/class_91.png"){ template_Mk2_double		(  0, 50)	}
-spriteset(gfx_mk4_windows_buffet_rev 	, "gfx/ELECTRIC_LOCO/class_91.png"){ template_Mk2_double		(  0, 50)	}
+spriteset(gfx_mk4_windows_buffet_rev 	, "gfx/ELECTRIC_LOCO/class_91.png"){ template_Mk2_double_reverse(  0, 50)	}
 
 //Graphics switches
 
