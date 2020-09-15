@@ -40,6 +40,8 @@ spriteset(gfx_dvt_chiltern			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,
 spriteset(gfx_dvt_chiltern_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,100) }
 spriteset(gfx_dvt_anglia			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,125) }
 spriteset(gfx_dvt_anglia_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,125) }
+spriteset(gfx_dvt_virgin_p			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(259, 75) }
+spriteset(gfx_dvt_virgin_p_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(259, 75) }
 
 spriteset(gfx_dvt_mk4_intercity		, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,175) }
 spriteset(gfx_dvt_mk4_intercity_rev	, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,175) }
@@ -51,6 +53,8 @@ spriteset(gfx_dvt_mk4_east_coast	, "gfx/WAGON/dvt.png"){ template_Mk2_double			(
 spriteset(gfx_dvt_mk4_east_coast_rev, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,250) }
 spriteset(gfx_dvt_mk4_vtec			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,275) }
 spriteset(gfx_dvt_mk4_vtec_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,275) }
+spriteset(gfx_dvt_mk4_gc			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,300) }
+spriteset(gfx_dvt_mk4_gc_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,300) }
 
 /*
 spriteset(gfx_dvt_7_intercity		, "gfx/WAGON/dvt.png"){	template_7_8_2(	348,	75)		}
@@ -81,12 +85,14 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check, DVT_REVERSE_CHECK){ 1 : gfx
 switch(FEAT_TRAINS, PARENT, sw_dvt_atw_exec_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_atw_exec_rev ; gfx_dvt_atw_exec ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_chiltern_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_chiltern_rev ; gfx_dvt_chiltern ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_anglia_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_anglia_rev ; gfx_dvt_anglia ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_p_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_virgin_p_rev ; gfx_dvt_virgin_p ; }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_intercity_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_mk4_intercity_rev ; gfx_dvt_mk4_intercity ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_gner_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_mk4_gner_rev ; gfx_dvt_mk4_gner ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_nxec_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_mk4_nxec_rev ; gfx_dvt_mk4_nxec ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_east_coast_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_mk4_east_coast_rev ; gfx_dvt_mk4_east_coast ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_vtec_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_mk4_vtec_rev ; gfx_dvt_mk4_vtec ; }
+switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_gc_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_mk4_gc_rev ; gfx_dvt_mk4_gc ; }
 
 /*
 switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check_7, DVT_REVERSE_CHECK){ 1 : gfx_dvt_7_intercity_rev ; gfx_dvt_7_intercity ; }
@@ -136,9 +142,12 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_al6, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_manual_cl90, cargo_subtype){
-	0..2 : sw_dvt_intercity_rev_check ;
+	0..2: sw_dvt_intercity_rev_check ;
 	4..5: sw_dvt_anglia_rev_check ;
+	6..7: sw_dvt_virgin_p_rev_check ;
 	8..9: sw_dvt_anglia_rev_check ;
+	10	: sw_dvt_virgin_p_rev_check ;
+	11	: sw_dvt_mk4_gc_rev_check ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -168,6 +177,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_57, cargo_subtype){
 	1..2 : sw_dvt_generic_rev_check ;
 	5 : sw_dvt_chiltern_rev_check ;
 	6 : sw_dvt_atw_exec_rev_check ;
+	7 : sw_dvt_virgin_p_rev_check ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -289,10 +299,11 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_br87, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_cl90, cargo_subtype){
-	0..2 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	0..2: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	4	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
 	5	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	8..9: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	11	: palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 

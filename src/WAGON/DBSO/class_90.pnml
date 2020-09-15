@@ -11,6 +11,8 @@ switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_manual_dvt, cargo_subtype){
 	7 : sw_cl90_gfx_rev_check_freightliner ;
 	8 : sw_cl90_gfx_rev_check_ews ;
 	9 : sw_cl90_gfx_rev_check_dbcargo ;
+	10: sw_cl90_gfx_rev_check_virgin_p ;
+	11: sw_cl90_gfx_rev_check_gc ;
 	sw_cl90_gfx_rev_check_virgin ;
 }
 
@@ -46,6 +48,8 @@ switch(FEAT_TRAINS, PARENT, sw_cl90_colours_manual_dvt, cargo_subtype){
 	7 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	8 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	9 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	10: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	11: palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 

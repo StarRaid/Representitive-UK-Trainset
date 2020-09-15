@@ -39,6 +39,7 @@ spriteset(gfx_mk3_emt                 , "gfx/WAGON/mark_3.png"){ template_Mk2_si
 spriteset(gfx_mk3_atw_exec            , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,250) }
 spriteset(gfx_mk3_chiltern            , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,275) }
 spriteset(gfx_mk3_gner                , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,325) }
+spriteset(gfx_mk3_virgin_p            , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,350) }
 spriteset(gfx_mk3_first_scotrail      , "gfx/WAGON/mark_3.png"){ template_Mk2_single(170,150) }
 
 spriteset(gfx_mk3_purchase_brblue     , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89, 25) }
@@ -86,6 +87,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_gfx_manual, cargo_subtype){
 	17     : gfx_mk3_intercity ;
 	18..19 : gfx_mk3_generic ;
 	20     : gfx_mk3_gner ;
+	21     : gfx_mk3_virgin_p ;
 	gfx_mk3_virgin ;
 }
 
@@ -174,6 +176,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_refit_text, cargo_subtype){
 	18 : string(STR_LIVERY_ONE_ANGLIA) ;
 	19 : string(STR_LIVERY_ABELLIO_GREATER_ANGLIA) ;
 	20 : string(STR_LIVERY_GNER) ;
+	21 : string(STR_LIVERY_VIRGIN_TRAINS_FAKE) ;
 	CB_RESULT_NO_TEXT ;
 }
 

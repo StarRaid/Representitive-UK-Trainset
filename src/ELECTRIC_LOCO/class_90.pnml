@@ -22,6 +22,10 @@ spriteset(gfx_cl90_ews					, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_d
 spriteset(gfx_cl90_ews_rev				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 225) }
 spriteset(gfx_cl90_dbcargo				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 250) }
 spriteset(gfx_cl90_dbcargo_rev			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 250) }
+spriteset(gfx_cl90_gc					, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 275) }
+spriteset(gfx_cl90_gc_rev				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 275) }
+spriteset(gfx_cl90_virgin_p				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 300) }
+spriteset(gfx_cl90_virgin_p_rev			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 300) }
 //New freightliner
 //New freightliner
 //Grand Central
@@ -54,6 +58,8 @@ switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_firstscotrail, vehicle_is_reve
 switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_freightliner, vehicle_is_reversed){	1 : gfx_cl90_freightliner_rev ;	gfx_cl90_freightliner	; }
 switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_ews, vehicle_is_reversed){			1 : gfx_cl90_ews_rev ;			gfx_cl90_ews			; }
 switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_dbcargo, vehicle_is_reversed){		1 : gfx_cl90_dbcargo_rev ;		gfx_cl90_dbcargo		; }
+switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_gc, vehicle_is_reversed){		1 : gfx_cl90_gc_rev ;		gfx_cl90_gc		; }
+switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_virgin_p, vehicle_is_reversed){			1 : gfx_cl90_virgin_p_rev ;		gfx_cl90_virgin_p			; }
 
 
 //Automatic
@@ -87,7 +93,8 @@ switch(FEAT_TRAINS, PARENT, sw_cl90_auto_private3, most_common_cargo_type){
 switch(FEAT_TRAINS, SELF, sw_cl90_gfx_auto, current_year){
 	ERA_SECTORISATION : sw_cl90_auto_sectorised ;
 	2004..2012 : sw_cl90_auto_private2 ;
-	2014..4096 : sw_cl90_auto_private3 ;
+	2014..2019 : sw_cl90_auto_private3 ;
+	2020..4096 : sw_cl90_gfx_rev_check_gc ;
 	sw_cl90_auto_private1 ;
 }
 
@@ -105,6 +112,8 @@ switch(FEAT_TRAINS, SELF, sw_cl90_gfx_manual, cargo_subtype){
 	7 : sw_cl90_gfx_rev_check_freightliner ;
 	8 : sw_cl90_gfx_rev_check_ews ;
 	9 : sw_cl90_gfx_rev_check_dbcargo ;
+	10: sw_cl90_gfx_rev_check_virgin_p ;
+	11: sw_cl90_gfx_rev_check_gc ;
 	sw_cl90_gfx_rev_check_virgin ;
 }
 
@@ -199,6 +208,8 @@ switch(FEAT_TRAINS, SELF, sw_cl90_colours_manual, cargo_subtype){
 	7 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	8 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	9 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	10: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	11: palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
@@ -236,6 +247,8 @@ switch(FEAT_TRAINS, SELF, sw_cl90_refit_text, cargo_subtype){
 	7 : string(STR_LIVERY_FREIGHTLINER) ;
 	8 : string(STR_LIVERY_EWS) ;
 	9 : string(STR_LIVERY_DBCARGO) ;
+	10: string(STR_LIVERY_VIRGIN_TRAINS_FAKE) ;
+	11: string(STR_LIVERY_GC) ;
 	CB_RESULT_NO_TEXT ;
 }
 
