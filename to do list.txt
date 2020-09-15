@@ -1,5 +1,5 @@
 To do:
-	G Code Juniper
+	! Code Juniper
 	- Class 66 (s h e d)
 	- Class 03/04
 	/ Class 08/09
@@ -38,14 +38,14 @@ Optional:
 	/ Redo Voyager/Merridian
 	- Mark 5s
 	- Class 13
-	- Class 373
+	G Class 373
 
 GRF extension ideas:
 	/ Track set:
 		! Option for different tracks withs speed limits (via parameter), with additional parameters to define the speed limits
 		/ Depending on speed limit, use different signal types (e.g. lower speed yard tracks use junction signals)
 		- Source/draw depot sprites
-		- Level crossings
+		/ Level crossings
 		- Tunnel sprites
 	- Stations:
 		- Depots (e.g. Long Rock, the big shed at Victoria)
