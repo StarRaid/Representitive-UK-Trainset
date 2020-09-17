@@ -142,12 +142,12 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_al6, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_manual_cl90, cargo_subtype){
-	0..2: sw_dvt_intercity_rev_check ;
-	4..5: sw_dvt_anglia_rev_check ;
-	6..7: sw_dvt_virgin_p_rev_check ;
-	8..9: sw_dvt_anglia_rev_check ;
-	10	: sw_dvt_virgin_p_rev_check ;
-	11	: sw_dvt_mk4_gc_rev_check ;
+	0..2	: sw_dvt_intercity_rev_check ;
+	4..5	: sw_dvt_anglia_rev_check ;
+	6..7	: sw_dvt_virgin_p_rev_check ;
+	8..9	: sw_dvt_anglia_rev_check ;
+	10		: sw_dvt_virgin_p_rev_check ;
+	11..12	: sw_dvt_mk4_gc_rev_check ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -299,11 +299,11 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_br87, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_cl90, cargo_subtype){
-	0..2: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	4	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
-	5	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
-	8..9: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
-	11	: palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;
+	0..2	: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	4		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	5		: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	8..9	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	11..12	: palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 

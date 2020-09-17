@@ -26,6 +26,8 @@ spriteset(gfx_cl90_gc					, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_do
 spriteset(gfx_cl90_gc_rev				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 275) }
 spriteset(gfx_cl90_virgin_p				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 300) }
 spriteset(gfx_cl90_virgin_p_rev			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 300) }
+spriteset(gfx_cl90_fl_orange			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			(   0, 325) }
+spriteset(gfx_cl90_fl_orange_rev		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double_reverse	(   0, 325) }
 //New freightliner
 //New freightliner
 //Grand Central
@@ -35,6 +37,7 @@ spriteset(gfx_cl90_purchase_intercity	, "gfx/ELECTRIC_LOCO/class_90_8.png"){ tem
 spriteset(gfx_cl90_purchase_virgin		, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178, 100) }
 spriteset(gfx_cl90_purchase_one			, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178, 125) }
 spriteset(gfx_cl90_purchase_greaterangla, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178, 150) }
+spriteset(gfx_cl90_purchase_fl_orange	, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_purchase	( 178, 325) }
 
 
 spriteset(gfx_cl90_panto_up				, "gfx/ELECTRIC_LOCO/class_90_8.png"){ template_Mk2_double			( 260,   0) }
@@ -58,8 +61,9 @@ switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_firstscotrail, vehicle_is_reve
 switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_freightliner, vehicle_is_reversed){	1 : gfx_cl90_freightliner_rev ;	gfx_cl90_freightliner	; }
 switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_ews, vehicle_is_reversed){			1 : gfx_cl90_ews_rev ;			gfx_cl90_ews			; }
 switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_dbcargo, vehicle_is_reversed){		1 : gfx_cl90_dbcargo_rev ;		gfx_cl90_dbcargo		; }
-switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_gc, vehicle_is_reversed){		1 : gfx_cl90_gc_rev ;		gfx_cl90_gc		; }
-switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_virgin_p, vehicle_is_reversed){			1 : gfx_cl90_virgin_p_rev ;		gfx_cl90_virgin_p			; }
+switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_gc, vehicle_is_reversed){				1 : gfx_cl90_gc_rev ;			gfx_cl90_gc		; }
+switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_virgin_p, vehicle_is_reversed){		1 : gfx_cl90_virgin_p_rev ;		gfx_cl90_virgin_p			; }
+switch(FEAT_TRAINS, PARENT, sw_cl90_gfx_rev_check_fl_orange, vehicle_is_reversed){		1 : gfx_cl90_fl_orange_rev ;	gfx_cl90_fl_orange			; }
 
 
 //Automatic
@@ -89,12 +93,17 @@ switch(FEAT_TRAINS, PARENT, sw_cl90_auto_private3, most_common_cargo_type){
 	sw_cl90_gfx_rev_check_dbcargo ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_cl90_auto_private4, most_common_cargo_type){
+	PASS : sw_cl90_gfx_rev_check_gc ;
+	sw_cl90_gfx_rev_check_fl_orange ;
+}
+
 
 switch(FEAT_TRAINS, SELF, sw_cl90_gfx_auto, current_year){
 	ERA_SECTORISATION : sw_cl90_auto_sectorised ;
 	2004..2012 : sw_cl90_auto_private2 ;
 	2014..2019 : sw_cl90_auto_private3 ;
-	2020..4096 : sw_cl90_gfx_rev_check_gc ;
+	2020..4096 : sw_cl90_auto_private4 ;
 	sw_cl90_auto_private1 ;
 }
 
@@ -114,6 +123,7 @@ switch(FEAT_TRAINS, SELF, sw_cl90_gfx_manual, cargo_subtype){
 	9 : sw_cl90_gfx_rev_check_dbcargo ;
 	10: sw_cl90_gfx_rev_check_virgin_p ;
 	11: sw_cl90_gfx_rev_check_gc ;
+	12: sw_cl90_gfx_rev_check_fl_orange ;
 	sw_cl90_gfx_rev_check_virgin ;
 }
 
@@ -187,10 +197,16 @@ switch(FEAT_TRAINS, PARENT, sw_cl90_colours_auto_private3, most_common_cargo_typ
 	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_cl90_colours_auto_private4, most_common_cargo_type){
+	PASS : palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;
+	palette_2cc(COLOUR_ORANGE, COLOUR_GREY) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_cl90_colours_auto, current_year){
 	ERA_SECTORISATION : sw_cl90_colours_auto_sectorised ;
 	2004..2012 : sw_cl90_colours_auto_private2 ;
-	2014..4096 : sw_cl90_colours_auto_private3 ;
+	2014..2019 : sw_cl90_colours_auto_private3 ;
+	2020..4096 : sw_cl90_colours_auto_private4 ;
 	sw_cl90_colours_auto_private1 ;
 }
 
@@ -210,6 +226,7 @@ switch(FEAT_TRAINS, SELF, sw_cl90_colours_manual, cargo_subtype){
 	9 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 	10: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 	11: palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;
+	12: palette_2cc(COLOUR_ORANGE, COLOUR_GREY) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
@@ -249,6 +266,7 @@ switch(FEAT_TRAINS, SELF, sw_cl90_refit_text, cargo_subtype){
 	9 : string(STR_LIVERY_DBCARGO) ;
 	10: string(STR_LIVERY_VIRGIN_TRAINS_FAKE) ;
 	11: string(STR_LIVERY_GC) ;
+	12: string(STR_LIVERY_FREIGHTLINER_ORANGE) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -264,14 +282,16 @@ switch(FEAT_TRAINS, SELF, sw_cl90_refit_text_check, livery_choice){
 switch(FEAT_TRAINS, SELF, sw_cl90_purchase, current_year){
 	ERA_SECTORISATION : gfx_cl90_purchase_intercity ;
 	2004..2012 : gfx_cl90_purchase_one ;
-	2014..4096 : gfx_cl90_purchase_greaterangla ;
+	2014..2019 : gfx_cl90_purchase_greaterangla ;
+	2020..4096 : gfx_cl90_purchase_fl_orange ;
 	gfx_cl90_purchase_virgin ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_cl90_purchase_colours, current_year){
 	ERA_SECTORISATION : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	2004..2012 : palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;
-	2014..4096 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2014..2019 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2020..4096: palette_2cc(COLOUR_ORANGE, COLOUR_GREY) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
