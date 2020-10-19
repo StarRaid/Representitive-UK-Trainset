@@ -40,6 +40,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DIESEL_LOCO/class_56.pnml"
 #include "src/DIESEL_LOCO/class_57.pnml"
 #include "src/DIESEL_LOCO/class_58.pnml"
+#include "src/DIESEL_LOCO/shed.pnml"
 #include "src/DIESEL_LOCO/class_73.pnml"
 #include "src/DIESEL_LOCO/GE_Powerhaul.pnml"
 #include "src/DIESEL_LOCO/UKLight.pnml"

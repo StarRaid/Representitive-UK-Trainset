@@ -288,6 +288,17 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_60, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
+/*
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_66, getbits(extra_callback_info1, 0, 8)){
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 10) ;
+	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 11) ;
+	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 10) ;
+	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
+}
+*/
+
 switch(FEAT_TRAINS, SELF, sw_sfx_extension_60_check_full, RUKTS_E_CHECK){ 1 : sw_sfx_extension_60 ; sw_sfx_diesel_loco_heritage_full; }
 
 //Decide sound effects based on parameter settings, SOUND_TRAIN_HORN, 
@@ -411,3 +422,9 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_60_check, sound_control){
 	1 : sw_sfx_extension_60_check_full;
 }
 
+/*
+switch(FEAT_TRAINS, SELF, sw_sfx_extension_66_check, sound_control){
+	0 : sw_sfx_0;
+	1 : sw_sfx_extension_66_check_full;
+}
+*/

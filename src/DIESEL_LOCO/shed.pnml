@@ -1,0 +1,177 @@
+//SHED
+
+spriteset(gfx_shed_base,			"gfx/DIESEL_LOCO/class_66.png"){ template_Mk2_double			(   0,   0)	}
+spriteset(gfx_shed_base_rev,		"gfx/DIESEL_LOCO/class_66.png"){ template_Mk2_double_reverse	(   0,   0)	}
+
+spriteset(gfx_shed_taillights,		"gfx/DIESEL_LOCO/class_66.png"){ template_Mk2_double			( 235,   0)	}
+spriteset(gfx_shed_headlights,		"gfx/DIESEL_LOCO/class_66.png"){ template_Mk2_double			( 235,  25)	}
+
+spriteset(gfx_shed_purch_base,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short		( 178,   0)	}
+
+
+//Graphics siwtches
+
+//Reversal
+
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_base,			vehicle_is_reversed	){ 1 : gfx_shed_base_rev	; gfx_shed_base	;}
+
+
+//Auto
+
+switch(FEAT_TRAINS, SELF, sw_shed_gfx_auto, current_year){
+	sw_shed_rev_check_base ;
+}
+
+
+//Manual
+
+switch(FEAT_TRAINS, SELF, sw_shed_gfx_manual, cargo_subtype){
+	sw_shed_rev_check_base ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_shed_gfx_manual_check, livery_choice){
+	1 : sw_shed_gfx_manual ;
+	sw_shed_gfx_auto ;
+}
+
+
+//Sprite stack
+
+switch(FEAT_TRAINS, SELF, sw_shed_gfx_check_headlight, position_in_consist){ 0 : gfx_shed_headlights ; }
+switch(FEAT_TRAINS, SELF, sw_shed_gfx_check_taillight, position_in_consist_from_end){ 0 : gfx_shed_taillights ; }
+
+switch(FEAT_TRAINS, SELF, sw_shed_gfx_spr_stack, SPR_STACK){
+	0 : sw_shed_gfx_manual_check ;
+	1 : sw_shed_gfx_check_headlight ;
+	2 : sw_shed_gfx_check_taillight ;
+}
+
+
+
+//Purchase sprite
+
+switch(FEAT_TRAINS, SELF, sw_shed_purch_gfx,	current_year){
+	gfx_shed_purch_base ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_shed_purch_col, current_year){
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_shed_purch_col_2cc_check, colour_scheme_1){
+	1 : sw_shed_purch_col ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_shed_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_EWS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_shed_refit_text_check, livery_choice){
+	1 : sw_shed_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+//Colours
+switch(FEAT_TRAINS, SELF, sw_shed_col_auto, current_year){
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_shed_col_manual, cargo_subtype){
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_shed_col_manual_check, livery_choice){
+	1 : sw_shed_col_manual ;
+	sw_shed_col_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_shed_col_2cc_check, colour_scheme_1){
+	1 : sw_shed_col_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+//Item
+
+
+item(FEAT_TRAINS, item_shed, 66){
+	property{
+		name                           : string(STR_NAME_SHED) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1998,1,1) ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 35 ;
+		reliability_decay              : 6 ;
+		cost_factor                    : 82 ;
+		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_factor            : 246 ;
+		speed                          : 75 mph ;
+		track_type                     : RAIL ;
+		power                          : 2460 kW ;
+		weight                         : 129 ton ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		tractive_effort_coefficient    : 0.32 ;
+		air_drag_coefficient           : 0.1 ;
+		length                         : 8 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : sw_shed_gfx_spr_stack ;
+		colour_mapping                 : sw_shed_col_2cc_check ;
+		purchase                       : sw_shed_purch_gfx ;
+		purchase_colour_mapping        : sw_shed_purch_col_2cc_check ;
+		sound_effect                   : sw_sfx_diesel_loco_modern ;
+		create_effect                  : vfx_diesel_default ;
+		cargo_subtype_text             : sw_shed_refit_text_check ;
+		purchase_cargo_capacity        : 0 ;
+		cargo_capacity                 : return 0 ;
+		can_attach_wagon               : sw_all_but_MU90;
+		running_cost_factor            : return(current_speed == 0 ? 50 : 246) ;
+		purchase_running_cost_factor   : 246 ;
+	}
+}
+
+/*
+if (alt_names == 1){
+item (FEAT_TRAINS, item_shed, 59){
+	property{
+		name                           : string(STR_NAME_SHED_YEOMAN_ALT) ;
+	}
+}
+}
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_shed, 59){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+*/
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_shed, 66){
+	property{
+		name                           : string(STR_NAME_SHED_ALT) ;
+	}
+}
+}
+

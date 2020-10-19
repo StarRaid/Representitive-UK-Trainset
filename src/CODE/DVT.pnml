@@ -110,7 +110,8 @@ switch(FEAT_TRAINS, SELF, sw_dvt_auto, current_year){
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_auto_90, current_year){
 	ERA_SECTORISATION : sw_dvt_intercity_rev_check ;
-	2004..4096 : sw_dvt_anglia_rev_check ;
+	2004..2019 : sw_dvt_anglia_rev_check ;
+	2020..4096 : sw_dvt_mk4_gc_rev_check ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -271,7 +272,8 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_auto, current_year){
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_auto_90, current_year){
 	ERA_SECTORISATION : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	2004..2012 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
-	2014..4096 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2004..2019 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2020..4096 : palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
