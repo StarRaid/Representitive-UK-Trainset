@@ -37,6 +37,7 @@ item(FEAT_RAILTYPES, rail_SAA3) {
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -79,6 +80,7 @@ item(FEAT_RAILTYPES, rail_SBA3) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -122,6 +124,7 @@ item(FEAT_RAILTYPES, rail_SCA3) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -165,6 +168,7 @@ item(FEAT_RAILTYPES, rail_SDA3) {
 		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -208,6 +212,7 @@ item(FEAT_RAILTYPES, rail_3RDR) {
 		level_crossings		: sw_RAIL_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -251,6 +256,7 @@ item(FEAT_RAILTYPES, rail_SEA3) {
 		level_crossings		: sw_SEAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -294,6 +300,7 @@ item(FEAT_RAILTYPES, rail_SFA3) {
 		level_crossings		: sw_SFAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 

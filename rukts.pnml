@@ -58,6 +58,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DMU/super_sprinter.pnml"
 #include "src/DMU/expr_sprint.pnml"
 #include "src/DMU/turbostar.pnml"
+#include "src/DMU/class_195.pnml"
 #include "src/DEMU/class_205.pnml"
 #include "src/DEMU/voyager.pnml"
 #include "src/EMU/class_307.pnml"

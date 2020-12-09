@@ -57,6 +57,7 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		bridge_surfaces		: gfx_SAAN_bridge ;
 		tunnels				: gfx_SAAN_tunnel ;
 		level_crossings		: sw_SAAN_lc_side_check ;
+		signals				: sw_signals;
 	}
 }
 
@@ -121,6 +122,7 @@ item(FEAT_RAILTYPES, rail_SBAN) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -186,6 +188,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -251,6 +254,7 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -317,6 +321,7 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		level_crossings		: sw_RAIL_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -381,6 +386,7 @@ item(FEAT_RAILTYPES, rail_SEAN) {
 		level_crossings		: sw_SEAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -446,6 +452,7 @@ item(FEAT_RAILTYPES, rail_SFAN) {
 		level_crossings		: sw_SFAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -491,6 +498,7 @@ item(FEAT_RAILTYPES, rail_SGAN) {
 		//level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 

@@ -30,6 +30,7 @@ item(FEAT_RAILTYPES, rail_SAAZ) {
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -66,6 +67,7 @@ item(FEAT_RAILTYPES, rail_SBAZ) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -102,6 +104,7 @@ item(FEAT_RAILTYPES, rail_SCAZ) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -138,6 +141,7 @@ item(FEAT_RAILTYPES, rail_3RDC) {
 		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
