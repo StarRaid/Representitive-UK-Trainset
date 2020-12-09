@@ -186,7 +186,6 @@ item (FEAT_TRAINS, item_334, 334) {
 		speed:							90 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
-		track_type:						SAAE;
 		ai_special_flag:				AI_FLAG_CARGO;
 		power:							1448 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;

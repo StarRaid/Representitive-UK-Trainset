@@ -46,7 +46,13 @@ STR_PARAM_SPEED_7					:Speed limit - Medium 3
 STR_PARAM_SPEED_8					:Speed limit - High
 STR_PARAM_SPEED_9					:Speed limit - Very high
 
+STR_PARAM_SIGNAL_ELEC_NAME				:Modern Signal Type
+STR_PARAM_SIGNAL_ELEC_DESC				:Changes type of modern signal
 
+STR_PARAM_SIGNAL_ELEC_2ASP				:2 Aspect Signals
+STR_PARAM_SIGNAL_ELEC_3ASP				:3 Aspect Signals (function as 2 aspect)
+STR_PARAM_SIGNAL_ELEC_4ASP				:4 Aspect Signals (function as 2 aspect)
+STR_PARAM_SIGNAL_ELEC_RAND				:Random
 
 
 STR_BLST_NAME				:Empty track ballast.
