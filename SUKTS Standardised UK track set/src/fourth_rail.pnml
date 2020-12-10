@@ -37,6 +37,7 @@ item(FEAT_RAILTYPES, rail_SAA4) {
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -80,6 +81,7 @@ item(FEAT_RAILTYPES, rail_SBA4) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -123,6 +125,7 @@ item(FEAT_RAILTYPES, rail_SCA4) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -132,11 +135,11 @@ item(FEAT_RAILTYPES, rail_SCA4) {
 //Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDA4
 
 
-spriteset(gfx_SDA4_overlay,	"gfx/tracks.png")	{template_overlay(2030, 570)}
+spriteset(gfx_SDA4_overlay,	"gfx/tracks.png")	{template_overlay(2030, 300)}
 
 spriteset(gfx_SDA4_ballast,	"gfx/tracks.png")	{template_underlay(2030, 570, 350)}
 
-spriteset(gfx_SDA4_bridge,	"gfx/tracks.png")	{template_underlay_bridge(2030, 570)}
+spriteset(gfx_SDA4_bridge,	"gfx/tracks.png")	{template_underlay_bridge(2030, 300)}
 
 item(FEAT_RAILTYPES, rail_SDA4) {
 	property {
@@ -166,6 +169,7 @@ item(FEAT_RAILTYPES, rail_SDA4) {
 		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 

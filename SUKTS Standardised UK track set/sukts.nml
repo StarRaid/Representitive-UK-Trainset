@@ -169,6 +169,17 @@ template template_lc_decorations(x, y){
 	[ x  , 0 , 1 , 1 , 0,  0  ]
 	[ x  , 0 , 1 , 1 , 0,  0  ]
 }
+
+template template_signals(x, y){
+	[ x  , y , 20 , 30 , 0,  0  ]
+	[ x+60  , y , 20 , 30 , 0,  0  ]
+	[ x+120  , y , 20 , 30 , 0,  0  ]
+	[ x+180 , y , 20 , 30 , 0,  0  ]
+	[ x+240  , y , 20 , 30 , 0,  0  ]
+	[ x+300  , y , 20 , 30 , 0,  0  ]
+	[ x+360  , y , 20 , 30 , 0,  0  ]
+	[ x+420  , y , 20 , 30 , 0,  0  ]
+}
 # 1 "sukts.pnml" 2
 
 # 1 "src/header.pnml" 1
@@ -176,7 +187,7 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 6 ;
+	version: 8 ;
 	min_compatible_version: 0 ;
 	param 0{
 		toggle_limits{
@@ -312,6 +323,22 @@ grf{
 			} ;
 		}
 	}
+	param 12{
+		signal_elec {
+ 			type:    int;
+ 			name:    string(STR_PARAM_SIGNAL_ELEC_NAME);
+ 			desc:    string(STR_PARAM_SIGNAL_ELEC_DESC);
+ 			min_value: 0;
+ 			max_value: 4;
+ 			def_value: 0;
+ 			names: {
+ 				0: string(STR_PARAM_SIGNAL_ELEC_2ASP);
+ 				1: string(STR_PARAM_SIGNAL_ELEC_3ASP);
+ 				2: string(STR_PARAM_SIGNAL_ELEC_4ASP);
+ 				3: string(STR_PARAM_SIGNAL_ELEC_RAND);
+ 			};
+		}
+	}
 }
 
 railtypetable {
@@ -344,6 +371,59 @@ cargotable {
 
 basecost{
 	PR_BUILD_RAIL	: (param[1]-3) ;
+}
+# 1 "sukts.pnml" 2
+
+# 1 "src/signals.pnml" 1
+//Signal sprites for 2 aspect signals
+spriteset(aspect2_r_block, "gfx/signal_electric_2asp.png") {template_signals(10,50)}
+spriteset(aspect2_g_block, "gfx/signal_electric_2asp.png") {template_signals(40,50)}
+spriteset(aspect2_r_en, "gfx/signal_electric_2asp.png") {template_signals(10,85)}
+spriteset(aspect2_g_en, "gfx/signal_electric_2asp.png") {template_signals(40,85)}
+spriteset(aspect2_r_ex, "gfx/signal_electric_2asp.png") {template_signals(10,120)}
+spriteset(aspect2_g_ex, "gfx/signal_electric_2asp.png") {template_signals(40,120)}
+spriteset(aspect2_r_co, "gfx/signal_electric_2asp.png") {template_signals(10,155)}
+spriteset(aspect2_g_co, "gfx/signal_electric_2asp.png") {template_signals(40,155)}
+spriteset(aspect2_r_path, "gfx/signal_electric_2asp.png") {template_signals(10,190)}
+spriteset(aspect2_g_path, "gfx/signal_electric_2asp.png") {template_signals(40,190)}
+spriteset(aspect2_r_owp, "gfx/signal_electric_2asp.png") {template_signals(10,225)}
+spriteset(aspect2_g_owp, "gfx/signal_electric_2asp.png") {template_signals(40,225)}
+
+//Switches for 2 aspect signals
+
+switch(FEAT_RAILTYPES, SELF, sw_aspect2_r, getbits(extra_callback_info2, 16, 8)){
+00 : aspect2_r_block;
+01 : aspect2_r_en;
+02 : aspect2_r_ex;
+03 : aspect2_r_co;
+04 : aspect2_r_path;
+05 : aspect2_r_owp;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_aspect2_g, getbits(extra_callback_info2, 16, 8)){
+00 : aspect2_g_block;
+01 : aspect2_g_en;
+02 : aspect2_g_ex;
+03 : aspect2_g_co;
+04 : aspect2_g_path;
+05 : aspect2_g_owp;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_aspect2, getbits(extra_callback_info2, 0, 8)){
+00 : sw_aspect2_r;
+01 : sw_aspect2_g;
+}
+
+//What kind of electric signal do you want?
+
+switch(FEAT_RAILTYPES, SELF, sw_electric_signals, signal_elec){
+0 : sw_aspect2;
+sw_aspect2;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_signals, getbits(extra_callback_info2, 8, 8)){
+0 : sw_electric_signals;
+sw_aspect2;
 }
 # 1 "sukts.pnml" 2
 
@@ -519,6 +599,7 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		bridge_surfaces		: gfx_SAAN_bridge ;
 		tunnels				: gfx_SAAN_tunnel ;
 		level_crossings		: sw_SAAN_lc_side_check ;
+		signals				: sw_signals;
 	}
 }
 
@@ -583,6 +664,7 @@ item(FEAT_RAILTYPES, rail_SBAN) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -648,6 +730,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -713,6 +796,7 @@ item(FEAT_RAILTYPES, rail_SDAN) {
 		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -779,6 +863,7 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		level_crossings		: sw_RAIL_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -843,6 +928,7 @@ item(FEAT_RAILTYPES, rail_SEAN) {
 		level_crossings		: sw_SEAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -908,6 +994,7 @@ item(FEAT_RAILTYPES, rail_SFAN) {
 		level_crossings		: sw_SFAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -953,6 +1040,7 @@ item(FEAT_RAILTYPES, rail_SGAN) {
 		//level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1085,6 +1173,7 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1121,6 +1210,7 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1157,6 +1247,7 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1193,6 +1284,7 @@ item(FEAT_RAILTYPES, rail_SDAE) {
 		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1229,6 +1321,7 @@ item(FEAT_RAILTYPES, rail_ELRL) {
 		level_crossings		: sw_RAIL_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1264,6 +1357,7 @@ item(FEAT_RAILTYPES, rail_SEAE) {
 		level_crossings		: sw_SEAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1300,6 +1394,7 @@ item(FEAT_RAILTYPES, rail_SFAE) {
 		level_crossings		: sw_SFAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1336,6 +1431,7 @@ item(FEAT_RAILTYPES, rail_SGAE) {
 		//level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1381,6 +1477,7 @@ item(FEAT_RAILTYPES, rail_SHAE) {
 		//level_crossings		: gfx_blank ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1525,6 +1622,7 @@ item(FEAT_RAILTYPES, rail_SAA3) {
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1567,6 +1665,7 @@ item(FEAT_RAILTYPES, rail_SBA3) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1610,6 +1709,7 @@ item(FEAT_RAILTYPES, rail_SCA3) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1653,6 +1753,7 @@ item(FEAT_RAILTYPES, rail_SDA3) {
 		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1696,6 +1797,7 @@ item(FEAT_RAILTYPES, rail_3RDR) {
 		level_crossings		: sw_RAIL_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1739,6 +1841,7 @@ item(FEAT_RAILTYPES, rail_SEA3) {
 		level_crossings		: sw_SEAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1782,6 +1885,7 @@ item(FEAT_RAILTYPES, rail_SFA3) {
 		level_crossings		: sw_SFAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1908,6 +2012,7 @@ item(FEAT_RAILTYPES, rail_SAAZ) {
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1944,6 +2049,7 @@ item(FEAT_RAILTYPES, rail_SBAZ) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1980,6 +2086,7 @@ item(FEAT_RAILTYPES, rail_SCAZ) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -2016,6 +2123,7 @@ item(FEAT_RAILTYPES, rail_3RDC) {
 		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -2211,11 +2319,11 @@ item(FEAT_RAILTYPES, rail_SCA4) {
 //Low speed			- 60 / Mainline/branch		- Wooden sleeper, light grey rail							-	SDA4
 
 
-spriteset(gfx_SDA4_overlay,	"gfx/tracks.png")	{template_overlay(2030, 570)}
+spriteset(gfx_SDA4_overlay,	"gfx/tracks.png")	{template_overlay(2030, 300)}
 
 spriteset(gfx_SDA4_ballast,	"gfx/tracks.png")	{template_underlay(2030, 570, 350)}
 
-spriteset(gfx_SDA4_bridge,	"gfx/tracks.png")	{template_underlay_bridge(2030, 570)}
+spriteset(gfx_SDA4_bridge,	"gfx/tracks.png")	{template_underlay_bridge(2030, 300)}
 
 item(FEAT_RAILTYPES, rail_SDA4) {
 	property {

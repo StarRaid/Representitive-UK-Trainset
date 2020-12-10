@@ -1,50 +1,50 @@
 //Signal sprites for 2 aspect signals
-spriteset(2aspect_r_block, "gfx/signal_electric_2asp.png") {template_signals(10,50)}
-spriteset(2aspect_g_block, "gfx/signal_electric_2asp.png") {template_signals(40,50)}
-spriteset(2aspect_r_en, "gfx/signal_electric_2asp.png") {template_signals(10,85)}
-spriteset(2aspect_g_en, "gfx/signal_electric_2asp.png") {template_signals(40,85)}
-spriteset(2aspect_r_ex, "gfx/signal_electric_2asp.png") {template_signals(10,120)}
-spriteset(2aspect_g_ex, "gfx/signal_electric_2asp.png") {template_signals(40,120)}
-spriteset(2aspect_r_co, "gfx/signal_electric_2asp.png") {template_signals(10,155)}
-spriteset(2aspect_g_co, "gfx/signal_electric_2asp.png") {template_signals(40,155)}
-spriteset(2aspect_r_path, "gfx/signal_electric_2asp.png") {template_signals(10,190)}
-spriteset(2aspect_g_path, "gfx/signal_electric_2asp.png") {template_signals(40,190)}
-spriteset(2aspect_r_owp, "gfx/signal_electric_2asp.png") {template_signals(10,225)}
-spriteset(2aspect_g_owp, "gfx/signal_electric_2asp.png") {template_signals(40,225)}
+spriteset(aspect2_r_block, "gfx/signal_electric_2asp.png") {template_signals(10,50)}
+spriteset(aspect2_g_block, "gfx/signal_electric_2asp.png") {template_signals(40,50)}
+spriteset(aspect2_r_en, "gfx/signal_electric_2asp.png") {template_signals(10,85)}
+spriteset(aspect2_g_en, "gfx/signal_electric_2asp.png") {template_signals(40,85)}
+spriteset(aspect2_r_ex, "gfx/signal_electric_2asp.png") {template_signals(10,120)}
+spriteset(aspect2_g_ex, "gfx/signal_electric_2asp.png") {template_signals(40,120)}
+spriteset(aspect2_r_co, "gfx/signal_electric_2asp.png") {template_signals(10,155)}
+spriteset(aspect2_g_co, "gfx/signal_electric_2asp.png") {template_signals(40,155)}
+spriteset(aspect2_r_path, "gfx/signal_electric_2asp.png") {template_signals(10,190)}
+spriteset(aspect2_g_path, "gfx/signal_electric_2asp.png") {template_signals(40,190)}
+spriteset(aspect2_r_owp, "gfx/signal_electric_2asp.png") {template_signals(10,225)}
+spriteset(aspect2_g_owp, "gfx/signal_electric_2asp.png") {template_signals(40,225)}
 
 //Switches for 2 aspect signals
 
-switch(FEAT_RAILTYPES, SELF, sw_2aspect_r, getbits(extra_callback_info2, 16, 8)){
-00 : 2aspect_r_block;
-01 : 2aspect_r_en;
-02 : 2aspect_r_ex;
-03 : 2aspect_r_co;
-04 : 2aspect_r_path;
-05 : 2aspect_r_owp;
+switch(FEAT_RAILTYPES, SELF, sw_aspect2_r, getbits(extra_callback_info2, 16, 8)){
+00 : aspect2_r_block;
+01 : aspect2_r_en;
+02 : aspect2_r_ex;
+03 : aspect2_r_co;
+04 : aspect2_r_path;
+05 : aspect2_r_owp;
 }
 
-switch(FEAT_RAILTYPES, SELF, sw_2aspect_g, getbits(extra_callback_info2, 16, 8)){
-00 : 2aspect_g_block;
-01 : 2aspect_g_en;
-02 : 2aspect_g_ex;
-03 : 2aspect_g_co;
-04 : 2aspect_g_path;
-05 : 2aspect_g_owp;
+switch(FEAT_RAILTYPES, SELF, sw_aspect2_g, getbits(extra_callback_info2, 16, 8)){
+00 : aspect2_g_block;
+01 : aspect2_g_en;
+02 : aspect2_g_ex;
+03 : aspect2_g_co;
+04 : aspect2_g_path;
+05 : aspect2_g_owp;
 }
 
-switch(FEAT_RAILTYPES, SELF, sw_2aspect, getbits(extra_callback_info2, 0, 8)){
-00 : sw_2aspect_r;
-01 : sw_2aspect_g;
+switch(FEAT_RAILTYPES, SELF, sw_aspect2, getbits(extra_callback_info2, 0, 8)){
+00 : sw_aspect2_r;
+01 : sw_aspect2_g;
 }
 
 //What kind of electric signal do you want?
 
 switch(FEAT_RAILTYPES, SELF, sw_electric_signals, signal_elec){
-0 : sw_2aspect;
-sw_2aspect;
+0 : sw_aspect2;
+sw_aspect2;
 }
 
 switch(FEAT_RAILTYPES, SELF, sw_signals, getbits(extra_callback_info2, 8, 8)){
 0 : sw_electric_signals;
-sw_2aspect;
+sw_aspect2;
 }
