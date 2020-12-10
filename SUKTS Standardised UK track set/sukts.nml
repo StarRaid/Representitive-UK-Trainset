@@ -171,14 +171,14 @@ template template_lc_decorations(x, y){
 }
 
 template template_signals(x, y){
-	[ x  , y , 20 , 30 , 0,  0  ]
-	[ x+60  , y , 20 , 30 , 0,  0  ]
-	[ x+120  , y , 20 , 30 , 0,  0  ]
-	[ x+180 , y , 20 , 30 , 0,  0  ]
-	[ x+240  , y , 20 , 30 , 0,  0  ]
-	[ x+300  , y , 20 , 30 , 0,  0  ]
-	[ x+360  , y , 20 , 30 , 0,  0  ]
-	[ x+420  , y , 20 , 30 , 0,  0  ]
+	[ x  , y , 20 , 30 , -5,  -28  ]
+	[ x+60  , y , 20 , 30 , -5,  -28  ]
+	[ x+120 , y , 20 , 30 , -5,  -28  ]
+	[ x+180 , y , 20 , 30 , -5,  -28  ]
+	[ x+240 , y , 20 , 30 , -5,  -28  ]
+	[ x+300 , y , 20 , 30 , -5,  -28  ]
+	[ x+360 , y , 20 , 30 , -5,  -28  ]
+	[ x+420 , y , 20 , 30 , -5,  -28  ]
 }
 # 1 "sukts.pnml" 2
 
@@ -2224,6 +2224,7 @@ item(FEAT_RAILTYPES, rail_SAA4) {
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -2267,6 +2268,7 @@ item(FEAT_RAILTYPES, rail_SBA4) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -2310,6 +2312,7 @@ item(FEAT_RAILTYPES, rail_SCA4) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -2353,6 +2356,7 @@ item(FEAT_RAILTYPES, rail_SDA4) {
 		level_crossings		: sw_SDAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
