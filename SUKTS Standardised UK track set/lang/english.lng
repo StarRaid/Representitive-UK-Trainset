@@ -52,7 +52,7 @@ STR_PARAM_SIGNAL_ELEC_DESC				:Changes type of modern signal
 STR_PARAM_SIGNAL_ELEC_2ASP				:2 Aspect Signals
 STR_PARAM_SIGNAL_ELEC_3ASP				:3 Aspect Signals (function as 2 aspect)
 STR_PARAM_SIGNAL_ELEC_4ASP				:4 Aspect Signals (function as 2 aspect)
-STR_PARAM_SIGNAL_ELEC_RAND				:Random
+STR_PARAM_SIGNAL_ELEC_4ASP_SPD			:4 Aspect Signals (track speed dependent aspects)
 
 
 STR_BLST_NAME				:Empty track ballast.

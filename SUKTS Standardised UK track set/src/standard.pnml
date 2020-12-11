@@ -57,7 +57,7 @@ item(FEAT_RAILTYPES, rail_SAAN) {
 		bridge_surfaces		: gfx_SAAN_bridge ;
 		tunnels				: gfx_SAAN_tunnel ;
 		level_crossings		: sw_SAAN_lc_side_check ;
-		signals				: sw_signals;
+		signals :sw_signals_low_speed;
 	}
 }
 
@@ -122,7 +122,7 @@ item(FEAT_RAILTYPES, rail_SBAN) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
-		signals				: sw_signals;
+		signals :sw_signals_low_speed;
 	}
 }
 
@@ -188,7 +188,7 @@ item(FEAT_RAILTYPES, rail_SCAN) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
-		signals				: sw_signals;
+		signals :sw_signals_low_speed;
 	}
 }
 

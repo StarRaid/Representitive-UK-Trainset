@@ -30,7 +30,7 @@ item(FEAT_RAILTYPES, rail_SAAE) {
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
-		signals				: sw_signals;
+		signals :sw_signals_low_speed;
 	}
 }
 
@@ -67,7 +67,7 @@ item(FEAT_RAILTYPES, rail_SBAE) {
 		level_crossings		: sw_SBAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
-		signals				: sw_signals;
+		signals :sw_signals_low_speed;
 	}
 }
 
@@ -104,7 +104,7 @@ item(FEAT_RAILTYPES, rail_SCAE) {
 		level_crossings		: sw_SCAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
-		signals				: sw_signals;
+		signals :sw_signals_low_speed;
 	}
 }
 

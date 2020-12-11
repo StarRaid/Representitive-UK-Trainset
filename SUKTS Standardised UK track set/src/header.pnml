@@ -150,7 +150,7 @@ grf{
  				0: string(STR_PARAM_SIGNAL_ELEC_2ASP);
  				1: string(STR_PARAM_SIGNAL_ELEC_3ASP);
  				2: string(STR_PARAM_SIGNAL_ELEC_4ASP);
- 				3: string(STR_PARAM_SIGNAL_ELEC_RAND);
+ 				3: string(STR_PARAM_SIGNAL_ELEC_4ASP_SPD);
  			};
 		}
 	}
