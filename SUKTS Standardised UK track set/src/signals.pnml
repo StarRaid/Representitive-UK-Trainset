@@ -1,16 +1,16 @@
 //Signal sprites for 2 aspect signals
-spriteset(aspect2_r_block, "gfx/signal_electric_2asp.png") {template_signals(10,50)}
-spriteset(aspect2_g_block, "gfx/signal_electric_2asp.png") {template_signals(40,50)}
-spriteset(aspect2_r_en, "gfx/signal_electric_2asp.png") {template_signals(10,85)}
-spriteset(aspect2_g_en, "gfx/signal_electric_2asp.png") {template_signals(40,85)}
-spriteset(aspect2_r_ex, "gfx/signal_electric_2asp.png") {template_signals(10,120)}
-spriteset(aspect2_g_ex, "gfx/signal_electric_2asp.png") {template_signals(40,120)}
-spriteset(aspect2_r_co, "gfx/signal_electric_2asp.png") {template_signals(10,155)}
-spriteset(aspect2_g_co, "gfx/signal_electric_2asp.png") {template_signals(40,155)}
-spriteset(aspect2_r_path, "gfx/signal_electric_2asp.png") {template_signals(10,190)}
-spriteset(aspect2_g_path, "gfx/signal_electric_2asp.png") {template_signals(40,190)}
-spriteset(aspect2_r_owp, "gfx/signal_electric_2asp.png") {template_signals(10,225)}
-spriteset(aspect2_g_owp, "gfx/signal_electric_2asp.png") {template_signals(40,225)}
+spriteset(aspect2_r_block, "gfx/signal_electric_2asp_2.png") {template_signals(10,50)}
+spriteset(aspect2_g_block, "gfx/signal_electric_2asp_2.png") {template_signals(40,50)}
+spriteset(aspect2_r_en, "gfx/signal_electric_2asp_2.png") {template_signals(10,85)}
+spriteset(aspect2_g_en, "gfx/signal_electric_2asp_2.png") {template_signals(40,85)}
+spriteset(aspect2_r_ex, "gfx/signal_electric_2asp_2.png") {template_signals(10,120)}
+spriteset(aspect2_g_ex, "gfx/signal_electric_2asp_2.png") {template_signals(40,120)}
+spriteset(aspect2_r_co, "gfx/signal_electric_2asp_2.png") {template_signals(10,155)}
+spriteset(aspect2_g_co, "gfx/signal_electric_2asp_2.png") {template_signals(40,155)}
+spriteset(aspect2_r_path, "gfx/signal_electric_2asp_2.png") {template_signals(10,190)}
+spriteset(aspect2_g_path, "gfx/signal_electric_2asp_2.png") {template_signals(40,190)}
+spriteset(aspect2_r_owp, "gfx/signal_electric_2asp_2.png") {template_signals(10,225)}
+spriteset(aspect2_g_owp, "gfx/signal_electric_2asp_2.png") {template_signals(40,225)}
 
 //Switches for 2 aspect signals
 
