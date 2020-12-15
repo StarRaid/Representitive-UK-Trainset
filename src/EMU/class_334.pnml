@@ -9,7 +9,7 @@ spriteset(spriteset_334_f_spt, "gfx/EMU/class_458.png") {template_8_8_networker(
 spriteset(spriteset_458_0_c, "gfx/EMU/class_458.png") {template_8_8_networker(0, 225)} //_c indicates coupled//
 //Trailer
 spriteset(spriteset_458_0_t, "gfx/EMU/class_458.png") {template_8_4_networker(179, 225)}
-spriteset(spriteset_460_t, "gfx/EMU/class_458.png") {template_8_4_networker(358, 175)}
+spriteset(spriteset_460_t, "gfx/EMU/class_458.png") {template_8_4_networker(537, 175)}
 spriteset(spriteset_458_5_t_a, "gfx/EMU/class_458.png") {template_8_4_networker(269, 225)}
 spriteset(spriteset_458_5_t_b, "gfx/EMU/class_458.png") {template_8_4_networker(359, 225)}
 spriteset(spriteset_334_t_sct, "gfx/EMU/class_458.png") {template_8_4_networker(358, 125)}
@@ -186,6 +186,7 @@ item (FEAT_TRAINS, item_334, 334) {
 		speed:							90 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
+		track_type:						SAAE;
 		ai_special_flag:				AI_FLAG_CARGO;
 		power:							1448 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
@@ -291,12 +292,12 @@ switch(FEAT_TRAINS, SELF, sw_458_t_decider, livery_choice){
 //Headlights
 switch(FEAT_TRAINS, SELF, sw_458_tl_man, cargo_subtype){
 	0: spriteset_458_0_rl;
-	1: spriteset_460_hl;
+	1: spriteset_460_rl;
 	2: spriteset_458_5_rl;
 }
 switch(FEAT_TRAINS, SELF, sw_458_hl_man, cargo_subtype){
 	0: spriteset_458_0_hl;
-	1: spriteset_460_rl;
+	1: spriteset_460_hl;
 	2: spriteset_458_5_hl;
 }
 switch(FEAT_TRAINS, SELF, sw_458_tl_auto, current_year){
@@ -411,7 +412,7 @@ item (FEAT_TRAINS, item_458, 458) {
 		running_cost_factor:			31;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAA3;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -443,7 +444,7 @@ item (FEAT_TRAINS, item_458, 458) {
 		speed:								sw_458_speed_decider;
 		tractive_effort_coefficient:		sw_458_te_decider;
 }
-		livery_override (9030) {
+		livery_override (9090) {
 		cargo_capacity: 85;
 		default: sw_458_t_default;
 		colour_mapping:	sw_458_colour_mapping_decider;
