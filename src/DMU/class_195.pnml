@@ -136,7 +136,7 @@ item (FEAT_TRAINS, item_195, 195) {
 		weight:	28;
 		colour_mapping:	sw_195_colour_mapping;
 		cargo_subtype_text: sw_195_livery_text_decider;
-		power: 523 hp;
+		power: 523;
 }
 }
 

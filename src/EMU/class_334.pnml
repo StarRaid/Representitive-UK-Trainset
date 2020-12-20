@@ -378,12 +378,12 @@ switch(FEAT_TRAINS, SELF, sw_458_coupling_restrictions, vehicle_type_id) {
     return string(STR_458_NO_COUPLE);
 }
 switch(FEAT_TRAINS, SELF, sw_458_speed_man, cargo_subtype){
-	0: 100;
-	1: 100;
-	2: 75;
+	0: 160;
+	1: 160;
+	2: 120;
 }
 switch(FEAT_TRAINS, SELF, sw_458_speed_decider, livery_choice){
-	0: 100;
+	0: 160;
 	sw_458_speed_man;
 }
 switch(FEAT_TRAINS, SELF, sw_458_te_man, cargo_subtype){

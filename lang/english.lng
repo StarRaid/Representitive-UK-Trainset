@@ -265,6 +265,7 @@ STR_NAME_153				 :Leyland "Dogbox" (Diesel)
 STR_NAME_SUPER_SPRINTER		 :Metro-Cammel Super Sprinter (Diesel)
 STR_NAME_EXPRESS_SPRINTER    :BREL Express Sprinter (Diesel)
 STR_NAME_165				 :ABB "Networker Turbo" (Diesel)
+STR_NAME_195				 :CAF "Civity" (Diesel)
 STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
 STR_NAME_VOYAGER             :Bombardier Voyager (Diesel Electric)
 
@@ -322,6 +323,7 @@ STR_153_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or anot
 STR_155_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another Metro-Cammel Super Sprinter!
 STR_158_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Express Sprinter!
 STR_168_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Turbostar!
+STR_195_NO_COUPLE: You may only couple this train to a "Modern MU car" or another CAF "Civity" (Diesel)!
 STR_220_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier Voyager!
 STR_307_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BREL Eastern Region Suburan EMU (Electric)!
 STR_309_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Mark 1 EMU (Electric)!
@@ -393,6 +395,7 @@ STR_NAME_153_ALT			 	:BR Class 153 (Diesel)
 STR_NAME_SUPER_SPRINTER_ALT		:BR Class 155/156 (Diesel)
 STR_NAME_EXPRESS_SPRINTER_ALT	:BR Class 158/159 (Diesel)
 STR_NAME_165_ALT				:BR Class 165/166 (Diesel)
+STR_NAME_195_ALT				:BR Class 195 (Diesel)
 STR_NAME_TURBOSTAR_ALT			:BR Class 168/170/172 (Diesel)
 STR_NAME_VOYAGER_ALT			:BR Class 220/221 (Diesel Electric)
 
