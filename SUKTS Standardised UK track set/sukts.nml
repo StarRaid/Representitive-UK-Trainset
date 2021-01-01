@@ -147,8 +147,8 @@ template template_underlay_bridge(x, y){
 
 template template_tunnel_tracks(x, y) {
 	[213,		y,	64,		31,		-31,	0	]
-	[x+420,		y,	64,		31,		-31,	0	]
 	[x+490,		y,	64,		31,		-31,	0	]
+	[x+420,		y,	64,		31,		-31,	0	]
 	[283,		y,	64,		31,		-31,	0	]
 }
 
@@ -2368,7 +2368,7 @@ item(FEAT_RAILTYPES, rail_SAA4) {
 		track_overlay		: gfx_SAA4_overlay ;
 		underlay			: gfx_SAA4_ballast ;
 		bridge_surfaces		: gfx_SAA4_bridge ;
-		//tunnels				: gfx_SAAN_tunnel ;
+		tunnels				: gfx_SAAN_tunnel ;
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
