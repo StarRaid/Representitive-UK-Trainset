@@ -187,7 +187,7 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 8 ;
+	version: 9 ;
 	min_compatible_version: 0 ;
 	param 0{
 		toggle_limits{
@@ -2368,7 +2368,7 @@ item(FEAT_RAILTYPES, rail_SAA4) {
 		track_overlay		: gfx_SAA4_overlay ;
 		underlay			: gfx_SAA4_ballast ;
 		bridge_surfaces		: gfx_SAA4_bridge ;
-		tunnels				: gfx_SAAN_tunnel ;
+		//tunnels				: gfx_SAAN_tunnel ;
 		level_crossings		: sw_SAAN_lc_side_check ;
 		//depots          : 
 		//fences          : 
