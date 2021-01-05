@@ -1053,6 +1053,10 @@ switch(FEAT_RAILTYPES, SELF, sw_underlay_BLST, wide_ballast) {
  1: gfx_underlays_BLST_wide;
  gfx_underlays_BLST;
 }
+switch(FEAT_RAILTYPES, SELF, sw_overlay_BLST, wide_ballast) {
+ 1: gfx_blank;
+ gfx_overlays_BLST;
+}
 
 
 
@@ -1078,7 +1082,7 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		sort_order					: 6 ;
 	}
 	graphics {
-		track_overlay		: gfx_overlays_BLST ;
+		track_overlay		: sw_overlay_BLST ;
 		underlay			: sw_underlay_BLST ;
 		bridge_surfaces		: gfx_bridge_tracks_BLST ;
 		tunnels				: gfx_tunnel_tracks_BLST ;
