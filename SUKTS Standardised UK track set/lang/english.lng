@@ -10,6 +10,9 @@ STR_PARAM_SPEEDLIMITS_DESC			:Turn on track speed limits.
 STR_PARAM_TRACK_LIST_NAME			:Track selection
 STR_PARAM_TRACK_LIST_DESC			:Enable extra track types for extra speed limits or decorative purposes
 
+STR_PARAM_TRACK_WIDE_BALLAST_NAME	:Wide ballast
+STR_PARAM_TRACK_WIDE_BALLAST_DESC	:Enable wide ballast graphics.
+
 STR_PARAM_TRACK_MIN					:Minimal selection
 STR_PARAM_TRACK_STANDARD			:Standard selection
 STR_PARAM_TRACK_EXTRA				:Extra selection
@@ -55,6 +58,7 @@ STR_PARAM_SIGNAL_ELEC_4ASP				:4 Aspect Signals (function as 2 aspect)
 STR_PARAM_SIGNAL_ELEC_4ASP_SPD			:4 Aspect Signals (track speed dependent aspects)
 
 
+
 STR_BLST_NAME				:Empty track ballast.
 STR_BLST_BUILD_NAME			:New track ballast vehicles.
 STR_BLST_REPLACE_NAME		:Replace track ballast vehicles.
@@ -89,6 +93,9 @@ STR_3RDC_BUILD_NAME			:New Standard Gauge (Dual Voltaage) vehicles.
 STR_3RDC_REPLACE_NAME		:Replace Standard Gauge (Dual Voltaage) vehicles.
 STR_3RDC_NEW_TRAIN			:Standard Gauge (Dual Voltaage)
 
+
+STR_BLS2_NAME				:Empty track ballast. {GOLD}(Overgrown){YELLOW}
+STR_BLS3_NAME				:Empty track ballast. {GOLD}(Concrete){YELLOW}
 
 STR_SAAN_NAME				:Standard Gauge {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){YELLOW}
 STR_SBAN_NAME				:Standard Gauge {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){YELLOW}

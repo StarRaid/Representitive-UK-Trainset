@@ -1,3 +1,5 @@
+
+/*
 spriteset(gfx_ballast, "gfx/tracks.png"){
 	[350,	0,		64,		31,		-31,	0	]//North East
 	[420,	0,		64,		31,		-31,	0	]//North West
@@ -86,8 +88,8 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		build_window_caption		: string(STR_BLST_BUILD_NAME) ;
 		autoreplace_text			: string(STR_BLST_REPLACE_NAME) ;
 		new_engine_text				: string(STR_BLST_NEW_TRAIN) ;
-		compatible_railtype_list	: ["BLST", "PLAN"] ;
-		powered_railtype_list		: ["BLST", "PLAN"] ;
+		compatible_railtype_list	: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		powered_railtype_list		: ["BLST", "BLS2", "BLS3", "PLAN"] ;
 		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 1 ;
@@ -106,5 +108,96 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		fences          : gfx_blank ;
 	}
 }
+
+
+
+*/
+
+
+
+
+
+item(FEAT_RAILTYPES, rail_ballast) {
+	property {
+		label						: "BLST" ;
+		name						: string(STR_BLST_NAME) ;
+		menu_text					: string(STR_BLST_NAME) ;
+		toolbar_caption				: string(STR_BLST_NAME) ;
+		build_window_caption		: string(STR_BLST_BUILD_NAME) ;
+		autoreplace_text			: string(STR_BLST_REPLACE_NAME) ;
+		new_engine_text				: string(STR_BLST_NEW_TRAIN) ;
+		compatible_railtype_list	: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		powered_railtype_list		: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		curve_speed_multiplier		: 1 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 1 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		//railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(0,1,1) ;
+		sort_order					: 6 ;
+	}
+	graphics {
+		track_overlay		: gfx_BLST_ballast ;
+		underlay			: gfx_BLST_ballast ;
+		bridge_surfaces		: gfx_BLST_bridge ;
+		tunnels				: gfx_BLST_tunnel ;
+		level_crossings		: sw_BLST_lc_side_check ;
+		//depots          : 
+		fences          : gfx_blank ;
+	}
+}
+
+item(FEAT_RAILTYPES, rail_ballast2) {
+	property {
+		label						: "BLS2" ;
+		name						: string(STR_BLS2_NAME) ;
+		menu_text					: string(STR_BLST_NAME) ;
+		toolbar_caption				: string(STR_BLST_NAME) ;
+		build_window_caption		: string(STR_BLST_BUILD_NAME) ;
+		autoreplace_text			: string(STR_BLST_REPLACE_NAME) ;
+		new_engine_text				: string(STR_BLST_NEW_TRAIN) ;
+		compatible_railtype_list	: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		powered_railtype_list		: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		curve_speed_multiplier		: 1 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 1 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		//railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(0,1,1) ;
+		sort_order					: 7 ;
+	}
+	graphics {
+	}
+}
+
+item(FEAT_RAILTYPES, rail_ballast3) {
+	property {
+		label						: "BLS3" ;
+		name						: string(STR_BLS3_NAME) ;
+		menu_text					: string(STR_BLST_NAME) ;
+		toolbar_caption				: string(STR_BLST_NAME) ;
+		build_window_caption		: string(STR_BLST_BUILD_NAME) ;
+		autoreplace_text			: string(STR_BLST_REPLACE_NAME) ;
+		new_engine_text				: string(STR_BLST_NEW_TRAIN) ;
+		compatible_railtype_list	: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		powered_railtype_list		: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		curve_speed_multiplier		: 1 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 1 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		//railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(0,1,1) ;
+		sort_order					: 8 ;
+	}
+	graphics {
+	}
+}
+
+
+
+
+
+
+
 
 

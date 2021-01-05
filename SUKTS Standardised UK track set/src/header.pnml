@@ -12,6 +12,13 @@ grf{
 			bit     : 1 ;
 			def_value : 1 ;
 		}
+		wide_ballast{
+			type    : bool ;
+			name    : string(STR_PARAM_TRACK_WIDE_BALLAST_NAME) ;
+			desc    : string(STR_PARAM_TRACK_WIDE_BALLAST_DESC) ;
+			bit     : 2 ;
+			def_value : 0 ;
+		}
 	}
 	param 1{
 		cost_multiplier{
