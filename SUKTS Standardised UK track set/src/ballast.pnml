@@ -167,7 +167,6 @@ item(FEAT_RAILTYPES, rail_ballast) {
 
 
 
-/*
 item(FEAT_RAILTYPES, rail_ballast2) {
 	property {
 		label						: "BLS2" ;
@@ -188,6 +187,14 @@ item(FEAT_RAILTYPES, rail_ballast2) {
 		sort_order					: 7 ;
 	}
 	graphics {
+		track_overlay		: sw_overlay_BLS2 ;
+		underlay			: sw_underlay_BLS2 ;
+		bridge_surfaces		: gfx_bridge_tracks_BLS2 ;
+		tunnels				: gfx_tunnel_tracks_BLS2 ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -211,6 +218,14 @@ item(FEAT_RAILTYPES, rail_ballast3) {
 		sort_order					: 8 ;
 	}
 	graphics {
+		track_overlay		: sw_overlay_BLS3 ;
+		underlay			: sw_underlay_BLS3 ;
+		bridge_surfaces		: gfx_bridge_tracks_BLS3 ;
+		tunnels				: gfx_tunnel_tracks_BLS3f ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -219,6 +234,5 @@ item(FEAT_RAILTYPES, rail_ballast3) {
 
 
 
-*/
 
 
