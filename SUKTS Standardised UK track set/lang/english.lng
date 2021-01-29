@@ -35,6 +35,11 @@ STR_PARAM_TOOTOOMUCH				:8x
 STR_PARAM_GFX_FENCE_NAME			:Fence graphics
 STR_PARAM_GFX_FENCE_DESC			:Changes the behaviour of fences.
 
+STR_PARAM_GFX_FENCE_ALL				:All tracks have fences
+STR_PARAM_GFX_FENCE_MOST			:Only high and medium speed tracks have fences
+STR_PARAM_GFX_FENCE_SOME			:Only high speed tracks have fences
+STR_PARAM_GFX_FENCE_NONE			:No fences
+
 
 
 STR_PARAM_SPEED_DESC				:Speed in mph if speed limits are enabled (set to 0 to disable speed limit)
