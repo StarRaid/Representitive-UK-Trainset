@@ -1,7 +1,7 @@
 ##grflangid 0x01
 
 STR_GRF_NAME	:Standardised UK Track Set - SUKTS
-STR_GRF_DESC	:{GOLD}A track set that adds a customisable roster of different track types that follow the standardised track scheme! Graphics drawn by and coded by {BLUE}Star{GREEN}Raid {GOLD}and {PURPLE}Gwyd{GOLD}.
+STR_GRF_DESC	:{GOLD}A track set that adds a customisable roster of different track types that follow the standardised track scheme! Graphics drawn by and coded by {RED}UnholyPhish {GOLD}and {PURPLE}Gwyd{GOLD}. Licenced under GPL v2. Check licence for details.
 
 
 STR_PARAM_SPEEDLIMITS_NAME			:Speed limits
@@ -9,6 +9,9 @@ STR_PARAM_SPEEDLIMITS_DESC			:Turn on track speed limits.
 
 STR_PARAM_TRACK_LIST_NAME			:Track selection
 STR_PARAM_TRACK_LIST_DESC			:Enable extra track types for extra speed limits or decorative purposes
+
+STR_PARAM_TRACK_WIDE_BALLAST_NAME	:Wide ballast
+STR_PARAM_TRACK_WIDE_BALLAST_DESC	:Enable wide ballast graphics.
 
 STR_PARAM_TRACK_MIN					:Minimal selection
 STR_PARAM_TRACK_STANDARD			:Standard selection
@@ -32,6 +35,11 @@ STR_PARAM_TOOTOOMUCH				:8x
 STR_PARAM_GFX_FENCE_NAME			:Fence graphics
 STR_PARAM_GFX_FENCE_DESC			:Changes the behaviour of fences.
 
+STR_PARAM_GFX_FENCE_ALL				:All tracks have fences
+STR_PARAM_GFX_FENCE_MOST			:Only high and medium speed tracks have fences
+STR_PARAM_GFX_FENCE_SOME			:Only high speed tracks have fences
+STR_PARAM_GFX_FENCE_NONE			:No fences
+
 
 
 STR_PARAM_SPEED_DESC				:Speed in mph if speed limits are enabled (set to 0 to disable speed limit)
@@ -53,6 +61,7 @@ STR_PARAM_SIGNAL_ELEC_2ASP				:2 Aspect Signals
 STR_PARAM_SIGNAL_ELEC_3ASP				:3 Aspect Signals (function as 2 aspect)
 STR_PARAM_SIGNAL_ELEC_4ASP				:4 Aspect Signals (function as 2 aspect)
 STR_PARAM_SIGNAL_ELEC_4ASP_SPD			:4 Aspect Signals (track speed dependent aspects)
+
 
 
 STR_BLST_NAME				:Empty track ballast.
@@ -89,6 +98,9 @@ STR_3RDC_BUILD_NAME			:New Standard Gauge (Dual Voltaage) vehicles.
 STR_3RDC_REPLACE_NAME		:Replace Standard Gauge (Dual Voltaage) vehicles.
 STR_3RDC_NEW_TRAIN			:Standard Gauge (Dual Voltaage)
 
+
+STR_BLS2_NAME				:Empty track ballast. {GOLD}(Overgrown){YELLOW}
+STR_BLS3_NAME				:Empty track ballast. {GOLD}(Concrete){YELLOW}
 
 STR_SAAN_NAME				:Standard Gauge {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){YELLOW}
 STR_SBAN_NAME				:Standard Gauge {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){YELLOW}

@@ -11,3 +11,5 @@
 #include "src/third_rail.pnml"
 #include "src/dual_volt.pnml"
 #include "src/fourth_rail.pnml"
+
+#include "src/RAIL.pnml"

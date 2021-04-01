@@ -1,0 +1,51 @@
+
+
+
+spriteset(gfx_overlays_RAIL,		"gfx/RAIL/Overlay_RAIL.png")		{	template_overlay_auz()		}
+spriteset(gfx_underlays_RAIL,		"gfx/RAIL/Underlay_RAIL.png")		{	template_underlay_auz()		}
+spriteset(gfx_underlays_RAIL_wide,	"gfx/RAIL/Underlay_RAIL_wide.png")	{	template_underlay_auz()		}
+spriteset(gfx_tunnel_tracks_RAIL,	"gfx/RAIL/TunnelTrack_RAIL.png")	{	template_tunneltracks()		}
+spriteset(gfx_bridge_tracks_RAIL,	"gfx/RAIL/BridgeTrack_RAIL.png")	{	template_bridgetracks()		}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_underlay_RAIL, wide_ballast) {
+ 1: gfx_underlays_RAIL_wide;
+ gfx_underlays_RAIL;
+}
+
+
+
+
+item(FEAT_RAILTYPES, rail_RAIL) {
+	property {
+		label						: "RAIL" ;
+		name						: string(STR_RAIL_NAME) ;
+		menu_text					: string(STR_RAIL_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1935,1,1) ;
+		sort_order					: 54 ;
+		speed_limit					: param[6] mph ;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_RAIL ;
+		underlay			: sw_underlay_RAIL ;
+		bridge_surfaces		: gfx_bridge_tracks_RAIL ;
+		tunnels				: gfx_tunnel_tracks_RAIL ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+		signals				: sw_signals;
+	}
+}
+
+

@@ -2,7 +2,7 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 8 ;
+	version: 9 ;
 	min_compatible_version: 0 ;
 	param 0{
 		toggle_limits{
@@ -11,6 +11,13 @@ grf{
 			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
 			bit     : 1 ;
 			def_value : 1 ;
+		}
+		wide_ballast{
+			type    : bool ;
+			name    : string(STR_PARAM_TRACK_WIDE_BALLAST_NAME) ;
+			desc    : string(STR_PARAM_TRACK_WIDE_BALLAST_DESC) ;
+			bit     : 2 ;
+			def_value : 0 ;
 		}
 	}
 	param 1{
@@ -151,6 +158,22 @@ grf{
  				1: string(STR_PARAM_SIGNAL_ELEC_3ASP);
  				2: string(STR_PARAM_SIGNAL_ELEC_4ASP);
  				3: string(STR_PARAM_SIGNAL_ELEC_4ASP_SPD);
+ 			};
+		}
+	}
+	param 13{
+		fence_number {
+ 			type:    int;
+ 			name:    string(STR_PARAM_GFX_FENCE_NAME);
+ 			desc:    string(STR_PARAM_GFX_FENCE_DESC);
+ 			min_value: 0;
+ 			max_value: 4;
+ 			def_value: 1;
+ 			names: {
+ 				0: string(STR_PARAM_GFX_FENCE_ALL);
+ 				1: string(STR_PARAM_GFX_FENCE_MOST);
+ 				2: string(STR_PARAM_GFX_FENCE_SOME);
+ 				3: string(STR_PARAM_GFX_FENCE_NONE);
  			};
 		}
 	}

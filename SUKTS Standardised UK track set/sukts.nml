@@ -147,8 +147,8 @@ template template_underlay_bridge(x, y){
 
 template template_tunnel_tracks(x, y) {
 	[213,		y,	64,		31,		-31,	0	]
-	[x+420,		y,	64,		31,		-31,	0	]
 	[x+490,		y,	64,		31,		-31,	0	]
+	[x+420,		y,	64,		31,		-31,	0	]
 	[283,		y,	64,		31,		-31,	0	]
 }
 
@@ -180,6 +180,349 @@ template template_signals(x, y){
 	[ x+360 , y , 20 , 30 , -10,  -28  ]
 	[ x+420 , y , 20 , 30 , -10,  -28  ]
 }
+
+
+
+
+
+
+
+
+/*******************************************
+// Newer track templates based off of AuzRails
+ *******************************************/
+
+
+
+
+template template_overlay_auz() {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [   1,		1,		64,		31,		-31,	0	]
+    [  66,		1,		64,		31,		-31,	0	]
+    [ 131,		1,		64,		31,		-31,	0	]
+    [ 196,		1,		64,		31,		-31,	0	]
+    [ 261,		1,		64,		31,		-31,	0	]
+    [ 326,		1,		64,		31,		-31,	0	]
+	//Slopes
+    [ 391,		1,		64,		41,		-31,	-10	]
+    [ 456,		1,		64,		41,		-31,	-10	]
+    [ 521,		1,		64,		41,		-31,	-10	]
+    [ 586,		1,		64,		41,		-31,	-10	]
+}
+
+
+template template_underlay_auz() {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [   1,		1,		64,		31,		-31,	0	]
+    [  66,		1,		64,		31,		-31,	0	]
+    [ 131,		1,		64,		31,		-31,	0	]
+    [ 196,		1,		64,		31,		-31,	0	]
+    [ 261,		1,		64,		31,		-31,	0	]
+    [ 326,		1,		64,		31,		-31,	0	]
+	//Slopes
+    [ 391,		1,		64,		41,		-31,	-10	]
+    [ 456,		1,		64,		41,		-31,	-10	]
+    [ 521,		1,		64,		41,		-31,	-10	]
+    [ 586,		1,		64,		41,		-31,	-10	]
+	//Crossing
+    [	1,		49,		64,		31,		-31,	0	]
+     //Ground for switches
+    [	66,		49,		64,		31,		-31,	0	]
+    [	131,	49,		64,		31,		-31,	0	]
+    [	196,	49,		64,		31,		-31,	0	]
+    [	261,	49,		64,		31,		-31,	0	]
+    [	326,	49,		64,		31,		-31,	0	]
+}
+
+
+//Tunnel Tracks, to be used for trackoverlay in vanilla tunnels or tunnels provided by a tunnel-replacement GRF
+template template_tunneltracks() {
+	//left_x, upper_y, width, height, offset_x, offset_y
+    [   3,    1,       64,    31,       -31,        0]
+    [  68,    1,       64,    31,       -31,        0]
+    [   3,   64,       64,    31,       -31,        0]
+    [  68,   64,       64,    31,       -31,        0]
+}
+
+
+
+
+
+
+
+
+/*******************************************
+//Custom Tunnel
+ *******************************************/
+
+template tmpl_tunnel_overlaytracks() {
+	//left_x, upper_y, width, height, offset_x, offset_y 
+ [ 10, 50, 64, 50, -31, -19]
+ [158, 50, 64, 50, -31, -19]
+ [306, 50, 64, 50, -31, -19]
+ [454, 50, 64, 50, -31, -19]
+ }
+
+ template tmpl_tunnel_overlays() {
+	//left_x, upper_y, width, height, offset_x, offset_y 
+ [ 84, 50, 64, 50, -31, -49]
+ [232, 50, 64, 50, -31, -49]
+ [380, 50, 64, 50, -31, -49]
+ [528, 50, 64, 50, -31, -49]
+}
+
+
+
+
+
+
+
+/*******************************************
+//Bridge Surface Tracks
+ *******************************************/
+
+template template_bridgetracks() {
+	//left_x, upper_y, width, height, offset_x, offset_y
+	[	1,		1,		64,		31,		-31,	0	]
+	[	66,		1,		64,		31,		-31,	0	]
+	//Slopes
+	[	131,	1,		64,		41,		-31,	-10	]
+	[	196,	1,		64,		41,		-31,	-10	]
+	[	261,	1,		64,		41,		-31,	-10	]
+	[	326,	1,		64,		41,		-31,	-10	]
+}
+
+
+
+
+/*******************************************
+// railtype level crossings
+ *******************************************/
+
+template tmpl_level_crossing_railtypes_empty() {
+ [ 1,1, 64,31, -31, 0]
+ [ 66,1, 64,31, -31, 0]
+}
+
+
+
+
+
+
+
+
+
+/*******************************************
+//Fences
+ *******************************************/
+
+template template_fences() {
+	//left_x, upper_y, width, height, offset_x, offset_y
+	[  2,  1, 33, 26,  -33,  -12] //Back of Track
+	[ 50,  1, 33, 26,    3,  -11] //Back of Track
+	[ 98,  5,  2, 38,    0, -22] //Right of Track
+	[114,  1, 65,  10,  -31,  -10] //Bottom of Track
+	[194,  1, 33, 19,  -33,  -13] //Back of Track (slope)
+	[242,  1, 33, 19,    3,  -12] //Back of Track (slope)
+	[290,  1, 33, 35,  -33, -21] //Back of Track (slope)
+	[338,  1, 33, 35,    3, -20] //Back of Track (slope)
+	[  2, 46, 33, 26,  -29,  -10] //Front of Track
+	[ 50, 46, 33, 26,   -1,  -9] //Front of Track
+	[ 98, 50,  2, 38,    1, -22] //Left of Track
+	[114, 46, 65,  10,  -31,  -10] //Top of Track
+	[194, 46, 33, 19,  -29,  -11] //Front of Track (slope)
+	[242, 46, 33, 19,   -1,  -10] //Front of Track (slope)
+	[290, 46, 33, 35,  -29, -19] //Front of Track (slope)
+	[338, 46, 33, 35,   -1, -18] //Front of Track (slope)
+
+}
+
+template tmpl_fences() {
+	//left_x, upper_y, width, height, offset_x, offset_y
+	[  2,  1, 33, 31,  -33,  -17] //Back of Track
+	[ 50,  1, 33, 31,    3,  -16] //Back of Track
+	[ 98,  5,  2, 38,    0, -22] //Right of Track
+	[114,  1, 65,  15,  -31,  -15] //Bottom of Track
+	[194,  1, 33, 24,  -33,  -18] //Back of Track (slope)
+	[242,  1, 33, 24,    3,  -17] //Back of Track (slope)
+	[290,  1, 33, 40,  -33, -26] //Back of Track (slope)
+	[338,  1, 33, 40,    3, -25] //Back of Track (slope)
+	[  2, 46, 33, 31,  -29,  -15] //Front of Track
+	[ 50, 46, 33, 31,   -1,  -14] //Front of Track
+	[ 98, 50,  2, 38,    1, -22] //Left of Track
+	[114, 46, 65,  15,  -31,  -15] //Top of Track
+	[194, 46, 33, 24,  -29,  -16] //Front of Track (slope)
+	[242, 46, 33, 24,   -1,  -15] //Front of Track (slope)
+	[290, 51, 33, 40,  -29, -24] //Front of Track (slope)
+	[338, 51, 33, 40,   -1, -23] //Front of Track (slope)
+
+}
+
+
+
+//No Fences
+template template_nofences() {
+	//left_x, upper_y, width, height, offset_x, offset_y
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+	[  0,0,1,1,0,0]
+}
+
+spriteset(spriteset_nofences, "gfx/track.png") {
+ template_nofences()
+}
+
+
+
+
+
+
+
+
+
+
+/*******************************************
+//Depot
+ *******************************************/
+
+template template_depot() {
+	//left_x, upper_y, width, height, offset_x, offset_y 
+  [   42, 85, 24, 25,   9,  -6]   
+  [    2, 24, 64, 58,  -9, -42] 
+  [   82, 85, 24, 25, -31,  -6] 
+  [   82, 24, 64, 58, -53, -42]
+  [  242, 24, 64, 58, -53, -42]
+  [  162, 24, 64, 58,  -9, -42] 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************
+//Catenarypylons
+ **********************************************/
+
+template template_catenarypylons() {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+ [ 10, 20, 14, 30, -11, -28]
+ [ 34, 20, 14, 30, 1, -28]
+ [ 58, 20, 14, 30, -1, -28]
+ [ 82, 20, 14, 30, -13, -28]
+ [ 106, 20, 14, 30, -6, -29]
+ [ 130, 20, 14, 30, -6, -28]
+ [ 154, 20, 14, 30, 0, -29]
+ [ 178, 20, 14, 30, -13, -29]
+}
+
+//Catenarypylons
+template template_catenarydoublepylons() {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+ [ 4, 28, 14, 32, -11, -30]
+ [ 20, 17, 40, 43, 1, -41]
+ [ 62, 28, 14, 32, -1, -30]
+ [ 78, 17, 40, 43, -39, -41]
+ [ 120, 28, 14, 32, -6, -39]
+ [ 136, 16, 14, 44, -6, -43]
+ [ 152, 28, 28, 32, 0, -31]
+ [ 181, 28, 27, 32, -26, -31]
+}
+
+//Catenarypylons
+template template_catenarymultipylons() {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+ [ 2, 22, 42, 38, -29, -27] //ok
+ [ 46, 11, 52, 49, -5, -44] //ok
+ [ 100, 22, 42, 38, -9, -27] //ok
+ [ 144, 11, 52, 49, -43, -44] //ok
+ [ 198, 28, 14, 32, -6, -43] //
+ [ 214, 12, 14, 44, -6, -47] //
+ [ 230, 28, 44, 32, -7, -31] //
+ [ 276, 28, 44, 32, -33, -31] //
+}
+
+//Catenarypylons
+template template_catenarycentrepylons() {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+ [ 2, 22, 42, 38, -25, -29] //ok
+ [ 46, 11, 52, 49, -13, -40] //ok
+ [ 100, 22, 42, 38, -15, -29] //ok
+ [ 144, 11, 52, 49, -37, -40] //ok
+ [ 198, 28, 14, 32, -6, -43] //
+ [ 214, 12, 14, 44, -6, -47] //
+ [ 230, 28, 44, 32, -20, -31] //ok
+ [ 276, 28, 44, 32, -28, -31] //ok
+}
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************
+//Catenarywires
+ **********************************************/
+
+template template_catenarywires() {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+ [ 10, 100, 64, 42, -45, -20]
+ [ 100, 100, 64, 42, -17, -20]
+ [ 200, 100, 32, 11, 0, -12] //-1
+ [ 300, 100, 1, 21, 1, -8] //0
+ [ 10, 200, 64, 50, -45, -21]
+ [ 100, 200, 64, 34, -17, -10]
+ [ 200, 200, 64, 34, -45, -10]
+ [ 300, 200, 64, 50, -17, -21]
+ [ 10, 300, 64, 42, -45, -20]
+ [ 100, 300, 64, 42, -17, -20]
+ [ 200, 300, 32, 11, 0, -12]
+ [ 300, 300, 1, 21, 1, -8] //0
+ [ 10, 400, 64, 50, -45, -21]
+ [ 100, 400, 64, 34, -17, -10]
+ [ 200, 400, 64, 34, -45, -10]
+ [ 300, 400, 64, 50, -17, -21]
+ [ 10, 500, 64, 42, -45, -20]
+ [ 100, 500, 64, 42, -17, -20]
+ [ 200, 500, 32, 11, 0, -12]
+ [ 300, 500, 1, 21, 1, -8] //0
+ [ 10, 600, 64, 50, -45, -21]
+ [ 100, 600, 64, 34, -17, -10]
+ [ 200, 600, 64, 34, -45, -10]
+ [ 300, 600, 64, 50, -17, -21]
+ [ 10, 700, 64, 42, -45, -20]
+ [ 100, 700, 64, 42, -17, -20]
+ [ 200, 700, 64, 42, -45, -20]
+ [ 300, 700, 64, 42, -17, -20]
+}
+
+
+
 # 1 "sukts.pnml" 2
 
 # 1 "src/header.pnml" 1
@@ -187,7 +530,7 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 8 ;
+	version: 9 ;
 	min_compatible_version: 0 ;
 	param 0{
 		toggle_limits{
@@ -196,6 +539,13 @@ grf{
 			desc    : string(STR_PARAM_SPEEDLIMITS_DESC) ;
 			bit     : 1 ;
 			def_value : 1 ;
+		}
+		wide_ballast{
+			type    : bool ;
+			name    : string(STR_PARAM_TRACK_WIDE_BALLAST_NAME) ;
+			desc    : string(STR_PARAM_TRACK_WIDE_BALLAST_DESC) ;
+			bit     : 2 ;
+			def_value : 0 ;
 		}
 	}
 	param 1{
@@ -576,6 +926,8 @@ sw_signals_slow;
 # 1 "sukts.pnml" 2
 
 # 1 "src/ballast.pnml" 1
+
+/*
 spriteset(gfx_ballast, "gfx/tracks.png"){
 	[350,	0,		64,		31,		-31,	0	]//North East
 	[420,	0,		64,		31,		-31,	0	]//North West
@@ -664,8 +1016,8 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		build_window_caption		: string(STR_BLST_BUILD_NAME) ;
 		autoreplace_text			: string(STR_BLST_REPLACE_NAME) ;
 		new_engine_text				: string(STR_BLST_NEW_TRAIN) ;
-		compatible_railtype_list	: ["BLST", "PLAN"] ;
-		powered_railtype_list		: ["BLST", "PLAN"] ;
+		compatible_railtype_list	: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		powered_railtype_list		: ["BLST", "BLS2", "BLS3", "PLAN"] ;
 		curve_speed_multiplier		: 1 ;
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 1 ;
@@ -684,6 +1036,118 @@ item(FEAT_RAILTYPES, rail_ballast) {
 		fences          : gfx_blank ;
 	}
 }
+
+*/
+
+
+
+
+spriteset(gfx_overlays_BLST,		"gfx/BLST/Overlay_BLST.png")		{	template_overlay_auz()		}
+spriteset(gfx_underlays_BLST,		"gfx/BLST/Underlay_BLST.png")		{	template_underlay_auz()		}
+spriteset(gfx_underlays_BLST_wide,	"gfx/BLST/Underlay_BLST_wide.png")	{	template_underlay_auz()		}
+spriteset(gfx_tunnel_tracks_BLST,	"gfx/BLST/TunnelTrack_BLST.png")	{	template_tunneltracks()		}
+spriteset(gfx_bridge_tracks_BLST,	"gfx/BLST/BridgeTrack_BLST.png")	{	template_bridgetracks()		}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_underlay_BLST, wide_ballast) {
+ 1: gfx_underlays_BLST_wide;
+ gfx_underlays_BLST;
+}
+switch(FEAT_RAILTYPES, SELF, sw_overlay_BLST, wide_ballast) {
+ 1: gfx_blank;
+ gfx_overlays_BLST;
+}
+
+
+
+
+
+item(FEAT_RAILTYPES, rail_ballast) {
+	property {
+		label						: "BLST" ;
+		name						: string(STR_BLST_NAME) ;
+		menu_text					: string(STR_BLST_NAME) ;
+		toolbar_caption				: string(STR_BLST_NAME) ;
+		build_window_caption		: string(STR_BLST_BUILD_NAME) ;
+		autoreplace_text			: string(STR_BLST_REPLACE_NAME) ;
+		new_engine_text				: string(STR_BLST_NEW_TRAIN) ;
+		compatible_railtype_list	: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		powered_railtype_list		: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		curve_speed_multiplier		: 1 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 1 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		//railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(0,1,1) ;
+		sort_order					: 6 ;
+	}
+	graphics {
+		track_overlay		: sw_overlay_BLST ;
+		underlay			: sw_underlay_BLST ;
+		bridge_surfaces		: gfx_bridge_tracks_BLST ;
+		tunnels				: gfx_tunnel_tracks_BLST ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+		signals				: sw_signals;
+	}
+}
+
+
+
+/*
+item(FEAT_RAILTYPES, rail_ballast2) {
+	property {
+		label						: "BLS2" ;
+		name						: string(STR_BLS2_NAME) ;
+		menu_text					: string(STR_BLST_NAME) ;
+		toolbar_caption				: string(STR_BLST_NAME) ;
+		build_window_caption		: string(STR_BLST_BUILD_NAME) ;
+		autoreplace_text			: string(STR_BLST_REPLACE_NAME) ;
+		new_engine_text				: string(STR_BLST_NEW_TRAIN) ;
+		compatible_railtype_list	: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		powered_railtype_list		: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		curve_speed_multiplier		: 1 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 1 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		//railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(0,1,1) ;
+		sort_order					: 7 ;
+	}
+	graphics {
+	}
+}
+
+item(FEAT_RAILTYPES, rail_ballast3) {
+	property {
+		label						: "BLS3" ;
+		name						: string(STR_BLS3_NAME) ;
+		menu_text					: string(STR_BLST_NAME) ;
+		toolbar_caption				: string(STR_BLST_NAME) ;
+		build_window_caption		: string(STR_BLST_BUILD_NAME) ;
+		autoreplace_text			: string(STR_BLST_REPLACE_NAME) ;
+		new_engine_text				: string(STR_BLST_NEW_TRAIN) ;
+		compatible_railtype_list	: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		powered_railtype_list		: ["BLST", "BLS2", "BLS3", "PLAN"] ;
+		curve_speed_multiplier		: 1 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 1 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		//railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
+		introduction_date			: date(0,1,1) ;
+		sort_order					: 8 ;
+	}
+	graphics {
+	}
+}
+
+
+
+
+
+
+*/
 
 
 # 1 "sukts.pnml" 2
@@ -2563,5 +3027,59 @@ if(extra_tracks < 2){
 	}
 	}
 }
+
+# 1 "sukts.pnml" 2
+
+# 1 "src/RAIL.pnml" 1
+
+
+
+spriteset(gfx_overlays_RAIL,		"gfx/RAIL/Overlay_RAIL.png")		{	template_overlay_auz()		}
+spriteset(gfx_underlays_RAIL,		"gfx/RAIL/Underlay_RAIL.png")		{	template_underlay_auz()		}
+spriteset(gfx_underlays_RAIL_wide,	"gfx/RAIL/Underlay_RAIL_wide.png")	{	template_underlay_auz()		}
+spriteset(gfx_tunnel_tracks_RAIL,	"gfx/RAIL/TunnelTrack_RAIL.png")	{	template_tunneltracks()		}
+spriteset(gfx_bridge_tracks_RAIL,	"gfx/RAIL/BridgeTrack_RAIL.png")	{	template_bridgetracks()		}
+
+
+switch(FEAT_RAILTYPES, SELF, sw_underlay_RAIL, wide_ballast) {
+ 1: gfx_underlays_RAIL_wide;
+ gfx_underlays_RAIL;
+}
+
+
+
+
+item(FEAT_RAILTYPES, rail_RAIL) {
+	property {
+		label						: "RAIL" ;
+		name						: string(STR_RAIL_NAME) ;
+		menu_text					: string(STR_RAIL_NAME) ;
+		build_window_caption		: string(STR_RAIL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_RAIL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_RAIL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_RAIL_TOOLBAR) ;
+		compatible_railtype_list	: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		powered_railtype_list		: ["RAIL", "RLOW", "RMED", "RHIG", "SAAN", "SABN", "SACN", "SBAN", "SBBN", "SBCN", "SCAN", "SCBN", "SCCN", "SDAN", "SDBN", "DBNN", "DBHN", "_040", "_080", "SEAN", "SFAN", "SGAN", "ELRL", "ELOW", "EMED", "EHIG", "HSTR", "SAAE", "SABE", "SACE", "SBAE", "SBBE", "SBCE", "SCAE", "SCBE", "SCCE", "SDAE", "SDBE", "SEAE", "SEBE", "DBNE", "DBHE", "DBHS", "E040", "E080", "SFAE", "SGAE", "SHAE", "3RDR", "3LOW", "3MED", "SAA3", "SAB3", "SAC3", "SBA3", "SBB3", "SBC3", "SCA3", "SCB3", "SCC3", "SDA3", "SEA3", "SFA3" , "4RDR", "4LOW", "4MED", "SAA4", "SAB4", "SAC4", "SBA4", "SBB4", "SBC4", "SCA4", "SCB4", "SCC4", "MTRO", "MTRC", "MTRS", "MTRU", "MTRT", "SDA4", "3RDC", "CLOW", "CMED", "SAAZ", "SABZ", "SACZ", "SBAZ", "SBBZ", "SBCZ", "SCAZ", "SCBZ", "SCCZ", "SDAZ"] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 14 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1935,1,1) ;
+		sort_order					: 54 ;
+		speed_limit					: param[6] mph ;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_RAIL ;
+		underlay			: sw_underlay_RAIL ;
+		bridge_surfaces		: gfx_bridge_tracks_RAIL ;
+		tunnels				: gfx_tunnel_tracks_RAIL ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+		signals				: sw_signals;
+	}
+}
+
 
 # 1 "sukts.pnml" 2

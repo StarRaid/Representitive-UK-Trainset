@@ -2,7 +2,7 @@
 spriteset(spriteset_195_f_nor, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 0)}
 spriteset(spriteset_195_t_nor, "gfx/UNUSED & MIXED/civity.png") {template_8_4_networker(0, 50)}
 //Purchase
-spriteset(spriteset_195_purchase, "gfx/UNUSED & MIXED/civity.png") {template_dualhead_purchase(0, 225)}
+spriteset(spriteset_195_purchase, "gfx/UNUSED & MIXED/civity.png") {template_dualhead_purchase(0, 238)}
 //Headlights
 spriteset(spriteset_195_hl, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 175)}
 spriteset(spriteset_195_rl, "gfx/UNUSED & MIXED/civity.png") {template_8_8_networker(0, 200)}
@@ -72,10 +72,12 @@ switch(FEAT_TRAINS, SELF, sw_195_colour_mapping, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2);
 }
 
+/*
 switch(FEAT_TRAINS, SELF, sw_195_start_stop, count_veh_id(9090)){
 0: string(STR_MORE_CARRIAGES_NEEDED);
 CB_RESULT_NO_TEXT;
 }
+*/
 
 switch(FEAT_TRAINS, SELF, sw_195_coupling_restrictions, vehicle_type_id) {
 195: return CB_RESULT_ATTACH_ALLOW;
@@ -105,12 +107,12 @@ item (FEAT_TRAINS, item_195, 195) {
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
 		power:							1046 hp;
-		running_cost_base:				RUNNING_COST_ELECTRIC;
+		running_cost_base:				RUNNING_COST_DIESEL;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
 		cargo_capacity:					62;
 		weight:							44 ton;
-		engine_class:					ENGINE_CLASS_ELECTRIC;
+		engine_class:					ENGINE_CLASS_DIESEL;
 		tractive_effort_coefficient:	0.29;
 		air_drag_coefficient:			0.06;
 		length:							8;
@@ -121,14 +123,14 @@ item (FEAT_TRAINS, item_195, 195) {
 		can_attach_wagon:					sw_195_coupling_restrictions;
 		default: 							sw_195_default;
 		purchase:							spriteset_195_purchase;
-		create_effect:						vfx_ohle_only;
+		create_effect:						vfx_diesel_default;
 		colour_mapping:						sw_195_colour_mapping;
 		cargo_subtype_text:					sw_195_livery_text_decider;
 		purchase_colour_mapping:			sw_195_recolour_auto;
-		sound_effect:						sw_sfx_electric_loco_modern;
+		sound_effect:						sw_sfx_dmu_one;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 30) ;
 		purchase_running_cost_factor : 30;
-		start_stop:							sw_195_start_stop;
+		//start_stop:							sw_195_start_stop;
 }
 		livery_override (9090) {
 		cargo_capacity: 80;
