@@ -217,7 +217,7 @@ item (FEAT_TRAINS, item_uklight, 68){
 		running_cost_factor            : 240 ;
 		refit_cost                     : 0 ; 
 		refittable_cargo_classes       : 0 ; 
-		cargo_allow_refit              : [GOOD]  ;
+		cargo_allow_refit              : [MAIL, GOOD]  ;
 		cargo_capacity                 : 1 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;

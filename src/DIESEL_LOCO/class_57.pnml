@@ -451,7 +451,7 @@ item(FEAT_TRAINS, item_ge4, 57){
 		introduction_date              : date(1998,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 30 ;
