@@ -298,7 +298,7 @@ item(FEAT_TRAINS, item_cl91, 91){
 		running_cost_factor		        : 255 ;
 		refit_cost		                : 0 ;
 		refittable_cargo_classes		: 0 ;
-		cargo_allow_refit		        : [GOOD] ;
+		cargo_allow_refit		        : [MAIL, GOOD] ;
 		cargo_capacity		            : 1 ;
 		track_type		                : ELRL ;
 		engine_class		            : ENGINE_CLASS_ELECTRIC ;
