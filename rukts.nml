@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 54 ;
+	version: 56 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -1717,6 +1717,11 @@ spriteset(gfx_mk3_chiltern            , "gfx/WAGON/mark_3.png"){ template_Mk2_si
 spriteset(gfx_mk3_gner                , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,325) }
 spriteset(gfx_mk3_virgin_p            , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,350) }
 spriteset(gfx_mk3_first_scotrail      , "gfx/WAGON/mark_3.png"){ template_Mk2_single(170,150) }
+spriteset(gfx_mk3_xc                  , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,375) }
+spriteset(gfx_mk3_vtec_front		  , "gfx/WAGON/mark_3.png"){ template_Mk2_double		(0,400) }
+spriteset(gfx_mk3_vtec_back			  , "gfx/WAGON/mark_3.png"){ template_Mk2_double_reverse(0,400) }
+spriteset(gfx_mk3_vtec_buffet		  , "gfx/WAGON/mark_3.png"){ template_Mk2_double		(179,400) }
+spriteset(gfx_mk3_vtec_buffet_reverse , "gfx/WAGON/mark_3.png"){ template_Mk2_double_reverse(179,400) }
 
 spriteset(gfx_mk3_purchase_brblue     , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89, 25) }
 spriteset(gfx_mk3_purchase_intercity  , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89, 50) }
@@ -1732,6 +1737,26 @@ spriteset(gfx_mk3_windows_buffet      , "gfx/WAGON/mark_3.png"){ template_Mk2_do
 spriteset(gfx_mk3_windows_buffet_rev  , "gfx/WAGON/mark_3.png"){ template_Mk2_double_reverse(180, 50) }
 
 //Graphics switches
+
+//VTEC switches
+
+switch(FEAT_TRAINS, SELF, sw_mk3_gfx_vtec_pos_check_front, position_in_vehid_chain){
+	0..1: gfx_mk3_vtec_front	;
+	2	: gfx_mk3_vtec_buffet_reverse	;
+	gfx_mk3_vtec_back ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk3_gfx_vtec_pos_check_back, position_in_vehid_chain_from_end){
+	0..1: gfx_mk3_vtec_back	;
+	2	: gfx_mk3_vtec_buffet	;
+	gfx_mk3_vtec_front ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_mk3_gfx_vtec_rev_check, vehicle_is_reversed){
+	1 : sw_mk3_gfx_vtec_pos_check_back ;
+	sw_mk3_gfx_vtec_pos_check_front ;
+}
+
 
 //Automatic liveries
 
@@ -1764,6 +1789,8 @@ switch(FEAT_TRAINS, SELF, sw_mk3_gfx_manual, cargo_subtype){
 	18..19 : gfx_mk3_generic ;
 	20     : gfx_mk3_gner ;
 	21     : gfx_mk3_virgin_p ;
+	22     : sw_mk3_gfx_vtec_rev_check ;
+	23     : gfx_mk3_xc ;
 	gfx_mk3_virgin ;
 }
 
@@ -1853,6 +1880,8 @@ switch(FEAT_TRAINS, SELF, sw_mk3_refit_text, cargo_subtype){
 	19 : string(STR_LIVERY_ABELLIO_GREATER_ANGLIA) ;
 	20 : string(STR_LIVERY_GNER) ;
 	21 : string(STR_LIVERY_VIRGIN_TRAINS_FAKE) ;
+	22 : string(STR_LIVERY_VTEC_LNER) ;
+	23 : string(STR_LIVERY_ARRIVA_XC) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -1914,6 +1943,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_colours_manual, cargo_subtype){
 	18     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;     //One Anglia
 	19     : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;          //Greater Anglia
 	20     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;      //GNER
+	23     : palette_2cc(COLOUR_PINK, COLOUR_RED) ;           //XC
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;                   //Virgin
 }
 
@@ -5249,7 +5279,7 @@ item(FEAT_TRAINS, item_swtype1, 14){
 		introduction_date              : date(1964,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 26 ;
 		vehicle_life                   : 40 ;
@@ -5513,7 +5543,7 @@ item(FEAT_TRAINS, item_eetype1, 20){
 		introduction_date              : date(1957,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 35 ;
 		vehicle_life                   : 45 ;
@@ -6377,7 +6407,7 @@ item (FEAT_TRAINS, item_37, 37){
 		introduction_date              : date(1959,12,2) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 50 ;
@@ -6599,7 +6629,7 @@ item (FEAT_TRAINS, item_eetype4, 40){
 		introduction_date              : date(1958,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 27 ;
 		vehicle_life                   : 35 ;
@@ -6843,7 +6873,7 @@ item(FEAT_TRAINS, item_hoover, 50){
 		introduction_date              : date(1968,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 18 ;
 		vehicle_life                   : 50 ;
@@ -7041,7 +7071,7 @@ item(FEAT_TRAINS, item_deltic, 55){
 		introduction_date              : date(1961,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 30 ;
 		vehicle_life                   : 40 ;
@@ -7363,7 +7393,7 @@ item(FEAT_TRAINS, item_brush2, 31){
 		introduction_date              : date(1957,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 35 ;
 		vehicle_life                   : 42 ;
@@ -7555,7 +7585,7 @@ item(FEAT_TRAINS, item_bshpeak, 46){
 		introduction_date              : date(1961,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 25 ;
 		vehicle_life                   : 35 ;
@@ -7914,7 +7944,7 @@ item(FEAT_TRAINS, item_brush4, 47){
 		introduction_date              : date(1962,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 38 ;
 		vehicle_life                   : 45 ;
@@ -8098,7 +8128,7 @@ item(FEAT_TRAINS, item_brush5, 60){
 		introduction_date              : date(1989,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 31 ;
 		vehicle_life                   : 40 ;
@@ -8191,6 +8221,12 @@ spriteset(gfx_hst_emt                , "gfx/DIESEL_LOCO/class_43.png" ){ templat
 spriteset(gfx_hst_emt_rev            , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,225) }
 spriteset(gfx_hst_gner               , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double         (  0,250) }
 spriteset(gfx_hst_gner_rev           , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,250) }
+spriteset(gfx_hst_lner               , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double         (  0,275) }
+spriteset(gfx_hst_lner_rev           , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,275) }
+spriteset(gfx_hst_xc                 , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double         (  0,300) }
+spriteset(gfx_hst_xc_rev             , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,300) }
+spriteset(gfx_hst_networkrail        , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double         (  0,325) }
+spriteset(gfx_hst_networkrail_rev    , "gfx/DIESEL_LOCO/class_43.png" ){ template_Mk2_double_reverse (  0,325) }
 
 spriteset(gfx_hst_brblue_purchase    , "gfx/DIESEL_LOCO/class_43.png" ){ template_purchase (  178,  0) }
 spriteset(gfx_hst_ic125_purchase     , "gfx/DIESEL_LOCO/class_43.png" ){ template_purchase (  178, 25) }
@@ -8232,7 +8268,10 @@ switch(FEAT_TRAINS, SELF, sw_hst_first_barbie_backcheck , position_in_consist){ 
 switch(FEAT_TRAINS, SELF, sw_hst_fgw_backcheck          , position_in_consist){ 0 : gfx_hst_fgw          ; gfx_hst_fgw_rev ;          }
 switch(FEAT_TRAINS, SELF, sw_hst_gwr_backcheck          , position_in_consist){ 0 : gfx_hst_gwr          ; gfx_hst_gwr_rev ;          }
 switch(FEAT_TRAINS, SELF, sw_hst_emt_backcheck          , position_in_consist){ 0 : gfx_hst_emt          ; gfx_hst_emt_rev ;          }
-switch(FEAT_TRAINS, SELF, sw_hst_gner_backcheck          , position_in_consist){ 0 : gfx_hst_gner          ; gfx_hst_gner_rev ;          }
+switch(FEAT_TRAINS, SELF, sw_hst_gner_backcheck         , position_in_consist){ 0 : gfx_hst_gner         ; gfx_hst_gner_rev ;         }
+switch(FEAT_TRAINS, SELF, sw_hst_lner_backcheck         , position_in_consist){ 0 : gfx_hst_lner         ; gfx_hst_lner_rev ;         }
+switch(FEAT_TRAINS, SELF, sw_hst_xc_backcheck           , position_in_consist){ 0 : gfx_hst_xc           ; gfx_hst_xc_rev ;           }
+switch(FEAT_TRAINS, SELF, sw_hst_networkrail_backcheck  , position_in_consist){ 0 : gfx_hst_networkrail  ; gfx_hst_networkrail_rev ;  }
 
 
 //Automatic liveries
@@ -8263,6 +8302,9 @@ switch(FEAT_TRAINS, SELF, sw_hst_gfx_manual, cargo_subtype){
 	8 : sw_hst_fgw_backcheck ;
 	9 : sw_hst_gwr_backcheck ;
 	10: sw_hst_gner_backcheck ;
+	11: sw_hst_lner_backcheck ;
+	12: sw_hst_xc_backcheck ;
+	13: sw_hst_networkrail_backcheck ;
 	sw_hst_virgin_backcheck ;
 }
 
@@ -8321,15 +8363,15 @@ switch(FEAT_TRAINS, SELF, sw_hst_refit_text, cargo_subtype){
 	8 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_EMPTY)) ;
 	9 : string(STR_LIVERY_FIRST_GWR, string(STR_LIVERY_EMPTY)) ;
 	10: string(STR_LIVERY_GNER) ;
-	11: string(STR_LIVERY_NXEC) ;
-	12: string(STR_LIVERY_ESCS) ;
-	13: string(STR_LIVERY_VTEC) ;
-	14: string(STR_LIVERY_LNER) ;
-	15: string(STR_LIVERY_ARRIVA_XC) ;
-	16: string(STR_LIVERY_GC_OG) ;
-	17: string(STR_LIVERY_GC) ;
-	18: string(STR_LIVERY_SCOTRAIL) ;
-	19: string(STR_LIVERY_NETWORK_RAIL) ;
+	11: string(STR_LIVERY_VTEC_LNER) ;
+	12: string(STR_LIVERY_ARRIVA_XC) ;
+	13: string(STR_LIVERY_NETWORK_RAIL) ;
+	// 13: string(STR_LIVERY_GC_OG) ;
+	// 15: string(STR_LIVERY_GC) ;
+	// 16: string(STR_LIVERY_SCOTRAIL) ;
+	// 17: string(STR_LIVERY_NXEC) ;
+	// 18: string(STR_LIVERY_ESCS) ;
+	// 19: string(STR_LIVERY_LNER) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -8389,8 +8431,10 @@ switch(FEAT_TRAINS, SELF, sw_hst_colours_manual, cargo_subtype){
 	7 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;  //First Barbie
 	8 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;    //First Great Western
 	9 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;  //GWR
-	10: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;      //GNER
-	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;             //Virgin
+	10: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;     //GNER
+	12: palette_2cc(COLOUR_PINK, COLOUR_RED) ;          //XC
+	13: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;     //Network Rail
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;             //Virgin (both)
 }
 
 
@@ -8627,7 +8671,7 @@ item(FEAT_TRAINS, item_grid, 56){
 		introduction_date              : date(1976,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 30 ;
 		vehicle_life                   : 30 ;
@@ -9135,7 +9179,7 @@ item(FEAT_TRAINS, item_ge4, 57){
 		introduction_date              : date(1998,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 30 ;
@@ -9310,7 +9354,7 @@ item(FEAT_TRAINS, item_bone, 58){
 		introduction_date              : date(1983,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 25 ;
 		vehicle_life                   : 38 ;
@@ -9475,11 +9519,11 @@ switch(FEAT_TRAINS, SELF, sw_shed_col_2cc_check, colour_scheme_1){
 item(FEAT_TRAINS, item_shed, 66){
 	property{
 		name                           : string(STR_NAME_SHED) ;  
-		climates_available             : ALL_CLIMATES ;
+		climates_available             : NO_CLIMATE ;
 		introduction_date              : date(1998,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 35 ;
@@ -9814,7 +9858,7 @@ item(FEAT_TRAINS, item_ee73, 73){
 		introduction_date              : date(1962,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		model_life                     : 40 ;
 		vehicle_life                   : 50 ;
@@ -10045,7 +10089,7 @@ item(FEAT_TRAINS, item_powerhaul, 70){
 		running_cost_factor            : 255 ;
 		refit_cost                     : 0 ; 
 		refittable_cargo_classes       : 0 ; 
-		cargo_allow_refit              : [GOOD]  ;
+		cargo_allow_refit              : [MAIL,GOOD]  ;
 		cargo_capacity                 : 1 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
@@ -10310,7 +10354,7 @@ item (FEAT_TRAINS, item_uklight, 68){
 		running_cost_factor            : 240 ;
 		refit_cost                     : 0 ; 
 		refittable_cargo_classes       : 0 ; 
-		cargo_allow_refit              : [GOOD]  ;
+		cargo_allow_refit              : [MAIL, GOOD]  ;
 		cargo_capacity                 : 1 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
@@ -10613,7 +10657,7 @@ item (FEAT_TRAINS, item_br87, 87){
 		running_cost_factor            : 250 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		track_type                     : ELRL ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
@@ -10920,7 +10964,7 @@ item (FEAT_TRAINS, item_al6, 86){
 		running_cost_factor            : 235 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		track_type                     : ELRL ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
@@ -11281,7 +11325,7 @@ item(FEAT_TRAINS, item_cl90, 90){
 		running_cost_factor		        : 235 ;
 		refit_cost		                : 0 ;
 		refittable_cargo_classes		: 0 ;
-		cargo_allow_refit		        : [GOOD] ;
+		cargo_allow_refit		        : [MAIL, GOOD] ;
 		cargo_capacity		            : 1 ;
 		track_type		                : ELRL ;
 		engine_class		            : ENGINE_CLASS_ELECTRIC ;
@@ -11620,7 +11664,7 @@ item(FEAT_TRAINS, item_cl91, 91){
 		running_cost_factor		        : 255 ;
 		refit_cost		                : 0 ;
 		refittable_cargo_classes		: 0 ;
-		cargo_allow_refit		        : [GOOD] ;
+		cargo_allow_refit		        : [MAIL, GOOD] ;
 		cargo_capacity		            : 1 ;
 		track_type		                : ELRL ;
 		engine_class		            : ENGINE_CLASS_ELECTRIC ;
@@ -11841,7 +11885,7 @@ item (FEAT_TRAINS, item_abb92, 92){
 		running_cost_factor            : 225 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [GOOD] ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
 		track_type                     : SAAZ ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
@@ -11978,7 +12022,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		running_cost_factor            : 250 ;
 		refit_cost                     : 0 ; 
 		refittable_cargo_classes       : 0 ; 
-		cargo_allow_refit              : [GOOD]  ;
+		cargo_allow_refit              : [MAIL, GOOD]  ;
 		cargo_capacity                 : 1 ;
 		track_type                     : RAIL ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
