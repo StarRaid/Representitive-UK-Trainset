@@ -68,3 +68,6 @@
 #define NARROW_GAUGE_CHECK_CATENARY (current_railtype == railtype("ELNG")) || (current_railtype == railtype("ENLW")) || (current_railtype == railtype("ENHI")) || (current_railtype == railtype("NAAE")) || (current_railtype == railtype("NRAE")) || (current_railtype == railtype("NBAE"))
 
 
+//https://github.com/OpenTTD/nml/commit/df80da311f8d9f3aeb4cecbf9083d986a44e724c
+//https://github.com/OpenTTD/OpenTTD/pull/8554
+
