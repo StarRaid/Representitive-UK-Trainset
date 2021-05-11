@@ -295,8 +295,13 @@ STR_NAME_700				 :Siemens "Desiro City" (Dual Voltage)
 STR_NAME_800				 :Hitachi High Speed "Intercity Express Train" (Dual Mode)
 
 STR_NAME_600				 :London Underground MU Carriage
-STR_NAME_LUL38				 :Metro-Cammel 1938 Stock (4th rail)
+STR_NAME_LUL38				 :Metro-Cammel '38 Stock (4th rail)
+STR_NAME_LUL59				 :Metro-Cammel '59 Stock (4th rail)
+STR_NAME_LUL67				 :Metro-Cammel '67/'72/'73 Stock (4th rail)
+STR_NAME_LUL95				 :GEC-Alsthom '95/'96 Stock (4th rail)
+STR_NAME_LUL09				 :Bombardier '09 Stock (4th rail)
 STR_NAME_LUL_A60			 :Cravens A60 Stock (4th rail)
+STR_NAME_LUL_C69			 :Metro-Cammel C69 Stock (4th rail)
 STR_NAME_LUL78				 :Metro-Cammel D78 Stock (4th rail)
 STR_NAME_LULS				 :Bombardier S Stock (3rd rail)
 
@@ -425,8 +430,16 @@ STR_NAME_700_ALT			:BR Class 700/707/717 (Dual Voltage)
 STR_NAME_800_ALT            :BR Class 800/802 (Dual Mode)
 
 
-STR_NAME_LUL78_ALT			:LU D78 Stock
 
+STR_NAME_LUL38_ALT			 :LU '38 Stock (4th rail)
+STR_NAME_LUL59_ALT			 :LU '59 Stock (4th rail)
+STR_NAME_LUL67_ALT			 :LU '67/'72/'73 Stock (4th rail)
+STR_NAME_LUL95_ALT			 :LU '95/'96 Stock (4th rail)
+STR_NAME_LUL09_ALT			 :LU '09 Stock (4th rail)
+STR_NAME_LUL_A60_ALT		 :LU A60 Stock (4th rail)
+STR_NAME_LUL_C69_ALT		 :LU C69 Stock (4th rail)
+STR_NAME_LUL78_ALT			 :LU D78 Stock (4th rail)
+STR_NAME_LULS_ALT			 :LU S Stock (3rd rail)
 
 STR_ADD_INFO_88				:Power on diesel: {GOLD}746 kW / 1000 hp
 STR_ADD_INFO_PUSHPULL		:Add ONE of these to the end of your train to create a push/pull set (certain locomotives){}{RED}WARNING{BLACK}: Adding more than one of these to a consist may result in odd graphical behaviour and is not recommended.

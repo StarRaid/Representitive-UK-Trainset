@@ -126,7 +126,7 @@ item(FEAT_TRAINS, item_lul_a60, 660){
 		reliability_decay              : 10 ;
 		cost_factor                    : 30 ;
 		running_cost_base              : RUNNING_COST_ELECTRIC ;
-		running_cost_factor            : 19 ;
+		running_cost_factor            : 21 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
@@ -152,8 +152,8 @@ item(FEAT_TRAINS, item_lul_a60, 660){
 		purchase_colour_mapping 		: sw_lul_a60_colours_auto ;
 		cargo_subtype_text      		: sw_lul_a60_refit_text_check ;
 		can_attach_wagon        		: sw_lul_a60_attach ;
-		running_cost_factor    			: return(current_speed == 0 ? 5 : 19) ;
-		purchase_running_cost_factor	: 19 ;
+		running_cost_factor    			: return(current_speed == 0 ? 6 : 21) ;
+		purchase_running_cost_factor	: 21 ;
 	}
 	livery_override (600){
 		default                     : sw_lul_a60_manual_check ;
@@ -163,4 +163,21 @@ item(FEAT_TRAINS, item_lul_a60, 660){
 		weight                      : 21 ;
 		create_effect           	: vfx_3rd_only ;
 	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_lul_a60, 660){
+	property{
+		name                           : string(STR_NAME_LUL_A60_ALT) ;
+	}
+}
+}
+
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_lul_a60, 660){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
 }

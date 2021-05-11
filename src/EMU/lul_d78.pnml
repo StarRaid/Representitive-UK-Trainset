@@ -116,7 +116,7 @@ item(FEAT_TRAINS, item_lul78, 678){
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1978,1,1) ;
-		model_life                     : 30 ;
+		model_life                     : 35 ;
 		vehicle_life                   : 40 ;
 		reliability_decay              : 11 ;
 		cost_factor                    : 27 ;
@@ -132,7 +132,7 @@ item(FEAT_TRAINS, item_lul78, 678){
 		speed                          : 50 mph ;
 		power                          : 400 hp ;
 		//extra_power_per_wagon          : 100 hp ;
-		weight                         : 27 ton ;
+		weight                         : 28 ton ;
 		tractive_effort_coefficient    : 0.24 ;
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
@@ -159,4 +159,22 @@ item(FEAT_TRAINS, item_lul78, 678){
 		create_effect           	: vfx_3rd_only ;
 	}
 }
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_lul78, 678){
+	property{
+		name                           : string(STR_NAME_LUL78_ALT) ;
+	}
+}
+}
+
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_lul78, 678){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
 

@@ -177,3 +177,12 @@ item(FEAT_TRAINS, item_lul38, 638){
 	}
 }
 
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_lul38, 638){
+	property{
+		name                           : string(STR_NAME_LUL38_ALT) ;
+	}
+}
+}
+

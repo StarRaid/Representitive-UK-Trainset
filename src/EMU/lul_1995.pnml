@@ -1,0 +1,103 @@
+//Spritesets
+
+
+spriteset(gfx_lul95_front			, "gfx/EMU/ts1995.png")	{template_7_8(0,	0)}
+spriteset(gfx_lul95_mid				, "gfx/EMU/ts1995.png")	{template_7_4(0,	24)}
+spriteset(gfx_lul95_back			, "gfx/EMU/ts1995.png")	{template_7_8(0,	48)}
+
+spriteset(gfx_lul95_purchase		, "gfx/EMU/ts1995.png")	{template_dualhead_purchase(82, 24)}
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_lul95_front_check	, position_in_consist)	{ 0 : gfx_lul95_front ; gfx_lul95_back ; }
+switch(FEAT_TRAINS, SELF, sw_lul95_id_check		, vehicle_type_id)		{ 600 : gfx_lul95_mid ; sw_lul95_front_check ; }
+
+
+
+
+//Colours
+
+
+switch(FEAT_TRAINS, SELF, sw_lul95_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_1cc(company_colour1) ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_lul95_attach, vehicle_type_id){
+	20	: return CB_RESULT_ATTACH_ALLOW ;
+	37	: return CB_RESULT_ATTACH_ALLOW ;
+	600	: return CB_RESULT_ATTACH_ALLOW ;
+	695	: return CB_RESULT_ATTACH_ALLOW ;
+    return string(STR_LUL_NO_COUPLE);
+}
+
+
+
+
+//Item
+
+
+item(FEAT_TRAINS, item_lul95, 695){
+	property{
+		name                           : string(STR_NAME_LUL95) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 7 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1995,1,1) ;
+		model_life                     : 30 ;
+		vehicle_life                   : 40 ;
+		reliability_decay              : 13 ;
+		cost_factor                    : 32 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 12 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 95 ;
+		loading_speed                  : 34 ;
+		track_type                     : SAA4 ;
+		engine_class                   : ENGINE_CLASS_ELECTRIC ;
+		speed                          : 62 mph ;
+		power                          : 350 hp ;
+		extra_power_per_wagon          : 100 hp ;
+		weight                         : 27 ton ;
+		tractive_effort_coefficient    : 0.25 ;
+		air_drag_coefficient           : 0.1 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 1 ;
+	}
+	graphics{
+		default                 		: sw_lul95_id_check ;
+		purchase                		: gfx_lul95_purchase ;
+		sound_effect            		: sw_sfx_tube_modern ;
+		create_effect           		: vfx_3rd_only ;
+		colour_mapping          		: sw_lul95_colours_2cc_check ;
+		can_attach_wagon        		: sw_lul95_attach ;
+		running_cost_factor    			: return(current_speed == 0 ? 5 : 12) ;
+		purchase_running_cost_factor	: 12 ;
+	}
+	livery_override (600){
+		default                     : sw_lul95_id_check ;
+		colour_mapping              : sw_lul95_colours_2cc_check ;
+		cargo_capacity              : 95 ;
+		weight                      : 20 ;
+		create_effect           	: vfx_3rd_only ;
+		length						: 7 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_lul95, 695){
+	property{
+		name                           : string(STR_NAME_LUL95_ALT) ;
+	}
+}
+}
+
+
+

@@ -1,14 +1,8 @@
 spriteset(gfx_lulcoach_grey_mid			, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0, 25)}
-spriteset(gfx_lulcoach_lulred_mid		, "gfx/EMU/lul_d78.png")	{template_8_4_networker(0, 75)}
 spriteset(gfx_lulcoach_purchase_grey	, "gfx/EMU/lul_d78.png")	{template_purchase(90, 25)}
 spriteset(gfx_lulcoach_purchase_lulred	, "gfx/EMU/lul_d78.png")	{template_purchase(90, 75)}
 
 
-
-switch(FEAT_TRAINS, SELF, sw_lulcoach_livery_decider, current_year){
-	0..1992 : gfx_lulcoach_grey_mid ;
-	gfx_lulcoach_lulred_mid ;
-}
 
 switch(FEAT_TRAINS, SELF, sw_lulcoach_purchase_sprite, current_year){
 	0..1992 : gfx_lulcoach_purchase_grey ;
@@ -22,17 +16,6 @@ switch(FEAT_TRAINS, PARENT, sw_lulcoach_attach, vehicle_type_id){
     return string(STR_LUL_NO_COUPLE);
 }
 
-
-switch(FEAT_TRAINS, SELF, sw_lulcoach_refit_text, cargo_subtype){
-	0 : string(STR_LIVERY_LUL_GREY) ;
-	1 : string(STR_LIVERY_LUL_CORP) ;
-	CB_RESULT_NO_TEXT ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_lulcoach_refit_text_check, livery_choice){
-	1 : sw_lulcoach_refit_text ;
-	CB_RESULT_NO_TEXT ;
-}
 
 item (FEAT_TRAINS, item_lulcoach, 600) {
 	property {
@@ -67,10 +50,10 @@ item (FEAT_TRAINS, item_lulcoach, 600) {
 		cargo_age_period:				115;
 	}
 	graphics {
-		default: 							sw_lulcoach_livery_decider;
+		default: 							gfx_lulcoach_grey_mid;
 		purchase:							sw_lulcoach_purchase_sprite;
 		can_attach_wagon:					sw_lulcoach_attach;
-		cargo_subtype_text:					sw_lulcoach_refit_text_check ;
+		colour_mapping:						palette_1cc(COLOUR_DARK_BLUE);
 	}
 }
 

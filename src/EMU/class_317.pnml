@@ -308,12 +308,12 @@ switch(FEAT_TRAINS, SELF, sw_317_headlights, position_in_consist_from_end){
 sw_317_headlights_1;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_317_pan_f, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY){
+switch(FEAT_TRAINS, PARENT, sw_317_pan_f, STANDARD_GAUGE_CHECK_OHLE_ONLY){
 1: spriteset_375_pan_up;
 spriteset_375_pan_down;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_317_pan_r, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY){
+switch(FEAT_TRAINS, PARENT, sw_317_pan_r, STANDARD_GAUGE_CHECK_OHLE_ONLY){
 1: spriteset_375_pan_up_r;
 spriteset_375_pan_down_r;
 }

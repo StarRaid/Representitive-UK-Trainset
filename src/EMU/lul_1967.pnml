@@ -1,0 +1,174 @@
+//Spritesets
+
+
+spriteset(gfx_lul67_lul_mid			, "gfx/EMU/ts1973.png")	{template_7_4(164,	0)}
+spriteset(gfx_lul67_lul				, "gfx/EMU/ts1973.png")	{template_7_8(164,	24)}
+spriteset(gfx_lul67_grey_mid		, "gfx/EMU/ts1973.png")	{template_7_4(164,	48)}
+spriteset(gfx_lul67_grey			, "gfx/EMU/ts1973.png")	{template_7_8(164,	72)}
+
+spriteset(gfx_lul73_lul_mid			, "gfx/EMU/ts1973.png")	{template_7_4(0,	0)}
+spriteset(gfx_lul73_lul				, "gfx/EMU/ts1973.png")	{template_7_8(0,	24)}
+spriteset(gfx_lul73_grey_mid		, "gfx/EMU/ts1973.png")	{template_7_4(0,	48)}
+spriteset(gfx_lul73_grey			, "gfx/EMU/ts1973.png")	{template_7_8(0,	72)}
+
+spriteset(gfx_lul67_light_front		, "gfx/EMU/ts1973.png")	{template_7_8(328,	0)}
+spriteset(gfx_lul67_light_back		, "gfx/EMU/ts1973.png")	{template_7_8(328,	24)}
+
+spriteset(gfx_lul67_purchase_lul	, "gfx/EMU/ts1973.png"){template_dualhead_purchase(82,	48)}
+spriteset(gfx_lul67_purchase_grey	, "gfx/EMU/ts1973.png"){template_dualhead_purchase(246,	48)}
+
+
+//Graphics switches
+
+switch(FEAT_TRAINS, SELF, sw_lul67_lul_id_check	, vehicle_type_id) { 600 : gfx_lul67_lul_mid ; gfx_lul67_lul ; }
+switch(FEAT_TRAINS, SELF, sw_lul67_grey_id_check, vehicle_type_id) { 600 : gfx_lul67_grey_mid ; gfx_lul67_grey ; }
+
+switch(FEAT_TRAINS, SELF, sw_lul73_lul_id_check	, vehicle_type_id) { 600 : gfx_lul73_lul_mid ; gfx_lul73_lul ; }
+switch(FEAT_TRAINS, SELF, sw_lul73_grey_id_check, vehicle_type_id) { 600 : gfx_lul73_grey_mid ; gfx_lul73_grey ; }
+
+
+//Automatic
+
+switch(FEAT_TRAINS, SELF, sw_lul67_gfx_auto, current_year){
+	0..1997 : sw_lul67_grey_id_check ;
+	sw_lul67_lul_id_check ;
+}
+
+
+//Manual
+
+switch(FEAT_TRAINS, SELF, sw_lul67_gfx_manual, cargo_subtype){
+	0 : sw_lul67_grey_id_check ;
+	1 : sw_lul67_lul_id_check ;
+	2 : sw_lul73_grey_id_check ;
+	sw_lul73_lul_id_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lul67_gfx_manual_check, livery_choice){
+	1 : sw_lul67_gfx_manual ;
+	sw_lul67_gfx_auto ;
+}
+
+
+//Sprite stacking
+
+switch(FEAT_TRAINS, SELF, sw_lul67_lights_check_back, position_in_consist_from_end){ 0 : gfx_lul67_light_back ; }
+switch(FEAT_TRAINS, SELF, sw_lul67_lights_check_front, position_in_consist){ 0 : gfx_lul67_light_front ; sw_lul67_lights_check_back ; }
+
+switch(FEAT_TRAINS, SELF, sw_lul67_gfx_spr_stack, SPR_STACK){
+	0 : sw_lul67_gfx_manual_check ;
+	1 : sw_lul67_lights_check_front ;
+}
+
+
+//Purchase sprites
+
+
+switch(FEAT_TRAINS, SELF, sw_lul67_purchase_gfx, current_year){
+	0..1997 : gfx_lul67_purchase_grey ;
+	gfx_lul67_purchase_lul ;
+}
+
+
+
+//Colours
+
+
+switch(FEAT_TRAINS, SELF, sw_lul67_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_1cc(company_colour1) ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_lul67_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_LUL_GREY) ;
+	1 : string(STR_LIVERY_LUL_CORP) ;
+	2 : string(STR_LIVERY_LUL_73) ;
+	3 : string(STR_LIVERY_LUL_73_CORP) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lul67_refit_text_check, livery_choice){
+	1 : sw_lul67_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_lul67_attach, vehicle_type_id){
+	20	: return CB_RESULT_ATTACH_ALLOW ;
+	37	: return CB_RESULT_ATTACH_ALLOW ;
+	600	: return CB_RESULT_ATTACH_ALLOW ;
+	667	: return CB_RESULT_ATTACH_ALLOW ;
+    return string(STR_LUL_NO_COUPLE);
+}
+
+
+
+
+//Item
+
+
+item(FEAT_TRAINS, item_lul67, 667){
+	property{
+		name                           : string(STR_NAME_LUL67) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 7 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1967,1,1) ;
+		model_life                     : 35 ;
+		vehicle_life                   : 40 ;
+		reliability_decay              : 11 ;
+		cost_factor                    : 26 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 15 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 90 ;
+		loading_speed                  : 30 ;
+		track_type                     : SAA4 ;
+		engine_class                   : ENGINE_CLASS_ELECTRIC ;
+		speed                          : 45 mph ;
+		power                          : 300 hp ;
+		//extra_power_per_wagon          : 100 hp ;
+		weight                         : 27 ton ;
+		tractive_effort_coefficient    : 0.22 ;
+		air_drag_coefficient           : 0.1 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 1 ;
+	}
+	graphics{
+		default                 		: sw_lul67_gfx_spr_stack ;
+		purchase                		: sw_lul67_purchase_gfx ;
+		sound_effect            		: sw_sfx_tube_gec ;
+		create_effect           		: vfx_3rd_only ;
+		colour_mapping          		: sw_lul67_colours_2cc_check ;
+		cargo_subtype_text      		: sw_lul67_refit_text_check ;
+		can_attach_wagon        		: sw_lul67_attach ;
+		running_cost_factor    			: return(current_speed == 0 ? 4 : 15) ;
+		purchase_running_cost_factor	: 15 ;
+	}
+	livery_override (600){
+		default                     : sw_lul67_gfx_manual_check ;
+		colour_mapping              : sw_lul67_colours_2cc_check ;
+		cargo_capacity              : 90 ;
+		cargo_subtype_text          : sw_lul67_refit_text_check ;
+		weight                      : 20 ;
+		create_effect           	: vfx_3rd_only ;
+		length						: 7 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_lul67, 667){
+	property{
+		name                           : string(STR_NAME_LUL67_ALT) ;
+	}
+}
+}
+

@@ -105,3 +105,21 @@ item(FEAT_TRAINS, item_lulS, 612){
 	}
 }
 
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_lulS, 612){
+	property{
+		name                           : string(STR_NAME_LULS_ALT) ;
+	}
+}
+}
+
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_lulS, 612){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
