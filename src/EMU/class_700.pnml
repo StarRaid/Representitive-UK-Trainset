@@ -103,13 +103,13 @@ switch(FEAT_TRAINS, SELF, sw_700_headlights, position_in_consist_from_end){
 sw_700_headlights_1;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_700_pan_f, current_railtype){
-ELRL: spriteset_700_pan_up;
+switch(FEAT_TRAINS, PARENT, sw_700_pan_f, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY){
+1: spriteset_700_pan_up;
 spriteset_700_pan_down;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_700_pan_r, current_railtype){
-ELRL: spriteset_700_pan_up_r;
+switch(FEAT_TRAINS, PARENT, sw_700_pan_r, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY){
+1: spriteset_700_pan_up_r;
 spriteset_700_pan_down_r;
 }
 

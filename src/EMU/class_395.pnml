@@ -30,8 +30,8 @@ spriteset(spriteset_395_lights_r, "gfx/FIXTURES/hitachi_hs_fixtures.png") {templ
 spriteset(spriteset_iet_lights_f, "gfx/FIXTURES/hitachi_hs_fixtures.png") {template_8_8_networker(0, 100)}
 spriteset(spriteset_iet_lights_r, "gfx/FIXTURES/hitachi_hs_fixtures.png") {template_8_8_networker(0, 125)}
 
-switch(FEAT_TRAINS, PARENT, sw_hitachi_pan, current_railtype){
-ELRL: spriteset_hitachi_pan_up;
+switch(FEAT_TRAINS, PARENT, sw_hitachi_pan, STANDARD_GAUGE_RAILTYPE_OHLE_ONLY){
+1: spriteset_hitachi_pan_up;
 spriteset_hitachi_pan_down;
 }
 
