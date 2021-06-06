@@ -43,6 +43,9 @@ STR_PARAM_VEH_SELEC_CHOICE_TWO   		 :Limited
 STR_PARAM_VEH_SELEC_CHOICE_THREE 		 :Normal
 STR_PARAM_VEH_SELEC_CHOICE_FOUR  		 :Extended
 
+
+STR_BLUE_SQUARE					 		 :{BLUE}Blue Square Coupling Compatibility
+
 STR_LIVERY_BRGREEN               		 : British Railways {GOLD}(Green)
 STR_LIVERY_BRGREEN_YELLOW        		 : British Railways {GOLD}(Green with Yellow Panel)
 STR_LIVERY_BRELECTRIC            		 : British Railways {GOLD}(Electric Blue)
@@ -325,8 +328,8 @@ STR_COLOUR_RED      :{RED}Red
 STR_COLOUR_GREEN    :{GREEN}Green
 STR_COLOUR_GREY     :Grey
 STR_DBSO_NO_COUPLE: You may only couple a DBSO/DVT at the back of another passenger locomotive from the "RUKTS" GRF!
-STR_DMMU_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage", Metro-Cammell Regional DMU, BR (Derby) Suburban DMU, Pressed Steel Co./GRC&W "Bubble Car" or BR (Swindon) Intercity DMU!
-STR_DMMU_MAIL_NO_COUPLE: You may only couple this train to a "General Utility Van", BR (Derby) Suburban DMU or Pressed Steel Co./GRC&W "Bubble Car"!
+STR_DMMU_NO_COUPLE: You may only couple this train to a Blue Square Coupling Compatible DMU or a "Mark 1 Carriage"!
+STR_DMMU_MAIL_NO_COUPLE: You may only couple this train to a mail carrying Blue Square Coupling Compatible DMU or a "General Utility Van"!
 STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another "Leyland "Pacer"!
 STR_165_NO_COUPLE: You may only couple this train to a "Modern MU car" or another ABB "Networker Turbo"!
 STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
