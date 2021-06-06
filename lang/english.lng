@@ -52,6 +52,7 @@ STR_LIVERY_BRBLUE_SPT			 		 : British Railways Strathclyde Partnership for Trans
 STR_LIVERY_BRBLUE_LOGO           		 : British Railways Large Logo {GOLD}(Blue)
 STR_LIVERY_BRRAILFREIGHT_LOGO    		 : British Railways Large Logo {GOLD}(Railfreight Grey)
 STR_LIVERY_BRBLUE_SUBTYPE		 		 : British Railways Blue {STRING}
+STR_LIVERY_BRBLUE_REFURB_DMU	 		 : British Railways Blue {GOLD}(Refurbished White & Blue)
 STR_LIVERY_HITACHI						 : Hitachi
 STR_LIVERY_INTERCITY			 		 : Intercity
 STR_LIVERY_INTERCITY_SLEEPER			 : Intercity {BLACK}(Sleeper)
@@ -257,6 +258,10 @@ STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
 STR_NAME_EURODUAL            :Stadler Euro Dual (Dual Mode)
 STR_NAME_EE73				 :English Electric "JB" (Dual Mode)
 
+STR_NAME_101				 :Metro-Cammell Regional DMU (Diesel)
+STR_NAME_115				 :BR (Derby) Suburban DMU (Diesel)
+STR_NAME_121				 :Pressed Steel Co./GRC&W "Bubble Car" (Diesel)
+STR_NAME_123				 :BR (Swindon) Intercity DMU (Diesel)
 STR_NAME_142				 :Leyland "Pacer" (Diesel)
 STR_NAME_205				 :BR Southern DEMU "Thumper" (Diesel Electric)
 STR_NAME_150_1				 :BREL Sprinter /0 & /1 (Diesel)
@@ -320,7 +325,9 @@ STR_COLOUR_RED      :{RED}Red
 STR_COLOUR_GREEN    :{GREEN}Green
 STR_COLOUR_GREY     :Grey
 STR_DBSO_NO_COUPLE: You may only couple a DBSO/DVT at the back of another passenger locomotive from the "RUKTS" GRF!
-STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another Leyland "Pacer"!
+STR_DMMU_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage", Metro-Cammell Regional DMU, BR (Derby) Suburban DMU, Pressed Steel Co./GRC&W "Bubble Car" or BR (Swindon) Intercity DMU!
+STR_DMMU_MAIL_NO_COUPLE: You may only couple this train to a "General Utility Van", BR (Derby) Suburban DMU or Pressed Steel Co./GRC&W "Bubble Car"!
+STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another "Leyland "Pacer"!
 STR_165_NO_COUPLE: You may only couple this train to a "Modern MU car" or another ABB "Networker Turbo"!
 STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
 STR_150_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Sprinter!
@@ -392,6 +399,10 @@ STR_NAME_UKLIGHT_ALT		:BR Class 68 (Diesel Electric)
 STR_NAME_EURODUAL_ALT 		:BR Class 88 (Dual Mode)
 STR_NAME_EE73_ALT			:BR Class 73 (Dual Mode)
 
+STR_NAME_101_ALT				:BR Class 101 (Diesel)
+STR_NAME_115_ALT				:BR Class 115 (Diesel)
+STR_NAME_121_ALT				:BR Class 121/128 (Diesel)
+STR_NAME_123_ALT				:BR Class 123 (Diesel)
 STR_NAME_142_ALT				:BR Class 142/143/144 (Diesel)
 STR_NAME_205_ALT				:BR Class 205/207 (Diesel Electric)
 STR_NAME_150_1_ALT				:BR Class 150/0 & 150/1 (Diesel)
