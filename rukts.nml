@@ -13453,7 +13453,7 @@ item (FEAT_TRAINS, item_101, 101) {
 		cargo_subtype_text:					sw_101_refit_text_auto_decider ;
 		colour_mapping:						sw_101_recolour_decider ;
 		purchase_colour_mapping:			sw_101_auto_recolour ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		sound_effect:						sw_sfx_dmu_one_full ;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 30) ;
 		purchase_running_cost_factor : 30;
 		additional_text:					return string(STR_BLUE_SQUARE);
@@ -13698,7 +13698,7 @@ item (FEAT_TRAINS, item_115, 115) {
 		cargo_subtype_text:					sw_115_refit_text_auto_decider ;
 		colour_mapping:						sw_115_recolour_decider ;
 		purchase_colour_mapping:			sw_115_auto_recolour ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		sound_effect:						sw_sfx_dmu_one_full ;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 33) ;
 		purchase_running_cost_factor : 30;
 		additional_text:					return string(STR_BLUE_SQUARE);
@@ -13940,7 +13940,7 @@ item (FEAT_TRAINS, item_121, 121) {
 		cargo_subtype_text:					sw_121_refit_text_auto_decider ;
 		colour_mapping:						sw_121_recolour_decider ;
 		purchase_colour_mapping:			sw_pass_121_auto_recolour ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		sound_effect:						sw_sfx_dmu_one_full ;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 33) ;
 		purchase_running_cost_factor : 33;
 		additional_text:					return string(STR_BLUE_SQUARE);
@@ -14096,7 +14096,7 @@ item (FEAT_TRAINS, item_123, 123) {
 		cargo_subtype_text:					sw_123_refit_text_auto_decider ;
 		colour_mapping:						sw_123_recolour_decider ;
 		purchase_colour_mapping:			sw_123_auto_recolour ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		sound_effect:						sw_sfx_dmu_one_full ;
 		running_cost_factor:				return(current_speed == 0 ? 7 : 35) ;
 		purchase_running_cost_factor : 35;
 		additional_text:					return string(STR_BLUE_SQUARE);
