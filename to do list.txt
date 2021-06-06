@@ -1,6 +1,6 @@
 To do:
 	! Code Juniper
-	- Class 66 (s h e d)
+	/ Class 66 (s h e d)
 	- Class 03/04
 	! Class 08/09
 	G Class 390
@@ -9,7 +9,7 @@ To do:
 	! Fix rail type issues
 	G First Gen DMUs
 	G Redo pacer (include 143s/144s, and Welsh 142 liveries)
-	- Convert DBSO/DVT functionality so that they can have independent liveries
+	- Convert DBSO/DVT functionality so that they can have independent liveries  (honestly fuck this)
 	! Fix the colouring on a whole bunch of purchase sprites
 		! Class 319 connex
 		! Class 317 BR Blue
@@ -18,15 +18,15 @@ To do:
 		! SE/GWR class 375/387
 	/ Tube stock:
 		! A stock
-		- C stock
+		! C stock
 		! D stock
 		! S stock
 		! 38 stock
-		/ 59 stock
-		- 67/72/73 stock
+		! 59 stock
+		! 67/72/73 stock
 		- 92 stock
-		- 95 stock
-		- 09 stock
+		! 95 stock
+		! 09 stock
 	
 Optional:
 	- Add parameter for reversal functionality on supported MUs
@@ -46,6 +46,7 @@ GRF extension ideas:
 		/ Depending on speed limit, use different signal types (e.g. lower speed yard tracks use junction signals)
 		- Source/draw depot sprites
 		/ Level crossings
+		- Bridge sprites
 		- Tunnel sprites
 	- Stations:
 		- Depots (e.g. Long Rock, the big shed at Victoria)
