@@ -1206,7 +1206,7 @@ item (FEAT_TRAINS, item_313, 313) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAAZ;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							880 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -1280,7 +1280,7 @@ item (FEAT_TRAINS, item_314, 314) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						ELRL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							880 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;

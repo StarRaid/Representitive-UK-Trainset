@@ -279,6 +279,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		dual_headed                    : 1 ;
 		loading_speed                  : 23 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		can_attach_wagon:		sw_168_coupling_restrictions;

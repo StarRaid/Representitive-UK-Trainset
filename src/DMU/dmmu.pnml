@@ -943,7 +943,7 @@ item (FEAT_TRAINS, item_123, 123) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		power:							460 hp;
 		running_cost_base:				RUNNING_COST_DIESEL;
 		dual_headed:					1;

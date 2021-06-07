@@ -303,6 +303,7 @@ item(FEAT_TRAINS, item_sprinter, 150){
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 	}
 	graphics{
 		default                 		: sw_150_2_spr_stack ;
@@ -369,6 +370,7 @@ item(FEAT_TRAINS, item_sprinter_1, 151){
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 	}
 	graphics{
 		default                 		: sw_150_1_spr_stack ;

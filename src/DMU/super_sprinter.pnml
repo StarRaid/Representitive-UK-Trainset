@@ -215,6 +215,7 @@ item(FEAT_TRAINS, item_supsprint, 155){
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_cl156_gfx_sprite_stack ;

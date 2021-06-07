@@ -1,3 +1,5 @@
+//DEPRECIATED TRAIN MAINTAINED FOR BACKWARDS COMPATIBILITY, CURRENT NETWORKERS ARE IN /DMU/CLASS_165.PNML
+
 spriteset(spriteset_x65_nse_t, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(0, 0)}
 
 spriteset(spriteset_x65_nse_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(0, 25)}

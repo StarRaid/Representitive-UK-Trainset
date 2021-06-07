@@ -153,6 +153,7 @@ item(FEAT_TRAINS, item_lul38, 638){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lul38_gfx_spr_stack ;

@@ -336,6 +336,7 @@ item(FEAT_TRAINS, item_dogbox, 153){
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 0 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_153_spr_stack ;
