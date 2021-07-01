@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 59 ;
+	version: 60 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -14073,7 +14073,7 @@ item (FEAT_TRAINS, item_123, 123) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		power:							460 hp;
 		running_cost_base:				RUNNING_COST_DIESEL;
 		dual_headed:					1;
@@ -14106,6 +14106,7 @@ item (FEAT_TRAINS, item_123, 123) {
 		default: sw_123_default_t;
 		colour_mapping:	sw_123_recolour_decider;
 		cargo_subtype_text: sw_123_refit_text_auto_decider ;
+		power:				172; //Note unit of kW
 }
 }
 
@@ -14378,7 +14379,7 @@ item (FEAT_TRAINS, item_142, 142) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							336 kW;
 		running_cost_base:				RUNNING_COST_DIESEL;
 		dual_headed:					1;
@@ -14740,6 +14741,7 @@ item(FEAT_TRAINS, item_sprinter, 150){
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 	}
 	graphics{
 		default                 		: sw_150_2_spr_stack ;
@@ -14806,6 +14808,7 @@ item(FEAT_TRAINS, item_sprinter_1, 151){
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 	}
 	graphics{
 		default                 		: sw_150_1_spr_stack ;
@@ -15189,6 +15192,7 @@ item(FEAT_TRAINS, item_dogbox, 153){
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 0 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_153_spr_stack ;
@@ -15441,6 +15445,7 @@ item(FEAT_TRAINS, item_supsprint, 155){
 		air_drag_coefficient           : 0.107 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_cl156_gfx_sprite_stack ;
@@ -16078,6 +16083,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		dual_headed                    : 1 ;
 		loading_speed                  : 23 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		can_attach_wagon:		sw_168_coupling_restrictions;
@@ -16228,7 +16234,7 @@ item (FEAT_TRAINS, item_195, 195) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1046 hp;
 		running_cost_base:				RUNNING_COST_DIESEL;
 		dual_headed:					1;
@@ -17082,7 +17088,7 @@ item (FEAT_TRAINS, item_307, 307) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						ELRL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		power:							696 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -17458,7 +17464,7 @@ item (FEAT_TRAINS, item_309, 309) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						ELRL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		power:							1100 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -18721,7 +18727,7 @@ item (FEAT_TRAINS, item_313, 313) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAAZ;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							880 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -18795,7 +18801,7 @@ item (FEAT_TRAINS, item_314, 314) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						ELRL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							880 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -19314,7 +19320,7 @@ item (FEAT_TRAINS, item_317, 317) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						ELRL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1450 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -19848,7 +19854,7 @@ item (FEAT_TRAINS, item_319, 319) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAAZ;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1438 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -20349,7 +20355,7 @@ item (FEAT_TRAINS, item_321, 321) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						ELRL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		power:							1072 kW;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -20570,7 +20576,7 @@ item (FEAT_TRAINS, item_331, 331) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						ELRL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							2360 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -20624,6 +20630,8 @@ item (FEAT_TRAINS, item_331, 331){
 }
 # 1 "rukts.pnml" 2
 # 1 "src/EMU/class_325.pnml" 1
+//DEPRECIATED TRAIN MAINTAINED FOR BACKWARDS COMPATIBILITY, CURRENT NETWORKERS ARE IN /DMU/CLASS_165.PNML
+
 spriteset(spriteset_x65_nse_t, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(0, 0)}
 
 spriteset(spriteset_x65_nse_p, "gfx/UNUSED & MIXED/networkers.png") {template_8_8_networker(0, 25)}
@@ -21380,7 +21388,7 @@ item (FEAT_TRAINS, item_334, 334) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAAE;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1448 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -21608,7 +21616,7 @@ item (FEAT_TRAINS, item_458, 458) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAA3;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1438 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -22009,7 +22017,7 @@ item (FEAT_TRAINS, item_411, 411) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAA3;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1000 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -22319,7 +22327,7 @@ item (FEAT_TRAINS, item_415, 415) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAA3;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							500 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -22516,7 +22524,7 @@ item (FEAT_TRAINS, item_442, 442) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAA3;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1608 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -22708,7 +22716,7 @@ item (FEAT_TRAINS, item_444, 444) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAA3;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							2000 kW;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -23108,7 +23116,7 @@ item (FEAT_TRAINS, item_350, 350) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						ELRL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							2000 kW;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -23492,7 +23500,7 @@ item (FEAT_TRAINS, item_375, 375) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAAZ;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							950 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -23831,7 +23839,7 @@ item (FEAT_TRAINS, item_455, 455) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAA3;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1000 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -24104,7 +24112,7 @@ item (FEAT_TRAINS, item_700, 700) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAAZ;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							4425 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -24305,6 +24313,7 @@ item(FEAT_TRAINS, item_lul38, 638){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lul38_gfx_spr_stack ;
@@ -24449,6 +24458,7 @@ item(FEAT_TRAINS, item_lul59, 659){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lul59_gfx_spr_stack ;
@@ -24625,6 +24635,7 @@ item(FEAT_TRAINS, item_lul67, 667){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lul67_gfx_spr_stack ;
@@ -24730,6 +24741,7 @@ item(FEAT_TRAINS, item_lul95, 695){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lul95_id_check ;
@@ -24832,6 +24844,7 @@ item(FEAT_TRAINS, item_lul09, 609){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lul09_id_check ;
@@ -25008,6 +25021,7 @@ item(FEAT_TRAINS, item_lul_a60, 660){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lul_a60_spr_stack ;
@@ -25188,6 +25202,7 @@ item(FEAT_TRAINS, item_lul_c69, 669){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lul_c69_spr_stack ;
@@ -25370,6 +25385,7 @@ item(FEAT_TRAINS, item_lul78, 678){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lul78_spr_stack ;
@@ -25497,6 +25513,7 @@ item(FEAT_TRAINS, item_lulS, 612){
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 	}
 	graphics{
 		default                 		: sw_lulS_id_check ;
@@ -26504,7 +26521,7 @@ item (FEAT_TRAINS, item_365, 365) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						ELRL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		power:							1680 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -26576,7 +26593,7 @@ item (FEAT_TRAINS, item_465, 465) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAA3;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		power:							3000 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -26958,7 +26975,7 @@ item (FEAT_TRAINS, item_395, 395) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAAZ;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1120 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;
@@ -27188,7 +27205,7 @@ item (FEAT_TRAINS, item_800, 800) {
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1400 kW;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
 		dual_headed:					1;

@@ -976,6 +976,7 @@ item (FEAT_TRAINS, item_123, 123) {
 		default: sw_123_default_t;
 		colour_mapping:	sw_123_recolour_decider;
 		cargo_subtype_text: sw_123_refit_text_auto_decider ;
+		power:				172; //Note unit of kW
 }
 }
 
