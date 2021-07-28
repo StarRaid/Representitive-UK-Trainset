@@ -166,7 +166,7 @@ item(FEAT_RAILTYPES, rail_ballast) {
 }
 
 
-
+/*
 item(FEAT_RAILTYPES, rail_ballast2) {
 	property {
 		label						: "BLS2" ;
@@ -235,4 +235,6 @@ item(FEAT_RAILTYPES, rail_ballast3) {
 
 
 
+
+*/
 

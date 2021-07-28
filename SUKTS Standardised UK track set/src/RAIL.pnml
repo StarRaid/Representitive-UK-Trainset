@@ -1,12 +1,45 @@
 
 
 
-spriteset(gfx_overlays_RAIL,		"gfx/RAIL/Overlay_RAIL.png")		{	template_overlay_auz()		}
-spriteset(gfx_underlays_RAIL,		"gfx/RAIL/Underlay_RAIL.png")		{	template_underlay_auz()		}
-spriteset(gfx_underlays_RAIL_wide,	"gfx/RAIL/Underlay_RAIL_wide.png")	{	template_underlay_auz()		}
-spriteset(gfx_tunnel_tracks_RAIL,	"gfx/RAIL/TunnelTrack_RAIL.png")	{	template_tunneltracks()		}
-spriteset(gfx_bridge_tracks_RAIL,	"gfx/RAIL/BridgeTrack_RAIL.png")	{	template_bridgetracks()		}
+spriteset(gfx_overlays_RAIL,			"gfx/RAIL/Overlay_RAIL.png")		{	template_overlay_auz()				}
+spriteset(gfx_underlays_RAIL,			"gfx/RAIL/Underlay_RAIL.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlays_RAIL_wide,		"gfx/RAIL/Underlay_RAIL_wide.png")	{	template_underlay_auz()				}
+spriteset(gfx_tunnel_tracks_RAIL,		"gfx/RAIL/TunnelTrack_RAIL.png")	{	template_tunneltracks()				}
+spriteset(gfx_bridge_tracks_RAIL,		"gfx/RAIL/BridgeTrack_RAIL.png")	{	template_bridgetracks()				}
 
+
+spriteset(gfx_fences_RAIL,		"gfx/RAIL/Fences_RAIL.png")			{	template_fences()					}
+spriteset(gfx_depot_RAIL,		"gfx/RAIL/Depot_RAIL.png")			{	template_depot()					}
+
+
+spriteset(gfx_level_crossing_RAIL_empty,	"gfx/RAIL/LevelCrossing_RAIL.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_RAIL_closed,	"gfx/RAIL/LevelCrossing_RAIL.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_RAIL_open,		"gfx/RAIL/LevelCrossing_RAIL.png")	{template_levcrossopen()				}
+
+spriteset(gfx_level_crossing_RAIL_empty_modern,		"gfx/RAIL/LevelCrossingModern_RAIL.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_RAIL_closed_modern,	"gfx/RAIL/LevelCrossingModern_RAIL.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_RAIL_open_modern,		"gfx/RAIL/LevelCrossingModern_RAIL.png")	{template_levcrossopen()				}
+
+
+// Level crossing switches
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_RAIL_closed, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_RAIL_closed ;
+	gfx_level_crossing_RAIL_closed_modern;
+}
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_RAIL_open, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_RAIL_open ;
+	gfx_level_crossing_RAIL_open_modern;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_lc_RAIL_state, level_crossing_status){
+	LEVEL_CROSSING_CLOSED : sw_lc_RAIL_closed ;
+	sw_lc_RAIL_open ;
+}
+
+
+// Wide ballast?
 
 switch(FEAT_RAILTYPES, SELF, sw_underlay_RAIL, wide_ballast) {
  1: gfx_underlays_RAIL_wide;
@@ -15,6 +48,7 @@ switch(FEAT_RAILTYPES, SELF, sw_underlay_RAIL, wide_ballast) {
 
 
 
+// Item
 
 item(FEAT_RAILTYPES, rail_RAIL) {
 	property {
@@ -41,10 +75,10 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		underlay			: sw_underlay_RAIL ;
 		bridge_surfaces		: gfx_bridge_tracks_RAIL ;
 		tunnels				: gfx_tunnel_tracks_RAIL ;
-		level_crossings		: gfx_blank ;
-		//depots          : 
-		//fences          : 
-		signals				: sw_signals;
+		level_crossings		: sw_lc_RAIL_state ;
+		depots				: gfx_depot_RAIL ;
+		fences				: gfx_fences_RAIL ;
+		signals				: sw_signals ;
 	}
 }
 

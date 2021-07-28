@@ -304,6 +304,35 @@ template tmpl_level_crossing_railtypes_empty() {
  [ 66,1, 64,31, -31, 0]
 }
 
+//Level Crossings (Closed)
+template template_levcrossclosed() {
+	//left_x, upper_y, width, height, offset_x, offset_y
+	[  1,     1,       64,    31,       -31,          0]
+	[ 66,     1,       64,    31,       -31,          0]
+	[  1,   115,       64,    50,       -31,        -19]	
+	[ 66,   115,       64,    50,       -31,        -19]
+	[  1,    50,       64,    50,       -57,        -32]
+	[196,   115,       64,    50,       -57,        -32]
+	[131,   115,       64,    50,        -5,        -32]
+	[ 66,    50,       64,    50,        -5,        -32]
+	[131,    50,       64,    50,       -31,        -45]
+	[196,    50,       64,    50,       -31,        -45]
+}
+
+//Level Crossings (Open)
+template template_levcrossopen() {
+	//left_x, upper_y, width, height, offset_x, offset_y
+	[  1,     1,       64,    31,       -31,          0]
+	[ 66,     1,       64,    31,       -31,          0]
+	[  1,   245,       64,    50,       -31,        -19]	
+	[ 66,   245,       64,    50,       -31,        -19]
+	[  1,   180,       64,    50,       -57,        -32]
+	[196,   245,       64,    50,       -57,        -32]
+	[131,   245,       64,    50,        -5,        -32]
+	[ 66,   180,       64,    50,        -5,        -32]
+	[131,   180,       64,    50,       -31,        -45]
+	[196,   180,       64,    50,       -31,        -45]
+}
 
 
 
@@ -530,7 +559,7 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 9 ;
+	version: 10 ;
 	min_compatible_version: 0 ;
 	param 0{
 		toggle_limits{
@@ -686,6 +715,22 @@ grf{
  				1: string(STR_PARAM_SIGNAL_ELEC_3ASP);
  				2: string(STR_PARAM_SIGNAL_ELEC_4ASP);
  				3: string(STR_PARAM_SIGNAL_ELEC_4ASP_SPD);
+ 			};
+		}
+	}
+	param 13{
+		fence_number {
+ 			type:    int;
+ 			name:    string(STR_PARAM_GFX_FENCE_NAME);
+ 			desc:    string(STR_PARAM_GFX_FENCE_DESC);
+ 			min_value: 0;
+ 			max_value: 4;
+ 			def_value: 1;
+ 			names: {
+ 				0: string(STR_PARAM_GFX_FENCE_ALL);
+ 				1: string(STR_PARAM_GFX_FENCE_MOST);
+ 				2: string(STR_PARAM_GFX_FENCE_SOME);
+ 				3: string(STR_PARAM_GFX_FENCE_NONE);
  			};
 		}
 	}
@@ -1094,7 +1139,6 @@ item(FEAT_RAILTYPES, rail_ballast) {
 }
 
 
-
 /*
 item(FEAT_RAILTYPES, rail_ballast2) {
 	property {
@@ -1116,6 +1160,14 @@ item(FEAT_RAILTYPES, rail_ballast2) {
 		sort_order					: 7 ;
 	}
 	graphics {
+		track_overlay		: sw_overlay_BLS2 ;
+		underlay			: sw_underlay_BLS2 ;
+		bridge_surfaces		: gfx_bridge_tracks_BLS2 ;
+		tunnels				: gfx_tunnel_tracks_BLS2 ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1139,6 +1191,14 @@ item(FEAT_RAILTYPES, rail_ballast3) {
 		sort_order					: 8 ;
 	}
 	graphics {
+		track_overlay		: sw_overlay_BLS3 ;
+		underlay			: sw_underlay_BLS3 ;
+		bridge_surfaces		: gfx_bridge_tracks_BLS3 ;
+		tunnels				: gfx_tunnel_tracks_BLS3f ;
+		level_crossings		: gfx_blank ;
+		//depots          : 
+		//fences          : 
+		signals				: sw_signals;
 	}
 }
 
@@ -1147,8 +1207,9 @@ item(FEAT_RAILTYPES, rail_ballast3) {
 
 
 
-*/
 
+
+*/
 
 # 1 "sukts.pnml" 2
 # 1 "src/standard.pnml" 1
@@ -3034,12 +3095,45 @@ if(extra_tracks < 2){
 
 
 
-spriteset(gfx_overlays_RAIL,		"gfx/RAIL/Overlay_RAIL.png")		{	template_overlay_auz()		}
-spriteset(gfx_underlays_RAIL,		"gfx/RAIL/Underlay_RAIL.png")		{	template_underlay_auz()		}
-spriteset(gfx_underlays_RAIL_wide,	"gfx/RAIL/Underlay_RAIL_wide.png")	{	template_underlay_auz()		}
-spriteset(gfx_tunnel_tracks_RAIL,	"gfx/RAIL/TunnelTrack_RAIL.png")	{	template_tunneltracks()		}
-spriteset(gfx_bridge_tracks_RAIL,	"gfx/RAIL/BridgeTrack_RAIL.png")	{	template_bridgetracks()		}
+spriteset(gfx_overlays_RAIL,			"gfx/RAIL/Overlay_RAIL.png")		{	template_overlay_auz()				}
+spriteset(gfx_underlays_RAIL,			"gfx/RAIL/Underlay_RAIL.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlays_RAIL_wide,		"gfx/RAIL/Underlay_RAIL_wide.png")	{	template_underlay_auz()				}
+spriteset(gfx_tunnel_tracks_RAIL,		"gfx/RAIL/TunnelTrack_RAIL.png")	{	template_tunneltracks()				}
+spriteset(gfx_bridge_tracks_RAIL,		"gfx/RAIL/BridgeTrack_RAIL.png")	{	template_bridgetracks()				}
 
+
+spriteset(gfx_fences_RAIL,		"gfx/RAIL/Fences_RAIL.png")			{	template_fences()					}
+spriteset(gfx_depot_RAIL,		"gfx/RAIL/Depot_RAIL.png")			{	template_depot()					}
+
+
+spriteset(gfx_level_crossing_RAIL_empty,	"gfx/RAIL/LevelCrossing_RAIL.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_RAIL_closed,	"gfx/RAIL/LevelCrossing_RAIL.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_RAIL_open,		"gfx/RAIL/LevelCrossing_RAIL.png")	{template_levcrossopen()				}
+
+spriteset(gfx_level_crossing_RAIL_empty_modern,		"gfx/RAIL/LevelCrossingModern_RAIL.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_RAIL_closed_modern,	"gfx/RAIL/LevelCrossingModern_RAIL.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_RAIL_open_modern,		"gfx/RAIL/LevelCrossingModern_RAIL.png")	{template_levcrossopen()				}
+
+
+// Level crossing switches
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_RAIL_closed, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_RAIL_closed ;
+	gfx_level_crossing_RAIL_closed_modern;
+}
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_RAIL_open, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_RAIL_open ;
+	gfx_level_crossing_RAIL_open_modern;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_lc_RAIL_state, level_crossing_status){
+	LEVEL_CROSSING_CLOSED : sw_lc_RAIL_closed ;
+	sw_lc_RAIL_open ;
+}
+
+
+// Wide ballast?
 
 switch(FEAT_RAILTYPES, SELF, sw_underlay_RAIL, wide_ballast) {
  1: gfx_underlays_RAIL_wide;
@@ -3048,6 +3142,7 @@ switch(FEAT_RAILTYPES, SELF, sw_underlay_RAIL, wide_ballast) {
 
 
 
+// Item
 
 item(FEAT_RAILTYPES, rail_RAIL) {
 	property {
@@ -3074,10 +3169,10 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		underlay			: sw_underlay_RAIL ;
 		bridge_surfaces		: gfx_bridge_tracks_RAIL ;
 		tunnels				: gfx_tunnel_tracks_RAIL ;
-		level_crossings		: gfx_blank ;
-		//depots          : 
-		//fences          : 
-		signals				: sw_signals;
+		level_crossings		: sw_lc_RAIL_state ;
+		depots				: gfx_depot_RAIL ;
+		fences				: gfx_fences_RAIL ;
+		signals				: sw_signals ;
 	}
 }
 
