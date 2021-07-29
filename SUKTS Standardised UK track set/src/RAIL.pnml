@@ -47,6 +47,24 @@ switch(FEAT_RAILTYPES, SELF, sw_underlay_RAIL, wide_ballast) {
 }
 
 
+// Custom depot?
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_RAIL, depot_type){
+	0 : gfx_depot_RAIL ;
+	1 : gfx_depot_1 ;
+}
+
+
+// Fences?
+
+switch(FEAT_RAILTYPES, SELF, sw_fences_RAIL, fence_number < 2){
+	1 : gfx_fences_RAIL ;
+	gfx_blank ;
+}
+
+
+
+
 
 // Item
 
@@ -76,10 +94,11 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		bridge_surfaces		: gfx_bridge_tracks_RAIL ;
 		tunnels				: gfx_tunnel_tracks_RAIL ;
 		level_crossings		: sw_lc_RAIL_state ;
-		depots				: gfx_depot_RAIL ;
-		fences				: gfx_fences_RAIL ;
+		fences				: sw_fences_RAIL ;
+		depots				: sw_depot_RAIL ;
 		signals				: sw_signals ;
 	}
 }
+
 
 

@@ -11,11 +11,14 @@ STR_PARAM_TRACK_LIST_NAME			:Track selection
 STR_PARAM_TRACK_LIST_DESC			:Enable extra track types for extra speed limits or decorative purposes
 
 STR_PARAM_TRACK_WIDE_BALLAST_NAME	:Wide ballast
-STR_PARAM_TRACK_WIDE_BALLAST_DESC	:Enable wide ballast graphics.
+STR_PARAM_TRACK_WIDE_BALLAST_DESC	:Enable full tile ballast graphics.
 
 STR_PARAM_TRACK_MIN					:Minimal selection
 STR_PARAM_TRACK_STANDARD			:Standard selection
 STR_PARAM_TRACK_EXTRA				:Extra selection
+
+STR_PARAM_DECOR_NAME				:Decorative industrial tracks
+STR_PARAM_DECOR_DESC				:Enable decorative tracks to match industry tile sets and industrial object sets. (CHIPS, FIRS & ISR compatible)
 
 STR_PARAM_COSTS_BUILD_NAME			:Construction costs
 STR_PARAM_COSTS_BUILD_DESC			:Changes the cost of purchasing tracks from this GRF.
@@ -39,6 +42,13 @@ STR_PARAM_GFX_FENCE_ALL				:All tracks have fences
 STR_PARAM_GFX_FENCE_MOST			:Only high and medium speed tracks have fences
 STR_PARAM_GFX_FENCE_SOME			:Only high speed tracks have fences
 STR_PARAM_GFX_FENCE_NONE			:No fences
+
+STR_PARAM_GFX_DEPOT_NAME			:Depot graphics
+STR_PARAM_GFX_DEPOT_DESC			:Changes the behaviour of depots.
+
+STR_PARAM_GFX_DEPOT_ALL				:Custom depots unique to each track type
+STR_PARAM_GFX_DEPOT_ONE				:Custom depot used for all track types.
+STR_PARAM_GFX_DEPOT_DEFAULT			:Default depots
 
 
 
@@ -64,39 +74,40 @@ STR_PARAM_SIGNAL_ELEC_4ASP_SPD			:4 Aspect Signals (track speed dependent aspect
 
 
 
-STR_BLST_NAME				:Empty track ballast.
+STR_BLST_NAME				:Empty track ballast.{YELLOW}
 STR_BLST_BUILD_NAME			:New track ballast vehicles.
 STR_BLST_REPLACE_NAME		:Replace track ballast vehicles.
 STR_BLST_NEW_TRAIN			:track ballast.
 
-STR_RAIL_TOOLBAR			:Standard Gauge construction.
+STR_RAIL_TOOLBAR			:Standard Gauge construction.{YELLOW}
 STR_RAIL_BUILD_NAME			:New Standard Gauge vehicles.
 STR_RAIL_REPLACE_NAME		:Replace Standard Gauge vehicles.
 STR_RAIL_NEW_TRAIN			:Standard Gauge
 
 
-STR_ELRL_TOOLBAR			:Standard Gauge (25kv Overhead) construction.
+STR_ELRL_TOOLBAR			:Standard Gauge (25kv Overhead) construction.{YELLOW}
 STR_ELRL_BUILD_NAME			:New Standard Gauge (25kv Overhead) vehicles.
 STR_ELRL_REPLACE_NAME		:Replace Standard Gauge (25kv Overhead) vehicles.
 STR_ELRL_NEW_TRAIN			:Standard Gauge (25kv Overhead)
 
 
-STR_3RDR_TOOLBAR			:Standard Gauge (750v 3rd Rail) construction.
+STR_3RDR_TOOLBAR			:Standard Gauge (750v 3rd Rail) construction.{YELLOW}
 STR_3RDR_BUILD_NAME			:New Standard Gauge (750v 3rd Rail) vehicles.
 STR_3RDR_REPLACE_NAME		:Replace Standard Gauge (750v 3rd Rail) vehicles.
 STR_3RDR_NEW_TRAIN			:Standard Gauge (750v 3rd Rail)
 
 
-STR_4RDR_TOOLBAR			:Standard Gauge (630v 4th Rail) construction.
+STR_4RDR_TOOLBAR			:Standard Gauge (630v 4th Rail) construction.{YELLOW}
 STR_4RDR_BUILD_NAME			:New Standard Gauge (630v 4th Rail) vehicles.
 STR_4RDR_REPLACE_NAME		:Replace Standard Gauge (630v 4th Rail) vehicles.
 STR_4RDR_NEW_TRAIN			:Standard Gauge (630v 4th Rail)
 
 
-STR_3RDC_TOOLBAR			:Standard Gauge (Dual Voltaage) construction.
+STR_3RDC_TOOLBAR			:Standard Gauge (Dual Voltaage) construction.{YELLOW}
 STR_3RDC_BUILD_NAME			:New Standard Gauge (Dual Voltaage) vehicles.
 STR_3RDC_REPLACE_NAME		:Replace Standard Gauge (Dual Voltaage) vehicles.
 STR_3RDC_NEW_TRAIN			:Standard Gauge (Dual Voltaage)
+
 
 
 STR_BLS2_NAME				:Empty track ballast. {GOLD}(Overgrown){YELLOW}
@@ -111,6 +122,11 @@ STR_SEAN_NAME				:Standard Gauge {GOLD}(Sleeper: Wooden, Rail: Light Grey){YELLO
 STR_SFAN_NAME				:Standard Gauge {GOLD}(Sleeper: Dark concrete, Rail: Light Grey){YELLOW}
 STR_SGAN_NAME				:Standard Gauge {GOLD}(Sleeper: Light concrete, Rail: Grey){YELLOW}
 
+STR_SY1N_NAME				:Standard Gauge {GOLD}(Sleeper: ISR, Rail: Dark Grey, Overgrown){YELLOW}
+STR_SY2N_NAME				:Standard Gauge {GOLD}(Sleeper: Cobblestone, Rail: Dark Grey, Overgrown){YELLOW}
+STR_SY3N_NAME				:Standard Gauge {GOLD}(Sleeper: Dirt, Rail: Dark Grey, Overgrown){YELLOW}
+STR_SY4N_NAME				:Standard Gauge {GOLD}(Sleeper: Asphalt, Rail: Dark Grey, Overgrown){YELLOW}
+
 
 STR_SAAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){YELLOW}
 STR_SBAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){YELLOW}
@@ -122,6 +138,10 @@ STR_SFAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Dark concr
 STR_SGAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Light concrete, Rail: Grey){YELLOW}
 STR_SHAE_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Light concrete, Rail: Grey){YELLOW}
 
+STR_SY1E_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: ISR, Rail: Dark Grey, Overgrown){YELLOW}
+STR_SY3E_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Dirt, Rail: Dark Grey, Overgrown){YELLOW}
+STR_SY4E_NAME				:Standard Gauge {RED}(25kv Overhead) {GOLD}(Sleeper: Asphalt, Rail: Dark Grey, Overgrown){YELLOW}
+
 
 STR_SAA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){YELLOW}
 STR_SBA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){YELLOW}
@@ -130,6 +150,10 @@ STR_SDA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Wooden, 
 STR_3RDR_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Dark concrete, Rail: Grey){YELLOW}
 STR_SEA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Wooden, Rail: Light Grey){YELLOW}
 STR_SFA3_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Dark concrete, Rail: Light Grey){YELLOW}
+
+STR_SY13_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: ISR, Rail: Dark Grey, Overgrown){YELLOW}
+STR_SY33_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Dirt, Rail: Dark Grey, Overgrown){YELLOW}
+STR_SY43_NAME				:Standard Gauge {BROWN}(750v 3rd Rail) {GOLD}(Sleeper: Asphalt, Rail: Dark Grey, Overgrown){YELLOW}
 
 
 STR_SAA4_NAME				:Standard Gauge {LTBLUE}(630v 4th Rail) {GOLD}(Sleeper: Wooden, Rail: Dark Grey, Overgrown){YELLOW}
@@ -142,4 +166,9 @@ STR_SAAZ_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, 
 STR_SBAZ_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Light Grey, Overgrown){YELLOW}
 STR_SCAZ_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Grey){YELLOW}
 STR_3RDC_NAME				:Standard Gauge {GREEN}(Dual Voltaage) {GOLD}(Sleeper: Wooden, Rail: Light Grey){YELLOW}
+
+
+
+
+
 

@@ -307,31 +307,31 @@ template tmpl_level_crossing_railtypes_empty() {
 //Level Crossings (Closed)
 template template_levcrossclosed() {
 	//left_x, upper_y, width, height, offset_x, offset_y
-	[  1,     1,       64,    31,       -31,          0]
-	[ 66,     1,       64,    31,       -31,          0]
-	[  1,   115,       64,    50,       -31,        -19]	
-	[ 66,   115,       64,    50,       -31,        -19]
-	[  1,    50,       64,    50,       -57,        -32]
-	[196,   115,       64,    50,       -57,        -32]
-	[131,   115,       64,    50,        -5,        -32]
-	[ 66,    50,       64,    50,        -5,        -32]
-	[131,    50,       64,    50,       -31,        -45]
-	[196,    50,       64,    50,       -31,        -45]
+	[  1,     1,       64,    31,       -31,          0,	ANIM]
+	[ 66,     1,       64,    31,       -31,          0,	ANIM]
+	[  1,   115,       64,    50,       -31,        -19,	ANIM]	
+	[ 66,   115,       64,    50,       -31,        -19,	ANIM]
+	[  1,    50,       64,    50,       -57,        -32,	ANIM]
+	[196,   115,       64,    50,       -57,        -32,	ANIM]
+	[131,   115,       64,    50,        -5,        -32,	ANIM]
+	[ 66,    50,       64,    50,        -5,        -32,	ANIM]
+	[131,    50,       64,    50,       -31,        -45,	ANIM]
+	[196,    50,       64,    50,       -31,        -45,	ANIM]
 }
 
 //Level Crossings (Open)
 template template_levcrossopen() {
 	//left_x, upper_y, width, height, offset_x, offset_y
-	[  1,     1,       64,    31,       -31,          0]
-	[ 66,     1,       64,    31,       -31,          0]
-	[  1,   245,       64,    50,       -31,        -19]	
-	[ 66,   245,       64,    50,       -31,        -19]
-	[  1,   180,       64,    50,       -57,        -32]
-	[196,   245,       64,    50,       -57,        -32]
-	[131,   245,       64,    50,        -5,        -32]
-	[ 66,   180,       64,    50,        -5,        -32]
-	[131,   180,       64,    50,       -31,        -45]
-	[196,   180,       64,    50,       -31,        -45]
+	[  1,     1,       64,    31,       -31,          0,	ANIM]
+	[ 66,     1,       64,    31,       -31,          0,	ANIM]
+	[  1,   245,       64,    50,       -31,        -19,	ANIM]	
+	[ 66,   245,       64,    50,       -31,        -19,	ANIM]
+	[  1,   180,       64,    50,       -57,        -32,	ANIM]
+	[196,   245,       64,    50,       -57,        -32,	ANIM]
+	[131,   245,       64,    50,        -5,        -32,	ANIM]
+	[ 66,   180,       64,    50,        -5,        -32,	ANIM]
+	[131,   180,       64,    50,       -31,        -45,	ANIM]
+	[196,   180,       64,    50,       -31,        -45,	ANIM]
 }
 
 
@@ -724,7 +724,7 @@ grf{
  			name:    string(STR_PARAM_GFX_FENCE_NAME);
  			desc:    string(STR_PARAM_GFX_FENCE_DESC);
  			min_value: 0;
- 			max_value: 4;
+ 			max_value: 3;
  			def_value: 1;
  			names: {
  				0: string(STR_PARAM_GFX_FENCE_ALL);
@@ -732,6 +732,30 @@ grf{
  				2: string(STR_PARAM_GFX_FENCE_SOME);
  				3: string(STR_PARAM_GFX_FENCE_NONE);
  			};
+		}
+	}
+	param 14{
+		depot_type {
+ 			type:    int;
+ 			name:    string(STR_PARAM_GFX_DEPOT_NAME);
+ 			desc:    string(STR_PARAM_GFX_DEPOT_DESC);
+ 			min_value: 0;
+ 			max_value: 2;
+ 			def_value: 1;
+ 			names: {
+ 				0: string(STR_PARAM_GFX_DEPOT_ALL);
+ 				1: string(STR_PARAM_GFX_DEPOT_ONE);
+ 				2: string(STR_PARAM_GFX_DEPOT_DEFAULT);
+ 			};
+		}
+	}
+	param 15{
+		decor_tracks{
+			type    : bool ;
+			name    : string(STR_PARAM_DECOR_NAME) ;
+			desc    : string(STR_PARAM_DECOR_DESC) ;
+			bit     : 1 ;
+			def_value : 0 ;
 		}
 	}
 }
@@ -968,6 +992,13 @@ switch(FEAT_RAILTYPES, SELF, sw_signals_low_speed, signal_elec){
 0..2 : sw_signals;
 sw_signals_slow;
 }
+# 1 "sukts.pnml" 2
+# 1 "src/depots.pnml" 1
+
+spriteset(gfx_depot_1,		"gfx/RAIL/Depot_RAIL.png")			{	template_depot()					}
+
+
+
 # 1 "sukts.pnml" 2
 
 # 1 "src/ballast.pnml" 1
@@ -3141,6 +3172,24 @@ switch(FEAT_RAILTYPES, SELF, sw_underlay_RAIL, wide_ballast) {
 }
 
 
+// Custom depot?
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_RAIL, depot_type){
+	0 : gfx_depot_RAIL ;
+	1 : gfx_depot_1 ;
+}
+
+
+// Fences?
+
+switch(FEAT_RAILTYPES, SELF, sw_fences_RAIL, fence_number < 2){
+	1 : gfx_fences_RAIL ;
+	gfx_blank ;
+}
+
+
+
+
 
 // Item
 
@@ -3170,11 +3219,12 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 		bridge_surfaces		: gfx_bridge_tracks_RAIL ;
 		tunnels				: gfx_tunnel_tracks_RAIL ;
 		level_crossings		: sw_lc_RAIL_state ;
-		depots				: gfx_depot_RAIL ;
-		fences				: gfx_fences_RAIL ;
+		fences				: sw_fences_RAIL ;
+		depots				: sw_depot_RAIL ;
 		signals				: sw_signals ;
 	}
 }
+
 
 
 # 1 "sukts.pnml" 2

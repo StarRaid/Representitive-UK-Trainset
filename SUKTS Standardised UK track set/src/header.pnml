@@ -167,7 +167,7 @@ grf{
  			name:    string(STR_PARAM_GFX_FENCE_NAME);
  			desc:    string(STR_PARAM_GFX_FENCE_DESC);
  			min_value: 0;
- 			max_value: 4;
+ 			max_value: 3;
  			def_value: 1;
  			names: {
  				0: string(STR_PARAM_GFX_FENCE_ALL);
@@ -175,6 +175,30 @@ grf{
  				2: string(STR_PARAM_GFX_FENCE_SOME);
  				3: string(STR_PARAM_GFX_FENCE_NONE);
  			};
+		}
+	}
+	param 14{
+		depot_type {
+ 			type:    int;
+ 			name:    string(STR_PARAM_GFX_DEPOT_NAME);
+ 			desc:    string(STR_PARAM_GFX_DEPOT_DESC);
+ 			min_value: 0;
+ 			max_value: 2;
+ 			def_value: 1;
+ 			names: {
+ 				0: string(STR_PARAM_GFX_DEPOT_ALL);
+ 				1: string(STR_PARAM_GFX_DEPOT_ONE);
+ 				2: string(STR_PARAM_GFX_DEPOT_DEFAULT);
+ 			};
+		}
+	}
+	param 15{
+		decor_tracks{
+			type    : bool ;
+			name    : string(STR_PARAM_DECOR_NAME) ;
+			desc    : string(STR_PARAM_DECOR_DESC) ;
+			bit     : 1 ;
+			def_value : 0 ;
 		}
 	}
 }

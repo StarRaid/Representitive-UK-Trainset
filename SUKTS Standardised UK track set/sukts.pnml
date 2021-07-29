@@ -4,6 +4,7 @@
 #include "src/header.pnml"
 
 #include "src/signals.pnml"
+#include "src/depots.pnml"
 
 #include "src/ballast.pnml"
 #include "src/standard.pnml"
