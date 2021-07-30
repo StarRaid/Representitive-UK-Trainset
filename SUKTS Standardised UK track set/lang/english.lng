@@ -74,7 +74,7 @@ STR_PARAM_SIGNAL_ELEC_4ASP_SPD			:4 Aspect Signals (track speed dependent aspect
 
 
 
-STR_BLST_NAME				:Empty track ballast.{YELLOW}
+STR_BLST_TOOLBAR			:Empty track ballast construction.{YELLOW}
 STR_BLST_BUILD_NAME			:New track ballast vehicles.
 STR_BLST_REPLACE_NAME		:Replace track ballast vehicles.
 STR_BLST_NEW_TRAIN			:track ballast.
@@ -110,6 +110,7 @@ STR_3RDC_NEW_TRAIN			:Standard Gauge (Dual Voltaage)
 
 
 
+STR_BLST_NAME				:Empty track ballast.{YELLOW}
 STR_BLS2_NAME				:Empty track ballast. {GOLD}(Overgrown){YELLOW}
 STR_BLS3_NAME				:Empty track ballast. {GOLD}(Concrete){YELLOW}
 

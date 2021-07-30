@@ -114,11 +114,11 @@ item(FEAT_RAILTYPES, rail_ballast) {
 
 
 
-spriteset(gfx_overlays_BLST,		"gfx/BLST/Overlay_BLST.png")		{	template_overlay_auz()		}
-spriteset(gfx_underlays_BLST,		"gfx/BLST/Underlay_BLST.png")		{	template_underlay_auz()		}
-spriteset(gfx_underlays_BLST_wide,	"gfx/BLST/Underlay_BLST_wide.png")	{	template_underlay_auz()		}
-spriteset(gfx_tunnel_tracks_BLST,	"gfx/BLST/TunnelTrack_BLST.png")	{	template_tunneltracks()		}
-spriteset(gfx_bridge_tracks_BLST,	"gfx/BLST/BridgeTrack_BLST.png")	{	template_bridgetracks()		}
+spriteset(gfx_overlays_BLST,		"gfx/BLST/BLST/Overlay_BLST.png")		{	template_overlay_auz()		}
+spriteset(gfx_underlays_BLST,		"gfx/BLST/BLST/Underlay_BLST.png")		{	template_underlay_auz()		}
+spriteset(gfx_underlays_BLST_wide,	"gfx/BLST/BLST/Underlay_BLST_wide.png")	{	template_underlay_auz()		}
+spriteset(gfx_tunnel_tracks_BLST,	"gfx/BLST/BLST/TunnelTrack_BLST.png")	{	template_tunneltracks()		}
+spriteset(gfx_bridge_tracks_BLST,	"gfx/BLST/BLST/BridgeTrack_BLST.png")	{	template_bridgetracks()		}
 
 
 switch(FEAT_RAILTYPES, SELF, sw_underlay_BLST, wide_ballast) {

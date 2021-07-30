@@ -1,24 +1,24 @@
 
 
 
-spriteset(gfx_overlays_RAIL,			"gfx/RAIL/Overlay_RAIL.png")		{	template_overlay_auz()				}
-spriteset(gfx_underlays_RAIL,			"gfx/RAIL/Underlay_RAIL.png")		{	template_underlay_auz()				}
-spriteset(gfx_underlays_RAIL_wide,		"gfx/RAIL/Underlay_RAIL_wide.png")	{	template_underlay_auz()				}
-spriteset(gfx_tunnel_tracks_RAIL,		"gfx/RAIL/TunnelTrack_RAIL.png")	{	template_tunneltracks()				}
-spriteset(gfx_bridge_tracks_RAIL,		"gfx/RAIL/BridgeTrack_RAIL.png")	{	template_bridgetracks()				}
+spriteset(gfx_overlays_RAIL,			"gfx/RAIL/RAIL/Overlay_RAIL.png")		{	template_overlay_auz()				}
+spriteset(gfx_underlays_RAIL,			"gfx/RAIL/RAIL/Underlay_RAIL.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlays_RAIL_wide,		"gfx/RAIL/RAIL/Underlay_RAIL_wide.png")	{	template_underlay_auz()				}
+spriteset(gfx_tunnel_tracks_RAIL,		"gfx/RAIL/RAIL/TunnelTrack_RAIL.png")	{	template_tunneltracks()				}
+spriteset(gfx_bridge_tracks_RAIL,		"gfx/RAIL/RAIL/BridgeTrack_RAIL.png")	{	template_bridgetracks()				}
 
 
-spriteset(gfx_fences_RAIL,		"gfx/RAIL/Fences_RAIL.png")			{	template_fences()					}
-spriteset(gfx_depot_RAIL,		"gfx/RAIL/Depot_RAIL.png")			{	template_depot()					}
+spriteset(gfx_fences_RAIL,				"gfx/RAIL/RAIL/Fences_RAIL.png")		{	template_fences()					}
+spriteset(gfx_depot_RAIL,				"gfx/RAIL/RAIL/Depot_RAIL.png")			{	template_depot()					}
 
 
-spriteset(gfx_level_crossing_RAIL_empty,	"gfx/RAIL/LevelCrossing_RAIL.png")	{tmpl_level_crossing_railtypes_empty()	}
-spriteset(gfx_level_crossing_RAIL_closed,	"gfx/RAIL/LevelCrossing_RAIL.png")	{template_levcrossclosed()				}
-spriteset(gfx_level_crossing_RAIL_open,		"gfx/RAIL/LevelCrossing_RAIL.png")	{template_levcrossopen()				}
+spriteset(gfx_level_crossing_RAIL_empty,	"gfx/RAIL/RAIL/LevelCrossing_RAIL.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_RAIL_closed,	"gfx/RAIL/RAIL/LevelCrossing_RAIL.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_RAIL_open,		"gfx/RAIL/RAIL/LevelCrossing_RAIL.png")	{template_levcrossopen()				}
 
-spriteset(gfx_level_crossing_RAIL_empty_modern,		"gfx/RAIL/LevelCrossingModern_RAIL.png")	{tmpl_level_crossing_railtypes_empty()	}
-spriteset(gfx_level_crossing_RAIL_closed_modern,	"gfx/RAIL/LevelCrossingModern_RAIL.png")	{template_levcrossclosed()				}
-spriteset(gfx_level_crossing_RAIL_open_modern,		"gfx/RAIL/LevelCrossingModern_RAIL.png")	{template_levcrossopen()				}
+spriteset(gfx_level_crossing_RAIL_empty_modern,		"gfx/RAIL/RAIL/LevelCrossingModern_RAIL.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_RAIL_closed_modern,	"gfx/RAIL/RAIL/LevelCrossingModern_RAIL.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_RAIL_open_modern,		"gfx/RAIL/RAIL/LevelCrossingModern_RAIL.png")	{template_levcrossopen()				}
 
 
 // Level crossing switches

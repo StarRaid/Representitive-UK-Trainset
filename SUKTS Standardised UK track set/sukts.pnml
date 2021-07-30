@@ -6,11 +6,12 @@
 #include "src/signals.pnml"
 #include "src/depots.pnml"
 
-#include "src/ballast.pnml"
+//#include "src/ballast.pnml"
 #include "src/standard.pnml"
 #include "src/overhead.pnml"
 #include "src/third_rail.pnml"
 #include "src/dual_volt.pnml"
 #include "src/fourth_rail.pnml"
 
-#include "src/RAIL.pnml"
+#include "src/BLST/BLST.pnml"
+#include "src/RAIL/RAIL.pnml"
