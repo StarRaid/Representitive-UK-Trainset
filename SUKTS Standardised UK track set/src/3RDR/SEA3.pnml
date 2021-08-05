@@ -1,0 +1,104 @@
+
+
+
+spriteset(gfx_overlays_SEA3,			"gfx/3RDR/SEA3/Overlay_SEA3.png")		{	template_overlay_auz()				}
+spriteset(gfx_underlays_SEA3,			"gfx/3RDR/SEA3/Underlay_SEA3.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlays_SEA3_wide,		"gfx/3RDR/SEA3/Underlay_SEA3_wide.png")	{	template_underlay_auz()				}
+spriteset(gfx_tunnel_tracks_SEA3,		"gfx/3RDR/SEA3/TunnelTrack_SEA3.png")	{	template_tunneltracks()				}
+spriteset(gfx_bridge_tracks_SEA3,		"gfx/3RDR/SEA3/BridgeTrack_SEA3.png")	{	template_bridgetracks()				}
+
+
+spriteset(gfx_fences_SEA3,				"gfx/3RDR/SEA3/Fences_SEA3.png")		{	template_fences()					}
+spriteset(gfx_depot_SEA3,				"gfx/3RDR/SEA3/Depot_SEA3.png")			{	template_depot()					}
+
+
+spriteset(gfx_level_crossing_SEA3_empty,	"gfx/3RDR/SEA3/LevelCrossing_SEA3.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_SEA3_closed,	"gfx/3RDR/SEA3/LevelCrossing_SEA3.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_SEA3_open,		"gfx/3RDR/SEA3/LevelCrossing_SEA3.png")	{template_levcrossopen()				}
+
+spriteset(gfx_level_crossing_SEA3_empty_modern,		"gfx/3RDR/SEA3/LevelCrossingModern_SEA3.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_SEA3_closed_modern,	"gfx/3RDR/SEA3/LevelCrossingModern_SEA3.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_SEA3_open_modern,		"gfx/3RDR/SEA3/LevelCrossingModern_SEA3.png")	{template_levcrossopen()				}
+
+
+// Level crossing switches
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_SEA3_closed, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_SEA3_closed ;
+	gfx_level_crossing_SEA3_closed_modern;
+}
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_SEA3_open, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_SEA3_open ;
+	gfx_level_crossing_SEA3_open_modern;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_lc_SEA3_state, level_crossing_status){
+	LEVEL_CROSSING_CLOSED : sw_lc_SEA3_closed ;
+	sw_lc_SEA3_open ;
+}
+
+
+// Wide ballast?
+
+switch(FEAT_RAILTYPES, SELF, sw_underlay_SEA3, wide_ballast) {
+ 1: gfx_underlays_SEA3_wide;
+ gfx_underlays_SEA3;
+}
+
+
+// Custom depot?
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_SEA3, depot_type){
+	0 : gfx_depot_SEA3 ;
+	1 : gfx_depot_1 ;
+}
+
+
+// Fences?
+
+switch(FEAT_RAILTYPES, SELF, sw_fences_SEA3, fence_number < 2){
+	1 : gfx_fences_SEA3 ;
+	gfx_blank ;
+}
+
+
+
+
+
+// Item
+
+item(FEAT_RAILTYPES, rail_SEA3) {
+	property {
+		label						: "SEA3" ;
+		name						: string(STR_SEA3_NAME) ;
+		menu_text					: string(STR_SEA3_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 17 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1880,1,1) ;
+		sort_order					: 75 ;
+		speed_limit					: param[7] mph ;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SEA3 ;
+		underlay			: sw_underlay_SEA3 ;
+		bridge_surfaces		: gfx_bridge_tracks_SEA3 ;
+		tunnels				: gfx_tunnel_tracks_SEA3 ;
+		level_crossings		: sw_lc_SEA3_state ;
+		fences				: sw_fences_SEA3 ;
+		depots				: sw_depot_SEA3 ;
+		signals				: sw_signals ;
+	}
+}
+
+
+

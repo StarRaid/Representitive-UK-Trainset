@@ -205,7 +205,7 @@ item(FEAT_RAILTYPES, rail_BLS2) {
 
 
 
-/*
+
 
 spriteset(gfx_overlays_BLS3,			"gfx/BLST/BLS3/Overlay_BLS3.png")		{	template_overlay_auz()				}
 spriteset(gfx_underlays_BLS3,			"gfx/BLST/BLS3/Underlay_BLS3.png")		{	template_underlay_auz()				}
@@ -269,7 +269,7 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_BLS3, fence_number < 1){
 }
 
 
-
+/*
 
 
 // Item

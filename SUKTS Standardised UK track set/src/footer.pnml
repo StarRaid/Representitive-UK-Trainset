@@ -1,0 +1,134 @@
+
+
+
+
+
+
+if(toggle_limits == 0){
+	item(FEAT_RAILTYPES, rail_SAA3) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SBA3) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCA3) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SDA3) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_3RDR) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SEA3) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFA3) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	item(FEAT_RAILTYPES, rail_SAAZ) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SBAZ) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCAZ) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_3RDC) {
+	property {
+		speed_limit : 0; 
+	}
+	}
+}
+
+
+
+if(extra_tracks < 1){
+	
+	item(FEAT_RAILTYPES, rail_SBA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SFA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SBAZ) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+}
+
+
+if(extra_tracks < 2){
+	
+	item(FEAT_RAILTYPES, rail_SAA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCA3) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	
+	item(FEAT_RAILTYPES, rail_3RDR) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SAAZ) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+	
+	item(FEAT_RAILTYPES, rail_SCAZ) {
+	property {
+		railtype_flags : bitmask(RAILTYPE_FLAG_CATENARY, RAILTYPE_FLAG_HIDDEN) ;
+	}
+	}
+}
+
+
+
+

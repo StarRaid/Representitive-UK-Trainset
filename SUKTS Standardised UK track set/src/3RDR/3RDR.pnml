@@ -1,0 +1,104 @@
+
+
+
+spriteset(gfx_overlays_3RDR,			"gfx/3RDR/3RDR/Overlay_3RDR.png")		{	template_overlay_auz()				}
+spriteset(gfx_underlays_3RDR,			"gfx/3RDR/3RDR/Underlay_3RDR.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlays_3RDR_wide,		"gfx/3RDR/3RDR/Underlay_3RDR_wide.png")	{	template_underlay_auz()				}
+spriteset(gfx_tunnel_tracks_3RDR,		"gfx/3RDR/3RDR/TunnelTrack_3RDR.png")	{	template_tunneltracks()				}
+spriteset(gfx_bridge_tracks_3RDR,		"gfx/3RDR/3RDR/BridgeTrack_3RDR.png")	{	template_bridgetracks()				}
+
+
+spriteset(gfx_fences_3RDR,				"gfx/3RDR/3RDR/Fences_3RDR.png")		{	template_fences()					}
+spriteset(gfx_depot_3RDR,				"gfx/3RDR/3RDR/Depot_3RDR.png")			{	template_depot()					}
+
+
+spriteset(gfx_level_crossing_3RDR_empty,	"gfx/3RDR/3RDR/LevelCrossing_3RDR.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_3RDR_closed,	"gfx/3RDR/3RDR/LevelCrossing_3RDR.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_3RDR_open,		"gfx/3RDR/3RDR/LevelCrossing_3RDR.png")	{template_levcrossopen()				}
+
+spriteset(gfx_level_crossing_3RDR_empty_modern,		"gfx/3RDR/3RDR/LevelCrossingModern_3RDR.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_3RDR_closed_modern,	"gfx/3RDR/3RDR/LevelCrossingModern_3RDR.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_3RDR_open_modern,		"gfx/3RDR/3RDR/LevelCrossingModern_3RDR.png")	{template_levcrossopen()				}
+
+
+// Level crossing switches
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_3RDR_closed, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_3RDR_closed ;
+	gfx_level_crossing_3RDR_closed_modern;
+}
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_3RDR_open, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_3RDR_open ;
+	gfx_level_crossing_3RDR_open_modern;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_lc_3RDR_state, level_crossing_status){
+	LEVEL_CROSSING_CLOSED : sw_lc_3RDR_closed ;
+	sw_lc_3RDR_open ;
+}
+
+
+// Wide ballast?
+
+switch(FEAT_RAILTYPES, SELF, sw_underlay_3RDR, wide_ballast) {
+ 1: gfx_underlays_3RDR_wide;
+ gfx_underlays_3RDR;
+}
+
+
+// Custom depot?
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_3RDR, depot_type){
+	0 : gfx_depot_3RDR ;
+	1 : gfx_depot_1 ;
+}
+
+
+// Fences?
+
+switch(FEAT_RAILTYPES, SELF, sw_fences_3RDR, fence_number < 2){
+	1 : gfx_fences_3RDR ;
+	gfx_blank ;
+}
+
+
+
+
+
+// Item
+
+item(FEAT_RAILTYPES, rail_3RDR) {
+	property {
+		label						: "3RDR" ;
+		name						: string(STR_3RDR_NAME) ;
+		menu_text					: string(STR_3RDR_NAME) ;
+		build_window_caption		: string(STR_3RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_3RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_3RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_3RDR_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_3RD_RAIL, STANDARD_GAUGE_RAILTYPE_DUAL, STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 16 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1935,1,1) ;
+		sort_order					: 74 ;
+		speed_limit					: param[6] mph ;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_3RDR ;
+		underlay			: sw_underlay_3RDR ;
+		bridge_surfaces		: gfx_bridge_tracks_3RDR ;
+		tunnels				: gfx_tunnel_tracks_3RDR ;
+		level_crossings		: sw_lc_3RDR_state ;
+		fences				: sw_fences_3RDR ;
+		depots				: sw_depot_3RDR ;
+		signals				: sw_signals ;
+	}
+}
+
+
+
