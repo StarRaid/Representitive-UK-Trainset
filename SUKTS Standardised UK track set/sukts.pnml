@@ -7,16 +7,25 @@
 #include "src/depots.pnml"
 
 //#include "src/ballast.pnml"
-#include "src/standard.pnml"
-#include "src/overhead.pnml"
+//#include "src/standard.pnml"
+//#include "src/overhead.pnml"
 //#include "src/third_rail.pnml"
 //#include "src/dual_volt.pnml"
-#include "src/fourth_rail.pnml"
+//#include "src/fourth_rail.pnml"
 
 
 #include "src/BLST/BLST.pnml"
 
 #include "src/RAIL/RAIL.pnml"
+#include "src/RAIL/SAAN.pnml"
+#include "src/RAIL/SBAN.pnml"
+#include "src/RAIL/SCAN.pnml"
+#include "src/RAIL/SDAN.pnml"
+#include "src/RAIL/SEAN.pnml"
+#include "src/RAIL/SFAN.pnml"
+#include "src/RAIL/SGAN.pnml"
+
+#include "src/ELRL/SHAE.pnml"
 
 #include "src/3RDR/3RDR.pnml"
 #include "src/3RDR/SAA3.pnml"
@@ -25,6 +34,11 @@
 #include "src/3RDR/SDA3.pnml"
 #include "src/3RDR/SEA3.pnml"
 #include "src/3RDR/SFA3.pnml"
+
+#include "src/4RDR/SAA4.pnml"
+#include "src/4RDR/SBA4.pnml"
+#include "src/4RDR/SCA4.pnml"
+#include "src/4RDR/SDA4.pnml"
 
 
 

@@ -100,5 +100,35 @@ item(FEAT_RAILTYPES, rail_RAIL) {
 	}
 }
 
-
+item(FEAT_RAILTYPES, rail_ELRL) {
+	property {
+		label						: "ELRL" ;
+		name						: string(STR_ELRL_NAME) ;
+		menu_text					: string(STR_ELRL_NAME) ;
+		build_window_caption		: string(STR_ELRL_BUILD_NAME) ;
+		autoreplace_text			: string(STR_ELRL_REPLACE_NAME) ;
+		new_engine_text				: string(STR_ELRL_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_ELRL_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_OHLE_ONLY] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 17 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_CATENARY) ;
+		introduction_date			: date(1935,1,1) ;
+		sort_order					: 64 ;
+		speed_limit					: param[6] mph ;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_RAIL ;
+		underlay			: sw_underlay_RAIL ;
+		bridge_surfaces		: gfx_bridge_tracks_RAIL ;
+		tunnels				: gfx_tunnel_tracks_RAIL ;
+		level_crossings		: sw_lc_RAIL_state ;
+		fences				: sw_fences_RAIL ;
+		depots				: sw_depot_RAIL ;
+		signals				: sw_signals ;
+	}
+}
 

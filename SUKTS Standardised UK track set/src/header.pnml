@@ -2,7 +2,7 @@ grf{
 	grfid: "SUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 11 ;
+	version: 13 ;
 	min_compatible_version: 0 ;
 	param 0{
 		toggle_limits{
@@ -168,7 +168,7 @@ grf{
  			desc:    string(STR_PARAM_GFX_FENCE_DESC);
  			min_value: 0;
  			max_value: 3;
- 			def_value: 1;
+ 			def_value: 0;
  			names: {
  				0: string(STR_PARAM_GFX_FENCE_ALL);
  				1: string(STR_PARAM_GFX_FENCE_MOST);

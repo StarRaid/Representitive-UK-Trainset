@@ -1,0 +1,104 @@
+
+
+
+spriteset(gfx_overlays_SAA4,			"gfx/4RDR/SAA4/Overlay_SAA4.png")		{	template_overlay_auz()				}
+spriteset(gfx_underlays_SAA4,			"gfx/4RDR/SAA4/Underlay_SAA4.png")		{	template_underlay_auz()				}
+spriteset(gfx_underlays_SAA4_wide,		"gfx/4RDR/SAA4/Underlay_SAA4_wide.png")	{	template_underlay_auz()				}
+spriteset(gfx_tunnel_tracks_SAA4,		"gfx/4RDR/SAA4/TunnelTrack_SAA4.png")	{	template_tunneltracks()				}
+spriteset(gfx_bridge_tracks_SAA4,		"gfx/4RDR/SAA4/BridgeTrack_SAA4.png")	{	template_bridgetracks()				}
+
+
+spriteset(gfx_fences_SAA4,				"gfx/4RDR/SAA4/Fences_SAA4.png")		{	template_fences()					}
+spriteset(gfx_depot_SAA4,				"gfx/4RDR/SAA4/Depot_SAA4.png")			{	template_depot()					}
+
+
+spriteset(gfx_level_crossing_SAA4_empty,	"gfx/4RDR/SAA4/LevelCrossing_SAA4.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_SAA4_closed,	"gfx/4RDR/SAA4/LevelCrossing_SAA4.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_SAA4_open,		"gfx/4RDR/SAA4/LevelCrossing_SAA4.png")	{template_levcrossopen()				}
+
+spriteset(gfx_level_crossing_SAA4_empty_modern,		"gfx/4RDR/SAA4/LevelCrossingModern_SAA4.png")	{tmpl_level_crossing_railtypes_empty()	}
+spriteset(gfx_level_crossing_SAA4_closed_modern,	"gfx/4RDR/SAA4/LevelCrossingModern_SAA4.png")	{template_levcrossclosed()				}
+spriteset(gfx_level_crossing_SAA4_open_modern,		"gfx/4RDR/SAA4/LevelCrossingModern_SAA4.png")	{template_levcrossopen()				}
+
+
+// Level crossing switches
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_SAA4_closed, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_SAA4_closed ;
+	gfx_level_crossing_SAA4_closed_modern;
+}
+
+switch(FEAT_RAILTYPES,	SELF,	sw_lc_SAA4_open, current_year){ 
+	0 .. 1970 - 1	: gfx_level_crossing_SAA4_open ;
+	gfx_level_crossing_SAA4_open_modern;
+}
+
+switch(FEAT_RAILTYPES, SELF, sw_lc_SAA4_state, level_crossing_status){
+	LEVEL_CROSSING_CLOSED : sw_lc_SAA4_closed ;
+	sw_lc_SAA4_open ;
+}
+
+
+// Wide ballast?
+
+switch(FEAT_RAILTYPES, SELF, sw_underlay_SAA4, wide_ballast) {
+ 1: gfx_underlays_SAA4_wide;
+ gfx_underlays_SAA4;
+}
+
+
+// Custom depot?
+
+switch(FEAT_RAILTYPES, SELF, sw_depot_SAA4, depot_type){
+	0 : gfx_depot_SAA4 ;
+	1 : gfx_depot_1 ;
+}
+
+
+// Fences?
+
+switch(FEAT_RAILTYPES, SELF, sw_fences_SAA4, fence_number < 2){
+	1 : gfx_fences_SAA4 ;
+	gfx_blank ;
+}
+
+
+
+
+
+// Item
+
+item(FEAT_RAILTYPES, rail_SAA4) {
+	property {
+		label						: "SAA4" ;
+		name						: string(STR_SAA4_NAME) ;
+		menu_text					: string(STR_SAA4_NAME) ;
+		build_window_caption		: string(STR_4RDR_BUILD_NAME) ;
+		autoreplace_text			: string(STR_4RDR_REPLACE_NAME) ;
+		new_engine_text				: string(STR_4RDR_NEW_TRAIN) ;
+		toolbar_caption				: string(STR_4RDR_TOOLBAR) ;
+		compatible_railtype_list	: [STANDARD_GAUGE_RAILTYPE_ALL] ;
+		powered_railtype_list		: [STANDARD_GAUGE_RAILTYPE_4TH_RAIL] ;
+		curve_speed_multiplier		: 0 ;
+		station_graphics			: RAILTYPE_STATION_NORMAL ;
+		construction_cost			: 7 ;
+		acceleration_model			: ACC_MODEL_RAIL ;
+		railtype_flags				: bitmask() ;
+		introduction_date			: date(1907,1,1) ;
+		sort_order					: 90 ;
+		speed_limit					: param[2] mph ;
+	}
+	graphics {
+		track_overlay		: gfx_overlays_SAA4 ;
+		underlay			: sw_underlay_SAA4 ;
+		bridge_surfaces		: gfx_bridge_tracks_SAA4 ;
+		tunnels				: gfx_tunnel_tracks_SAA4 ;
+		level_crossings		: sw_lc_SAA4_state ;
+		fences				: sw_fences_SAA4 ;
+		depots				: sw_depot_SAA4 ;
+		signals				: sw_signals ;
+	}
+}
+
+
+

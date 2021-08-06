@@ -1,7 +1,7 @@
 
 
 
-spriteset(gfx_overlays_BLST,			"gfx/BLST/BLST/Overlay_BLST.png")		{	template_overlay_auz()				}
+//spriteset(gfx_overlays_BLST,			"gfx/BLST/BLST/Overlay_BLST.png")		{	template_overlay_auz()				}
 spriteset(gfx_underlays_BLST,			"gfx/BLST/BLST/Underlay_BLST.png")		{	template_underlay_auz()				}
 spriteset(gfx_underlays_BLST_wide,		"gfx/BLST/BLST/Underlay_BLST_wide.png")	{	template_underlay_auz()				}
 spriteset(gfx_tunnel_tracks_BLST,		"gfx/BLST/BLST/TunnelTrack_BLST.png")	{	template_tunneltracks()				}
@@ -104,7 +104,15 @@ item(FEAT_RAILTYPES, rail_BLST) {
 
 
 
-spriteset(gfx_overlays_BLS2,			"gfx/BLST/BLS2/Overlay_BLS2.png")		{	template_overlay_auz()				}
+
+
+
+
+
+
+
+
+//spriteset(gfx_overlays_BLS2,			"gfx/BLST/BLS2/Overlay_BLS2.png")		{	template_overlay_auz()				}
 spriteset(gfx_underlays_BLS2,			"gfx/BLST/BLS2/Underlay_BLS2.png")		{	template_underlay_auz()				}
 spriteset(gfx_underlays_BLS2_wide,		"gfx/BLST/BLS2/Underlay_BLS2_wide.png")	{	template_underlay_auz()				}
 spriteset(gfx_tunnel_tracks_BLS2,		"gfx/BLST/BLS2/TunnelTrack_BLS2.png")	{	template_tunneltracks()				}
@@ -188,10 +196,10 @@ item(FEAT_RAILTYPES, rail_BLS2) {
 		acceleration_model			: ACC_MODEL_RAIL ;
 		railtype_flags				: bitmask() ;
 		introduction_date			: date(0,1,1) ;
-		sort_order					: 6 ;
+		sort_order					: 7 ;
 	}
 	graphics {
-		track_overlay		: sw_underlay_BLS2 ;
+		track_overlay		: gfx_blank ;
 		underlay			: sw_underlay_BLS2 ;
 		bridge_surfaces		: gfx_bridge_tracks_BLS2 ;
 		tunnels				: gfx_tunnel_tracks_BLS2 ;
@@ -207,7 +215,12 @@ item(FEAT_RAILTYPES, rail_BLS2) {
 
 
 
-spriteset(gfx_overlays_BLS3,			"gfx/BLST/BLS3/Overlay_BLS3.png")		{	template_overlay_auz()				}
+
+
+
+
+
+//spriteset(gfx_overlays_BLS3,			"gfx/BLST/BLS3/Overlay_BLS3.png")		{	template_overlay_auz()				}
 spriteset(gfx_underlays_BLS3,			"gfx/BLST/BLS3/Underlay_BLS3.png")		{	template_underlay_auz()				}
 spriteset(gfx_underlays_BLS3_wide,		"gfx/BLST/BLS3/Underlay_BLS3_wide.png")	{	template_underlay_auz()				}
 spriteset(gfx_tunnel_tracks_BLS3,		"gfx/BLST/BLS3/TunnelTrack_BLS3.png")	{	template_tunneltracks()				}
@@ -217,17 +230,17 @@ spriteset(gfx_bridge_tracks_BLS3,		"gfx/BLST/BLS3/BridgeTrack_BLS3.png")	{	templ
 spriteset(gfx_fences_BLS3,				"gfx/BLST/BLS3/Fences_BLS3.png")		{	template_fences()					}
 spriteset(gfx_depot_BLS3,				"gfx/BLST/BLS3/Depot_BLS3.png")			{	template_depot()					}
 
-
+/*
 spriteset(gfx_level_crossing_BLS3_empty,	"gfx/BLST/BLS3/LevelCrossing_BLS3.png")	{tmpl_level_crossing_railtypes_empty()	}
 spriteset(gfx_level_crossing_BLS3_closed,	"gfx/BLST/BLS3/LevelCrossing_BLS3.png")	{template_levcrossclosed()				}
-spriteset(gfx_level_crossing_BLS3_open,		"gfx/BLST/BLS3/LevelCrossing_BLS3.png")	{template_levcrossopen()				}
+spriteset(gfx_level_crossing_BLS3_open,		"gfx/BLST/BLS3/LevelCrossing_BLS3.png")	{template_levcrossopen()				}*/
 
 spriteset(gfx_level_crossing_BLS3_empty_modern,		"gfx/BLST/BLS3/LevelCrossingModern_BLS3.png")	{tmpl_level_crossing_railtypes_empty()	}
 spriteset(gfx_level_crossing_BLS3_closed_modern,	"gfx/BLST/BLS3/LevelCrossingModern_BLS3.png")	{template_levcrossclosed()				}
 spriteset(gfx_level_crossing_BLS3_open_modern,		"gfx/BLST/BLS3/LevelCrossingModern_BLS3.png")	{template_levcrossopen()				}
 
 
-// Level crossing switches
+/* Level crossing switches
 
 switch(FEAT_RAILTYPES,	SELF,	sw_lc_BLS3_closed, current_year){ 
 	0 .. 1970 - 1	: gfx_level_crossing_BLS3_closed ;
@@ -243,7 +256,7 @@ switch(FEAT_RAILTYPES, SELF, sw_lc_BLS3_state, level_crossing_status){
 	LEVEL_CROSSING_CLOSED : sw_lc_BLS3_closed ;
 	sw_lc_BLS3_open ;
 }
-
+*/
 
 // Wide ballast?
 
@@ -269,7 +282,6 @@ switch(FEAT_RAILTYPES, SELF, sw_fences_BLS3, fence_number < 1){
 }
 
 
-/*
 
 
 // Item
@@ -289,16 +301,16 @@ item(FEAT_RAILTYPES, rail_BLS3) {
 		station_graphics			: RAILTYPE_STATION_NORMAL ;
 		construction_cost			: 14 ;
 		acceleration_model			: ACC_MODEL_RAIL ;
-		railtype_flags				: bitmask() ;
+		railtype_flags				: bitmask(RAILTYPE_FLAG_NO_LEVEL_CROSSING) ;
 		introduction_date			: date(0,1,1) ;
-		sort_order					: 6 ;
+		sort_order					: 8 ;
 	}
 	graphics {
-		track_overlay		: gfx_overlays_BLS3 ;
+		track_overlay		: sw_underlay_BLS3 ;
 		underlay			: sw_underlay_BLS3 ;
 		bridge_surfaces		: gfx_bridge_tracks_BLS3 ;
 		tunnels				: gfx_tunnel_tracks_BLS3 ;
-		level_crossings		: sw_lc_BLS3_state ;
+		//level_crossings		: sw_lc_BLS3_state ;
 		fences				: sw_fences_BLS3 ;
 		depots				: sw_depot_BLS3 ;
 		signals				: sw_signals ;
@@ -306,4 +318,3 @@ item(FEAT_RAILTYPES, rail_BLS3) {
 }
 
 
-*/
