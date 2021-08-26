@@ -17,11 +17,9 @@ Shading will be based off of the 405 graphic found on https://www.tt-forums.net/
 
 ## License for the use of RUKTS (Representative United Kingdom Train Set)
 
-Redistribution of a released version of the compiled GRF is allowed without permission.
+All code, graphics, and sound files are licensed under GPL V2. © StarRaid, Gwyd, PikkaBird, and andythenorth.
 
-All graphics and sounds are © StarRaid & Gwyd, with additions from PikkaBird and andythenorth. All rights reserved. Distribution or modification without permission is **strictly prohibited**. Please contact the respectful owner of the graphic **before** using outside of this GRF. Decompiling the released GRF is **strictly prohibited**.
-
-All code is licensed under GPL V2.
+Non-comercial redistribution, decompiling, and modifying are all encouraged.
 
 ```		    GNU GENERAL PUBLIC LICENSE
 		       Version 2, June 1991
