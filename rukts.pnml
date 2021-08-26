@@ -77,6 +77,7 @@ disable_item(FEAT_TRAINS);
 #include "src/EMU/class_450.pnml"
 #include "src/EMU/class_350.pnml"
 #include "src/EMU/class_375.pnml"
+#include "src/EMU/class_357.pnml"
 #include "src/EMU/class_455.pnml"
 #include "src/EMU/class_700.pnml"
 #include "src/EMU/lul_1938.pnml"
