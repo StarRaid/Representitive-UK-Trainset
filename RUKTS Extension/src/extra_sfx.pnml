@@ -39,7 +39,7 @@ spriteset(gfx_sfx_extra){
 item(FEAT_TRAINS, item_sfx_extra, 0){
 	property{
 		name                           : string(STR_NWST_NAME) ;  
-		climates_available             : ALL_CLIMATES ;
+		climates_available             : NO_CLIMATE ;
 		introduction_date              : date(1,1,1) ;
 		refit_cost                     : 1 ;
 		refittable_cargo_classes       : 0 ;

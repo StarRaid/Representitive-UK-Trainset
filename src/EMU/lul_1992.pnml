@@ -54,15 +54,15 @@ item(FEAT_TRAINS, item_lul92, 692){
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
 		cargo_allow_refit              : [PASS, TOUR] ;
-		cargo_capacity                 : 105 ;
+		cargo_capacity                 : 111 ;
 		loading_speed                  : 38 ;
 		track_type                     : SAA4 ;
 		engine_class                   : ENGINE_CLASS_ELECTRIC ;
-		speed                          : 50 mph ;
-		power                          : 400 hp ;
-		extra_power_per_wagon          : 125 hp ;
-		weight                         : 27 ton ;
-		tractive_effort_coefficient    : 0.3 ;
+		speed                          : 60 mph ;
+		power                          : 300 hp ;
+		extra_power_per_wagon          : 100 hp ;
+		weight                         : 22 ton ;
+		tractive_effort_coefficient    : 0.28 ;
 		air_drag_coefficient           : 0.1 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
 		dual_headed                    : 1 ;
@@ -81,7 +81,7 @@ item(FEAT_TRAINS, item_lul92, 692){
 	livery_override (600){
 		default                     : sw_lul92_id_check ;
 		colour_mapping              : sw_lul92_colours_2cc_check ;
-		cargo_capacity              : 105 ;
+		cargo_capacity              : 111 ;
 		weight                      : 20 ;
 		create_effect           	: vfx_3rd_only ;
 		length						: 7 ;
@@ -93,6 +93,15 @@ if (alt_names == 1){
 item (FEAT_TRAINS, item_lul92, 692){
 	property{
 		name                           : string(STR_NAME_LUL92_ALT) ;
+	}
+}
+}
+
+
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_lul92, 692){
+	property{
+		climates_available             : NO_CLIMATE ;
 	}
 }
 }
