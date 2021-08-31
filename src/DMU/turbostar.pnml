@@ -21,36 +21,10 @@
 //17 - Midland Mainline
 //18 - SWT
 
-template template_turbo_single(x,y){
-	[x+0,y,8,24,-3,-11] //North
-	[x+10,y,20,16,-13,-8] //North East
-	[x+32,y,32,11,-16,-7] //East
-	[x+66,y,20,16,-5,-8] //South East
-}
 
-template template_turbo_double(x,y){
-	[x+0,y,8,24,-3,-11] //North
-	[x+10,y,20,16,-13,-8] //North East
-	[x+32,y,32,11,-16,-7] //East
-	[x+66,y,20,16,-5,-8] //South East
-	[x+88,y,8,24,-3,-11] //South
-	[x+98,y,20,16,-13,-8] //South West
-	[x+120,y,32,11,-16,-7] //West
-	[x+154,y,20,16,-5,-8] //North West
-}
-
-//Spritesets
-
-spriteset (cl168_cm_front, "gfx/DMU/class_168.png"){template_turbo_double(0,0) }
-spriteset (cl168_cm_back,  "gfx/DMU/class_168.png"){template_turbo_double(0,26)}
-spriteset (cl168_cm_mid,   "gfx/DMU/class_168.png"){template_turbo_single(0,52)}
-//spriteset (cl172_lm_front, "gfx/DMU/class_172.png"){template_turbo_double(0,0) }
-//spriteset (cl172_lm_back,  "gfx/DMU/class_172.png"){template_turbo_double(0,26)}
-//spriteset (cl172_lm_mid,   "gfx/DMU/class_172.png"){template_turbo_single(0,52)}
-
-spriteset (cl168_purchase, "gfx/DMU/class_168.png"){template_dualhead_purchase(88,52)}
-//spriteset (cl172_purchase, "gfx/DMU/class_172.png"){template_dualhead_purchase(88,52)}
-
+spriteset (turbostar_ch_168_1			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 150)}
+spriteset (turbostar_ch_168_0			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 200)}
+spriteset (turbostar_ch_168_mid			, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 175)}
 spriteset (turbostar_lm_170				, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 050)}
 spriteset (turbostar_lm_170_mid			, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 075)}
 spriteset (turbostar_xc_170				, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 100)}
@@ -62,7 +36,10 @@ spriteset (turbostar_wmr_172_mid		, "gfx/DMU/turbostar.png"){template_8_4_networ
 
 spriteset (turbostar_headlight			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 100)}
 spriteset (turbostar_taillight			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 125)}
+spriteset (turbostar_headlight_0		, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 225)}
+spriteset (turbostar_taillight_0		, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 250)}
 
+spriteset (turbostar_purchase_ch_168	, "gfx/DMU/turbostar.png"){template_dualhead_purchase	( 090, 175)}
 spriteset (turbostar_purchase_lm_170	, "gfx/DMU/turbostar.png"){template_dualhead_purchase	( 269, 075)}
 spriteset (turbostar_purchase_lm_172	, "gfx/DMU/turbostar.png"){template_dualhead_purchase	( 090, 025)}
 spriteset (turbostar_purchase_wmr_172	, "gfx/DMU/turbostar.png"){template_dualhead_purchase	( 090, 075)}
@@ -70,13 +47,8 @@ spriteset (turbostar_purchase_wmr_172	, "gfx/DMU/turbostar.png"){template_dualhe
 
 //Graphics
 
-switch(FEAT_TRAINS, SELF, sw_168_old_2, position_in_consist_from_end){
-	0 : cl168_cm_back ;
-	cl168_cm_front ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_168_old_1, vehicle_type_id){ 9090 : cl168_cm_mid ; sw_168_old_2 ;}
-
+switch(FEAT_TRAINS, SELF, sw_168_1_ch_id_check	, vehicle_type_id ){ 9090 : turbostar_ch_168_mid ; turbostar_ch_168_1 ;}
+switch(FEAT_TRAINS, SELF, sw_168_0_ch_id_check	, vehicle_type_id ){ 9090 : turbostar_ch_168_mid ; turbostar_ch_168_0 ;}
 switch(FEAT_TRAINS, SELF, sw_170_xc_id_check	, vehicle_type_id ){ 9090 : turbostar_xc_170_mid ; turbostar_xc_170 ;}
 switch(FEAT_TRAINS, SELF, sw_170_lm_id_check	, vehicle_type_id ){ 9090 : turbostar_lm_170_mid ; turbostar_lm_170 ;}
 switch(FEAT_TRAINS, SELF, sw_172_lm_id_check	, vehicle_type_id ){ 9090 : turbostar_lm_172_mid ; turbostar_lm_172 ;}
@@ -85,7 +57,7 @@ switch(FEAT_TRAINS, SELF, sw_172_wmr_id_check	, vehicle_type_id ){ 9090 : turbos
 
 
 switch(FEAT_TRAINS, SELF, sw_168_auto, current_year){
-	0000..2006 : sw_168_old_1 ;
+	0000..2006 : sw_168_0_ch_id_check ;
 	2018..4096 : sw_170_lm_id_check ;
 	sw_170_lm_id_check ;
 }
@@ -101,10 +73,11 @@ switch(FEAT_TRAINS, SELF, sw_168_gfx_auto_year_check, build_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_168_gfx_manual, cargo_subtype){
-	0	: sw_168_old_1 ;
+	0	: sw_168_1_ch_id_check ;
 	1	: sw_170_xc_id_check ;
 	3	: sw_172_lm_id_check ;
 	4	: sw_172_wmr_id_check ;
+	5	: sw_168_0_ch_id_check ;
 	sw_170_lm_id_check ;
 }
 
@@ -126,24 +99,30 @@ switch(FEAT_TRAINS, SELF, sw_168_gfx_manual_check, livery_choice){
 switch(FEAT_TRAINS, SELF, sw_168_headlights, position_in_consist){ 0 : turbostar_headlight ;}
 switch(FEAT_TRAINS, SELF, sw_168_taillights, position_in_consist_from_end){ 0 : turbostar_taillight ;}
 
+switch(FEAT_TRAINS, SELF, sw_168_0_headlights, position_in_consist){ 0 : turbostar_headlight_0 ;}
+switch(FEAT_TRAINS, SELF, sw_168_0_taillights, position_in_consist_from_end){ 0 : turbostar_taillight_0 ;}
+
+switch(FEAT_TRAINS, SELF, sw_168_headlights_livery_check, cargo_subtype){ 5 : sw_168_0_headlights ; sw_168_headlights ; }
+switch(FEAT_TRAINS, SELF, sw_168_taillights_livery_check, cargo_subtype){ 5 : sw_168_0_taillights ; sw_168_taillights ; }
+
 switch(FEAT_TRAINS, SELF, sw_168_sprite_stack, SPR_STACK){
 	0 : sw_168_gfx_manual_check ;
-	1 : sw_168_headlights ;
-	2 : sw_168_taillights ;
+	1 : sw_168_headlights_livery_check ;
+	2 : sw_168_taillights_livery_check ;
 }
 
 
 //Purchase
 
 switch(FEAT_TRAINS, SELF, sw_168_purchase, current_year){
-	0000..2006 : cl168_purchase ;
+	0000..2006 : turbostar_purchase_ch_168 ;
 	2007..2009 : turbostar_purchase_lm_170 ;
 	2010..2017 : turbostar_purchase_lm_172 ;
 	turbostar_purchase_wmr_172 ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_168_purchase_colours, current_year){
-	1996..2006 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	1996..2006 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	2007..2017 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
 	palette_2cc(COLOUR_ORANGE, COLOUR_MAUVE) ;
 }
@@ -162,6 +141,7 @@ switch(FEAT_TRAINS, SELF, sw_168_refit_text, cargo_subtype){
 	2	: string(STR_LIVERY_LONDON_MIDLAND_STRING, string(STR_170)) ;
 	3	: string(STR_LIVERY_LONDON_MIDLAND_STRING, string(STR_172)) ;
 	4	: string(STR_LIVERY_WEST_MIDLANDS_RAILWAY_STRING, string(STR_172)) ;
+	5	: string(STR_LIVERY_CHILTERN_0) ;
 	CB_RESULT_NO_TEXT ;
 }
 /*
@@ -205,9 +185,10 @@ switch(FEAT_TRAINS, SELF, sw_168_colours_auto, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_168_colours_manual, cargo_subtype){
-	0	: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	0	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	1	: palette_2cc(COLOUR_GREY, COLOUR_PINK) ;
 	4	: palette_2cc(COLOUR_ORANGE, COLOUR_MAUVE) ;
+	5	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
 }
 /*
