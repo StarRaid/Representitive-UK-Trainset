@@ -53,7 +53,7 @@ disable_item(FEAT_TRAINS);
 #include "src/WAGON/DBSO.pnml"
 #include "src/WAGON/DVT.pnml"
 #include "src/DMU/dmmu.pnml"
-#include "src/DMU/class_142.pnml"
+#include "src/DMU/class_142_2.pnml"
 #include "src/DMU/sprinter.pnml"
 #include "src/DMU/dogbox.pnml"
 #include "src/DMU/super_sprinter.pnml"

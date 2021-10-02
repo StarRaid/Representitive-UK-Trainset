@@ -10,7 +10,7 @@ while True:
             hp = 0.0229 * area * psi
         else:
             hp = 0.0212 * area * psi
-        print("\n", count, "-", round(hp, 1), "hp\n")
+        print("\n", count, "-", round(hp, 1), "ihp\n")
     except KeyboardInterrupt:
         exit()
     except:

@@ -61,6 +61,7 @@ STR_LIVERY_INTERCITY			 		 : Intercity
 STR_LIVERY_INTERCITY_SLEEPER			 : Intercity {BLACK}(Sleeper)
 STR_LIVERY_INTERCITY_SWL		 		 : Intercity {GOLD}(Swallow)
 STR_LIVERY_REG_RAILWAYS			 		 : Regional Railways
+STR_LIVERY_REG_PROVINCIAL		 		 : Regional Railways {GOLD}(Provincial)
 STR_LIVERY_NSE					 		 : Network South East
 STR_LIVERY_NSW					 		 : Network South East {GOLD}(White)
 STR_LIVERY_NSG					 		 : Network South East {GOLD}(Grey)
@@ -179,6 +180,27 @@ STR_LIVERY_LO							 : London Overground
 STR_LIVERY_STANSTEAD					 : Stanstead Express
 STR_LIVERY_NS_DUTCH						 : Nederlandse Spoorwegen
 STR_LIVERY_HEATHROW_EXPRESS				 : Heathrow Express
+
+
+STR_LIVERY_142_REG_RAILWAYS			 	 : Regional Railways {BLACK}(Class 142)
+STR_LIVERY_142_REG_PROVINCIAL		 	 : Regional Railways {GOLD}(Provincial) {BLACK}(Class 142)
+STR_LIVERY_142_MERSEYRAIL			 	 : Merseyrail {BLACK}(Class 142)
+STR_LIVERY_142_VALLEY_LINES				 : Valley Lines {BLACK}(Class 142)
+STR_LIVERY_142_ATW                   	 : Arriva Trains Wales {BLACK}(Class 142)
+STR_LIVERY_142_ATN                   	 : Arriva Trains Northern {BLACK}(Class 142)
+STR_LIVERY_142_NORTHERN              	 : Northern Rail {BLACK}(Class 142)
+STR_LIVERY_142_N_SPIRIT              	 : Northern Spirit {BLACK}(Class 142)
+
+STR_LIVERY_143_REG_RAILWAYS			 	 : Regional Railways {BLACK}(Class 143)
+STR_LIVERY_143_REG_PROVINCIAL		 	 : Regional Railways {GOLD}(Provincial) {BLACK}(Class 143)
+STR_LIVERY_143_MERSEYRAIL			 	 : Merseyrail {BLACK}(Class 143)
+STR_LIVERY_143_VALLEY_LINES				 : Valley Lines {BLACK}(Class 143)
+STR_LIVERY_144_NORTHERN              	 : Northern Rail {BLACK}(Class 144)
+STR_LIVERY_143_FGW		              	 : First Great Western {BLACK}(Class 143)
+STR_LIVERY_143_FLL		              	 : First Great Western {GOLD}(Local Lines){BLACK}(Class 143)
+STR_LIVERY_143_ATW                   	 : Arriva Trains Wales {BLACK}(Class 143)
+STR_LIVERY_143_ATW_EXEC              		 : Arriva Trains Wales {GOLD}(Executive)
+
 
 STR_LIVERY_LUL_MAROON					 : London Underground {RED}(Maroon)
 STR_LIVERY_LUL_GREY						 : London Underground {BLACK}(Grey)
