@@ -169,6 +169,7 @@ STR_LIVERY_C2C_NX				 		 : c2c {GOLD}(National Express)
 STR_LIVERY_MERSEYRAIL			 		 : Merseyrail
 STR_LIVERY_MERSEYRAIL_REFERB	 		 : Merseyrail {GOLD}(Refurbished)
 STR_LIVERY_NETWORK_RAIL          		 : Network Rail Yellow
+STR_LIVERY_TFW                   		 : Transport for Wales
 STR_LIVERY_ATW                   		 : Arriva Trains Wales
 STR_LIVERY_ATW_REFURB            		 : Arriva Trains Wales {GOLD}(Refurbished)
 STR_LIVERY_ATW_EXEC              		 : Arriva Trains Wales {GOLD}(Executive)
@@ -301,6 +302,7 @@ STR_NAME_165				 :ABB "Networker Turbo" (Diesel)
 STR_NAME_195				 :CAF "Civity" (Diesel)
 STR_NAME_TURBOSTAR           :Bombardier Turbostar (Diesel)
 STR_NAME_VOYAGER             :Bombardier Voyager (Diesel Electric)
+STR_NAME_769         	     :Brush Flex (Diesel Electric)
 
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_307				 :BREL Eastern Region Suburan EMU (Electric)
@@ -360,6 +362,7 @@ STR_DMMU_MAIL_NO_COUPLE: You may only couple this train to a mail carrying Blue 
 STR_142_NO_COUPLE: You may only couple this train to a "BREL Mark 2 Carriage" or another "Leyland "Pacer"!
 STR_165_NO_COUPLE: You may only couple this train to a "Modern MU car" or another ABB "Networker Turbo"!
 STR_205_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage" or another BR Southern DEMU "Thumper"!
+STR_769_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another Brush Flex!
 STR_150_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL Sprinter!
 STR_153_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another Leyland Dogbox!
 STR_155_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another Metro-Cammel Super Sprinter!
@@ -445,6 +448,7 @@ STR_NAME_165_ALT				:BR Class 165/166 (Diesel)
 STR_NAME_195_ALT				:BR Class 195 (Diesel)
 STR_NAME_TURBOSTAR_ALT			:BR Class 168/170/172 (Diesel)
 STR_NAME_VOYAGER_ALT			:BR Class 220/221 (Diesel Electric)
+STR_NAME_769_ALT       	     	:BR Class 769 (Diesel Electric)
 
 STR_NAME_PEP_ALT			:PEP 1972 Design EMU (Dual Voltage)
 STR_NAME_307_ALT			:BR Class 307 (Electric)

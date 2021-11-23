@@ -62,6 +62,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DMU/class_195.pnml"
 #include "src/DEMU/class_205.pnml"
 #include "src/DEMU/voyager.pnml"
+#include "src/DEMU/class_769.pnml"
 #include "src/EMU/class_307.pnml"
 #include "src/EMU/class_309.pnml"
 #include "src/EMU/class_313.pnml"

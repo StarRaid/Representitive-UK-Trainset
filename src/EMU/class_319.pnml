@@ -366,12 +366,13 @@ switch(FEAT_TRAINS, PARENT, sw_319_purchase, livery_choice){
 	spriteset_319_purchase_ns1 ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_319_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+switch(FEAT_TRAINS, SELF, sw_319_default, SPR_STACK){
 	0 : return sw_319_livery_choice_decider;
 }
 
-switch(FEAT_TRAINS, SELF, sw_319_default_t, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+switch(FEAT_TRAINS, SELF, sw_319_default_t, SPR_STACK){
 	0 : return sw_319_livery_choice_decider_t;
+	1 : return sw_flex_pan_select_t;
 }
 
 //Recolour

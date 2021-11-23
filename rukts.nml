@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 63 ;
+	version: 64 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -15563,6 +15563,8 @@ spriteset(gfx_expsprint_nra       		, "gfx/DMU/class_158.png") { template_Mk2_do
 spriteset(gfx_expsprint_nra_mid    		, "gfx/DMU/class_158.png") { template_Mk2_single         (259,275) }
 spriteset(gfx_expsprint_srs       		, "gfx/DMU/class_158.png") { template_Mk2_double         (  0,300) }
 spriteset(gfx_expsprint_srs_mid    		, "gfx/DMU/class_158.png") { template_Mk2_single         (259,300) }
+spriteset(gfx_expsprint_nse       		, "gfx/DMU/class_158.png") { template_Mk2_double         (  0,325) }
+spriteset(gfx_expsprint_nse_mid    		, "gfx/DMU/class_158.png") { template_Mk2_single         (259,325) }
 
 spriteset(gfx_expsprint_purchase_rr    	, "gfx/DMU/class_158.png") { template_dualhead_purchase (178,175) }
 spriteset(gfx_expsprint_purchase_fsr    , "gfx/DMU/class_158.png") { template_dualhead_purchase (178,200) }
@@ -15586,6 +15588,7 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_gwr_id_check   , vehicle_type_id){ 9030 :
 switch(FEAT_TRAINS, SELF, sw_expsprint_nrt_id_check   , vehicle_type_id){ 9030 : gfx_expsprint_nrt_mid ; gfx_expsprint_nrt ; }
 switch(FEAT_TRAINS, SELF, sw_expsprint_nra_id_check   , vehicle_type_id){ 9030 : gfx_expsprint_nra_mid ; gfx_expsprint_nra ; }
 switch(FEAT_TRAINS, SELF, sw_expsprint_srs_id_check   , vehicle_type_id){ 9030 : gfx_expsprint_srs_mid ; gfx_expsprint_srs ; }
+switch(FEAT_TRAINS, SELF, sw_expsprint_nse_id_check   , vehicle_type_id){ 9030 : gfx_expsprint_nse_mid ; gfx_expsprint_nse ; }
 
 
 
@@ -15610,6 +15613,7 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_gfx_manual, cargo_subtype){
 	9 : sw_expsprint_srs_id_check ;
 	10: sw_expsprint_atw_id_check ;
 	11: sw_expsprint_atw_exec_id_check ;
+	12: sw_expsprint_nse_id_check ;
 	sw_expsprint_rr_id_check ;
 }
 
@@ -15643,6 +15647,7 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_colours_manual, cargo_subtype){
 	9 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	10: palette_2cc(COLOUR_BLUE, COLOUR_YELLOW) ;
 	11: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	12: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;
 }
 
@@ -15716,6 +15721,7 @@ switch(FEAT_TRAINS, SELF, sw_expsprint_refit_text, cargo_subtype){
 	9 : string(STR_LIVERY_SCOTRAIL) ;
 	10: string(STR_LIVERY_ATW) ;
 	11: string(STR_LIVERY_ATW_EXEC) ;
+	12: string(STR_LIVERY_NSE) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -16800,6 +16806,319 @@ if (alt_names == 1){
 item (FEAT_TRAINS, item_voyager, 220){
 	property{
 		name                           : string(STR_NAME_VOYAGER_ALT) ;
+	}
+}
+}
+# 1 "rukts.pnml" 2
+# 1 "src/DEMU/class_769.pnml" 1
+//Front Cars
+spriteset(spriteset_769_f_gwr, "gfx/DEMU/class_769.png") {template_8_8_networker(0, 200)}
+spriteset(spriteset_769_f_tfw, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 500)}
+spriteset(spriteset_769_f_nra, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 800)}
+//Rear Cars
+spriteset(spriteset_769_r_gwr, "gfx/DEMU/class_769.png") {template_8_8_networker(0, 225)}
+spriteset(spriteset_769_r_tfw, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 525)}
+spriteset(spriteset_769_r_nra, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 825)}
+//Med Driving
+spriteset(spriteset_769_o_gwr, "gfx/DEMU/class_769.png") {template_8_8_networker(0, 250)}
+spriteset(spriteset_769_o_tfw, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 550)}
+spriteset(spriteset_769_o_nra, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 850)}
+//PMSO
+spriteset(spriteset_769_m_gwr, "gfx/DEMU/class_769.png") {template_8_8_networker(0, 175)}
+spriteset(spriteset_769_m_tfw, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 475)}
+spriteset(spriteset_769_m_nra, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 775)}
+//Trailer
+spriteset(spriteset_769_t_gwr, "gfx/DEMU/class_769.png") {template_8_8_networker(0, 150)}
+spriteset(spriteset_769_t_tfw, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 450)}
+spriteset(spriteset_769_t_nra, "gfx/DEMU/class_769.png") {template_8_8_networker(179, 750)}
+//Purchase
+spriteset(spriteset_769_purchase_gwr, "gfx/DEMU/class_769.png") {template_dualhead_purchase(0, 275)}
+spriteset(spriteset_769_purchase_tfw, "gfx/DEMU/class_769.png") {template_dualhead_purchase(179, 575)}
+spriteset(spriteset_769_purchase_nra, "gfx/DEMU/class_769.png") {template_dualhead_purchase(179, 875)}
+//Panto
+spriteset(spriteset_769_panto_up, "gfx/DEMU/class_769.png") {template_8_8_networker(180, 0)}
+spriteset(spriteset_769_panto_dn, "gfx/DEMU/class_769.png") {template_8_8_networker(180, 25)}
+
+
+//Switches
+
+//Power Car
+switch(FEAT_TRAINS, SELF, sw_769_gwr_f, position_in_consist){
+	0: spriteset_769_f_gwr; spriteset_769_o_gwr;
+}
+switch(FEAT_TRAINS, SELF, sw_flex_gwr_select, position_in_consist_from_end){
+	0: spriteset_769_r_gwr; sw_769_gwr_f;
+}
+random_switch(FEAT_TRAINS, SELF, sw_flex_gwr, TRIGGER_VEHICLE_SERVICE){1: sw_flex_gwr_select;}
+//
+switch(FEAT_TRAINS, SELF, sw_769_tfw_f, position_in_consist){
+	0: spriteset_769_f_tfw; spriteset_769_o_tfw;
+}
+switch(FEAT_TRAINS, SELF, sw_flex_tfw_select, position_in_consist_from_end){
+	0: spriteset_769_r_tfw; sw_769_tfw_f;
+}
+random_switch(FEAT_TRAINS, SELF, sw_flex_tfw, TRIGGER_VEHICLE_SERVICE){1: sw_flex_tfw_select;}	
+//
+switch(FEAT_TRAINS, SELF, sw_769_nra_f, position_in_consist){
+	0: spriteset_769_f_nra; spriteset_769_o_nra;
+}
+switch(FEAT_TRAINS, SELF, sw_flex_nra_select, position_in_consist_from_end){
+	0: spriteset_769_r_nra; sw_769_nra_f;
+}
+random_switch(FEAT_TRAINS, SELF, sw_flex_nra, TRIGGER_VEHICLE_SERVICE){1: sw_flex_nra_select;}
+	
+	
+	
+//Trailer/Pan
+switch(FEAT_TRAINS, SELF, sw_769_gwr_msb_f, position_in_vehid_chain){
+	0: spriteset_769_m_gwr; spriteset_769_t_gwr;
+}
+switch(FEAT_TRAINS, SELF, sw_769_gwr_msb_r, position_in_vehid_chain_from_end){
+	0: spriteset_769_m_gwr; spriteset_769_t_gwr;
+}
+switch(FEAT_TRAINS, SELF, sw_flex_gwr_select_t, vehicle_is_reversed){
+	0: sw_769_gwr_msb_f; 
+	sw_769_gwr_msb_r;
+}
+random_switch(FEAT_TRAINS, SELF, sw_flex_gwr_t, TRIGGER_VEHICLE_SERVICE){1: sw_flex_gwr_select_t;}
+
+switch(FEAT_TRAINS, SELF, sw_769_tfw_msb_f, position_in_vehid_chain){
+	0: spriteset_769_m_tfw; spriteset_769_t_tfw;
+}
+switch(FEAT_TRAINS, SELF, sw_769_tfw_msb_r, position_in_vehid_chain_from_end){
+	0: spriteset_769_m_tfw; spriteset_769_t_tfw;
+}
+switch(FEAT_TRAINS, SELF, sw_flex_tfw_select_t, vehicle_is_reversed){
+	0: sw_769_tfw_msb_f; 
+	sw_769_tfw_msb_r;
+}
+random_switch(FEAT_TRAINS, SELF, sw_flex_tfw_t, TRIGGER_VEHICLE_SERVICE){1: sw_flex_tfw_select_t;}
+
+switch(FEAT_TRAINS, SELF, sw_769_nra_msb_f, position_in_vehid_chain){
+	0: spriteset_769_m_nra; spriteset_769_t_nra;
+}
+switch(FEAT_TRAINS, SELF, sw_769_nra_msb_r, position_in_vehid_chain_from_end){
+	0: spriteset_769_m_nra; spriteset_769_t_nra;
+}
+switch(FEAT_TRAINS, SELF, sw_flex_nra_select_t, vehicle_is_reversed){
+	0: sw_769_nra_msb_f; 
+	sw_769_nra_msb_r;
+}
+random_switch(FEAT_TRAINS, SELF, sw_flex_nra_t, TRIGGER_VEHICLE_SERVICE){1: sw_flex_nra_select_t;}
+
+
+//Panto
+
+switch(FEAT_TRAINS, SELF, sw_769_panto_check, (current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ"))){
+	1: spriteset_769_panto_up ;
+	spriteset_769_panto_dn ;
+}
+switch(FEAT_TRAINS, SELF, sw_769_pan_msb_f, position_in_vehid_chain){
+	0: sw_769_panto_check;
+}
+switch(FEAT_TRAINS, SELF, sw_769_pan_msb_r, position_in_vehid_chain_from_end){
+	0: sw_769_panto_check;
+}
+switch(FEAT_TRAINS, SELF, sw_flex_pan_select_t, vehicle_is_reversed){
+	0: sw_769_pan_msb_f; 
+	sw_769_pan_msb_r;
+}
+
+
+//Livery Switches 
+ 
+//Manual liveries
+
+switch(FEAT_TRAINS, SELF, sw_769_manual_livery_decider, cargo_subtype){
+	0: sw_flex_gwr;
+	1: sw_flex_tfw;
+	2: sw_flex_nra;
+}
+
+switch(FEAT_TRAINS, SELF, sw_769_manual_livery_decider_t, cargo_subtype){
+	0: sw_flex_gwr_t;
+	1: sw_flex_tfw_t;
+	2: sw_flex_nra_t;
+}
+
+switch(FEAT_TRAINS, SELF, sw_769_livery_choice_decider, livery_choice){
+	1 : sw_769_manual_livery_decider ; 
+	sw_flex_gwr ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_769_livery_choice_decider_t, livery_choice){
+	1 : sw_769_manual_livery_decider_t ; 
+	sw_flex_gwr_t ;
+}
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_769_refit_text, cargo_subtype){
+	0: string(STR_LIVERY_FIRST_GWR);
+	1: string(STR_LIVERY_TFW);
+	2: string(STR_LIVERY_NORTHERN_ARRIVA);
+	return CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_769_refit_text_decider, livery_choice){
+	1 : sw_769_refit_text ;
+	return CB_RESULT_NO_TEXT ;
+}
+
+//Sprite stack
+
+switch(FEAT_TRAINS, SELF, sw_769_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : return sw_769_livery_choice_decider;
+}
+
+switch(FEAT_TRAINS, SELF, sw_769_default_t, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : return sw_769_livery_choice_decider_t;
+	1 : return sw_flex_pan_select_t;
+}
+
+//Recolour
+
+random_switch(FEAT_TRAINS, SELF, sw_769_tfw_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
+	1 : palette_2cc(COLOUR_RED, company_colour2) ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_769_gwr_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREY) ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_769_nra_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
+	1 : palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;
+}
+//Recolour Switches
+
+
+switch(FEAT_TRAINS, SELF, sw_769_colour_mapping_manual, cargo_subtype){
+	0: sw_769_gwr_colour_mapping;
+	1: sw_769_tfw_colour_mapping;
+	2: sw_769_nra_colour_mapping;
+	return CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_769_colour_mapping_manual_check, livery_choice){
+	1 : sw_769_colour_mapping_manual ;
+	sw_769_gwr_colour_mapping ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_769_colour_mapping_decider, colour_scheme_1){
+	1 : sw_769_colour_mapping_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_769_colour_mapping_purchase, colour_scheme_1){
+	1 : sw_769_gwr_colour_mapping ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_769_coupling_restrictions, vehicle_type_id) {
+    9030: return CB_RESULT_ATTACH_ALLOW;
+	769: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_769_NO_COUPLE);
+}
+
+switch(FEAT_TRAINS, PARENT, sw_769_power, (current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE")) || (current_railtype == railtype("3RDR")) || (current_railtype == railtype("3LOW")) || (current_railtype == railtype("3MED")) || (current_railtype == railtype("SAA3")) || (current_railtype == railtype("SAB3")) || (current_railtype == railtype("SAC3")) || (current_railtype == railtype("SBA3")) || (current_railtype == railtype("SBB3")) || (current_railtype == railtype("SBC3")) || (current_railtype == railtype("SCA3")) || (current_railtype == railtype("SCB3")) || (current_railtype == railtype("SCC3")) || (current_railtype == railtype("SDA3")) || (current_railtype == railtype("SEA3")) || (current_railtype == railtype("SFA3")) || (current_railtype == railtype("4RDR")) || (current_railtype == railtype("4LOW")) || (current_railtype == railtype("4MED")) || (current_railtype == railtype("SAA4")) || (current_railtype == railtype("SAB4")) || (current_railtype == railtype("SAC4")) || (current_railtype == railtype("SBA4")) || (current_railtype == railtype("SBB4")) || (current_railtype == railtype("SBC4")) || (current_railtype == railtype("SCA4")) || (current_railtype == railtype("SCB4")) || (current_railtype == railtype("SCC4")) || (current_railtype == railtype("MTRO")) || (current_railtype == railtype("MTRC")) || (current_railtype == railtype("MTRS")) || (current_railtype == railtype("MTRU")) || (current_railtype == railtype("MTRT")) || (current_railtype == railtype("SDA4")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ"))){
+	1 : 1438 ;
+	1046 ;
+}
+
+
+
+//Effects
+
+switch(FEAT_TRAINS, SELF, sw_769_sfx_check, (current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE")) || (current_railtype == railtype("3RDR")) || (current_railtype == railtype("3LOW")) || (current_railtype == railtype("3MED")) || (current_railtype == railtype("SAA3")) || (current_railtype == railtype("SAB3")) || (current_railtype == railtype("SAC3")) || (current_railtype == railtype("SBA3")) || (current_railtype == railtype("SBB3")) || (current_railtype == railtype("SBC3")) || (current_railtype == railtype("SCA3")) || (current_railtype == railtype("SCB3")) || (current_railtype == railtype("SCC3")) || (current_railtype == railtype("SDA3")) || (current_railtype == railtype("SEA3")) || (current_railtype == railtype("SFA3")) || (current_railtype == railtype("4RDR")) || (current_railtype == railtype("4LOW")) || (current_railtype == railtype("4MED")) || (current_railtype == railtype("SAA4")) || (current_railtype == railtype("SAB4")) || (current_railtype == railtype("SAC4")) || (current_railtype == railtype("SBA4")) || (current_railtype == railtype("SBB4")) || (current_railtype == railtype("SBC4")) || (current_railtype == railtype("SCA4")) || (current_railtype == railtype("SCB4")) || (current_railtype == railtype("SCC4")) || (current_railtype == railtype("MTRO")) || (current_railtype == railtype("MTRC")) || (current_railtype == railtype("MTRS")) || (current_railtype == railtype("MTRU")) || (current_railtype == railtype("MTRT")) || (current_railtype == railtype("SDA4")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ"))){
+	1 : sw_sfx_emu_gec ;
+	sw_sfx_dmu_one ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_769_vfx_check_2, (current_railtype == railtype("3RDR")) || (current_railtype == railtype("3LOW")) || (current_railtype == railtype("3MED")) || (current_railtype == railtype("SAA3")) || (current_railtype == railtype("SAB3")) || (current_railtype == railtype("SAC3")) || (current_railtype == railtype("SBA3")) || (current_railtype == railtype("SBB3")) || (current_railtype == railtype("SBC3")) || (current_railtype == railtype("SCA3")) || (current_railtype == railtype("SCB3")) || (current_railtype == railtype("SCC3")) || (current_railtype == railtype("SDA3")) || (current_railtype == railtype("SEA3")) || (current_railtype == railtype("SFA3")) || (current_railtype == railtype("4RDR")) || (current_railtype == railtype("4LOW")) || (current_railtype == railtype("4MED")) || (current_railtype == railtype("SAA4")) || (current_railtype == railtype("SAB4")) || (current_railtype == railtype("SAC4")) || (current_railtype == railtype("SBA4")) || (current_railtype == railtype("SBB4")) || (current_railtype == railtype("SBC4")) || (current_railtype == railtype("SCA4")) || (current_railtype == railtype("SCB4")) || (current_railtype == railtype("SCC4")) || (current_railtype == railtype("MTRO")) || (current_railtype == railtype("MTRC")) || (current_railtype == railtype("MTRS")) || (current_railtype == railtype("MTRU")) || (current_railtype == railtype("MTRT")) || (current_railtype == railtype("SDA4")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ"))){
+	1 : vfx_3rd ;
+	vfx_diesel_default ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_769_vfx_check_1, (current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ"))){
+	1 : vfx_ohle ;
+	sw_769_vfx_check_2 ;
+}
+
+
+
+
+
+item (FEAT_TRAINS, item_769, 769) {
+	property {
+		name: 							string(STR_NAME_769);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(2019, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					23;
+		cost_factor:					45;
+		running_cost_factor:			34;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							100 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_PASSENGER;
+		power:							1438 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					75;
+		weight:							30 ton;
+		tractive_effort_coefficient:	0.1;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+	}
+	graphics {
+		can_attach_wagon:					sw_769_coupling_restrictions;
+		default: 							sw_769_default;
+		purchase:							spriteset_769_purchase_gwr;
+		create_effect:						sw_769_vfx_check_1;
+		cargo_subtype_text:					sw_769_refit_text_decider ;
+		colour_mapping:						sw_769_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_769_colour_mapping_purchase;
+		running_cost_factor: return(current_speed == 0 ? 8 : 34) ;
+		purchase_running_cost_factor:		34;
+		sound_effect:						sw_769_sfx_check ;
+		power:								sw_769_power;
+}
+		livery_override (9030) {
+		cargo_capacity: 85;
+		default: sw_769_default_t;
+		colour_mapping:	sw_769_colour_mapping_decider;
+		cargo_subtype_text: sw_769_refit_text_decider ;
+}
+}
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_769, 769){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_769, 769){
+	property{
+		name                           : string(STR_NAME_769_ALT) ;
 	}
 }
 }
@@ -19748,6 +20067,7 @@ switch(FEAT_TRAINS, SELF, sw_319_default, [STORE_TEMP((getbits(extra_callback_in
 
 switch(FEAT_TRAINS, SELF, sw_319_default_t, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : return sw_319_livery_choice_decider_t;
+	1 : return sw_flex_pan_select_t;
 }
 
 //Recolour
