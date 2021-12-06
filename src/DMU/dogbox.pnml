@@ -23,6 +23,8 @@ spriteset(gfx_153_fgw				,"gfx/DMU/class_153.png"){template_Mk2_double(0,225)}
 spriteset(gfx_153_fgw_rev			,"gfx/DMU/class_153.png"){template_Mk2_double_reverse(0,225)}
 spriteset(gfx_153_atw				,"gfx/DMU/class_153.png"){template_Mk2_double(0,250)}
 spriteset(gfx_153_atw_rev			,"gfx/DMU/class_153.png"){template_Mk2_double_reverse(0,250)}
+spriteset(gfx_153_tfw				,"gfx/DMU/class_153.png"){template_Mk2_double(0,275)}
+spriteset(gfx_153_tfw_rev			,"gfx/DMU/class_153.png"){template_Mk2_double_reverse(0,275)}
 
 
 //Graphics switches
@@ -141,6 +143,7 @@ switch(FEAT_TRAINS, PARENT, sw_153_gfx_rev_a_north_arr, vehicle_is_reversed){ 1 
 switch(FEAT_TRAINS, PARENT, sw_153_gfx_rev_a_gwr, vehicle_is_reversed){ 1 : gfx_153_gwr_rev ; gfx_153_gwr ; }
 switch(FEAT_TRAINS, PARENT, sw_153_gfx_rev_a_fgw, vehicle_is_reversed){ 1 : gfx_153_fgw_rev ; gfx_153_fgw ; }
 switch(FEAT_TRAINS, PARENT, sw_153_gfx_rev_a_atw, vehicle_is_reversed){ 1 : gfx_153_atw_rev ; gfx_153_atw ; }
+switch(FEAT_TRAINS, PARENT, sw_153_gfx_rev_a_tfw, vehicle_is_reversed){ 1 : gfx_153_tfw_rev ; gfx_153_tfw ; }
 
  
 //Livery selection
@@ -164,6 +167,7 @@ switch(FEAT_TRAINS, SELF, sw_153_gfx_manual, cargo_subtype){
 	10	: sw_153_gfx_rev_a_atw ;
 	11	: sw_153_gfx_rev_a_north_arr ;
 	12	: sw_153_gfx_rev_a_emt ;
+	13	: sw_153_gfx_rev_a_tfw ;
 	sw_153_gfx_rev_a_anglia ;
 }
 
@@ -247,6 +251,7 @@ switch(FEAT_TRAINS, SELF, sw_153_refit_text, cargo_subtype){
 	10	: string(STR_LIVERY_ATW) ;
 	11	: string(STR_LIVERY_ATW_EXEC) ;
 	12	: string(STR_LIVERY_EMT) ;
+	13	: string(STR_LIVERY_TFW) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -279,6 +284,7 @@ switch(FEAT_TRAINS, SELF, sw_153_col_manual, cargo_subtype){
 	10	: palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;
 	11	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
 	12	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	13	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
 }
 

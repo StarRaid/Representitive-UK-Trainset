@@ -24,6 +24,8 @@ spriteset(gfx_150_northern			, "gfx/DMU/150_2.png"){template_Mk2_double(0,500)}
 spriteset(gfx_150_northern_mid		, "gfx/DMU/150_2.png"){template_Mk2_single(0,525)}
 spriteset(gfx_150_arriva_exec		, "gfx/DMU/150_2.png"){template_Mk2_double(0,550)}
 spriteset(gfx_150_arriva_exec_mid	, "gfx/DMU/150_2.png"){template_Mk2_single(0,575)}
+spriteset(gfx_150_tfw				, "gfx/DMU/150_2.png"){template_Mk2_double(0,600)}
+spriteset(gfx_150_tfw_mid			, "gfx/DMU/150_2.png"){template_Mk2_single(0,625)}
 
 spriteset(gfx_150_purch_rr			, "gfx/DMU/150_2.png"){template_dualhead_purchase(90,25)}
 spriteset(gfx_150_purch_central		, "gfx/DMU/150_2.png"){template_dualhead_purchase(90,175)}
@@ -52,6 +54,7 @@ switch(FEAT_TRAINS, SELF, sw_150_gfx_idcheck_fgw, vehicle_type_id){ 9030 : gfx_1
 switch(FEAT_TRAINS, SELF, sw_150_gfx_idcheck_northern_arr, vehicle_type_id){ 9030 : gfx_150_northern_arr_mid ; gfx_150_northern_arr ; }
 switch(FEAT_TRAINS, SELF, sw_150_gfx_idcheck_northern, vehicle_type_id){ 9030 : gfx_150_northern_mid ; gfx_150_northern ; }
 switch(FEAT_TRAINS, SELF, sw_150_gfx_idcheck_arriva_exec, vehicle_type_id){ 9030 : gfx_150_arriva_exec_mid ; gfx_150_arriva_exec ; }
+switch(FEAT_TRAINS, SELF, sw_150_gfx_idcheck_tfw, vehicle_type_id){ 9030 : gfx_150_tfw_mid ; gfx_150_tfw ; }
 
 
 
@@ -75,6 +78,7 @@ switch(FEAT_TRAINS, SELF, sw_150_2_gfx_manual, cargo_subtype){
 	8	: sw_150_gfx_idcheck_anglia ;
 	9	: sw_150_gfx_idcheck_wessex ;
 	11	: sw_150_gfx_idcheck_arriva_exec ;
+	12	: sw_150_gfx_idcheck_tfw ;
 	sw_150_gfx_idcheck_northern ;
 }
 
@@ -164,6 +168,7 @@ switch(FEAT_TRAINS, SELF, sw_150_2_refit_text, cargo_subtype){
 	9	: string(STR_LIVERY_WESSEX_TRAINS) ;
 	10	: string(STR_LIVERY_ATW) ;
 	11	: string(STR_LIVERY_ATW_EXEC) ;
+	12	: string(STR_LIVERY_TFW) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -215,6 +220,7 @@ switch(FEAT_TRAINS, SELF, sw_150_2_col_manual, cargo_subtype){
 	9	: palette_2cc(COLOUR_RED, COLOUR_PALE_GREEN) ;
 	10	: palette_2cc(COLOUR_WHITE, COLOUR_BLUE) ;
 	11	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	12	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 

@@ -234,6 +234,12 @@ switch(FEAT_TRAINS, SELF, sw_769_vfx_check_1, STANDARD_GAUGE_CHECK_OHLE_ONLY){
 }
 
 
+switch(FEAT_TRAINS, SELF, sw_769_effect_1_check, STANDARD_GAUGE_CHECK_EVERY_ELEC){
+	1 : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	EFFECT_SPAWN_MODEL_DIESEL ;
+}
+
+
 
 
 
@@ -258,7 +264,7 @@ item (FEAT_TRAINS, item_769, 769) {
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1438 hp;
-		running_cost_base:				RUNNING_COST_ELECTRIC;
+		running_cost_base:				RUNNING_COST_DIESEL;
 		dual_headed:					1;
 		default_cargo_type:				PASS;
 		cargo_capacity:					75;
@@ -266,11 +272,11 @@ item (FEAT_TRAINS, item_769, 769) {
 		tractive_effort_coefficient:	0.1;
 		air_drag_coefficient:			0.06;
 		length:							8;
-		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_DIESEL;
 		bitmask_vehicle_info:			0;
 		cargo_age_period:				185;
 		default_cargo_type:				PASS;
-		engine_class:					ENGINE_CLASS_ELECTRIC;
+		engine_class:					ENGINE_CLASS_DIESEL;
 	}
 	graphics {
 		can_attach_wagon:					sw_769_coupling_restrictions;
@@ -284,6 +290,7 @@ item (FEAT_TRAINS, item_769, 769) {
 		purchase_running_cost_factor:		34;
 		sound_effect:						sw_769_sfx_check ;
 		power:								sw_769_power;
+		effect_spawn_model_and_powered:		sw_769_effect_1_check;
 }
 		livery_override (9030) {
 		cargo_capacity: 85;

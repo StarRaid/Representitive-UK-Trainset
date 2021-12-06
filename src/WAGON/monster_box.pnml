@@ -4,6 +4,7 @@
 //Sprites
 
 spriteset(gfx_mbox			, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,   0)}
+spriteset(gfx_mbox_new		, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0, 150)}
 spriteset(gfx_mbox_coal_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  25)}
 spriteset(gfx_mbox_coal_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  25)}
 spriteset(gfx_mbox_iron_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  50)}
@@ -66,31 +67,75 @@ switch(FEAT_TRAINS, SELF, sw_mbox_cargo_check, cargo_type_in_veh){
 	sw_mbox_grey_cargo_check ;
 }
 
+
 //Sprite stack
 
+switch(FEAT_TRAINS, SELF, sw_mbox_gfx_manual, cargo_subtype){
+	3 : gfx_mbox_new ;
+	gfx_mbox ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_gfx_manual_check, livery_choice){
+	1 : sw_mbox_gfx_manual ;
+	gfx_mbox ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_mbox_sprite_stack, SPR_STACK){
-	0 : gfx_mbox ;
+	0 : sw_mbox_gfx_manual_check ;
 	1 : sw_mbox_cargo_check ;
 }
 
 
 //Colours
 
+
+
 random_switch(FEAT_TRAINS, PARENT, sw_mbox_colours_random){
 	2 : palette_2cc(COLOUR_DARK_GREEN , COLOUR_DARK_GREEN) ;
 	1 : palette_2cc(COLOUR_RED , COLOUR_RED) ;
 }
+
+
+switch(FEAT_TRAINS, SELF, sw_mbox_colours_manual, cargo_subtype){
+	1 : palette_2cc(COLOUR_DARK_GREEN , COLOUR_DARK_GREEN) ;
+	2 : palette_2cc(COLOUR_RED , COLOUR_RED) ;
+	3 : palette_2cc(COLOUR_GREY , COLOUR_YELLOW) ;
+	4 : palette_2cc(COLOUR_DARK_BLUE , COLOUR_YELLOW) ;
+	sw_mbox_colours_random ;
+}
+
 
 switch(FEAT_TRAINS, SELF, sw_mbox_colours_year_check, build_year <= 1995){
 	1 : palette_2cc(COLOUR_BROWN, COLOUR_BROWN) ;
 	sw_mbox_colours_random ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_mbox_colours_manual_check, livery_choice){
+	1 : sw_mbox_colours_manual ;
+	sw_mbox_colours_year_check ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_mbox_colours_2cc_check, colour_scheme_2){
-	1 : sw_mbox_colours_year_check ;
+	1 : sw_mbox_colours_manual_check ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_mbox_refit_text, cargo_subtype){
+	0 : string(STR_RANDOM_COLOURS) ;
+	1 : string(STR_LIVERY_FREIGHTLINER) ;
+	2 : string(STR_LIVERY_DBCARGO) ;
+	3 : string(STR_LIVERY_FREIGHTLINER_ORANGE) ;
+	4 : string(STR_LIVERY_GBRF) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_refit_text_check, livery_choice){
+	1 : sw_mbox_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
 
 item(FEAT_TRAINS, item_mbox, 10005){
 	property{
@@ -118,8 +163,9 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		speed						   : 75 mph ;
 	}
 	graphics{
-		default			: sw_mbox_sprite_stack ;
-		purchase		: gfx_mbox_purchase ;
-		colour_mapping	: sw_mbox_colours_2cc_check ;
+		default				: sw_mbox_sprite_stack ;
+		purchase			: gfx_mbox_purchase ;
+		colour_mapping		: sw_mbox_colours_2cc_check ;
+		cargo_subtype_text	: sw_mbox_refit_text_check ;
 	}
 }
