@@ -175,14 +175,19 @@ switch(FEAT_TRAINS, PARENT, sw_307_trailer_p, vehicle_is_reversed){
 	1: sw_307_t;
 } 
 
-switch(FEAT_TRAINS, PARENT, sw_307_trailer_x_p, vehicle_is_reversed){
+switch(FEAT_TRAINS, PARENT, sw_307_trailer_r_p, vehicle_is_reversed){
 	0: sw_307_t;
 	1: sw_307_t_p_r;
 } 
 
+switch(FEAT_TRAINS, SELF, sw_307_livery_selection_t_1, position_in_vehid_chain_from_end){
+	0: sw_307_trailer_r_p;
+	sw_307_t;
+}
+
 switch(FEAT_TRAINS, SELF, sw_307_livery_selection_t, position_in_vehid_chain){
-	0: sw_307_trailer_x_p;
-	1: sw_307_trailer_p;
+	0: sw_307_trailer_p;
+	sw_307_livery_selection_t_1;
 }
 
 switch(FEAT_TRAINS, SELF, sw_307_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
