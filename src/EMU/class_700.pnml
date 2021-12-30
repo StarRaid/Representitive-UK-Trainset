@@ -197,11 +197,6 @@ switch(FEAT_TRAINS, SELF, sw_700_coupling_restrictions, vehicle_type_id) {
     return string(STR_700_NO_COUPLE);
 }
 
-switch(FEAT_TRAINS, SELF, sw_700test, position_in_consist%2) {
-    0: return 8;
-	1: return 2;
-}
-
 item (FEAT_TRAINS, item_700, 700) {
 	property {
 		name: 							string(STR_NAME_700);
@@ -254,7 +249,6 @@ item (FEAT_TRAINS, item_700, 700) {
 		weight:	34;
 		colour_mapping:	sw_700_recolour;
 		cargo_subtype_text: sw_700_livery_decider;
-		length: sw_700test;
 }
 }
 
