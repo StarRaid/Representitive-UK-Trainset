@@ -1,0 +1,181 @@
+// L&BSCR e4
+
+//Sprites
+
+spriteset(gfx_lbsc_e4_br_black			, "gfx/STEAM_LOCO/southern_region.png"	){	template_5_8		(0	,25	)}
+spriteset(gfx_lbsc_e4_br_black_rev		, "gfx/STEAM_LOCO/southern_region.png"	){	template_5_8_rev	(0	,25	)}
+spriteset(gfx_lbsc_e4_lbsc				, "gfx/STEAM_LOCO/southern_region.png"	){	template_5_8		(0	,50	)}
+spriteset(gfx_lbsc_e4_lbsc_rev			, "gfx/STEAM_LOCO/southern_region.png"	){	template_5_8_rev	(0	,50	)}
+spriteset(gfx_lbsc_e4_sr				, "gfx/STEAM_LOCO/southern_region.png"	){	template_5_8		(0	,75	)}
+spriteset(gfx_lbsc_e4_sr_rev			, "gfx/STEAM_LOCO/southern_region.png"	){	template_5_8_rev	(0	,75	)}
+
+spriteset(gfx_lbsc_e4_purchase_br_black	, "gfx/STEAM_LOCO/southern_region.png"	){	template_purchase	(130,25	)}
+spriteset(gfx_lbsc_e4_purchase_lbsc		, "gfx/STEAM_LOCO/southern_region.png"	){	template_purchase	(130,50	)}
+spriteset(gfx_lbsc_e4_purchase_sr		, "gfx/STEAM_LOCO/southern_region.png"	){	template_purchase	(130,75	)}
+
+//Switches
+
+
+//Graphics
+
+//BR Black
+switch(FEAT_TRAINS, PARENT, sw_lbsc_e4_gfx_rev_check_a_br_black,	vehicle_is_reversed){ 1 : gfx_lbsc_e4_br_black ; gfx_lbsc_e4_br_black_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_lbsc_e4_gfx_rev_check_b_br_black,	vehicle_is_reversed){ 1 : gfx_lbsc_e4_br_black_rev ; gfx_lbsc_e4_br_black ; }
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_m_br_black,		position_in_vehid_chain){ 0 : gfx_lbsc_e4_br_black_rev ; sw_lbsc_e4_gfx_rev_check_b_br_black ;}
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_b_br_black,		position_in_vehid_chain_from_end){ 0 : gfx_lbsc_e4_br_black ; sw_lbsc_e4_gfx_pos_check_m_br_black ;}
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_f_br_black,		num_vehs_in_vehid_chain ){ 1 : sw_lbsc_e4_gfx_rev_check_a_br_black ; gfx_lbsc_e4_br_black_rev ;}
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_a_br_black,		position_in_consist){ 0 : sw_lbsc_e4_gfx_pos_check_f_br_black ; sw_lbsc_e4_gfx_pos_check_b_br_black ;}
+
+//LBSCR
+switch(FEAT_TRAINS, PARENT, sw_lbsc_e4_gfx_rev_check_a_lbsc,		vehicle_is_reversed){ 1 : gfx_lbsc_e4_lbsc ; gfx_lbsc_e4_lbsc_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_lbsc_e4_gfx_rev_check_b_lbsc,		vehicle_is_reversed){ 1 : gfx_lbsc_e4_lbsc_rev ; gfx_lbsc_e4_lbsc ; }
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_m_lbsc,			position_in_vehid_chain){ 0 : gfx_lbsc_e4_lbsc_rev ; sw_lbsc_e4_gfx_rev_check_b_lbsc ;}
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_b_lbsc,			position_in_vehid_chain_from_end){ 0 : gfx_lbsc_e4_lbsc ; sw_lbsc_e4_gfx_pos_check_m_lbsc ;}
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_f_lbsc,			num_vehs_in_vehid_chain ){ 1 : sw_lbsc_e4_gfx_rev_check_a_lbsc ; gfx_lbsc_e4_lbsc_rev ;}
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_a_lbsc,			position_in_consist){ 0 : sw_lbsc_e4_gfx_pos_check_f_lbsc ; sw_lbsc_e4_gfx_pos_check_b_lbsc ;}
+
+//Southern
+switch(FEAT_TRAINS, PARENT, sw_lbsc_e4_gfx_rev_check_a_sr,			vehicle_is_reversed){ 1 : gfx_lbsc_e4_sr ; gfx_lbsc_e4_sr_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_lbsc_e4_gfx_rev_check_b_sr,			vehicle_is_reversed){ 1 : gfx_lbsc_e4_sr_rev ; gfx_lbsc_e4_sr ; }
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_m_sr,			position_in_vehid_chain){ 0 : gfx_lbsc_e4_sr_rev ; sw_lbsc_e4_gfx_rev_check_b_sr ;}
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_b_sr,			position_in_vehid_chain_from_end){ 0 : gfx_lbsc_e4_sr ; sw_lbsc_e4_gfx_pos_check_m_sr ;}
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_f_sr,			num_vehs_in_vehid_chain ){ 1 : sw_lbsc_e4_gfx_rev_check_a_sr ; gfx_lbsc_e4_sr_rev ;}
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_pos_check_a_sr,			position_in_consist){ 0 : sw_lbsc_e4_gfx_pos_check_f_sr ; sw_lbsc_e4_gfx_pos_check_b_sr ;}
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_auto, current_year){
+	ERA_BRCREST: sw_lbsc_e4_gfx_pos_check_a_br_black ;
+	ERA_BIGFOUR: sw_lbsc_e4_gfx_pos_check_a_sr ;
+	sw_lbsc_e4_gfx_pos_check_a_lbsc ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_manual, cargo_subtype){
+	0 : sw_lbsc_e4_gfx_pos_check_a_lbsc ;
+	1 : sw_lbsc_e4_gfx_pos_check_a_sr ;
+	sw_lbsc_e4_gfx_pos_check_a_br_black ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_manual_check, livery_choice){
+	1 : sw_lbsc_e4_gfx_manual ;
+	sw_lbsc_e4_gfx_auto ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_gfx_purchase, current_year){
+	ERA_BRCREST: gfx_lbsc_e4_purchase_br_black ;
+	ERA_BIGFOUR: gfx_lbsc_e4_purchase_sr ;
+	gfx_lbsc_e4_purchase_lbsc ;
+}
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_colours_auto, current_year){
+	ERA_BRCREST: palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	ERA_BIGFOUR: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_BROWN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_BROWN, COLOUR_YELLOW) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_colours_manual_check, livery_choice){
+	1 : sw_lbsc_e4_colours_manual ;
+	sw_lbsc_e4_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_colours_2cc_check, colour_scheme_1){
+	1 : sw_lbsc_e4_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_purchase_colours_2cc_check, colour_scheme_1){
+	1 : sw_lbsc_e4_colours_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_LBSCR) ;
+	 1 : string(STR_LIVERY_SOUTHERN) ;
+	 2 : string(STR_LIVERY_BR_BLACK) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lbsc_e4_refit_text_check, livery_choice){
+	1 : sw_lbsc_e4_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+//Item
+
+item(FEAT_TRAINS, item_lbsc_e4, 1401){
+	property{
+		name                           : string(STR_NAME_LBSC_E4) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1897,1,1) ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : 25 ;
+		vehicle_life                   : 35 ;
+		reliability_decay              : 17 ;
+		cost_factor                    : 65 ;
+		running_cost_base              : RUNNING_COST_STEAM ;
+		running_cost_factor            : 86 ;
+		speed                          : 50 mph ;
+		track_type                     : RAIL ;
+		power                          : 588 hp ;
+		weight                         : 59 ton ;
+		engine_class                   : ENGINE_CLASS_STEAM ;
+		tractive_effort_coefficient    : 0.14 ;
+		air_drag_coefficient           : 0.0888888888888889 ;
+		length                         : 5 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_STEAM ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : sw_lbsc_e4_gfx_manual_check ;
+		colour_mapping                 : sw_lbsc_e4_colours_2cc_check ;
+		purchase                       : sw_lbsc_e4_gfx_purchase ;
+		purchase_colour_mapping        : sw_lbsc_e4_purchase_colours_2cc_check ;
+		sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
+		create_effect                  : vfx_steam ;
+		cargo_subtype_text             : sw_lbsc_e4_refit_text_check ;
+		purchase_cargo_capacity        : 0 ;
+		cargo_capacity                 : return 0 ;
+		can_attach_wagon               : sw_all_but_MU90;
+		running_cost_factor            : return(current_speed == 0 ? 70 : 252) ;
+		purchase_running_cost_factor : 252 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_lbsc_e4, 1401){
+	property{
+		name                           : string(STR_NAME_LBSC_E4_ALT) ;
+	}
+}
+}
+
+
+
+
+
+

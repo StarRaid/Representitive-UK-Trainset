@@ -8,6 +8,10 @@ Representative UK Train Set (RUKTS) is a GRF for OpenTTD designed to give a vari
 
 ![RUKTS preview image](/RUKTS9.png)
 
+### Tracking Table
+
+A tracking table can be found [here](https://docs.google.com/spreadsheets/d/14dvx5S2F79QEwwT9pLjGXr7K4LLShhIT8fC4FO4DW8I/edit?usp=sharing "Tracking table").
+
 ### Graphics
 
 Graphics are drawn with the DOS pallete, and have 2 pixels between each graphic.
@@ -17,7 +21,7 @@ Shading will be based off of the 405 graphic found on https://www.tt-forums.net/
 
 ## License for the use of RUKTS (Representative United Kingdom Train Set)
 
-All code, graphics, and sound files are licensed under GPL V2. © StarRaid, Gwyd, PikkaBird, and andythenorth.
+All code, graphics, and sound files are licensed under GPL V2. © StarRaid, Gwyd, PikkaBird, audigex, and andythenorth.
 
 Non-comercial redistribution, decompiling, and modifying are all encouraged.
 

@@ -166,10 +166,10 @@ item(FEAT_TRAINS, item_nrwgarratt, 1000){
 		running_cost_factor            : 60 ;
 		speed                          : 50 mph ;
 		track_type                     : NAAN ;
-		power                          : 600 kW ;
+		power                          : 633 hp ;
 		weight                         : 60 ton ;
 		engine_class                   : ENGINE_CLASS_STEAM ;
-		tractive_effort_coefficient    : 0.2 ;
+		tractive_effort_coefficient    : 0.12 ;
 		air_drag_coefficient           : 0.1 ;
 		length                         : 4 ;
 		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;

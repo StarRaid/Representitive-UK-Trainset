@@ -1,5 +1,8 @@
 if(purchase_list_sort == 0 ){
 sort(FEAT_TRAINS,[
+1401,
+1403,
+1404,
 20,
 37,
 40,
@@ -121,6 +124,9 @@ sort(FEAT_TRAINS,[
 
 if(purchase_list_sort > 0 ){
 sort(FEAT_TRAINS,[
+1401,
+1403,
+1404,
 14,
 20,
 31,

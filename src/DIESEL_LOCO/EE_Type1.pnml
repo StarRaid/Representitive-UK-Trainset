@@ -49,32 +49,32 @@ switch(FEAT_TRAINS, PARENT, sw_gfx_20_rev_check_b_gbrf, vehicle_is_reversed){ 1 
 
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_m_brblue, position_in_vehid_chain){ 0 : gfx_20_brblue_rev ; sw_gfx_20_rev_check_b_brblue ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_b_brblue, position_in_vehid_chain_from_end){ 0 : gfx_20_brblue ; sw_gfx_20_pos_check_m_brblue ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_brblue, num_vehs_in_vehid_chain ){ 0 : sw_gfx_20_rev_check_a_brblue ; gfx_20_brblue_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_brblue, num_vehs_in_vehid_chain ){ 1 : sw_gfx_20_rev_check_a_brblue ; gfx_20_brblue_rev ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_a_brblue, position_in_consist){ 0 : sw_gfx_20_pos_check_f_brblue ; sw_gfx_20_pos_check_b_brblue ;}
 
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_m_railfreight, position_in_vehid_chain){ 0 : gfx_20_railfreight_rev ; sw_gfx_20_rev_check_b_railfreight ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_b_railfreight, position_in_vehid_chain_from_end){ 0 : gfx_20_railfreight ; sw_gfx_20_pos_check_m_railfreight ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_railfreight, num_vehs_in_vehid_chain ){ 0 : sw_gfx_20_rev_check_a_railfreight ; gfx_20_railfreight_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_railfreight, num_vehs_in_vehid_chain ){ 1 : sw_gfx_20_rev_check_a_railfreight ; gfx_20_railfreight_rev ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_a_railfreight, position_in_consist){ 0 : sw_gfx_20_pos_check_f_railfreight ; sw_gfx_20_pos_check_b_railfreight ;}
 
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_m_railfreight_grey, position_in_vehid_chain){ 0 : gfx_20_railfreight_grey_rev ; sw_gfx_20_rev_check_b_railfreight_grey ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_b_railfreight_grey, position_in_vehid_chain_from_end){ 0 : gfx_20_railfreight_grey ; sw_gfx_20_pos_check_m_railfreight_grey ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_railfreight_grey, num_vehs_in_vehid_chain ){ 0 : sw_gfx_20_rev_check_a_railfreight_grey ; gfx_20_railfreight_grey_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_railfreight_grey, num_vehs_in_vehid_chain ){ 1 : sw_gfx_20_rev_check_a_railfreight_grey ; gfx_20_railfreight_grey_rev ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_a_railfreight_grey, position_in_consist){ 0 : sw_gfx_20_pos_check_f_railfreight_grey ; sw_gfx_20_pos_check_b_railfreight_grey ;}
 
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_m_drs_comp, position_in_vehid_chain){ 0 : gfx_20_drs_comp_rev ; sw_gfx_20_rev_check_b_drs_comp ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_b_drs_comp, position_in_vehid_chain_from_end){ 0 : gfx_20_drs_comp ; sw_gfx_20_pos_check_m_drs_comp ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_drs_comp, num_vehs_in_vehid_chain ){ 0 : sw_gfx_20_rev_check_a_drs_comp ; gfx_20_drs_comp_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_drs_comp, num_vehs_in_vehid_chain ){ 1 : sw_gfx_20_rev_check_a_drs_comp ; gfx_20_drs_comp_rev ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_a_drs_comp, position_in_consist){ 0 : sw_gfx_20_pos_check_f_drs_comp ; sw_gfx_20_pos_check_b_drs_comp ;}
 
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_m_drs, position_in_vehid_chain){ 0 : gfx_20_drs_rev ; sw_gfx_20_rev_check_b_drs ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_b_drs, position_in_vehid_chain_from_end){ 0 : gfx_20_drs ; sw_gfx_20_pos_check_m_drs ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_drs, num_vehs_in_vehid_chain ){ 0 : sw_gfx_20_rev_check_a_drs ; gfx_20_drs_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_drs, num_vehs_in_vehid_chain ){ 1 : sw_gfx_20_rev_check_a_drs ; gfx_20_drs_rev ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_a_drs, position_in_consist){ 0 : sw_gfx_20_pos_check_f_drs ; sw_gfx_20_pos_check_b_drs ;}
 
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_m_gbrf, position_in_vehid_chain){ 0 : gfx_20_gbrf_rev ; sw_gfx_20_rev_check_b_gbrf ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_b_gbrf, position_in_vehid_chain_from_end){ 0 : gfx_20_gbrf ; sw_gfx_20_pos_check_m_gbrf ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_gbrf, num_vehs_in_vehid_chain ){ 0 : sw_gfx_20_rev_check_a_gbrf ; gfx_20_gbrf_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_f_gbrf, num_vehs_in_vehid_chain ){ 1 : sw_gfx_20_rev_check_a_gbrf ; gfx_20_gbrf_rev ;}
 switch(FEAT_TRAINS, SELF, sw_gfx_20_pos_check_a_gbrf, position_in_consist){ 0 : sw_gfx_20_pos_check_f_gbrf ; sw_gfx_20_pos_check_b_gbrf ;}
 
 //Automatic

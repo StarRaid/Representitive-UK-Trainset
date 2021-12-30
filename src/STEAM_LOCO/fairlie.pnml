@@ -39,7 +39,7 @@ item(FEAT_TRAINS, item_fairlie, 1001){
 		power                          : 350 kW ;
 		weight                         : 35 ton ;
 		engine_class                   : ENGINE_CLASS_STEAM ;
-		tractive_effort_coefficient    : 0.25 ;
+		tractive_effort_coefficient    : 0.18 ;
 		air_drag_coefficient           : 0.1 ;
 		length                         : 6 ;
 		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;

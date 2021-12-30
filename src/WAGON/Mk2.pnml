@@ -184,6 +184,8 @@ switch(FEAT_TRAINS, SELF, sw_mk2_livery_decider, cargo_subtype){
 	9..10: gfx_mk2_generic_f_tso ;
 	11: gfx_mk2_fgw_fag_f_tso ;
 	12: sw_mk2_scr_check_front ;
+	13 : gfx_mk2_generic_f_tso ;
+	14 : sw_mk2f_brblue_back;
 	sw_mk2a_brblue_back ;
 }
 
@@ -216,6 +218,8 @@ switch(FEAT_TRAINS, SELF, sw_mk2_refit_text, cargo_subtype){
 	10 : string(STR_LIVERY_NETWORK_RAIL) ;
 	11 : string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_EMPTY)) ;
 	12 : string(STR_LIVERY_SCR) ;
+	13 : string(STR_LIVER_COMP_COLOURS_A);
+	14 : string(STR_LIVER_COMP_COLOURS_F);
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -289,6 +293,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_manual, cargo_subtype){
 	10 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
 	11 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	12 : palette_2cc(COLOUR_RED, COLOUR_ORANGE) ;
+	13..14: palette_2cc(company_colour1, company_colour2) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
