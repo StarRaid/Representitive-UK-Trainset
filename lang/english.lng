@@ -190,6 +190,9 @@ STR_LIVERY_HEATHROW_EXPRESS					: Heathrow Express
 
 STR_LIVERY_LBSCR							: London, Brighton & South Coast Railway
 STR_LIVERY_SOUTHERN_RAILWAY					: Southern Railway
+STR_LIVERY_GWR								: Great Western Railway
+STR_LIVERY_LMS								: London, Midland & Scotland
+STR_LIVERY_LNER_1923						: London & North Eastern Railway
 STR_LIVERY_BR_BLACK							: British Railways {GOLD}(Black)
 STR_LIVERY_BR_BRUNSWICK						: British Railways {GOLD}(Brunswick Green)
 
@@ -239,9 +242,15 @@ STR_CONTAINER_LARGE             : 1 x Large container
 
 STR_RANDOM_COLOURS				: Random colours
 
+STR_NAME_STROUDLEY				:Stroudley 6-Wheel Carraige
+STR_NAME_VICTORIAN				:Victorain Suburban Carraige
+STR_NAME_CLEROSTORY				:Clerostory Carraige
+STR_NAME_MAUNSELL				:Maunsell Carraige
+STR_NAME_BULLEID				:Bulleid Suburban Carraige
 STR_NAME_DBSO                   :BREL Mark 2 Driving Coach
 STR_NAME_DVT                    :BREL Driving Van Trailer
 STR_NAME_MK1					:Mark 1 Carriage
+STR_NAME_MK1_SUB				:Mark 1 Suburban Carriage
 STR_NAME_MK2					:BREL Mark 2 Carriage
 STR_NAME_MK2A					:{GOLD}(Mk2a)
 STR_NAME_MK2F					:{GOLD}(Mk2f)

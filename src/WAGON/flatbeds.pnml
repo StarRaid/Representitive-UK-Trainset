@@ -84,7 +84,7 @@ item (FEAT_TRAINS, item_rrv, 10017) {
 	property {
 		name: 							string(STR_NAME_RRV);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1955, 1, 1);
+		introduction_date:				date(1950, 1, 1);
 		model_life:						30;
 		retire_early:					1;
 		vehicle_life:					40;

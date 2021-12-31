@@ -63,7 +63,7 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 	property {
 		name: 							string(STR_NAME_ZDX);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1955, 1, 1);
+		introduction_date:				date(1950, 1, 1);
 		model_life:						30;
 		retire_early:					1;
 		vehicle_life:					40;
@@ -170,7 +170,7 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 	property {
 		name: 							string(STR_NAME_MDO);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1975, 1, 1);
+		introduction_date:				date(1930, 1, 1);
 		model_life:						20;
 		retire_early:					1;
 		vehicle_life:					25;
@@ -230,7 +230,7 @@ item (FEAT_TRAINS, item_zgo, 10012) {
 	property {
 		name: 							string(STR_NAME_ZGO);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1950, 1, 1);
+		introduction_date:				date(1850, 1, 1);
 		model_life:						20;
 		retire_early:					1;
 		vehicle_life:					25;
@@ -290,7 +290,7 @@ item (FEAT_TRAINS, item_mtv, 10014) {
 	property {
 		name: 							string(STR_NAME_MTV);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1975, 1, 1);
+		introduction_date:				date(1960, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		retire_early:					1;
 		vehicle_life:					35;
@@ -444,3 +444,4 @@ item (FEAT_TRAINS, item_haz, 10019) {
 		colour_mapping:					sw_hazard_col_check;
 }
 }
+

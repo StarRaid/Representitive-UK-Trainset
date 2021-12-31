@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 65 ;
+	version: 66 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -413,32 +413,32 @@ template template_6_8_rev(x,y){
 
 
 template template_8_8(x,y){
-    [ x, y, 8, 24, -3, -12]
-    [ x+10, y, 21, 17, -12, -10]
-    [ x+33, y, 32, 12, -16, -8]
-    [ x+67, y, 21, 17, -5, -10]
-    [ x+90, y, 8, 24, -3, -12]
-    [ x+100, y, 21, 17, -12, -10]
-    [ x+123, y, 32, 12, -16, -8]
-    [ x+157, y, 21, 17, -5, -10]
+	[x+0	,y	,8	,23	,-3		,-11] //North
+	[x+10	,y	,20	,16	,-13	,-8] //North East
+	[x+32	,y	,33	,13	,-17	,-9] //East
+	[x+67	,y	,20	,16	,-5		,-8] //South East
+	[x+89	,y	,8	,23	,-3		,-11] //South
+	[x+99	,y	,20	,16	,-13	,-8] //South West
+	[x+121	,y	,33	,13	,-17	,-9] //West
+	[x+156	,y	,20	,16	,-5		,-8] //North West
 }
 
 template template_8_8_rev(x,y){
-    [ x+90, y, 8, 24, -3, -12]
-    [ x+100, y, 21, 17, -12, -10]
-    [ x+123, y, 32, 12, -16, -8]
-    [ x+157, y, 21, 17, -5, -10]
-    [ x, y, 8, 24, -3, -12]
-    [ x+10, y, 21, 17, -12, -10]
-    [ x+33, y, 32, 12, -16, -8]
-    [ x+67, y, 21, 17, -5, -10]
+	[x+89,y,8,23,-3,-11] //South
+	[x+99,y,20,16,-13,-8] //South West
+	[x+121,y,33,13,-17,-9] //West
+	[x+156,y,20,16,-5,-8] //North West
+	[x+0,y,8,23,-3,-11] //North
+	[x+10,y,20,16,-13,-8] //North East
+	[x+32,y,33,13,-17,-9] //East
+	[x+67,y,20,16,-5,-8] //South East
 }
 
 template template_8_4(x,y){
-    [ x, y, 8, 24, -3, -12]
-    [ x+10, y, 21, 17, -12, -10]
-    [ x+33, y, 32, 12, -16, -8]
-    [ x+67, y, 21, 17, -5, -10]
+	[x+0,y,8,23,-3,-11] //North
+	[x+10,y,20,16,-13,-8] //North East
+	[x+32,y,33,13,-17,-9] //East
+	[x+67,y,20,16,-5,-8] //South East
 }
 
 
@@ -1044,6 +1044,186 @@ switch(FEAT_TRAINS, SELF, sw_all_but_MU90, vehicle_type_id) {
 }
 # 1 "rukts.pnml" 2
 //#include "src/TRACKS/narrow_gauge.pnml"
+# 1 "src/WAGON/victorian.pnml" 1
+
+//Stroudley 6-wheel
+
+
+spriteset(gfx_stroudley				, "gfx/WAGON/coaches.png"	){	template_5_4		(0	,0	)}
+spriteset(gfx_stroudley_purchase	, "gfx/WAGON/coaches.png"	){	template_purchase	(130,0	)}
+
+
+switch(FEAT_TRAINS, SELF, sw_stroudley_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_LBSCR) ;
+	 1 : string(STR_LIVERY_SOUTHERN) ;
+	 2 : string(STR_LIVERY_LMS) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_stroudley_refit_text_check, livery_choice){
+	1 : sw_stroudley_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_stroudley_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_BROWN, COLOUR_YELLOW) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	palette_2cc(COLOUR_YELLOW, COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_stroudley_colours_manual_check, livery_choice){
+	1 : sw_stroudley_colours_manual ;
+	palette_2cc(COLOUR_BROWN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_stroudley_colours_2cc_check, colour_scheme_1){
+	1 : sw_stroudley_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+//Item
+
+item (FEAT_TRAINS, item_stroudley, 9070){
+	property{
+		name						   : string(STR_NAME_STROUDLEY) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 5 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1870, 1, 1) ;
+		model_life                     : 35 ;
+		vehicle_life                   : 45 ;
+		cost_factor                    : 20 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 20 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 20 ;
+		loading_speed                  : 10 ;
+		track_type                     : RAIL ;
+		speed                          : 50 mph ;
+		power                          : 0 hp ;
+		weight                         : 20 ton ;
+	}
+	graphics{
+		default                 : gfx_stroudley ;
+		purchase                : gfx_stroudley_purchase ;
+		purchase_colour_mapping : palette_2cc(company_colour1, company_colour2) ;
+		cargo_subtype_text      : sw_stroudley_refit_text_check ;
+		colour_mapping          : sw_stroudley_colours_2cc_check ;
+	}
+}
+
+
+
+//Victorian Suburban
+
+
+
+spriteset(gfx_vicsub				, "gfx/WAGON/coaches.png"	){	template_8_4		(0	,25	)}
+spriteset(gfx_vicsub_brake			, "gfx/WAGON/coaches.png"	){	template_8_8		(0	,50	)}
+spriteset(gfx_vicsub_brake_rev		, "gfx/WAGON/coaches.png"	){	template_8_8_rev	(0	,50	)}
+spriteset(gfx_vicsub_purchase		, "gfx/WAGON/coaches.png"	){	template_purchase	(130,25	)}
+
+switch(FEAT_TRAINS, SELF, sw_vicsub_gfx_brake_check, position_in_vehid_chain){
+	0 : gfx_vicsub_brake_rev ;
+	gfx_vicsub ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_vicsub_gfx_brake_check_rev, position_in_vehid_chain_from_end){
+	0 : gfx_vicsub_brake ;
+	gfx_vicsub ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_vicsub_gfx_rev_check, vehicle_is_reversed){
+	1 : sw_vicsub_gfx_brake_check ;
+	sw_vicsub_gfx_brake_check_rev ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_vicsub_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_LBSCR) ;
+	 1 : string(STR_LIVERY_SOUTHERN) ;
+	 2 : string(STR_LIVERY_LMS) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_vicsub_refit_text_check, livery_choice){
+	1 : sw_vicsub_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_vicsub_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_BROWN, COLOUR_YELLOW) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	palette_2cc(COLOUR_YELLOW, COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_vicsub_colours_manual_check, livery_choice){
+	1 : sw_vicsub_colours_manual ;
+	palette_2cc(COLOUR_BROWN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_vicsub_colours_2cc_check, colour_scheme_1){
+	1 : sw_vicsub_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+//Item
+
+item (FEAT_TRAINS, item_vicsub, 9071){
+	property{
+		name						   : string(STR_NAME_VICTORIAN) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1880, 1, 1) ;
+		model_life                     : 40 ;
+		vehicle_life                   : 50 ;
+		cost_factor                    : 30 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 30 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 40 ;
+		loading_speed                  : 24 ;
+		track_type                     : RAIL ;
+		speed                          : 65 mph ;
+		power                          : 0 hp ;
+		weight                         : 30 ton ;
+	}
+	graphics{
+		default                 : sw_vicsub_gfx_rev_check ;
+		purchase                : gfx_vicsub_purchase ;
+		purchase_colour_mapping : palette_2cc(company_colour1, company_colour2) ;
+		cargo_subtype_text      : sw_vicsub_refit_text_check ;
+		colour_mapping          : sw_vicsub_colours_2cc_check ;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+# 1 "rukts.pnml" 2
 # 1 "src/WAGON/Mk1.pnml" 1
 
 
@@ -2764,7 +2944,7 @@ item (FEAT_TRAINS, item_ntx, 9002){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1968, 1, 1) ;
+		introduction_date              : date(1966, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 45 ;
 		cost_factor                    : 60 ;
@@ -2819,7 +2999,7 @@ item (FEAT_TRAINS, item_qpv, 9003){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 6 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1948, 1, 1) ;
+		introduction_date              : date(1922, 1, 1) ;
 		model_life                     : 22 ;
 		vehicle_life                   : 35 ;
 		cost_factor                    : 27 ;
@@ -2927,7 +3107,7 @@ item (FEAT_TRAINS, item_rbx, 9004){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1960, 1, 1) ;
+		introduction_date              : date(1931, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 40 ;
 		cost_factor                    : 30 ;
@@ -3091,7 +3271,7 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 	property {
 		name: 							string(STR_NAME_ZDX);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1955, 1, 1);
+		introduction_date:				date(1950, 1, 1);
 		model_life:						30;
 		retire_early:					1;
 		vehicle_life:					40;
@@ -3198,7 +3378,7 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 	property {
 		name: 							string(STR_NAME_MDO);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1975, 1, 1);
+		introduction_date:				date(1930, 1, 1);
 		model_life:						20;
 		retire_early:					1;
 		vehicle_life:					25;
@@ -3258,7 +3438,7 @@ item (FEAT_TRAINS, item_zgo, 10012) {
 	property {
 		name: 							string(STR_NAME_ZGO);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1950, 1, 1);
+		introduction_date:				date(1850, 1, 1);
 		model_life:						20;
 		retire_early:					1;
 		vehicle_life:					25;
@@ -3318,7 +3498,7 @@ item (FEAT_TRAINS, item_mtv, 10014) {
 	property {
 		name: 							string(STR_NAME_MTV);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1975, 1, 1);
+		introduction_date:				date(1960, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		retire_early:					1;
 		vehicle_life:					35;
@@ -3472,6 +3652,7 @@ item (FEAT_TRAINS, item_haz, 10019) {
 		colour_mapping:					sw_hazard_col_check;
 }
 }
+
 # 1 "rukts.pnml" 2
 # 1 "src/WAGON/hoppers.pnml" 1
 //Hoppers
@@ -4141,7 +4322,7 @@ item (FEAT_TRAINS, item_rrv, 10017) {
 	property {
 		name: 							string(STR_NAME_RRV);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1955, 1, 1);
+		introduction_date:				date(1950, 1, 1);
 		model_life:						30;
 		retire_early:					1;
 		vehicle_life:					40;
@@ -4662,7 +4843,7 @@ item (FEAT_TRAINS, item_lulcoach, 600) {
 	property {
 		name: 							string(STR_NAME_600);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date              : date(1938,1,1) ;
+		introduction_date              : date(1937,1,1) ;
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		retire_early:					1;
 		vehicle_life:					50;
@@ -25081,7 +25262,7 @@ item(FEAT_TRAINS, item_lul38, 638){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1938,1,1) ;
+		introduction_date              : date(1937,1,1) ;
 		model_life                     : 30 ;
 		vehicle_life                   : 60 ;
 		reliability_decay              : 14 ;
@@ -25226,7 +25407,7 @@ item(FEAT_TRAINS, item_lul59, 659){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1939,1,1) ;
+		introduction_date              : date(1959,1,1) ;
 		model_life                     : 30 ;
 		vehicle_life                   : 45 ;
 		reliability_decay              : 12 ;
@@ -28393,6 +28574,11 @@ sort(FEAT_TRAINS,[
 9004,
 9001,
 9002,
+9070,
+9071,
+9072,
+9073,
+9074,
 9010,
 9020,
 9025,

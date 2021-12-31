@@ -291,7 +291,7 @@ item (FEAT_TRAINS, item_ntx, 9002){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1968, 1, 1) ;
+		introduction_date              : date(1966, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 45 ;
 		cost_factor                    : 60 ;
@@ -346,7 +346,7 @@ item (FEAT_TRAINS, item_qpv, 9003){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 6 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1948, 1, 1) ;
+		introduction_date              : date(1922, 1, 1) ;
 		model_life                     : 22 ;
 		vehicle_life                   : 35 ;
 		cost_factor                    : 27 ;
@@ -454,7 +454,7 @@ item (FEAT_TRAINS, item_rbx, 9004){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1960, 1, 1) ;
+		introduction_date              : date(1931, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 40 ;
 		cost_factor                    : 30 ;

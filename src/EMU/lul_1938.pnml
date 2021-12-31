@@ -131,7 +131,7 @@ item(FEAT_TRAINS, item_lul38, 638){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1938,1,1) ;
+		introduction_date              : date(1937,1,1) ;
 		model_life                     : 30 ;
 		vehicle_life                   : 60 ;
 		reliability_decay              : 14 ;
