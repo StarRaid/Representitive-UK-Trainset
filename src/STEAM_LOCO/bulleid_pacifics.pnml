@@ -191,7 +191,7 @@ item(FEAT_TRAINS, item_merchnav_t, 2800){
 		engine_class					: ENGINE_CLASS_STEAM ;
 		tractive_effort_coefficient		: 0.0 ;
 		air_drag_coefficient			: 0.0 ;
-		length							: 5 ;
+		length							: 4 ;
 		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
 		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_NONE ;
 		sprite_id						: SPRITE_ID_NEW_TRAIN ;

@@ -5,7 +5,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 66 ;
+	version: 67 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -5837,7 +5837,7 @@ item(FEAT_TRAINS, item_merchnav_t, 2800){
 		engine_class					: ENGINE_CLASS_STEAM ;
 		tractive_effort_coefficient		: 0.0 ;
 		air_drag_coefficient			: 0.0 ;
-		length							: 5 ;
+		length							: 4 ;
 		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
 		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_NONE ;
 		sprite_id						: SPRITE_ID_NEW_TRAIN ;
@@ -28556,6 +28556,10 @@ sort(FEAT_TRAINS,[
 1401,
 1403,
 1404,
+1800,
+1802,
+1801,
+1804,
 20,
 37,
 40,
@@ -28680,6 +28684,10 @@ sort(FEAT_TRAINS,[
 1401,
 1403,
 1404,
+1800,
+1802,
+1801,
+1804,
 14,
 20,
 31,
