@@ -8,6 +8,17 @@ template template_purchase_short(x,y){
 	[ x, y, 55, 12, -39, -8]
 }
 
+template template_dualhead_purchase(x,y){
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x, y, 78, 12, -54, -8]
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x+77, y+11, 1, 1, 0, 0]
+	[ x+77, y+11, 1, 1, 0, 0]
+}
+
+
 template base_32bpp(){
 	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //North
 	[0,0,1,1,0,0,"gfx/TEMPLATES/blank.png"] //North East
@@ -21,188 +32,220 @@ template base_32bpp(){
 
 spriteset(gfx_blank){base_32bpp()}
 
-template template_narrow_4_4(x, y){
-	[x+000, y  ,  8 , 14 , -3 , -12] //North
-	[x+010, y  , 12 , 13 , -5 , -10] //North East
-	[x+024, y  , 17 , 13 , -1 , -10] //East
-	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
-	[x+000, y  ,  8 , 14 , -3 , -4 ] //South
-	[x+010, y  , 12 , 13 , -13, -6 ] //South West
-	[x+024, y  , 17 , 13 , -17, -10] //West
-	[x+043, y  , 12 , 13 , -5 , -10] //North West
-}
-
-template template_narrow_4_8(x, y){
-	[x+000, y  ,  8 , 14 , -3 , -12] //North
-	[x+010, y  , 12 , 13 , -5 , -10] //North East
-	[x+024, y  , 17 , 13 , -1 , -10] //East
-	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
-	[x+057, y  ,  8 , 14 , -3 , -4 ] //South
-	[x+067, y  , 12 , 13 , -13, -6 ] //South West
-	[x+081, y  , 17 , 13 , -17, -10] //West
-	[x+100, y  , 12 , 13 , -5 , -10] //North West
-}
-
-template template_narrow_6_4(x, y){
-	[x+000, y  ,  8 , 18 , -3 , -12] //North
-	[x+010, y  , 16 , 15 , -9 , -10] //North East
-	[x+028, y  , 25 , 13 , -9 , -10] //East
-	[x+055, y  , 16 , 15 , -1 , -8 ] //South East
-	[x+000, y  ,  8 , 18 , -3 , -8 ] //South
-	[x+010, y  , 16 , 15 , -13, -8 ] //South West
-	[x+028, y  , 25 , 13 , -17, -10] //West
-	[x+055, y  , 16 , 15 , -5 , -10] //North West
-}
-
-template template_narrow_6_8(x, y){
-	[x+000, y  ,  8 , 18 , -3 , -12] //North
-	[x+010, y  , 16 , 15 , -9 , -10] //North East
-	[x+028, y  , 25 , 13 , -9 , -10] //East
-	[x+055, y  , 16 , 15 , -1 , -8 ] //South East
-	[x+073, y  ,  8 , 18 , -3 , -8 ] //South
-	[x+083, y  , 16 , 15 , -13, -8 ] //South West
-	[x+101, y  , 25 , 13 , -17, -10] //West
-	[x+128, y  , 16 , 15 , -5 , -10] //North West
-}
-
-
-template template_dualhead_purchase(x,y){
-	[ x+77, y+11, 1, 1, 0, 0]
-	[ x+77, y+11, 1, 1, 0, 0]
-	[ x, y, 78, 12, -54, -8]
-	[ x+77, y+11, 1, 1, 0, 0]
-	[ x+77, y+11, 1, 1, 0, 0]
-	[ x+77, y+11, 1, 1, 0, 0]
-	[ x+77, y+11, 1, 1, 0, 0]
-}
-
-
-template template_uklight(x,y){
-	[x+0,y,8,24,-3,-11] //North
-	[x+10,y,20,16,-14,-8] //North East
-	[x+32,y,32,13,-16,-9] //East
-	[x+66,y,20,16,-4,-8] //South East
-	[x+88,y,8,24,-3,-11] //South
-	[x+98,y,20,16,-14,-8] //South West
-	[x+120,y,32,13,-16,-9] //West
-	[x+154,y,20,16,-4,-8] //North West
-}
-
-template template_uklight_reverse(x,y){
-	[x+88,y,8,24,-3,-11] //South
-	[x+98,y,20,16,-14,-8] //South West
-	[x+120,y,32,13,-16,-9] //West
-	[x+154,y,20,16,-4,-8] //North West
-	[x+0,y,8,24,-3,-11] //North
-	[x+10,y,20,16,-14,-8] //North East
-	[x+32,y,32,13,-16,-9] //East
-	[x+66,y,20,16,-4,-8] //South East
-}
 
 
 
+
+
+
+//Standardised sprite templates
+
+
+
+
+//Length 4
+
+
+
+//4 views
 template template_4_4(x,y){
-	[x+000,  y ,  8 , 14 , -3 , -10] //North
-	[x+010,  y , 12 , 13 , -5 , -9 ] //North East
-	[x+024,  y , 17 , 13 , -1 , -9 ] //East
-	[x+043,  y , 12 , 13 ,  3 , -5 ] //South East
-	[x+000,  y ,  8 , 14 , -3 , -2 ] //South     
-	[x+010,  y , 12 , 13 , -13, -5 ] //South West
-	[x+024,  y , 17 , 13 , -17, -9 ] //West      
-	[x+043,  y , 12 , 13 , -5 , -9 ] //North West
+	[x+000,  y ,  8 , 14 , -3 , -10, ANIM] //North
+	[x+010,  y , 12 , 13 , -5 , -9 , ANIM] //North East
+	[x+024,  y , 17 , 13 , -1 , -9 , ANIM] //East
+	[x+043,  y , 12 , 13 ,  3 , -5 , ANIM] //South East
+	[x+000,  y ,  8 , 14 , -3 , -2 , ANIM] //South     
+	[x+010,  y , 12 , 13 , -13, -5 , ANIM] //South West
+	[x+024,  y , 17 , 13 , -17, -9 , ANIM] //West      
+	[x+043,  y , 12 , 13 , -5 , -9 , ANIM] //North West
 }
 
+//8 views
 template template_4_8(x,y){
-	[x+000,  y ,  8 , 14 , -3 , -10] //North
-	[x+010,  y , 12 , 13 , -5 , -9 ] //North East
-	[x+024,  y , 17 , 13 , -1 , -9 ] //East
-	[x+043,  y , 12 , 13 ,  3 , -5 ] //South East
-	[x+057,  y ,  8 , 14 , -3 , -2 ] //South     
-	[x+067,  y , 12 , 13 , -13, -5 ] //South West
-	[x+081,  y , 17 , 13 , -17, -9 ] //West      
-	[x+100,  y , 12 , 13 , -5 , -9 ] //North West
+	[x+000,  y ,  8 , 14 , -3 , -10, ANIM] //North
+	[x+010,  y , 12 , 13 , -5 , -9 , ANIM] //North East
+	[x+024,  y , 17 , 13 , -1 , -9 , ANIM] //East
+	[x+043,  y , 12 , 13 ,  3 , -5 , ANIM] //South East
+	[x+057,  y ,  8 , 14 , -3 , -2 , ANIM] //South     
+	[x+067,  y , 12 , 13 , -13, -5 , ANIM] //South West
+	[x+081,  y , 17 , 13 , -17, -9 , ANIM] //West      
+	[x+100,  y , 12 , 13 , -5 , -9 , ANIM] //North West
 }
 
+//8 views, reversed
 template template_4_8_rev(x,y){
-	[x+057,  y ,  8 , 14 , -3 , -10] //North
-	[x+067,  y , 12 , 13 , -5 , -9 ] //North East
-	[x+081,  y , 17 , 13 , -1 , -9 ] //East
-	[x+100,  y , 12 , 13 ,  3 , -5 ] //South East
-	[x+000,  y ,  8 , 14 , -3 , -2 ] //South     
-	[x+010,  y , 12 , 13 , -13, -5 ] //South West
-	[x+024,  y , 17 , 13 , -17, -9 ] //West      
-	[x+043,  y , 12 , 13 , -5 , -9 ] //North West
+	[x+057,  y ,  8 , 14 , -3 , -10, ANIM] //North
+	[x+067,  y , 12 , 13 , -5 , -9 , ANIM] //North East
+	[x+081,  y , 17 , 13 , -1 , -9 , ANIM] //East
+	[x+100,  y , 12 , 13 ,  3 , -5 , ANIM] //South East
+	[x+000,  y ,  8 , 14 , -3 , -2 , ANIM] //South     
+	[x+010,  y , 12 , 13 , -13, -5 , ANIM] //South West
+	[x+024,  y , 17 , 13 , -17, -9 , ANIM] //West      
+	[x+043,  y , 12 , 13 , -5 , -9 , ANIM] //North West
 }
 
 
 
+//Length 5
+
+
+
+//4 views
 template template_5_4(x,y){
-	[x+000,  y ,  8 , 16 , -3 , -11] //North
-	[x+010,  y , 14 , 14 , -7 , -9 ] //North East
-	[x+026,  y , 21 , 13 , -5 , -9 ] //East
-	[x+049,  y , 14 , 14 ,  1 , -6 ] //South East
-	[x+000,  y ,  8 , 16 , -3 , -5 ] //North
-	[x+010,  y , 14 , 14 , -13, -6 ] //North East
-	[x+026,  y , 21 , 13 , -17, -9 ] //East
-	[x+049,  y , 14 , 14 , -5 , -9 ] //South East
+	[x+000,  y ,  8 , 16 , -3 , -11, ANIM] //North
+	[x+010,  y , 14 , 14 , -7 , -9 , ANIM] //North East
+	[x+026,  y , 21 , 13 , -5 , -9 , ANIM] //East
+	[x+049,  y , 14 , 14 ,  1 , -6 , ANIM] //South East
+	[x+000,  y ,  8 , 16 , -3 , -5 , ANIM] //North
+	[x+010,  y , 14 , 14 , -13, -6 , ANIM] //North East
+	[x+026,  y , 21 , 13 , -17, -9 , ANIM] //East
+	[x+049,  y , 14 , 14 , -5 , -9 , ANIM] //South East
 }
 
+//8 views
 template template_5_8(x,y){
-	[x+000,  y ,  8 , 16 , -3 , -11] //North
-	[x+010,  y , 14 , 14 , -7 , -9 ] //North East
-	[x+026,  y , 21 , 13 , -5 , -9 ] //East
-	[x+049,  y , 14 , 14 ,  1 , -6 ] //South East
-	[x+065,  y ,  8 , 16 , -3 , -5 ] //South     
-	[x+075,  y , 14 , 14 , -13, -6 ] //South West
-	[x+091,  y , 21 , 13 , -17, -9 ] //West      
-	[x+114,  y , 14 , 14 , -5 , -9 ] //North West
+	[x+000,  y ,  8 , 16 , -3 , -11, ANIM] //North
+	[x+010,  y , 14 , 14 , -7 , -9 , ANIM] //North East
+	[x+026,  y , 21 , 13 , -5 , -9 , ANIM] //East
+	[x+049,  y , 14 , 14 ,  1 , -6 , ANIM] //South East
+	[x+065,  y ,  8 , 16 , -3 , -5 , ANIM] //South     
+	[x+075,  y , 14 , 14 , -13, -6 , ANIM] //South West
+	[x+091,  y , 21 , 13 , -17, -9 , ANIM] //West      
+	[x+114,  y , 14 , 14 , -5 , -9 , ANIM] //North West
 }
 
+//8 views, reversed
 template template_5_8_rev(x,y){
-	[x+065,  y ,  8 , 16 , -3 , -11] //South     
-	[x+075,  y , 14 , 14 , -7 , -9 ] //South West
-	[x+091,  y , 21 , 13 , -5 , -9 ] //West      
-	[x+114,  y , 14 , 14 ,  1 , -6 ] //North West
-	[x+000,  y ,  8 , 16 , -3 , -5 ] //North
-	[x+010,  y , 14 , 14 , -13, -6 ] //North East
-	[x+026,  y , 21 , 13 , -17, -9 ] //East
-	[x+049,  y , 14 , 14 , -5 , -9 ] //South East
+	[x+065,  y ,  8 , 16 , -3 , -11, ANIM] //South     
+	[x+075,  y , 14 , 14 , -7 , -9 , ANIM] //South West
+	[x+091,  y , 21 , 13 , -5 , -9 , ANIM] //West      
+	[x+114,  y , 14 , 14 ,  1 , -6 , ANIM] //North West
+	[x+000,  y ,  8 , 16 , -3 , -5 , ANIM] //North
+	[x+010,  y , 14 , 14 , -13, -6 , ANIM] //North East
+	[x+026,  y , 21 , 13 , -17, -9 , ANIM] //East
+	[x+049,  y , 14 , 14 , -5 , -9 , ANIM] //South East
 }
 
 
 
+//Length 6
+
+
+
+//4 views
 template template_6_4(x,y){
-	[x+0  , y, 8 , 18, -3 , -10] // NORTH	
-	[x+10 , y, 16, 15, -9,  -9 ] // NORTH EAST
-	[x+28 , y, 25, 13, -9,  -9 ] // EAST
-	[x+55 , y, 16, 15, -1,  -7 ] // SOUTH EAST
-	[x+0  , y, 8 , 18, -3 , -6 ] // SOUTH
-	[x+10 , y, 16, 15, -13, -7 ] // SOUTH WEST
-	[x+28 , y, 25, 13, -17, -9 ] // WEST
-	[x+55 , y, 16, 15, -5,  -9 ] // NORTH WEST
+	[x+0  , y, 8 , 18, -3 , -10, ANIM] // NORTH	
+	[x+10 , y, 16, 15, -9,  -9 , ANIM] // NORTH EAST
+	[x+28 , y, 25, 13, -9,  -9 , ANIM] // EAST
+	[x+55 , y, 16, 15, -1,  -7 , ANIM] // SOUTH EAST
+	[x+0  , y, 8 , 18, -3 , -6 , ANIM] // SOUTH
+	[x+10 , y, 16, 15, -13, -7 , ANIM] // SOUTH WEST
+	[x+28 , y, 25, 13, -17, -9 , ANIM] // WEST
+	[x+55 , y, 16, 15, -5,  -9 , ANIM] // NORTH WEST
 }
 
+//8 views
 template template_6_8(x,y){
-	[x+0  , y, 8 , 18, -3 , -10] // NORTH	  
-	[x+10 , y, 16, 15, -9,  -9 ] // NORTH EAST
-	[x+28 , y, 25, 13, -9,  -9 ] // EAST
-	[x+55 , y, 16, 15, -1,  -7 ] // SOUTH EAST
-	[x+73 , y, 8 , 18, -3 , -6 ] // SOUTH
-	[x+83 , y, 16, 15, -13, -7 ] // SOUTH WEST
-	[x+101, y, 25, 13, -17, -9 ] // WEST
-	[x+128, y, 16, 15, -5,  -9 ] // NORTH WEST
+	[x+0  , y, 8 , 18, -3 , -10, ANIM] // NORTH	  
+	[x+10 , y, 16, 15, -9,  -9 , ANIM] // NORTH EAST
+	[x+28 , y, 25, 13, -9,  -9 , ANIM] // EAST
+	[x+55 , y, 16, 15, -1,  -7 , ANIM] // SOUTH EAST
+	[x+73 , y, 8 , 18, -3 , -6 , ANIM] // SOUTH
+	[x+83 , y, 16, 15, -13, -7 , ANIM] // SOUTH WEST
+	[x+101, y, 25, 13, -17, -9 , ANIM] // WEST
+	[x+128, y, 16, 15, -5,  -9 , ANIM] // NORTH WEST
 }
 
+//8 views, reversed
 template template_6_8_rev(x,y){
-	[x+73 , y, 8 , 18, -3 , -10] // NORTH	  
-	[x+83 , y, 16, 15, -9,  -9 ] // NORTH EAST
-	[x+101, y, 25, 13, -9,  -9 ] // EAST
-	[x+128, y, 16, 15, -1,  -7 ] // SOUTH EAST
-	[x+0  , y, 8 , 18, -3 , -6 ] // SOUTH
-	[x+10 , y, 16, 15, -13, -7 ] // SOUTH WEST
-	[x+28 , y, 25, 13, -17, -9 ] // WEST
-	[x+55 , y, 16, 15, -5,  -9 ] // NORTH WEST
+	[x+73 , y, 8 , 18, -3 , -10, ANIM] // NORTH	  
+	[x+83 , y, 16, 15, -9,  -9 , ANIM] // NORTH EAST
+	[x+101, y, 25, 13, -9,  -9 , ANIM] // EAST
+	[x+128, y, 16, 15, -1,  -7 , ANIM] // SOUTH EAST
+	[x+0  , y, 8 , 18, -3 , -6 , ANIM] // SOUTH
+	[x+10 , y, 16, 15, -13, -7 , ANIM] // SOUTH WEST
+	[x+28 , y, 25, 13, -17, -9 , ANIM] // WEST
+	[x+55 , y, 16, 15, -5,  -9 , ANIM] // NORTH WEST
 }
+
+
+
+//Length 7
+
+//8 views
+template template_7_8_2(x,y){
+    [ x    , y, 8 , 20, -3 , -10, ANIM] //N
+    [ x+10 , y, 18, 16, -11, -9 , ANIM] //NE
+    [ x+30 , y, 29, 13, -13, -9 , ANIM] //E
+    [ x+61 , y, 18, 16, -3 , -8 , ANIM] //SE
+    [ x+81 , y, 8 , 20, -3 , -8 , ANIM] //S
+    [ x+91 , y, 18, 16, -13, -8 , ANIM] //SW
+    [ x+111, y, 29, 13, -17, -9 , ANIM] //W
+    [ x+142, y, 18, 16, -5 , -9 , ANIM] //NW
+}
+
+//8 views, reversed
+template template_7_8_rev_2(x,y){
+    [ x+81 , y, 8 , 20, -3 , -10, ANIM] //S
+    [ x+91 , y, 18, 16, -11, -9 , ANIM] //SW
+    [ x+111, y, 29, 13, -13, -9 , ANIM] //W
+    [ x+142, y, 18, 16, -3 , -8 , ANIM] //NW
+    [ x    , y, 8 , 20, -3 , -8 , ANIM] //N
+    [ x+10 , y, 18, 16, -13, -8 , ANIM] //NE
+    [ x+30 , y, 29, 13, -17, -9 , ANIM] //E
+    [ x+61 , y, 18, 16, -5 , -9 , ANIM] //SE
+}
+
+//4 views
+template template_7_4_2(x,y){
+    [ x    , y, 8 , 20, -3 , -10, ANIM] //N
+    [ x+10 , y, 18, 16, -11, -9 , ANIM] //NE
+    [ x+30 , y, 29, 13, -13, -9 , ANIM] //E
+    [ x+61 , y, 18, 16, -3 , -8 , ANIM] //SE
+    [ x    , y, 8 , 20, -3 , -8 , ANIM] //S
+    [ x+10 , y, 18, 16, -13, -8 , ANIM] //SW
+    [ x+30 , y, 29, 13, -17, -9 , ANIM] //W
+    [ x+61 , y, 18, 16, -5 , -9 , ANIM] //NW
+}
+
+//Length 8
+
+//8 views
+template template_8_8_2(x,y){
+	[ x+0	,y, 8	, 23, -3	,-11, ANIM] //North
+	[ x+10	,y, 20	, 16, -13	,-8	, ANIM] //North East
+	[ x+32	,y, 33	, 13, -17	,-9	, ANIM] //East
+	[ x+67	,y, 20	, 16, -5	,-8	, ANIM] //South East
+	[ x+89	,y, 8	, 23, -3	,-11, ANIM] //South
+	[ x+99	,y, 20	, 16, -13	,-8	, ANIM] //South West
+	[ x+121	,y, 33	, 13, -17	,-9	, ANIM] //West
+	[ x+156	,y, 20	, 16, -5	,-8	, ANIM] //North West
+}
+
+//8 views, reversed
+template template_8_8_rev_2(x,y){
+	[ x+89	,y, 8	, 23, -3	,-11, ANIM] //South
+	[ x+99	,y, 20	, 16, -13	,-8	, ANIM] //South West
+	[ x+121	,y, 33	, 13, -17	,-9	, ANIM] //West
+	[ x+156	,y, 20	, 16, -5	,-8	, ANIM] //North West
+	[ x+0	,y, 8	, 23, -3	,-11, ANIM] //North
+	[ x+10	,y, 20	, 16, -13	,-8	, ANIM] //North East
+	[ x+32	,y, 33	, 13, -17	,-9	, ANIM] //East
+	[ x+67	,y, 20	, 16, -5	,-8	, ANIM] //South East
+}
+
+//4 views
+template template_8_4_2(x,y){
+	[ x+0	,y, 8	, 23, -3	,-11, ANIM] //North
+	[ x+10	,y, 20	, 16, -13	,-8	, ANIM] //North East
+	[ x+32	,y, 33	, 13, -17	,-9	, ANIM] //East
+	[ x+67	,y, 20	, 16, -5	,-8	, ANIM] //South East
+}
+
+
+
+
+
+//Special case templates (generally outdated)
 
 
 template template_8_8(x,y){
@@ -273,41 +316,6 @@ template template_7_4(x,y){
 
 
 
-template template_7_8_2(x,y){
-    [ x    , y, 8 , 20, -3 , -10] //N
-    [ x+10 , y, 18, 16, -11, -9 ] //NE
-    [ x+30 , y, 29, 13, -13, -9 ] //E
-    [ x+61 , y, 18, 16, -3 , -8 ] //SE
-    [ x+81 , y, 8 , 20, -3 , -8 ] //S
-    [ x+91 , y, 18, 16, -13, -8 ] //SW
-    [ x+111, y, 29, 13, -17, -9 ] //W
-    [ x+142, y, 18, 16, -5 , -9 ] //NW
-}
-
-template template_7_8_rev_2(x,y){
-    [ x+81 , y, 8 , 20, -3 , -10] //S
-    [ x+91 , y, 18, 16, -11, -9 ] //SW
-    [ x+111, y, 29, 13, -13, -9 ] //W
-    [ x+142, y, 18, 16, -3 , -8 ] //NW
-    [ x    , y, 8 , 20, -3 , -8 ] //N
-    [ x+10 , y, 18, 16, -13, -8 ] //NE
-    [ x+30 , y, 29, 13, -17, -9 ] //E
-    [ x+61 , y, 18, 16, -5 , -9 ] //SE
-}
-
-template template_7_4_2(x,y){
-    [ x    , y, 8 , 20, -3 , -10] //N
-    [ x+10 , y, 18, 16, -11, -9 ] //NE
-    [ x+30 , y, 29, 13, -13, -9 ] //E
-    [ x+61 , y, 18, 16, -3 , -8 ] //SE
-    [ x    , y, 8 , 20, -3 , -8 ] //S
-    [ x+10 , y, 18, 16, -13, -8 ] //SW
-    [ x+30 , y, 29, 13, -17, -9 ] //W
-    [ x+61 , y, 18, 16, -5 , -9 ] //NW
-}
-
-
-
 template template_8_8_networker(x,y){
     [ x, y, 8, 24, -3, -12]
     [ x+10, y, 21, 18, -13, -10]
@@ -339,6 +347,74 @@ template template_8_4_networker(x,y){
 
 
 
+
+template template_uklight(x,y){
+	[x+0,y,8,24,-3,-11] //North
+	[x+10,y,20,16,-14,-8] //North East
+	[x+32,y,32,13,-16,-9] //East
+	[x+66,y,20,16,-4,-8] //South East
+	[x+88,y,8,24,-3,-11] //South
+	[x+98,y,20,16,-14,-8] //South West
+	[x+120,y,32,13,-16,-9] //West
+	[x+154,y,20,16,-4,-8] //North West
+}
+
+template template_uklight_reverse(x,y){
+	[x+88,y,8,24,-3,-11] //South
+	[x+98,y,20,16,-14,-8] //South West
+	[x+120,y,32,13,-16,-9] //West
+	[x+154,y,20,16,-4,-8] //North West
+	[x+0,y,8,24,-3,-11] //North
+	[x+10,y,20,16,-14,-8] //North East
+	[x+32,y,32,13,-16,-9] //East
+	[x+66,y,20,16,-4,-8] //South East
+}
+
+
+
+template template_narrow_4_4(x, y){
+	[x+000, y  ,  8 , 14 , -3 , -12] //North
+	[x+010, y  , 12 , 13 , -5 , -10] //North East
+	[x+024, y  , 17 , 13 , -1 , -10] //East
+	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
+	[x+000, y  ,  8 , 14 , -3 , -4 ] //South
+	[x+010, y  , 12 , 13 , -13, -6 ] //South West
+	[x+024, y  , 17 , 13 , -17, -10] //West
+	[x+043, y  , 12 , 13 , -5 , -10] //North West
+}
+
+template template_narrow_4_8(x, y){
+	[x+000, y  ,  8 , 14 , -3 , -12] //North
+	[x+010, y  , 12 , 13 , -5 , -10] //North East
+	[x+024, y  , 17 , 13 , -1 , -10] //East
+	[x+043, y  , 12 , 13 ,  3 , -5 ] //South East
+	[x+057, y  ,  8 , 14 , -3 , -4 ] //South
+	[x+067, y  , 12 , 13 , -13, -6 ] //South West
+	[x+081, y  , 17 , 13 , -17, -10] //West
+	[x+100, y  , 12 , 13 , -5 , -10] //North West
+}
+
+template template_narrow_6_4(x, y){
+	[x+000, y  ,  8 , 18 , -3 , -12] //North
+	[x+010, y  , 16 , 15 , -9 , -10] //North East
+	[x+028, y  , 25 , 13 , -9 , -10] //East
+	[x+055, y  , 16 , 15 , -1 , -8 ] //South East
+	[x+000, y  ,  8 , 18 , -3 , -8 ] //South
+	[x+010, y  , 16 , 15 , -13, -8 ] //South West
+	[x+028, y  , 25 , 13 , -17, -10] //West
+	[x+055, y  , 16 , 15 , -5 , -10] //North West
+}
+
+template template_narrow_6_8(x, y){
+	[x+000, y  ,  8 , 18 , -3 , -12] //North
+	[x+010, y  , 16 , 15 , -9 , -10] //North East
+	[x+028, y  , 25 , 13 , -9 , -10] //East
+	[x+055, y  , 16 , 15 , -1 , -8 ] //South East
+	[x+073, y  ,  8 , 18 , -3 , -8 ] //South
+	[x+083, y  , 16 , 15 , -13, -8 ] //South West
+	[x+101, y  , 25 , 13 , -17, -10] //West
+	[x+128, y  , 16 , 15 , -5 , -10] //North West
+}
 
 
 

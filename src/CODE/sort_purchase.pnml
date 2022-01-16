@@ -1,5 +1,6 @@
 if(purchase_list_sort == 0 ){
 sort(FEAT_TRAINS,[
+2000,
 1401,
 1403,
 1404,
@@ -7,12 +8,14 @@ sort(FEAT_TRAINS,[
 1802,
 1801,
 1804,
+8,
 20,
 37,
 40,
 50,
 55,
 58,
+73,
 14,
 31,
 46,
@@ -24,7 +27,7 @@ sort(FEAT_TRAINS,[
 70,
 68,
 67,
-73,
+77,
 86,
 87,
 90,
@@ -128,6 +131,7 @@ sort(FEAT_TRAINS,[
 
 if(purchase_list_sort > 0 ){
 sort(FEAT_TRAINS,[
+2000,
 1401,
 1403,
 1404,
@@ -135,6 +139,7 @@ sort(FEAT_TRAINS,[
 1802,
 1801,
 1804,
+8,
 14,
 20,
 31,

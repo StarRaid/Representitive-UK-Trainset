@@ -14,7 +14,7 @@ spriteset(gfx_merchnav_purchase					, "gfx/STEAM_LOCO/southern_region.png"	){	te
 //Switches
 
 switch (FEAT_TRAINS, SELF, sw_merchnav_artpart, extra_callback_info1) {
-	1: return item_merchnav_t;
+	1: return item_tender;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
 
@@ -82,6 +82,29 @@ switch(FEAT_TRAINS, SELF, sw_merchnav_refit_text_check, livery_choice){
 
 
 
+
+//Tender
+
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_merchnav_t_gfx_auto, current_year){
+	gfx_merchnav_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_merchnav_t_gfx_manual, cargo_subtype){
+	gfx_merchnav_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_merchnav_t_gfx_manual_check, livery_choice){
+	1 : sw_merchnav_t_gfx_manual ;
+	sw_merchnav_t_gfx_auto ;
+}
+
+
+
+
 //Item
 
 item(FEAT_TRAINS, item_merchnav, 1800){
@@ -102,7 +125,7 @@ item(FEAT_TRAINS, item_merchnav, 1800){
 		speed							: 105 mph ;
 		track_type						: RAIL ;
 		power							: 2591 hp ;
-		weight							: 94 ton ;
+		weight							: 141 ton ;
 		engine_class					: ENGINE_CLASS_STEAM ;
 		tractive_effort_coefficient		: 0.12 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
@@ -127,6 +150,12 @@ item(FEAT_TRAINS, item_merchnav, 1800){
 		articulated_part				: sw_merchnav_artpart ;
 		purchase_running_cost_factor	: 255 ;
 	}
+	livery_override(item_tender){
+		default							: sw_merchnav_t_gfx_manual_check ;
+		colour_mapping					: sw_merchnav_colours_2cc_check ;
+		length							: 4 ;
+		cargo_subtype_text				: sw_merchnav_refit_text_check ;
+	}
 }
 
 
@@ -141,33 +170,11 @@ item (FEAT_TRAINS, item_merchnav, 1800){
 
 
 
-//Tender
-
-
-
-//Liveries
-
-switch(FEAT_TRAINS, SELF, sw_merchnav_t_gfx_auto, current_year){
-	gfx_merchnav_t ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_merchnav_t_gfx_manual, cargo_subtype){
-	gfx_merchnav_t ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_merchnav_t_gfx_manual_check, livery_choice){
-	1 : sw_merchnav_t_gfx_manual ;
-	sw_merchnav_t_gfx_auto ;
-}
 
 
 
 
-
-
-
-
-//Item
+/*Item
 
 item(FEAT_TRAINS, item_merchnav_t, 2800){
 	property{
@@ -189,7 +196,7 @@ item(FEAT_TRAINS, item_merchnav_t, 2800){
 		power							: 0 hp ;
 		weight							: 47 ton ;
 		engine_class					: ENGINE_CLASS_STEAM ;
-		tractive_effort_coefficient		: 0.0 ;
+		tractive_effort_coefficient		: 0.18 ;
 		air_drag_coefficient			: 0.0 ;
 		length							: 4 ;
 		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
@@ -207,4 +214,4 @@ item(FEAT_TRAINS, item_merchnav_t, 2800){
 	}
 }
 
-
+*/

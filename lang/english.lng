@@ -187,6 +187,7 @@ STR_LIVERY_LO								: London Overground
 STR_LIVERY_STANSTEAD						: Stanstead Express
 STR_LIVERY_NS_DUTCH							: Nederlandse Spoorwegen
 STR_LIVERY_HEATHROW_EXPRESS					: Heathrow Express
+STR_LIVERY_ST_PIRAN							: 08645 "St Piran"
 
 STR_LIVERY_LBSCR							: London, Brighton & South Coast Railway
 STR_LIVERY_SOUTHERN_RAILWAY					: Southern Railway
@@ -287,11 +288,12 @@ STR_NAME_LBSC_E4				:0-6-2 Brighton "Thomas" (Steam)
 STR_NAME_MERCHNAV				:2-6-4 Merchant Navy (Steam)
 
 STR_NAME_AL6				 :EE AL6 (Electric)
-STR_NAME_87                  :BREL 87 (Electric)
-STR_NAME_90                  :BREL 90 (Electric)
-STR_NAME_91                  :GEC "Intercity 225" (Electric)
-STR_NAME_92                  :Brush/ABB "92" (Dual Voltage)
-STR_NAME_SWTYPE1             :Swindon Type 1 (Diesel)
+STR_NAME_87					 :BREL 87 (Electric)
+STR_NAME_90					 :BREL 90 (Electric)
+STR_NAME_91					 :GEC "Intercity 225" (Electric)
+STR_NAME_92					 :Brush/ABB "92" (Dual Voltage)
+STR_NAME_SWTYPE1			 :Swindon Type 1 (Diesel)
+STR_NAME_GRONK				 :EE Shunter (Diesel Electric)
 STR_NAME_EETYPE1			 :EE Type 1 (Diesel Electric) 
 STR_NAME_EETYPE3			 :EE Type 3 (Diesel Electric) 
 STR_NAME_EETYPE4			 :EE Whistler (Diesel Electric)
@@ -381,6 +383,7 @@ STR_COLOUR_DKBLUE   :{BLUE}Dark blue
 STR_COLOUR_RED      :{RED}Red
 STR_COLOUR_GREEN    :{GREEN}Green
 STR_COLOUR_GREY     :Grey
+STR_COLOUR_BLACK    :{BLACK}Black
 STR_DBSO_NO_COUPLE: You may only couple a DBSO/DVT at the back of another passenger locomotive from the "RUKTS" GRF!
 STR_DMMU_NO_COUPLE: You may only couple this train to a Blue Square Coupling Compatible DMU or a "Mark 1 Carriage"!
 STR_DMMU_MAIL_NO_COUPLE: You may only couple this train to a mail carrying Blue Square Coupling Compatible DMU or a "General Utility Van"!
@@ -441,6 +444,7 @@ STR_NAME_90_ALT				:BR Class 90 (Electric)
 STR_NAME_91_ALT				:BR Class 91 (Electric)
 STR_NAME_92_ALT				:BR Class 92 (Dual Voltage)
 STR_NAME_SWTYPE1_ALT		:BR Class 14 (Diesel)
+STR_NAME_GRONK_ALT			:BR Class 08/09/10/11/12 (Diesel Electric)
 STR_NAME_EETYPE1_ALT		:BR Class 20 (Diesel Electric) 
 STR_NAME_EETYPE3_ALT		:BR Class 37 (Diesel Electric) 
 STR_NAME_EETYPE4_ALT		:BR Class 40 (Diesel Electric)
@@ -520,3 +524,4 @@ STR_NAME_LULS_ALT			 :LU S Stock (3rd rail)
 STR_ADD_INFO_88				:Power on diesel: {GOLD}746 kW / 1000 hp
 STR_ADD_INFO_PUSHPULL		:Add ONE of these to the end of your train to create a push/pull set (certain locomotives){}{RED}WARNING{BLACK}: Adding more than one of these to a consist may result in odd graphical behaviour and is not recommended.
 STR_ADD_INFO_73				:Power on diesel: {GOLD}450 kW / 600 hp
+

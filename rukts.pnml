@@ -1,4 +1,5 @@
 disable_item(FEAT_TRAINS);
+
 #include "src/CODE/header.pnml"
 #include "src/CODE/era_definitions.pnml"
 #include "src/CODE/cargo_table.pnml"
@@ -7,7 +8,9 @@ disable_item(FEAT_TRAINS);
 #include "src/CODE/visual_effects.pnml"
 #include "src/CODE/sound_effects.pnml"
 #include "src/CODE/coupling_restrictions.pnml"
+
 //#include "src/TRACKS/narrow_gauge.pnml"
+
 #include "src/WAGON/victorian.pnml"
 #include "src/WAGON/Mk1.pnml"
 #include "src/WAGON/Mk2.pnml"
@@ -24,11 +27,17 @@ disable_item(FEAT_TRAINS);
 #include "src/WAGON/intermodal.pnml"
 #include "src/WAGON/monster_box.pnml"
 #include "src/WAGON/lul_coach.pnml"
+
 #include "src/CODE/DBSO.pnml"
 #include "src/CODE/DVT.pnml"
+
+#include "src/OTHER/Tender.pnml"
+
 #include "src/STEAM_LOCO/lbscr_e4.pnml"
 #include "src/STEAM_LOCO/bulleid_pacifics.pnml"
+
 #include "src/DIESEL_LOCO/Swindon_Type1.pnml"
+#include "src/DIESEL_LOCO/gronk.pnml"
 //#include "src/DIESEL_LOCO/EE_Type3.pnml"
 #include "src/DIESEL_LOCO/EE_Type1.pnml"
 #include "src/DIESEL_LOCO/EE_Type3_2.pnml"
@@ -47,14 +56,17 @@ disable_item(FEAT_TRAINS);
 #include "src/DIESEL_LOCO/class_73.pnml"
 #include "src/DIESEL_LOCO/GE_Powerhaul.pnml"
 #include "src/DIESEL_LOCO/UKLight.pnml"
+
 #include "src/ELECTRIC_LOCO/BR_Class87.pnml"
 #include "src/ELECTRIC_LOCO/EE_AL6.pnml"
 #include "src/ELECTRIC_LOCO/class_90.pnml"
 #include "src/ELECTRIC_LOCO/class_91.pnml"
 #include "src/ELECTRIC_LOCO/class_92.pnml"
 #include "src/ELECTRIC_LOCO/EuroDual.pnml"
+
 #include "src/WAGON/DBSO.pnml"
 #include "src/WAGON/DVT.pnml"
+
 #include "src/DMU/dmmu.pnml"
 #include "src/DMU/class_142_2.pnml"
 #include "src/DMU/sprinter.pnml"
@@ -63,9 +75,11 @@ disable_item(FEAT_TRAINS);
 #include "src/DMU/expr_sprint.pnml"
 #include "src/DMU/turbostar.pnml"
 #include "src/DMU/class_195.pnml"
+
 #include "src/DEMU/class_205.pnml"
 #include "src/DEMU/voyager.pnml"
 #include "src/DEMU/class_769.pnml"
+
 #include "src/EMU/class_307.pnml"
 #include "src/EMU/class_309.pnml"
 #include "src/EMU/class_313.pnml"
@@ -84,6 +98,7 @@ disable_item(FEAT_TRAINS);
 #include "src/EMU/class_357.pnml"
 #include "src/EMU/class_455.pnml"
 #include "src/EMU/class_700.pnml"
+
 #include "src/EMU/lul_1938.pnml"
 #include "src/EMU/lul_1959.pnml"
 #include "src/EMU/lul_1967.pnml"
@@ -94,11 +109,14 @@ disable_item(FEAT_TRAINS);
 #include "src/EMU/lul_c69.pnml"
 #include "src/EMU/lul_d78.pnml"
 #include "src/EMU/lul_s.pnml"
+
 #include "src/STEAM_LOCO/narrow_garratt.pnml"
 #include "src/STEAM_LOCO/fairlie.pnml"
+
 #include "src/WAGON/narrow_coach_one.pnml"
 #include "src/WAGON/narrow_slate_wagon.pnml"
 #include "src/WAGON/narrow_plank_wagon.pnml"
+
 #include "src/DMU/class_165.pnml"
 #include "src/EMU/class_395.pnml"
 #include "src/CODE/sort_purchase.pnml"
