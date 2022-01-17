@@ -154,7 +154,7 @@ item(FEAT_TRAINS, item_lbsc_e4, 1401){
 		colour_mapping                 : sw_lbsc_e4_colours_2cc_check ;
 		purchase                       : sw_lbsc_e4_gfx_purchase ;
 		purchase_colour_mapping        : sw_lbsc_e4_purchase_colours_2cc_check ;
-		sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
+		//sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
 		create_effect                  : vfx_steam ;
 		cargo_subtype_text             : sw_lbsc_e4_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;

@@ -191,10 +191,13 @@ STR_LIVERY_ST_PIRAN							: 08645 "St Piran"
 
 STR_LIVERY_LBSCR							: London, Brighton & South Coast Railway
 STR_LIVERY_SOUTHERN_RAILWAY					: Southern Railway
+STR_LIVERY_SOUTHERN_RAILWAY_LINED			: Southern Railway {GOLD}(Lined Green)
 STR_LIVERY_GWR								: Great Western Railway
 STR_LIVERY_LMS								: London, Midland & Scotland
+STR_LIVERY_LMS_SMOOTH						: London, Midland & Scotland {GOLD}(Streamlined)
 STR_LIVERY_LNER_1923						: London & North Eastern Railway
 STR_LIVERY_BR_BLACK							: British Railways {GOLD}(Black)
+STR_LIVERY_BR_NAVY							: British Railways {GOLD}(Navy)
 STR_LIVERY_BR_BRUNSWICK						: British Railways {GOLD}(Brunswick Green)
 
 
@@ -286,6 +289,9 @@ STR_NAME_NTX					:Express Mail Coach
 
 STR_NAME_LBSC_E4				:0-6-2 Brighton "Thomas" (Steam)
 STR_NAME_MERCHNAV				:2-6-4 Merchant Navy (Steam)
+STR_NAME_MERCHNAV_REBUILT		:2-6-4 Rebuilt Merchant Navy (Steam)
+STR_NAME_BULLEID_LIGHT			:2-6-4 Light Pacific (Steam)
+STR_NAME_BULLEID_LIGHT_REBUILT	:2-6-4 Rebuilt Light Pacific (Steam)
 
 STR_NAME_AL6				 :EE AL6 (Electric)
 STR_NAME_87					 :BREL 87 (Electric)
@@ -435,8 +441,11 @@ STR_NAAN_NEW_TRAIN    :Looksie here! A new train built for Narrow Gauge!
 
 STR_NAME_DBSO_ALT			:BREL DBSO
 
-STR_NAME_LBSC_E4_ALT		:LB&SCR E4 (Steam)
-STR_NAME_MERCHNAV_ALT		:SR Merchant Navy (Steam)
+STR_NAME_LBSC_E4_ALT				:LB&SCR E4 (Steam)
+STR_NAME_MERCHNAV_ALT				:SR Merchant Navy (Steam)
+STR_NAME_MERCHNAV_REBUILT_ALT		:BR Rebuilt Merchant Navy (Steam)
+STR_NAME_BULLEID_LIGHT_ALT			:SR Light Pacific (Steam)
+STR_NAME_BULLEID_LIGHT_REBUILT_ALT	:BR Rebuilt Light Pacific (Steam)
 
 STR_NAME_AL6_ALT			:BR Class 86 (Electric)
 STR_NAME_87_ALT				:BR Class 87 (Electric)

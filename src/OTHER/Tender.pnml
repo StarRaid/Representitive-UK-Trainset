@@ -18,7 +18,8 @@ item (FEAT_TRAINS, item_tender, 2000) {
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
-		cargo_capacity:					0;
+		cargo_allow_refit:				[MAIL, GOOD] ;
+		cargo_capacity:					1 ;
 		weight:							0;
 		tractive_effort_coefficient:	0.0;
 		air_drag_coefficient:			0.08;
@@ -28,5 +29,7 @@ item (FEAT_TRAINS, item_tender, 2000) {
 	}
 	graphics {
 		default: 							gfx_blank;
+		cargo_capacity:						return 0;
+		purchase_cargo_capacity:			0;
 	}
 }

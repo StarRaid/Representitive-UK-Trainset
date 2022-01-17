@@ -2,18 +2,24 @@
 //MERCHANT NAVY
 
 
-spriteset(gfx_merchnav							, "gfx/STEAM_LOCO/southern_region.png"	){	template_7_8_2		(0	,100)}
+spriteset(gfx_merchnav							, "gfx/STEAM_LOCO/bulleid.png"	){	template_7_8_2		(0	,250)}
+spriteset(gfx_merchnav_later					, "gfx/STEAM_LOCO/bulleid.png"	){	template_7_8_2		(0	,275)}
+spriteset(gfx_merchnav_rebuilt					, "gfx/STEAM_LOCO/bulleid.png"	){	template_7_8_2		(0	,300)}
+spriteset(gfx_merchnav_lined					, "gfx/STEAM_LOCO/bulleid.png"	){	template_7_8_2		(0	,325)}
 
-spriteset(gfx_merchnav_t						, "gfx/STEAM_LOCO/southern_region.png"	){	template_4_8		(200,100)}
+spriteset(gfx_merchnav_t						, "gfx/STEAM_LOCO/bulleid.png"	){	template_4_8		(162,250)}
+spriteset(gfx_merchnav_later_t					, "gfx/STEAM_LOCO/bulleid.png"	){	template_4_8		(162,275)}
+spriteset(gfx_merchnav_rebuilt_t				, "gfx/STEAM_LOCO/bulleid.png"	){	template_4_8		(162,300)}
+spriteset(gfx_merchnav_lined_t					, "gfx/STEAM_LOCO/bulleid.png"	){	template_4_8		(162,325)}
 
-spriteset(gfx_merchnav_purchase					, "gfx/STEAM_LOCO/southern_region.png"	){	template_purchase	(225,0	)}
-
+spriteset(gfx_merchnav_purchase					, "gfx/STEAM_LOCO/bulleid.png"	){	template_purchase	(289,250)}
+spriteset(gfx_merchnav_purchase_rebuilt			, "gfx/STEAM_LOCO/bulleid.png"	){	template_purchase	(289,300)}
 
 
 
 //Switches
 
-switch (FEAT_TRAINS, SELF, sw_merchnav_artpart, extra_callback_info1) {
+switch (FEAT_TRAINS, SELF, sw_tender_loco, extra_callback_info1) {
 	1: return item_tender;
     return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
 }
@@ -21,34 +27,29 @@ switch (FEAT_TRAINS, SELF, sw_merchnav_artpart, extra_callback_info1) {
 
 //Liveries
 
-switch(FEAT_TRAINS, SELF, sw_merchnav_gfx_auto, current_year){
-	gfx_merchnav ;
-}
-
 switch(FEAT_TRAINS, SELF, sw_merchnav_gfx_manual, cargo_subtype){
+	 1 : gfx_merchnav_lined ;
+	 2 : gfx_merchnav_later ;
+	 3 : gfx_merchnav_later ;
 	gfx_merchnav ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_merchnav_gfx_manual_check, livery_choice){
 	1 : sw_merchnav_gfx_manual ;
-	sw_merchnav_gfx_auto ;
+	gfx_merchnav ;
 }
-
-
-switch(FEAT_TRAINS, SELF, sw_merchnav_gfx_purchase, current_year){
-	gfx_merchnav_purchase ;
-}
-
 
 
 //Colours
 
 switch(FEAT_TRAINS, SELF, sw_merchnav_colours_auto, current_year){
-	palette_2cc(COLOUR_YELLOW, COLOUR_GREEN) ;
+	palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_merchnav_colours_manual, cargo_subtype){
-	palette_2cc(COLOUR_YELLOW, COLOUR_GREEN) ;
+	 2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+	 3 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_merchnav_colours_manual_check, livery_choice){
@@ -72,6 +73,9 @@ switch(FEAT_TRAINS, SELF, sw_merchnav_purchase_colours_2cc_check, colour_scheme_
 
 switch(FEAT_TRAINS, SELF, sw_merchnav_refit_text, cargo_subtype){
 	 0 : string(STR_LIVERY_SOUTHERN) ;
+	 1 : string(STR_LIVERY_SOUTHERN_RAILWAY_LINED) ;
+	 2 : string(STR_LIVERY_BR_NAVY) ;
+	 3 : string(STR_LIVERY_BR_BRUNSWICK) ;
 	 CB_RESULT_NO_TEXT ;
 }
 
@@ -89,17 +93,16 @@ switch(FEAT_TRAINS, SELF, sw_merchnav_refit_text_check, livery_choice){
 
 //Liveries
 
-switch(FEAT_TRAINS, SELF, sw_merchnav_t_gfx_auto, current_year){
-	gfx_merchnav_t ;
-}
-
 switch(FEAT_TRAINS, SELF, sw_merchnav_t_gfx_manual, cargo_subtype){
+	 1 : gfx_merchnav_lined_t ;
+	 2 : gfx_merchnav_later_t ;
+	 3 : gfx_merchnav_later_t ;
 	gfx_merchnav_t ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_merchnav_t_gfx_manual_check, livery_choice){
 	1 : sw_merchnav_t_gfx_manual ;
-	sw_merchnav_t_gfx_auto ;
+	gfx_merchnav_t ;
 }
 
 
@@ -116,45 +119,49 @@ item(FEAT_TRAINS, item_merchnav, 1800){
 		refittable_cargo_classes		: 0 ;
 		cargo_allow_refit				: [MAIL, GOOD] ;
 		cargo_capacity					: 1 ;
+		air_drag_coefficient			: 0.0888888888888889 ;
+		
 		model_life						: 25 ;
 		vehicle_life					: 35 ;
-		reliability_decay				: 20 ;
 		cost_factor						: 230 ;
-		running_cost_base				: RUNNING_COST_STEAM ;
 		running_cost_factor				: 255 ;
-		speed							: 105 mph ;
-		track_type						: RAIL ;
-		power							: 2591 hp ;
-		weight							: 141 ton ;
-		engine_class					: ENGINE_CLASS_STEAM ;
-		tractive_effort_coefficient		: 0.12 ;
-		air_drag_coefficient			: 0.0888888888888889 ;
 		length							: 7 ;
-		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		reliability_decay				: 20 ;
+		
+		speed							: 110 mph ;
+		power							: 2468 hp ;
+		weight							: 141 ton ;
+		tractive_effort_coefficient		: 0.12 ;
+		
+		track_type						: RAIL ;
+		engine_class					: ENGINE_CLASS_STEAM ;
 		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_STEAM ;
+		running_cost_base				: RUNNING_COST_STEAM ;
+		
+		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
 		sprite_id						: SPRITE_ID_NEW_TRAIN ;
 		dual_headed						: 0 ;
 	}
 	graphics{
 		default							: sw_merchnav_gfx_manual_check ;
 		colour_mapping					: sw_merchnav_colours_2cc_check ;
-		purchase						: sw_merchnav_gfx_purchase ;
+		purchase						: gfx_merchnav_purchase ;
 		purchase_colour_mapping			: sw_merchnav_purchase_colours_2cc_check ;
-		sound_effect					: sw_sfx_diesel_loco_ee_2 ;
+		//sound_effect					: sw_sfx_diesel_loco_ee_2 ;
 		create_effect					: vfx_steam ;
 		cargo_subtype_text				: sw_merchnav_refit_text_check ;
 		purchase_cargo_capacity			: 0 ;
 		cargo_capacity					: return 0 ;
 		can_attach_wagon				: sw_all_but_MU90;
 		running_cost_factor				: return(current_speed == 0 ? 100 : 255) ;
-		articulated_part				: sw_merchnav_artpart ;
+		articulated_part				: sw_tender_loco ;
 		purchase_running_cost_factor	: 255 ;
 	}
 	livery_override(item_tender){
 		default							: sw_merchnav_t_gfx_manual_check ;
 		colour_mapping					: sw_merchnav_colours_2cc_check ;
 		length							: 4 ;
-		cargo_subtype_text				: sw_merchnav_refit_text_check ;
+		//cargo_subtype_text				: sw_merchnav_refit_text_check ;
 	}
 }
 
@@ -163,6 +170,356 @@ if (alt_names == 1){
 item (FEAT_TRAINS, item_merchnav, 1800){
 	property{
 		name                           : string(STR_NAME_MERCHNAV_ALT) ;
+	}
+}
+}
+
+
+
+
+
+
+
+
+//Rebuilt Merchant Navy
+
+
+switch(FEAT_TRAINS, SELF, sw_merchnav_rebuilt_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+//Item
+
+item(FEAT_TRAINS, item_merchnav_rebuilt, 1900){
+	property{
+		name							: string(STR_NAME_MERCHNAV) ;  
+		climates_available				: ALL_CLIMATES ;
+		introduction_date				: date(1956,1,1) ;
+		refit_cost						: 0 ;
+		refittable_cargo_classes		: 0 ;
+		cargo_allow_refit				: [MAIL, GOOD] ;
+		cargo_capacity					: 1 ;
+		air_drag_coefficient			: 0.0888888888888889 ;
+		
+		model_life						: 15 ;
+		vehicle_life					: 30 ;
+		cost_factor						: 200 ;
+		running_cost_factor				: 230 ;
+		length							: 7 ;
+		reliability_decay				: 11 ;
+		
+		speed							: 110 mph ;
+		power							: 2204 hp ;
+		weight							: 144 ton ;
+		tractive_effort_coefficient		: 0.1 ;
+		
+		track_type						: RAIL ;
+		engine_class					: ENGINE_CLASS_STEAM ;
+		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_STEAM ;
+		running_cost_base				: RUNNING_COST_STEAM ;
+		
+		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id						: SPRITE_ID_NEW_TRAIN ;
+		dual_headed						: 0 ;
+	}
+	graphics{
+		default							: gfx_merchnav_rebuilt ;
+		colour_mapping					: sw_merchnav_rebuilt_colours_2cc_check ;
+		purchase						: gfx_merchnav_purchase_rebuilt ;
+		//sound_effect					: sw_sfx_diesel_loco_ee_2 ;
+		create_effect					: vfx_steam ;
+		purchase_cargo_capacity			: 0 ;
+		cargo_capacity					: return 0 ;
+		can_attach_wagon				: sw_all_but_MU90;
+		running_cost_factor				: return(current_speed == 0 ? 60 : 230) ;
+		articulated_part				: sw_tender_loco ;
+		purchase_running_cost_factor	: 230 ;
+	}
+	livery_override(item_tender){
+		default							: gfx_merchnav_rebuilt_t ;
+		colour_mapping					: sw_merchnav_rebuilt_colours_2cc_check ;
+		length							: 4 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_merchnav_rebuilt, 1900){
+	property{
+		name                           : string(STR_NAME_MERCHNAV_ALT) ;
+	}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//LIGHT PACIFICS
+
+
+spriteset(gfx_lightpacific_lined					, "gfx/STEAM_LOCO/bulleid.png"	){	template_7_8_2		(0	,125)}
+spriteset(gfx_lightpacific_named					, "gfx/STEAM_LOCO/bulleid.png"	){	template_7_8_2		(0	,150)}
+spriteset(gfx_lightpacific_rebuilt					, "gfx/STEAM_LOCO/bulleid.png"	){	template_7_8_2		(0	,175)}
+spriteset(gfx_lightpacific_plain					, "gfx/STEAM_LOCO/bulleid.png"	){	template_7_8_2		(0	,200)}
+spriteset(gfx_lightpacific_black					, "gfx/STEAM_LOCO/bulleid.png"	){	template_7_8_2		(0	,225)}
+
+spriteset(gfx_lightpacific_lined_t					, "gfx/STEAM_LOCO/bulleid.png"	){	template_4_8		(162,125)}
+spriteset(gfx_lightpacific_named_t					, "gfx/STEAM_LOCO/bulleid.png"	){	template_4_8		(162,150)}
+spriteset(gfx_lightpacific_rebuilt_t				, "gfx/STEAM_LOCO/bulleid.png"	){	template_4_8		(162,175)}
+spriteset(gfx_lightpacific_plain_t					, "gfx/STEAM_LOCO/bulleid.png"	){	template_4_8		(162,200)}
+spriteset(gfx_lightpacific_black_t					, "gfx/STEAM_LOCO/bulleid.png"	){	template_4_8		(162,225)}
+
+spriteset(gfx_lightpacific_purchase_lined			, "gfx/STEAM_LOCO/bulleid.png"	){	template_purchase	(289,125)}
+spriteset(gfx_lightpacific_purchase_rebuilt			, "gfx/STEAM_LOCO/bulleid.png"	){	template_purchase	(289,175)}
+
+
+
+
+//Switches
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_gfx_auto, current_year){
+	gfx_lightpacific_lined ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_gfx_manual, cargo_subtype){
+	1 : gfx_lightpacific_plain ;
+	2 : gfx_lightpacific_named ;
+	3 : gfx_lightpacific_black ;
+	gfx_lightpacific_lined ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_gfx_manual_check, livery_choice){
+	1 : sw_lightpacific_gfx_manual ;
+	sw_lightpacific_gfx_auto ;
+}
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_colours_auto, current_year){
+	palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_colours_manual, cargo_subtype){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+	2 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	3 : palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_colours_manual_check, livery_choice){
+	1 : sw_lightpacific_colours_manual ;
+	palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_colours_2cc_check, colour_scheme_1){
+	1 : sw_lightpacific_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_purchase_colours_2cc_check, colour_scheme_1){
+	1 : sw_lightpacific_colours_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_SOUTHERN_RAILWAY_LINED) ;
+	1 : string(STR_LIVERY_BR_NAVY) ;
+	2 : string(STR_LIVERY_BR_BRUNSWICK) ;
+	3 : string(STR_LIVERY_BR_BLACK) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_refit_text_check, livery_choice){
+	1 : sw_lightpacific_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+
+//Tender
+
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_t_gfx_manual, cargo_subtype){
+	1 : gfx_lightpacific_plain_t ;
+	2 : gfx_lightpacific_named_t ;
+	3 : gfx_lightpacific_black_t ;
+	gfx_lightpacific_lined_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_t_gfx_manual_check, livery_choice){
+	1 : sw_lightpacific_t_gfx_manual ;
+	gfx_lightpacific_lined_t ;
+}
+
+
+
+
+//Item
+
+item(FEAT_TRAINS, item_lightpacific, 1801){
+	property{
+		name							: string(STR_NAME_BULLEID_LIGHT) ;  
+		climates_available				: ALL_CLIMATES ;
+		introduction_date				: date(1945,1,1) ;
+		refit_cost						: 0 ;
+		refittable_cargo_classes		: 0 ;
+		cargo_allow_refit				: [MAIL, GOOD] ;
+		cargo_capacity					: 1 ;
+		air_drag_coefficient			: 0.0888888888888889 ;
+		
+		model_life						: 35 ;
+		vehicle_life					: 50 ;
+		cost_factor						: 210 ;
+		running_cost_factor				: 234 ;
+		length							: 7 ;
+		reliability_decay				: 18 ;
+		
+		speed							: 100 mph ;
+		power							: 2221 hp ;
+		weight							: 133 ton ;
+		tractive_effort_coefficient		: 0.1 ;
+		
+		track_type						: RAIL ;
+		engine_class					: ENGINE_CLASS_STEAM ;
+		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_STEAM ;
+		running_cost_base				: RUNNING_COST_STEAM ;
+		
+		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id						: SPRITE_ID_NEW_TRAIN ;
+		dual_headed						: 0 ;
+	}
+	graphics{
+		default							: sw_lightpacific_gfx_manual_check ;
+		colour_mapping					: sw_lightpacific_colours_2cc_check ;
+		purchase						: gfx_lightpacific_purchase_lined ;
+		purchase_colour_mapping			: sw_lightpacific_purchase_colours_2cc_check ;
+		//sound_effect					: sw_sfx_diesel_loco_ee_2 ;
+		create_effect					: vfx_steam ;
+		cargo_subtype_text				: sw_lightpacific_refit_text_check ;
+		purchase_cargo_capacity			: 0 ;
+		cargo_capacity					: return 0 ;
+		can_attach_wagon				: sw_all_but_MU90;
+		running_cost_factor				: return(current_speed == 0 ? 100 : 255) ;
+		articulated_part				: sw_tender_loco ;
+		purchase_running_cost_factor	: 255 ;
+	}
+	livery_override(item_tender){
+		default							: sw_lightpacific_t_gfx_manual_check ;
+		colour_mapping					: sw_lightpacific_colours_2cc_check ;
+		length							: 4 ;
+		//cargo_subtype_text				: sw_lightpacific_refit_text_check ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_lightpacific, 1801){
+	property{
+		name                           : string(STR_NAME_BULLEID_LIGHT_ALT) ;
+	}
+}
+}
+
+
+
+
+
+
+
+
+//Rebuilt Light Pacific
+
+
+switch(FEAT_TRAINS, SELF, sw_lightpacific_rebuilt_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+//Item
+
+item(FEAT_TRAINS, item_lightpacific_rebuilt, 1901){
+	property{
+		name							: string(STR_NAME_BULLEID_LIGHT_REBUILT) ;  
+		climates_available				: ALL_CLIMATES ;
+		introduction_date				: date(1955,1,1) ;
+		refit_cost						: 0 ;
+		refittable_cargo_classes		: 0 ;
+		cargo_allow_refit				: [MAIL, GOOD] ;
+		cargo_capacity					: 1 ;
+		air_drag_coefficient			: 0.0888888888888889 ;
+		
+		model_life						: 20 ;
+		vehicle_life					: 42 ;
+		cost_factor						: 182 ;
+		running_cost_factor				: 213 ;
+		length							: 7 ;
+		reliability_decay				: 8 ;
+		
+		speed							: 100 mph ;
+		power							: 1983 hp ;
+		weight							: 138 ton ;
+		tractive_effort_coefficient		: 0.09 ;
+		
+		track_type						: RAIL ;
+		engine_class					: ENGINE_CLASS_STEAM ;
+		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_STEAM ;
+		running_cost_base				: RUNNING_COST_STEAM ;
+		
+		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id						: SPRITE_ID_NEW_TRAIN ;
+		dual_headed						: 0 ;
+	}
+	graphics{
+		default							: gfx_lightpacific_rebuilt ;
+		colour_mapping					: sw_lightpacific_rebuilt_colours_2cc_check ;
+		purchase						: gfx_lightpacific_purchase_rebuilt ;
+		//sound_effect					: sw_sfx_diesel_loco_ee_2 ;
+		create_effect					: vfx_steam ;
+		purchase_cargo_capacity			: 0 ;
+		cargo_capacity					: return 0 ;
+		can_attach_wagon				: sw_all_but_MU90;
+		running_cost_factor				: return(current_speed == 0 ? 60 : 230) ;
+		articulated_part				: sw_tender_loco ;
+		purchase_running_cost_factor	: 230 ;
+	}
+	livery_override(item_tender){
+		default							: gfx_lightpacific_rebuilt_t ;
+		colour_mapping					: sw_lightpacific_rebuilt_colours_2cc_check ;
+		length							: 4 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_lightpacific_rebuilt, 1901){
+	property{
+		name                           : string(STR_NAME_BULLEID_LIGHT_REBUILT_ALT) ;
 	}
 }
 }
@@ -215,3 +572,4 @@ item(FEAT_TRAINS, item_merchnav_t, 2800){
 }
 
 */
+
