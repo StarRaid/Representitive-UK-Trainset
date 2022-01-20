@@ -188,7 +188,10 @@ STR_LIVERY_STANSTEAD						: Stanstead Express
 STR_LIVERY_NS_DUTCH							: Nederlandse Spoorwegen
 STR_LIVERY_HEATHROW_EXPRESS					: Heathrow Express
 STR_LIVERY_ST_PIRAN							: 08645 "St Piran"
+STR_LIVERY_BOURNEMOUTH						: 73235 SWR Blue "71B"
 
+STR_LIVERY_MIDLAND_RAILWAY					: Midland Railway {GOLD}(Green)
+STR_LIVERY_MIDLAND_RAILWAY_LATE				: Midland Railway {GOLD}(Red)
 STR_LIVERY_LBSCR							: London, Brighton & South Coast Railway
 STR_LIVERY_SOUTHERN_RAILWAY					: Southern Railway
 STR_LIVERY_SOUTHERN_RAILWAY_LINED			: Southern Railway {GOLD}(Lined Green)
@@ -271,8 +274,10 @@ STR_NAME_RRV					:Lowmac
 STR_NAME_PXA					:Speedlink Flat Wagon
 STR_NAME_HAB					:Speedlink Habfis Van
 STR_NAME_HAZ					:Hazardous Goods Wagon
-STR_NAME_ZGO					:Wood Open Wagon
+STR_NAME_ZCO					:Wood 5 Plank Open Wagon
+STR_NAME_ZGO					:Wood 7 Plank Open Wagon
 STR_NAME_MDO					:Steel Open Wagon
+STR_NAME_MCO					:Steel Open Wagon (BR)
 STR_NAME_CGO					:Riveted Covered Hopper
 STR_NAME_CHV					:Welded Covered Hopper
 STR_NAME_HTO					:Riveted Hopper
@@ -282,16 +287,20 @@ STR_NAME_PGA					:PGA Hopper
 STR_NAME_ZZA					:ZZA Tanker
 STR_NAME_PCA					:PCA Tanker
 STR_NAME_TEA					:TEA Tanker
+STR_NAME_CUBE					:General Goods Van
 STR_NAME_QPV					:XP Luggage Van
 STR_NAME_RBX					:Speedlink Van
 STR_NAME_GUV					:General Utility Van
 STR_NAME_NTX					:Express Mail Coach
 
-STR_NAME_LBSC_E4				:0-6-2 Brighton "Thomas" (Steam)
+STR_NAME_MR_1377				:0-6-0T "Half-Cab" (Steam)
+STR_NAME_MR_115					:MR 115 Class (Steam)
+STR_NAME_LBSC_E4				:0-6-2T Brighton "Thomas" (Steam)
 STR_NAME_MERCHNAV				:2-6-4 Merchant Navy (Steam)
 STR_NAME_MERCHNAV_REBUILT		:2-6-4 Rebuilt Merchant Navy (Steam)
 STR_NAME_BULLEID_LIGHT			:2-6-4 Light Pacific (Steam)
 STR_NAME_BULLEID_LIGHT_REBUILT	:2-6-4 Rebuilt Light Pacific (Steam)
+STR_NAME_BULLEID_Q1				:0-6-0 Bulleid "Q1" (Steam)
 
 STR_NAME_AL6				 :EE AL6 (Electric)
 STR_NAME_87					 :BREL 87 (Electric)
@@ -385,11 +394,12 @@ STR_NAME_NRWPLANK   :Plank Bulk Wagon
 STR_LIVERY_NRW_2TONE:Two-tone white and red
 STR_LIVERY_NRW_1TONE:Green
 
-STR_COLOUR_DKBLUE   :{BLUE}Dark blue
-STR_COLOUR_RED      :{RED}Red
-STR_COLOUR_GREEN    :{GREEN}Green
-STR_COLOUR_GREY     :Grey
-STR_COLOUR_BLACK    :{BLACK}Black
+STR_COLOUR_DKBLUE	:{BLUE}Dark blue
+STR_COLOUR_RED		:{RED}Red
+STR_COLOUR_GREEN	:{GREEN}Green
+STR_COLOUR_GREY		:Grey
+STR_COLOUR_BLACK	:{BLACK}Black
+STR_LIVERY_COMPANY	:"TTD"
 STR_DBSO_NO_COUPLE: You may only couple a DBSO/DVT at the back of another passenger locomotive from the "RUKTS" GRF!
 STR_DMMU_NO_COUPLE: You may only couple this train to a Blue Square Coupling Compatible DMU or a "Mark 1 Carriage"!
 STR_DMMU_MAIL_NO_COUPLE: You may only couple this train to a mail carrying Blue Square Coupling Compatible DMU or a "General Utility Van"!
@@ -441,11 +451,14 @@ STR_NAAN_NEW_TRAIN    :Looksie here! A new train built for Narrow Gauge!
 
 STR_NAME_DBSO_ALT			:BREL DBSO
 
-STR_NAME_LBSC_E4_ALT				:LB&SCR E4 (Steam)
+STR_NAME_MR_1377_ALT				:MR 1377 Class (Steam)
+STR_NAME_MR_115_ALT					:MR 115 Class (Steam)
+STR_NAME_LBSC_E4_ALT				:LB&SCR E4 Class (Steam)
 STR_NAME_MERCHNAV_ALT				:SR Merchant Navy (Steam)
 STR_NAME_MERCHNAV_REBUILT_ALT		:BR Rebuilt Merchant Navy (Steam)
 STR_NAME_BULLEID_LIGHT_ALT			:SR Light Pacific (Steam)
 STR_NAME_BULLEID_LIGHT_REBUILT_ALT	:BR Rebuilt Light Pacific (Steam)
+STR_NAME_BULLEID_Q1_ALT				:BR Q1 Class (Steam)
 
 STR_NAME_AL6_ALT			:BR Class 86 (Electric)
 STR_NAME_87_ALT				:BR Class 87 (Electric)
@@ -533,4 +546,17 @@ STR_NAME_LULS_ALT			 :LU S Stock (3rd rail)
 STR_ADD_INFO_88				:Power on diesel: {GOLD}746 kW / 1000 hp
 STR_ADD_INFO_PUSHPULL		:Add ONE of these to the end of your train to create a push/pull set (certain locomotives){}{RED}WARNING{BLACK}: Adding more than one of these to a consist may result in odd graphical behaviour and is not recommended.
 STR_ADD_INFO_73				:Power on diesel: {GOLD}450 kW / 600 hp
+
+
+
+STR_LENGTH		: LENGTH {STRING}
+STR_1			: 1
+STR_2			: 2
+STR_3			: 3
+STR_4			: 4
+STR_5			: 5
+STR_6			: 6
+STR_7			: 7
+STR_8			: 8
+
 

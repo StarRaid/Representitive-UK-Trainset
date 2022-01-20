@@ -33,6 +33,7 @@ disable_item(FEAT_TRAINS);
 
 #include "src/OTHER/Tender.pnml"
 
+#include "src/STEAM_LOCO/mr_1377.pnml"
 #include "src/STEAM_LOCO/lbscr_e4.pnml"
 #include "src/STEAM_LOCO/bulleid_pacifics.pnml"
 

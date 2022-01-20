@@ -289,7 +289,7 @@ item(FEAT_TRAINS, item_sprinter, 150){
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1984,1,1) ;
-		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		model_life                     : 40 ;
 		vehicle_life                   : 50 ;
 		reliability_decay              : 6 ;
 		cost_factor                    : 47 ;
@@ -356,7 +356,7 @@ item(FEAT_TRAINS, item_sprinter_1, 151){
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1984,1,1) ;
-		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		model_life                     : 40 ;
 		vehicle_life                   : 50 ;
 		reliability_decay              : 6 ;
 		cost_factor                    : 47 ;

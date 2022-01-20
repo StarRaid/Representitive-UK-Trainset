@@ -43,6 +43,49 @@ spriteset(gfx_blank){base_32bpp()}
 
 
 
+//Length 3
+
+
+
+//4 views
+template template_3_4(x,y){
+	[x+000,  y ,  8 , 12 , -3 , -10, ANIM] //North
+	[x+010,  y , 10 , 12 , -3 , -9 , ANIM] //North East
+	[x+022,  y , 13 , 13 ,  3 , -9 , ANIM] //East
+	[x+037,  y , 10 , 12 ,  5 , -4 , ANIM] //South East
+	[x+000,  y ,  8 , 12 , -3 ,	 0 , ANIM] //South     
+	[x+010,  y , 10 , 12 , -13, -4 , ANIM] //South West
+	[x+022,  y , 13 , 13 , -17, -9 , ANIM] //West      
+	[x+037,  y , 10 , 12 , -5 , -9 , ANIM] //North West
+}
+
+//8 views
+template template_3_8(x,y){
+	[x+000,  y ,  8 , 12 , -3 , -10, ANIM] //North
+	[x+010,  y , 10 , 12 , -3 , -9 , ANIM] //North East
+	[x+022,  y , 13 , 13 ,  3 , -9 , ANIM] //East
+	[x+037,  y , 10 , 12 ,  5 , -4 , ANIM] //South East
+	[x+049,  y ,  8 , 12 , -3 ,	 0 , ANIM] //South     
+	[x+059,  y , 10 , 12 , -13, -4 , ANIM] //South West
+	[x+071,  y , 13 , 13 , -17, -9 , ANIM] //West      
+	[x+086,  y , 10 , 12 , -5 , -9 , ANIM] //North West
+}
+
+//8 views, reversed
+template template_3_8_rev(x,y){
+	[x+049,  y ,  8 , 12 , -3 , -10, ANIM] //North
+	[x+059,  y , 10 , 12 , -3 , -9 , ANIM] //North East
+	[x+071,  y , 13 , 13 ,  3 , -9 , ANIM] //East
+	[x+086,  y , 10 , 12 ,  5 , -4 , ANIM] //South East
+	[x+000,  y ,  8 , 12 , -3 ,	 0 , ANIM] //South     
+	[x+010,  y , 10 , 12 , -13, -4 , ANIM] //South West
+	[x+022,  y , 13 , 13 , -17, -9 , ANIM] //West      
+	[x+037,  y , 10 , 12 , -5 , -9 , ANIM] //North West
+}
+
+
+
+
 //Length 4
 
 

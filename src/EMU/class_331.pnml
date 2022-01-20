@@ -151,7 +151,7 @@ item (FEAT_TRAINS, item_331, 331) {
 		name: 							string(STR_NAME_331);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(2017, 1, 1);
-		model_life:						15;
+		model_life:						VEHICLE_NEVER_EXPIRES;
 		retire_early:					1;
 		vehicle_life:					50;
 		reliability_decay:				7;

@@ -48,7 +48,7 @@ item (FEAT_TRAINS, item_stroudley, 9070){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 5 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1870, 1, 1) ;
+		introduction_date              : date(1860, 1, 1) ;
 		model_life                     : 35 ;
 		vehicle_life                   : 45 ;
 		cost_factor                    : 20 ;

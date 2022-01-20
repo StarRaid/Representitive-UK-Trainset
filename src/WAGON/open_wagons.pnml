@@ -170,7 +170,7 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 	property {
 		name: 							string(STR_NAME_MDO);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1930, 1, 1);
+		introduction_date:				date(1920, 1, 1);
 		model_life:						20;
 		retire_early:					1;
 		vehicle_life:					25;
@@ -182,7 +182,7 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 		cost_factor:					6;
 		running_cost_factor:			10;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							70 mph;
+		speed:							40 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
@@ -230,7 +230,7 @@ item (FEAT_TRAINS, item_zgo, 10012) {
 	property {
 		name: 							string(STR_NAME_ZGO);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1850, 1, 1);
+		introduction_date:				date(1890, 1, 1);
 		model_life:						20;
 		retire_early:					1;
 		vehicle_life:					25;
@@ -242,7 +242,7 @@ item (FEAT_TRAINS, item_zgo, 10012) {
 		cost_factor:					4;
 		running_cost_factor:			10;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							50 mph;
+		speed:							40 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
@@ -263,6 +263,35 @@ item (FEAT_TRAINS, item_zgo, 10012) {
 		purchase:						gfx_zgo_purchase;
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -444,4 +473,308 @@ item (FEAT_TRAINS, item_haz, 10019) {
 		colour_mapping:					sw_hazard_col_check;
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//5PLANK
+
+spriteset(gfx_5plank,			"gfx/WAGON/wagons.png"){template_4_4	(297,500)}
+spriteset(gfx_5plank_ttd,		"gfx/WAGON/wagons.png"){template_4_4	(354,500)}
+spriteset(gfx_5plank_dark,		"gfx/WAGON/wagons.png"){template_4_4	(297,525)}
+spriteset(gfx_5plank_2cc,		"gfx/WAGON/wagons.png"){template_4_4	(354,525)}
+spriteset(gfx_5plank_other_h,	"gfx/WAGON/wagons.png"){template_4_4	(297,600)}
+spriteset(gfx_5plank_other_f,	"gfx/WAGON/wagons.png"){template_4_4	(354,600)}
+spriteset(gfx_5plank_sand_h,	"gfx/WAGON/wagons.png"){template_4_4	(297,625)}
+spriteset(gfx_5plank_sand_f,	"gfx/WAGON/wagons.png"){template_4_4	(354,625)}
+spriteset(gfx_5plank_ore_h,		"gfx/WAGON/wagons.png"){template_4_4	(297,550)}
+spriteset(gfx_5plank_ore_f,		"gfx/WAGON/wagons.png"){template_4_4	(354,550)}
+spriteset(gfx_5plank_coal_h,	"gfx/WAGON/wagons.png"){template_4_4	(297,575)}
+spriteset(gfx_5plank_coal_f,	"gfx/WAGON/wagons.png"){template_4_4	(354,575)}
+spriteset(gfx_5plank_cover,		"gfx/WAGON/wagons.png"){template_4_4	(297,650)}
+
+spriteset(gfx_5plank_purchase,	"gfx/WAGON/wagons.png"){template_purchase(150,700)}
+
+switch(FEAT_TRAINS, SELF, sw_5plank_cargo_check_h, cargo_type_in_veh){
+	COAL : gfx_5plank_coal_h ;
+	COKE : gfx_5plank_coal_h ;
+	IORE : gfx_5plank_ore_h ;
+	PORE : gfx_5plank_ore_h ;
+	SAND : gfx_5plank_sand_h ;
+	SULP : gfx_5plank_sand_h ;
+	AORE : gfx_5plank_other_h ;
+	GRVL : gfx_5plank_other_h ;
+	LIME : gfx_5plank_other_h ;
+	MNO2 : gfx_5plank_other_h ;
+	NITR : gfx_5plank_other_h ;
+	gfx_5plank_cover ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_5plank_cargo_check_f, cargo_type_in_veh){
+	COAL : gfx_5plank_coal_f ;
+	COKE : gfx_5plank_coal_f ;
+	IORE : gfx_5plank_ore_f ;
+	PORE : gfx_5plank_ore_f ;
+	SAND : gfx_5plank_sand_f ;
+	SULP : gfx_5plank_sand_f ;
+	AORE : gfx_5plank_other_f ;
+	GRVL : gfx_5plank_other_f ;
+	LIME : gfx_5plank_other_f ;
+	MNO2 : gfx_5plank_other_f ;
+	NITR : gfx_5plank_other_f ;
+	gfx_5plank_cover ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_5plank_cargo_amount_check, PERCENT_FULL){
+	1..50	: sw_5plank_cargo_check_h ;
+	51..100	: sw_5plank_cargo_check_f ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_5plank_manual, cargo_subtype){
+	0 : gfx_5plank ;
+	1 : gfx_5plank_dark ;
+	2 : gfx_5plank_ttd ;
+	gfx_5plank_2cc ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_5plank_manual_check, livery_choice){
+	1 : sw_5plank_manual ;
+	gfx_5plank_2cc ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_5plank_sprite_stack, SPR_STACK){
+	0 : sw_5plank_manual_check ;
+	1 : sw_5plank_cargo_amount_check ;
+}
+
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_5plank_refit_text, cargo_subtype){
+	 0 : string(STR_COLOUR_GREY) ;
+	 1 : string(STR_COLOUR_BLACK) ;
+	 2 : string(STR_LIVERY_COMPANY) ;
+	 3 : string(STR_LIVER_COMP_COLOURS) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_5plank_refit_text_check, livery_choice){
+	1 : sw_5plank_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+item (FEAT_TRAINS, item_5plank, 10022) {
+	property {
+		name: 							string(STR_NAME_ZCO);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1860, 1, 1);
+		model_life:						70;
+		retire_early:					1;
+		vehicle_life:					30;
+		reliability_decay:				25;
+		refittable_cargo_classes:		bitmask(CC_BULK, CC_NON_POURABLE);
+		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED);
+		cargo_allow_refit:				[COAL, IORE, AORE, COKE, FERT, GRVL, LIME, MNO2, NITR, PHOS, PORE, SCMT, SGBT, SGCN, SLAG, SULP, STEL, PAPR, BEER, BDMT, BOOM, BRCK, CERA, COPR, DYES, ENSP, FICR, FMSP, GLAS, IRON, METL, MNSP, NICK, NUTS, PIPE, RCYC, VPTS, WDPR, WOOL, SCRP, SCMT, RCYC];
+		loading_speed:					8;
+		cost_factor:					4;
+		running_cost_factor:			5;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							35 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				COAL;
+		cargo_capacity:					12;
+		weight:							8 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							4;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_5plank_sprite_stack;
+		purchase:						gfx_5plank_purchase;
+		cargo_subtype_text:				sw_5plank_refit_text_check;
+}
+}
+
+
+
+
+
+
+
+
+//newsteel
+
+spriteset(gfx_newsteel,			"gfx/WAGON/wagons.png"){template_5_8	(0	,600)}
+spriteset(gfx_newsteel_other_h,	"gfx/WAGON/wagons.png"){template_5_4	(0	,675)}
+spriteset(gfx_newsteel_other_f,	"gfx/WAGON/wagons.png"){template_5_4	(65	,675)}
+spriteset(gfx_newsteel_sand_h,	"gfx/WAGON/wagons.png"){template_5_4	(0	,650)}
+spriteset(gfx_newsteel_sand_f,	"gfx/WAGON/wagons.png"){template_5_4	(65	,650)}
+spriteset(gfx_newsteel_ore_h,	"gfx/WAGON/wagons.png"){template_5_4	(0	,700)}
+spriteset(gfx_newsteel_ore_f,	"gfx/WAGON/wagons.png"){template_5_4	(65	,700)}
+spriteset(gfx_newsteel_coal_h,	"gfx/WAGON/wagons.png"){template_5_4	(0	,625)}
+spriteset(gfx_newsteel_coal_f,	"gfx/WAGON/wagons.png"){template_5_4	(65	,625)}
+
+spriteset(gfx_newsteel_purchase,"gfx/WAGON/wagons.png"){template_purchase(150,675)}
+
+switch(FEAT_TRAINS, SELF, sw_newsteel_cargo_check_h, cargo_type_in_veh){
+	COAL : gfx_newsteel_coal_h ;
+	COKE : gfx_newsteel_coal_h ;
+	IORE : gfx_newsteel_ore_h ;
+	PORE : gfx_newsteel_ore_h ;
+	SAND : gfx_newsteel_sand_h ;
+	SULP : gfx_newsteel_sand_h ;
+	gfx_newsteel_other_h ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_newsteel_cargo_check_f, cargo_type_in_veh){
+	COAL : gfx_newsteel_coal_f ;
+	COKE : gfx_newsteel_coal_f ;
+	IORE : gfx_newsteel_ore_f ;
+	PORE : gfx_newsteel_ore_f ;
+	SAND : gfx_newsteel_sand_f ;
+	SULP : gfx_newsteel_sand_f ;
+	gfx_newsteel_other_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_newsteel_cargo_amount_check, PERCENT_FULL){
+	1..50	: sw_newsteel_cargo_check_h ;
+	51..100	: sw_newsteel_cargo_check_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_newsteel_sprite_stack, SPR_STACK){
+	0 : gfx_newsteel ;
+	1 : sw_newsteel_cargo_amount_check ;
+}
+
+
+
+
+
+
+
+item (FEAT_TRAINS, item_newsteel, 10023) {
+	property {
+		name: 							string(STR_NAME_MCO);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1950, 1, 1);
+		model_life:						50;
+		retire_early:					1;
+		vehicle_life:					40;
+		reliability_decay:				6;
+		refittable_cargo_classes:		bitmask(CC_BULK, CC_NON_POURABLE);
+		non_refittable_cargo_classes:	bitmask(CC_POWDERIZED);
+		cargo_allow_refit:				[COAL, IORE, AORE, COKE, FERT, GRVL, LIME, MNO2, NITR, PHOS, PORE, SCMT, SGBT, SGCN, SLAG, SULP, STEL, PAPR, BEER, BDMT, BOOM, BRCK, CERA, COPR, DYES, ENSP, FICR, FMSP, GLAS, IRON, METL, MNSP, NICK, NUTS, PIPE, RCYC, VPTS, WDPR, WOOL, SCRP, SCMT, RCYC];
+		loading_speed:					8;
+		cost_factor:					4;
+		running_cost_factor:			5;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							50 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				COAL;
+		cargo_capacity:					21;
+		weight:							11 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							5;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_newsteel_sprite_stack;
+		purchase:						gfx_newsteel_purchase;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

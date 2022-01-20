@@ -17,13 +17,6 @@ spriteset(gfx_merchnav_purchase_rebuilt			, "gfx/STEAM_LOCO/bulleid.png"	){	temp
 
 
 
-//Switches
-
-switch (FEAT_TRAINS, SELF, sw_tender_loco, extra_callback_info1) {
-	1: return item_tender;
-    return CB_RESULT_NO_MORE_ARTICULATED_PARTS;
-}
-
 
 //Liveries
 
@@ -162,6 +155,8 @@ item(FEAT_TRAINS, item_merchnav, 1800){
 		colour_mapping					: sw_merchnav_colours_2cc_check ;
 		length							: 4 ;
 		//cargo_subtype_text				: sw_merchnav_refit_text_check ;
+		cargo_capacity:					return 0;
+		purchase_cargo_capacity:		0 ;
 	}
 }
 
@@ -242,6 +237,8 @@ item(FEAT_TRAINS, item_merchnav_rebuilt, 1900){
 		default							: gfx_merchnav_rebuilt_t ;
 		colour_mapping					: sw_merchnav_rebuilt_colours_2cc_check ;
 		length							: 4 ;
+		cargo_capacity:					return 0;
+		purchase_cargo_capacity:		0 ;
 	}
 }
 
@@ -423,15 +420,17 @@ item(FEAT_TRAINS, item_lightpacific, 1801){
 		purchase_cargo_capacity			: 0 ;
 		cargo_capacity					: return 0 ;
 		can_attach_wagon				: sw_all_but_MU90;
-		running_cost_factor				: return(current_speed == 0 ? 100 : 255) ;
+		running_cost_factor				: return(current_speed == 0 ? 100 : 234) ;
 		articulated_part				: sw_tender_loco ;
-		purchase_running_cost_factor	: 255 ;
+		purchase_running_cost_factor	: 234 ;
 	}
 	livery_override(item_tender){
 		default							: sw_lightpacific_t_gfx_manual_check ;
 		colour_mapping					: sw_lightpacific_colours_2cc_check ;
 		length							: 4 ;
 		//cargo_subtype_text				: sw_lightpacific_refit_text_check ;
+		cargo_capacity:					return 0;
+		purchase_cargo_capacity:		0 ;
 	}
 }
 
@@ -504,14 +503,16 @@ item(FEAT_TRAINS, item_lightpacific_rebuilt, 1901){
 		purchase_cargo_capacity			: 0 ;
 		cargo_capacity					: return 0 ;
 		can_attach_wagon				: sw_all_but_MU90;
-		running_cost_factor				: return(current_speed == 0 ? 60 : 230) ;
+		running_cost_factor				: return(current_speed == 0 ? 60 : 213) ;
 		articulated_part				: sw_tender_loco ;
-		purchase_running_cost_factor	: 230 ;
+		purchase_running_cost_factor	: 213 ;
 	}
 	livery_override(item_tender){
 		default							: gfx_lightpacific_rebuilt_t ;
 		colour_mapping					: sw_lightpacific_rebuilt_colours_2cc_check ;
 		length							: 4 ;
+		cargo_capacity:					return 0;
+		purchase_cargo_capacity:		0 ;
 	}
 }
 
@@ -572,4 +573,183 @@ item(FEAT_TRAINS, item_merchnav_t, 2800){
 }
 
 */
+
+
+
+
+
+
+
+
+
+
+
+//BULLEID Q1
+
+
+
+spriteset(gfx_q1				, "gfx/STEAM_LOCO/southern_region.png"	){	template_5_8		(0	,175)}
+spriteset(gfx_q1_2cc			, "gfx/STEAM_LOCO/southern_region.png"	){	template_5_8		(0	,200)}
+
+spriteset(gfx_q1_t				, "gfx/STEAM_LOCO/southern_region.png"	){	template_3_8		(130,175)}
+spriteset(gfx_q1_2cc_t			, "gfx/STEAM_LOCO/southern_region.png"	){	template_3_8		(130,200)}
+
+spriteset(gfx_q1_purchase		, "gfx/STEAM_LOCO/southern_region.png"	){	template_purchase	(92	,141)}
+spriteset(gfx_q1_purchase_2cc	, "gfx/STEAM_LOCO/southern_region.png"	){	template_purchase	(92	,154)}
+
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_q1_gfx_purchase, colour_scheme_1){
+	1 : gfx_q1_purchase ;
+	gfx_q1_purchase_2cc ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_q1_gfx_auto, colour_scheme_1){
+	1 : gfx_q1 ;
+	gfx_q1_2cc ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_q1_gfx_manual, cargo_subtype){
+	1..2 : gfx_q1_2cc ;
+	gfx_q1 ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_q1_gfx_manual_check, livery_choice){
+	1 : sw_q1_gfx_manual ;
+	sw_q1_gfx_auto ;
+}
+
+
+//Colours
+
+
+
+switch(FEAT_TRAINS, SELF, sw_q1_colours_manual, cargo_subtype){
+	0..1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_q1_colours_2cc_check, colour_scheme_1){
+	1 : sw_q1_colours_manual ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_q1_purchase_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_q1_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_BR_BLACK) ;
+	 1 : string(STR_LIVERY_SOUTHERN) ;
+	 2 : string(STR_LIVER_COMP_COLOURS) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_q1_refit_text_check, livery_choice){
+	1 : sw_q1_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+//Tender
+
+
+switch(FEAT_TRAINS, SELF, sw_q1_t_gfx_auto, colour_scheme_1){
+	1 : gfx_q1_t ;
+	gfx_q1_2cc_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_q1_t_gfx_manual, cargo_subtype){
+	1..2 : gfx_q1_2cc_t ;
+	gfx_q1_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_q1_t_gfx_manual_check, livery_choice){
+	1 : sw_q1_t_gfx_manual ;
+	sw_q1_t_gfx_auto ;
+}
+
+
+
+
+//Item
+
+item(FEAT_TRAINS, item_q1, 1802){
+	property{
+		name							: string(STR_NAME_BULLEID_Q1) ;  
+		climates_available				: ALL_CLIMATES ;
+		introduction_date				: date(1942,1,1) ;
+		refit_cost						: 0 ;
+		refittable_cargo_classes		: 0 ;
+		cargo_allow_refit				: [MAIL, GOOD] ;
+		cargo_capacity					: 1 ;
+		air_drag_coefficient			: 0.0888888888888889 ;
+		
+		model_life						: 30 ;
+		vehicle_life					: 65 ;
+		cost_factor						: 100 ;
+		running_cost_factor				: 100 ;
+		length							: 5 ;
+		reliability_decay				: 3 ;
+		
+		speed							: 65 mph ;
+		power							: 1447 hp ;
+		weight							: 89 ton ;
+		tractive_effort_coefficient		: 0.15 ;
+		
+		track_type						: RAIL ;
+		engine_class					: ENGINE_CLASS_STEAM ;
+		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_STEAM ;
+		running_cost_base				: RUNNING_COST_STEAM ;
+		
+		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id						: SPRITE_ID_NEW_TRAIN ;
+		dual_headed						: 0 ;
+	}
+	graphics{
+		default							: sw_q1_gfx_manual_check ;
+		colour_mapping					: sw_q1_colours_2cc_check ;
+		purchase						: sw_q1_gfx_purchase ;
+		purchase_colour_mapping			: sw_q1_purchase_colours_2cc_check ;
+		//sound_effect					: sw_sfx_diesel_loco_ee_2 ;
+		create_effect					: vfx_steam ;
+		cargo_subtype_text				: sw_q1_refit_text_check ;
+		purchase_cargo_capacity			: 0 ;
+		cargo_capacity					: return 0 ;
+		can_attach_wagon				: sw_all_but_MU90;
+		running_cost_factor				: return(current_speed == 0 ? 20 : 100) ;
+		articulated_part				: sw_tender_loco ;
+		purchase_running_cost_factor	: 100 ;
+	}
+	livery_override(item_tender){
+		default							: sw_q1_t_gfx_manual_check ;
+		colour_mapping					: sw_q1_colours_2cc_check ;
+		length							: 3 ;
+		cargo_capacity:					return 0;
+		purchase_cargo_capacity:		0 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_q1, 1802){
+	property{
+		name                           : string(STR_NAME_BULLEID_Q1_ALT) ;
+	}
+}
+}
+
+
+
+
+
+
 

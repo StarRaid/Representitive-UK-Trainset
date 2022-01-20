@@ -481,3 +481,114 @@ item (FEAT_TRAINS, item_rbx, 9004){
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+spriteset(gfx_oldcube_open,			"gfx/WAGON/wagons.png"){template_4_4	(207,600)}
+spriteset(gfx_oldcube_closed,		"gfx/WAGON/wagons.png"){template_4_4	(150,600)}
+spriteset(gfx_oldcube_2cc_open,		"gfx/WAGON/wagons.png"){template_4_4	(207,625)}
+spriteset(gfx_oldcube_2cc_closed,	"gfx/WAGON/wagons.png"){template_4_4	(150,625)}
+
+spriteset(gfx_oldcube_purchase,		"gfx/WAGON/wagons.png"){template_purchase(150,650)}
+
+
+
+spritegroup sprgrp_oldcube {
+	loading	: gfx_oldcube_open ;
+	loaded	: gfx_oldcube_closed ;
+}
+
+spritegroup sprgrp_oldcube_2cc {
+	loading	: gfx_oldcube_2cc_open ;
+	loaded	: gfx_oldcube_2cc_closed ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_oldcube_manual, cargo_subtype){
+	0 : sprgrp_oldcube ;
+	sprgrp_oldcube_2cc ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_oldcube_manual_check, livery_choice){
+	1 : sw_oldcube_manual ;
+	sprgrp_oldcube_2cc ;
+}
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_oldcube_refit_text, cargo_subtype){
+	 0 : string(STR_COLOUR_GREY) ;
+	 1 : string(STR_LIVER_COMP_COLOURS) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_oldcube_refit_text_check, livery_choice){
+	1 : sw_oldcube_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+
+
+//Item
+
+
+item (FEAT_TRAINS, item_oldcube, 9005){
+	property{
+		name						   : string(STR_NAME_CUBE) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 4 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1860, 1, 1) ;
+		model_life                     : 70 ;
+		vehicle_life                   : 30 ;
+		cost_factor                    : 10 ;
+		running_cost_base              : RUNNING_COST_NONE ;
+		running_cost_factor            : 12 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS, CC_PIECE_GOODS) ;
+		cargo_allow_refit              : [VBOD, VPTS, LVST, PLAS, JAVA, BEER, MILK] ;
+		default_cargo_type			   : MAIL ;
+		cargo_capacity                 : 12 ;
+		loading_speed                  : 4 ;
+		track_type                     : RAIL ;
+		speed                          : 40 mph ;
+		power                          : 0 hp ;
+		weight                         : 8 ton ;
+	}
+	graphics{
+		default                 : sw_oldcube_manual_check ;
+		purchase                : gfx_oldcube_purchase ;
+		cargo_subtype_text      : sw_oldcube_refit_text_check ;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
