@@ -49,7 +49,7 @@ item (FEAT_TRAINS, item_stroudley, 9070){
 		length                         : 5 ;
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1860, 1, 1) ;
-		model_life                     : 35 ;
+		model_life                     : 50 ;
 		vehicle_life                   : 45 ;
 		cost_factor                    : 20 ;
 		running_cost_base              : RUNNING_COST_NONE ;
@@ -143,7 +143,7 @@ item (FEAT_TRAINS, item_vicsub, 9071){
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1880, 1, 1) ;
-		model_life                     : 40 ;
+		model_life                     : 70 ;
 		vehicle_life                   : 50 ;
 		cost_factor                    : 30 ;
 		running_cost_base              : RUNNING_COST_NONE ;

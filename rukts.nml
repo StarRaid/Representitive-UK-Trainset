@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 71 ;
+	version: 72 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -1218,7 +1218,7 @@ item (FEAT_TRAINS, item_stroudley, 9070){
 		length                         : 5 ;
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1860, 1, 1) ;
-		model_life                     : 35 ;
+		model_life                     : 50 ;
 		vehicle_life                   : 45 ;
 		cost_factor                    : 20 ;
 		running_cost_base              : RUNNING_COST_NONE ;
@@ -1312,7 +1312,7 @@ item (FEAT_TRAINS, item_vicsub, 9071){
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1880, 1, 1) ;
-		model_life                     : 40 ;
+		model_life                     : 70 ;
 		vehicle_life                   : 50 ;
 		cost_factor                    : 30 ;
 		running_cost_base              : RUNNING_COST_NONE ;
@@ -3331,7 +3331,7 @@ item (FEAT_TRAINS, item_oldcube, 9005){
 		length                         : 4 ;
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1860, 1, 1) ;
-		model_life                     : 70 ;
+		model_life                     : 80 ;
 		vehicle_life                   : 30 ;
 		cost_factor                    : 10 ;
 		running_cost_base              : RUNNING_COST_NONE ;
@@ -3505,7 +3505,7 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 		name: 							string(STR_NAME_ZDX);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1950, 1, 1);
-		model_life:						30;
+		model_life:						40;
 		retire_early:					1;
 		vehicle_life:					40;
 		reliability_decay:				11;
@@ -3612,7 +3612,7 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 		name: 							string(STR_NAME_MDO);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1920, 1, 1);
-		model_life:						20;
+		model_life:						50;
 		retire_early:					1;
 		vehicle_life:					25;
 		reliability_decay:				9;
@@ -4027,7 +4027,7 @@ item (FEAT_TRAINS, item_5plank, 10022) {
 		name: 							string(STR_NAME_ZCO);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1860, 1, 1);
-		model_life:						70;
+		model_life:						80;
 		retire_early:					1;
 		vehicle_life:					30;
 		reliability_decay:				25;
@@ -6313,16 +6313,16 @@ item(FEAT_TRAINS, item_mr_1377, 1103){
 		refittable_cargo_classes       : 0 ;
 		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
-		model_life                     : 30 ;
-		vehicle_life                   : 70 ;
+		model_life                     : 50 ;
+		vehicle_life                   : 60 ;
 		reliability_decay              : 14 ;
 		cost_factor                    : 50 ;
 		running_cost_base              : RUNNING_COST_STEAM ;
 		running_cost_factor            : 50 ;
 		speed                          : 30 mph ;
 		track_type                     : RAIL ;
-		power                          : 588 hp ;
-		weight                         : 59 ton ;
+		power                          : 371 hp ;
+		weight                         : 40 ton ;
 		engine_class                   : ENGINE_CLASS_STEAM ;
 		tractive_effort_coefficient    : 0.18 ;
 		air_drag_coefficient           : 0.0888888888888889 ;
@@ -6411,8 +6411,8 @@ item(FEAT_TRAINS, item_mr_115, 1104){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 30 ;
-		vehicle_life					: 65 ;
+		model_life						: 50 ;
+		vehicle_life					: 45 ;
 		cost_factor						: 190 ;
 		running_cost_factor				: 190 ;
 		length							: 5 ;
@@ -6605,8 +6605,8 @@ item(FEAT_TRAINS, item_lbsc_e4, 1401){
 		refittable_cargo_classes       : 0 ;
 		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
-		model_life                     : 25 ;
-		vehicle_life                   : 35 ;
+		model_life                     : 40 ;
+		vehicle_life                   : 38 ;
 		reliability_decay              : 17 ;
 		cost_factor                    : 65 ;
 		running_cost_base              : RUNNING_COST_STEAM ;
@@ -6772,8 +6772,8 @@ item(FEAT_TRAINS, item_merchnav, 1800){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 25 ;
-		vehicle_life					: 35 ;
+		model_life						: 30 ;
+		vehicle_life					: 40 ;
 		cost_factor						: 230 ;
 		running_cost_factor				: 255 ;
 		length							: 7 ;
@@ -6857,7 +6857,7 @@ item(FEAT_TRAINS, item_merchnav_rebuilt, 1900){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 15 ;
+		model_life						: 14 ;
 		vehicle_life					: 30 ;
 		cost_factor						: 200 ;
 		running_cost_factor				: 230 ;
@@ -7046,7 +7046,7 @@ item(FEAT_TRAINS, item_lightpacific, 1801){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 35 ;
+		model_life						: 25 ;
 		vehicle_life					: 50 ;
 		cost_factor						: 210 ;
 		running_cost_factor				: 234 ;
@@ -7131,7 +7131,7 @@ item(FEAT_TRAINS, item_lightpacific_rebuilt, 1901){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 20 ;
+		model_life						: 15 ;
 		vehicle_life					: 42 ;
 		cost_factor						: 182 ;
 		running_cost_factor				: 213 ;

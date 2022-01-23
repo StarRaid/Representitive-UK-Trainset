@@ -108,16 +108,16 @@ item(FEAT_TRAINS, item_mr_1377, 1103){
 		refittable_cargo_classes       : 0 ;
 		cargo_allow_refit              : [MAIL, GOOD] ;
 		cargo_capacity                 : 1 ;
-		model_life                     : 30 ;
-		vehicle_life                   : 70 ;
+		model_life                     : 50 ;
+		vehicle_life                   : 60 ;
 		reliability_decay              : 14 ;
 		cost_factor                    : 50 ;
 		running_cost_base              : RUNNING_COST_STEAM ;
 		running_cost_factor            : 50 ;
 		speed                          : 30 mph ;
 		track_type                     : RAIL ;
-		power                          : 588 hp ;
-		weight                         : 59 ton ;
+		power                          : 371 hp ;
+		weight                         : 40 ton ;
 		engine_class                   : ENGINE_CLASS_STEAM ;
 		tractive_effort_coefficient    : 0.18 ;
 		air_drag_coefficient           : 0.0888888888888889 ;
@@ -206,8 +206,8 @@ item(FEAT_TRAINS, item_mr_115, 1104){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 30 ;
-		vehicle_life					: 65 ;
+		model_life						: 50 ;
+		vehicle_life					: 45 ;
 		cost_factor						: 190 ;
 		running_cost_factor				: 190 ;
 		length							: 5 ;

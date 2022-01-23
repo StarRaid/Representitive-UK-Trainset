@@ -114,8 +114,8 @@ item(FEAT_TRAINS, item_merchnav, 1800){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 25 ;
-		vehicle_life					: 35 ;
+		model_life						: 30 ;
+		vehicle_life					: 40 ;
 		cost_factor						: 230 ;
 		running_cost_factor				: 255 ;
 		length							: 7 ;
@@ -199,7 +199,7 @@ item(FEAT_TRAINS, item_merchnav_rebuilt, 1900){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 15 ;
+		model_life						: 14 ;
 		vehicle_life					: 30 ;
 		cost_factor						: 200 ;
 		running_cost_factor				: 230 ;
@@ -388,7 +388,7 @@ item(FEAT_TRAINS, item_lightpacific, 1801){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 35 ;
+		model_life						: 25 ;
 		vehicle_life					: 50 ;
 		cost_factor						: 210 ;
 		running_cost_factor				: 234 ;
@@ -473,7 +473,7 @@ item(FEAT_TRAINS, item_lightpacific_rebuilt, 1901){
 		cargo_capacity					: 1 ;
 		air_drag_coefficient			: 0.0888888888888889 ;
 		
-		model_life						: 20 ;
+		model_life						: 15 ;
 		vehicle_life					: 42 ;
 		cost_factor						: 182 ;
 		running_cost_factor				: 213 ;

@@ -64,7 +64,7 @@ item (FEAT_TRAINS, item_zdx, 10006) {
 		name: 							string(STR_NAME_ZDX);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1950, 1, 1);
-		model_life:						30;
+		model_life:						40;
 		retire_early:					1;
 		vehicle_life:					40;
 		reliability_decay:				11;
@@ -171,7 +171,7 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 		name: 							string(STR_NAME_MDO);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1920, 1, 1);
-		model_life:						20;
+		model_life:						50;
 		retire_early:					1;
 		vehicle_life:					25;
 		reliability_decay:				9;
@@ -586,7 +586,7 @@ item (FEAT_TRAINS, item_5plank, 10022) {
 		name: 							string(STR_NAME_ZCO);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1860, 1, 1);
-		model_life:						70;
+		model_life:						80;
 		retire_early:					1;
 		vehicle_life:					30;
 		reliability_decay:				25;
