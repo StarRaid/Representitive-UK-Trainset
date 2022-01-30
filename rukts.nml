@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 72 ;
+	version: 73 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -12225,7 +12225,7 @@ switch(FEAT_TRAINS, SELF, sw_shed_col_2cc_check, colour_scheme_1){
 item(FEAT_TRAINS, item_shed, 66){
 	property{
 		name                           : string(STR_NAME_SHED) ;  
-		climates_available             : NO_CLIMATE ;
+		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1998,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
@@ -25518,6 +25518,13 @@ spriteset(spriteset_450_swt_t, "gfx/EMU/class_450.png") {
 	template_8_4_networker(90, 25)
 }
 
+spriteset(spriteset_450_swr, "gfx/EMU/class_450.png") {
+	template_8_8_networker(0, 100)
+}
+spriteset(spriteset_450_swr_t, "gfx/EMU/class_450.png") {
+	template_8_4_networker(90, 125)
+}
+
 spriteset(spriteset_444_purchase, "gfx/EMU/class_450.png") {
 	template_dualhead_purchase(0, 25)
 }
@@ -25556,11 +25563,13 @@ switch(FEAT_TRAINS, PARENT, sw_444_livery_selection_auto_t, ((count_veh_id(item_
 switch(FEAT_TRAINS, SELF, sw_444_livery_selection_manual, cargo_subtype){
 	0: spriteset_450_swt;
 	1: spriteset_444_swt;
+	2: spriteset_450_swr;
 } 
 
 switch(FEAT_TRAINS, PARENT, sw_444_livery_selection_manual_t, cargo_subtype){
 	0: spriteset_450_swt_t;
 	1: spriteset_444_swt_t;
+	2: spriteset_450_swr_t;
 } 
 
 switch(FEAT_TRAINS, SELF, sw_444_livery_selection, livery_choice){
@@ -25587,6 +25596,7 @@ switch(FEAT_TRAINS, SELF, sw_444_trailer, [STORE_TEMP((getbits(extra_callback_in
 switch(FEAT_TRAINS, SELF, sw_444_refit_text, cargo_subtype){
 	0: string(STR_LIVERY_SWT_STR, string(STR_450));
 	1: string(STR_LIVERY_SWT_STR, string(STR_444));
+	2: string(STR_LIVERY_SWR_STR, string(STR_450));
 	return CB_RESULT_NO_TEXT;
 }
 
@@ -25611,6 +25621,7 @@ switch(FEAT_TRAINS, PARENT, sw_444_recolour_selection_auto, (count_veh_id(item_M
 switch(FEAT_TRAINS, SELF, sw_444_recolour_selection_manual, cargo_subtype){
 	0: sw_450_colour_mapping;
 	1: sw_450_colour_mapping;
+	palette_2cc(COLOUR_WHITE, COLOUR_GREY);
 }
 
 switch(FEAT_TRAINS, SELF, sw_444_recolour_livery_selection, livery_choice){

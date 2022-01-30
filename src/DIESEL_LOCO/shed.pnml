@@ -108,7 +108,7 @@ switch(FEAT_TRAINS, SELF, sw_shed_col_2cc_check, colour_scheme_1){
 item(FEAT_TRAINS, item_shed, 66){
 	property{
 		name                           : string(STR_NAME_SHED) ;  
-		climates_available             : NO_CLIMATE ;
+		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1998,1,1) ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;
