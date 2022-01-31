@@ -5,7 +5,7 @@ grf{
 	grfid                  : "RTNA" ;
 	name                   : string(STR_GRF_NAME) ;
 	desc                   : string(STR_GRF_DESC) ;
-	version                : 9 ;
+	version                : 10 ;
 	min_compatible_version : 6 ;
 	param 0{
 		nuclear_enabled{
@@ -13,7 +13,7 @@ grf{
 			name		: string(STR_NUCLEAR_ENABLED_NAME) ;
 			desc		: string(STR_NUCLEAR_ENABLED_DESC) ;
 			bit			: 1 ;
-			def_value	: 1 ;
+			def_value	: 0 ;
 		}
 		narrow_gauge_enabled{
 			type		: bool ;
@@ -140,16 +140,19 @@ switch(FEAT_INDUSTRIES, SELF, sw_nuclear_build_date_check, current_year < 1950){
 switch(FEAT_TRAINS, SELF, sfx_extra, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED			: sound("sfx/40_idle.wav", 80) ;	//0
 	SOUND_EVENT_VISUAL_EFFECT	: sound("sfx/40_run.wav", 80) ;		//1
-	SOUND_EVENT_RUNNING_16		: sound("sfx/08_idle.wav") ;	//2
-	SOUND_EVENT_START			: sound("sfx/08_coast.wav") ;	//3
-	SOUND_EVENT_BREAKDOWN		: sound("sfx/25_idle.wav") ;	//4
-	SOUND_EVENT_TUNNEL			: sound("sfx/25_coast.wav") ;	//5
+	SOUND_EVENT_RUNNING_16		: sound("sfx/08_idle.wav") ;		//2
+	SOUND_EVENT_START			: sound("sfx/08_coast.wav") ;		//3
+	SOUND_EVENT_BREAKDOWN		: sound("sfx/25_idle.wav") ;		//4
+	SOUND_EVENT_TUNNEL			: sound("sfx/25_coast.wav") ;		//5
 }
 
 switch(FEAT_TRAINS, SELF, sfx_extra_1, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED			: sound("sfx/25_run.wav") ;		//6
+	SOUND_EVENT_STOPPED			: sound("sfx/25_run.wav") ;			//6
 	SOUND_EVENT_VISUAL_EFFECT	: sound("sfx/60_idle.wav", 80) ;	//7
 	SOUND_EVENT_RUNNING_16		: sound("sfx/60_coast.wav", 80) ;	//8
+	//SOUND_EVENT_START			: sound("sfx/66_run.wav") ;			//9
+	//SOUND_EVENT_BREAKDOWN		: sound("sfx/66_idle.wav") ;		//10
+	//SOUND_EVENT_TUNNEL			: sound("sfx/66_coast.wav") ;		//11
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_extra, cargo_subtype){
@@ -173,7 +176,7 @@ spriteset(gfx_sfx_extra){
 item(FEAT_TRAINS, item_sfx_extra, 0){
 	property{
 		name                           : string(STR_NWST_NAME) ;  
-		climates_available             : ALL_CLIMATES ;
+		climates_available             : NO_CLIMATE ;
 		introduction_date              : date(1,1,1) ;
 		refit_cost                     : 1 ;
 		refittable_cargo_classes       : 0 ;

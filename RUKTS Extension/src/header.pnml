@@ -2,7 +2,7 @@ grf{
 	grfid                  : "RTNA" ;
 	name                   : string(STR_GRF_NAME) ;
 	desc                   : string(STR_GRF_DESC) ;
-	version                : 9 ;
+	version                : 10 ;
 	min_compatible_version : 6 ;
 	param 0{
 		nuclear_enabled{
@@ -10,7 +10,7 @@ grf{
 			name		: string(STR_NUCLEAR_ENABLED_NAME) ;
 			desc		: string(STR_NUCLEAR_ENABLED_DESC) ;
 			bit			: 1 ;
-			def_value	: 1 ;
+			def_value	: 0 ;
 		}
 		narrow_gauge_enabled{
 			type		: bool ;

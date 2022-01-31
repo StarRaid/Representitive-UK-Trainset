@@ -1,12 +1,15 @@
 //SHED
 
-spriteset(gfx_shed_base,			"gfx/DIESEL_LOCO/class_66.png"){ template_Mk2_double			(   0,   0)	}
-spriteset(gfx_shed_base_rev,		"gfx/DIESEL_LOCO/class_66.png"){ template_Mk2_double_reverse	(   0,   0)	}
+spriteset(gfx_shed_base,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,0	)}
+spriteset(gfx_shed_base_rev,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,0	)}
 
-spriteset(gfx_shed_taillights,		"gfx/DIESEL_LOCO/class_66.png"){ template_Mk2_double			( 235,   0)	}
-spriteset(gfx_shed_headlights,		"gfx/DIESEL_LOCO/class_66.png"){ template_Mk2_double			( 235,  25)	}
+spriteset(gfx_shed_ews,				"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,100)}
+spriteset(gfx_shed_ews_rev,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,100)}
 
-spriteset(gfx_shed_purch_base,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short		( 178,   0)	}
+spriteset(gfx_shed_taillights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,0	)}
+spriteset(gfx_shed_headlights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,25	)}
+
+spriteset(gfx_shed_purch_base,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(178,0	)}
 
 
 //Graphics siwtches
@@ -15,18 +18,37 @@ spriteset(gfx_shed_purch_base,		"gfx/DIESEL_LOCO/class_66.png"){ template_purcha
 
 switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_base,			vehicle_is_reversed	){ 1 : gfx_shed_base_rev	; gfx_shed_base	;}
 
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_ews,			vehicle_is_reversed	){ 1 : gfx_shed_ews_rev	; gfx_shed_ews	;}
+
 
 //Auto
 
 switch(FEAT_TRAINS, SELF, sw_shed_gfx_auto, current_year){
-	sw_shed_rev_check_base ;
+	sw_shed_rev_check_ews ;
 }
 
 
 //Manual
 
 switch(FEAT_TRAINS, SELF, sw_shed_gfx_manual, cargo_subtype){
-	sw_shed_rev_check_base ;
+	/*1	: (DB Cargo)
+	2	: DB Cargo "Climate Hero"
+	3	: Freightliner
+	4	: Freightliner Pink "ONE"
+	5	: Freightliner PowerHaul
+	6	: (Freightliner Orange)
+	7	: First GBRf
+	8	: (GBRf)
+	9	: GBRf Cemex
+	10	: GBRf BiffaBins
+	11	: GBRf Large Logo
+	12	: GBRf Sectors
+	13	: GBRf "Evening Star"
+	14	: Fastline
+	15	: Colas
+	16	: DRS
+	17	: Stobart Rail*/
+	sw_shed_rev_check_ews ;
 }
 
 
@@ -69,7 +91,24 @@ switch(FEAT_TRAINS, SELF, sw_shed_purch_col_2cc_check, colour_scheme_1){
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_shed_refit_text, cargo_subtype){
-	0 : string(STR_LIVERY_EWS) ;
+	0	: string(STR_LIVERY_EWS) ;
+	/*1	: (DB Cargo)
+	2	: DB Cargo "Climate Hero"
+	3	: Freightliner
+	4	: Freightliner Pink "ONE"
+	5	: Freightliner PowerHaul
+	6	: (Freightliner Orange)
+	7	: First GBRf
+	8	: (GBRf)
+	9	: GBRf Cemex
+	10	: GBRf BiffaBins
+	11	: GBRf Large Logo
+	12	: GBRf Sectors
+	13	: GBRf "Evening Star"
+	14	: Fastline
+	15	: Colas
+	16	: DRS
+	17	: Stobart Rail*/
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -82,6 +121,23 @@ switch(FEAT_TRAINS, SELF, sw_shed_refit_text_check, livery_choice){
 
 //Colours
 switch(FEAT_TRAINS, SELF, sw_shed_col_auto, current_year){
+	/*1	: (DB Cargo)
+	2	: DB Cargo "Climate Hero"
+	3	: Freightliner
+	4	: Freightliner Pink "ONE"
+	5	: Freightliner PowerHaul
+	6	: (Freightliner Orange)
+	7	: First GBRf
+	8	: (GBRf)
+	9	: GBRf Cemex
+	10	: GBRf BiffaBins
+	11	: GBRf Large Logo
+	12	: GBRf Sectors
+	13	: GBRf "Evening Star"
+	14	: Fastline
+	15	: Colas
+	16	: DRS
+	17	: Stobart Rail*/
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 }
 
@@ -138,7 +194,7 @@ item(FEAT_TRAINS, item_shed, 66){
 		colour_mapping                 : sw_shed_col_2cc_check ;
 		purchase                       : sw_shed_purch_gfx ;
 		purchase_colour_mapping        : sw_shed_purch_col_2cc_check ;
-		sound_effect                   : sw_sfx_diesel_loco_modern ;
+		sound_effect                   : sw_sfx_extension_66_check ;
 		create_effect                  : vfx_diesel_default ;
 		cargo_subtype_text             : sw_shed_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
@@ -175,3 +231,28 @@ item (FEAT_TRAINS, item_shed, 66){
 }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_59_refit_text, cargo_subtype){
+	0	: string(STR_LIVERY_EWS) ;
+	/*0	: string(Foster Yeoman);
+	1	: string(Aggregates);
+	2	: string(ARC);
+	3	: string(Mendip Rail);
+	4	: string(DB Cargo);
+	5	: string(Freightliner Orange);
+	6	: string(GBRf);*/
+	CB_RESULT_NO_TEXT ;
+}
