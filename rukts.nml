@@ -12120,13 +12120,30 @@ item (FEAT_TRAINS, item_bone, 58){
 spriteset(gfx_shed_base,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,0	)}
 spriteset(gfx_shed_base_rev,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,0	)}
 
-spriteset(gfx_shed_ews,				"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,100)}
-spriteset(gfx_shed_ews_rev,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,100)}
+spriteset(gfx_shed_ews,						"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,100)}
+spriteset(gfx_shed_ews_rev,					"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,100)}
+spriteset(gfx_shed_db,						"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,125)}
+spriteset(gfx_shed_db_rev,					"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,125)}
+spriteset(gfx_shed_db_green,				"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,150)}
+spriteset(gfx_shed_db_green_rev,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,150)}
+spriteset(gfx_shed_freightliner,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,175)}
+spriteset(gfx_shed_freightliner_rev,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,175)}
+spriteset(gfx_shed_powerhaul,				"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,200)}
+spriteset(gfx_shed_powerhaul_rev,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,200)}
+spriteset(gfx_shed_one,						"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,225)}
+spriteset(gfx_shed_one_rev,					"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,225)}
+spriteset(gfx_shed_freightliner_orange,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,250)}
+spriteset(gfx_shed_freightliner_orange_rev,	"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,250)}
+spriteset(gfx_shed_first_gbrf,				"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,275)}
+spriteset(gfx_shed_first_gbrf_rev,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,275)}
+spriteset(gfx_shed_gbrf,					"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(0	,300)}
+spriteset(gfx_shed_gbrf_rev,				"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(0	,300)}
 
 spriteset(gfx_shed_taillights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,0	)}
 spriteset(gfx_shed_headlights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,25	)}
 
-spriteset(gfx_shed_purch_base,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(178,100)}
+spriteset(gfx_shed_purch_ews,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(178,100)}
+spriteset(gfx_shed_purch_db,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(178,125)}
 
 
 //Graphics siwtches
@@ -12135,12 +12152,21 @@ spriteset(gfx_shed_purch_base,		"gfx/DIESEL_LOCO/class_66.png"){ template_purcha
 
 switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_base,			vehicle_is_reversed	){ 1 : gfx_shed_base_rev	; gfx_shed_base	;}
 
-switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_ews,			vehicle_is_reversed	){ 1 : gfx_shed_ews_rev	; gfx_shed_ews	;}
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_ews,						vehicle_is_reversed	){ 1 : gfx_shed_ews_rev	; gfx_shed_ews	;}
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_db,						vehicle_is_reversed	){ 1 : gfx_shed_db_rev	; gfx_shed_db	;}
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_db_green,					vehicle_is_reversed	){ 1 : gfx_shed_db_green_rev	; gfx_shed_db_green	;}
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_freightliner,				vehicle_is_reversed	){ 1 : gfx_shed_freightliner_rev	; gfx_shed_freightliner	;}
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_powerhaul,				vehicle_is_reversed	){ 1 : gfx_shed_powerhaul_rev	; gfx_shed_powerhaul	;}
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_one,						vehicle_is_reversed	){ 1 : gfx_shed_one_rev	; gfx_shed_one	;}
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_freightliner_orange,		vehicle_is_reversed	){ 1 : gfx_shed_freightliner_orange_rev	; gfx_shed_freightliner_orange	;}
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_first_gbrf,						vehicle_is_reversed	){ 1 : gfx_shed_first_gbrf_rev	; gfx_shed_first_gbrf	;}
+switch(FEAT_TRAINS,	PARENT,	sw_shed_rev_check_gbrf,						vehicle_is_reversed	){ 1 : gfx_shed_gbrf_rev	; gfx_shed_gbrf	;}
 
 
 //Auto
 
 switch(FEAT_TRAINS, SELF, sw_shed_gfx_auto, current_year){
+	2008..4096 : sw_shed_rev_check_db ;
 	sw_shed_rev_check_ews ;
 }
 
@@ -12148,15 +12174,15 @@ switch(FEAT_TRAINS, SELF, sw_shed_gfx_auto, current_year){
 //Manual
 
 switch(FEAT_TRAINS, SELF, sw_shed_gfx_manual, cargo_subtype){
-	/*1	: (DB Cargo)
-	2	: DB Cargo "Climate Hero"
-	3	: Freightliner
-	4	: Freightliner Pink "ONE"
-	5	: Freightliner PowerHaul
-	6	: (Freightliner Orange)
-	7	: First GBRf
-	8	: (GBRf)
-	9	: GBRf Cemex
+	1	: sw_shed_rev_check_db;
+	2	: sw_shed_rev_check_db_green;
+	3	: sw_shed_rev_check_freightliner;
+	4	: sw_shed_rev_check_one;
+	5	: sw_shed_rev_check_powerhaul;
+	6	: sw_shed_rev_check_freightliner_orange;
+	7	: sw_shed_rev_check_first_gbrf;
+	8	: sw_shed_rev_check_gbrf;
+	/*9	: GBRf Cemex
 	10	: GBRf BiffaBins
 	11	: GBRf Large Logo
 	12	: GBRf Sectors
@@ -12191,10 +12217,12 @@ switch(FEAT_TRAINS, SELF, sw_shed_gfx_spr_stack, [STORE_TEMP((getbits(extra_call
 //Purchase sprite
 
 switch(FEAT_TRAINS, SELF, sw_shed_purch_gfx,	current_year){
-	gfx_shed_purch_base ;
+	2008..4096 : gfx_shed_purch_db ;
+	gfx_shed_purch_ews ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_shed_purch_col, current_year){
+	2008..4096 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 }
 
@@ -12209,15 +12237,15 @@ switch(FEAT_TRAINS, SELF, sw_shed_purch_col_2cc_check, colour_scheme_1){
 
 switch(FEAT_TRAINS, SELF, sw_shed_refit_text, cargo_subtype){
 	0	: string(STR_LIVERY_EWS) ;
-	/*1	: (DB Cargo)
-	2	: DB Cargo "Climate Hero"
-	3	: Freightliner
-	4	: Freightliner Pink "ONE"
-	5	: Freightliner PowerHaul
-	6	: (Freightliner Orange)
-	7	: First GBRf
-	8	: (GBRf)
-	9	: GBRf Cemex
+	1	: string(STR_LIVERY_DBCARGO) ;
+	2	: string(STR_LIVERY_DBCARGO_GREEN) ;
+	3	: string(STR_LIVERY_FREIGHTLINER) ;
+	4	: string(STR_LIVERY_FREIGHTLINER_PINK) ;
+	5	: string(STR_LIVERY_FREIGHTLINER_POWERHAUL) ;
+	6	: string(STR_LIVERY_FREIGHTLINER_ORANGE) ;
+	7	: string(STR_LIVERY_FIRST_GBRF) ;
+	8	: string(STR_LIVERY_GBRF) ;
+	/*9	: GBRf Cemex
 	10	: GBRf BiffaBins
 	11	: GBRf Large Logo
 	12	: GBRf Sectors
@@ -12238,15 +12266,21 @@ switch(FEAT_TRAINS, SELF, sw_shed_refit_text_check, livery_choice){
 
 //Colours
 switch(FEAT_TRAINS, SELF, sw_shed_col_auto, current_year){
-	/*1	: (DB Cargo)
-	2	: DB Cargo "Climate Hero"
-	3	: Freightliner
-	4	: Freightliner Pink "ONE"
-	5	: Freightliner PowerHaul
-	6	: (Freightliner Orange)
-	7	: First GBRf
-	8	: (GBRf)
-	9	: GBRf Cemex
+	2008..4096 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_shed_col_manual, cargo_subtype){
+	1	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	2	: palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
+	3	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	4	: palette_2cc(COLOUR_PINK, COLOUR_WHITE) ;
+	5	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	6	: palette_2cc(COLOUR_ORANGE, COLOUR_GREY) ;
+	7	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	8	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
+	/*9	: GBRf Cemex
 	10	: GBRf BiffaBins
 	11	: GBRf Large Logo
 	12	: GBRf Sectors
@@ -12255,11 +12289,6 @@ switch(FEAT_TRAINS, SELF, sw_shed_col_auto, current_year){
 	15	: Colas
 	16	: DRS
 	17	: Stobart Rail*/
-	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
-}
-
-
-switch(FEAT_TRAINS, SELF, sw_shed_col_manual, cargo_subtype){
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 }
 
@@ -12343,6 +12372,8 @@ item (FEAT_TRAINS, item_shed, 66){
 
 spriteset(gfx_59_yeoman,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(470,100)}
 spriteset(gfx_59_yeoman_rev,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(470,100)}
+spriteset(gfx_59_gbrf,				"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(470,125)}
+spriteset(gfx_59_gbrf_rev,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(470,125)}
 
 spriteset(gfx_59_taillights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(470,25	)}
 spriteset(gfx_59_headlights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(470,50	)}
@@ -12355,6 +12386,7 @@ spriteset(gfx_59_purch,				"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_sh
 //Reversal
 
 switch(FEAT_TRAINS,	PARENT,	sw_59_rev_check_yeoman,			vehicle_is_reversed	){ 1 : gfx_59_yeoman_rev	; gfx_59_yeoman	;}
+switch(FEAT_TRAINS,	PARENT,	sw_59_rev_check_gbrf,			vehicle_is_reversed	){ 1 : gfx_59_gbrf_rev	; gfx_59_gbrf	;}
 
 
 //Auto
@@ -12369,10 +12401,10 @@ switch(FEAT_TRAINS, SELF, sw_59_gfx_auto, current_year){
 switch(FEAT_TRAINS, SELF, sw_59_gfx_manual, cargo_subtype){
 	/*1	: string(STR_LIVERY_AGGREGATES);
 	2	: string(STR_LIVERY_ARC);
-	3	: string(STR_LIVERY_MENDIP);
-	4	: string(DB Cargo);
-	5	: string(Freightliner Orange);
-	6	: string(GBRf);*/
+	3	: string(STR_LIVERY_MENDIP);*/
+	4	: sw_shed_rev_check_db;
+	5	: sw_shed_rev_check_freightliner_orange;
+	6	: sw_59_rev_check_gbrf;
 	sw_59_rev_check_yeoman ;
 }
 
@@ -12385,8 +12417,11 @@ switch(FEAT_TRAINS, SELF, sw_59_gfx_manual_check, livery_choice){
 
 //Sprite stack
 
-switch(FEAT_TRAINS, SELF, sw_59_gfx_check_headlight, position_in_consist){ 0 : gfx_59_headlights ; }
-switch(FEAT_TRAINS, SELF, sw_59_gfx_check_taillight, position_in_consist_from_end){ 0 : gfx_59_taillights ; }
+switch(FEAT_TRAINS, SELF, sw_59_gfx_check_headlight_2, position_in_consist){ 0 : gfx_59_headlights ; }
+switch(FEAT_TRAINS, SELF, sw_59_gfx_check_taillight_2, position_in_consist_from_end){ 0 : gfx_59_taillights ; }
+
+switch(FEAT_TRAINS, SELF, sw_59_gfx_check_headlight, cargo_subtype){ 4..5 : sw_shed_gfx_check_headlight ; sw_59_gfx_check_headlight_2 ; }
+switch(FEAT_TRAINS, SELF, sw_59_gfx_check_taillight, cargo_subtype){ 4..5 : sw_shed_gfx_check_taillight ; sw_59_gfx_check_taillight_2 ; }
 
 switch(FEAT_TRAINS, SELF, sw_59_gfx_spr_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_59_gfx_manual_check ;
@@ -12418,17 +12453,17 @@ switch(FEAT_TRAINS, SELF, sw_59_purch_col_2cc_check, colour_scheme_1){
 
 //Colours
 switch(FEAT_TRAINS, SELF, sw_59_col_auto, current_year){
-	/*1	: string(STR_LIVERY_AGGREGATES);
-	2	: string(STR_LIVERY_ARC);
-	3	: string(STR_LIVERY_MENDIP);
-	4	: string(DB Cargo);
-	5	: string(Freightliner Orange);
-	6	: string(GBRf);*/
 	palette_2cc(COLOUR_GREY, COLOUR_DARK_BLUE) ;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_59_col_manual, cargo_subtype){
+	/*1	: string(STR_LIVERY_AGGREGATES);
+	2	: string(STR_LIVERY_ARC);
+	3	: string(STR_LIVERY_MENDIP);*/
+	4	: palette_2cc(COLOUR_RED, COLOUR_GREY);
+	5	: palette_2cc(COLOUR_ORANGE, COLOUR_GREY);
+	6	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE);
 	palette_2cc(COLOUR_GREY, COLOUR_DARK_BLUE) ;
 }
 
@@ -12448,12 +12483,12 @@ switch(FEAT_TRAINS, SELF, sw_59_col_2cc_check, colour_scheme_1){
 
 switch(FEAT_TRAINS, SELF, sw_59_refit_text, cargo_subtype){
 	0	: string(STR_LIVERY_YEOMAN);
-	/*1	: string(STR_LIVERY_AGGREGATES);
+	1	: string(STR_LIVERY_AGGREGATES);
 	2	: string(STR_LIVERY_ARC);
 	3	: string(STR_LIVERY_MENDIP);
-	4	: string(DB Cargo);
-	5	: string(Freightliner Orange);
-	6	: string(GBRf);*/
+	4	: string(STR_LIVERY_DBCARGO);
+	5	: string(STR_LIVERY_FREIGHTLINER_ORANGE);
+	6	: string(STR_LIVERY_GBRF);
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -12563,11 +12598,16 @@ item (FEAT_TRAINS, item_59, 59){
 
 spriteset(gfx_67_ews,				"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,100)}
 spriteset(gfx_67_ews_rev,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(235,100)}
+spriteset(gfx_67_db,				"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,125)}
+spriteset(gfx_67_db_rev,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(235,125)}
+spriteset(gfx_67_arriva,			"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,150)}
+spriteset(gfx_67_arriva_rev,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_2		(235,150)}
 
 spriteset(gfx_67_taillights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,50	)}
 spriteset(gfx_67_headlights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,75	)}
 
 spriteset(gfx_67_purch,				"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(413,100)}
+spriteset(gfx_67_purch_db,			"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(413,125)}
 
 
 //Graphics siwtches
@@ -12575,11 +12615,14 @@ spriteset(gfx_67_purch,				"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_sh
 //Reversal
 
 switch(FEAT_TRAINS,	PARENT,	sw_67_rev_check_ews,			vehicle_is_reversed	){ 1 : gfx_67_ews_rev	; gfx_67_ews	;}
+switch(FEAT_TRAINS,	PARENT,	sw_67_rev_check_db,				vehicle_is_reversed	){ 1 : gfx_67_db_rev	; gfx_67_db		;}
+switch(FEAT_TRAINS,	PARENT,	sw_67_rev_check_arriva,				vehicle_is_reversed	){ 1 : gfx_67_arriva_rev	; gfx_67_arriva		;}
 
 
 //Auto
 
 switch(FEAT_TRAINS, SELF, sw_67_gfx_auto, current_year){
+	2008..4096 : sw_67_rev_check_db ;
 	sw_67_rev_check_ews ;
 }
 
@@ -12587,23 +12630,13 @@ switch(FEAT_TRAINS, SELF, sw_67_gfx_auto, current_year){
 //Manual
 
 switch(FEAT_TRAINS, SELF, sw_67_gfx_manual, cargo_subtype){
-	/*1	: (DB Cargo)
-	2	: DB Cargo "Climate Hero"
-	3	: Freightliner
-	4	: Freightliner Pink "ONE"
-	5	: Freightliner PowerHaul
-	6	: (Freightliner Orange)
-	7	: First GBRf
-	8	: (GBRf)
-	9	: GBRf Cemex
-	10	: GBRf BiffaBins
-	11	: GBRf Large Logo
-	12	: GBRf Sectors
-	13	: GBRf "Evening Star"
-	14	: Fastline
-	15	: Colas
-	16	: DRS
-	17	: Stobart Rail*/
+	1	: sw_67_rev_check_db ;
+	2	: sw_67_rev_check_arriva;
+	/*3	: string(Pullman);
+	4	: string(Colas);
+	5	: string(Chiltern);
+	6	: sw_67_rev_check_arriva;
+	7	: string(TfW);*/
 	sw_67_rev_check_ews ;
 }
 
@@ -12630,10 +12663,12 @@ switch(FEAT_TRAINS, SELF, sw_67_gfx_spr_stack, [STORE_TEMP((getbits(extra_callba
 //Purchase sprite
 
 switch(FEAT_TRAINS, SELF, sw_67_purch_gfx,	current_year){
+	2008..4096 : gfx_67_purch_db ;
 	gfx_67_purch ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_67_purch_col, current_year){
+	2008..4096 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 }
 
@@ -12649,17 +12684,19 @@ switch(FEAT_TRAINS, SELF, sw_67_purch_col_2cc_check, colour_scheme_1){
 
 //Colours
 switch(FEAT_TRAINS, SELF, sw_67_col_auto, current_year){
-	/*1	: string(STR_LIVERY_AGGREGATES);
-	2	: string(STR_LIVERY_ARC);
-	3	: string(STR_LIVERY_MENDIP);
-	4	: string(DB Cargo);
-	5	: string(Freightliner Orange);
-	6	: string(GBRf);*/
+	2008..4096 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_67_col_manual, cargo_subtype){
+	1 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	2 : palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	/*3	: string(Pullman);
+	4	: string(Colas);
+	5	: string(Chiltern);
+	6	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	7	: string(TfW);*/
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 }
 
@@ -12678,13 +12715,14 @@ switch(FEAT_TRAINS, SELF, sw_67_col_2cc_check, colour_scheme_1){
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_67_refit_text, cargo_subtype){
-	0	: string(STR_LIVERY_YEOMAN);
-	/*1	: string(STR_LIVERY_AGGREGATES);
-	2	: string(STR_LIVERY_ARC);
-	3	: string(STR_LIVERY_MENDIP);
-	4	: string(DB Cargo);
-	5	: string(Freightliner Orange);
-	6	: string(GBRf);*/
+	0	: string(STR_LIVERY_EWS);
+	1	: string(STR_LIVERY_DBCARGO);
+	2	: string(STR_LIVERY_DBSCHENKER);
+	/*3	: string(Pullman);
+	4	: string(Colas);
+	5	: string(Chiltern);
+	6	: string(Arriva);
+	7	: string(TfW);*/
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -12786,21 +12824,6 @@ item (FEAT_TRAINS, item_67, 67){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Class 67
 
 
 
