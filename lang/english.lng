@@ -190,6 +190,10 @@ STR_LIVERY_NS_DUTCH							: Nederlandse Spoorwegen
 STR_LIVERY_HEATHROW_EXPRESS					: Heathrow Express
 STR_LIVERY_ST_PIRAN							: 08645 "St Piran"
 STR_LIVERY_BOURNEMOUTH						: 73235 SWR Blue "71B"
+STR_LIVERY_YEOMAN							: Foster Yeoman
+STR_LIVERY_AGGREGATES						: Aggregates Industries
+STR_LIVERY_ARC								: ARC
+STR_LIVERY_MENDIP							: Mendip Rail
 
 STR_LIVERY_MIDLAND_RAILWAY					: Midland Railway {GOLD}(Green)
 STR_LIVERY_MIDLAND_RAILWAY_LATE				: Midland Railway {GOLD}(Red)
@@ -324,6 +328,7 @@ STR_NAME_HST                 :BREL HST (Diesel Electric)
 STR_NAME_BREL56				 :BREL "56" (Diesel Electric)
 STR_NAME_BREL58				 :BREL "58" (Diesel Electric)
 STR_NAME_SHED				 :EMD "Shed" (Diesel Electric)
+STR_NAME_SKIP				 :EMD "Skip" (Diesel Electric)
 STR_NAME_SHED_YEOMAN		 :EMD "Yeoman" (Diesel Electric)
 STR_NAME_POWERHAUL			 :GE Powerhaul (Diesel Electric)
 STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
@@ -482,6 +487,7 @@ STR_NAME_HST_ALT			:BR Class 43 (Diesel Electric)
 STR_NAME_BREL58_ALT			:BR Class 58 (Diesel Electric)
 STR_NAME_BREL56_ALT			:BR Class 56 (Diesel Electric)
 STR_NAME_SHED_ALT			:BR Class 66 (Diesel Electric)
+STR_NAME_SKIP_ALT			:BR Class 67 (Diesel Electric)
 STR_NAME_SHED_YEOMAN_ALT	:BR Class 59 (Diesel Electric)
 STR_NAME_POWERHAUL_ALT		:BR Class 70 (Diesel Electric)
 STR_NAME_UKLIGHT_ALT		:BR Class 68 (Diesel Electric)
