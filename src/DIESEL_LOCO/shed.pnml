@@ -470,23 +470,13 @@ switch(FEAT_TRAINS, SELF, sw_67_gfx_auto, current_year){
 //Manual
 
 switch(FEAT_TRAINS, SELF, sw_67_gfx_manual, cargo_subtype){
-	/*1	: (DB Cargo)
-	2	: DB Cargo "Climate Hero"
-	3	: Freightliner
-	4	: Freightliner Pink "ONE"
-	5	: Freightliner PowerHaul
-	6	: (Freightliner Orange)
-	7	: First GBRf
-	8	: (GBRf)
-	9	: GBRf Cemex
-	10	: GBRf BiffaBins
-	11	: GBRf Large Logo
-	12	: GBRf Sectors
-	13	: GBRf "Evening Star"
-	14	: Fastline
-	15	: Colas
-	16	: DRS
-	17	: Stobart Rail*/
+	/*1	: string(DB Cargo);
+	2	: string(DB full red);
+	3	: string(Pullman);
+	4	: string(Colas);
+	5	: string(Chiltern);
+	6	: string(Arriva);
+	7	: string(TfW);*/
 	sw_67_rev_check_ews ;
 }
 
@@ -532,12 +522,14 @@ switch(FEAT_TRAINS, SELF, sw_67_purch_col_2cc_check, colour_scheme_1){
 
 //Colours
 switch(FEAT_TRAINS, SELF, sw_67_col_auto, current_year){
-	/*1	: string(STR_LIVERY_AGGREGATES);
-	2	: string(STR_LIVERY_ARC);
-	3	: string(STR_LIVERY_MENDIP);
-	4	: string(DB Cargo);
-	5	: string(Freightliner Orange);
-	6	: string(GBRf);*/
+	/*0	: string(EWS);
+	1	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	2	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	3	: string(Pullman);
+	4	: string(Colas);
+	5	: string(Chiltern);
+	6	: string(Arriva);
+	7	: string(TfW);*/
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 }
 
@@ -561,13 +553,14 @@ switch(FEAT_TRAINS, SELF, sw_67_col_2cc_check, colour_scheme_1){
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_67_refit_text, cargo_subtype){
-	0	: string(STR_LIVERY_YEOMAN);
-	/*1	: string(STR_LIVERY_AGGREGATES);
-	2	: string(STR_LIVERY_ARC);
-	3	: string(STR_LIVERY_MENDIP);
-	4	: string(DB Cargo);
-	5	: string(Freightliner Orange);
-	6	: string(GBRf);*/
+	0	: string(STR_LIVERY_EWS);
+	/*1	: string(DB Cargo);
+	2	: string(DB full red);
+	3	: string(Pullman);
+	4	: string(Colas);
+	5	: string(Chiltern);
+	6	: string(Arriva);
+	7	: string(TfW);*/
 	CB_RESULT_NO_TEXT ;
 }
 
