@@ -95,6 +95,7 @@ STR_LIVERY_EMT                   			: East Midlands Trains
 STR_LIVERY_CENTRAL               			: Central Trains
 STR_LIVERY_CONNEX				 			: Connex
 STR_LIVERY_LOADHAUL							: Loadhaul
+STR_LIVERY_STOBART					 		: Stobart Rail
 STR_LIVERY_DRS					 			: Direct Rail Services
 STR_LIVERY_DRS_COMPASS           			: Direct Rail Services {GOLD}(Compass)
 STR_LIVERY_EWS                   			: English, Welsh & Scottish {GOLD}(EWS)
@@ -107,6 +108,12 @@ STR_LIVERY_FASTLINE							: Fastline
 STR_LIVERY_TPE_NEW				 			: TransPennine Express
 STR_LIVERY_CAL_SLEEPER			 			: Caledonian Sleeper
 STR_LIVERY_GBRF					 			: GBRf
+STR_LIVERY_GBRF_GREY			 			: GBRf {GOLD}(Grey)
+STR_LIVERY_GBRF_CEMEX			 			: GBRf {GOLD}(Cemex)
+STR_LIVERY_GBRF_BIFFA						: GBRf {GOLD}(Biffa Bins)
+STR_LIVERY_GBRF_LARGELOGO					: GBRf {GOLD}(BR Large Logo)
+STR_LIVERY_GBRF_SECTORS						: GBRf {GOLD}(BR Railfreight)
+STR_LIVERY_GBRF_EVENINGSTAR					: GBRf {GOLD}(Evening Star)
 STR_LIVERY_FIRST_GBRF					 	: First GBRf
 STR_LIVERY_LONDON_MIDLAND		 			: London Midland
 STR_LIVERY_LONDON_MIDLAND_STRING 			: London Midland {STRING}

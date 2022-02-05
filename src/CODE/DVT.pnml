@@ -1,7 +1,7 @@
 //DVT Source
 
 #define DVT_CHECK vehicle_is_reversed && (count_veh_id(9035) > 0)
-#define DVT_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 57 | vehicle_type_id == 68 | vehicle_type_id == 86 | vehicle_type_id == 87 | vehicle_type_id == 88 | vehicle_type_id == 90 | vehicle_type_id == 91 | vehicle_type_id == 92 )
+#define DVT_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 57 | vehicle_type_id == 67 | vehicle_type_id == 68 | vehicle_type_id == 86 | vehicle_type_id == 87 | vehicle_type_id == 88 | vehicle_type_id == 90 | vehicle_type_id == 91 | vehicle_type_id == 92 )
 
 // | vehicle_type_id == 92)
 
@@ -182,6 +182,15 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_57, cargo_subtype){
 	sw_dvt_virgin_rev_check ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_dvt_manual_67, cargo_subtype){
+	0	: sw_dvt_virgin_rev_check;
+	1..3: sw_dvt_virgin_p_rev_check;
+	4	: sw_dvt_generic_rev_check;
+	6	: sw_dvt_atw_exec_rev_check;
+	7	: sw_dvt_mk4_vtec_rev_check;
+	sw_dvt_chiltern_rev_check ;
+}
+
 switch(FEAT_TRAINS, PARENT, sw_dvt_manual_abb92, cargo_subtype){
 	0    : sw_dvt_intercity_rev_check ;
 	1..2 : sw_dvt_atw_exec_rev_check ;
@@ -192,6 +201,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_abb92, cargo_subtype){
 switch(FEAT_TRAINS, PARENT, sw_dvt_manual, vehicle_type_id){
 	37 : sw_dvt_manual_ee3 ;
 	57 : sw_dvt_manual_57 ;
+	67 : sw_dvt_manual_67 ;
 	68 : sw_dvt_manual_uklight ;
 	86 : sw_dvt_manual_al6 ;
 	87 : sw_dvt_manual_br87 ;
@@ -344,6 +354,14 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_57, cargo_subtype){
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_dvt_colours_67, cargo_subtype){
+	0..3: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	4	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
+	6	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	7	: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+}
+
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_abb92, cargo_subtype){
 	0    : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
 	1..2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
@@ -354,6 +372,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_abb92, cargo_subtype){
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_manual, vehicle_type_id){
 	37 : sw_dvt_colours_ee3 ;
 	57 : sw_dvt_colours_57 ;
+	67 : sw_dvt_colours_67 ;
 	68 : sw_dvt_colours_uklight ;
 	86 : sw_dvt_colours_al6 ;
 	87 : sw_dvt_colours_br87 ;
