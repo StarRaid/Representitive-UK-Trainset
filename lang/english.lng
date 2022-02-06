@@ -43,6 +43,13 @@ STR_PARAM_VEH_SELEC_CHOICE_TWO   		 	:Limited
 STR_PARAM_VEH_SELEC_CHOICE_THREE 		 	:Normal
 STR_PARAM_VEH_SELEC_CHOICE_FOUR  		 	:Extended
 
+STR_PARAM_STEAM_SELEC_NAME         		 	:Steam era vehicle selection
+STR_PARAM_STEAM_SELEC_DESC         		 	:Choose the selection of steam locomotives that will appear in game. Limited reduces the purchase list to a basic list of steam locomotives, Kettle Enthusiast includes some extras that are extensions to the normal set.
+STR_PARAM_STEAM_SELEC_CHOICE_ONE   		 	:Limited
+STR_PARAM_STEAM_SELEC_CHOICE_TWO   		 	:Normal
+STR_PARAM_STEAM_SELEC_CHOICE_THREE 		 	:Tea Enjoyer
+STR_PARAM_STEAM_SELEC_CHOICE_FOUR  		 	:Kettle Enthusiast
+
 
 STR_BLUE_SQUARE					 			:{BLUE}Blue Square Coupling Compatibility
 
