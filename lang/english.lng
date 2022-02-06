@@ -95,17 +95,26 @@ STR_LIVERY_EMT                   			: East Midlands Trains
 STR_LIVERY_CENTRAL               			: Central Trains
 STR_LIVERY_CONNEX				 			: Connex
 STR_LIVERY_LOADHAUL							: Loadhaul
+STR_LIVERY_STOBART					 		: Stobart Rail
 STR_LIVERY_DRS					 			: Direct Rail Services
 STR_LIVERY_DRS_COMPASS           			: Direct Rail Services {GOLD}(Compass)
 STR_LIVERY_EWS                   			: English, Welsh & Scottish {GOLD}(EWS)
 STR_LIVERY_DBSCHENKER            			: DB Schenker Rail UK
 STR_LIVERY_DBCARGO               			: DB Cargo UK
+STR_LIVERY_DBCARGO_GREEN           			: DB Cargo UK {GOLD}("Climate Hero" Green)
 STR_LIVERY_DCR_GREEN						: Devon & Cornwall Railways {GREEN}(Green)
 STR_LIVERY_DCR_GREY							: Devon & Cornwall Railways {GREEN}(Grey)
 STR_LIVERY_FASTLINE							: Fastline
 STR_LIVERY_TPE_NEW				 			: TransPennine Express
 STR_LIVERY_CAL_SLEEPER			 			: Caledonian Sleeper
 STR_LIVERY_GBRF					 			: GBRf
+STR_LIVERY_GBRF_GREY			 			: GBRf {GOLD}(Grey)
+STR_LIVERY_GBRF_CEMEX			 			: GBRf {GOLD}(Cemex)
+STR_LIVERY_GBRF_BIFFA						: GBRf {GOLD}(Biffa Bins)
+STR_LIVERY_GBRF_LARGELOGO					: GBRf {GOLD}(BR Large Logo)
+STR_LIVERY_GBRF_SECTORS						: GBRf {GOLD}(BR Railfreight)
+STR_LIVERY_GBRF_EVENINGSTAR					: GBRf {GOLD}(Evening Star)
+STR_LIVERY_FIRST_GBRF					 	: First GBRf
 STR_LIVERY_LONDON_MIDLAND		 			: London Midland
 STR_LIVERY_LONDON_MIDLAND_STRING 			: London Midland {STRING}
 STR_LIVERY_WEST_MIDLANDS_RAILWAY 			: West Midlands Railway
@@ -122,9 +131,10 @@ STR_707							 			:(Class 707)
 STR_717							 			:(Class 717)
 STR_LIVERY_CHILTERN				 			: Chiltern Railways
 STR_LIVERY_CHILTERN_0				 		: Chiltern Railways {GOLD}(168/0)
-STR_LIVERY_FREIGHTLINER          			: Frieghtliner
-STR_LIVERY_FREIGHTLINER_POWERHAUL			: Frieghtliner {GOLD}(Powerhaul)
-STR_LIVERY_FREIGHTLINER_ORANGE				: Frieghtliner {GOLD}(G&W Orange)
+STR_LIVERY_FREIGHTLINER          			: Freightliner
+STR_LIVERY_FREIGHTLINER_POWERHAUL			: Freightliner {GOLD}(Powerhaul)
+STR_LIVERY_FREIGHTLINER_PINK				: Freightliner {GOLD}(ONE Pink)
+STR_LIVERY_FREIGHTLINER_ORANGE				: Freightliner {GOLD}(G&W Orange)
 STR_LIVERY_COLAS				 			: Colas Rail
 STR_LIVERY_GATEX				 			: Gatwick Express
 STR_LIVERY_SE_BLUE				 			: Southeastern {GOLD}(Blue)
@@ -136,6 +146,7 @@ STR_LIVERY_CRIMSON_CREAM		 			: British Railways "Crimson"
 STR_LIVERY_CHOCOLATE_CREAM		 			: British Railways "Chocolate"
 STR_LIVERY_MAROON				 			: British Railways Maroon
 STR_LIVERY_SWR					 			: South Western Railway
+STR_LIVERY_SWR_STR				 			: South Western Railway {STRING}
 STR_LIVERY_SWT					 			: South West Trains
 STR_LIVERY_SWT_STR				 			: South West Trains {STRING}
 STR_LIVERY_SCR					 			: Stagecoach Rail
@@ -189,6 +200,10 @@ STR_LIVERY_NS_DUTCH							: Nederlandse Spoorwegen
 STR_LIVERY_HEATHROW_EXPRESS					: Heathrow Express
 STR_LIVERY_ST_PIRAN							: 08645 "St Piran"
 STR_LIVERY_BOURNEMOUTH						: 73235 SWR Blue "71B"
+STR_LIVERY_YEOMAN							: Foster Yeoman
+STR_LIVERY_AGGREGATES						: Aggregates Industries
+STR_LIVERY_ARC								: ARC
+STR_LIVERY_MENDIP							: Mendip Rail
 
 STR_LIVERY_MIDLAND_RAILWAY					: Midland Railway {GOLD}(Green)
 STR_LIVERY_MIDLAND_RAILWAY_LATE				: Midland Railway {GOLD}(Red)
@@ -294,7 +309,7 @@ STR_NAME_GUV					:General Utility Van
 STR_NAME_NTX					:Express Mail Coach
 
 STR_NAME_MR_1377				:0-6-0T "Half-Cab" (Steam)
-STR_NAME_MR_115					:MR 115 Class (Steam)
+STR_NAME_MR_115					:4-2-2 "Spinner" (Steam)
 STR_NAME_LBSC_E4				:0-6-2T Brighton "Thomas" (Steam)
 STR_NAME_MERCHNAV				:2-6-4 Merchant Navy (Steam)
 STR_NAME_MERCHNAV_REBUILT		:2-6-4 Rebuilt Merchant Navy (Steam)
@@ -323,6 +338,7 @@ STR_NAME_HST                 :BREL HST (Diesel Electric)
 STR_NAME_BREL56				 :BREL "56" (Diesel Electric)
 STR_NAME_BREL58				 :BREL "58" (Diesel Electric)
 STR_NAME_SHED				 :EMD "Shed" (Diesel Electric)
+STR_NAME_SKIP				 :EMD "Skip" (Diesel Electric)
 STR_NAME_SHED_YEOMAN		 :EMD "Yeoman" (Diesel Electric)
 STR_NAME_POWERHAUL			 :GE Powerhaul (Diesel Electric)
 STR_NAME_UKLIGHT             :Stadler UK Light (Diesel Electric)
@@ -481,6 +497,7 @@ STR_NAME_HST_ALT			:BR Class 43 (Diesel Electric)
 STR_NAME_BREL58_ALT			:BR Class 58 (Diesel Electric)
 STR_NAME_BREL56_ALT			:BR Class 56 (Diesel Electric)
 STR_NAME_SHED_ALT			:BR Class 66 (Diesel Electric)
+STR_NAME_SKIP_ALT			:BR Class 67 (Diesel Electric)
 STR_NAME_SHED_YEOMAN_ALT	:BR Class 59 (Diesel Electric)
 STR_NAME_POWERHAUL_ALT		:BR Class 70 (Diesel Electric)
 STR_NAME_UKLIGHT_ALT		:BR Class 68 (Diesel Electric)

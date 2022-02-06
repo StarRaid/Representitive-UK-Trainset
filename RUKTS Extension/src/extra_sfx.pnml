@@ -13,9 +13,9 @@ switch(FEAT_TRAINS, SELF, sfx_extra_1, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED			: sound("sfx/25_run.wav") ;			//6
 	SOUND_EVENT_VISUAL_EFFECT	: sound("sfx/60_idle.wav", 80) ;	//7
 	SOUND_EVENT_RUNNING_16		: sound("sfx/60_coast.wav", 80) ;	//8
-	SOUND_EVENT_START			: sound("sfx/66_run.wav") ;			//9
-	SOUND_EVENT_BREAKDOWN		: sound("sfx/66_idle.wav") ;		//10
-	SOUND_EVENT_TUNNEL			: sound("sfx/66_coast.wav") ;		//11
+	//SOUND_EVENT_START			: sound("sfx/66_run.wav") ;			//9
+	//SOUND_EVENT_BREAKDOWN		: sound("sfx/66_idle.wav") ;		//10
+	//SOUND_EVENT_TUNNEL			: sound("sfx/66_coast.wav") ;		//11
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_extra, cargo_subtype){

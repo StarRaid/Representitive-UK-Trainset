@@ -246,7 +246,7 @@ item(FEAT_TRAINS, item_merchnav_rebuilt, 1900){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_merchnav_rebuilt, 1900){
 	property{
-		name                           : string(STR_NAME_MERCHNAV_ALT) ;
+		name                           : string(STR_NAME_MERCHNAV_REBUILT_ALT) ;
 	}
 }
 }
