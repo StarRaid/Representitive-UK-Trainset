@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 73 ;
+	version: 74 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -110,6 +110,22 @@ grf{
 			} ;
 		}
 	}
+	param 7{
+		steam_selection{
+			type      : int ;
+			name      : string(STR_PARAM_STEAM_SELEC_NAME) ;
+			desc      : string(STR_PARAM_STEAM_SELEC_DESC) ;
+			min_value : 0 ;
+			max_value : 3 ;
+			def_value : 2 ;
+			names     : {
+				0 : string(STR_PARAM_STEAM_SELEC_CHOICE_ONE  ) ;
+				1 : string(STR_PARAM_STEAM_SELEC_CHOICE_TWO  ) ;
+				2 : string(STR_PARAM_STEAM_SELEC_CHOICE_THREE) ;
+				3 : string(STR_PARAM_STEAM_SELEC_CHOICE_FOUR ) ;
+			} ;
+		}
+	} 
 }
 
 
