@@ -1,0 +1,197 @@
+//210 DMBSO
+spriteset(spriteset_210_m_brb, "gfx/EMU/class_317_2.png") {template_8_8_networker(179, 450)}
+spriteset(spriteset_210_m_nse, "gfx/EMU/class_317_2.png") {template_8_8_networker(179, 525)}
+//210 DTC
+spriteset(spriteset_210_dt_brb, "gfx/EMU/class_317_2.png") {template_8_8_networker(179, 425)}
+spriteset(spriteset_210_dt_nse, "gfx/EMU/class_317_2.png") {template_8_8_networker(179, 500)}
+//Trailer
+spriteset(spriteset_210_t_brb, "gfx/EMU/class_317_2.png") {template_8_4_networker(179, 475)}
+spriteset(spriteset_210_t_nse, "gfx/EMU/class_317_2.png") {template_8_4_networker(179, 550)}
+//Purchase
+spriteset(spriteset_210_brb_purchase, "gfx/EMU/class_317_2.png") {template_dualhead_purchase(269, 475)}
+spriteset(spriteset_210_nse_purchase, "gfx/EMU/class_317_2.png") {template_dualhead_purchase(269, 550)}
+//Headcodes
+spriteset(spriteset_210_headcode_f, "gfx/EMU/class_317_2.png") {template_8_8_networker(179, 300)}
+spriteset(spriteset_210_headcode_r, "gfx/EMU/class_317_2.png") {template_8_8_networker(179, 275)}
+
+
+//Switches
+switch(FEAT_TRAINS, SELF, sw_210_brb_f, (count_veh_id(210)+1)%2){1: spriteset_210_m_brb; spriteset_210_dt_brb;}
+switch(FEAT_TRAINS, SELF, sw_210_brb_r, (count_veh_id(210)+1)%2){1: spriteset_210_dt_brb; spriteset_210_m_brb;}
+switch(FEAT_TRAINS, PARENT, sw_210_brb, vehicle_is_reversed){0: sw_210_brb_f; sw_210_brb_r;}
+
+switch(FEAT_TRAINS, SELF, sw_210_nse_f, (count_veh_id(210)+1)%2){1: spriteset_210_m_nse; spriteset_210_dt_nse;}
+switch(FEAT_TRAINS, SELF, sw_210_nse_r, (count_veh_id(210)+1)%2){1: spriteset_210_dt_nse; spriteset_210_m_nse;}
+switch(FEAT_TRAINS, PARENT, sw_210_nse, vehicle_is_reversed){0: sw_210_nse_f; sw_210_nse_r;}
+
+
+//Livery Switches
+switch(FEAT_TRAINS, SELF, sw_210_passenger_livery_decider, current_year){
+	ERA_SECTORISATION: sw_210_nse;
+	sw_210_brb;
+}
+
+switch(FEAT_TRAINS, SELF, sw_210_passenger_livery_decider_t, current_year){
+	ERA_SECTORISATION: spriteset_210_t_nse;
+	spriteset_210_t_brb;
+}
+
+//Manual liveries
+
+switch(FEAT_TRAINS, SELF, sw_210_manual_livery_decider, cargo_subtype){
+	1: sw_210_nse;
+	sw_210_brb;
+}
+
+switch(FEAT_TRAINS, SELF, sw_210_manual_livery_decider_t, cargo_subtype){
+	1: spriteset_210_t_nse;
+	spriteset_210_t_brb;
+}
+
+switch(FEAT_TRAINS, SELF, sw_210_livery_choice_decider, livery_choice){1 : sw_210_manual_livery_decider ; sw_210_passenger_livery_decider ;}
+switch(FEAT_TRAINS, SELF, sw_210_livery_choice_decider_t, livery_choice){1 : sw_210_manual_livery_decider_t ; sw_210_passenger_livery_decider_t ;}
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_210_refit_text, cargo_subtype){
+	0: string(STR_LIVERY_BRBLUE);
+	1: string(STR_LIVERY_NSE);
+	return CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_210_refit_text_decider, livery_choice){
+	1 : sw_210_refit_text ;
+	return CB_RESULT_NO_TEXT ;
+}
+
+//Purchase sprite decider
+switch(FEAT_TRAINS, SELF, sw_210_purchase, current_year){
+	ERA_SECTORISATION: spriteset_210_nse_purchase;
+	spriteset_210_brb_purchase;
+}
+
+//Visual Effects switch
+switch(FEAT_TRAINS, PARENT, sw_210_visual_effect_f, vehicle_is_reversed){1: vfx_diesel_default; VISUAL_EFFECT_DISABLE;}
+switch(FEAT_TRAINS, PARENT, sw_210_visual_effect_r, vehicle_is_reversed){1: VISUAL_EFFECT_DISABLE; vfx_diesel_default;}
+switch(FEAT_TRAINS, SELF, sw_210_visual_effect, (count_veh_id(210)+1)%2){1: sw_210_visual_effect_r; sw_210_visual_effect_f;}
+
+//Headcodes
+switch(FEAT_TRAINS, SELF, sw_210_headcode, position_in_consist){0: spriteset_210_headcode_f; gfx_blank;}
+switch(FEAT_TRAINS, SELF, sw_210_headcode_2, position_in_consist_from_end){0: spriteset_210_headcode_r; sw_210_headcode;}
+
+
+switch(FEAT_TRAINS, SELF, sw_210_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : return sw_210_livery_choice_decider;
+	1 : return sw_210_headcode_2;
+}
+
+switch(FEAT_TRAINS, SELF, sw_210_default_t, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : return sw_210_livery_choice_decider_t;
+}
+
+
+//Recolour Switches
+
+switch(FEAT_TRAINS, SELF, sw_210_colour_mapping_auto, current_year){
+	ERA_SECTORISATION: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_210_colour_mapping_manual, cargo_subtype){
+	1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+
+switch(FEAT_TRAINS, PARENT, sw_210_colour_mapping_manual_check, livery_choice){
+	1 : sw_210_colour_mapping_manual ;
+	sw_210_colour_mapping_auto ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_210_colour_mapping_decider, colour_scheme_1){
+	1 : sw_210_colour_mapping_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_210_coupling_restrictions, vehicle_type_id) {
+    9030: return CB_RESULT_ATTACH_ALLOW;
+	210: return CB_RESULT_ATTACH_ALLOW;
+	317: return CB_RESULT_ATTACH_ALLOW;
+	37: return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_210_NO_COUPLE);
+}
+
+
+
+item (FEAT_TRAINS, item_210, 210) {
+	property {
+		name: 							string(STR_NAME_210);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1982, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					45;
+		reliability_decay:				20;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					24;
+		cost_factor:					60;
+		running_cost_factor:			39;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							90 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							1140 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					85;
+		weight:							44 ton;
+		tractive_effort_coefficient:	0.19;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_DIESEL;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+		engine_class:					ENGINE_CLASS_DIESEL;
+	}
+	graphics {
+		can_attach_wagon:					sw_210_coupling_restrictions;
+		default: 							sw_210_default;
+		purchase:							sw_210_purchase;
+		create_effect:						sw_210_visual_effect;
+		cargo_subtype_text:					sw_210_refit_text_decider ;
+		colour_mapping:						sw_210_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_210_colour_mapping_auto;
+		sound_effect:                   	sw_sfx_diesel_loco_small;
+		running_cost_factor: 				return(current_speed == 0 ? 9 : 39) ;
+		purchase_running_cost_factor:		39;
+}
+		livery_override (9030) {
+		cargo_capacity: 95;
+		default: sw_210_default_t;
+		colour_mapping:	sw_210_colour_mapping_decider;
+		cargo_subtype_text: sw_210_refit_text_decider ;
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_210, 210){
+	property{
+		name                           : string(STR_NAME_210_ALT) ;
+	}
+}
+}
+
+if (enable_prototypes < 1){
+item (FEAT_TRAINS, item_210, 210){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+

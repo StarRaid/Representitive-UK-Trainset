@@ -3,57 +3,48 @@
 
 //Sprite sets
 
-spriteset(gfx_voyager_virgin_middle		, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 125)}
-spriteset(gfx_voyager_virgin_front_hl	, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 150)}
-spriteset(gfx_voyager_virgin_front_tl	, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 175)}
-spriteset(gfx_voyager_virgin_front		, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 200)}
+spriteset(gfx_voyager_virgin_middle		, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 000, 225)}
+spriteset(gfx_voyager_virgin_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 000, 200)}
 
-spriteset(gfx_voyager_arriva_middle		, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 251)}
-spriteset(gfx_voyager_arriva_front_hl	, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 276)}
-spriteset(gfx_voyager_arriva_front_tl	, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 301)}
-spriteset(gfx_voyager_arriva_front		, "gfx/DEMU/class_221.png"	){	template_8_8_networker(	0, 326)}
+spriteset(gfx_voyager_arriva_middle		, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 000, 275)}
+spriteset(gfx_voyager_arriva_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 000, 250)}
 
-spriteset(gfx_voyager_virgin_purchase	, "gfx/DEMU/class_221.png"	){	template_dualhead_purchase( 0, 225)}
-spriteset(gfx_voyager_arriva_purchase	, "gfx/DEMU/class_221.png"	){	template_dualhead_purchase( 0, 351)}
+spriteset(gfx_meridian_mml_middle		, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 000, 325)}
+spriteset(gfx_meridian_mml_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 000, 300)}
 
+spriteset(gfx_voyager_virgin_middle_2cc	, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 179, 225)}
+spriteset(gfx_voyager_virgin_front_2cc	, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 179, 200)}
+
+spriteset(gfx_voyager_arriva_middle_2cc	, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 179, 275)}
+spriteset(gfx_voyager_arriva_front_2cc	, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 179, 250)}
+
+spriteset(gfx_voyager_virgin_purchase	, "gfx/DEMU/voyajah.png"	){	template_dualhead_purchase	( 269, 225)}
+spriteset(gfx_voyager_arriva_purchase	, "gfx/DEMU/voyajah.png"	){	template_dualhead_purchase	( 269, 275)}
+
+spriteset(gfx_voyager_headlight			, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 358, 200)}
+spriteset(gfx_voyager_taillight			, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 358, 225)}
 
 
 //Switches
 
+switch(FEAT_TRAINS, SELF, sw_voyager_virgin_2cc, colour_scheme_1	){ 1 : gfx_voyager_virgin_front ; gfx_voyager_virgin_front_2cc ; }
+switch(FEAT_TRAINS, SELF, sw_voyager_virgin_t_2cc, colour_scheme_1	){ 1 : gfx_voyager_virgin_middle ; gfx_voyager_virgin_middle_2cc ; }
 
-//Graphics
-
-switch(FEAT_TRAINS, SELF, sw_voyager_virgin_back_check, position_in_consist_from_end){
-	0 : gfx_voyager_virgin_front_tl ;
-	gfx_voyager_virgin_front ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_voyager_virgin_front_check, position_in_consist){
-	0 : gfx_voyager_virgin_front_hl ;
-	sw_voyager_virgin_back_check ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_voyager_arriva_back_check, position_in_consist_from_end){
-	0 : gfx_voyager_arriva_front_tl ;
-	gfx_voyager_arriva_front ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_voyager_arriva_front_check, position_in_consist){
-	0 : gfx_voyager_arriva_front_hl ;
-	sw_voyager_arriva_back_check ;
-}
-
+switch(FEAT_TRAINS, SELF, sw_voyager_arriva_2cc, colour_scheme_1	){ 1 : gfx_voyager_arriva_front ; gfx_voyager_arriva_front_2cc ; }
+switch(FEAT_TRAINS, SELF, sw_voyager_arriva_t_2cc, colour_scheme_1	){ 1 : gfx_voyager_arriva_middle ; gfx_voyager_arriva_middle_2cc ; }
 
 //Liveries
 
 switch(FEAT_TRAINS, SELF, sw_voyager_auto, current_year < 2009){
-	1 : sw_voyager_virgin_front_check ;
-	sw_voyager_arriva_front_check ;
+	1 : sw_voyager_virgin_2cc ;
+	sw_voyager_arriva_2cc ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_voyager_manual, cargo_subtype){
-	1 : sw_voyager_arriva_front_check ;
-	sw_voyager_virgin_front_check ;
+	1 : sw_voyager_arriva_2cc ;
+	2 : gfx_voyager_arriva_front_2cc ;
+	3 : gfx_meridian_mml_front ;
+	sw_voyager_virgin_2cc ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_voyager_manual_check, livery_choice){
@@ -62,16 +53,28 @@ switch(FEAT_TRAINS, SELF, sw_voyager_manual_check, livery_choice){
 }
 
 
+switch(FEAT_TRAINS, SELF, sw_voyager_headlights, position_in_consist){ 0 : gfx_voyager_headlight ;}
+switch(FEAT_TRAINS, SELF, sw_voyager_taillights, position_in_consist_from_end){ 0 : gfx_voyager_taillight ;}
+
+switch(FEAT_TRAINS, SELF, sw_voyager_sprite_stack, SPR_STACK){
+	0 : sw_voyager_manual_check ;
+	1 : sw_voyager_taillights ;
+	2 : sw_voyager_headlights ;
+}
+
+
 //Intermediate carriages
 
 switch(FEAT_TRAINS, SELF, sw_voyager_middle_auto, current_year < 2009){
-	1 : gfx_voyager_virgin_middle ;
-	gfx_voyager_arriva_middle ;
+	1 : sw_voyager_virgin_t_2cc ;
+	sw_voyager_arriva_t_2cc ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_voyager_middle_manual, cargo_subtype){
-	1 : gfx_voyager_arriva_middle ;
-	gfx_voyager_virgin_middle ;
+	1 : sw_voyager_arriva_t_2cc ;
+	2 : gfx_voyager_arriva_middle_2cc ;
+	3 : gfx_meridian_mml_middle ;
+	sw_voyager_virgin_t_2cc ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_voyager_middle_manual_check, livery_choice){
@@ -89,6 +92,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_colours_auto, current_year < 2009){
 
 switch(FEAT_TRAINS, SELF, sw_voyager_colours_manual, cargo_subtype){
 	1 : palette_2cc(COLOUR_PINK, COLOUR_RED) ;
+	2..3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 }
 
@@ -123,6 +127,8 @@ switch(FEAT_TRAINS, SELF, sw_voyager_purchase_2cc_check, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_voyager_refit_text, cargo_subtype){
 	0 : string(STR_LIVERY_VIRGIN_TRAINS) ;
 	1 : string(STR_LIVERY_ARRIVA_XC) ;
+	2 : string(STR_LIVERY_AVANTI) ;
+	3 : string(STR_LIVERY_MIDLAND_MAINLINE_BLUE) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -146,7 +152,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_attach, vehicle_type_id){
 item(FEAT_TRAINS, item_voyager, 220){
 	property{
 		name                           : string(STR_NAME_VOYAGER) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU, TRAIN_FLAG_TILT);
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU, TRAIN_FLAG_TILT, TRAIN_FLAG_SPRITE_STACK);
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;
@@ -173,7 +179,7 @@ item(FEAT_TRAINS, item_voyager, 220){
 		dual_headed                    : 1 ;
 	}
 	graphics{
-		default							: sw_voyager_manual_check ;
+		default							: sw_voyager_sprite_stack ;
 		purchase						: sw_voyager_purchase_sprite ;
 		sound_effect					: sw_sfx_dmu_two ;
 		create_effect					: vfx_diesel_default ;
