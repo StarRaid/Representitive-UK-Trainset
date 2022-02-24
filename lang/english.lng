@@ -92,6 +92,8 @@ STR_LIVERY_ROYAL_MAIL						: Royal Mail
 STR_LIVERY_AVANTI				 			: Avanti West Coast
 STR_LIVERY_VIRGIN_TRAINS		 			: Virgin Trains
 STR_LIVERY_VIRGIN_TRAINS_FAKE	 			: Virgin Trains {GOLD}(Pretendolino)
+STR_LIVERY_VIRGIN_TRAINS_SILK	 			: Virgin Trains {GOLD}(Silk)
+STR_LIVERY_VIRGIN_TRAINS_BLANK	 			: Virgin Trains {GOLD}(Plain White)
 STR_LIVERY_GNER								: Great North Eastern Railway
 STR_LIVERY_NXEC								: National Express East Coast
 STR_LIVERY_ESCS								: East Coast
@@ -389,6 +391,7 @@ STR_NAME_365				 :Metro-Cammel "Networker Express" (Electric)
 STR_NAME_350				 :Siemens "Desiro" (Electric)
 STR_NAME_375				 :Bombardier "Electrostar" (Dual Voltage)
 STR_NAME_357				 :Adtranz "Electrostar" (Electric)
+STR_NAME_390				 :Alstom "Pendolino" (Electric)
 STR_NAME_395				 :Hitachi High Speed "A-Train" (Dual Voltage)
 STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
 STR_NAME_415				 :BR Compartment EMU (3rd rail)
@@ -470,6 +473,7 @@ STR_MU90_NO_COUPLE: You may only couple this train to a correct MU!
 STR_LUL_NO_COUPLE: You may only couple this train to a "London Underground MU Carriage", or London Underground MU of the same type!
 STR_WRONG_JUNIPER_CANNOT_START: You need to refit this train to a correct version for the track type!
 STR_MORE_CARRIAGES_NEEDED: You need to add carriages before this train can leave (at least one between each pair of engines)!
+STR_UNIQUE_NO_COUPLE: You may only couple this train to a "{STRING}" or another {STRING}!
 
 STR_NAAN_NAME         :Narrow Gauge Rails
 STR_NAAN_BUILD_NAME   :Narrow Gauge Construction
@@ -550,6 +554,7 @@ STR_NAME_365_ALT			:BR Class 365 (Electric)
 STR_NAME_350_ALT			:BR Class 350/360 (Electric)
 STR_NAME_375_ALT			:BR Class 375/377/379/387 (Dual Voltage)
 STR_NAME_357_ALT			:BR Class 357 (Electric)
+STR_NAME_390_ALT			:BR Class 390 (Electric)
 STR_NAME_395_ALT			:BR Class 395 (Dual Voltage)
 STR_NAME_411_ALT			:BR Class 421 (3rd rail)
 STR_NAME_415_ALT			:BR Class 415 (3rd rail)
