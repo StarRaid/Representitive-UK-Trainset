@@ -192,7 +192,7 @@ switch(FEAT_TRAINS, SELF, sw_390_recolour, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2);
 }
 
-switch(FEAT_TRAINS, SELF, sw_390_recolour_purchase_1, colour_scheme_1){
+switch(FEAT_TRAINS, SELF, sw_390_recolour_purchase_1, current_year){
 	0 .. 2018: sw_390_vt_colour_mapping;
 	sw_390_awc_colour_mapping;
 }
@@ -235,8 +235,8 @@ item (FEAT_TRAINS, item_390, 390) {
 		cost_factor:					100;
 		running_cost_factor:			45;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							125 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		speed:							140 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_TILT);
 		refit_cost:						0;
 		track_type:						SAAE;
 		ai_special_flag:				AI_FLAG_PASSENGER;
