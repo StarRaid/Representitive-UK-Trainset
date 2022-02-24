@@ -257,7 +257,6 @@ item (FEAT_TRAINS, item_390, 390) {
 		can_attach_wagon:					sw_390_coupling_restrictions;
 		default: 							sw_390_default;
 		purchase:							sw_390_purchase;
-		create_effect:						vfx_dual_voltage;
 		colour_mapping:						sw_390_recolour;
 		cargo_subtype_text:					sw_390_livery_decider;
 		purchase_colour_mapping:			sw_390_recolour_purchase;
