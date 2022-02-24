@@ -25739,7 +25739,7 @@ switch(FEAT_TRAINS, SELF, sw_370_colours_manual, cargo_subtype){
 
 switch(FEAT_TRAINS, SELF, sw_370_colours_manual_check, livery_choice){
 	1 : sw_370_colours_manual ;
-	palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_370_colours_2cc_check, colour_scheme_1){
