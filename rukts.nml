@@ -25224,7 +25224,7 @@ switch(FEAT_TRAINS, SELF, sw_334_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	334: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_334_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_334), string(STR_NAME_MU90));
 }
 
 item (FEAT_TRAINS, item_334, 334) {
@@ -25434,7 +25434,7 @@ switch(FEAT_TRAINS, SELF, sw_458_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	458: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_458_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_458), string(STR_NAME_MU90));
 }
 switch(FEAT_TRAINS, SELF, sw_458_speed_man, cargo_subtype){
 	0: 160;
@@ -25547,7 +25547,7 @@ spriteset(spriteset_390_Wh_T, "gfx/EMU/class_390.png") {template_8_4_networker(0
 spriteset(spriteset_390_Av_D, "gfx/EMU/class_390.png") {template_8_8_networker(0, 175)}
 //Fixtures
 spriteset(spriteset_390_f_lights, "gfx/EMU/class_390.png") {template_8_8_networker(179, 0)}
-spriteset(spriteset_390_r_lights, "gfx/EMU/class_390.png") {template_8_8_networker_reverse(179, 25)}
+spriteset(spriteset_390_r_lights, "gfx/EMU/class_390.png") {template_8_8_networker(179, 25)}
 //Purchase
 spriteset(spriteset_390_VT_purchase, "gfx/EMU/class_390.png") {template_dualhead_purchase(179, 50)}
 spriteset(spriteset_390_VS_purchase, "gfx/EMU/class_390.png") {template_dualhead_purchase(179, 63)}
@@ -25744,6 +25744,7 @@ switch(FEAT_TRAINS, SELF, sw_390_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	390: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
+	57 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_390), string(STR_NAME_MU90));
 }
 
@@ -25803,8 +25804,8 @@ item (FEAT_TRAINS, item_390, 390) {
 		power: 760;
 		default: sw_390_t_default;
 		weight:	50;
-		colour_mapping:	sw_390_recolour;
-		cargo_subtype_text: sw_390_t_recolour;
+		colour_mapping:	sw_390_t_recolour;
+		cargo_subtype_text: sw_390_livery_decider;
 }
 }
 
@@ -26861,7 +26862,7 @@ switch(FEAT_TRAINS, SELF, sw_444_coupling_restrictions, vehicle_type_id) {
     item_MU90: return CB_RESULT_ATTACH_ALLOW;
 	item_444: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_444_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_444), string(STR_NAME_MU90));
 }
 
 item (FEAT_TRAINS, item_444, 444) {
@@ -28031,7 +28032,7 @@ switch(FEAT_TRAINS, SELF, sw_455_coupling_restrictions, vehicle_type_id) {
 	item_455: return CB_RESULT_ATTACH_ALLOW;
 	456: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_455_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_455), string(STR_NAME_MK2));
 }
 
 //Power Car
@@ -28512,7 +28513,7 @@ switch(FEAT_TRAINS, SELF, sw_700_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	700: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_700_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_700), string(STR_NAME_MU90));
 }
 
 item (FEAT_TRAINS, item_700, 700) {
@@ -31002,14 +31003,14 @@ switch(FEAT_TRAINS, SELF, sw_365_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	365: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_365_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_365), string(STR_NAME_MU90));
 }
 
 switch(FEAT_TRAINS, SELF, sw_465_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	465: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_365_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_465), string(STR_NAME_MU90));
 }
 
 switch(FEAT_TRAINS, SELF, sw_365_refit_text, cargo_subtype){
@@ -31298,7 +31299,7 @@ switch(FEAT_TRAINS, SELF, sw_165_coupling_restrictions, vehicle_type_id) {
 	165: return CB_RESULT_ATTACH_ALLOW;
 	168: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_165_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_165), string(STR_NAME_MU90));
 }
 
 
@@ -31484,7 +31485,7 @@ switch(FEAT_TRAINS, SELF, sw_395_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	395: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_395_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_395), string(STR_NAME_MU90));
 }
 
 switch(FEAT_TRAINS, SELF, sw_395_speed, ((current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ")))) {
@@ -31687,7 +31688,7 @@ switch(FEAT_TRAINS, SELF, sw_iet_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	800: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_IET_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_800), string(STR_NAME_MU90));
 }
 
 switch(FEAT_TRAINS, SELF, sw_iet_speed, ((current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ")))) {
@@ -32006,6 +32007,7 @@ sort(FEAT_TRAINS,[
 357,
 365,
 375,
+390,
 395,
 415,
 411,

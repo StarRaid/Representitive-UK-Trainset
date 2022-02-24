@@ -49,7 +49,7 @@ switch(FEAT_TRAINS, SELF, sw_455_coupling_restrictions, vehicle_type_id) {
 	item_455: return CB_RESULT_ATTACH_ALLOW;
 	456: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_455_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_455), string(STR_NAME_MK2));
 }
 
 //Power Car

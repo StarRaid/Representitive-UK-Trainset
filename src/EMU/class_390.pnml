@@ -14,7 +14,7 @@ spriteset(spriteset_390_Wh_T, "gfx/EMU/class_390.png") {template_8_4_networker(0
 spriteset(spriteset_390_Av_D, "gfx/EMU/class_390.png") {template_8_8_networker(0, 175)}
 //Fixtures
 spriteset(spriteset_390_f_lights, "gfx/EMU/class_390.png") {template_8_8_networker(179, 0)}
-spriteset(spriteset_390_r_lights, "gfx/EMU/class_390.png") {template_8_8_networker_reverse(179, 25)}
+spriteset(spriteset_390_r_lights, "gfx/EMU/class_390.png") {template_8_8_networker(179, 25)}
 //Purchase
 spriteset(spriteset_390_VT_purchase, "gfx/EMU/class_390.png") {template_dualhead_purchase(179, 50)}
 spriteset(spriteset_390_VS_purchase, "gfx/EMU/class_390.png") {template_dualhead_purchase(179, 63)}
@@ -211,6 +211,7 @@ switch(FEAT_TRAINS, SELF, sw_390_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	390: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
+	57 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_390), string(STR_NAME_MU90));
 }
 
@@ -270,8 +271,8 @@ item (FEAT_TRAINS, item_390, 390) {
 		power: 760;
 		default: sw_390_t_default;
 		weight:	50;
-		colour_mapping:	sw_390_recolour;
-		cargo_subtype_text: sw_390_t_recolour;
+		colour_mapping:	sw_390_t_recolour;
+		cargo_subtype_text: sw_390_livery_decider;
 }
 }
 

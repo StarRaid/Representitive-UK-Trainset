@@ -312,14 +312,14 @@ switch(FEAT_TRAINS, SELF, sw_365_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	365: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_365_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_365), string(STR_NAME_MU90));
 }
 
 switch(FEAT_TRAINS, SELF, sw_465_coupling_restrictions, vehicle_type_id) {
     9090: return CB_RESULT_ATTACH_ALLOW;
 	465: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_365_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_465), string(STR_NAME_MU90));
 }
 
 switch(FEAT_TRAINS, SELF, sw_365_refit_text, cargo_subtype){
@@ -608,7 +608,7 @@ switch(FEAT_TRAINS, SELF, sw_165_coupling_restrictions, vehicle_type_id) {
 	165: return CB_RESULT_ATTACH_ALLOW;
 	168: return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
-    return string(STR_165_NO_COUPLE);
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_165), string(STR_NAME_MU90));
 }
 
 

@@ -306,19 +306,12 @@ STR_375_NO_COUPLE                           :Du darfst diesen Zug nur mit einem 
 STR_411_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Mark 1 Carriage", BR Compartment EMU (Stromschiene) oder einem weiteren BR Mark 1 EMU (Stromschiene) koppeln!
 STR_415_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Mark 1 Carriage", BR Mark 1 EMU (Stromschiene) oder einem weiteren BR Compartment EMU (Stromschiene) koppeln! 
 STR_442_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Mark 3 Carriage" oder einem weiteren BREL "Wessex Express" koppeln!
-STR_444_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Modern MU car" oder einem weiteren Siemens "Desiro" (Stromschiene) koppeln!
 STR_350_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Modern MU car" oder einem weiteren Siemens "Desiro" (Doppelspannung) koppeln!
-STR_455_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Mark 2 Carriage" oder einem weiteren BREL Suburban EMU (Stromschiene) koppeln!
-STR_458_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Modern MU car" oder einem weiteren Alstom "Juniper" koppeln!
 STR_325_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Modern MU car" oder einem weiteren Adtranz "Networker" koppeln!
-STR_365_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Modern MU car" oder einem weiteren Metro-Cammel "Networker Express" (Doppelspannung) koppeln!
-STR_395_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Modern MU car" oder einem weiteren Hitachi High Speed "A-Train" (Doppelspannung) koppeln!
-STR_465_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Modern MU car" oder einem weiteren Metro-Cammel "Networker" (Stromschiene) koppeln!
-STR_700_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Modern MU car" oder einem weiteren Siemens "Desiro City"!
-STR_IET_NO_COUPLE                           :Du darfst diesen Zug nur mit einem "Modern MU car" oder einem weiteren Hitachi High Speed "Intercity Express Train" (Dual Mode) koppeln!
 STR_MU90_NO_COUPLE                          :Du darfst diesen Zug nur mit einem correct MU koppeln! STR_LUL_NO_COUPLE                           :Du darfst diesen Zug nur mit einem correct London Underground MU koppeln!
 STR_WRONG_JUNIPER_CANNOT_START              : Sie müssen diesen Zug umbauen zu der korrekten Version für diese Strecken Art!
 STR_MORE_CARRIAGES_NEEDED                   : Dieser Zug benötigt mindestens einen Anhänger um das Depot zu verlassen (mindestens eines zwischen jedem paar von Lokomotiven)!
+STR_UNIQUE_NO_COUPLE                        :Du darfst diesen Zug nur mit einem "{STRING}" oder einem weiteren {STRING}!
 
 STR_NAAN_NAME	                            :Schmalspur 
 STR_NAAN_BUILD_NAME                         :Schmalspur Konstruction 
