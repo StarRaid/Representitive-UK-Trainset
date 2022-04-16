@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 80 ;
+	version: 81 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -13303,49 +13303,28 @@ item (FEAT_TRAINS, item_ee73, 73){
 
 //Templates
 
-template template_powerhaul(x, y){
-	//left_x, upper_y, width, height, offset_x, offset_y
-	[x+0,y,8,23,-3,-11]    //North
-	[x+10,y,20,16,-13,-8]  //North East
-	[x+32,y,33,11,-17,-7]  //East
-	[x+67,y,20,16,-5,-8]   //South East
-	[x+89,y,8,23,-3,-11]   //South
-	[x+99,y,20,16,-13,-8]   //South West
-	[x+121,y,33,11,-17,-7] //West
-	[x+156,y,20,16,-5,-8]  //North West
-}
-
-template template_powerhaul_reverse(x, y){
-	//left_x, upper_y, width, height, offset_x, offset_y
-	[x+89,y,8,23,-3,-11]   //South
-	[x+99,y,20,16,-13,-8]   //South West
-	[x+121,y,33,11,-17,-7] //West
-	[x+156,y,20,16,-5,-8]  //North West
-	[x+0,y,8,23,-3,-11]    //North
-	[x+10,y,20,16,-13,-8]  //North East
-	[x+32,y,33,11,-17,-7]  //East
-	[x+67,y,20,16,-5,-8]   //South East
-}
-
 
 //Sritesets
 
-spriteset (gfx_powerhaul_fliner             , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,25)}
-spriteset (gfx_powerhaul_fliner_reverse     , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,25)}
-spriteset (gfx_powerhaul_colas              , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul(0,0)}
-spriteset (gfx_powerhaul_colas_reverse      , "gfx/DIESEL_LOCO/class_70.png"){template_powerhaul_reverse(0,0)}
+spriteset (gfx_powerhaul_fliner				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2				(0	,25	)}
+spriteset (gfx_powerhaul_fliner_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2			(0	,25	)}
+spriteset (gfx_powerhaul_colas				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2				(0	,0	)}
+spriteset (gfx_powerhaul_colas_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2			(0	,0	)}
+spriteset (gfx_powerhaul_2cc				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2				(0	,50	)}
+spriteset (gfx_powerhaul_2cc_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2			(0	,50	)}
 
-spriteset (gfx_powerhaul_headlights         , "gfx/FIXTURES/class_70_lights.png"){template_powerhaul(0,0)}
-spriteset (gfx_powerhaul_taillights         , "gfx/FIXTURES/class_70_lights.png"){template_powerhaul(0,25)}
+spriteset (gfx_powerhaul_headlights			, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,100)}
+spriteset (gfx_powerhaul_taillights			, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,125)}
 
-spriteset (gfx_powerhaul_fliner_purchase    , "gfx/DIESEL_LOCO/class_70.png"){template_purchase_short(178,25)}
-spriteset (gfx_powerhaul_colas_purchase     , "gfx/DIESEL_LOCO/class_70.png"){template_purchase_short(178,0)}
+spriteset (gfx_powerhaul_fliner_purchase	, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_purchase_short		(178,25	)}
+spriteset (gfx_powerhaul_colas_purchase		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_purchase_short		(178,0	)}
 
 
 //Graphics
 
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_fliner_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_fliner_reverse  ; gfx_powerhaul_fliner ; }
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_colas_reverse ; gfx_powerhaul_colas ; }
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_2cc_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_2cc_reverse ; gfx_powerhaul_2cc ; }
 
 //Automatic
 
@@ -13367,6 +13346,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_manual, cargo_subtype){
 	0 : sw_powerhaul_gfx_fliner_reverse_check ;
+	2 : sw_powerhaul_gfx_2cc_reverse_check ;
 	sw_powerhaul_gfx_colas_reverse_check ;
 }
 
@@ -13394,6 +13374,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_spritestack, [STORE_TEMP((getbits(extra_c
 switch(FEAT_TRAINS, SELF, sw_powerhaul_refit_text, cargo_subtype){
 	0 : string(STR_LIVERY_FREIGHTLINER_POWERHAUL) ;
 	1 : string(STR_LIVERY_COLAS) ;
+	2 : string(STR_LIVER_COMP_COLOURS);
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -13439,6 +13420,7 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, current_year){
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_manual, cargo_subtype){
 	0 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	2 : palette_2cc(company_colour1, company_colour2) ;
 	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 }
 
