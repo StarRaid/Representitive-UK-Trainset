@@ -4631,7 +4631,7 @@ random_switch(FEAT_TRAINS, PARENT, sw_zrr_colours_random){
 switch(FEAT_TRAINS, SELF, sw_zrr_colours_manual, cargo_subtype){
 	0 : palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;
 	1 : palette_2cc(COLOUR_BLUE, COLOUR_DARK_GREEN) ;
-	3 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
+	2 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
 	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
 }
 
@@ -20315,6 +20315,9 @@ spriteset(gfx_voyager_virgin_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_net
 spriteset(gfx_voyager_arriva_middle		, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 000, 275)}
 spriteset(gfx_voyager_arriva_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 000, 250)}
 
+spriteset(gfx_voyager_avanti_middle		, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 358, 325)}
+spriteset(gfx_voyager_avanti_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 358, 300)}
+
 spriteset(gfx_meridian_mml_middle		, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 000, 325)}
 spriteset(gfx_meridian_mml_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 000, 300)}
 
@@ -20348,7 +20351,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_auto, current_year < 2009){
 
 switch(FEAT_TRAINS, SELF, sw_voyager_manual, cargo_subtype){
 	1 : sw_voyager_arriva_2cc ;
-	2 : gfx_voyager_arriva_front_2cc ;
+	2 : gfx_voyager_avanti_front ;
 	3 : gfx_meridian_mml_front ;
 	sw_voyager_virgin_2cc ;
 }
@@ -20378,7 +20381,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_middle_auto, current_year < 2009){
 
 switch(FEAT_TRAINS, SELF, sw_voyager_middle_manual, cargo_subtype){
 	1 : sw_voyager_arriva_t_2cc ;
-	2 : gfx_voyager_arriva_middle_2cc ;
+	2 : gfx_voyager_avanti_middle ;
 	3 : gfx_meridian_mml_middle ;
 	sw_voyager_virgin_t_2cc ;
 }
@@ -20398,7 +20401,8 @@ switch(FEAT_TRAINS, SELF, sw_voyager_colours_auto, current_year < 2009){
 
 switch(FEAT_TRAINS, SELF, sw_voyager_colours_manual, cargo_subtype){
 	1 : palette_2cc(COLOUR_PINK, COLOUR_RED) ;
-	2..3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 }
 

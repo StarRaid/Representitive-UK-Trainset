@@ -16,7 +16,7 @@ random_switch(FEAT_TRAINS, PARENT, sw_zrr_colours_random){
 switch(FEAT_TRAINS, SELF, sw_zrr_colours_manual, cargo_subtype){
 	0 : palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;
 	1 : palette_2cc(COLOUR_BLUE, COLOUR_DARK_GREEN) ;
-	3 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
+	2 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
 	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
 }
 

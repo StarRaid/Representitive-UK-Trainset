@@ -104,7 +104,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_colours_manual, cargo_subtype){
 	3 : palette_2cc(COLOUR_GREY , COLOUR_YELLOW) ;
 	4 : palette_2cc(COLOUR_DARK_BLUE , COLOUR_YELLOW) ;
 	5 : palette_2cc(COLOUR_YELLOW , COLOUR_YELLOW) ;
-	6 : palette_2cc(COLOUR_GREY , COLOUR_BLUE) ;
+	6 : palette_2cc(COLOUR_GREY , COLOUR_DARK_BLUE) ;
 	sw_mbox_colours_random ;
 }
 
