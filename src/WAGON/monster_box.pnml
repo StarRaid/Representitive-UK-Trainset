@@ -105,6 +105,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_colours_manual, cargo_subtype){
 	4 : palette_2cc(COLOUR_DARK_BLUE , COLOUR_YELLOW) ;
 	5 : palette_2cc(COLOUR_YELLOW , COLOUR_YELLOW) ;
 	6 : palette_2cc(COLOUR_GREY , COLOUR_DARK_BLUE) ;
+	7 : palette_2cc(company_colour1, company_colour2) ;
 	sw_mbox_colours_random ;
 }
 
@@ -135,6 +136,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_refit_text, cargo_subtype){
 	4 : string(STR_LIVERY_GBRF) ;
 	5 : string(STR_LIVERY_NETWORK_RAIL) ;
 	6 : string(STR_LIVERY_AGGREGATES) ;
+	7 : string(STR_LIVER_COMP_COLOURS) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -150,7 +152,7 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
 		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date( 1988, 1, 1) ;
+		introduction_date              : date( 1985, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 40 ;
 		cost_factor                    : 50 ;
@@ -166,7 +168,7 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		track_type                     : RAIL ;
 		power                          : 0 hp ;
 		weight                         : 23 ton ;
-		speed						   : 75 mph ;
+		speed						   : 80 mph ;
 	}
 	graphics{
 		default				: sw_mbox_sprite_stack ;
@@ -175,3 +177,211 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		cargo_subtype_text	: sw_mbox_refit_text_check ;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//JHA 10025
+
+spriteset(gfx_jha						, "gfx/WAGON/wagons.png"	){	template_8_4_2		(625,325)}
+spriteset(gfx_jha_stripe				, "gfx/WAGON/wagons.png"	){	template_8_4_2		(625,350)}
+spriteset(gfx_jha_yeo					, "gfx/WAGON/wagons.png"	){	template_8_4_2		(625,375)}
+
+spriteset(gfx_jha_coal					, "gfx/WAGON/wagons.png"	){	template_8_4_2		(625,400)}
+spriteset(gfx_jha_iron					, "gfx/WAGON/wagons.png"	){	template_8_4_2		(625,425)}
+spriteset(gfx_jha_stone					, "gfx/WAGON/wagons.png"	){	template_8_4_2		(625,450)}
+
+spriteset(gfx_jha_purchase				, "gfx/WAGON/wagons.png"	){	template_purchase	(425,250)}
+
+switch(FEAT_TRAINS, SELF, sw_jha_gfx_manual, cargo_subtype){
+	0 : gfx_jha_stripe ;
+	1 : gfx_jha_yeo ;
+	gfx_jha ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jha_gfx_manual_check, livery_choice){
+	1 : sw_jha_gfx_manual ;
+	gfx_jha ;
+}
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_jha_gfx_cargo_check, cargo_type_in_veh){
+	COAL : gfx_jha_coal ;
+	COKE : gfx_jha_coal ;
+	SLAG : gfx_jha_coal ;
+	IORE : gfx_jha_iron ;
+	CORE : gfx_jha_iron ;
+	PORE : gfx_jha_iron ;
+	AORE : gfx_jha_iron ;
+	gfx_jha_stone ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jha_gfx_cargo_count, PERCENT_FULL){
+	51..100 : sw_jha_gfx_cargo_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jha_gfx_sprite_stack, SPR_STACK){
+	0 : sw_jha_gfx_manual_check ;
+	1 : sw_jha_gfx_cargo_count ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_jha_col, cargo_subtype){
+	0..1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	2 : palette_2cc(COLOUR_YELLOW, COLOUR_WHITE) ;
+	3 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	4 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jha_col_manual_check, livery_choice){
+	1 : sw_jha_col ;
+	palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+}
+switch(FEAT_TRAINS, SELF, sw_jha_col_2cc_check, colour_scheme_2){
+	1 : sw_jha_col_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_jha_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_NCB) ; //National power
+	1 : string(STR_LIVERY_AGGREGATES) ; //Aggregates
+	2 : string(STR_LIVERY_ARC) ; //ARC
+	3 : string(STR_LIVERY_DBCARGO) ; //DB Cargo
+	4 : string(STR_LIVERY_FREIGHTLINER) ; //Freightliner Green
+	5 : string(STR_LIVER_COMP_COLOURS) ; //2cc
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jha_refit_text_check, livery_choice){
+	1 : sw_jha_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+item (FEAT_TRAINS, item_jha, 10025) {
+	property {
+		name: 							string(STR_NAME_JHA);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1990, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					38;
+		reliability_decay:				11;
+		refittable_cargo_classes:		bitmask(CC_BULK);
+		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED, CC_PIECE_GOODS);
+		cargo_disallow_refit:			[GRAI, WHEA, MAIZ, CERE];
+		loading_speed:					15;
+		cost_factor:					22;
+		running_cost_factor:			28;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							70 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				COAL;
+		cargo_capacity:					60;
+		weight:							20 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_jha_gfx_sprite_stack;
+		purchase:						gfx_jha_purchase;
+		colour_mapping:					sw_jha_col_2cc_check;
+		cargo_subtype_text:				sw_jha_refit_text_check;
+	}
+}
+
+
+
+
+
+//Polybulk 10027
+
+spriteset(gfx_pol						, "gfx/WAGON/wagons.png"	){	template_8_4_2		(625,300)}
+
+spriteset(gfx_pol_purchase				, "gfx/WAGON/wagons.png"	){	template_purchase	(525,250)}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_pol_col_check, colour_scheme_2){
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+item (FEAT_TRAINS, item_pol, 10027) {
+	property {
+		name: 							string(STR_NAME_POL);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1990, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					42;
+		reliability_decay:				11;
+		refittable_cargo_classes:		bitmask(CC_POWDERIZED, CC_COVERED);
+		non_refittable_cargo_classes:	bitmask(CC_NON_POURABLE, CC_PIECE_GOODS);
+		cargo_allow_refit:				[BEAN, CERE, OLSD, POTA, QLME, RCYC, SASH, SULP, WOOL, GRAI, WHEA, MAIZ, FICR];
+		loading_speed:					10;
+		cost_factor:					20;
+		running_cost_factor:			20;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							70 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				GRAI;
+		cargo_capacity:					60;
+		weight:							20 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						gfx_pol;
+		purchase:						gfx_pol_purchase;
+		colour_mapping:					sw_pol_col_check;
+	}
+}
+
+

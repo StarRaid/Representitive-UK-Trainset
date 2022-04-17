@@ -16,7 +16,7 @@ item (FEAT_TRAINS, item_cgo, 10008) {
 	property {
 		name: 							string(STR_NAME_CGO);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1950, 1, 1);
+		introduction_date:				date(1940, 1, 1);
 		model_life:						20;
 		retire_early:					1;
 		vehicle_life:					25;
@@ -36,7 +36,7 @@ item (FEAT_TRAINS, item_cgo, 10008) {
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
-		default_cargo_type:				CERE;
+		default_cargo_type:				GRAI;
 		cargo_capacity:					20;
 		weight:							12 ton;
 		tractive_effort_coefficient:	0.07;
@@ -60,7 +60,7 @@ item (FEAT_TRAINS, item_chv, 10009) {
 		name: 							string(STR_NAME_CHV);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1962, 1, 1);
-		model_life:						VEHICLE_NEVER_EXPIRES;
+		model_life:						40;
 		retire_early:					1;
 		vehicle_life:					30;
 		reliability_decay:				11;
@@ -79,7 +79,7 @@ item (FEAT_TRAINS, item_chv, 10009) {
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
-		default_cargo_type:				CERE;
+		default_cargo_type:				GRAI;
 		cargo_capacity:					24;
 		weight:							16 ton;
 		tractive_effort_coefficient:	0.07;

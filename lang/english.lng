@@ -86,7 +86,7 @@ STR_LIVERY_RAILFREIGHT2						: Railfreight
 STR_LIVERY_CIVIL_ENGINEERS					: Civil Engineer's "Dutch"
 STR_LIVERY_RAIL_EXPRESS          			: Rail Express Systems
 STR_LIVERY_POLICE							: Police
-STR_LIVERY_NCB                   			: National Coal Board {GOLD}(Blue)
+STR_LIVERY_NCB                   			: National Power
 STR_LIVERY_BSC                   			: British Steel Corporation
 STR_LIVERY_ROYAL_MAIL						: Royal Mail
 STR_LIVERY_AVANTI				 			: Avanti West Coast
@@ -329,6 +329,19 @@ STR_NAME_QPV					:XP Luggage Van
 STR_NAME_RBX					:Speedlink Van
 STR_NAME_GUV					:General Utility Van
 STR_NAME_NTX					:Express Mail Coach
+STR_NAME_MGR					:MGR Hopper
+STR_NAME_CDA					:MGR Covered Hopper
+STR_NAME_STEEL_TANK				:Steel Tank
+STR_NAME_ZRV					:ZRV Tank
+STR_NAME_UCV					:China Clay Wagon
+STR_NAME_FQA					:Cartic
+STR_NAME_POL					:Polybulk Hopper
+STR_NAME_OBA					:Log Wagon
+STR_NAME_JHA					:Aggregates Hopper
+STR_NAME_HTA					:HTA Hopper
+
+STR_NAME_HAA					:HAA Hopper
+STR_NAME_HDA					:HDA Hopper
 
 STR_NAME_MR_1377				:0-6-0T "Half-Cab" (Steam)
 STR_NAME_MR_115					:4-2-2 "Spinner" (Steam)
@@ -448,6 +461,7 @@ STR_COLOUR_WHITE_STRIPE	:White (with stripe)
 STR_COLOUR_BLACK_STRIPE	:{BLACK}Black {POP_COLOUR}(with stripe)
 
 STR_LIVERY_COMPANY	:"TTD"
+
 STR_DBSO_NO_COUPLE: You may only couple a DBSO/DVT at the back of another passenger locomotive from the "RUKTS" GRF!
 STR_DMMU_NO_COUPLE: You may only couple this train to a Blue Square Coupling Compatible DMU or a "Mark 1 Carriage"!
 STR_DMMU_MAIL_NO_COUPLE: You may only couple this train to a mail carrying Blue Square Coupling Compatible DMU or a "General Utility Van"!

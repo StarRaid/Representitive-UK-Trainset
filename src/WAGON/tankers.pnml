@@ -4,8 +4,27 @@
 
 //ZRR 10020
 
-spriteset(gfx_zrr,			"gfx/WAGON/wagons.png"){template_5_4(230,475)}
-spriteset(gfx_zrr_purch,	"gfx/WAGON/wagons.png"){template_purchase(297,479)}
+spriteset(gfx_zrr,			"gfx/WAGON/wagons.png"){template_5_4(425,100)}
+spriteset(gfx_zrr_logo,		"gfx/WAGON/wagons.png"){template_5_4(425,125)}
+spriteset(gfx_zrr_grey,		"gfx/WAGON/wagons.png"){template_5_4(425,150)}
+spriteset(gfx_zrr_black,	"gfx/WAGON/wagons.png"){template_5_4(425,175)}
+spriteset(gfx_zrr_white,	"gfx/WAGON/wagons.png"){template_5_4(425,200)}
+spriteset(gfx_zrr_purch,	"gfx/WAGON/wagons.png"){template_purchase(575,75)}
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_zrr_gfx_manual, cargo_subtype){
+	0 : gfx_zrr_logo ;
+	1 : gfx_zrr_grey ;
+	2 : gfx_zrr_black ;
+	3 : gfx_zrr_white ;
+	gfx_zrr ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrr_gfx_manual_check, livery_choice){
+	1 : sw_zrr_gfx_manual ;
+	gfx_zrr ;
+}
 
 random_switch(FEAT_TRAINS, PARENT, sw_zrr_colours_random){
 	3 : palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;
@@ -13,15 +32,8 @@ random_switch(FEAT_TRAINS, PARENT, sw_zrr_colours_random){
 	1 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_zrr_colours_manual, cargo_subtype){
-	0 : palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;
-	1 : palette_2cc(COLOUR_BLUE, COLOUR_DARK_GREEN) ;
-	2 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
-	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
-}
-
 switch(FEAT_TRAINS, SELF, sw_zrr_colours_manual_check, livery_choice){
-	1 : sw_zrr_colours_manual ;
+	1 : palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
 	sw_zrr_colours_random ;
 }
 
@@ -33,10 +45,11 @@ switch(FEAT_TRAINS, SELF, sw_zrr_colours_2cc_check, colour_scheme_2){
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_zrr_refit_text, cargo_subtype){
-	0 : string(STR_COLOUR_WHITE) ;
-	1 : string(STR_COLOUR_BLUE) ;
-	2 : string(STR_COLOUR_GREY) ;
-	3 : string(STR_LIVER_COMP_COLOURS) ;
+	0 : string(STR_LIVERY_COMPANY) ;
+	1 : string(STR_COLOUR_GREY) ;
+	2 : string(STR_COLOUR_BLACK) ;
+	3 : string(STR_COLOUR_WHITE_STRIPE) ;
+	4 : string(STR_LIVER_COMP_COLOURS) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -79,7 +92,7 @@ item (FEAT_TRAINS, item_zrr, 10020) {
 		bitmask_vehicle_info:			0;
 	}
 	graphics {
-		default: 						gfx_zrr;
+		default: 						sw_zrr_gfx_manual_check;
 		purchase:						gfx_zrr_purch;
 		colour_mapping:					sw_zrr_colours_2cc_check;
 		cargo_subtype_text:				sw_zrr_refit_text_check;
@@ -186,6 +199,11 @@ item (FEAT_TRAINS, item_pca, 10015){
 }
 
 
+
+
+
+
+
 //TEA 10021
 
 spriteset(gfx_tea_white,		"gfx/WAGON/wagons.png"){template_7_4_2(150,475)}
@@ -274,7 +292,7 @@ switch(FEAT_TRAINS, SELF, sw_tea_refit_text_check, livery_choice){
 item (FEAT_TRAINS, item_tea, 10021) {
 	property {
 		name: 							string(STR_NAME_TEA);
-		climates_available: 			ALL_CLIMATES;
+		climates_available: 			NO_CLIMATE;
 		introduction_date:				date(1970, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		retire_early:					1;
@@ -312,3 +330,138 @@ item (FEAT_TRAINS, item_tea, 10021) {
 		cargo_subtype_text:				sw_tea_refit_text_check;
 }
 }
+
+
+
+
+
+
+
+//TEA 10036
+
+spriteset(gfx_tea_2_white,			"gfx/WAGON/wagons.png"){template_8_4_2(425,350)}
+spriteset(gfx_tea_2_2cc,			"gfx/WAGON/wagons.png"){template_8_4_2(425,325)}
+spriteset(gfx_tea_2_black_stripe,	"gfx/WAGON/wagons.png"){template_8_4_2(425,300)}
+spriteset(gfx_tea_2_purch,			"gfx/WAGON/wagons.png"){template_purchase(425,275)}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_tea_2_cargo_check, cargo_type_in_veh){
+	RUBR : gfx_tea_2_white ;
+	WATR : gfx_tea_2_white ;
+	BEER : gfx_tea_2_white ;
+	EOIL : gfx_tea_2_white ;
+	MILK : gfx_tea_2_white ;
+	gfx_tea_2_black_stripe ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_2_gfx_manual, cargo_subtype){
+	0 : gfx_tea_2_white ;
+	2 : gfx_tea_2_black_stripe ;
+	gfx_tea_2_2cc ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_2_manual_check, livery_choice){
+	1 : sw_tea_2_gfx_manual ;
+	sw_tea_2_cargo_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_tea_2_col_cargo_check, cargo_type_in_veh){
+	RUBR : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	WATR : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	BEER : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	EOIL : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	MILK : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_2_colours_manual, cargo_subtype){
+	0..1: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	2	: palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_2_colours_manual_check, livery_choice){
+	1 : sw_tea_2_colours_manual ;
+	sw_tea_2_col_cargo_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_2_colours_2cc_check, colour_scheme_2){
+	1 : sw_tea_2_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_tea_2_refit_text, cargo_subtype){
+	0 : string(STR_COLOUR_WHITE) ;
+	1 : string(STR_COLOUR_WHITE_STRIPE) ;
+	2 : string(STR_COLOUR_BLACK_STRIPE) ;
+	3 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_2_refit_text_check, livery_choice){
+	1 : sw_tea_2_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+
+item (FEAT_TRAINS, item_tea_2, 10036) {
+	property {
+		name: 							string(STR_NAME_TEA);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1965, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					45;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_LIQUID, CC_POWDERIZED, CC_COVERED);
+		non_refittable_cargo_classes:	bitmask(CC_HAZARDOUS);
+		//cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
+		cargo_disallow_refit:			[CLAY] ;
+		loading_speed:					20;
+		cost_factor:					75;
+		running_cost_factor:			100;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							80 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		//default_cargo_type:				COAL;
+		cargo_capacity:					45;
+		weight:							20 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							7;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_tea_2_manual_check;
+		purchase:						gfx_tea_2_purch;
+		purchase_colour_mapping:		palette_2cc(company_colour1, COLOUR_YELLOW);
+		colour_mapping:					sw_tea_2_colours_2cc_check;
+		cargo_subtype_text:				sw_tea_2_refit_text_check;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
