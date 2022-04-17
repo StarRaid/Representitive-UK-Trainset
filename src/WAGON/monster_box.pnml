@@ -5,6 +5,7 @@
 
 spriteset(gfx_mbox			, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,   0)}
 spriteset(gfx_mbox_new		, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0, 150)}
+spriteset(gfx_mbox_yeo		, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81, 150)}
 spriteset(gfx_mbox_coal_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  25)}
 spriteset(gfx_mbox_coal_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  25)}
 spriteset(gfx_mbox_iron_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  50)}
@@ -72,6 +73,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_cargo_check, cargo_type_in_veh){
 
 switch(FEAT_TRAINS, SELF, sw_mbox_gfx_manual, cargo_subtype){
 	3 : gfx_mbox_new ;
+	6 : gfx_mbox_yeo ;
 	gfx_mbox ;
 }
 
@@ -102,6 +104,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_colours_manual, cargo_subtype){
 	3 : palette_2cc(COLOUR_GREY , COLOUR_YELLOW) ;
 	4 : palette_2cc(COLOUR_DARK_BLUE , COLOUR_YELLOW) ;
 	5 : palette_2cc(COLOUR_YELLOW , COLOUR_YELLOW) ;
+	6 : palette_2cc(COLOUR_GREY , COLOUR_BLUE) ;
 	sw_mbox_colours_random ;
 }
 
@@ -131,6 +134,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_refit_text, cargo_subtype){
 	3 : string(STR_LIVERY_FREIGHTLINER_ORANGE) ;
 	4 : string(STR_LIVERY_GBRF) ;
 	5 : string(STR_LIVERY_NETWORK_RAIL) ;
+	6 : string(STR_LIVERY_AGGREGATES) ;
 	CB_RESULT_NO_TEXT ;
 }
 

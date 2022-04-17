@@ -7,15 +7,42 @@
 spriteset(gfx_zrr,			"gfx/WAGON/wagons.png"){template_5_4(230,475)}
 spriteset(gfx_zrr_purch,	"gfx/WAGON/wagons.png"){template_purchase(297,479)}
 
-random_switch(FEAT_TRAINS, SELF, sw_zrr_colours_random){
+random_switch(FEAT_TRAINS, PARENT, sw_zrr_colours_random){
 	3 : palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;
 	2 : palette_2cc(COLOUR_BLUE, COLOUR_DARK_GREEN) ;
 	1 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_zrr_colours_2cc_check, colour_scheme_2){
-	1 : sw_zrr_colours_random ;
+switch(FEAT_TRAINS, SELF, sw_zrr_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_BLUE, COLOUR_DARK_GREEN) ;
+	3 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
 	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrr_colours_manual_check, livery_choice){
+	1 : sw_zrr_colours_manual ;
+	sw_zrr_colours_random ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrr_colours_2cc_check, colour_scheme_2){
+	1 : sw_zrr_colours_manual_check ;
+	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
+}
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_zrr_refit_text, cargo_subtype){
+	0 : string(STR_COLOUR_WHITE) ;
+	1 : string(STR_COLOUR_BLUE) ;
+	2 : string(STR_COLOUR_GREY) ;
+	3 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrr_refit_text_check, livery_choice){
+	1 : sw_zrr_refit_text ;
+	CB_RESULT_NO_TEXT ;
 }
 
 item (FEAT_TRAINS, item_zrr, 10020) {
@@ -55,6 +82,7 @@ item (FEAT_TRAINS, item_zrr, 10020) {
 		default: 						gfx_zrr;
 		purchase:						gfx_zrr_purch;
 		colour_mapping:					sw_zrr_colours_2cc_check;
+		cargo_subtype_text:				sw_zrr_refit_text_check;
 }
 }
 
@@ -71,10 +99,42 @@ random_switch(FEAT_TRAINS, PARENT, sw_pca_col_random){
 	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_GREEN) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_pca_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_DARK_GREEN) ;
+	2 : palette_2cc(COLOUR_YELLOW, COLOUR_DARK_GREEN) ;
+	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_GREEN) ;
+	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_pca_colours_manual_check, livery_choice){
+	1 : sw_pca_colours_manual ;
+	sw_pca_col_random ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_pca_colours_2cc_check, colour_scheme_2){
-	1 : sw_pca_col_random ;
+	1 : sw_pca_colours_manual_check ;
 	palette_2cc(company_colour1, COLOUR_DARK_GREEN) ;
 }
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_pca_refit_text, cargo_subtype){
+	0 : string(STR_COLOUR_GREY) ;
+	1 : string(STR_COLOUR_RED) ;
+	2 : string(STR_COLOUR_YELLOW) ;
+	3 : string(STR_COLOUR_DKBLUE) ;
+	4 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_pca_refit_text_check, livery_choice){
+	1 : sw_pca_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
 
 item (FEAT_TRAINS, item_pca, 10015) {
 	property {
@@ -113,6 +173,7 @@ item (FEAT_TRAINS, item_pca, 10015) {
 		default: 						gfx_pca;
 		purchase:						gfx_pca_purch;
 		colour_mapping:					sw_pca_colours_2cc_check;
+		cargo_subtype_text:				sw_pca_refit_text_check;
 }
 }
 
@@ -155,6 +216,18 @@ switch(FEAT_TRAINS, SELF, sw_tea_cargo_check, cargo_type_in_veh){
 	sw_tea_black_random ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_tea_gfx_manual, cargo_subtype){
+	0 : gfx_tea_white ;
+	2 : gfx_tea_black ;
+	3 : gfx_tea_black_stripe ;
+	gfx_tea_white_stripe ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_manual_check, livery_choice){
+	1 : sw_tea_gfx_manual ;
+	sw_tea_cargo_check ;
+}
+
 
 switch(FEAT_TRAINS, SELF, sw_tea_col_cargo_check, cargo_type_in_veh){
 	RUBR : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
@@ -165,10 +238,38 @@ switch(FEAT_TRAINS, SELF, sw_tea_col_cargo_check, cargo_type_in_veh){
 	palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_tea_colours_manual, cargo_subtype){
+	0..1 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2..3 : palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_colours_manual_check, livery_choice){
+	1 : sw_tea_colours_manual ;
+	sw_tea_col_cargo_check ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_tea_colours_2cc_check, colour_scheme_2){
-	1 : sw_tea_col_cargo_check ;
+	1 : sw_tea_colours_manual_check ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_tea_refit_text, cargo_subtype){
+	0 : string(STR_COLOUR_WHITE) ;
+	1 : string(STR_COLOUR_WHITE_STRIPE) ;
+	2 : string(STR_COLOUR_BLACK) ;
+	3 : string(STR_COLOUR_BLACK_STRIPE) ;
+	4 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_refit_text_check, livery_choice){
+	1 : sw_tea_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
 
 item (FEAT_TRAINS, item_tea, 10021) {
 	property {
@@ -204,9 +305,10 @@ item (FEAT_TRAINS, item_tea, 10021) {
 		bitmask_vehicle_info:			0;
 	}
 	graphics {
-		default: 						sw_tea_cargo_check;
+		default: 						sw_tea_manual_check;
 		purchase:						gfx_tea_purch;
 		purchase_colour_mapping:		palette_2cc(company_colour1, COLOUR_YELLOW);
 		colour_mapping:					sw_tea_colours_2cc_check;
+		cargo_subtype_text:				sw_tea_refit_text_check;
 }
 }

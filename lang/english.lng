@@ -436,10 +436,17 @@ STR_LIVERY_NRW_2TONE:Two-tone white and red
 STR_LIVERY_NRW_1TONE:Green
 
 STR_COLOUR_DKBLUE	:{BLUE}Dark blue
+STR_COLOUR_BLUE		:{LTBLUE}Blue
 STR_COLOUR_RED		:{RED}Red
 STR_COLOUR_GREEN	:{GREEN}Green
 STR_COLOUR_GREY		:Grey
 STR_COLOUR_BLACK	:{BLACK}Black
+STR_COLOUR_WHITE	:White
+STR_COLOUR_YELLOW	:{YELLOW}Yellow
+
+STR_COLOUR_WHITE_STRIPE	:White (with stripe)
+STR_COLOUR_BLACK_STRIPE	:{BLACK}Black {POP_COLOUR}(with stripe)
+
 STR_LIVERY_COMPANY	:"TTD"
 STR_DBSO_NO_COUPLE: You may only couple a DBSO/DVT at the back of another passenger locomotive from the "RUKTS" GRF!
 STR_DMMU_NO_COUPLE: You may only couple this train to a Blue Square Coupling Compatible DMU or a "Mark 1 Carriage"!

@@ -2,7 +2,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 81 ;
+	version: 82 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -31,7 +31,7 @@ grf{
 			name : string(STR_PARAM_PROTOTYPES) ;
 			desc : string(STR_PARAM_PROTOTYPES_DESC) ;
 			bit  : 4 ;
-			def_value : 0 ;
+			def_value : 1 ;
 		}
 	}
 	param 1{
@@ -41,7 +41,7 @@ grf{
 			desc      : string(STR_PARAM_VEH_SELEC_DESC) ;
 			min_value : 0 ;
 			max_value : 3 ;
-			def_value : 2 ;
+			def_value : 3 ;
 			names     : {
 				0 : string(STR_PARAM_VEH_SELEC_CHOICE_ONE  ) ;
 				1 : string(STR_PARAM_VEH_SELEC_CHOICE_TWO  ) ;
@@ -56,6 +56,7 @@ grf{
 			name      : string(STR_PARAM_ALT_NAMES_NAME) ;
 			desc      : string(STR_PARAM_ALT_NAMES_DESC) ;
 			bit		  : 1 ;
+			def_value : 1 ;
 			}
 		}
 	param 3{
@@ -95,7 +96,7 @@ grf{
 			type : bool ;
 			name : string(STR_PARAM_PURCHASE_LIST_SORT_NAME) ;
 			desc : string(STR_PARAM_PURCHASE_LIST_SORT_DESC) ;
-			def_value : 0 ;
+			def_value : 1 ;
 			}
 		}
 	
@@ -120,7 +121,7 @@ grf{
 			desc      : string(STR_PARAM_STEAM_SELEC_DESC) ;
 			min_value : 0 ;
 			max_value : 3 ;
-			def_value : 2 ;
+			def_value : 3 ;
 			names     : {
 				0 : string(STR_PARAM_STEAM_SELEC_CHOICE_ONE  ) ;
 				1 : string(STR_PARAM_STEAM_SELEC_CHOICE_TWO  ) ;

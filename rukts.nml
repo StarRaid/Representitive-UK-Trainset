@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 81 ;
+	version: 82 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -35,7 +35,7 @@ grf{
 			name : string(STR_PARAM_PROTOTYPES) ;
 			desc : string(STR_PARAM_PROTOTYPES_DESC) ;
 			bit  : 4 ;
-			def_value : 0 ;
+			def_value : 1 ;
 		}
 	}
 	param 1{
@@ -45,7 +45,7 @@ grf{
 			desc      : string(STR_PARAM_VEH_SELEC_DESC) ;
 			min_value : 0 ;
 			max_value : 3 ;
-			def_value : 2 ;
+			def_value : 3 ;
 			names     : {
 				0 : string(STR_PARAM_VEH_SELEC_CHOICE_ONE  ) ;
 				1 : string(STR_PARAM_VEH_SELEC_CHOICE_TWO  ) ;
@@ -60,6 +60,7 @@ grf{
 			name      : string(STR_PARAM_ALT_NAMES_NAME) ;
 			desc      : string(STR_PARAM_ALT_NAMES_DESC) ;
 			bit		  : 1 ;
+			def_value : 1 ;
 			}
 		}
 	param 3{
@@ -99,7 +100,7 @@ grf{
 			type : bool ;
 			name : string(STR_PARAM_PURCHASE_LIST_SORT_NAME) ;
 			desc : string(STR_PARAM_PURCHASE_LIST_SORT_DESC) ;
-			def_value : 0 ;
+			def_value : 1 ;
 			}
 		}
 	
@@ -124,7 +125,7 @@ grf{
 			desc      : string(STR_PARAM_STEAM_SELEC_DESC) ;
 			min_value : 0 ;
 			max_value : 3 ;
-			def_value : 2 ;
+			def_value : 3 ;
 			names     : {
 				0 : string(STR_PARAM_STEAM_SELEC_CHOICE_ONE  ) ;
 				1 : string(STR_PARAM_STEAM_SELEC_CHOICE_TWO  ) ;
@@ -4621,15 +4622,42 @@ item (FEAT_TRAINS, item_pga, 10013){
 spriteset(gfx_zrr,			"gfx/WAGON/wagons.png"){template_5_4(230,475)}
 spriteset(gfx_zrr_purch,	"gfx/WAGON/wagons.png"){template_purchase(297,479)}
 
-random_switch(FEAT_TRAINS, SELF, sw_zrr_colours_random){
+random_switch(FEAT_TRAINS, PARENT, sw_zrr_colours_random){
 	3 : palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;
 	2 : palette_2cc(COLOUR_BLUE, COLOUR_DARK_GREEN) ;
 	1 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_zrr_colours_2cc_check, colour_scheme_2){
-	1 : sw_zrr_colours_random ;
+switch(FEAT_TRAINS, SELF, sw_zrr_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_BLUE, COLOUR_DARK_GREEN) ;
+	3 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
 	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrr_colours_manual_check, livery_choice){
+	1 : sw_zrr_colours_manual ;
+	sw_zrr_colours_random ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrr_colours_2cc_check, colour_scheme_2){
+	1 : sw_zrr_colours_manual_check ;
+	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
+}
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_zrr_refit_text, cargo_subtype){
+	0 : string(STR_COLOUR_WHITE) ;
+	1 : string(STR_COLOUR_BLUE) ;
+	2 : string(STR_COLOUR_GREY) ;
+	3 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrr_refit_text_check, livery_choice){
+	1 : sw_zrr_refit_text ;
+	CB_RESULT_NO_TEXT ;
 }
 
 item (FEAT_TRAINS, item_zrr, 10020) {
@@ -4669,6 +4697,7 @@ item (FEAT_TRAINS, item_zrr, 10020) {
 		default: 						gfx_zrr;
 		purchase:						gfx_zrr_purch;
 		colour_mapping:					sw_zrr_colours_2cc_check;
+		cargo_subtype_text:				sw_zrr_refit_text_check;
 }
 }
 
@@ -4685,10 +4714,42 @@ random_switch(FEAT_TRAINS, PARENT, sw_pca_col_random){
 	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_GREEN) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_pca_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_GREY, COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_DARK_GREEN) ;
+	2 : palette_2cc(COLOUR_YELLOW, COLOUR_DARK_GREEN) ;
+	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_GREEN) ;
+	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_pca_colours_manual_check, livery_choice){
+	1 : sw_pca_colours_manual ;
+	sw_pca_col_random ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_pca_colours_2cc_check, colour_scheme_2){
-	1 : sw_pca_col_random ;
+	1 : sw_pca_colours_manual_check ;
 	palette_2cc(company_colour1, COLOUR_DARK_GREEN) ;
 }
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_pca_refit_text, cargo_subtype){
+	0 : string(STR_COLOUR_GREY) ;
+	1 : string(STR_COLOUR_RED) ;
+	2 : string(STR_COLOUR_YELLOW) ;
+	3 : string(STR_COLOUR_DKBLUE) ;
+	4 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_pca_refit_text_check, livery_choice){
+	1 : sw_pca_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
 
 item (FEAT_TRAINS, item_pca, 10015) {
 	property {
@@ -4727,6 +4788,7 @@ item (FEAT_TRAINS, item_pca, 10015) {
 		default: 						gfx_pca;
 		purchase:						gfx_pca_purch;
 		colour_mapping:					sw_pca_colours_2cc_check;
+		cargo_subtype_text:				sw_pca_refit_text_check;
 }
 }
 
@@ -4769,6 +4831,18 @@ switch(FEAT_TRAINS, SELF, sw_tea_cargo_check, cargo_type_in_veh){
 	sw_tea_black_random ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_tea_gfx_manual, cargo_subtype){
+	0 : gfx_tea_white ;
+	2 : gfx_tea_black ;
+	3 : gfx_tea_black_stripe ;
+	gfx_tea_white_stripe ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_manual_check, livery_choice){
+	1 : sw_tea_gfx_manual ;
+	sw_tea_cargo_check ;
+}
+
 
 switch(FEAT_TRAINS, SELF, sw_tea_col_cargo_check, cargo_type_in_veh){
 	RUBR : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
@@ -4779,10 +4853,38 @@ switch(FEAT_TRAINS, SELF, sw_tea_col_cargo_check, cargo_type_in_veh){
 	palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_tea_colours_manual, cargo_subtype){
+	0..1 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	2..3 : palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_colours_manual_check, livery_choice){
+	1 : sw_tea_colours_manual ;
+	sw_tea_col_cargo_check ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_tea_colours_2cc_check, colour_scheme_2){
-	1 : sw_tea_col_cargo_check ;
+	1 : sw_tea_colours_manual_check ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_tea_refit_text, cargo_subtype){
+	0 : string(STR_COLOUR_WHITE) ;
+	1 : string(STR_COLOUR_WHITE_STRIPE) ;
+	2 : string(STR_COLOUR_BLACK) ;
+	3 : string(STR_COLOUR_BLACK_STRIPE) ;
+	4 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_tea_refit_text_check, livery_choice){
+	1 : sw_tea_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
 
 item (FEAT_TRAINS, item_tea, 10021) {
 	property {
@@ -4818,10 +4920,11 @@ item (FEAT_TRAINS, item_tea, 10021) {
 		bitmask_vehicle_info:			0;
 	}
 	graphics {
-		default: 						sw_tea_cargo_check;
+		default: 						sw_tea_manual_check;
 		purchase:						gfx_tea_purch;
 		purchase_colour_mapping:		palette_2cc(company_colour1, COLOUR_YELLOW);
 		colour_mapping:					sw_tea_colours_2cc_check;
+		cargo_subtype_text:				sw_tea_refit_text_check;
 }
 }
 # 1 "rukts.pnml" 3
@@ -5244,6 +5347,7 @@ item (FEAT_TRAINS, item_container, 10002){
 
 spriteset(gfx_mbox			, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,   0)}
 spriteset(gfx_mbox_new		, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0, 150)}
+spriteset(gfx_mbox_yeo		, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81, 150)}
 spriteset(gfx_mbox_coal_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  25)}
 spriteset(gfx_mbox_coal_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  25)}
 spriteset(gfx_mbox_iron_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  50)}
@@ -5311,6 +5415,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_cargo_check, cargo_type_in_veh){
 
 switch(FEAT_TRAINS, SELF, sw_mbox_gfx_manual, cargo_subtype){
 	3 : gfx_mbox_new ;
+	6 : gfx_mbox_yeo ;
 	gfx_mbox ;
 }
 
@@ -5341,6 +5446,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_colours_manual, cargo_subtype){
 	3 : palette_2cc(COLOUR_GREY , COLOUR_YELLOW) ;
 	4 : palette_2cc(COLOUR_DARK_BLUE , COLOUR_YELLOW) ;
 	5 : palette_2cc(COLOUR_YELLOW , COLOUR_YELLOW) ;
+	6 : palette_2cc(COLOUR_GREY , COLOUR_BLUE) ;
 	sw_mbox_colours_random ;
 }
 
@@ -5370,6 +5476,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_refit_text, cargo_subtype){
 	3 : string(STR_LIVERY_FREIGHTLINER_ORANGE) ;
 	4 : string(STR_LIVERY_GBRF) ;
 	5 : string(STR_LIVERY_NETWORK_RAIL) ;
+	6 : string(STR_LIVERY_AGGREGATES) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -19163,6 +19270,44 @@ spriteset (turbostar_lm_172				, "gfx/DMU/turbostar.png"){template_8_8_networker
 spriteset (turbostar_lm_172_mid			, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 025)}
 spriteset (turbostar_wmr_172			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 050)}
 spriteset (turbostar_wmr_172_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 075)}
+spriteset (turbostar_cen_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 150)}
+spriteset (turbostar_cen_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 175)}
+spriteset (turbostar_anr_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 200)}
+spriteset (turbostar_anr_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 225)}
+spriteset (turbostar_nxs_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 250)}
+spriteset (turbostar_nxs_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 275)}
+spriteset (turbostar_fsc_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 325)}
+spriteset (turbostar_fsc_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 350)}
+spriteset (turbostar_stn_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 300)}
+spriteset (turbostar_stn_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 325)}
+spriteset (turbostar_mml_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 375)}
+spriteset (turbostar_mml_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 400)}
+spriteset (turbostar_spt_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 350)}
+spriteset (turbostar_spt_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 375)}
+spriteset (turbostar_tpe_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 425)}
+spriteset (turbostar_tpe_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 450)}
+spriteset (turbostar_cnm_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 400)}
+spriteset (turbostar_cnm_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 425)}
+spriteset (turbostar_sct_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 475)}
+spriteset (turbostar_sct_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 500)}
+spriteset (turbostar_swt_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 450)}
+spriteset (turbostar_swt_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 475)}
+spriteset (turbostar_chi_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 525)}
+spriteset (turbostar_chi_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 550)}
+spriteset (turbostar_one_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 500)}
+spriteset (turbostar_one_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 525)}
+spriteset (turbostar_ovg_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 575)}
+spriteset (turbostar_ovg_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 600)}
+spriteset (turbostar_wmr_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 550)}
+spriteset (turbostar_wmr_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 575)}
+spriteset (turbostar_emr_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 625)}
+spriteset (turbostar_emr_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 650)}
+spriteset (turbostar_ga__170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 600)}
+spriteset (turbostar_ga__170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 625)}
+spriteset (turbostar_ntn_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 675)}
+spriteset (turbostar_ntn_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 000, 700)}
+spriteset (turbostar_tfw_170			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 179, 650)}
+spriteset (turbostar_tfw_170_mid		, "gfx/DMU/turbostar.png"){template_8_4_networker		( 179, 675)}
 
 spriteset (turbostar_headlight			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 100)}
 spriteset (turbostar_taillight			, "gfx/DMU/turbostar.png"){template_8_8_networker		( 000, 125)}
@@ -19202,24 +19347,71 @@ switch(FEAT_TRAINS, SELF, sw_168_gfx_auto_year_check, build_year){
 	sw_172_auto ;
 }
 
-switch(FEAT_TRAINS, SELF, sw_168_gfx_manual, cargo_subtype){
-	0	: sw_168_1_ch_id_check ;
-	1	: sw_170_xc_id_check ;
-	3	: sw_172_lm_id_check ;
-	4	: sw_172_wmr_id_check ;
-	5	: sw_168_0_ch_id_check ;
-	sw_170_lm_id_check ;
+switch(FEAT_TRAINS, SELF, sw_168_gfx_d_manual, cargo_subtype){
+	0: turbostar_ch_168_1;			 
+	1: turbostar_xc_170;				 
+	2: turbostar_lm_170;					 
+	3: turbostar_lm_172;			 
+	4: turbostar_wmr_172;
+	5: turbostar_ch_168_0;
+	6: turbostar_cen_170;			 	 
+	7: turbostar_anr_170;			 
+	8: turbostar_nxs_170;			 
+	9: turbostar_fsc_170;				 
+	10: turbostar_stn_170;			 
+	11: turbostar_mml_170;			 
+	12: turbostar_spt_170;					 
+	13: turbostar_cnm_170;			 
+	14: turbostar_tpe_170;			 
+	15: turbostar_swt_170;			 
+	16: turbostar_sct_170;		 
+	17: turbostar_one_170;			 
+	18: turbostar_chi_170;		
+	19: turbostar_wmr_170;	 
+	20: turbostar_ovg_170;
+	21: turbostar_ga__170;		 
+	22: turbostar_emr_170;
+	23: turbostar_tfw_170;
+	24: turbostar_tfw_170;
+	25: turbostar_ntn_170;
 }
 
-/*
-	2	: sw_170_xc_id_check ;
-	9	: sw_172_lm_id_check ;
-	10	: sw_172_wmr_id_check ;
-	sw_170_lm_id_check ;
-}*/
+switch(FEAT_TRAINS, SELF, sw_168_gfx_t_manual, cargo_subtype){
+	0: turbostar_ch_168_mid;			 
+	1: turbostar_xc_170_mid;				 
+	2: turbostar_lm_170_mid;					 
+	3: turbostar_lm_172_mid;				 
+	4: turbostar_wmr_172_mid;
+	5: turbostar_ch_168_mid;			 	
+	6: turbostar_cen_170_mid;		 
+	7: turbostar_anr_170_mid;		 
+	8: turbostar_nxs_170_mid;	 
+	9: turbostar_fsc_170_mid;		 
+	10: turbostar_stn_170_mid;	 
+	11: turbostar_mml_170_mid;		 
+	12: turbostar_spt_170_mid;	  
+	13: turbostar_cnm_170_mid;			 
+	14: turbostar_tpe_170_mid;	 
+	15: turbostar_swt_170_mid;			 
+	16: turbostar_sct_170_mid;
+	17: turbostar_one_170_mid;		 
+	18: turbostar_chi_170_mid;			 
+	19: turbostar_wmr_170_mid;				 
+	20: turbostar_ovg_170_mid;			 
+	21: turbostar_ga__170_mid;			 
+	22: turbostar_emr_170_mid;			 
+	23: turbostar_tfw_170_mid;			 
+	24: turbostar_tfw_170_mid;			 
+	25: turbostar_ntn_170_mid;
+}
 
-switch(FEAT_TRAINS, SELF, sw_168_gfx_manual_check, livery_choice){
-	1 : sw_168_gfx_manual ;
+switch(FEAT_TRAINS, SELF, sw_168_gfx_d_manual_check, livery_choice){
+	1 : sw_168_gfx_d_manual ;
+	sw_168_gfx_auto_year_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_168_gfx_t_manual_check, livery_choice){
+	1 : sw_168_gfx_t_manual ;
 	sw_168_gfx_auto_year_check ;
 }
 
@@ -19235,8 +19427,8 @@ switch(FEAT_TRAINS, SELF, sw_168_0_taillights, position_in_consist_from_end){ 0 
 switch(FEAT_TRAINS, SELF, sw_168_headlights_livery_check, cargo_subtype){ 5 : sw_168_0_headlights ; sw_168_headlights ; }
 switch(FEAT_TRAINS, SELF, sw_168_taillights_livery_check, cargo_subtype){ 5 : sw_168_0_taillights ; sw_168_taillights ; }
 
-switch(FEAT_TRAINS, SELF, sw_168_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
-	0 : sw_168_gfx_manual_check ;
+switch(FEAT_TRAINS, SELF, sw_168_d_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_168_gfx_d_manual_check ;
 	1 : sw_168_headlights_livery_check ;
 	2 : sw_168_taillights_livery_check ;
 }
@@ -19272,34 +19464,28 @@ switch(FEAT_TRAINS, SELF, sw_168_refit_text, cargo_subtype){
 	3	: string(STR_LIVERY_LONDON_MIDLAND_STRING, string(STR_172)) ;
 	4	: string(STR_LIVERY_WEST_MIDLANDS_RAILWAY_STRING, string(STR_172)) ;
 	5	: string(STR_LIVERY_CHILTERN_0) ;
+	6	: string(STR_LIVERY_CENTRAL) ;
+	7	: string(STR_LIVERY_ANGLIA_RAIL) ;
+	8	: string(STR_LIVERY_NX_SCOTRAIL) ;
+	9	: string(STR_LIVERY_FIRST_SCOTRAIL) ;
+	10	: string(STR_LIVERY_SOUTHERN) ;
+	11	: string(STR_LIVERY_MML) ;
+	12	: string(STR_LIVERY_SPT_CARMINE_CREAM) ;
+	13	: string(STR_LIVERY_CENTRAL_EX_M) ;
+	14	: string(STR_LIVERY_FIRST_TPE) ;
+	15	: string(STR_LIVERY_SWT) ;
+	16	: string(STR_LIVERY_SCOTRAIL) ;
+	17	: string(STR_LIVERY_ONE_ANGLIA) ;
+	18	: string(STR_LIVERY_CHILTERN_G) ;
+	19	: string(STR_LIVERY_WEST_MIDLANDS_RAILWAY_STRING, string(STR_170)) ;
+	20	: string(STR_LIVERY_OVERGROUND) ;
+	21	: string(STR_LIVERY_GREATER_ANGLIA) ;
+	22	: string(STR_LIVERY_EMR) ;
+	23	: string(STR_LIVERY_TFW) ;
+	24	: string(STR_LIVERY_ABELLIO_GREATER_ANGLIA) ;
+	25	: string(STR_LIVERY_NORTHERN) ;
 	CB_RESULT_NO_TEXT ;
 }
-/*
-	0	: string(STR_LIVERY_CHILTERN) ;
-	1	: string(STR_LIVERY_CENTRAL) ;
-	2	: string(STR_LIVERY_ARRIVA_XC) ;
-	3	: string(STR_LIVERY_FIRST_TPE) ;
-	4	: string(STR_LIVERY_FIRST_SCOT_RAIL) ;
-	5	: string(STR_LIVERY_SCOTRAIL) ;
-	6	: string(STR_LIVERY_SOUTHERN) ;
-	7	: string(STR_LIVERY_LONDON_MIDLAND_STRING, string(STR_170)) ;
-	8	: string(STR_LIVERY_WEST_MIDLANDS_RAILWAY_STRING, string(STR_170)) ;
-	9	: string(STR_LIVERY_LONDON_MIDLAND_STRING, string(STR_172)) ;
-	10	: string(STR_LIVERY_WEST_MIDLANDS_RAILWAY_STRING, string(STR_172)) ;
-	CB_RESULT_NO_TEXT ;
-}*/
-
-//00 - Chiltern Railways - a
-//01 - Central Trains
-//02 - Cross Country - a
-//03 - TransPennine Express
-//04 - First Scot RAIL
-//05 - ScotRail Saltaire
-//06 - Southern
-//dd  - London Midland (170) - a
-//08 - West Midlands Railway (170) - a
-//09 - London Midland (172) - a
-//10 - West Midlands Railway (172) - a
 
 switch(FEAT_TRAINS, SELF, sw_168_refit_text_check, livery_choice){
 	1 : sw_168_refit_text ;
@@ -19319,19 +19505,31 @@ switch(FEAT_TRAINS, SELF, sw_168_colours_manual, cargo_subtype){
 	1	: palette_2cc(COLOUR_GREY, COLOUR_PINK) ;
 	4	: palette_2cc(COLOUR_ORANGE, COLOUR_MAUVE) ;
 	5	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	6	: palette_2cc(COLOUR_GREEN, COLOUR_DARK_BLUE) ;
+	7	: palette_2cc(COLOUR_WHITE, COLOUR_PALE_GREEN) ;
+	8	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	9	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	10	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
+	11	: palette_2cc(COLOUR_PALE_GREEN, COLOUR_WHITE) ;
+	12	: palette_2cc(COLOUR_RED, COLOUR_BROWN) ;
+	13	: palette_2cc(COLOUR_PALE_GREEN, COLOUR_DARK_BLUE) ;
+	14	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	15	: palette_2cc(COLOUR_RED, COLOUR_DARK_BLUE) ;
+	16	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;
+	17	: palette_2cc(COLOUR_BLUE, COLOUR_YELLOW) ;
+	18	: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	19	: palette_2cc(COLOUR_MAUVE, COLOUR_ORANGE) ;
+	20	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
+	21	: palette_2cc(COLOUR_BLUE, COLOUR_BLUE) ;
+	22	: palette_2cc(COLOUR_MAUVE, COLOUR_WHITE) ;
+	23	: palette_2cc(COLOUR_RED, COLOUR_RED) ;
+	24	: palette_2cc(COLOUR_RED, COLOUR_RED) ;
+	25	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
 }
 /*
-	0	: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
-	1	: palette_2cc(COLOUR_GREEN, COLOUR_DARK_BLUE) ;
-	2	: palette_2cc(COLOUR_PINK, COLOUR_RED) ;
-	3	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
-	4	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	5	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	6	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-	8	: palette_2cc(COLOUR_ORANGE, COLOUR_MAUVE) ;
-	10	: palette_2cc(COLOUR_ORANGE, COLOUR_MAUVE) ;
-	palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREEN) ;
+	
+	
 }*/
 
 switch(FEAT_TRAINS, SELF, sw_168_colours_manual_check, livery_choice){
@@ -19394,7 +19592,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 	}
 	graphics{
 		can_attach_wagon:		sw_168_coupling_restrictions;
-		default                 : sw_168_sprite_stack ;
+		default                 : sw_168_d_sprite_stack ;
 		colour_mapping          : sw_168_colours_2cc_check ;
 		purchase                : sw_168_purchase ;
 		purchase_colour_mapping : sw_168_purchase_2cc_check ;
@@ -19405,7 +19603,7 @@ item (FEAT_TRAINS, item_cl168, 168){
 		purchase_running_cost_factor : 46 ;
 	}
 	livery_override (item_MU90){
-		default                     : sw_168_gfx_manual_check ;
+		default                     : sw_168_gfx_t_manual_check ;
 		colour_mapping              : sw_168_colours_2cc_check ;
 		power                       : 450;
 		cargo_capacity              : 80 ;
