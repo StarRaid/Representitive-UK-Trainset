@@ -592,3 +592,105 @@ item (FEAT_TRAINS, item_oldcube, 9005){
 
 
 
+
+
+
+
+//GER BRAKE 10034
+
+
+spriteset(gfx_brake_ger,			"gfx/WAGON/wagons.png"){template_5_4		(175,825)}
+spriteset(gfx_brake_ger_purchase,	"gfx/WAGON/wagons.png"){template_purchase	(250,825)}
+
+switch(FEAT_TRAINS, SELF, sw_brake_ger_colours_2cc_check, colour_scheme_2){
+	1 : palette_2cc(COLOUR_BROWN, company_colour2) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+item (FEAT_TRAINS, item_brake_ger, 10034) {
+	property {
+		name: 							string(STR_NAME_BRAKE_GER);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1860, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					40;
+		reliability_decay:				10;
+		cost_factor:					10;
+		running_cost_factor:			20;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							25 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		cargo_capacity:					0;
+		weight:							10 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							5;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						gfx_brake_ger;
+		purchase:						gfx_brake_ger_purchase;
+		colour_mapping:					sw_brake_ger_colours_2cc_check;
+}
+}
+
+
+
+
+
+
+
+
+//LMS BRAKE 10035
+
+
+spriteset(gfx_brake_lms,			"gfx/WAGON/wagons.png"){template_5_4		(175,850)}
+spriteset(gfx_brake_lms_purchase,	"gfx/WAGON/wagons.png"){template_purchase	(250,850)}
+
+switch(FEAT_TRAINS, SELF, sw_brake_lms_colours_2cc_check, colour_scheme_2){
+	1 : palette_2cc(COLOUR_BROWN, company_colour2) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+item (FEAT_TRAINS, item_brake_lms, 10035) {
+	property {
+		name: 							string(STR_NAME_BRAKE_LMS);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1925, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					40;
+		reliability_decay:				10;
+		cost_factor:					10;
+		running_cost_factor:			20;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							45 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		cargo_capacity:					0;
+		weight:							20 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							5;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						gfx_brake_lms;
+		purchase:						gfx_brake_lms_purchase;
+		colour_mapping:					sw_brake_lms_colours_2cc_check;
+}
+}
+
+

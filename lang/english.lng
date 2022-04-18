@@ -331,8 +331,8 @@ STR_NAME_GUV					:General Utility Van
 STR_NAME_NTX					:Express Mail Coach
 STR_NAME_MGR					:MGR Hopper
 STR_NAME_CDA					:MGR Covered Hopper
-STR_NAME_STEEL_TANK				:Steel Tank
-STR_NAME_ZRV					:ZRV Tank
+STR_NAME_STEEL_TANK				:Steel Tanker
+STR_NAME_ZRV					:ZRV Tanker
 STR_NAME_UCV					:China Clay Wagon
 STR_NAME_FQA					:Cartic
 STR_NAME_POL					:Polybulk Hopper
@@ -342,6 +342,9 @@ STR_NAME_HTA					:HTA Hopper
 
 STR_NAME_HAA					:HAA Hopper
 STR_NAME_HDA					:HDA Hopper
+
+STR_NAME_BRAKE_GER				:10 Tonne Brake Van
+STR_NAME_BRAKE_LMS				:20 Tonne Brake Van
 
 STR_NAME_MR_1377				:0-6-0T "Half-Cab" (Steam)
 STR_NAME_MR_115					:4-2-2 "Spinner" (Steam)

@@ -258,7 +258,7 @@ switch(FEAT_TRAINS, SELF, sw_tea_col_cargo_check, cargo_type_in_veh){
 
 switch(FEAT_TRAINS, SELF, sw_tea_colours_manual, cargo_subtype){
 	0..1 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
-	2..3 : palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	2..3 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
 	palette_2cc(company_colour2, COLOUR_DARK_GREEN) ;
 }
 
@@ -356,7 +356,7 @@ switch(FEAT_TRAINS, SELF, sw_tea_2_cargo_check, cargo_type_in_veh){
 }
 
 switch(FEAT_TRAINS, SELF, sw_tea_2_gfx_manual, cargo_subtype){
-	0 : gfx_tea_2_white ;
+	1 : gfx_tea_2_white ;
 	2 : gfx_tea_2_black_stripe ;
 	gfx_tea_2_2cc ;
 }
@@ -373,12 +373,13 @@ switch(FEAT_TRAINS, SELF, sw_tea_2_col_cargo_check, cargo_type_in_veh){
 	BEER : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 	EOIL : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 	MILK : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
-	palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_YELLOW, COLOUR_GREY) ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_tea_2_colours_manual, cargo_subtype){
-	0..1: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
-	2	: palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
+	0	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	1	: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	2	: palette_2cc(COLOUR_YELLOW, COLOUR_GREY) ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
@@ -436,11 +437,11 @@ item (FEAT_TRAINS, item_tea_2, 10036) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		//default_cargo_type:				COAL;
-		cargo_capacity:					45;
+		cargo_capacity:					65;
 		weight:							20 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
-		length:							7;
+		length:							8;
 		bitmask_vehicle_info:			0;
 	}
 	graphics {
@@ -453,6 +454,189 @@ item (FEAT_TRAINS, item_tea_2, 10036) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+//OLD TANK 10031
+
+spriteset(gfx_oldtank,			"gfx/WAGON/wagons.png"){template_4_4		(425,75	)}
+spriteset(gfx_oldtank_2cc,		"gfx/WAGON/wagons.png"){template_4_4		(425,50	)}
+
+spriteset(gfx_oldtank_purchase,	"gfx/WAGON/wagons.png"){template_purchase	(575,50)}
+
+
+switch(FEAT_TRAINS, SELF, sw_oldtank_manual, cargo_subtype){
+	0 : gfx_oldtank ;
+	gfx_oldtank_2cc ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_oldtank_manual_check, livery_choice){
+	1 : sw_oldtank_manual ;
+	gfx_oldtank_2cc ;
+}
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_oldtank_refit_text, cargo_subtype){
+	 0 : string(STR_COLOUR_BLACK) ;
+	 1 : string(STR_LIVER_COMP_COLOURS) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_oldtank_refit_text_check, livery_choice){
+	1 : sw_oldtank_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+item (FEAT_TRAINS, item_oldtank, 10031) {
+	property {
+		name: 							string(STR_NAME_STEEL_TANK);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1860, 1, 1);
+		model_life:						60;
+		retire_early:					1;
+		vehicle_life:					30;
+		reliability_decay:				29;
+		refittable_cargo_classes:		bitmask(CC_LIQUID, CC_POWDERIZED, CC_COVERED);
+		loading_speed:					10;
+		cost_factor:					4;
+		running_cost_factor:			5;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							30 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				OIL_;
+		cargo_capacity:					15;
+		weight:							8 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							4;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_oldtank_manual_check;
+		purchase:						gfx_oldtank_purchase;
+		cargo_subtype_text:				sw_oldtank_refit_text_check;
+}
+}
+
+
+
+
+
+
+
+
+//ZRV 10030
+
+spriteset(gfx_zrv,			"gfx/WAGON/wagons.png"){template_4_4	(500,0	)}
+spriteset(gfx_zrv_black,	"gfx/WAGON/wagons.png"){template_4_4	(500,25	)}
+spriteset(gfx_zrv_2cc,		"gfx/WAGON/wagons.png"){template_4_4	(500,50	)}
+
+spriteset(gfx_zrv_purchase,"gfx/WAGON/wagons.png"){template_purchase(575,0	)}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_zrv_gfx_manual, cargo_subtype){
+	 0 : gfx_zrv ;
+	 1 : gfx_zrv_black ;
+	 gfx_zrv_2cc ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrv_gfx_manual_check, livery_choice){
+	1 : sw_zrv_gfx_manual ;
+	gfx_zrv_2cc ;
+}
+
+
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_zrv_refit_text, cargo_subtype){
+	 0 : string(STR_COLOUR_WHITE) ;
+	 1 : string(STR_COLOUR_BLACK) ;
+	 2 : string(STR_LIVER_COMP_COLOURS) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrv_refit_text_check, livery_choice){
+	1 : sw_zrv_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_zrv_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_zrv_colours_manual_check, livery_choice){
+	1 : sw_zrv_colours_manual ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_zrv_colours_2cc_check, colour_scheme_2){
+	1 : sw_zrv_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+item (FEAT_TRAINS, item_zrv, 10030) {
+	property {
+		name: 							string(STR_NAME_ZRV);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1910, 1, 1);
+		model_life:						60;
+		retire_early:					1;
+		vehicle_life:					40;
+		reliability_decay:				9;
+		refittable_cargo_classes:		bitmask(CC_LIQUID, CC_POWDERIZED, CC_COVERED);
+		loading_speed:					10;
+		cost_factor:					4;
+		running_cost_factor:			5;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							40 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				OIL_;
+		cargo_capacity:					23;
+		weight:							11 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							4;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_zrv_gfx_manual_check;
+		purchase:						gfx_zrv_purchase;
+		cargo_subtype_text:				sw_zrv_refit_text_check;
+		colour_mapping:					sw_zrv_colours_2cc_check;
+}
+}
 
 
 

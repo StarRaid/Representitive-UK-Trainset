@@ -168,15 +168,113 @@ item (FEAT_TRAINS, item_container, 10002){
 
 
 
-//Cartic
+//Cartic 10028
+
+
+spriteset(gfx_fqa						, "gfx/WAGON/wagons.png"	){	template_7_4_2		(0	,725)}
+
+spriteset(gfx_fqa_a						, "gfx/WAGON/wagons.png"	){	template_7_8_2		(0	,750)}
+spriteset(gfx_fqa_a_rev					, "gfx/WAGON/wagons.png"	){	template_7_8_rev_2	(0	,750)}
+spriteset(gfx_fqa_b						, "gfx/WAGON/wagons.png"	){	template_7_8_2		(0	,775)}
+spriteset(gfx_fqa_b_rev					, "gfx/WAGON/wagons.png"	){	template_7_8_rev_2	(0	,775)}
+spriteset(gfx_fqa_c						, "gfx/WAGON/wagons.png"	){	template_7_8_2		(0	,800)}
+spriteset(gfx_fqa_c_rev					, "gfx/WAGON/wagons.png"	){	template_7_8_rev_2	(0	,800)}
+spriteset(gfx_fqa_d						, "gfx/WAGON/wagons.png"	){	template_7_8_2		(0	,825)}
+spriteset(gfx_fqa_d_rev					, "gfx/WAGON/wagons.png"	){	template_7_8_rev_2	(0	,825)}
+spriteset(gfx_fqa_e						, "gfx/WAGON/wagons.png"	){	template_7_8_2		(0	,850)}
+spriteset(gfx_fqa_e_rev					, "gfx/WAGON/wagons.png"	){	template_7_8_rev_2	(0	,850)}
+spriteset(gfx_fqa_f						, "gfx/WAGON/wagons.png"	){	template_7_8_2		(0	,875)}
+spriteset(gfx_fqa_f_rev					, "gfx/WAGON/wagons.png"	){	template_7_8_rev_2	(0	,875)}
+
+spriteset(gfx_fqa_purchase				, "gfx/WAGON/wagons.png"	){	template_purchase	(425,225)}
+
+
+switch(FEAT_TRAINS,	PARENT,	sw_fqa_gfx_rev_check_a,	vehicle_is_reversed	){ 1 : gfx_fqa_a_rev	; gfx_fqa_a	;}
+switch(FEAT_TRAINS,	PARENT,	sw_fqa_gfx_rev_check_b,	vehicle_is_reversed	){ 1 : gfx_fqa_b_rev	; gfx_fqa_b	;}
+switch(FEAT_TRAINS,	PARENT,	sw_fqa_gfx_rev_check_c,	vehicle_is_reversed	){ 1 : gfx_fqa_c_rev	; gfx_fqa_c	;}
+switch(FEAT_TRAINS,	PARENT,	sw_fqa_gfx_rev_check_d,	vehicle_is_reversed	){ 1 : gfx_fqa_d_rev	; gfx_fqa_d	;}
+switch(FEAT_TRAINS,	PARENT,	sw_fqa_gfx_rev_check_e,	vehicle_is_reversed	){ 1 : gfx_fqa_e_rev	; gfx_fqa_e	;}
+switch(FEAT_TRAINS,	PARENT,	sw_fqa_gfx_rev_check_f,	vehicle_is_reversed	){ 1 : gfx_fqa_f_rev	; gfx_fqa_f	;}
+
+
+switch(FEAT_TRAINS, SELF, sw_fqa_gfx_cargo_count_b, PERCENT_FULL){
+	1..50	: sw_fqa_gfx_rev_check_a ;
+	51..100 : sw_fqa_gfx_rev_check_b ;
+	gfx_fqa ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_fqa_gfx_cargo_count_c, PERCENT_FULL){
+	1..50	: sw_fqa_gfx_rev_check_a ;
+	51..100 : sw_fqa_gfx_rev_check_c ;
+	gfx_fqa ;
+}
 
 
 
+switch(FEAT_TRAINS, SELF, sw_fqa_gfx_cargo_count_e, PERCENT_FULL){
+	1..50	: sw_fqa_gfx_rev_check_d ;
+	51..100 : sw_fqa_gfx_rev_check_e ;
+	gfx_fqa ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_fqa_gfx_cargo_count_f, PERCENT_FULL){
+	1..50	: sw_fqa_gfx_rev_check_d ;
+	51..100 : sw_fqa_gfx_rev_check_f ;
+	gfx_fqa ;
+}
+
+
+random_switch(FEAT_TRAINS, SELF, sw_fqa_gfx_random, TRIGGER_VEHICLE_NEW_LOAD){
+	1 : sw_fqa_gfx_cargo_count_b ;
+	1 : sw_fqa_gfx_cargo_count_c ;
+	1 : sw_fqa_gfx_cargo_count_e ;
+	1 : sw_fqa_gfx_cargo_count_f ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_fqa_colours_2cc_check, colour_scheme_2){
+	1 : palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
 
 
 
-
-
+item (FEAT_TRAINS, item_fqa, 10028) {
+	property {
+		name: 							string(STR_NAME_FQA);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1966, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					35;
+		reliability_decay:				15;
+		cargo_allow_refit:				[GOOD, VBOD, VPTS, VEHI, ENSP];
+		loading_speed:					20;
+		cost_factor:					33;
+		running_cost_factor:			20;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							75 mph;
+		misc_flags:						bitmask();
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				VEHI;
+		cargo_capacity:					70;
+		weight:							23 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							7;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		default: 						sw_fqa_gfx_random;
+		purchase:						gfx_fqa_purchase;
+		colour_mapping:					sw_fqa_colours_2cc_check;
+	}
+}
 
 
 
