@@ -421,7 +421,6 @@ item (FEAT_TRAINS, item_tea_2, 10036) {
 		vehicle_life:					45;
 		reliability_decay:				7;
 		refittable_cargo_classes:		bitmask(CC_LIQUID, CC_POWDERIZED, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_HAZARDOUS);
 		//cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
 		cargo_disallow_refit:			[CLAY] ;
 		loading_speed:					20;
@@ -436,7 +435,7 @@ item (FEAT_TRAINS, item_tea_2, 10036) {
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
-		//default_cargo_type:				COAL;
+		default_cargo_type:				OIL_;
 		cargo_capacity:					65;
 		weight:							20 ton;
 		tractive_effort_coefficient:	0.07;
