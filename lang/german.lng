@@ -36,6 +36,8 @@ STR_PARAM_VEH_SELEC_CHOICE_TWO	            :Begrenzt
 STR_PARAM_VEH_SELEC_CHOICE_THREE	        :Normal
 STR_PARAM_VEH_SELEC_CHOICE_FOUR	            :Erweitert
 
+STR_WARNING_BRSET                   :Sie haben sowohl das „Representative UK Trainset (RUKTS)“ als auch das „British Rail Set (BRSet)“ aktiviert. Das wird nichts kaputt machen, aber es wird wahrscheinlich verwirrend sein. Erwägen Sie für ein optimales Erlebnis, eines dieser Sets zu deaktivieren
+
 STR_LIVERY_BRGREEN	                        : British Railways {GOLD}(Grün) 
 STR_LIVERY_BRGREEN_YELLOW                   : British Railways {GOLD}(Grün mit Gelben Panel) 
 STR_LIVERY_BRELECTRIC                       : British Railways {GOLD}(Elektrisch Blue) 

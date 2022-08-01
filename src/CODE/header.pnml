@@ -146,3 +146,8 @@ basecost{
 	PR_RUNNING_TRAIN_DIESEL   : param[4] ;
 	PR_RUNNING_TRAIN_ELECTRIC : param[4] ;
 }
+
+if(param["brv2", 1] != 0)
+{
+    error(ERROR,string(STR_WARNING_BRSET));
+}
