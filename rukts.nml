@@ -1378,12 +1378,12 @@ item (FEAT_TRAINS, item_vicsub, 9071){
 
 //Spritesets
 
-spriteset(gfx_mk1_base,		"gfx/WAGON/mark_1.png")	{template_8_4_networker(0,	0	)}
-spriteset(gfx_mk1_lined,	"gfx/WAGON/mark_1.png")	{template_8_4_networker(0,	25	)}
-spriteset(gfx_mk1_brblue,	"gfx/WAGON/mark_1.png")	{template_8_4_networker(0,	50	)}
-spriteset(gfx_mk1_nse,		"gfx/WAGON/mark_1.png")	{template_8_4_networker(0,	75	)}
-spriteset(gfx_mk1_ic,		"gfx/WAGON/mark_1.png")	{template_8_4_networker(0,	100	)}
-spriteset(gfx_mk1_rr,		"gfx/WAGON/mark_1.png")	{template_8_4_networker(0,	125	)}
+spriteset(gfx_mk1_base,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	0	)}
+spriteset(gfx_mk1_lined,	"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	25	)}
+spriteset(gfx_mk1_brblue,	"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	50	)}
+spriteset(gfx_mk1_nse,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	75	)}
+spriteset(gfx_mk1_ic,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	100	)}
+spriteset(gfx_mk1_rr,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	125	)}
 
 //Purchase sprites
 
@@ -8857,7 +8857,7 @@ switch(FEAT_TRAINS, SELF, sw_coronation_colours_auto, current_year){
 }
 
 switch(FEAT_TRAINS, SELF, sw_coronation_colours_manual, cargo_subtype){
-	0 : palette_2cc(COLOUR_BLUE, COLOUR_YELLOW) ;
+	0 : palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;
 	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
 	5 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
