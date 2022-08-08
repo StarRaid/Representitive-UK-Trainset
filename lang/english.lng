@@ -233,6 +233,7 @@ STR_LIVERY_SOUTHERN_RAILWAY_LINED			: Southern Railway {GOLD}(Lined Green)
 STR_LIVERY_GWR								: Great Western Railway
 STR_LIVERY_LMS								: London, Midland & Scotland
 STR_LIVERY_LMS_SMOOTH						: London, Midland & Scotland {GOLD}(Streamlined)
+STR_LIVERY_LMS_BLUE							: London, Midland & Scotland {GOLD}(Blue)
 STR_LIVERY_LNER_1923						: London & North Eastern Railway
 STR_LIVERY_BR_BLACK							: British Railways {GOLD}(Black)
 STR_LIVERY_BR_NAVY							: British Railways {GOLD}(Navy)
@@ -354,6 +355,7 @@ STR_NAME_MERCHNAV_REBUILT		:2-6-4 Rebuilt Merchant Navy (Steam)
 STR_NAME_BULLEID_LIGHT			:2-6-4 Light Pacific (Steam)
 STR_NAME_BULLEID_LIGHT_REBUILT	:2-6-4 Rebuilt Light Pacific (Steam)
 STR_NAME_BULLEID_Q1				:0-6-0 Bulleid "Q1" (Steam)
+STR_NAME_CORONATION				:4-6-2 Coronation (Steam)
 
 STR_NAME_AL6				 :EE AL6 (Electric)
 STR_NAME_87					 :BREL 87 (Electric)
@@ -518,6 +520,7 @@ STR_NAME_MERCHNAV_REBUILT_ALT		:BR Rebuilt Merchant Navy (Steam)
 STR_NAME_BULLEID_LIGHT_ALT			:SR Light Pacific (Steam)
 STR_NAME_BULLEID_LIGHT_REBUILT_ALT	:BR Rebuilt Light Pacific (Steam)
 STR_NAME_BULLEID_Q1_ALT				:BR Q1 Class (Steam)
+STR_NAME_CORONATION_ALT				:LMS Coronation Class (Steam)
 
 STR_NAME_AL6_ALT			:BR Class 86 (Electric)
 STR_NAME_87_ALT				:BR Class 87 (Electric)

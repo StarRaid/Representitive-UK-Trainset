@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 83 ;
+	version: 85 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -5138,7 +5138,6 @@ item (FEAT_TRAINS, item_tea_2, 10036) {
 		vehicle_life:					45;
 		reliability_decay:				7;
 		refittable_cargo_classes:		bitmask(CC_LIQUID, CC_POWDERIZED, CC_COVERED);
-		non_refittable_cargo_classes:	bitmask(CC_HAZARDOUS);
 		//cargo_allow_refit:				[GOOD, WOOD, STEL, PAPR, BDMT, BOOM, BRCK, CERA, COPR, ENSP, GLAS, METL, NICK, PIPE, WDPR, SCMT, MNSP, FOOD, FRUT, SUGR, BEER, DYES, FERT, FMSP, JAVA, NUTS, PLAS, VPTS, FISH, MILK, ZINC];
 		cargo_disallow_refit:			[CLAY] ;
 		loading_speed:					20;
@@ -5153,7 +5152,7 @@ item (FEAT_TRAINS, item_tea_2, 10036) {
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
-		//default_cargo_type:				COAL;
+		default_cargo_type:				OIL_;
 		cargo_capacity:					65;
 		weight:							20 ton;
 		tractive_effort_coefficient:	0.07;
@@ -8288,6 +8287,14 @@ item (FEAT_TRAINS, item_merchnav_rebuilt, 1900){
 }
 }
 
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_merchnav_rebuilt, 1900){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
 
 
 
@@ -8480,6 +8487,14 @@ item (FEAT_TRAINS, item_lightpacific, 1801){
 }
 }
 
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_lightpacific, 1801){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
 
 
 
@@ -8562,7 +8577,13 @@ item (FEAT_TRAINS, item_lightpacific_rebuilt, 1901){
 }
 }
 
-
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_lightpacific_rebuilt, 1901){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 
 
 
@@ -8786,6 +8807,197 @@ item (FEAT_TRAINS, item_q1, 1802){
 
 
 
+
+
+
+
+# 1 "rukts.pnml" 3
+# 1 "src/STEAM_LOCO/lms_coronation.pnml" 1
+
+//MERCHANT NAVY
+
+
+spriteset(gfx_coronation						, "gfx/STEAM_LOCO/midland_region.png"	){	template_7_8_2		(0	,0	)}
+spriteset(gfx_coronation_rebuilt				, "gfx/STEAM_LOCO/midland_region.png"	){	template_7_8_2		(0	,25	)}
+spriteset(gfx_coronation_black_rebuilt			, "gfx/STEAM_LOCO/midland_region.png"	){	template_7_8_2		(0	,50	)}
+spriteset(gfx_coronation_red					, "gfx/STEAM_LOCO/midland_region.png"	){	template_7_8_2		(0	,75	)}
+spriteset(gfx_coronation_red_rebuilt			, "gfx/STEAM_LOCO/midland_region.png"	){	template_7_8_2		(0	,100)}
+
+spriteset(gfx_coronation_t						, "gfx/STEAM_LOCO/midland_region.png"	){	template_4_8		(162,0	)}
+spriteset(gfx_coronation_rebuilt_t				, "gfx/STEAM_LOCO/midland_region.png"	){	template_4_8		(162,25	)}
+spriteset(gfx_coronation_black_rebuilt_t		, "gfx/STEAM_LOCO/midland_region.png"	){	template_4_8		(162,50	)}
+spriteset(gfx_coronation_red_t					, "gfx/STEAM_LOCO/midland_region.png"	){	template_4_8		(162,75	)}
+spriteset(gfx_coronation_red_rebuilt_t			, "gfx/STEAM_LOCO/midland_region.png"	){	template_4_8		(162,100)}
+
+spriteset(gfx_coronation_purchase_rebuilt		, "gfx/STEAM_LOCO/midland_region.png"	){	template_purchase	(289,25	)}
+
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_coronation_gfx_manual, cargo_subtype){
+	 1 : gfx_coronation_red ;
+	 2 : gfx_coronation_rebuilt ;
+	 3 : gfx_coronation_red_rebuilt ;
+	 4 : gfx_coronation_black_rebuilt ;
+	 5 : gfx_coronation_rebuilt ;
+	gfx_coronation ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_coronation_gfx_manual_check, livery_choice){
+	1 : sw_coronation_gfx_manual ;
+	gfx_coronation_rebuilt ;
+}
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_coronation_colours_auto, current_year){
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_coronation_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_BLUE, COLOUR_YELLOW) ;
+	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+	5 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_coronation_colours_manual_check, livery_choice){
+	1 : sw_coronation_colours_manual ;
+	sw_coronation_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_coronation_colours_2cc_check, colour_scheme_1){
+	1 : sw_coronation_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_coronation_purchase_colours_2cc_check, colour_scheme_1){
+	1 : sw_coronation_colours_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_coronation_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_LMS_BLUE) ;
+	 1 : string(STR_LIVERY_LMS_SMOOTH) ;
+	 2 : string(STR_LIVERY_BR_NAVY) ;
+	 3 : string(STR_LIVERY_LMS) ;
+	 4 : string(STR_LIVERY_BR_BLACK) ;
+	 5 : string(STR_LIVERY_BR_BRUNSWICK) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_coronation_refit_text_check, livery_choice){
+	1 : sw_coronation_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+
+//Tender
+
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_coronation_t_gfx_manual, cargo_subtype){
+	 1 : gfx_coronation_red_t ;
+	 2 : gfx_coronation_rebuilt_t ;
+	 3 : gfx_coronation_red_rebuilt_t ;
+	 4 : gfx_coronation_black_rebuilt_t ;
+	 5 : gfx_coronation_rebuilt_t ;
+	gfx_coronation_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_coronation_t_gfx_manual_check, livery_choice){
+	1 : sw_coronation_t_gfx_manual ;
+	gfx_coronation_rebuilt_t ;
+}
+
+
+
+
+//Item
+
+item(FEAT_TRAINS, item_coronation, 1700){
+	property{
+		name							: string(STR_NAME_CORONATION) ;  
+		climates_available				: ALL_CLIMATES ;
+		introduction_date				: date(1937,1,1) ;
+		refit_cost						: 0 ;
+		refittable_cargo_classes		: 0 ;
+		cargo_allow_refit				: [MAIL, GOOD] ;
+		cargo_capacity					: 1 ;
+		air_drag_coefficient			: 0.07 ;
+		
+		model_life						: 25 ;
+		vehicle_life					: 35 ;
+		cost_factor						: 240 ;
+		running_cost_factor				: 230 ;
+		length							: 7 ;
+		reliability_decay				: 20 ;
+		
+		speed							: 110 mph ;
+		power							: 2501 hp ;
+		weight							: 167 ton ;
+		tractive_effort_coefficient		: 0.16 ;
+		
+		track_type						: RAIL ;
+		engine_class					: ENGINE_CLASS_STEAM ;
+		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_STEAM ;
+		running_cost_base				: RUNNING_COST_STEAM ;
+		
+		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id						: SPRITE_ID_NEW_TRAIN ;
+		dual_headed						: 0 ;
+	}
+	graphics{
+		default							: sw_coronation_gfx_manual_check ;
+		colour_mapping					: sw_coronation_colours_2cc_check ;
+		purchase						: gfx_coronation_purchase_rebuilt ;
+		purchase_colour_mapping			: sw_coronation_purchase_colours_2cc_check ;
+		//sound_effect					: sw_sfx_diesel_loco_ee_2 ;
+		create_effect					: vfx_steam ;
+		cargo_subtype_text				: sw_coronation_refit_text_check ;
+		purchase_cargo_capacity			: 0 ;
+		cargo_capacity					: return 0 ;
+		can_attach_wagon				: sw_all_but_MU90;
+		running_cost_factor				: return(current_speed == 0 ? 85 : 230) ;
+		articulated_part				: sw_tender_loco ;
+		purchase_running_cost_factor	: 230 ;
+	}
+	livery_override(item_tender){
+		default							: sw_coronation_t_gfx_manual_check ;
+		colour_mapping					: sw_coronation_colours_2cc_check ;
+		length							: 4 ;
+		//cargo_subtype_text				: sw_coronation_refit_text_check ;
+		cargo_capacity:					return 0;
+		purchase_cargo_capacity:		0 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_coronation, 1700){
+	property{
+		name                           : string(STR_NAME_CORONATION_ALT) ;
+	}
+}
+}
+
+if (steam_selection < 2){
+item (FEAT_TRAINS, item_coronation, 1700){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 
 
 

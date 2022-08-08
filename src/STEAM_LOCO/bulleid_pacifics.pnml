@@ -251,6 +251,14 @@ item (FEAT_TRAINS, item_merchnav_rebuilt, 1900){
 }
 }
 
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_merchnav_rebuilt, 1900){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
 
 
 
@@ -443,6 +451,14 @@ item (FEAT_TRAINS, item_lightpacific, 1801){
 }
 }
 
+if (vehicle_selection < 1){
+item (FEAT_TRAINS, item_lightpacific, 1801){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
 
 
 
@@ -525,7 +541,13 @@ item (FEAT_TRAINS, item_lightpacific_rebuilt, 1901){
 }
 }
 
-
+if (vehicle_selection < 2){
+item (FEAT_TRAINS, item_lightpacific_rebuilt, 1901){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
 
 
 
