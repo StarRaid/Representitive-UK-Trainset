@@ -36,6 +36,7 @@ disable_item(FEAT_TRAINS);
 
 #include "src/STEAM_LOCO/mr_1377.pnml"
 #include "src/STEAM_LOCO/lbscr_e4.pnml"
+#include "src/STEAM_LOCO/lord_nelson.pnml"
 #include "src/STEAM_LOCO/bulleid_pacifics.pnml"
 #include "src/STEAM_LOCO/lms_coronation.pnml"
 

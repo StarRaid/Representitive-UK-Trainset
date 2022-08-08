@@ -230,6 +230,7 @@ STR_LIVERY_MIDLAND_RAILWAY_LATE				: Midland Railway {GOLD}(Red)
 STR_LIVERY_LBSCR							: London, Brighton & South Coast Railway
 STR_LIVERY_SOUTHERN_RAILWAY					: Southern Railway
 STR_LIVERY_SOUTHERN_RAILWAY_LINED			: Southern Railway {GOLD}(Lined Green)
+STR_LIVERY_SOUTHERN_RAILWAY_DEFLECTORS		: Southern Railway {GOLD}(Smoke deflectors)
 STR_LIVERY_GWR								: Great Western Railway
 STR_LIVERY_LMS								: London, Midland & Scotland
 STR_LIVERY_LMS_SMOOTH						: London, Midland & Scotland {GOLD}(Streamlined)
@@ -349,7 +350,8 @@ STR_NAME_BRAKE_LMS				:20 Tonne Brake Van
 
 STR_NAME_MR_1377				:0-6-0T "Half-Cab" (Steam)
 STR_NAME_MR_115					:4-2-2 "Spinner" (Steam)
-STR_NAME_LBSC_E4				:0-6-2T Brighton "Thomas" (Steam)
+STR_NAME_LBSC_E4				:0-6-2T Billinton "Thomas" (Steam)
+STR_NAME_NELSON					:2-6-4 Maunsell "Lord" (Steam)
 STR_NAME_MERCHNAV				:2-6-4 Merchant Navy (Steam)
 STR_NAME_MERCHNAV_REBUILT		:2-6-4 Rebuilt Merchant Navy (Steam)
 STR_NAME_BULLEID_LIGHT			:2-6-4 Light Pacific (Steam)
@@ -515,11 +517,12 @@ STR_NAME_DBSO_ALT			:BREL DBSO
 STR_NAME_MR_1377_ALT				:MR 1377 Class (Steam)
 STR_NAME_MR_115_ALT					:MR 115 Class (Steam)
 STR_NAME_LBSC_E4_ALT				:LB&SCR E4 Class (Steam)
+STR_NAME_NELSON_ALT					:SR Lord Nelson (Steam)
 STR_NAME_MERCHNAV_ALT				:SR Merchant Navy (Steam)
 STR_NAME_MERCHNAV_REBUILT_ALT		:BR Rebuilt Merchant Navy (Steam)
 STR_NAME_BULLEID_LIGHT_ALT			:SR Light Pacific (Steam)
 STR_NAME_BULLEID_LIGHT_REBUILT_ALT	:BR Rebuilt Light Pacific (Steam)
-STR_NAME_BULLEID_Q1_ALT				:BR Q1 Class (Steam)
+STR_NAME_BULLEID_Q1_ALT				:SR Q1 Class (Steam)
 STR_NAME_CORONATION_ALT				:LMS Coronation Class (Steam)
 
 STR_NAME_AL6_ALT			:BR Class 86 (Electric)

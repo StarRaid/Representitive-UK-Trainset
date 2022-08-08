@@ -8033,6 +8033,183 @@ item (FEAT_TRAINS, item_lbsc_e4, 1401){
 
 
 # 1 "rukts.pnml" 3
+# 1 "src/STEAM_LOCO/lord_nelson.pnml" 1
+
+//MERCHANT NAVY
+
+
+spriteset(gfx_nelson_a						, "gfx/STEAM_LOCO/SR.png"	){	template_7_8_2		(0	,0	)}
+spriteset(gfx_nelson_a_smoke				, "gfx/STEAM_LOCO/SR.png"	){	template_7_8_2		(0	,0	)}
+spriteset(gfx_nelson_a_br_black				, "gfx/STEAM_LOCO/SR.png"	){	template_7_8_2		(0	,0	)}
+
+spriteset(gfx_nelson_b						, "gfx/STEAM_LOCO/SR.png"	){	template_7_8_2		(0	,25	)}
+spriteset(gfx_nelson_b_smoke				, "gfx/STEAM_LOCO/SR.png"	){	template_7_8_2		(0	,25	)}
+spriteset(gfx_nelson_b_br_black				, "gfx/STEAM_LOCO/SR.png"	){	template_7_8_2		(0	,25	)}
+
+spriteset(gfx_nelson_t						, "gfx/STEAM_LOCO/SR.png"	){	template_4_8		(162,0	)}
+spriteset(gfx_nelson_t_br_black				, "gfx/STEAM_LOCO/SR.png"	){	template_4_8		(162,0	)}
+
+spriteset(gfx_nelson_purchase				, "gfx/STEAM_LOCO/SR.png"	){	template_purchase	(162,25	)}
+
+switch(FEAT_TRAINS, SELF, sw_nelson_motion, motion_counter % 2){1 : gfx_nelson_a ; gfx_nelson_b ;}
+switch(FEAT_TRAINS, SELF, sw_nelson_motion_smoke, motion_counter % 2){1 : gfx_nelson_a_smoke ; gfx_nelson_b_smoke ;}
+switch(FEAT_TRAINS, SELF, sw_nelson_motion_br_black, motion_counter % 2){1 : gfx_nelson_a_br_black ; gfx_nelson_b_br_black ;}
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_nelson_gfx_manual, cargo_subtype){
+	0 : sw_nelson_motion ;
+	3 : sw_nelson_motion_br_black ;
+	sw_nelson_motion_smoke ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nelson_gfx_manual_check, livery_choice){
+	1 : sw_nelson_gfx_manual ;
+	sw_nelson_motion_smoke ;
+}
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_nelson_colours_manual, cargo_subtype){
+	2 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nelson_colours_manual_check, livery_choice){
+	1 : sw_nelson_colours_manual ;
+	palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nelson_colours_2cc_check, colour_scheme_1){
+	1 : sw_nelson_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nelson_purchase_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_nelson_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_SOUTHERN) ;
+	 1 : string(STR_LIVERY_SOUTHERN_RAILWAY_DEFLECTORS) ;
+	 2 : string(STR_LIVERY_BR_BRUNSWICK) ;
+	 3 : string(STR_LIVERY_BR_BLACK) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nelson_refit_text_check, livery_choice){
+	1 : sw_nelson_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+
+//Tender
+
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_nelson_t_gfx_manual, cargo_subtype){
+	3 : gfx_nelson_t_br_black ;
+	gfx_nelson_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_nelson_t_gfx_manual_check, livery_choice){
+	1 : sw_nelson_t_gfx_manual ;
+	gfx_nelson_t ;
+}
+
+
+
+
+//Item
+
+item(FEAT_TRAINS, item_nelson, 1804){
+	property{
+		name							: string(STR_NAME_NELSON) ;  
+		climates_available				: ALL_CLIMATES ;
+		introduction_date				: date(1926,1,1) ;
+		refit_cost						: 0 ;
+		refittable_cargo_classes		: 0 ;
+		cargo_allow_refit				: [MAIL, GOOD] ;
+		cargo_capacity					: 1 ;
+		air_drag_coefficient			: 0.0888888888888889 ;
+		
+		model_life						: 30 ;
+		vehicle_life					: 40 ;
+		cost_factor						: 196 ;
+		running_cost_factor				: 187 ;
+		length							: 7 ;
+		reliability_decay				: 20 ;
+		
+		speed							: 90 mph ;
+		power							: 1863 hp ;
+		weight							: 144 ton ;
+		tractive_effort_coefficient		: 0.18 ;
+		
+		track_type						: RAIL ;
+		engine_class					: ENGINE_CLASS_STEAM ;
+		effect_spawn_model_and_powered	: EFFECT_SPAWN_MODEL_STEAM ;
+		running_cost_base				: RUNNING_COST_STEAM ;
+		
+		misc_flags						: bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id						: SPRITE_ID_NEW_TRAIN ;
+		dual_headed						: 0 ;
+	}
+	graphics{
+		default							: sw_nelson_gfx_manual_check ;
+		colour_mapping					: sw_nelson_colours_2cc_check ;
+		purchase						: gfx_nelson_purchase ;
+		purchase_colour_mapping			: sw_nelson_purchase_colours_2cc_check ;
+		//sound_effect					: sw_sfx_diesel_loco_ee_2 ;
+		create_effect					: vfx_steam ;
+		cargo_subtype_text				: sw_nelson_refit_text_check ;
+		purchase_cargo_capacity			: 0 ;
+		cargo_capacity					: return 0 ;
+		can_attach_wagon				: sw_all_but_MU90;
+		running_cost_factor				: return(current_speed == 0 ? 85 : 187) ;
+		articulated_part				: sw_tender_loco ;
+		purchase_running_cost_factor	: 187 ;
+	}
+	livery_override(item_tender){
+		default							: sw_nelson_t_gfx_manual_check ;
+		colour_mapping					: sw_nelson_colours_2cc_check ;
+		length							: 4 ;
+		//cargo_subtype_text				: sw_nelson_refit_text_check ;
+		cargo_capacity:					return 0;
+		purchase_cargo_capacity:		0 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_nelson, 1804){
+	property{
+		name                           : string(STR_NAME_NELSON_ALT) ;
+	}
+}
+}
+
+if (steam_selection < 1){
+item (FEAT_TRAINS, item_nelson, 1804){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+
+# 1 "rukts.pnml" 3
 # 1 "src/STEAM_LOCO/bulleid_pacifics.pnml" 1
 
 //MERCHANT NAVY
@@ -33737,13 +33914,22 @@ item (FEAT_TRAINS, item_800, 800){
 if(purchase_list_sort == 0 ){
 sort(FEAT_TRAINS,[
 2000,
+1100,
 1401,
+1103,
+1101,
+1102,
 1403,
 1404,
+1803,
+1104,
+1802,
+1804,
 1800,
 1801,
 1900,
 1901,
+1700,
 8,
 20,
 37,
@@ -33888,9 +34074,18 @@ sort(FEAT_TRAINS,[
 if(purchase_list_sort > 0 ){
 sort(FEAT_TRAINS,[
 2000,
+1100,
+1101,
+1103,
+1102,
+1104,
+1700,
 1401,
 1403,
 1404,
+1803,
+1802,
+1804,
 1800,
 1801,
 1900,
