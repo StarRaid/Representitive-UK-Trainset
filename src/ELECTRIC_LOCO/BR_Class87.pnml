@@ -2,24 +2,24 @@
 
 //Spritesets
 
-spriteset(gfx_br87_brblue              , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double(0,0)}
-spriteset(gfx_br87_brblue_reverse      , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double_reverse(0,0)}
-spriteset(gfx_br87_intercity           , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double(0,25)}
-spriteset(gfx_br87_intercity_reverse   , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double_reverse(0,25)}
-spriteset(gfx_br87_virgin              , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double(0,50)}
-spriteset(gfx_br87_virgin_reverse      , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double_reverse(0,50)}
-spriteset(gfx_br87_calsleeper          , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double(0,75)}
-spriteset(gfx_br87_calsleeper_reverse  , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double_reverse(0,75)}
-spriteset(gfx_br87_gbrf                , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double(0,100)}
-spriteset(gfx_br87_gbrf_reverse        , "gfx/ELECTRIC_LOCO/class_87.png"){template_Mk2_double_reverse(0,100)}
+spriteset(gfx_br87_brblue              , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_2(0,0)}
+spriteset(gfx_br87_brblue_reverse      , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_rev_2(0,0)}
+spriteset(gfx_br87_intercity           , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_2(0,25)}
+spriteset(gfx_br87_intercity_reverse   , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_rev_2(0,25)}
+spriteset(gfx_br87_virgin              , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_2(0,50)}
+spriteset(gfx_br87_virgin_reverse      , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_rev_2(0,50)}
+spriteset(gfx_br87_calsleeper          , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_2(0,75)}
+spriteset(gfx_br87_calsleeper_reverse  , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_rev_2(0,75)}
+spriteset(gfx_br87_gbrf                , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_2(0,100)}
+spriteset(gfx_br87_gbrf_reverse        , "gfx/ELECTRIC_LOCO/class_87.png"){template_8_8_rev_2(0,100)}
 
 spriteset(gfx_br87_brblue_purchase     , "gfx/ELECTRIC_LOCO/class_87.png"){template_purchase(178,0)}
 spriteset(gfx_br87_intercity_purchase  , "gfx/ELECTRIC_LOCO/class_87.png"){template_purchase(178,25)}
 spriteset(gfx_br87_virgin_purchase     , "gfx/ELECTRIC_LOCO/class_87.png"){template_purchase(178,50)}
 spriteset(gfx_br87_calsleeper_purchase , "gfx/ELECTRIC_LOCO/class_87.png"){template_purchase(178,75)}
 
-spriteset(gfx_br87_headlight     , "gfx/FIXTURES/class_87_headlights.png"){template_Mk2_double(0,0)}
-spriteset(gfx_br87_taillight     , "gfx/FIXTURES/class_87_headlights.png"){template_Mk2_double(0,25)}
+spriteset(gfx_br87_headlight     , "gfx/FIXTURES/class_87_headlights.png"){template_8_8_2(0,0)}
+spriteset(gfx_br87_taillight     , "gfx/FIXTURES/class_87_headlights.png"){template_8_8_2(0,25)}
 
 //Switches
 

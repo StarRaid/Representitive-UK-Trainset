@@ -2,22 +2,24 @@
 
 //Spritesets
 
-spriteset(gfx_al6_brblue				, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double(  0,  0)}
-spriteset(gfx_al6_brblue_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double_reverse(  0,  0)}
-spriteset(gfx_al6_acblue				, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double(  0, 25)}
-spriteset(gfx_al6_acblue_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double_reverse(  0, 25)}
-spriteset(gfx_al6_intercity				, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double(  0, 50)}
-spriteset(gfx_al6_intercity_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double_reverse(  0, 50)}
-spriteset(gfx_al6_railfreight			, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double(  0, 75)}
-spriteset(gfx_al6_railfreight_rev		, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double_reverse(  0, 75)}
-spriteset(gfx_al6_virgin				, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double(  0,100)}
-spriteset(gfx_al6_virgin_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double_reverse(  0,100)}
-spriteset(gfx_al6_freightliner			, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double(  0,125)}
-spriteset(gfx_al6_freightliner_rev		, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double_reverse(  0,125)}
-spriteset(gfx_al6_colasrail				, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double(  0,150)}
-spriteset(gfx_al6_colasrail_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double_reverse(  0,150)}
-spriteset(gfx_al6_railexpress			, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double(  0,175)}
-spriteset(gfx_al6_railexpress_rev		, "gfx/ELECTRIC_LOCO/class_86.png"){template_Mk2_double_reverse(  0,175)}
+spriteset(gfx_al6_brblue				, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0,  0)}
+spriteset(gfx_al6_brblue_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,  0)}
+spriteset(gfx_al6_acblue				, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0, 25)}
+spriteset(gfx_al6_acblue_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0, 25)}
+spriteset(gfx_al6_intercity				, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0, 50)}
+spriteset(gfx_al6_intercity_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0, 50)}
+spriteset(gfx_al6_railfreight			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0, 75)}
+spriteset(gfx_al6_railfreight_rev		, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0, 75)}
+spriteset(gfx_al6_virgin				, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0,100)}
+spriteset(gfx_al6_virgin_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,100)}
+spriteset(gfx_al6_freightliner			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0,125)}
+spriteset(gfx_al6_freightliner_rev		, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,125)}
+spriteset(gfx_al6_colasrail				, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0,150)}
+spriteset(gfx_al6_colasrail_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,150)}
+spriteset(gfx_al6_railexpress			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0,175)}
+spriteset(gfx_al6_railexpress_rev		, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,175)}
+spriteset(gfx_al6_ews					, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0,200)}
+spriteset(gfx_al6_ews_rev				, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,200)}
 
 spriteset(gfx_al6_brblue_purchase		, "gfx/ELECTRIC_LOCO/class_86.png"){template_purchase(178,  0)}
 spriteset(gfx_al6_acblue_purchase		, "gfx/ELECTRIC_LOCO/class_86.png"){template_purchase(178, 25)}
@@ -27,8 +29,8 @@ spriteset(gfx_al6_virgin_purchase		, "gfx/ELECTRIC_LOCO/class_86.png"){template_
 spriteset(gfx_al6_freightliner_purchase	, "gfx/ELECTRIC_LOCO/class_86.png"){template_purchase(178,125)}
 spriteset(gfx_al6_colasrail_purchase	, "gfx/ELECTRIC_LOCO/class_86.png"){template_purchase(178,150)}
 
-spriteset(gfx_al6_headlight				, "gfx/FIXTURES/class_86_headlights.png"){template_Mk2_double(0,0)}
-spriteset(gfx_al6_taillight				, "gfx/FIXTURES/class_86_headlights.png"){template_Mk2_double(0,25)}
+spriteset(gfx_al6_headlight				, "gfx/FIXTURES/class_86_headlights.png"){template_8_8_2(0,0)}
+spriteset(gfx_al6_taillight				, "gfx/FIXTURES/class_86_headlights.png"){template_8_8_2(0,25)}
 
 
 //Switches
@@ -43,6 +45,7 @@ switch(FEAT_TRAINS, PARENT, sw_al6_gfx_virgin_reverse_check , vehicle_is_reverse
 switch(FEAT_TRAINS, PARENT, sw_al6_gfx_freightliner_reverse_check , vehicle_is_reversed){	1 : gfx_al6_freightliner_rev; gfx_al6_freightliner ;}
 switch(FEAT_TRAINS, PARENT, sw_al6_gfx_colasrail_reverse_check , vehicle_is_reversed){		1 : gfx_al6_colasrail_rev 	; gfx_al6_colasrail ;}
 switch(FEAT_TRAINS, PARENT, sw_al6_gfx_railexpress_reverse_check , vehicle_is_reversed){	1 : gfx_al6_railexpress_rev ; gfx_al6_railexpress ;}
+switch(FEAT_TRAINS, PARENT, sw_al6_gfx_ews_reverse_check , vehicle_is_reversed){			1 : gfx_al6_ews_rev 		; gfx_al6_ews ;}
 
 
 //Automatic liveries
@@ -60,6 +63,7 @@ switch(FEAT_TRAINS, SELF, sw_al6_gfx_auto_private1, most_common_cargo_type){
 
 switch(FEAT_TRAINS, SELF, sw_al6_gfx_auto_private2, most_common_cargo_type){
 	GOOD : sw_al6_gfx_freightliner_reverse_check ;
+	FOOD : sw_al6_gfx_freightliner_reverse_check ;
 	sw_al6_gfx_colasrail_reverse_check ;
 }
 
@@ -84,6 +88,7 @@ switch(FEAT_TRAINS, SELF, sw_al6_gfx_manual, cargo_subtype){
 	5 : sw_al6_gfx_virgin_reverse_check ;
 	6 : sw_al6_gfx_freightliner_reverse_check ;
 	7 : sw_al6_gfx_colasrail_reverse_check ;
+	8 : sw_al6_gfx_ews_reverse_check ;
 	sw_al6_gfx_brblue_reverse_check ;
 }
 
@@ -133,6 +138,7 @@ switch(FEAT_TRAINS, SELF, sw_al6_refit_text, cargo_subtype){
 	5 : string(STR_LIVERY_VIRGIN_TRAINS) ;
 	6 : string(STR_LIVERY_FREIGHTLINER) ;
 	7 : string(STR_LIVERY_COLAS) ;
+	8 : string(STR_LIVERY_EWS) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -184,6 +190,7 @@ switch(FEAT_TRAINS, SELF, sw_al6_colours_manual, cargo_subtype){
 	5 : palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 	6 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	7 : palette_2cc(COLOUR_YELLOW, company_colour2) ;
+	8 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
