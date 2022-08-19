@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 87 ;
+	version: 89 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -7581,7 +7581,7 @@ item (FEAT_TRAINS, item_cube, 9999) {
 # 1 "rukts.pnml" 3
 
 # 1 "src/STEAM_LOCO/mr_1377.pnml" 1
-// L&BSCR e4
+// MR 1377
 
 //Sprites
 
@@ -7721,8 +7721,8 @@ item(FEAT_TRAINS, item_mr_1377, 1103){
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
 		can_attach_wagon               : sw_all_but_MU90;
-		running_cost_factor            : return(current_speed == 0 ? 30 : 86) ;
-		purchase_running_cost_factor : 86 ;
+		running_cost_factor            : return(current_speed == 0 ? 10 : 50) ;
+		purchase_running_cost_factor : 50 ;
 	}
 }
 
@@ -8991,7 +8991,7 @@ item (FEAT_TRAINS, item_q1, 1802){
 # 1 "rukts.pnml" 3
 # 1 "src/STEAM_LOCO/lms_coronation.pnml" 1
 
-//MERCHANT NAVY
+// LMS Coronation Class
 
 
 spriteset(gfx_coronation						, "gfx/STEAM_LOCO/midland_region.png"	){	template_7_8_2		(0	,0	)}
@@ -9175,6 +9175,484 @@ item (FEAT_TRAINS, item_coronation, 1700){
 	}
 }
 }
+
+
+
+
+# 1 "rukts.pnml" 3
+# 1 "src/STEAM_LOCO/gwr_saddle.pnml" 1
+// GWR Saddle Tank
+
+//Sprites
+
+//spriteset(gfx_gwr_saddle					, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8			(200,75	)}
+//spriteset(gfx_gwr_saddle_rev				, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8_rev		(200,75	)}
+spriteset(gfx_gwr_saddle_short				, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8			(200,100)}
+spriteset(gfx_gwr_saddle_short_rev			, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8_rev		(200,100)}
+spriteset(gfx_gwr_saddle_lined				, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8			(200,125)}
+spriteset(gfx_gwr_saddle_lined_rev			, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8_rev		(200,125)}
+
+
+spriteset(gfx_gwr_saddle_wheels_a			, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8			(325,100)}
+spriteset(gfx_gwr_saddle_wheels_a_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8_rev		(325,100)}
+spriteset(gfx_gwr_saddle_wheels_b			, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8			(325,125)}
+spriteset(gfx_gwr_saddle_wheels_b_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8_rev		(325,125)}
+
+spriteset(gfx_gwr_saddle_purchase			, "gfx/STEAM_LOCO/gwr.png"	){	template_purchase_short	(325,75	)}
+
+
+//Switches
+
+
+//Graphics
+
+
+/*Base
+switch(FEAT_TRAINS, PARENT, sw_gwr_saddle_gfx_rev_check_a,			vehicle_is_reversed){ 1 : gfx_gwr_saddle ; gfx_gwr_saddle_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_gwr_saddle_gfx_rev_check_b,			vehicle_is_reversed){ 1 : gfx_gwr_saddle_rev ; gfx_gwr_saddle ; }
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_gfx_pos_check_m,			position_in_vehid_chain){ 0 : gfx_gwr_saddle_rev ; sw_gwr_saddle_gfx_rev_check_b ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_gfx_pos_check_b,			position_in_vehid_chain_from_end){ 0 : gfx_gwr_saddle ; sw_gwr_saddle_gfx_pos_check_m ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_gfx_pos_check_f,			num_vehs_in_vehid_chain ){ 1 : sw_gwr_saddle_gfx_rev_check_a ; gfx_gwr_saddle_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_gfx_pos_check_a,			position_in_consist){ 0 : sw_gwr_saddle_gfx_pos_check_f ; sw_gwr_saddle_gfx_pos_check_b ;}*/
+
+//Short
+switch(FEAT_TRAINS, PARENT, sw_gwr_saddle_short_gfx_rev_check_a,	vehicle_is_reversed){ 1 : gfx_gwr_saddle_short ; gfx_gwr_saddle_short_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_gwr_saddle_short_gfx_rev_check_b,	vehicle_is_reversed){ 1 : gfx_gwr_saddle_short_rev ; gfx_gwr_saddle_short ; }
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_short_gfx_pos_check_m,		position_in_vehid_chain){ 0 : gfx_gwr_saddle_short_rev ; sw_gwr_saddle_short_gfx_rev_check_b ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_short_gfx_pos_check_b,		position_in_vehid_chain_from_end){ 0 : gfx_gwr_saddle_short ; sw_gwr_saddle_short_gfx_pos_check_m ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_short_gfx_pos_check_f,		num_vehs_in_vehid_chain ){ 1 : sw_gwr_saddle_short_gfx_rev_check_a ; gfx_gwr_saddle_short_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_short_gfx_pos_check_a,		position_in_consist){ 0 : sw_gwr_saddle_short_gfx_pos_check_f ; sw_gwr_saddle_short_gfx_pos_check_b ;}
+
+//Lined
+switch(FEAT_TRAINS, PARENT, sw_gwr_saddle_lined_gfx_rev_check_a,	vehicle_is_reversed){ 1 : gfx_gwr_saddle_lined ; gfx_gwr_saddle_lined_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_gwr_saddle_lined_gfx_rev_check_b,	vehicle_is_reversed){ 1 : gfx_gwr_saddle_lined_rev ; gfx_gwr_saddle_lined ; }
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_lined_gfx_pos_check_m,		position_in_vehid_chain){ 0 : gfx_gwr_saddle_lined_rev ; sw_gwr_saddle_lined_gfx_rev_check_b ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_lined_gfx_pos_check_b,		position_in_vehid_chain_from_end){ 0 : gfx_gwr_saddle_lined ; sw_gwr_saddle_lined_gfx_pos_check_m ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_lined_gfx_pos_check_f,		num_vehs_in_vehid_chain ){ 1 : sw_gwr_saddle_lined_gfx_rev_check_a ; gfx_gwr_saddle_lined_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_lined_gfx_pos_check_a,		position_in_consist){ 0 : sw_gwr_saddle_lined_gfx_pos_check_f ; sw_gwr_saddle_lined_gfx_pos_check_b ;}
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_gfx_manual, cargo_subtype){
+	1 : sw_gwr_saddle_lined_gfx_pos_check_a ;
+	sw_gwr_saddle_short_gfx_pos_check_a ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_gfx_manual_check, livery_choice){
+	1 : sw_gwr_saddle_gfx_manual ;
+	sw_gwr_saddle_short_gfx_pos_check_a ;
+}
+
+
+
+
+//Sprite stack
+
+//Wheels
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_wheels, motion_counter % 2){
+	1 : gfx_gwr_saddle_wheels_a ;
+	gfx_gwr_saddle_wheels_b ;
+}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_wheels_rev, motion_counter % 2){
+	1 : gfx_gwr_saddle_wheels_a_rev ;
+	gfx_gwr_saddle_wheels_b_rev ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_gwr_saddle_wheels_gfx_rev_check_a,			vehicle_is_reversed){ 1 : sw_gwr_saddle_wheels ; sw_gwr_saddle_wheels_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_gwr_saddle_wheels_gfx_rev_check_b,			vehicle_is_reversed){ 1 : sw_gwr_saddle_wheels_rev ; sw_gwr_saddle_wheels ; }
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_wheels_gfx_pos_check_m,			position_in_vehid_chain){ 0 : sw_gwr_saddle_wheels_rev ; sw_gwr_saddle_wheels_gfx_rev_check_b ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_wheels_gfx_pos_check_b,			position_in_vehid_chain_from_end){ 0 : sw_gwr_saddle_wheels ; sw_gwr_saddle_wheels_gfx_pos_check_m ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_wheels_gfx_pos_check_f,			num_vehs_in_vehid_chain ){ 1 : sw_gwr_saddle_wheels_gfx_rev_check_a ; sw_gwr_saddle_wheels_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_wheels_gfx_pos_check_a,			position_in_consist){ 0 : sw_gwr_saddle_wheels_gfx_pos_check_f ; sw_gwr_saddle_wheels_gfx_pos_check_b ;}
+
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_gwr_saddle_gfx_manual_check ;
+	1 : sw_gwr_saddle_wheels_gfx_pos_check_a ;
+}
+
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_colours_manual, cargo_subtype){
+	1..2 : palette_2cc(COLOUR_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_colours_2cc_check, colour_scheme_1){
+	1 : sw_gwr_saddle_colours_manual ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_purchase_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+//Refit text
+
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_GWR) ;
+	 1 : string(STR_LIVERY_GWR_STRING,string(STR_LIVERY_LINED)) ;
+	 2 : string(STR_LIVERY_AVON) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_gwr_saddle_refit_text_check, livery_choice){
+	1 : sw_gwr_saddle_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+item(FEAT_TRAINS, item_gwr_saddle, 1513){
+	property{
+		name                           : string(STR_NAME_GWR_SADDLE) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1872,1,1) ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : 40 ;
+		vehicle_life                   : 72 ;
+		reliability_decay              : 11 ;
+		cost_factor                    : 40 ;
+		running_cost_base              : RUNNING_COST_STEAM ;
+		running_cost_factor            : 40 ;
+		speed                          : 20 mph ;
+		track_type                     : RAIL ;
+		power                          : 147 hp ;
+		weight                         : 24 ton ;
+		engine_class                   : ENGINE_CLASS_STEAM ;
+		tractive_effort_coefficient    : 0.21 ;
+		air_drag_coefficient           : 0.0888888888888889 ;
+		length                         : 4 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_STEAM ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : sw_gwr_saddle_spritestack ;
+		colour_mapping                 : sw_gwr_saddle_colours_2cc_check ;
+		purchase_colour_mapping		   : sw_gwr_saddle_purchase_colours_2cc_check ;
+		purchase                       : gfx_gwr_saddle_purchase ;
+		//sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
+		create_effect                  : vfx_steam ;
+		cargo_subtype_text             : sw_gwr_saddle_refit_text_check ;
+		purchase_cargo_capacity        : 0 ;
+		cargo_capacity                 : return 0 ;
+		can_attach_wagon               : sw_all_but_MU90;
+		running_cost_factor            : return(current_speed == 0 ? 10 : 40) ;
+		purchase_running_cost_factor : 40 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_gwr_saddle, 1513){
+	property{
+		name                           : string(STR_NAME_GWR_SADDLE_ALT) ;
+	}
+}
+}
+
+
+
+
+
+
+
+// GWR 1361 Class
+
+
+spriteset(gfx_gwr_1361					, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8			(200,175)}
+spriteset(gfx_gwr_1361_rev				, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8_rev		(200,175)}
+
+
+spriteset(gfx_gwr_1361_wheels_a			, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8			(330,175)}
+spriteset(gfx_gwr_1361_wheels_a_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8_rev		(330,175)}
+spriteset(gfx_gwr_1361_wheels_b			, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8			(330,200)}
+spriteset(gfx_gwr_1361_wheels_b_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8_rev		(330,200)}
+
+spriteset(gfx_gwr_1361_purchase			, "gfx/STEAM_LOCO/gwr.png"	){	template_purchase_short	(200,225)}
+
+
+//Base
+switch(FEAT_TRAINS, PARENT, sw_gwr_1361_gfx_rev_check_a,			vehicle_is_reversed){ 1 : gfx_gwr_1361 ; gfx_gwr_1361_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_gwr_1361_gfx_rev_check_b,			vehicle_is_reversed){ 1 : gfx_gwr_1361_rev ; gfx_gwr_1361 ; }
+
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_gfx_pos_check_m,			position_in_vehid_chain){ 0 : gfx_gwr_1361_rev ; sw_gwr_1361_gfx_rev_check_b ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_gfx_pos_check_b,			position_in_vehid_chain_from_end){ 0 : gfx_gwr_1361 ; sw_gwr_1361_gfx_pos_check_m ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_gfx_pos_check_f,			num_vehs_in_vehid_chain ){ 1 : sw_gwr_1361_gfx_rev_check_a ; gfx_gwr_1361_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_gfx_pos_check_a,			position_in_consist){ 0 : sw_gwr_1361_gfx_pos_check_f ; sw_gwr_1361_gfx_pos_check_b ;}
+
+
+
+//Wheels
+
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_wheels, motion_counter % 2){
+	1 : gfx_gwr_1361_wheels_a ;
+	gfx_gwr_1361_wheels_b ;
+}
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_wheels_rev, motion_counter % 2){
+	1 : gfx_gwr_1361_wheels_a_rev ;
+	gfx_gwr_1361_wheels_b_rev ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_gwr_1361_wheels_gfx_rev_check_a,			vehicle_is_reversed){ 1 : sw_gwr_1361_wheels ; sw_gwr_1361_wheels_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_gwr_1361_wheels_gfx_rev_check_b,			vehicle_is_reversed){ 1 : sw_gwr_1361_wheels_rev ; sw_gwr_1361_wheels ; }
+
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_wheels_gfx_pos_check_m,			position_in_vehid_chain){ 0 : sw_gwr_1361_wheels_rev ; sw_gwr_1361_wheels_gfx_rev_check_b ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_wheels_gfx_pos_check_b,			position_in_vehid_chain_from_end){ 0 : sw_gwr_1361_wheels ; sw_gwr_1361_wheels_gfx_pos_check_m ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_wheels_gfx_pos_check_f,			num_vehs_in_vehid_chain ){ 1 : sw_gwr_1361_wheels_gfx_rev_check_a ; sw_gwr_1361_wheels_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_wheels_gfx_pos_check_a,			position_in_consist){ 0 : sw_gwr_1361_wheels_gfx_pos_check_f ; sw_gwr_1361_wheels_gfx_pos_check_b ;}
+
+
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_gwr_1361_gfx_pos_check_a ;
+	1 : sw_gwr_1361_wheels_gfx_pos_check_a ;
+}
+
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_gwr_1361_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+item(FEAT_TRAINS, item_gwr_1361, 1561){
+	property{
+		name                           : string(STR_NAME_GWR_1361) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1910,1,1) ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : 30 ;
+		vehicle_life                   : 62 ;
+		reliability_decay              : 19 ;
+		cost_factor                    : 30 ;
+		running_cost_base              : RUNNING_COST_STEAM ;
+		running_cost_factor            : 30 ;
+		speed                          : 30 mph ;
+		track_type                     : RAIL ;
+		power                          : 244 hp ;
+		weight                         : 36 ton ;
+		engine_class                   : ENGINE_CLASS_STEAM ;
+		tractive_effort_coefficient    : 0.18 ;
+		air_drag_coefficient           : 0.0888888888888889 ;
+		length                         : 5 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_STEAM ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : sw_gwr_1361_spritestack ;
+		colour_mapping                 : sw_gwr_1361_colours_2cc_check ;
+		//purchase_colour_mapping		   : sw_gwr_1361_purchase_colours_2cc_check ;
+		purchase                       : gfx_gwr_1361_purchase ;
+		//sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
+		create_effect                  : vfx_steam ;
+		//cargo_subtype_text             : sw_gwr_1361_refit_text_check ;
+		purchase_cargo_capacity        : 0 ;
+		cargo_capacity                 : return 0 ;
+		can_attach_wagon               : sw_all_but_MU90;
+		running_cost_factor            : return(current_speed == 0 ? 10 : 30) ;
+		purchase_running_cost_factor   : 30 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_gwr_1361, 1561){
+	property{
+		name                           : string(STR_NAME_GWR_1361_ALT) ;
+	}
+}
+}
+
+
+if (steam_selection < 2){
+item (FEAT_TRAINS, item_gwr_1361, 1561){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+// GWR 1361 Class
+
+
+spriteset(gfx_gwr_buffalo					, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8			(200,200)}
+spriteset(gfx_gwr_buffalo_rev				, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8_rev		(200,200)}
+
+
+spriteset(gfx_gwr_buffalo_wheels_a			, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8			(330,225)}
+spriteset(gfx_gwr_buffalo_wheels_a_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8_rev		(330,225)}
+spriteset(gfx_gwr_buffalo_wheels_b			, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8			(330,250)}
+spriteset(gfx_gwr_buffalo_wheels_b_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8_rev		(330,250)}
+
+spriteset(gfx_gwr_buffalo_purchase			, "gfx/STEAM_LOCO/gwr.png"	){	template_purchase_short	(200,250)}
+
+
+//Base
+switch(FEAT_TRAINS, PARENT, sw_gwr_buffalo_gfx_rev_check_a,			vehicle_is_reversed){ 1 : gfx_gwr_buffalo ; gfx_gwr_buffalo_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_gwr_buffalo_gfx_rev_check_b,			vehicle_is_reversed){ 1 : gfx_gwr_buffalo_rev ; gfx_gwr_buffalo ; }
+
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_gfx_pos_check_m,			position_in_vehid_chain){ 0 : gfx_gwr_buffalo_rev ; sw_gwr_buffalo_gfx_rev_check_b ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_gfx_pos_check_b,			position_in_vehid_chain_from_end){ 0 : gfx_gwr_buffalo ; sw_gwr_buffalo_gfx_pos_check_m ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_gfx_pos_check_f,			num_vehs_in_vehid_chain ){ 1 : sw_gwr_buffalo_gfx_rev_check_a ; gfx_gwr_buffalo_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_gfx_pos_check_a,			position_in_consist){ 0 : sw_gwr_buffalo_gfx_pos_check_f ; sw_gwr_buffalo_gfx_pos_check_b ;}
+
+
+//Wheels
+
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_wheels, motion_counter % 2){
+	1 : gfx_gwr_buffalo_wheels_a ;
+	gfx_gwr_buffalo_wheels_b ;
+}
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_wheels_rev, motion_counter % 2){
+	1 : gfx_gwr_buffalo_wheels_a_rev ;
+	gfx_gwr_buffalo_wheels_b_rev ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_gwr_buffalo_wheels_gfx_rev_check_a,			vehicle_is_reversed){ 1 : sw_gwr_buffalo_wheels ; sw_gwr_buffalo_wheels_rev ; }
+switch(FEAT_TRAINS, PARENT, sw_gwr_buffalo_wheels_gfx_rev_check_b,			vehicle_is_reversed){ 1 : sw_gwr_buffalo_wheels_rev ; sw_gwr_buffalo_wheels ; }
+
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_wheels_gfx_pos_check_m,			position_in_vehid_chain){ 0 : sw_gwr_buffalo_wheels_rev ; sw_gwr_buffalo_wheels_gfx_rev_check_b ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_wheels_gfx_pos_check_b,			position_in_vehid_chain_from_end){ 0 : sw_gwr_buffalo_wheels ; sw_gwr_buffalo_wheels_gfx_pos_check_m ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_wheels_gfx_pos_check_f,			num_vehs_in_vehid_chain ){ 1 : sw_gwr_buffalo_wheels_gfx_rev_check_a ; sw_gwr_buffalo_wheels_rev ;}
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_wheels_gfx_pos_check_a,			position_in_consist){ 0 : sw_gwr_buffalo_wheels_gfx_pos_check_f ; sw_gwr_buffalo_wheels_gfx_pos_check_b ;}
+
+
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_gwr_buffalo_gfx_pos_check_a ;
+	1 : sw_gwr_buffalo_wheels_gfx_pos_check_a ;
+}
+
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_gwr_buffalo_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+item(FEAT_TRAINS, item_gwr_buffalo, 1510){
+	property{
+		name                           : string(STR_NAME_GWR_BUFFALO) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1870,1,1) ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : 45 ;
+		vehicle_life                   : 75 ;
+		reliability_decay              : 24 ;
+		cost_factor                    : 48 ;
+		running_cost_base              : RUNNING_COST_STEAM ;
+		running_cost_factor            : 75 ;
+		speed                          : 45 mph ;
+		track_type                     : RAIL ;
+		power                          : 338 hp ;
+		weight                         : 44 ton ;
+		engine_class                   : ENGINE_CLASS_STEAM ;
+		tractive_effort_coefficient    : 0.18 ;
+		air_drag_coefficient           : 0.0888888888888889 ;
+		length                         : 5 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_STEAM ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : sw_gwr_buffalo_spritestack ;
+		colour_mapping                 : sw_gwr_buffalo_colours_2cc_check ;
+		//purchase_colour_mapping		   : sw_gwr_buffalo_purchase_colours_2cc_check ;
+		purchase                       : gfx_gwr_buffalo_purchase ;
+		//sound_effect                   : sw_sfx_diesel_loco_ee_2 ;
+		create_effect                  : vfx_steam ;
+		//cargo_subtype_text             : sw_gwr_buffalo_refit_text_check ;
+		purchase_cargo_capacity        : 0 ;
+		cargo_capacity                 : return 0 ;
+		can_attach_wagon               : sw_all_but_MU90;
+		running_cost_factor            : return(current_speed == 0 ? 20 : 75) ;
+		purchase_running_cost_factor   : 75 ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_gwr_buffalo, 1510){
+	property{
+		name                           : string(STR_NAME_GWR_BUFFALO_ALT) ;
+	}
+}
+}
+
+
+if (steam_selection < 1){
+item (FEAT_TRAINS, item_gwr_buffalo, 1510){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

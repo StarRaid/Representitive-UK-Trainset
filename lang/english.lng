@@ -231,7 +231,9 @@ STR_LIVERY_LBSCR							: London, Brighton & South Coast Railway
 STR_LIVERY_SOUTHERN_RAILWAY					: Southern Railway
 STR_LIVERY_SOUTHERN_RAILWAY_LINED			: Southern Railway {GOLD}(Lined Green)
 STR_LIVERY_SOUTHERN_RAILWAY_DEFLECTORS		: Southern Railway {GOLD}(Smoke deflectors)
+STR_LIVERY_AVON								: Avonside {GOLD}(Trojan)
 STR_LIVERY_GWR								: Great Western Railway
+STR_LIVERY_GWR_STRING						: Great Western Railway {STRING}
 STR_LIVERY_LMS								: London, Midland & Scotland
 STR_LIVERY_LMS_SMOOTH						: London, Midland & Scotland {GOLD}(Streamlined)
 STR_LIVERY_LMS_BLUE							: London, Midland & Scotland {GOLD}(Blue)
@@ -242,6 +244,7 @@ STR_LIVERY_BR_BRUNSWICK						: British Railways {GOLD}(Brunswick Green)
 
 
 STR_LIVERY_FICTIONAL						: {GOLD}(Fictional){BLACK}{STRING}
+STR_LIVERY_LINED							:{GOLD}(Lined)
 
 
 STR_LIVERY_142_REG_RAILWAYS			 		: Regional Railways {BLACK}(Class 142)
@@ -357,6 +360,9 @@ STR_NAME_MERCHNAV_REBUILT		:2-6-4 Rebuilt Merchant Navy (Steam)
 STR_NAME_BULLEID_LIGHT			:2-6-4 Light Pacific (Steam)
 STR_NAME_BULLEID_LIGHT_REBUILT	:2-6-4 Rebuilt Light Pacific (Steam)
 STR_NAME_BULLEID_Q1				:0-6-0 Bulleid "Q1" (Steam)
+STR_NAME_GWR_1361				:0-6-0ST "Millbay" (Steam)
+STR_NAME_GWR_SADDLE				:0-4-0ST "Avon" (Steam)
+STR_NAME_GWR_BUFFALO			:0-6-0ST "Buffalo" (Steam)
 STR_NAME_CORONATION				:4-6-2 Coronation (Steam)
 
 STR_NAME_AL6				 :EE AL6 (Electric)
@@ -523,6 +529,9 @@ STR_NAME_MERCHNAV_REBUILT_ALT		:BR Rebuilt Merchant Navy (Steam)
 STR_NAME_BULLEID_LIGHT_ALT			:SR Light Pacific (Steam)
 STR_NAME_BULLEID_LIGHT_REBUILT_ALT	:BR Rebuilt Light Pacific (Steam)
 STR_NAME_BULLEID_Q1_ALT				:SR Q1 Class (Steam)
+STR_NAME_GWR_1361_ALT				:GWR 1361 Class (Steam)
+STR_NAME_GWR_SADDLE_ALT				:Avonside Saddle Tank (Steam)
+STR_NAME_GWR_BUFFALO_ALT			:GWR 1076 Buffalo (Steam)
 STR_NAME_CORONATION_ALT				:LMS Coronation Class (Steam)
 
 STR_NAME_AL6_ALT			:BR Class 86 (Electric)
