@@ -183,7 +183,7 @@ item (FEAT_TRAINS, item_mdo, 10007) {
 		running_cost_factor:			10;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							40 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -243,7 +243,7 @@ item (FEAT_TRAINS, item_zgo, 10012) {
 		running_cost_factor:			10;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							40 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;

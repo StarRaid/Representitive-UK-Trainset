@@ -287,7 +287,7 @@ switch(FEAT_TRAINS, SELF, sw_ntx_col_2cc_check, colour_scheme_1){
 item (FEAT_TRAINS, item_ntx, 9002){
 	property{
 		name						   : string(STR_NAME_NTX) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
 		climates_available             : ALL_CLIMATES ;

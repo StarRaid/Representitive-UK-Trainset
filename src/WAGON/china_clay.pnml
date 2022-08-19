@@ -32,7 +32,7 @@ item (FEAT_TRAINS, item_ucv, 10029) {
 		running_cost_factor:			5;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							40 mph;
-		misc_flags:						bitmask();
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -84,7 +84,7 @@ item (FEAT_TRAINS, item_cda, 10033) {
 		running_cost_factor:			15;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							60 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -238,7 +238,7 @@ item (FEAT_TRAINS, item_haa, 10032) {
 		running_cost_factor:			12;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							55 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;

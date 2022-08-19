@@ -55,7 +55,7 @@ switch(FEAT_TRAINS, SELF, sw_slatewgn_spr_stack, SPR_STACK){
 item(FEAT_TRAINS, item_slatewgn, 10003){
 	property{
 		name						   : string(STR_NAME_NRWSLATE) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 4 ;
 		climates_available             : ALL_CLIMATES ;

@@ -148,7 +148,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_refit_text_check, livery_choice){
 item(FEAT_TRAINS, item_mbox, 10005){
 	property{
 		name						   : string(STR_NAME_MONSTER_BOX) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
 		climates_available             : ALL_CLIMATES ;
@@ -276,7 +276,7 @@ item (FEAT_TRAINS, item_hta, 10024) {
 		running_cost_factor:			20;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							75 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -425,7 +425,7 @@ item (FEAT_TRAINS, item_jha, 10025) {
 		running_cost_factor:			28;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							70 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -483,7 +483,7 @@ item (FEAT_TRAINS, item_pol, 10027) {
 		running_cost_factor:			20;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							70 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;

@@ -29,7 +29,7 @@ item (FEAT_TRAINS, item_cgo, 10008) {
 		running_cost_factor:			12;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							50 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -72,7 +72,7 @@ item (FEAT_TRAINS, item_chv, 10009) {
 		running_cost_factor:			10;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							60 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -176,7 +176,7 @@ item (FEAT_TRAINS, item_hto, 10010) {
 		running_cost_factor:			16;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							60 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -244,7 +244,7 @@ item (FEAT_TRAINS, item_ssa, 10011) {
 		running_cost_factor:			14;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							70 mph;
-		//misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -334,7 +334,7 @@ item (FEAT_TRAINS, item_pga, 10013) {
 		running_cost_factor:			40;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							70 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;

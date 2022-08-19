@@ -52,7 +52,7 @@ item (FEAT_TRAINS, flask_wagon, 10001){
 		running_cost_base            : RUNNING_COST_NONE ;
 		sprite_id                    : SPRITE_ID_NEW_TRAIN ;
 		speed                        : 60 mph ;
-		misc_flags                   : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
+		misc_flags                   : bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
 		refit_cost                   : 0 ;
 		track_type                   : RAIL ;
 		ai_special_flag              : AI_FLAG_CARGO ;

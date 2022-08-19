@@ -76,7 +76,7 @@ item (FEAT_TRAINS, item_zrr, 10020) {
 		running_cost_factor:			57;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							50 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -167,7 +167,7 @@ item (FEAT_TRAINS, item_pca, 10015) {
 		running_cost_factor:			46;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							60 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -307,7 +307,7 @@ item (FEAT_TRAINS, item_tea, 10021) {
 		running_cost_factor:			100;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							80 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -428,7 +428,7 @@ item (FEAT_TRAINS, item_tea_2, 10036) {
 		running_cost_factor:			100;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							80 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -513,7 +513,7 @@ item (FEAT_TRAINS, item_oldtank, 10031) {
 		running_cost_factor:			5;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							30 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
@@ -614,7 +614,7 @@ item (FEAT_TRAINS, item_zrv, 10030) {
 		running_cost_factor:			5;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							40 mph;
-		misc_flags:						bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
 		ai_special_flag:				AI_FLAG_CARGO;
