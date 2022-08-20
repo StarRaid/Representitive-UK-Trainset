@@ -12,9 +12,10 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_auto_dbso, current_year){
 //Manual
 
 switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_manual_dbso, cargo_subtype){
-	1 : sw_uklight_gfx_tpe_reverse_check ;
-	2 : sw_uklight_gfx_scot_reverse_check ;
-	3 : sw_uklight_gfx_chr_reverse_check ;
+	1 : sw_uklight_gfx_drs_plain_reverse_check ;
+	2 : sw_uklight_gfx_tpe_reverse_check ;
+	3 : sw_uklight_gfx_scot_reverse_check ;
+	4 : sw_uklight_gfx_chr_reverse_check ;
 	sw_uklight_gfx_drs_reverse_check ;
 }
 
@@ -28,8 +29,9 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_manual_check_dbso, livery_choice){
 //Spritestacking
 
 switch(FEAT_TRAINS, PARENT, sw_uklight_spritestack_dbso, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
-	0 : sw_uklight_gfx_manual_check_dbso ;
+	0 : sw_uklight_gfx_manual_check ;
 	1 : sw_uklight_gfx_headlights ;
+	2 : sw_uklight_gfx_taillights ;
 }
 
 
@@ -44,9 +46,9 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_colours_auto_dbso, current_year){
 }
 
 switch(FEAT_TRAINS, PARENT, sw_uklight_colours_manual_dbso, cargo_subtype){
-	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
-	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
-	3 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
+	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+	4 : palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN); 
 }
 

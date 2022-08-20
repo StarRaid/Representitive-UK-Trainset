@@ -162,7 +162,8 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_manual_cl91, cargo_subtype){
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_manual_uklight, cargo_subtype){
 	1 : sw_dvt_atw_exec_rev_check ;
-	3 : sw_dvt_chiltern_rev_check ;
+	2 : sw_dvt_atw_exec_rev_check ;
+	4 : sw_dvt_chiltern_rev_check ;
 	sw_dvt_virgin_rev_check ;
 }
 
@@ -334,7 +335,8 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_al6, cargo_subtype){
 
 switch(FEAT_TRAINS, PARENT, sw_dvt_colours_uklight, cargo_subtype){
 	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
-	3 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
+	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;
+	4 : palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 }
 

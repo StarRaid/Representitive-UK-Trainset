@@ -2,10 +2,10 @@
 
 //Spritesets
 
-spriteset(gfx_eurodual_drs         , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight(0,0)}
-spriteset(gfx_eurodual_drs_reverse , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight_reverse(0,0)}
+spriteset(gfx_eurodual_drs         , "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_2		(0	,0	)}
+spriteset(gfx_eurodual_drs_reverse , "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_rev_2	(0	,0	)}
 
-spriteset(gfx_eurodual_drs_purchase, "gfx/ELECTRIC_LOCO/class_88.png"){template_purchase_short(176,0)}
+spriteset(gfx_eurodual_drs_purchase, "gfx/ELECTRIC_LOCO/class_88.png"){template_purchase_short(178,0)}
 
 
 switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_drs_reversal_check, vehicle_is_reversed){
@@ -13,9 +13,13 @@ switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_drs_reversal_check, vehicle_is_rever
 	gfx_eurodual_drs ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_panto_rev_check, vehicle_is_reversed){ 1 : gfx_abb92_pantograph_rev ; gfx_abb92_pantograph ; }
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_panto, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){ 1 : sw_uklight_gfx_panto_rev_check ; gfx_blank ; }
+
 switch(FEAT_TRAINS, SELF, sw_eurodual_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_eurodual_gfx_drs_reversal_check ;
 	1 : sw_uklight_gfx_headlights ;
+	2 : sw_uklight_gfx_panto ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_eurodual_dbso_check, DBSO_CHECK){
