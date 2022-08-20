@@ -17516,10 +17516,10 @@ item (FEAT_TRAINS, item_abb92, 92){
 
 //Spritesets
 
-spriteset(gfx_eurodual_drs         , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight(0,0)}
-spriteset(gfx_eurodual_drs_reverse , "gfx/ELECTRIC_LOCO/class_88.png"){template_uklight_reverse(0,0)}
+spriteset(gfx_eurodual_drs         , "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_2		(0	,0	)}
+spriteset(gfx_eurodual_drs_reverse , "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_rev_2	(0	,0	)}
 
-spriteset(gfx_eurodual_drs_purchase, "gfx/ELECTRIC_LOCO/class_88.png"){template_purchase_short(176,0)}
+spriteset(gfx_eurodual_drs_purchase, "gfx/ELECTRIC_LOCO/class_88.png"){template_purchase_short(178,0)}
 
 
 switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_drs_reversal_check, vehicle_is_reversed){
@@ -17527,9 +17527,13 @@ switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_drs_reversal_check, vehicle_is_rever
 	gfx_eurodual_drs ;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_panto_rev_check, vehicle_is_reversed){ 1 : gfx_abb92_pantograph_rev ; gfx_abb92_pantograph ; }
+switch(FEAT_TRAINS, SELF, sw_uklight_gfx_panto, ((current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ")))){ 1 : sw_uklight_gfx_panto_rev_check ; gfx_blank ; }
+
 switch(FEAT_TRAINS, SELF, sw_eurodual_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0 : sw_eurodual_gfx_drs_reversal_check ;
 	1 : sw_uklight_gfx_headlights ;
+	2 : sw_uklight_gfx_panto ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_eurodual_dbso_check, vehicle_is_reversed && (count_veh_id(9025) > 0)){
