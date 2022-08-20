@@ -15,7 +15,7 @@ spriteset(gfx_gwr_saddle_wheels_a_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_4_
 spriteset(gfx_gwr_saddle_wheels_b			, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8			(325,125)}
 spriteset(gfx_gwr_saddle_wheels_b_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_4_8_rev		(325,125)}
 
-spriteset(gfx_gwr_saddle_purchase			, "gfx/STEAM_LOCO/gwr.png"	){	template_purchase_short	(325,75	)}
+spriteset(gfx_gwr_saddle_purchase			, "gfx/STEAM_LOCO/gwr.png"	){	template_purchase	(325,75	)}
 
 
 //Switches
@@ -203,7 +203,7 @@ spriteset(gfx_gwr_1361_wheels_a_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8_
 spriteset(gfx_gwr_1361_wheels_b			, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8			(330,200)}
 spriteset(gfx_gwr_1361_wheels_b_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8_rev		(330,200)}
 
-spriteset(gfx_gwr_1361_purchase			, "gfx/STEAM_LOCO/gwr.png"	){	template_purchase_short	(200,225)}
+spriteset(gfx_gwr_1361_purchase			, "gfx/STEAM_LOCO/gwr.png"	){	template_purchase	(200,225)}
 
 
 //Base
@@ -336,7 +336,7 @@ spriteset(gfx_gwr_buffalo_wheels_a_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_5
 spriteset(gfx_gwr_buffalo_wheels_b			, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8			(330,250)}
 spriteset(gfx_gwr_buffalo_wheels_b_rev		, "gfx/STEAM_LOCO/gwr.png"	){	template_5_8_rev		(330,250)}
 
-spriteset(gfx_gwr_buffalo_purchase			, "gfx/STEAM_LOCO/gwr.png"	){	template_purchase_short	(200,250)}
+spriteset(gfx_gwr_buffalo_purchase			, "gfx/STEAM_LOCO/gwr.png"	){	template_purchase	(200,250)}
 
 
 //Base
