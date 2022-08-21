@@ -30,7 +30,7 @@ spriteset(gfx_370_windows_end_rev		, "gfx/EMU/apt.png"	){	template_8_8_rev_2			(
 spriteset(gfx_370_more					, "gfx/EMU/apt.png"	){	template_8_4_2				(89	,75	)}
 
 //Purchase
-spriteset(gfx_370_purchase				, "gfx/EMU/apt.png"	){	template_dualhead_purchase	(179,0	)}
+spriteset(gfx_370_purchase				, "gfx/EMU/apt.png"	){	template_dualhead_purchase	(178,0	)}
 
 //Switches
 

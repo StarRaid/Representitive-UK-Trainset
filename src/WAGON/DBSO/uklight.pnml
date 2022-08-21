@@ -16,6 +16,7 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_manual_dbso, cargo_subtype){
 	2 : sw_uklight_gfx_tpe_reverse_check ;
 	3 : sw_uklight_gfx_scot_reverse_check ;
 	4 : sw_uklight_gfx_chr_reverse_check ;
+	5 : sw_uklight_gfx_nts_reverse_check ;
 	sw_uklight_gfx_drs_reverse_check ;
 }
 

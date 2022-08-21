@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 91 ;
+	version: 92 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -15718,6 +15718,8 @@ spriteset (gfx_uklight_scot					, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8
 spriteset (gfx_uklight_scot_reverse			, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8_rev_2	(0	,75	)}
 spriteset (gfx_uklight_chr					, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8_2		(0	,100)}
 spriteset (gfx_uklight_chr_reverse			, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8_rev_2	(0	,100)}
+spriteset (gfx_uklight_nts					, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8_2		(0	,125)}
+spriteset (gfx_uklight_nts_reverse			, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8_rev_2	(0	,125)}
                                    
 spriteset (gfx_uklight_headlight   , "gfx/FIXTURES/uklight_headlight.png"){template_8_8_2(0,0)}
 spriteset (gfx_uklight_taillight   , "gfx/FIXTURES/uklight_headlight.png"){template_8_8_2(0,25)}
@@ -15731,6 +15733,7 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_drs_plain_reverse_check, vehicle_is_r
 switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_tpe_reverse_check, vehicle_is_reversed){ 1 : gfx_uklight_tpe_reverse ; gfx_uklight_tpe ; }
 switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_scot_reverse_check, vehicle_is_reversed){ 1 : gfx_uklight_scot_reverse ; gfx_uklight_scot ; }
 switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_chr_reverse_check, vehicle_is_reversed){ 1 : gfx_uklight_chr_reverse ; gfx_uklight_chr ; }
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_nts_reverse_check, vehicle_is_reversed){ 1 : gfx_uklight_nts_reverse ; gfx_uklight_nts ; }
 
 
 //Automatic
@@ -15763,6 +15766,7 @@ switch(FEAT_TRAINS, SELF, sw_uklight_gfx_manual, cargo_subtype){
 	2 : sw_uklight_gfx_tpe_reverse_check ;
 	3 : sw_uklight_gfx_scot_reverse_check ;
 	4 : sw_uklight_gfx_chr_reverse_check ;
+	5 : sw_uklight_gfx_nts_reverse_check ;
 	sw_uklight_gfx_drs_reverse_check ;
 }
 
@@ -15798,6 +15802,7 @@ switch(FEAT_TRAINS, SELF, sw_uklight_refit_text, cargo_subtype){
 	2 : string(STR_LIVERY_TPE_NEW) ;
 	3 : string(STR_LIVERY_SCOTRAIL) ;
 	4 : string(STR_LIVERY_CHILTERN) ;
+	5 : string(STR_LIVERY_DRS_NTS) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -17787,6 +17792,7 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_manual_dbso, cargo_subtype){
 	2 : sw_uklight_gfx_tpe_reverse_check ;
 	3 : sw_uklight_gfx_scot_reverse_check ;
 	4 : sw_uklight_gfx_chr_reverse_check ;
+	5 : sw_uklight_gfx_nts_reverse_check ;
 	sw_uklight_gfx_drs_reverse_check ;
 }
 
@@ -27981,7 +27987,7 @@ spriteset(gfx_370_windows_end_rev		, "gfx/EMU/apt.png"	){	template_8_8_rev_2			(
 spriteset(gfx_370_more					, "gfx/EMU/apt.png"	){	template_8_4_2				(89	,75	)}
 
 //Purchase
-spriteset(gfx_370_purchase				, "gfx/EMU/apt.png"	){	template_dualhead_purchase	(179,0	)}
+spriteset(gfx_370_purchase				, "gfx/EMU/apt.png"	){	template_dualhead_purchase	(178,0	)}
 
 //Switches
 
