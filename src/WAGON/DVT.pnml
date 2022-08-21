@@ -31,7 +31,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_gfx_parent_id_check, vehicle_type_id){
 	68 : sw_uklight_spritestack_dbso ;
 	86 : sw_al6_sprite_stack_dbso ;
 	87 : sw_br87_sprite_stack_dbso ;
-	88 : sw_eurodual_spritestack ;
+	88 : sw_eurodual_spritestack_dvt ;
 	90 : sw_cl90_gfx_sprite_stack_dvt ;
 	91 : sw_cl91_gfx_sprite_stack_dvt ;
 	92 : sw_abb92_spritestack_dbso ;
@@ -53,7 +53,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_parent_id_check, vehicle_type_id){
 	68 : sw_uklight_colours_2cc_check_dbso ;
 	86 : sw_al6_colours_2cc_check_dbso ;
 	87 : sw_br87_colours_2cc_check_dbso ;
-	88 : sw_eurodual_colours ;
+	88 : sw_eurodual_colours_dvt ;
 	90 : sw_cl90_colours_2cc_check_dvt ;
 	91 : sw_cl91_colours_2cc_check_dvt ;
 	92 : sw_abb92_colours_2cc_check_dbso ;
@@ -96,7 +96,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_effect_parent_id_check, vehicle_type_id){
 	68 : EFFECT_SPAWN_MODEL_DIESEL ;
 	86 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	87 : EFFECT_SPAWN_MODEL_ELECTRIC ;
-	88 : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	88 : sw_eurodual_effect_model ;
 	90 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	91 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	92 : EFFECT_SPAWN_MODEL_ELECTRIC ;

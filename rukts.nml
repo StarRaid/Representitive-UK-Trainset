@@ -17516,8 +17516,15 @@ item (FEAT_TRAINS, item_abb92, 92){
 
 //Spritesets
 
-spriteset(gfx_eurodual_drs         , "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_2		(0	,0	)}
-spriteset(gfx_eurodual_drs_reverse , "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_rev_2	(0	,0	)}
+spriteset(gfx_eurodual_drs				, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_2		(0	,0	)}
+spriteset(gfx_eurodual_drs_reverse		, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_rev_2	(0	,0	)}
+spriteset(gfx_eurodual_cold				, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_2		(0	,25	)}
+spriteset(gfx_eurodual_cold_reverse		, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_rev_2	(0	,25	)}
+
+spriteset(gfx_eurodual_panto_up			, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_2		(0	,50	)}
+spriteset(gfx_eurodual_panto_up_reverse	, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_rev_2	(0	,50	)}
+spriteset(gfx_eurodual_panto_dn			, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_2		(0	,75	)}
+spriteset(gfx_eurodual_panto_dn_reverse	, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_rev_2	(0	,75	)}
 
 spriteset(gfx_eurodual_drs_purchase, "gfx/ELECTRIC_LOCO/class_88.png"){template_purchase_short(178,0)}
 
@@ -17526,14 +17533,29 @@ switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_drs_reversal_check, vehicle_is_rever
 	1 : gfx_eurodual_drs_reverse ;
 	gfx_eurodual_drs ;
 }
+switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_cold_reversal_check, vehicle_is_reversed){
+	1 : gfx_eurodual_cold_reverse ;
+	gfx_eurodual_cold ;
+}
 
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_panto_rev_check, vehicle_is_reversed){ 1 : gfx_abb92_pantograph_rev ; gfx_abb92_pantograph ; }
-switch(FEAT_TRAINS, SELF, sw_uklight_gfx_panto, ((current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ")))){ 1 : sw_uklight_gfx_panto_rev_check ; gfx_blank ; }
+switch(FEAT_TRAINS, SELF, sw_eurodual_gfx_manual, cargo_subtype){
+	1 : sw_eurodual_gfx_cold_reversal_check ;
+	sw_eurodual_gfx_drs_reversal_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_gfx_manual_check, livery_choice){
+	1 : sw_eurodual_gfx_manual ;
+	sw_eurodual_gfx_drs_reversal_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_panto_up_rev_check, vehicle_is_reversed){ 1 : gfx_eurodual_panto_up_reverse ; gfx_eurodual_panto_up ; }
+switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_panto_dn_rev_check, vehicle_is_reversed){ 1 : gfx_eurodual_panto_dn_reverse ; gfx_eurodual_panto_dn ; }
+switch(FEAT_TRAINS, SELF, sw_eurodual_gfx_panto, ((current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE")) || (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ")))){ 1 : sw_eurodual_gfx_panto_up_rev_check ; sw_eurodual_gfx_panto_dn_rev_check ; }
 
 switch(FEAT_TRAINS, SELF, sw_eurodual_spritestack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
-	0 : sw_eurodual_gfx_drs_reversal_check ;
+	0 : sw_eurodual_gfx_manual_check ;
 	1 : sw_uklight_gfx_headlights ;
-	2 : sw_uklight_gfx_panto ;
+	2 : sw_eurodual_gfx_panto ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_eurodual_dbso_check, vehicle_is_reversed && (count_veh_id(9025) > 0)){
@@ -17549,8 +17571,18 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_dvt_check, vehicle_is_reversed && (count_v
 
 //Colour mapping
 
+switch(FEAT_TRAINS, SELF, sw_eurodual_colours_manual, cargo_subtype){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_colours_manual_check, livery_choice){
+	1 : sw_eurodual_colours_manual ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_eurodual_colours, colour_scheme_1){
-	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+	1 :sw_eurodual_colours_manual_check ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
@@ -17595,6 +17627,17 @@ switch(FEAT_TRAINS, SELF, sw_eurodual_effect_model, ((current_railtype == railty
 	EFFECT_SPAWN_MODEL_DIESEL ;	
 }
 
+switch(FEAT_TRAINS, SELF, sw_eurodual_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_DRS_COMPASS) ;
+	 1 : string(STR_LIVERY_DRS_COLD) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_refit_text_check, livery_choice){
+	1 : sw_eurodual_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
 //Item
 
 item (FEAT_TRAINS, item_eurodual, 88){
@@ -17626,21 +17669,22 @@ item (FEAT_TRAINS, item_eurodual, 88){
 		dual_headed                    : 0 ;
 	}
 	graphics{
-		default                 : sw_eurodual_dvt_check ;
-		purchase                : gfx_eurodual_drs_purchase ;
-		purchase_colour_mapping : sw_eurodual_colours ;
-		colour_mapping          : sw_eurodual_colours_dvt_check ;
-		sound_effect            : sw_eurodual_sfx_decider ;
-		create_effect           : sw_eurodual_effect_dbso_check ;
-		purchase_power          : 5400 ;
-		purchase_cargo_capacity : 0 ;
-		cargo_capacity          : return 0 ;
-		power                   : sw_eurodual_power_decider;
-		can_attach_wagon        : sw_all_but_MU90;
-		running_cost_factor     : return(current_speed == 0 ? 60 : 250) ;
-		purchase_running_cost_factor : 250 ;
-		additional_text			: string(STR_ADD_INFO_88) ;
-		effect_spawn_model_and_powered : sw_eurodual_effect_model ;
+		default:						sw_eurodual_dvt_check ;
+		purchase:						gfx_eurodual_drs_purchase ;
+		purchase_colour_mapping:		sw_eurodual_colours ;
+		colour_mapping:					sw_eurodual_colours_dvt_check ;
+		sound_effect:					sw_eurodual_sfx_decider ;
+		create_effect:					sw_eurodual_effect_dbso_check ;
+		purchase_power:					5400 ;
+		purchase_cargo_capacity:		0 ;
+		cargo_capacity:					return 0 ;
+		power:							sw_eurodual_power_decider;
+		can_attach_wagon:				sw_all_but_MU90;
+		running_cost_factor:			return(current_speed == 0 ? 60 : 250) ;
+		purchase_running_cost_factor:	250 ;
+		additional_text:				string(STR_ADD_INFO_88) ;
+		effect_spawn_model_and_powered:	sw_eurodual_effect_model ;
+		cargo_subtype_text:				sw_eurodual_refit_text_check ;
 	}
 }
 
@@ -17660,6 +17704,7 @@ item (FEAT_TRAINS, item_eurodual, 88){
 	}
 }
 }
+
 # 1 "rukts.pnml" 3
 
 # 1 "src/WAGON/DBSO.pnml" 1
@@ -17789,6 +17834,71 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_colours_2cc_check_dbso, colour_scheme_1){
 	1 : sw_uklight_colours_manual_check_dbso ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_manual_dvt, cargo_subtype){
+	1 : sw_eurodual_gfx_cold_reversal_check ;
+	sw_eurodual_gfx_drs_reversal_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_manual_check_dvt, livery_choice){
+	1 : sw_eurodual_gfx_manual_dvt ;
+	sw_eurodual_gfx_drs_reversal_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_spritestack_dvt, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_eurodual_gfx_manual_check_dvt ;
+	1 : sw_uklight_gfx_headlights ;
+	2 : sw_eurodual_gfx_panto ;
+}
+
+
+
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_colours_manual_dvt, cargo_subtype){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_colours_manual_check_dvt, livery_choice){
+	1 : sw_eurodual_colours_manual_dvt ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_colours_dvt, colour_scheme_1){
+	1 :sw_eurodual_colours_manual_check_dvt ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 1 "src/WAGON/DBSO.pnml" 6
 # 1 "src/WAGON/DBSO/br87.pnml" 1
 switch(FEAT_TRAINS, PARENT, sw_br87_gfx_privatised_dbso, most_common_cargo_type){
@@ -18506,7 +18616,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_gfx_parent_id_check, vehicle_type_id){
 	68 : sw_uklight_spritestack_dbso ;
 	86 : sw_al6_sprite_stack_dbso ;
 	87 : sw_br87_sprite_stack_dbso ;
-	88 : sw_eurodual_spritestack ;
+	88 : sw_eurodual_spritestack_dvt ;
 	90 : sw_cl90_gfx_sprite_stack_dvt ;
 	91 : sw_cl91_gfx_sprite_stack_dvt ;
 	92 : sw_abb92_spritestack_dbso ;
@@ -18528,7 +18638,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_colours_parent_id_check, vehicle_type_id){
 	68 : sw_uklight_colours_2cc_check_dbso ;
 	86 : sw_al6_colours_2cc_check_dbso ;
 	87 : sw_br87_colours_2cc_check_dbso ;
-	88 : sw_eurodual_colours ;
+	88 : sw_eurodual_colours_dvt ;
 	90 : sw_cl90_colours_2cc_check_dvt ;
 	91 : sw_cl91_colours_2cc_check_dvt ;
 	92 : sw_abb92_colours_2cc_check_dbso ;
@@ -18571,7 +18681,7 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_effect_parent_id_check, vehicle_type_id){
 	68 : EFFECT_SPAWN_MODEL_DIESEL ;
 	86 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	87 : EFFECT_SPAWN_MODEL_ELECTRIC ;
-	88 : EFFECT_SPAWN_MODEL_ELECTRIC ;
+	88 : sw_eurodual_effect_model ;
 	90 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	91 : EFFECT_SPAWN_MODEL_ELECTRIC ;
 	92 : EFFECT_SPAWN_MODEL_ELECTRIC ;

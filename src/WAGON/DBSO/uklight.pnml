@@ -63,3 +63,68 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_colours_2cc_check_dbso, colour_scheme_1){
 	1 : sw_uklight_colours_manual_check_dbso ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_manual_dvt, cargo_subtype){
+	1 : sw_eurodual_gfx_cold_reversal_check ;
+	sw_eurodual_gfx_drs_reversal_check ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_manual_check_dvt, livery_choice){
+	1 : sw_eurodual_gfx_manual_dvt ;
+	sw_eurodual_gfx_drs_reversal_check ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_eurodual_spritestack_dvt, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_eurodual_gfx_manual_check_dvt ;
+	1 : sw_uklight_gfx_headlights ;
+	2 : sw_eurodual_gfx_panto ;
+}
+
+
+
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_colours_manual_dvt, cargo_subtype){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_colours_manual_check_dvt, livery_choice){
+	1 : sw_eurodual_colours_manual_dvt ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_eurodual_colours_dvt, colour_scheme_1){
+	1 :sw_eurodual_colours_manual_check_dvt ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
