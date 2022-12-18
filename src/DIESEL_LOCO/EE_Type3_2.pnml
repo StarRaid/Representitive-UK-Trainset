@@ -18,6 +18,13 @@ Rail Operations Group
 Colas Rail
 Network Rail Yellow
 Police
+Railfreight Red Stripe
+British Steel Blue
+Network SouthEast (Fictional)
+GIF Blue
+HNRC Old
+HNRC New
+GBRf (Fictional)
 
 */
 
@@ -49,6 +56,16 @@ spriteset(gfx_37_rog,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0
 spriteset(gfx_37_rog_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,300)}
 spriteset(gfx_37_colas,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,325)}
 spriteset(gfx_37_colas_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,325)}
+spriteset(gfx_37_hnrc,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,350)}
+spriteset(gfx_37_hnrc_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,350)}
+spriteset(gfx_37_nse,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,375)}
+spriteset(gfx_37_nse_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,375)}
+spriteset(gfx_37_brsteel,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,400)}
+spriteset(gfx_37_brsteel_rev,		"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,400)}
+spriteset(gfx_37_gbrf,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,425)}
+spriteset(gfx_37_gbrf_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,425)}
+spriteset(gfx_37_rfredstripe,		"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,450)}
+spriteset(gfx_37_rfredstripe_rev,	"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,450)}
 
 spriteset(gfx_37_police,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(178,0)}
 spriteset(gfx_37_police_rev,		"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(178,0)}
@@ -89,6 +106,11 @@ switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_ews, vehicle_is_reversed){ 1 : g
 switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_rog, vehicle_is_reversed){ 1 : gfx_37_rog_rev ; gfx_37_rog ; }
 switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_colas, vehicle_is_reversed){ 1 : gfx_37_colas_rev ; gfx_37_colas ; }
 switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_police, vehicle_is_reversed){ 1 : gfx_37_police_rev ; gfx_37_police ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_hnrc, vehicle_is_reversed){ 1 : gfx_37_hnrc_rev ; gfx_37_hnrc ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_nse, vehicle_is_reversed){ 1 : gfx_37_nse_rev ; gfx_37_nse ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_brsteel, vehicle_is_reversed){ 1 : gfx_37_brsteel_rev ; gfx_37_brsteel ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_gbrf, vehicle_is_reversed){ 1 : gfx_37_gbrf_rev ; gfx_37_gbrf ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_rfredstripe, vehicle_is_reversed){ 1 : gfx_37_rfredstripe_rev ; gfx_37_rfredstripe ; }
 
 
 //Automatic
@@ -155,6 +177,13 @@ switch(FEAT_TRAINS, SELF, sw_37_gfx_manual, cargo_subtype){
 	13	: sw_37_gfx_rev_check_colas ;
 	14	: sw_37_gfx_rev_check_railfreight ;
 	15	: sw_37_gfx_rev_check_police ;
+	16	: sw_37_gfx_rev_check_rfredstripe ; // Railfreight Red Stripe
+	17	: sw_37_gfx_rev_check_brsteel ; // British Steel Blue
+	18	: sw_37_gfx_rev_check_nse ;//  Network SouthEast (Fictional)
+	19	: sw_37_gfx_rev_check_ews ; // GIF Blue
+	20	: sw_37_gfx_rev_check_railfreight ; // HNRC Old
+	21	: sw_37_gfx_rev_check_hnrc ; // HNRC New
+	22	: sw_37_gfx_rev_check_gbrf ; // GBRf (Fictional)
 	sw_37_gfx_rev_check_brll ;
 }
 
@@ -195,6 +224,13 @@ switch(FEAT_TRAINS, PARENT, sw_37_gfx_manual_dbso, cargo_subtype){
 	13	: sw_37_gfx_rev_check_colas ;
 	14	: sw_37_gfx_rev_check_railfreight ;
 	15	: sw_37_gfx_rev_check_police ;
+	16	: sw_37_gfx_rev_check_rfredstripe ; // Railfreight Red Stripe
+	17	: sw_37_gfx_rev_check_brsteel ; // British Steel Blue
+	18	: sw_37_gfx_rev_check_nse ;//  Network SouthEast (Fictional)
+	19	: sw_37_gfx_rev_check_ews ; // GIF Blue
+	20	: sw_37_gfx_rev_check_railfreight ; // HNRC Old
+	21	: sw_37_gfx_rev_check_hnrc ; // HNRC New
+	22	: sw_37_gfx_rev_check_gbrf ; // GBRf (Fictional)
 	sw_37_gfx_rev_check_brll ;
 }
 
@@ -310,6 +346,13 @@ switch(FEAT_TRAINS, SELF, sw_37_gfx_hc_manual, cargo_subtype){
 	12		: sw_37_hc_modern ;
 	14		: sw_37_hc_centre ;
 	15		: gfx_37_hc_split ;
+	16		: sw_37_hc_standard_4 ; // Railfreight Red Stripe
+	17		: gfx_37_hc_centre_refit ; // British Steel Blue
+	18		: sw_37_hc_standard_4 ;//  Network SouthEast (Fictional)
+	19		: sw_37_hc_standard_4 ; // GIF Blue
+	20		: sw_37_hc_standard_4 ; // HNRC Old
+	21		: sw_37_hc_modern ; // HNRC New
+	22		: sw_37_hc_modern ; // GBRf (Fictional)
 	sw_37_hc_standard_4 ;
 }
 
@@ -375,6 +418,13 @@ switch(FEAT_TRAINS, PARENT, sw_37_gfx_hc_manual_dbso, cargo_subtype){
 	12		: sw_37_hc_modern_dbso ;
 	14		: sw_37_hc_centre_dbso ;
 	15		: gfx_37_hc_split ;
+	16		: sw_37_hc_standard_4 ; // Railfreight Red Stripe
+	17		: gfx_37_hc_centre_refit ; // British Steel Blue
+	18		: sw_37_hc_standard_4 ;//  Network SouthEast (Fictional)
+	19		: sw_37_hc_standard_4 ; // GIF Blue
+	20		: sw_37_hc_standard_4 ; // HNRC Old
+	21		: sw_37_hc_modern ; // HNRC New
+	22		: sw_37_hc_modern ; // GBRf (Fictional)
 	sw_37_hc_standard_4_dbso ;
 }
 
@@ -483,6 +533,13 @@ switch(FEAT_TRAINS, SELF, sw_37_gfx_lt_manual, cargo_subtype){
 	12		: sw_37_lt_modern ;
 	14		: gfx_37_lt_centre ;
 	15		: gfx_37_lt_split ;
+	16		: sw_37_lt_standard_4 ; // Railfreight Red Stripe
+	17		: gfx_37_lt_centre ; // British Steel Blue
+	18		: sw_37_lt_standard_4 ;//  Network SouthEast (Fictional)
+	19		: sw_37_lt_standard_4 ; // GIF Blue
+	20		: sw_37_lt_standard_4 ; // HNRC Old
+	21		: sw_37_lt_modern ; // HNRC New
+	22		: sw_37_lt_modern ; // GBRf (Fictional)
 	sw_37_lt_standard_4 ;
 }
 
@@ -547,6 +604,13 @@ switch(FEAT_TRAINS, PARENT, sw_37_gfx_lt_manual_dbso, cargo_subtype){
 	12		: sw_37_lt_modern_dbso ;
 	14		: gfx_37_lt_centre ;
 	15		: gfx_37_lt_split ;
+	16		: sw_37_lt_standard_4 ; // Railfreight Red Stripe
+	17		: gfx_37_lt_centre ; // British Steel Blue
+	18		: sw_37_lt_standard_4 ;//  Network SouthEast (Fictional)
+	19		: sw_37_lt_standard_4 ; // GIF Blue
+	20		: sw_37_lt_standard_4 ; // HNRC Old
+	21		: sw_37_lt_modern ; // HNRC New
+	22		: sw_37_lt_modern ; // GBRf (Fictional)
 	sw_37_lt_standard_4_dbso ;
 }
 
@@ -667,6 +731,13 @@ switch(FEAT_TRAINS, SELF, sw_37_col_manual, cargo_subtype){
 	13	: palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 	14	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW)	;
 	15	: palette_2cc(COLOUR_WHITE, COLOUR_ORANGE) ;
+	16	: palette_2cc(COLOUR_GREY, COLOUR_RED) ; // Railfreight Red Stripe
+	17	: palette_2cc(COLOUR_BLUE, COLOUR_BLUE) ; // British Steel Blue
+	18	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;//  Network SouthEast (Fictional)
+	19	: palette_2cc(COLOUR_BLUE, COLOUR_DARK_BLUE) ; // GIF Blue
+	20	: palette_2cc(COLOUR_ORANGE, COLOUR_WHITE) ; // HNRC Old
+	21	: palette_2cc(COLOUR_ORANGE, COLOUR_WHITE) ; // HNRC New
+	22	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ; // GBRf (Fictional)
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
@@ -707,6 +778,13 @@ switch(FEAT_TRAINS, PARENT, sw_37_col_manual_dbso, cargo_subtype){
 	13	: palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 	14	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW)	;
 	15	: palette_2cc(COLOUR_WHITE, COLOUR_ORANGE) ;
+	16	: palette_2cc(COLOUR_GREY, COLOUR_RED) ; // Railfreight Red Stripe
+	17	: palette_2cc(COLOUR_BLUE, COLOUR_BLUE) ; // British Steel Blue
+	18	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;//  Network SouthEast (Fictional)
+	19	: palette_2cc(COLOUR_BLUE, COLOUR_DARK_BLUE) ; // GIF Blue
+	20	: palette_2cc(COLOUR_ORANGE, COLOUR_WHITE) ; // HNRC Old
+	21	: palette_2cc(COLOUR_ORANGE, COLOUR_WHITE) ; // HNRC New
+	22	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ; // GBRf (Fictional)
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
@@ -765,6 +843,13 @@ switch(FEAT_TRAINS, SELF, sw_37_refit_text, cargo_subtype){
 	13	: string(STR_LIVERY_COLAS) ;
 	14	: string(STR_LIVERY_NETWORK_RAIL) ;
 	15	: string(STR_LIVERY_POLICE) ;
+	16	: string(STR_LIVERY_RAILFREIGHT3) ; // Railfreight Red Stripe
+	17	: string(STR_LIVERY_BSC) ; // British Steel Blue
+	18	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_NSE)); //  Network SouthEast (Fictional)
+	19	: string(STR_LIVERY_GIF) ; // GIF Blue
+	20	: string(STR_LIVERY_HNRC) ; // HNRC Old
+	21	: string(STR_LIVERY_HNRC_NEW) ; // HNRC New
+	22	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_GBRF)); // GBRf (Fictional)
 	CB_RESULT_NO_TEXT ;
 }
 

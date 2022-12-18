@@ -81,8 +81,9 @@ STR_LIVERY_NSE					 			: Network South East
 STR_LIVERY_NSW					 			: Network South East {GOLD}(White)
 STR_LIVERY_NSG					 			: Network South East {GOLD}(Grey)
 STR_LIVERY_BR_SCOTRAIL           			: Scotrail
-STR_LIVERY_RAILFREIGHT           			: Railfreight Two-Tone Grey {STRING}
+STR_LIVERY_RAILFREIGHT           			: Railfreight Two-Tone Grey
 STR_LIVERY_RAILFREIGHT2						: Railfreight
+STR_LIVERY_RAILFREIGHT3						: Railfreight {GOLD}(Red Stripe)
 STR_LIVERY_CIVIL_ENGINEERS					: Civil Engineer's "Dutch"
 STR_LIVERY_RAIL_EXPRESS          			: Rail Express Systems
 STR_LIVERY_POLICE							: Police
@@ -124,6 +125,9 @@ STR_LIVERY_DCR_GREY							: Devon & Cornwall Railways {GREEN}(Grey)
 STR_LIVERY_FASTLINE							: Fastline
 STR_LIVERY_TPE_NEW				 			: TransPennine Express
 STR_LIVERY_CAL_SLEEPER			 			: Caledonian Sleeper
+STR_LIVERY_GIF					 			: GIF {GOLD}(Light Blue)
+STR_LIVERY_HNRC					 			: HNRC {GOLD}(Orange & White)
+STR_LIVERY_HNRC_NEW					 		: HNRC {GOLD}(Orange)
 STR_LIVERY_GBRF					 			: GBRf
 STR_LIVERY_GBRF_GREY			 			: GBRf {GOLD}(Grey)
 STR_LIVERY_GBRF_CEMEX			 			: GBRf {GOLD}(Cemex)

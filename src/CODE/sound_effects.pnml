@@ -81,7 +81,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_old_full, getbits(extra_callback_
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/86_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_8.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_8.wav") ;
 }
 
@@ -90,7 +90,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_modern_full, getbits(extra_callba
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_electric_modern_running ;
 	SOUND_EVENT_START         : sound("sfx/horn_4.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_4.wav") ;
 }
 
@@ -99,7 +99,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_modern_full, getbits(extra_callback
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/modern_diesel_run.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/modern_diesel_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_4.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_4.wav") ;
 }
 
@@ -108,7 +108,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_full, getbits(extra_callback_inf
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_run.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/ee_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -117,7 +117,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2_full, getbits(extra_callback_i
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_2_run.wav",70) ;
 	SOUND_EVENT_RUNNING_16    : sw_ee_coast_decider ;
 	SOUND_EVENT_START         : sound("sfx/horn_7.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_7.wav") ;
 }
 
@@ -127,7 +127,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_deltic_full, getbits(extra_callback
 	SOUND_EVENT_VISUAL_EFFECT	: sound("sfx/deltic_run.wav") ;
 	SOUND_EVENT_START			: sound("sfx/horn_7.wav") ;
 	SOUND_EVENT_TUNNEL			: sound("sfx/horn_7.wav") ;
-	SOUND_EVENT_BREAKDOWN		: SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN		: SOUND_BREAKDOWN_TRAIN_SHIP ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small_full, getbits(extra_callback_info1, 0, 8)){
@@ -135,7 +135,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small_full, getbits(extra_callback_
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/thump_coast.wav",60) ;
 	SOUND_EVENT_START         : sound("sfx/horn_8.wav",) ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_8.wav") ;
 }
 
@@ -144,7 +144,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage_full, getbits(extra_callba
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",80) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/46_coast.wav",80) ;
 	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
 }
 
@@ -153,7 +153,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_emd_full, getbits(extra_callback_in
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/emd_run.wav",90) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/emd_coast.wav",90) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -162,7 +162,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_hst_full, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/hst_run.wav",90) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/hst_coast.wav",90) ;
 	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
 }
 
@@ -171,7 +171,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_emu_desiro_full, getbits(extra_callback_info1, 
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_desiro_running ;
 	SOUND_EVENT_START         : sound("sfx/horn_6.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_6.wav") ;
 }
 
@@ -180,7 +180,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_emu_gec_full, getbits(extra_callback_info1, 0, 
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_gec_run ;
 	SOUND_EVENT_START         : sound("sfx/horn_1.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
 }
 
@@ -189,7 +189,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_tube_gec_full, getbits(extra_callback_info1, 0,
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_gec_run ;
 	SOUND_EVENT_START         : sound("sfx/thump_whistle.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav") ;
 }
 
@@ -198,7 +198,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_tube_modern_full, getbits(extra_callback_info1,
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_electric_modern_running ;
 	SOUND_EVENT_START         : sound("sfx/thump_whistle.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav") ;
 }
 
@@ -207,7 +207,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one_full, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/dmu_run.wav", 80) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/dmu_coast.wav", 80) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -215,7 +215,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_two_full, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_STOPPED       : sound("sfx/voyager_idle.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/voyager_run.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -225,7 +225,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker_full, getbits(extra_callback
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/465_shoe_clatter.wav") ;
  SOUND_EVENT_RUNNING_16 : sw_sfx_electric_networker_running ;
  SOUND_EVENT_START : sound("sfx/465_depart.wav") ;
- SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
+ SOUND_EVENT_BREAKDOWN : SOUND_BREAKDOWN_TRAIN_SHIP ;
  SOUND_EVENT_TUNNEL : sound("sfx/horn_1.wav") ;
 }*/
 
@@ -246,7 +246,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_08, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
 	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 3) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -258,7 +258,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_25, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 6) ;
 	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 5) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -271,7 +271,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_40, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 1) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/ee_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -284,7 +284,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_60, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",90) ;
 	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 8) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -294,21 +294,21 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_66, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/modern_diesel_run.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/66_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_sfx_extension_60_check_full, RUKTS_E_CHECK){ 1 : sw_sfx_extension_60 ; sw_sfx_diesel_loco_heritage_full; }
 
-//Decide sound effects based on parameter settings, SOUND_TRAIN_HORN, 
+//Decide sound effects based on parameter settings, SOUND_DEPARTURE_TRAIN, 
 
 switch(FEAT_TRAINS, SELF, sw_sfx_0, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : CB_RESULT_NO_SOUND;
 	SOUND_EVENT_VISUAL_EFFECT : CB_RESULT_NO_SOUND;
 	SOUND_EVENT_RUNNING_16    : CB_RESULT_NO_SOUND;
-	SOUND_EVENT_START         : SOUND_TRAIN_HORN;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_START         : SOUND_DEPARTURE_TRAIN;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : CB_RESULT_NO_SOUND;
 }
 

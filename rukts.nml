@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 92 ;
+	version: 94 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -833,7 +833,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_old_full, getbits(extra_callback_
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/86_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_8.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_8.wav") ;
 }
 
@@ -842,7 +842,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_loco_modern_full, getbits(extra_callba
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_electric_modern_running ;
 	SOUND_EVENT_START         : sound("sfx/horn_4.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_4.wav") ;
 }
 
@@ -851,7 +851,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_modern_full, getbits(extra_callback
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/modern_diesel_run.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/modern_diesel_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_4.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_4.wav") ;
 }
 
@@ -860,7 +860,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_full, getbits(extra_callback_inf
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_run.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/ee_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -869,7 +869,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_ee_2_full, getbits(extra_callback_i
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/ee_2_run.wav",70) ;
 	SOUND_EVENT_RUNNING_16    : sw_ee_coast_decider ;
 	SOUND_EVENT_START         : sound("sfx/horn_7.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_7.wav") ;
 }
 
@@ -879,7 +879,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_deltic_full, getbits(extra_callback
 	SOUND_EVENT_VISUAL_EFFECT	: sound("sfx/deltic_run.wav") ;
 	SOUND_EVENT_START			: sound("sfx/horn_7.wav") ;
 	SOUND_EVENT_TUNNEL			: sound("sfx/horn_7.wav") ;
-	SOUND_EVENT_BREAKDOWN		: SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN		: SOUND_BREAKDOWN_TRAIN_SHIP ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small_full, getbits(extra_callback_info1, 0, 8)){
@@ -887,7 +887,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_small_full, getbits(extra_callback_
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/thump_coast.wav",60) ;
 	SOUND_EVENT_START         : sound("sfx/horn_8.wav",) ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_8.wav") ;
 }
 
@@ -896,7 +896,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_heritage_full, getbits(extra_callba
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",80) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/46_coast.wav",80) ;
 	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
 }
 
@@ -905,7 +905,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_diesel_loco_emd_full, getbits(extra_callback_in
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/emd_run.wav",90) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/emd_coast.wav",90) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -914,7 +914,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_hst_full, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/hst_run.wav",90) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/hst_coast.wav",90) ;
 	SOUND_EVENT_START         : sound("sfx/horn_3.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_3.wav") ;
 }
 
@@ -923,7 +923,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_emu_desiro_full, getbits(extra_callback_info1, 
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_desiro_running ;
 	SOUND_EVENT_START         : sound("sfx/horn_6.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_6.wav") ;
 }
 
@@ -932,7 +932,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_emu_gec_full, getbits(extra_callback_info1, 0, 
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_gec_run ;
 	SOUND_EVENT_START         : sound("sfx/horn_1.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_1.wav") ;
 }
 
@@ -941,7 +941,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_tube_gec_full, getbits(extra_callback_info1, 0,
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_gec_run ;
 	SOUND_EVENT_START         : sound("sfx/thump_whistle.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav") ;
 }
 
@@ -950,7 +950,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_tube_modern_full, getbits(extra_callback_info1,
 	//SOUND_EVENT_VISUAL_EFFECT : sound("sfx/.wav") ;
 	SOUND_EVENT_RUNNING_16    : sw_sfx_electric_modern_running ;
 	SOUND_EVENT_START         : sound("sfx/thump_whistle.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/thump_whistle.wav") ;
 }
 
@@ -959,7 +959,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_one_full, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/dmu_run.wav", 80) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/dmu_coast.wav", 80) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -967,7 +967,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_dmu_two_full, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_STOPPED       : sound("sfx/voyager_idle.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/voyager_run.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -977,7 +977,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_electric_networker_full, getbits(extra_callback
  SOUND_EVENT_VISUAL_EFFECT : sound("sfx/465_shoe_clatter.wav") ;
  SOUND_EVENT_RUNNING_16 : sw_sfx_electric_networker_running ;
  SOUND_EVENT_START : sound("sfx/465_depart.wav") ;
- SOUND_EVENT_BREAKDOWN : SOUND_TRAIN_BREAKDOWN ;
+ SOUND_EVENT_BREAKDOWN : SOUND_BREAKDOWN_TRAIN_SHIP ;
  SOUND_EVENT_TUNNEL : sound("sfx/horn_1.wav") ;
 }*/
 
@@ -998,7 +998,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_08, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/thump_run.wav",60) ;
 	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 3) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -1010,7 +1010,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_25, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 6) ;
 	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 5) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -1023,7 +1023,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_40, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 1) ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/ee_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -1036,7 +1036,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_60, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/46_run.wav",90) ;
 	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 8) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
@@ -1046,21 +1046,21 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_66, getbits(extra_callback_info1, 0, 
 	SOUND_EVENT_VISUAL_EFFECT : sound("sfx/modern_diesel_run.wav") ;
 	SOUND_EVENT_RUNNING_16    : sound("sfx/66_coast.wav") ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : sound("sfx/horn_5.wav") ;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_sfx_extension_60_check_full, (grf_current_status("RTNA")) | (grf_future_status("RTNA"))){ 1 : sw_sfx_extension_60 ; sw_sfx_diesel_loco_heritage_full; }
 
-//Decide sound effects based on parameter settings, SOUND_TRAIN_HORN, 
+//Decide sound effects based on parameter settings, SOUND_DEPARTURE_TRAIN, 
 
 switch(FEAT_TRAINS, SELF, sw_sfx_0, getbits(extra_callback_info1, 0, 8)){
 	SOUND_EVENT_STOPPED       : CB_RESULT_NO_SOUND;
 	SOUND_EVENT_VISUAL_EFFECT : CB_RESULT_NO_SOUND;
 	SOUND_EVENT_RUNNING_16    : CB_RESULT_NO_SOUND;
-	SOUND_EVENT_START         : SOUND_TRAIN_HORN;
-	SOUND_EVENT_BREAKDOWN     : SOUND_TRAIN_BREAKDOWN ;
+	SOUND_EVENT_START         : SOUND_DEPARTURE_TRAIN;
+	SOUND_EVENT_BREAKDOWN     : SOUND_BREAKDOWN_TRAIN_SHIP ;
 	SOUND_EVENT_TUNNEL        : CB_RESULT_NO_SOUND;
 }
 
@@ -10564,6 +10564,13 @@ Rail Operations Group
 Colas Rail
 Network Rail Yellow
 Police
+Railfreight Red Stripe
+British Steel Blue
+Network SouthEast (Fictional)
+GIF Blue
+HNRC Old
+HNRC New
+GBRf (Fictional)
 
 */
 
@@ -10594,6 +10601,16 @@ spriteset(gfx_37_rog,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0
 spriteset(gfx_37_rog_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,300)}
 spriteset(gfx_37_colas,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,325)}
 spriteset(gfx_37_colas_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,325)}
+spriteset(gfx_37_hnrc,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,350)}
+spriteset(gfx_37_hnrc_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,350)}
+spriteset(gfx_37_nse,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,375)}
+spriteset(gfx_37_nse_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,375)}
+spriteset(gfx_37_brsteel,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,400)}
+spriteset(gfx_37_brsteel_rev,		"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,400)}
+spriteset(gfx_37_gbrf,				"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,425)}
+spriteset(gfx_37_gbrf_rev,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,425)}
+spriteset(gfx_37_rfredstripe,		"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(0,450)}
+spriteset(gfx_37_rfredstripe_rev,	"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(0,450)}
 
 spriteset(gfx_37_police,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(178,0)}
 spriteset(gfx_37_police_rev,		"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double_reverse(178,0)}
@@ -10634,6 +10651,11 @@ switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_ews, vehicle_is_reversed){ 1 : g
 switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_rog, vehicle_is_reversed){ 1 : gfx_37_rog_rev ; gfx_37_rog ; }
 switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_colas, vehicle_is_reversed){ 1 : gfx_37_colas_rev ; gfx_37_colas ; }
 switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_police, vehicle_is_reversed){ 1 : gfx_37_police_rev ; gfx_37_police ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_hnrc, vehicle_is_reversed){ 1 : gfx_37_hnrc_rev ; gfx_37_hnrc ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_nse, vehicle_is_reversed){ 1 : gfx_37_nse_rev ; gfx_37_nse ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_brsteel, vehicle_is_reversed){ 1 : gfx_37_brsteel_rev ; gfx_37_brsteel ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_gbrf, vehicle_is_reversed){ 1 : gfx_37_gbrf_rev ; gfx_37_gbrf ; }
+switch(FEAT_TRAINS, PARENT, sw_37_gfx_rev_check_rfredstripe, vehicle_is_reversed){ 1 : gfx_37_rfredstripe_rev ; gfx_37_rfredstripe ; }
 
 
 //Automatic
@@ -10700,6 +10722,13 @@ switch(FEAT_TRAINS, SELF, sw_37_gfx_manual, cargo_subtype){
 	13	: sw_37_gfx_rev_check_colas ;
 	14	: sw_37_gfx_rev_check_railfreight ;
 	15	: sw_37_gfx_rev_check_police ;
+	16	: sw_37_gfx_rev_check_rfredstripe ; // Railfreight Red Stripe
+	17	: sw_37_gfx_rev_check_brsteel ; // British Steel Blue
+	18	: sw_37_gfx_rev_check_nse ;//  Network SouthEast (Fictional)
+	19	: sw_37_gfx_rev_check_ews ; // GIF Blue
+	20	: sw_37_gfx_rev_check_railfreight ; // HNRC Old
+	21	: sw_37_gfx_rev_check_hnrc ; // HNRC New
+	22	: sw_37_gfx_rev_check_gbrf ; // GBRf (Fictional)
 	sw_37_gfx_rev_check_brll ;
 }
 
@@ -10740,6 +10769,13 @@ switch(FEAT_TRAINS, PARENT, sw_37_gfx_manual_dbso, cargo_subtype){
 	13	: sw_37_gfx_rev_check_colas ;
 	14	: sw_37_gfx_rev_check_railfreight ;
 	15	: sw_37_gfx_rev_check_police ;
+	16	: sw_37_gfx_rev_check_rfredstripe ; // Railfreight Red Stripe
+	17	: sw_37_gfx_rev_check_brsteel ; // British Steel Blue
+	18	: sw_37_gfx_rev_check_nse ;//  Network SouthEast (Fictional)
+	19	: sw_37_gfx_rev_check_ews ; // GIF Blue
+	20	: sw_37_gfx_rev_check_railfreight ; // HNRC Old
+	21	: sw_37_gfx_rev_check_hnrc ; // HNRC New
+	22	: sw_37_gfx_rev_check_gbrf ; // GBRf (Fictional)
 	sw_37_gfx_rev_check_brll ;
 }
 
@@ -10855,6 +10891,13 @@ switch(FEAT_TRAINS, SELF, sw_37_gfx_hc_manual, cargo_subtype){
 	12		: sw_37_hc_modern ;
 	14		: sw_37_hc_centre ;
 	15		: gfx_37_hc_split ;
+	16		: sw_37_hc_standard_4 ; // Railfreight Red Stripe
+	17		: gfx_37_hc_centre_refit ; // British Steel Blue
+	18		: sw_37_hc_standard_4 ;//  Network SouthEast (Fictional)
+	19		: sw_37_hc_standard_4 ; // GIF Blue
+	20		: sw_37_hc_standard_4 ; // HNRC Old
+	21		: sw_37_hc_modern ; // HNRC New
+	22		: sw_37_hc_modern ; // GBRf (Fictional)
 	sw_37_hc_standard_4 ;
 }
 
@@ -10920,6 +10963,13 @@ switch(FEAT_TRAINS, PARENT, sw_37_gfx_hc_manual_dbso, cargo_subtype){
 	12		: sw_37_hc_modern_dbso ;
 	14		: sw_37_hc_centre_dbso ;
 	15		: gfx_37_hc_split ;
+	16		: sw_37_hc_standard_4 ; // Railfreight Red Stripe
+	17		: gfx_37_hc_centre_refit ; // British Steel Blue
+	18		: sw_37_hc_standard_4 ;//  Network SouthEast (Fictional)
+	19		: sw_37_hc_standard_4 ; // GIF Blue
+	20		: sw_37_hc_standard_4 ; // HNRC Old
+	21		: sw_37_hc_modern ; // HNRC New
+	22		: sw_37_hc_modern ; // GBRf (Fictional)
 	sw_37_hc_standard_4_dbso ;
 }
 
@@ -11028,6 +11078,13 @@ switch(FEAT_TRAINS, SELF, sw_37_gfx_lt_manual, cargo_subtype){
 	12		: sw_37_lt_modern ;
 	14		: gfx_37_lt_centre ;
 	15		: gfx_37_lt_split ;
+	16		: sw_37_lt_standard_4 ; // Railfreight Red Stripe
+	17		: gfx_37_lt_centre ; // British Steel Blue
+	18		: sw_37_lt_standard_4 ;//  Network SouthEast (Fictional)
+	19		: sw_37_lt_standard_4 ; // GIF Blue
+	20		: sw_37_lt_standard_4 ; // HNRC Old
+	21		: sw_37_lt_modern ; // HNRC New
+	22		: sw_37_lt_modern ; // GBRf (Fictional)
 	sw_37_lt_standard_4 ;
 }
 
@@ -11092,6 +11149,13 @@ switch(FEAT_TRAINS, PARENT, sw_37_gfx_lt_manual_dbso, cargo_subtype){
 	12		: sw_37_lt_modern_dbso ;
 	14		: gfx_37_lt_centre ;
 	15		: gfx_37_lt_split ;
+	16		: sw_37_lt_standard_4 ; // Railfreight Red Stripe
+	17		: gfx_37_lt_centre ; // British Steel Blue
+	18		: sw_37_lt_standard_4 ;//  Network SouthEast (Fictional)
+	19		: sw_37_lt_standard_4 ; // GIF Blue
+	20		: sw_37_lt_standard_4 ; // HNRC Old
+	21		: sw_37_lt_modern ; // HNRC New
+	22		: sw_37_lt_modern ; // GBRf (Fictional)
 	sw_37_lt_standard_4_dbso ;
 }
 
@@ -11212,6 +11276,13 @@ switch(FEAT_TRAINS, SELF, sw_37_col_manual, cargo_subtype){
 	13	: palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 	14	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW)	;
 	15	: palette_2cc(COLOUR_WHITE, COLOUR_ORANGE) ;
+	16	: palette_2cc(COLOUR_GREY, COLOUR_RED) ; // Railfreight Red Stripe
+	17	: palette_2cc(COLOUR_BLUE, COLOUR_BLUE) ; // British Steel Blue
+	18	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;//  Network SouthEast (Fictional)
+	19	: palette_2cc(COLOUR_BLUE, COLOUR_DARK_BLUE) ; // GIF Blue
+	20	: palette_2cc(COLOUR_ORANGE, COLOUR_WHITE) ; // HNRC Old
+	21	: palette_2cc(COLOUR_ORANGE, COLOUR_WHITE) ; // HNRC New
+	22	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ; // GBRf (Fictional)
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
@@ -11252,6 +11323,13 @@ switch(FEAT_TRAINS, PARENT, sw_37_col_manual_dbso, cargo_subtype){
 	13	: palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
 	14	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW)	;
 	15	: palette_2cc(COLOUR_WHITE, COLOUR_ORANGE) ;
+	16	: palette_2cc(COLOUR_GREY, COLOUR_RED) ; // Railfreight Red Stripe
+	17	: palette_2cc(COLOUR_BLUE, COLOUR_BLUE) ; // British Steel Blue
+	18	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;//  Network SouthEast (Fictional)
+	19	: palette_2cc(COLOUR_BLUE, COLOUR_DARK_BLUE) ; // GIF Blue
+	20	: palette_2cc(COLOUR_ORANGE, COLOUR_WHITE) ; // HNRC Old
+	21	: palette_2cc(COLOUR_ORANGE, COLOUR_WHITE) ; // HNRC New
+	22	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ; // GBRf (Fictional)
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
@@ -11310,6 +11388,13 @@ switch(FEAT_TRAINS, SELF, sw_37_refit_text, cargo_subtype){
 	13	: string(STR_LIVERY_COLAS) ;
 	14	: string(STR_LIVERY_NETWORK_RAIL) ;
 	15	: string(STR_LIVERY_POLICE) ;
+	16	: string(STR_LIVERY_RAILFREIGHT3) ; // Railfreight Red Stripe
+	17	: string(STR_LIVERY_BSC) ; // British Steel Blue
+	18	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_NSE)); //  Network SouthEast (Fictional)
+	19	: string(STR_LIVERY_GIF) ; // GIF Blue
+	20	: string(STR_LIVERY_HNRC) ; // HNRC Old
+	21	: string(STR_LIVERY_HNRC_NEW) ; // HNRC New
+	22	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_GBRF)); // GBRf (Fictional)
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -28503,7 +28588,7 @@ item (FEAT_TRAINS, item_390, 390) {
 		speed:							140 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_TILT);
 		refit_cost:						0;
-		track_type:						SAAE;
+		track_type:						ELRL;
 		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							1520 hp;
 		running_cost_base:				RUNNING_COST_ELECTRIC;
