@@ -1,0 +1,146 @@
+//Brush Peak
+
+//Spritesets
+
+spriteset(gfx_western_maroon_s		, "gfx/DIESEL_LOCO/class_52.png"){	template_8_4_2		(  0,  0) }
+spriteset(gfx_western_sand			, "gfx/DIESEL_LOCO/class_52.png"){	template_8_4_2		(  0, 25) }
+spriteset(gfx_western_green			, "gfx/DIESEL_LOCO/class_52.png"){	template_8_4_2		(  0, 50) }
+spriteset(gfx_western_blue_s		, "gfx/DIESEL_LOCO/class_52.png"){	template_8_4_2		(  0, 75) }
+spriteset(gfx_western_blue_l		, "gfx/DIESEL_LOCO/class_52.png"){	template_8_4_2		(  0,100) }
+spriteset(gfx_western_maroon_l		, "gfx/DIESEL_LOCO/class_52.png"){	template_8_4_2		(  0,125) }
+
+spriteset(gfx_western_purchase_maroon	, "gfx/DIESEL_LOCO/class_52.png"){ template_purchase_short(89,  0) }
+spriteset(gfx_western_purchase_blue		, "gfx/DIESEL_LOCO/class_52.png"){ template_purchase_short(89, 100) }
+
+//Graphics switches
+
+
+switch(FEAT_TRAINS, SELF, sw_western_auto, current_year){
+	0..1969 : gfx_western_maroon_s ;
+	gfx_western_blue_l ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_western_manual, cargo_subtype){
+	0 : gfx_western_maroon_s ;
+	1 : gfx_western_maroon_l ;
+	2 : gfx_western_sand ;
+	3 : gfx_western_green ;
+	4 : gfx_western_blue_s ;
+	gfx_western_blue_l ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_western_manual_check, livery_choice){
+	1 : sw_western_manual ;
+	sw_western_auto ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_western_auto_2cc, current_year){
+	0..1969 : gfx_western_blue_s ;
+	gfx_western_blue_l ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_western_manual_check_2cc, colour_scheme_1){
+	1 : sw_western_manual ;
+	sw_western_auto_2cc ;
+}
+
+
+
+
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_western_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_WARNING_SMALL, string(STR_LIVERY_MAROON)) ;
+	1 : string(STR_LIVERY_WARNING_LARGE, string(STR_LIVERY_MAROON)) ;
+	2 : string(STR_LIVERY_BR_SAND) ;
+	3 : string(STR_LIVERY_BR_BRUNSWICK) ;
+	4 : string(STR_LIVERY_WARNING_SMALL, string(STR_LIVERY_BRBLUE)) ;
+	5 : string(STR_LIVERY_WARNING_LARGE, string(STR_LIVERY_BRBLUE)) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_western_refit_text_check, livery_choice){
+	1 : sw_western_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+//Purchase sprites
+
+switch(FEAT_TRAINS, SELF, sw_western_purchase, colour_scheme_1){
+	1 : gfx_western_purchase_maroon ;
+	gfx_western_purchase_blue ;
+}
+
+//Colour mapping
+
+switch(FEAT_TRAINS, SELF, sw_western_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_GREEN) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+//Item
+
+
+item(FEAT_TRAINS, item_western, 52){
+	property{
+		name                           : string(STR_NAME_WESTERN) ;  
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1961,1,1) ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : 15 ;
+		vehicle_life                   : 17 ;
+		reliability_decay              : 19 ;
+		cost_factor                    : 78 ;
+		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_factor            : 253 ;
+		speed                          : 90 mph ;
+		track_type                     : RAIL ;
+		power                          : 2700 hp ;
+		weight                         : 110 ton ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		tractive_effort_coefficient    : 0.27 ;
+		air_drag_coefficient           : 0.0888888888888889 ;
+		length                         : 8 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default                        : sw_western_manual_check_2cc ;
+		colour_mapping                 : sw_western_colours_2cc_check ;
+		purchase                       : sw_western_purchase ;
+		purchase_colour_mapping        : palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+		sound_effect                   : sw_sfx_diesel_loco_heritage ;
+		create_effect                  : vfx_diesel_default ;
+		cargo_subtype_text             : sw_western_refit_text_check ;
+		purchase_cargo_capacity        : 0 ;
+		cargo_capacity                 : return 0 ;
+		can_attach_wagon               : sw_all_but_MU90;
+		running_cost_factor            : return(current_speed == 0 ? 50 : 253) ;
+		purchase_running_cost_factor : 253 ;
+	}
+}
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_western, 52){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_western, 52){
+	property{
+		name                           : string(STR_NAME_WESTERN_ALT) ;
+	}
+}
+}
