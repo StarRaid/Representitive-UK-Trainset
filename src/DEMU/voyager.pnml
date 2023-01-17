@@ -15,6 +15,9 @@ spriteset(gfx_voyager_avanti_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_net
 spriteset(gfx_meridian_mml_middle		, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 000, 325)}
 spriteset(gfx_meridian_mml_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 000, 300)}
 
+spriteset(gfx_meridian_emt_middle		, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 358, 275)}
+spriteset(gfx_meridian_emt_front		, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 358, 250)}
+
 spriteset(gfx_voyager_virgin_middle_2cc	, "gfx/DEMU/voyajah.png"	){	template_8_4_networker		( 179, 225)}
 spriteset(gfx_voyager_virgin_front_2cc	, "gfx/DEMU/voyajah.png"	){	template_8_8_networker		( 179, 200)}
 
@@ -47,6 +50,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_manual, cargo_subtype){
 	1 : sw_voyager_arriva_2cc ;
 	2 : gfx_voyager_avanti_front ;
 	3 : gfx_meridian_mml_front ;
+	4 : gfx_meridian_emt_front ;
 	sw_voyager_virgin_2cc ;
 }
 
@@ -77,6 +81,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_middle_manual, cargo_subtype){
 	1 : sw_voyager_arriva_t_2cc ;
 	2 : gfx_voyager_avanti_middle ;
 	3 : gfx_meridian_mml_middle ;
+	4 : gfx_meridian_emt_middle ;
 	sw_voyager_virgin_t_2cc ;
 }
 
@@ -97,6 +102,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_colours_manual, cargo_subtype){
 	1 : palette_2cc(COLOUR_PINK, COLOUR_RED) ;
 	2 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	4 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 }
 
@@ -133,6 +139,7 @@ switch(FEAT_TRAINS, SELF, sw_voyager_refit_text, cargo_subtype){
 	1 : string(STR_LIVERY_ARRIVA_XC) ;
 	2 : string(STR_LIVERY_AVANTI) ;
 	3 : string(STR_LIVERY_MIDLAND_MAINLINE_BLUE) ;
+	4 : string(STR_LIVERY_EMT) ;
 	CB_RESULT_NO_TEXT ;
 }
 
