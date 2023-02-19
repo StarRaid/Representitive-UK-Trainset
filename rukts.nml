@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 96 ;
+	version: 97 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -5960,21 +5960,21 @@ item (FEAT_TRAINS, item_fqa, 10028) {
 
 //Sprites
 
-spriteset(gfx_mbox			, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,   0)}
-spriteset(gfx_mbox_new		, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0, 150)}
-spriteset(gfx_mbox_yeo		, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81, 150)}
-spriteset(gfx_mbox_coal_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  25)}
-spriteset(gfx_mbox_coal_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  25)}
-spriteset(gfx_mbox_iron_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  50)}
-spriteset(gfx_mbox_iron_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  50)}
-spriteset(gfx_mbox_sand_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0,  75)}
-spriteset(gfx_mbox_sand_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81,  75)}
-spriteset(gfx_mbox_grey_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0, 100)}
-spriteset(gfx_mbox_grey_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81, 100)}
-spriteset(gfx_mbox_scrap_h	, "gfx/WAGON/monster_box.png"){ template_7_4_2(   0, 125)}
-spriteset(gfx_mbox_scrap_f	, "gfx/WAGON/monster_box.png"){ template_7_4_2(  81, 125)}
+spriteset(gfx_mbox			, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0,   0)}
+spriteset(gfx_mbox_new		, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0, 150)}
+spriteset(gfx_mbox_yeo		, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81, 150)}
+spriteset(gfx_mbox_coal_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0,  25)}
+spriteset(gfx_mbox_coal_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81,  25)}
+spriteset(gfx_mbox_iron_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0,  50)}
+spriteset(gfx_mbox_iron_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81,  50)}
+spriteset(gfx_mbox_sand_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0,  75)}
+spriteset(gfx_mbox_sand_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81,  75)}
+spriteset(gfx_mbox_grey_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0, 100)}
+spriteset(gfx_mbox_grey_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81, 100)}
+spriteset(gfx_mbox_scrap_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0, 125)}
+spriteset(gfx_mbox_scrap_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81, 125)}
 
-spriteset(gfx_mbox_purchase	, "gfx/WAGON/monster_box.png"){ template_purchase ( 81 , 0)}
+spriteset(gfx_mbox_purchase	, "gfx/WAGON/monster_box_v2.png"){ template_purchase ( 81 , 0)}
 
 
 //Switches
