@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 97 ;
+	version: 98 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -6621,7 +6621,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_v2_refit_text_check, livery_choice){
 	CB_RESULT_NO_TEXT ;
 }
 
-item(FEAT_TRAINS, item_mbox_v2, 10035){
+item(FEAT_TRAINS, item_mbox_v2, 10039){
 	property{
 		name:							string(STR_NAME_MONSTER_BOX) ;
 		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
@@ -6716,7 +6716,7 @@ switch(FEAT_TRAINS, SELF, sw_mwa_refit_text_check, livery_choice){
 }
 
 
-item(FEAT_TRAINS, item_mwa, 10036){
+item(FEAT_TRAINS, item_mwa, 10038){
 	property{
 		name:							string(STR_NAME_MWA) ;
 		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
@@ -6740,7 +6740,7 @@ item(FEAT_TRAINS, item_mwa, 10036){
 		power:							0 hp ;
 		weight:							23 ton ;
 		speed:							75 mph ;
-        variant_group:					10035;
+        variant_group:					10039;
 	}
 	graphics{
 		default:				sw_mwa_sprite_stack ;
@@ -6911,7 +6911,7 @@ item(FEAT_TRAINS, item_jna, 10037){
 		power:							0 hp ;
 		weight:							23 ton ;
 		speed:							60 mph ;
-        variant_group:					10035;
+        variant_group:					10039;
 	}
 	graphics{
 		default:				sw_jna_sprite_stack ;
@@ -36533,6 +36533,9 @@ sort(FEAT_TRAINS,[
 10013,
 10032,
 10005,
+10038,
+10039,
+10037,
 10025,
 10024,
 10011,
@@ -36701,6 +36704,9 @@ sort(FEAT_TRAINS,[
 10013,
 10032,
 10005,
+10038,
+10039,
+10037,
 10025,
 10024,
 10011,

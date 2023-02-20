@@ -664,7 +664,7 @@ switch(FEAT_TRAINS, SELF, sw_mbox_v2_refit_text_check, livery_choice){
 	CB_RESULT_NO_TEXT ;
 }
 
-item(FEAT_TRAINS, item_mbox_v2, 10035){
+item(FEAT_TRAINS, item_mbox_v2, 10039){
 	property{
 		name:							string(STR_NAME_MONSTER_BOX) ;
 		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
@@ -759,7 +759,7 @@ switch(FEAT_TRAINS, SELF, sw_mwa_refit_text_check, livery_choice){
 }
 
 
-item(FEAT_TRAINS, item_mwa, 10036){
+item(FEAT_TRAINS, item_mwa, 10038){
 	property{
 		name:							string(STR_NAME_MWA) ;
 		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
@@ -783,7 +783,7 @@ item(FEAT_TRAINS, item_mwa, 10036){
 		power:							0 hp ;
 		weight:							23 ton ;
 		speed:							75 mph ;
-        variant_group:					10035;
+        variant_group:					10039;
 	}
 	graphics{
 		default:				sw_mwa_sprite_stack ;
@@ -954,7 +954,7 @@ item(FEAT_TRAINS, item_jna, 10037){
 		power:							0 hp ;
 		weight:							23 ton ;
 		speed:							60 mph ;
-        variant_group:					10035;
+        variant_group:					10039;
 	}
 	graphics{
 		default:				sw_jna_sprite_stack ;
