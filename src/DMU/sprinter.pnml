@@ -377,6 +377,7 @@ item(FEAT_TRAINS, item_sprinter_1, 151){
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		dual_headed                    : 1 ;
 		ai_special_flag:				AI_FLAG_PASSENGER ;
+        variant_group:					150;
 	}
 	graphics{
 		default                 		: sw_150_1_spr_stack ;

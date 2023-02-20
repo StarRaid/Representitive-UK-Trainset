@@ -181,6 +181,7 @@ item(FEAT_TRAINS, item_funnynumber, 69){
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		dual_headed                    : 0 ;
+        variant_group:					56;
 	}
 	graphics{
 		default                        : sw_56_gfx_spr_stack ;
