@@ -203,6 +203,8 @@ item(FEAT_TRAINS, item_dbso, 9025){
 		power                          : 0 hp ;
 		weight                         : 38 ton ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		
+        variant_group: 9020;
 	}
 	graphics{
 		default                        : sw_dbso_gfx_reverse_check ;

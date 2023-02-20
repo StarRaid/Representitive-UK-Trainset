@@ -151,7 +151,7 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		misc_flags                     : bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
-		climates_available             : ALL_CLIMATES ;
+		climates_available             : NO_CLIMATE ;
 		introduction_date              : date( 1985, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 40 ;
@@ -504,5 +504,494 @@ item (FEAT_TRAINS, item_pol, 10027) {
 		colour_mapping:					sw_pol_col_check;
 	}
 }
+
+
+
+
+
+
+//Monster box
+
+
+//Sprites
+
+spriteset(gfx_mbox_v2			, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0,   0)}
+spriteset(gfx_mbox_v2_new		, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0, 150)}
+spriteset(gfx_mbox_v2_yeo		, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81, 150)}
+spriteset(gfx_mbox_v2_coal_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0,  25)}
+spriteset(gfx_mbox_v2_coal_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81,  25)}
+spriteset(gfx_mbox_v2_iron_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0,  50)}
+spriteset(gfx_mbox_v2_iron_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81,  50)}
+spriteset(gfx_mbox_v2_sand_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0,  75)}
+spriteset(gfx_mbox_v2_sand_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81,  75)}
+spriteset(gfx_mbox_v2_grey_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0, 100)}
+spriteset(gfx_mbox_v2_grey_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81, 100)}
+spriteset(gfx_mbox_v2_scrap_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0, 125)}
+spriteset(gfx_mbox_v2_scrap_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81, 125)}
+spriteset(gfx_mbox_v2_bauxite_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(   0, 175)}
+spriteset(gfx_mbox_v2_bauxite_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2(  81, 175)}
+
+spriteset(gfx_mbox_v2_purchase	, "gfx/WAGON/monster_box_v2.png"){ template_purchase ( 81 , 0)}
+
+
+//Switches
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_coal_cargo_check, PERCENT_FULL){
+	1..50	: gfx_mbox_v2_coal_h ;
+	51..100	: gfx_mbox_v2_coal_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_iron_cargo_check, PERCENT_FULL){
+	1..50	: gfx_mbox_v2_iron_h ;
+	51..100	: gfx_mbox_v2_iron_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_sand_cargo_check, PERCENT_FULL){
+	1..50	: gfx_mbox_v2_sand_h ;
+	51..100	: gfx_mbox_v2_sand_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_grey_cargo_check, PERCENT_FULL){
+	1..50	: gfx_mbox_v2_grey_h ;
+	51..100	: gfx_mbox_v2_grey_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_scrap_cargo_check, PERCENT_FULL){
+	1..50	: gfx_mbox_v2_scrap_h ;
+	51..100	: gfx_mbox_v2_scrap_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_bauxite_cargo_check, PERCENT_FULL){
+	1..50	: gfx_mbox_v2_bauxite_h ;
+	51..100	: gfx_mbox_v2_bauxite_f ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_cargo_check, cargo_type_in_veh){
+	COAL : sw_mbox_v2_coal_cargo_check ;
+	IORE : sw_mbox_v2_iron_cargo_check ;
+	PORE : sw_mbox_v2_iron_cargo_check ;
+	AORE : sw_mbox_v2_bauxite_cargo_check ;
+	CORE : sw_mbox_v2_bauxite_cargo_check ;
+	SAND : sw_mbox_v2_sand_cargo_check ;
+	GOLD : sw_mbox_v2_sand_cargo_check ;
+	CERA : sw_mbox_v2_sand_cargo_check ;
+	CERE : sw_mbox_v2_sand_cargo_check ;
+	GRAI : sw_mbox_v2_sand_cargo_check ;
+	WHEA : sw_mbox_v2_sand_cargo_check ;
+	MAIZ : sw_mbox_v2_sand_cargo_check ;
+	BEAN : sw_mbox_v2_scrap_cargo_check ;
+	SCMT : sw_mbox_v2_scrap_cargo_check ;
+	SCRP : sw_mbox_v2_scrap_cargo_check ;
+	SLAG : sw_mbox_v2_scrap_cargo_check ;
+	sw_mbox_v2_grey_cargo_check ;
+}
+
+
+//Sprite stack
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_gfx_manual, cargo_subtype){
+	3 : gfx_mbox_v2_new ;
+	6 : gfx_mbox_v2_yeo ;
+	gfx_mbox_v2 ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_gfx_manual_check, livery_choice){
+	1 : sw_mbox_v2_gfx_manual ;
+	gfx_mbox_v2 ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_sprite_stack, SPR_STACK){
+	0 : sw_mbox_v2_gfx_manual_check ;
+	1 : sw_mbox_v2_cargo_check ;
+}
+
+
+//Colours
+
+
+
+random_switch(FEAT_TRAINS, PARENT, sw_mbox_v2_colours_random){
+	2 : palette_2cc(COLOUR_DARK_GREEN , COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_RED , COLOUR_RED) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_colours_manual, cargo_subtype){
+	1 : palette_2cc(COLOUR_DARK_GREEN , COLOUR_DARK_GREEN) ;
+	2 : palette_2cc(COLOUR_RED , COLOUR_RED) ;
+	3 : palette_2cc(COLOUR_GREY , COLOUR_YELLOW) ;
+	4 : palette_2cc(COLOUR_DARK_BLUE , COLOUR_YELLOW) ;
+	5 : palette_2cc(COLOUR_YELLOW , COLOUR_YELLOW) ;
+	6 : palette_2cc(COLOUR_GREY , COLOUR_DARK_BLUE) ;
+	7 : palette_2cc(company_colour1, company_colour2) ;
+	sw_mbox_v2_colours_random ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_colours_year_check, build_year <= 1995){
+	1 : palette_2cc(COLOUR_BROWN, COLOUR_BROWN) ;
+	sw_mbox_v2_colours_random ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_colours_manual_check, livery_choice){
+	1 : sw_mbox_v2_colours_manual ;
+	sw_mbox_v2_colours_year_check ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_colours_2cc_check, colour_scheme_2){
+	1 : sw_mbox_v2_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_refit_text, cargo_subtype){
+	0 : string(STR_RANDOM_COLOURS) ;
+	1 : string(STR_LIVERY_FREIGHTLINER) ;
+	2 : string(STR_LIVERY_DBCARGO) ;
+	3 : string(STR_LIVERY_FREIGHTLINER_ORANGE) ;
+	4 : string(STR_LIVERY_GBRF) ;
+	5 : string(STR_LIVERY_NETWORK_RAIL) ;
+	6 : string(STR_LIVERY_AGGREGATES) ;
+	7 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mbox_v2_refit_text_check, livery_choice){
+	1 : sw_mbox_v2_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+item(FEAT_TRAINS, item_mbox_v2, 10035){
+	property{
+		name:							string(STR_NAME_MONSTER_BOX) ;
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
+		sprite_id:						SPRITE_ID_NEW_TRAIN ;
+		length:							7 ;
+		climates_available:				ALL_CLIMATES ;
+		introduction_date:				date(1981, 1, 1) ;
+		model_life:						VEHICLE_NEVER_EXPIRES ;
+		vehicle_life:					38 ;
+		cost_factor:					60 ;
+		running_cost_base:				RUNNING_COST_NONE ;
+		running_cost_factor:			100 ;
+		refit_cost:						0 ;
+		refittable_cargo_classes:		bitmask(CC_BULK, CC_NON_POURABLE) ;
+		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED, CC_PIECE_GOODS);
+		cargo_disallow_refit:			[GRAI, WHEA, MAIZ, CERE];
+		//cargo_allow_refit:			[COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
+		cargo_capacity:					75 ;
+		loading_speed:					30 ;
+		track_type:						RAIL ;
+		power:							0 hp ;
+		weight:							23 ton ;
+		speed:							50 mph ;
+	}
+	graphics{
+		default:				sw_mbox_v2_sprite_stack ;
+		purchase:				gfx_mbox_v2_purchase ;
+		colour_mapping:			sw_mbox_v2_colours_2cc_check ;
+		cargo_subtype_text:		sw_mbox_v2_refit_text_check ;
+	}
+}
+
+
+
+//MWA
+
+spriteset(gfx_mwa			, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 162, 175)}
+spriteset(gfx_mwa_new		, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 243, 175)}
+
+spriteset(gfx_mwa_purchase	, "gfx/WAGON/monster_box_v2.png"){ template_purchase( 81 ,200)}
+
+//Sprite stack
+
+switch(FEAT_TRAINS, SELF, sw_mwa_gfx_manual, cargo_subtype){
+	1 : gfx_mwa_new ;
+	gfx_mwa ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mwa_gfx_manual_check, livery_choice){
+	1 : sw_mwa_gfx_manual ;
+	gfx_mwa ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mwa_sprite_stack, SPR_STACK){
+	0 : sw_mwa_gfx_manual_check ;
+	1 : sw_mbox_v2_cargo_check ;
+}
+
+
+
+//Colours
+
+switch(FEAT_TRAINS, SELF, sw_mwa_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_DARK_GREEN , COLOUR_DARK_GREEN) ;
+	1 : palette_2cc(COLOUR_GREY , COLOUR_YELLOW) ;
+	2 : palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mwa_colours_manual_check, livery_choice){
+	1 : sw_mwa_colours_manual ;
+	palette_2cc(COLOUR_DARK_GREEN , COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mwa_colours_2cc_check, colour_scheme_2){
+	1 : sw_mwa_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_mwa_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_FREIGHTLINER) ;
+	1 : string(STR_LIVERY_FREIGHTLINER_ORANGE) ;
+	2 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mwa_refit_text_check, livery_choice){
+	1 : sw_mwa_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+item(FEAT_TRAINS, item_mwa, 10036){
+	property{
+		name:							string(STR_NAME_MWA) ;
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
+		sprite_id:						SPRITE_ID_NEW_TRAIN ;
+		length:							7 ;
+		climates_available:				ALL_CLIMATES ;
+		introduction_date:				date(2016, 1, 1) ;
+		model_life:						VEHICLE_NEVER_EXPIRES ;
+		vehicle_life:					45 ;
+		cost_factor:					50 ;
+		running_cost_base:				RUNNING_COST_NONE ;
+		running_cost_factor:			100 ;
+		refit_cost:						0 ;
+		refittable_cargo_classes:		bitmask(CC_BULK, CC_NON_POURABLE) ;
+		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED, CC_PIECE_GOODS);
+		cargo_disallow_refit:			[GRAI, WHEA, MAIZ, CERE];
+		//cargo_allow_refit:			[COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
+		cargo_capacity:					77 ;
+		loading_speed:					30 ;
+		track_type:						RAIL ;
+		power:							0 hp ;
+		weight:							23 ton ;
+		speed:							75 mph ;
+        variant_group:					10035;
+	}
+	graphics{
+		default:				sw_mwa_sprite_stack ;
+		purchase:				gfx_mwa_purchase ;
+		colour_mapping:			sw_mwa_colours_2cc_check ;
+		cargo_subtype_text:		sw_mwa_refit_text_check ;
+	}
+}
+
+
+
+
+//jna
+
+//Sprites
+
+spriteset(gfx_jna_coal_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 243,  25)}
+spriteset(gfx_jna_coal_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 162,  25)}
+spriteset(gfx_jna_iron_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 243,  50)}
+spriteset(gfx_jna_iron_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 162,  50)}
+spriteset(gfx_jna_sand_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 243,  75)}
+spriteset(gfx_jna_sand_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 162,  75)}
+spriteset(gfx_jna_grey_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 243, 100)}
+spriteset(gfx_jna_grey_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 162, 100)}
+spriteset(gfx_jna_scrap_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 243, 125)}
+spriteset(gfx_jna_scrap_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 162, 125)}
+spriteset(gfx_jna_bauxite_h	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 243, 200)}
+spriteset(gfx_jna_bauxite_f	, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 162, 200)}
+
+
+//Switches
+
+switch(FEAT_TRAINS, SELF, sw_jna_coal_cargo_check, PERCENT_FULL){
+	1..50	: gfx_jna_coal_h ;
+	51..100	: gfx_jna_coal_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_iron_cargo_check, PERCENT_FULL){
+	1..50	: gfx_jna_iron_h ;
+	51..100	: gfx_jna_iron_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_sand_cargo_check, PERCENT_FULL){
+	1..50	: gfx_jna_sand_h ;
+	51..100	: gfx_jna_sand_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_grey_cargo_check, PERCENT_FULL){
+	1..50	: gfx_jna_grey_h ;
+	51..100	: gfx_jna_grey_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_scrap_cargo_check, PERCENT_FULL){
+	1..50	: gfx_jna_scrap_h ;
+	51..100	: gfx_jna_scrap_f ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_bauxite_cargo_check, PERCENT_FULL){
+	1..50	: gfx_jna_bauxite_h ;
+	51..100	: gfx_jna_bauxite_f ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_jna_cargo_check, cargo_type_in_veh){
+	COAL : sw_jna_coal_cargo_check ;
+	IORE : sw_jna_iron_cargo_check ;
+	PORE : sw_jna_iron_cargo_check ;
+	AORE : sw_jna_bauxite_cargo_check ;
+	CORE : sw_jna_bauxite_cargo_check ;
+	SAND : sw_jna_sand_cargo_check ;
+	GOLD : sw_jna_sand_cargo_check ;
+	CERA : sw_jna_sand_cargo_check ;
+	CERE : sw_jna_sand_cargo_check ;
+	GRAI : sw_jna_sand_cargo_check ;
+	WHEA : sw_jna_sand_cargo_check ;
+	MAIZ : sw_jna_sand_cargo_check ;
+	BEAN : sw_jna_scrap_cargo_check ;
+	SCMT : sw_jna_scrap_cargo_check ;
+	SCRP : sw_jna_scrap_cargo_check ;
+	SLAG : sw_jna_scrap_cargo_check ;
+	sw_jna_grey_cargo_check ;
+}
+
+
+spriteset(gfx_jna			, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 162, 150)}
+spriteset(gfx_jna_ews		, "gfx/WAGON/monster_box_v2.png"){ template_7_4_2( 243, 150)}
+
+spriteset(gfx_jna_purchase	, "gfx/WAGON/monster_box_v2.png"){ template_purchase( 0 ,200)}
+
+//Sprite stack
+
+switch(FEAT_TRAINS, SELF, sw_jna_gfx_manual, cargo_subtype){
+	1 : gfx_jna_ews ;
+	gfx_jna ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_gfx_manual_check, livery_choice){
+	1 : sw_jna_gfx_manual ;
+	gfx_jna ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_sprite_stack, SPR_STACK){
+	0 : sw_jna_gfx_manual_check ;
+	1 : sw_jna_cargo_check ;
+}
+
+
+
+//Colours
+
+
+switch(FEAT_TRAINS, SELF, sw_jna_colours_manual, cargo_subtype){
+	0 : palette_2cc(COLOUR_RED , COLOUR_YELLOW) ;
+	1 : palette_2cc(COLOUR_YELLOW , COLOUR_YELLOW) ;
+	2 : palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_colours_manual_check, livery_choice){
+	1 : sw_jna_colours_manual ;
+	palette_2cc(COLOUR_DARK_GREEN , COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_colours_2cc_check, colour_scheme_2){
+	1 : sw_jna_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+//Refit text
+
+switch(FEAT_TRAINS, SELF, sw_jna_refit_text, cargo_subtype){
+	0 : string(STR_LIVERY_EWS) ;
+	1 : string(STR_LIVERY_NETWORK_RAIL) ;
+	2 : string(STR_LIVER_COMP_COLOURS) ;
+	CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_jna_refit_text_check, livery_choice){
+	1 : sw_jna_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+
+
+item(FEAT_TRAINS, item_jna, 10037){
+	property{
+		name:							string(STR_NAME_JNA) ;
+		misc_flags:						bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
+		sprite_id:						SPRITE_ID_NEW_TRAIN ;
+		length:							7 ;
+		climates_available:				ALL_CLIMATES ;
+		introduction_date:				date(1998, 1, 1) ;
+		model_life:						VEHICLE_NEVER_EXPIRES ;
+		vehicle_life:					40 ;
+		cost_factor:					30 ;
+		running_cost_base:				RUNNING_COST_NONE ;
+		running_cost_factor:			100 ;
+		refit_cost:						0 ;
+		refittable_cargo_classes:		bitmask(CC_BULK, CC_NON_POURABLE) ;
+		non_refittable_cargo_classes:	bitmask(CC_COVERED, CC_POWDERIZED, CC_PIECE_GOODS);
+		cargo_disallow_refit:			[GRAI, WHEA, MAIZ, CERE];
+		//cargo_allow_refit:			[COAL, GOLD, IORE, WHEA, CORE, DIAM, AORE, BDMT, SAND, CLAY, PORE, COPR, CERA] ;
+		cargo_capacity:					64 ;
+		loading_speed:					30 ;
+		track_type:						RAIL ;
+		power:							0 hp ;
+		weight:							23 ton ;
+		speed:							60 mph ;
+        variant_group:					10035;
+	}
+	graphics{
+		default:				sw_jna_sprite_stack ;
+		purchase:				gfx_jna_purchase ;
+		colour_mapping:			sw_jna_colours_2cc_check ;
+		cargo_subtype_text:		sw_jna_refit_text_check ;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
