@@ -64,7 +64,7 @@ item(FEAT_TRAINS, item_ner_autocar, 3170 ){
 	graphics{
 		default                 		: sw_3170_spr_stack ;
 		purchase                		: gfx_3170_purch ;
-		sound_effect            		: sw_sfx_extension_08_check ;
+		sound_effect            		: sw_sfx_extension_25_check ;
 		create_effect           		: vfx_diesel_default ;
 		colour_mapping          		: sw_3170_colours_2cc_check ;
 		running_cost_factor    			: return(current_speed == 0 ? 6 : 15) ;

@@ -86,6 +86,7 @@ STR_LIVERY_RAILFREIGHT2						: Railfreight
 STR_LIVERY_RAILFREIGHT3						: Railfreight {GOLD}(Red Stripe)
 STR_LIVERY_CIVIL_ENGINEERS					: Civil Engineer's "Dutch"
 STR_LIVERY_RAIL_EXPRESS          			: Rail Express Systems
+STR_LIVERY_RTC			         			: Railway Technical Centre {GOLD}(Blue & Red)
 STR_LIVERY_POLICE							: Police
 STR_LIVERY_NCB                   			: National Power
 STR_LIVERY_BSC                   			: British Steel Corporation
@@ -403,6 +404,7 @@ STR_NAME_EEHOOVER            :EE Hoover (Diesel Electric)
 STR_NAME_HST                 :BREL HST (Diesel Electric)
 STR_NAME_BREL56				 :BREL "56" (Diesel Electric)
 STR_NAME_BREL58				 :BREL "58" (Diesel Electric)
+STR_NAME_BREL69				 :BREL "69" (Diesel Electric)
 STR_NAME_SHED				 :EMD "Shed" (Diesel Electric)
 STR_NAME_SKIP				 :EMD "Skip" (Diesel Electric)
 STR_NAME_SHED_YEOMAN		 :EMD "Yeoman" (Diesel Electric)
@@ -580,6 +582,7 @@ STR_NAME_EEHOOVER_ALT		:BR Class 50 (Diesel Electric)
 STR_NAME_HST_ALT			:BR Class 43 (Diesel Electric)
 STR_NAME_BREL58_ALT			:BR Class 58 (Diesel Electric)
 STR_NAME_BREL56_ALT			:BR Class 56 (Diesel Electric)
+STR_NAME_BREL69_ALT			:BR Class 69 (Diesel Electric)
 STR_NAME_SHED_ALT			:BR Class 66 (Diesel Electric)
 STR_NAME_SKIP_ALT			:BR Class 67 (Diesel Electric)
 STR_NAME_SHED_YEOMAN_ALT	:BR Class 59 (Diesel Electric)

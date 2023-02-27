@@ -7,7 +7,7 @@ spriteset(gfx_mr_1377_rev				, "gfx/STEAM_LOCO/midland_region.png"	){	template_5
 spriteset(gfx_mr_1377_br_black			, "gfx/STEAM_LOCO/midland_region.png"	){	template_5_8			(130,125)}
 spriteset(gfx_mr_1377_br_black_rev		, "gfx/STEAM_LOCO/midland_region.png"	){	template_5_8_rev		(130,125)}
 
-spriteset(gfx_mr_1377_purchase			, "gfx/STEAM_LOCO/midland_region.png"	){	template_purchase_short	(260,125)}
+spriteset(gfx_mr_1377_purchase			, "gfx/STEAM_LOCO/midland_region.png"	){	template_purchase		(260,125)}
 
 //Switches
 
