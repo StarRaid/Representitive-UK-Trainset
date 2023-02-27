@@ -254,7 +254,7 @@ switch(FEAT_TRAINS, SELF, sw_sfx_extension_08_check_full, RUKTS_E_CHECK){ 1 : sw
 
 
 switch(FEAT_TRAINS, SELF, sw_sfx_extension_25, getbits(extra_callback_info1, 0, 8)){
-	SOUND_EVENT_STOPPED       : import_sound("RTNA", 4) ;
+	SOUND_EVENT_STOPPED       : import_sound("RTNA", 2) ;
 	SOUND_EVENT_VISUAL_EFFECT : import_sound("RTNA", 6) ;
 	SOUND_EVENT_RUNNING_16    : import_sound("RTNA", 5) ;
 	SOUND_EVENT_START         : sound("sfx/horn_5.wav") ;

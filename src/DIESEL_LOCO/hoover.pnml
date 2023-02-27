@@ -144,9 +144,9 @@ switch(FEAT_TRAINS, SELF, sw_ee50_colours_2cc_check, colour_scheme_1){
 //Graphics
 
 switch(FEAT_TRAINS, SELF, sw_ee50_mk2_graphics, current_year){
-	ERA_SECTORISATION : sw_mk2a_nse_back ;
-	ERA_PRIVATE_ONE   : sw_mk2f_virgin ;
-	sw_mk2a_brblue ;
+	ERA_SECTORISATION : gfx_mk2_nse_a_tso ;
+	ERA_PRIVATE_ONE   : gfx_mk2_virgin_f_tso ;
+	gfx_mk2_brblue_a_tso ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ee50_mk2_livery_choice_decider, livery_choice){
