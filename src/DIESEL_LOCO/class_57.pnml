@@ -26,8 +26,8 @@ spriteset(gfx_57_lights_old_front,	"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_
 spriteset(gfx_57_lights_new_back,	"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(235,100)}
 spriteset(gfx_57_lights_new_front,	"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(235,125)}
 
-spriteset(gfx_57_purch_drs,			"gfx/DIESEL_LOCO/class_57.png"){template_purchase_short(178,25)}
-spriteset(gfx_57_purch_fliner,		"gfx/DIESEL_LOCO/class_57.png"){template_purchase_short(178,50)}
+spriteset(gfx_57_purch_drs,			"gfx/DIESEL_LOCO/class_57.png"){template_purchase(178,150)}
+spriteset(gfx_57_purch_fliner,		"gfx/DIESEL_LOCO/class_57.png"){template_purchase(178,175)}
 
 
 //Graphics switches

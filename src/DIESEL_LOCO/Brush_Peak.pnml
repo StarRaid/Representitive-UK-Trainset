@@ -15,8 +15,8 @@ spriteset(gfx_bshpeak_hc_split_brgreen, "gfx/DIESEL_LOCO/class_46.png"){ templat
 spriteset(gfx_bshpeak_hc_split_brblue , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_single(235, 25) }
 spriteset(gfx_bshpeak_hc_centre       , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_single(235, 50) }
 
-spriteset(gfx_bshpeak_purchase_brgreen, "gfx/DIESEL_LOCO/class_46.png"){ template_purchase_short(178,  0) }
-spriteset(gfx_bshpeak_purchase_brblue , "gfx/DIESEL_LOCO/class_46.png"){ template_purchase_short(178, 25) }
+spriteset(gfx_bshpeak_purchase_brgreen, "gfx/DIESEL_LOCO/class_46.png"){ template_purchase(324,  0) }
+spriteset(gfx_bshpeak_purchase_brblue , "gfx/DIESEL_LOCO/class_46.png"){ template_purchase(324, 25) }
 
 spriteset(gfx_bshpeak_blank           , "gfx/DIESEL_LOCO/class_46.png"){ base_32bpp() }
 

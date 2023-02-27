@@ -33,12 +33,12 @@ spriteset(gfx_gronk_regional_rail_rev		, "gfx/DIESEL_LOCO/class_08.png"){ templa
 spriteset(gfx_gronk_nse						, "gfx/DIESEL_LOCO/class_08.png"){ template_4_8		(228,100)}
 spriteset(gfx_gronk_nse_rev					, "gfx/DIESEL_LOCO/class_08.png"){ template_4_8_rev	(228,100)}
 
-spriteset(gfx_gronk_purchase_br_blue		, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase_short(114	,0	)}
-spriteset(gfx_gronk_purchase_br_black		, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase_short(114	,13	)}
-spriteset(gfx_gronk_purchase_br_green		, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase_short(114	,26	)}
-spriteset(gfx_gronk_purchase_railfreight	, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase_short(275	,0	)}
-spriteset(gfx_gronk_purchase_ews			, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase_short(275	,13	)}
-spriteset(gfx_gronk_purchase_freightliner	, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase_short(275	,26	)}
+spriteset(gfx_gronk_purchase_br_blue		, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase(114	,0	)}
+spriteset(gfx_gronk_purchase_br_black		, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase(114	,13	)}
+spriteset(gfx_gronk_purchase_br_green		, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase(114	,26	)}
+spriteset(gfx_gronk_purchase_railfreight	, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase(275	,0	)}
+spriteset(gfx_gronk_purchase_ews			, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase(275	,13	)}
+spriteset(gfx_gronk_purchase_freightliner	, "gfx/DIESEL_LOCO/class_08.png"){ template_purchase(275	,26	)}
 
 spriteset(gfx_gronk_wheels_1				, "gfx/DIESEL_LOCO/class_08.png"){ template_4_4		(200,0	)}
 spriteset(gfx_gronk_wheels_2				, "gfx/DIESEL_LOCO/class_08.png"){ template_4_4		(200,25	)}

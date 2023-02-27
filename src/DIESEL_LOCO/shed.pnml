@@ -41,8 +41,8 @@ spriteset(gfx_shed_drs_rev,					"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_re
 spriteset(gfx_shed_taillights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,0	)}
 spriteset(gfx_shed_headlights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,25	)}
 
-spriteset(gfx_shed_purch_ews,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(178,100)}
-spriteset(gfx_shed_purch_db,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(178,125)}
+spriteset(gfx_shed_purch_ews,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase(648,50)}
+spriteset(gfx_shed_purch_db,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase(648,75)}
 
 
 //Graphics switches
@@ -295,8 +295,8 @@ spriteset(gfx_59_mendip_rev,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_
 spriteset(gfx_59_taillights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(470,25	)}
 spriteset(gfx_59_headlights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(470,50	)}
 
-spriteset(gfx_59_purch,				"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(648,100)}
-spriteset(gfx_59_purch_gbrf,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(648,125)}
+spriteset(gfx_59_purch,				"gfx/DIESEL_LOCO/class_66.png"){ template_purchase(648,100)}
+spriteset(gfx_59_purch_gbrf,		"gfx/DIESEL_LOCO/class_66.png"){ template_purchase(648,125)}
 
 
 //Graphics switches
@@ -530,8 +530,8 @@ spriteset(gfx_67_arriva_rev,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_rev_
 spriteset(gfx_67_taillights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,50	)}
 spriteset(gfx_67_headlights,		"gfx/DIESEL_LOCO/class_66.png"){ template_8_8_2			(235,75	)}
 
-spriteset(gfx_67_purch,				"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(413,100)}
-spriteset(gfx_67_purch_db,			"gfx/DIESEL_LOCO/class_66.png"){ template_purchase_short(413,125)}
+spriteset(gfx_67_purch,				"gfx/DIESEL_LOCO/class_66.png"){ template_purchase		(648,150)}
+spriteset(gfx_67_purch_db,			"gfx/DIESEL_LOCO/class_66.png"){ template_purchase		(648,175)}
 
 
 //Graphics siwtches

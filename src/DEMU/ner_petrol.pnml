@@ -1,0 +1,76 @@
+
+
+
+spriteset(gfx_3170			, "gfx/WAGON/coaches.png"	){ template_7_4_2		( 225,	0)}
+spriteset(gfx_3170_headlight, "gfx/WAGON/coaches.png"	){ template_7_8_2		( 306,	0)}
+spriteset(gfx_3170_taillight, "gfx/WAGON/coaches.png"	){ template_7_8_2		( 306,	25)}
+
+spriteset(gfx_3170_purch	, "gfx/WAGON/coaches.png"	){	template_purchase	( 225,	25)}
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_3170_gfx_lights_back_check, position_in_consist_from_end){0 : gfx_3170_taillight ; }
+switch(FEAT_TRAINS, SELF, sw_3170_gfx_lights_front_check, position_in_consist){0 : gfx_3170_headlight ; }
+
+//Sprite stack
+
+switch(FEAT_TRAINS, SELF, sw_3170_spr_stack, SPR_STACK){
+	0 : gfx_3170 ;
+	1 : sw_3170_gfx_lights_back_check ;
+	2 : sw_3170_gfx_lights_front_check ;
+}
+
+
+
+switch(FEAT_TRAINS, SELF, sw_3170_colours_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+item(FEAT_TRAINS, item_ner_autocar, 3170 ){
+	property{
+		name                           : string(STR_NAME_NER_AUTOCAR) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_MU, TRAIN_FLAG_SPRITE_STACK);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 7 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(1903,1,1) ;
+		model_life                     : 30 ;
+		vehicle_life                   : 34 ;
+		reliability_decay              : 13 ;
+		cost_factor                    : 11 ;
+		running_cost_base              : RUNNING_COST_DIESEL ;
+		running_cost_factor            : 15 ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : CC_PASSENGERS ;
+		cargo_allow_refit              : [PASS, TOUR] ;
+		cargo_capacity                 : 52 ;
+		loading_speed                  : 21 ;
+		track_type                     : RAIL ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		speed                          : 40 mph ;
+		power                          : 92 hp ;
+		weight                         : 36 ton ;
+		tractive_effort_coefficient    : 0.068 ;
+		air_drag_coefficient           : 0.107 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
+		dual_headed                    : 0 ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
+	}
+	graphics{
+		default                 		: sw_3170_spr_stack ;
+		purchase                		: gfx_3170_purch ;
+		sound_effect            		: sw_sfx_extension_08_check ;
+		create_effect           		: vfx_diesel_default ;
+		colour_mapping          		: sw_3170_colours_2cc_check ;
+		running_cost_factor    			: return(current_speed == 0 ? 6 : 15) ;
+		purchase_running_cost_factor	: 15 ;
+	}
+}
+
+
+

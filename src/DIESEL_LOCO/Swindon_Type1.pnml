@@ -11,7 +11,7 @@ spriteset(gfx_swtype1_brblue_rev    , "gfx/DIESEL_LOCO/class_14.png"){ template_
 spriteset(gfx_swtype1_brmrn         , "gfx/DIESEL_LOCO/class_14.png"){ template_5_8    (  0,100) } 
 spriteset(gfx_swtype1_brmrn_rev     , "gfx/DIESEL_LOCO/class_14.png"){ template_5_8_rev(  0,100) } 
 
-spriteset(gfx_swtype1_purchase, "gfx/DIESEL_LOCO/class_14.png"){ template_purchase_short(130, 25) } 
+spriteset(gfx_swtype1_purchase, "gfx/DIESEL_LOCO/class_14.png"){ template_purchase(130, 50) } 
 
 spriteset(gfx_swtype1_wheels_1      , "gfx/DIESEL_LOCO/class_14.png"){ template_5_8    (187,  0) } 
 spriteset(gfx_swtype1_wheels_1_rev  , "gfx/DIESEL_LOCO/class_14.png"){ template_5_8_rev(187,  0) } 

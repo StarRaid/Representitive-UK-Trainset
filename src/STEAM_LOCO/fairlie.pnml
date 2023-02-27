@@ -4,7 +4,7 @@
 //Sprite sets
 
 spriteset(fairlie          , "gfx/STEAM_LOCO/fairlie.png" ){ template_narrow_6_4(  0 , 43 ) }
-spriteset(fairlie_purchase , "gfx/STEAM_LOCO/fairlie.png" ){ template_purchase_short(  0 , 63 ) }
+spriteset(fairlie_purchase , "gfx/STEAM_LOCO/fairlie.png" ){ template_purchase(  0 , 63 ) }
 
 
 //Switches

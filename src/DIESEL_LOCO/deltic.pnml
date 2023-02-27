@@ -8,8 +8,8 @@ spriteset(gfx_deltic_brblue_wcab,		"gfx/DIESEL_LOCO/class_55.png"){template_Mk2_
 spriteset(gfx_deltic_taillights,		"gfx/DIESEL_LOCO/class_55.png"){template_Mk2_double(0,75)}
 spriteset(gfx_deltic_headlights,		"gfx/DIESEL_LOCO/class_55.png"){template_Mk2_double(0,100)}
 
-spriteset(gfx_deltic_purch_brgreen,		"gfx/DIESEL_LOCO/class_55.png"){template_purchase_short(178,25)}
-spriteset(gfx_deltic_purch_brblue,		"gfx/DIESEL_LOCO/class_55.png"){template_purchase_short(178,50)}
+spriteset(gfx_deltic_purch_brgreen,		"gfx/DIESEL_LOCO/class_55.png"){template_purchase(178,25)}
+spriteset(gfx_deltic_purch_brblue,		"gfx/DIESEL_LOCO/class_55.png"){template_purchase(178,50)}
 
 
 //Graphics siwtches

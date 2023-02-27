@@ -16,9 +16,9 @@ spriteset(gfx_60_gbrf_rev,				"gfx/DIESEL_LOCO/class_60.png"){template_Mk2_doubl
 spriteset(gfx_60_lights_front,			"gfx/DIESEL_LOCO/class_60.png"){template_Mk2_double(235,0)}
 spriteset(gfx_60_lights_back,			"gfx/DIESEL_LOCO/class_60.png"){template_Mk2_double(235,25)}
 
-spriteset(gfx_60_purch_railfreight,		"gfx/DIESEL_LOCO/class_60.png"){template_purchase_short(178,25)}
-spriteset(gfx_60_purch_ews,				"gfx/DIESEL_LOCO/class_60.png"){template_purchase_short(178,75)}
-spriteset(gfx_60_purch_db,				"gfx/DIESEL_LOCO/class_60.png"){template_purchase_short(178,100)}
+spriteset(gfx_60_purch_railfreight,		"gfx/DIESEL_LOCO/class_60.png"){template_purchase(275,50)}
+spriteset(gfx_60_purch_ews,				"gfx/DIESEL_LOCO/class_60.png"){template_purchase(178,75)}
+spriteset(gfx_60_purch_db,				"gfx/DIESEL_LOCO/class_60.png"){template_purchase(178,100)}
 
 
 //Graphics switches

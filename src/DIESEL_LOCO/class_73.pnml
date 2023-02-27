@@ -161,12 +161,12 @@ switch(FEAT_TRAINS, SELF, sw_73_refit_text_check, livery_choice){
 
 //Purchase sprites
 
-spriteset(gfx_73_purch_base,		"gfx/DIESEL_LOCO/class_73.png"){template_purchase_short(178,0)}
-spriteset(gfx_73_purch_brgreen,		"gfx/DIESEL_LOCO/class_73.png"){template_purchase_short(178,50)}
-spriteset(gfx_73_purch_brlogo,		"gfx/DIESEL_LOCO/class_73.png"){template_purchase_short(178,75)}
-spriteset(gfx_73_purch_nse,			"gfx/DIESEL_LOCO/class_73.png"){template_purchase_short(178,125)}
-spriteset(gfx_73_purch_ews,			"gfx/DIESEL_LOCO/class_73.png"){template_purchase_short(178,175)}
-spriteset(gfx_73_purch_gbrf,		"gfx/DIESEL_LOCO/class_73.png"){template_purchase_short(178,200)}
+spriteset(gfx_73_purch_base,		"gfx/DIESEL_LOCO/class_73.png"){template_purchase(178,50)}
+spriteset(gfx_73_purch_brgreen,		"gfx/DIESEL_LOCO/class_73.png"){template_purchase(178,75)}
+spriteset(gfx_73_purch_brlogo,		"gfx/DIESEL_LOCO/class_73.png"){template_purchase(178,100)}
+spriteset(gfx_73_purch_nse,			"gfx/DIESEL_LOCO/class_73.png"){template_purchase(178,125)}
+spriteset(gfx_73_purch_ews,			"gfx/DIESEL_LOCO/class_73.png"){template_purchase(178,150)}
+spriteset(gfx_73_purch_gbrf,		"gfx/DIESEL_LOCO/class_73.png"){template_purchase(178,175)}
 
 switch(FEAT_TRAINS, SELF, sw_73_purch_gfx, current_year){
 	0..1967		: gfx_73_purch_brgreen ;

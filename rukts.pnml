@@ -82,6 +82,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DMU/turbostar.pnml"
 #include "src/DMU/class_195.pnml"
 
+#include "src/DEMU/ner_petrol.pnml"
 #include "src/DEMU/class_205.pnml"
 #include "src/DEMU/class_210.pnml"
 #include "src/DEMU/voyager.pnml"

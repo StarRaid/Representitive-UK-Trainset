@@ -13,11 +13,11 @@ spriteset(gfx_abb92_calsleeper_rev    , "gfx/ELECTRIC_LOCO/class_92.png"){ templ
 spriteset(gfx_abb92_gbrf              , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double(  0,150) }
 spriteset(gfx_abb92_gbrf_rev          , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double_reverse(  0,150) }
 
-spriteset(gfx_abb92_purchase_railfreight, "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase_short(178, 50) }
-spriteset(gfx_abb92_purchase_ews        , "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase_short(178, 75) }
-spriteset(gfx_abb92_purchase_dbcargo    , "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase_short(178,100) }
-spriteset(gfx_abb92_purchase_calsleeper , "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase_short(178,125) }
-spriteset(gfx_abb92_purchase_gbrf       , "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase_short(178,150) }
+spriteset(gfx_abb92_purchase_railfreight, "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase(275,125) }
+spriteset(gfx_abb92_purchase_ews        , "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase(275,150) }
+spriteset(gfx_abb92_purchase_dbcargo    , "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase(178,100) }
+spriteset(gfx_abb92_purchase_calsleeper , "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase(178,125) }
+spriteset(gfx_abb92_purchase_gbrf       , "gfx/ELECTRIC_LOCO/class_92.png"){ template_purchase(178,150) }
 
 spriteset(gfx_abb92_pantograph          , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double(235, 0) }
 spriteset(gfx_abb92_pantograph_rev      , "gfx/ELECTRIC_LOCO/class_92.png"){ template_Mk2_double(235, 25) }

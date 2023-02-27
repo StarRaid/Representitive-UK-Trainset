@@ -37,9 +37,9 @@ spriteset (ee40_br_blue_rev,      "gfx/DIESEL_LOCO/class_40.png"){template_eetyp
 spriteset (ee40_br_blue_logo,     "gfx/DIESEL_LOCO/class_40.png"){template_eetype4(0,50)}         //BR Large Logo
 spriteset (ee40_br_blue_logo_rev, "gfx/DIESEL_LOCO/class_40.png"){template_eetype4_reverse(0,50)} //BR Large Logo Reverse
 
-spriteset (ee40_purchase_brgreen,     "gfx/DIESEL_LOCO/class_40.png"){template_purchase_short(184,0)} //BR Green Purchase
-spriteset (ee40_purchase_brblue,      "gfx/DIESEL_LOCO/class_40.png"){template_purchase_short(184,0)} //BR Blue Purchase
-spriteset (ee40_purchase_brblue_logo, "gfx/DIESEL_LOCO/class_40.png"){template_purchase_short(184,0)} //BR Large Logo Purchase
+spriteset (ee40_purchase_brgreen,     "gfx/DIESEL_LOCO/class_40.png"){template_purchase(184,0)} //BR Green Purchase
+spriteset (ee40_purchase_brblue,      "gfx/DIESEL_LOCO/class_40.png"){template_purchase(184,0)} //BR Blue Purchase
+spriteset (ee40_purchase_brblue_logo, "gfx/DIESEL_LOCO/class_40.png"){template_purchase(184,0)} //BR Large Logo Purchase
 
 
 //Switches

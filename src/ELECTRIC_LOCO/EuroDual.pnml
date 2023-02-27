@@ -12,7 +12,7 @@ spriteset(gfx_eurodual_panto_up_reverse	, "gfx/ELECTRIC_LOCO/class_88.png"){temp
 spriteset(gfx_eurodual_panto_dn			, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_2		(0	,75	)}
 spriteset(gfx_eurodual_panto_dn_reverse	, "gfx/ELECTRIC_LOCO/class_88.png"){template_8_8_rev_2	(0	,75	)}
 
-spriteset(gfx_eurodual_drs_purchase, "gfx/ELECTRIC_LOCO/class_88.png"){template_purchase_short(178,0)}
+spriteset(gfx_eurodual_drs_purchase, "gfx/ELECTRIC_LOCO/class_88.png"){template_purchase(178,0)}
 
 
 switch(FEAT_TRAINS, PARENT, sw_eurodual_gfx_drs_reversal_check, vehicle_is_reversed){

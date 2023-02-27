@@ -5,18 +5,18 @@
 
 //Sritesets
 
-spriteset (gfx_powerhaul_fliner				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2				(0	,25	)}
-spriteset (gfx_powerhaul_fliner_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2			(0	,25	)}
-spriteset (gfx_powerhaul_colas				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2				(0	,0	)}
-spriteset (gfx_powerhaul_colas_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2			(0	,0	)}
-spriteset (gfx_powerhaul_2cc				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2				(0	,50	)}
-spriteset (gfx_powerhaul_2cc_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2			(0	,50	)}
+spriteset (gfx_powerhaul_fliner				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,25	)}
+spriteset (gfx_powerhaul_fliner_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2		(0	,25	)}
+spriteset (gfx_powerhaul_colas				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,0	)}
+spriteset (gfx_powerhaul_colas_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2		(0	,0	)}
+spriteset (gfx_powerhaul_2cc				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,50	)}
+spriteset (gfx_powerhaul_2cc_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2		(0	,50	)}
 
 spriteset (gfx_powerhaul_headlights			, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,100)}
 spriteset (gfx_powerhaul_taillights			, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,125)}
 
-spriteset (gfx_powerhaul_fliner_purchase	, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_purchase_short		(178,25	)}
-spriteset (gfx_powerhaul_colas_purchase		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_purchase_short		(178,0	)}
+spriteset (gfx_powerhaul_fliner_purchase	, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_purchase		(178,25	)}
+spriteset (gfx_powerhaul_colas_purchase		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_purchase		(178,0	)}
 
 
 //Graphics

@@ -85,12 +85,12 @@ spriteset(gfx_37_lt_centre,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_dou
 spriteset(gfx_37_lt_split,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(250,275)}
 spriteset(gfx_37_lt_modern,			"gfx/DIESEL_LOCO/class_37_2.png"){template_Mk2_double(250,300)}
 
-spriteset(gfx_37_purch_brgreen,		"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase_short(178,50)}
-spriteset(gfx_37_purch_brblue,		"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase_short(178,75)}
-spriteset(gfx_37_purch_brll,		"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase_short(178,100)}
-spriteset(gfx_37_purch_regional,	"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase_short(178,150)}
-spriteset(gfx_37_purch_drs,			"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase_short(178,225)}
-spriteset(gfx_37_purch_drs_comp,	"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase_short(178,250)}
+spriteset(gfx_37_purch_brgreen,		"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase(178,325)}
+spriteset(gfx_37_purch_brblue,		"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase(178,350)}
+spriteset(gfx_37_purch_brll,		"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase(178,375)}
+spriteset(gfx_37_purch_regional,	"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase(178,400)}
+spriteset(gfx_37_purch_drs,			"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase(178,425)}
+spriteset(gfx_37_purch_drs_comp,	"gfx/DIESEL_LOCO/class_37_2.png"){template_purchase(178,450)}
 
 
 //Graphics switches
