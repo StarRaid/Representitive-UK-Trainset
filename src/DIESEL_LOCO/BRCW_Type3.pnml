@@ -22,14 +22,14 @@ spriteset(gfx_brcw3_wcrc,		"gfx/DIESEL_LOCO/class_33.png"){template_7_8_2(0,336)
 spriteset(gfx_brcw3_ews,		"gfx/DIESEL_LOCO/class_33.png"){template_7_8_2(0,357)}
 spriteset(gfx_brcw3_frag,		"gfx/DIESEL_LOCO/class_33.png"){template_7_8_2(0,378)}
 
-spriteset(gfx_brcw3_brg_purchase		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,0)}
-spriteset(gfx_brcw3_brb_purchase		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,84)}
-spriteset(gfx_brcw3_nse_purchase		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,294)}
-spriteset(gfx_brcw3_drs_purchase		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,315)}
-spriteset(gfx_brcw3_wcrc_purchase		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,336)}
+spriteset(gfx_brcw3_brg_purchase,		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,0)}
+spriteset(gfx_brcw3_brb_purchase,		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,84)}
+spriteset(gfx_brcw3_nse_purchase,		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,294)}
+spriteset(gfx_brcw3_drs_purchase,		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,315)}
+spriteset(gfx_brcw3_wcrc_purchase,		"gfx/DIESEL_LOCO/class_33.png"){template_purchase(161,336)}
 
-spriteset(gfx_brcw3_construction		"gfx/FIXTURES/class_33_RF_sectors.png"){template_7_8_2(0,0)}
-spriteset(gfx_brcw3_distribution		"gfx/FIXTURES/class_33_RF_sectors.png"){template_7_8_2(0,21)}
+spriteset(gfx_brcw3_construction,		"gfx/FIXTURES/class_33_RF_sectors.png"){template_7_8_2(0,0)}
+spriteset(gfx_brcw3_distribution,		"gfx/FIXTURES/class_33_RF_sectors.png"){template_7_8_2(0,21)}
 
 
 //Graphics switches
@@ -41,7 +41,7 @@ random_switch(FEAT_TRAINS, SELF, sw_gfx_brcw3_bgy, TRIGGER_VEHICLE_SERVICE){
 
 random_switch(FEAT_TRAINS, SELF, sw_gfx_brcw3_brb, TRIGGER_VEHICLE_SERVICE){
 	4 : gfx_brcw3_brb_1 ;
-	70 : gfx_brcw3_brb_2 ;
+	20 : gfx_brcw3_brb_2 ;
 	1 : gfx_brcw3_brb_3 ;
 	2 : gfx_brcw3_brb_4 ;
 	3 : gfx_brcw3_brb_5 ;
@@ -129,7 +129,7 @@ switch(FEAT_TRAINS, SELF, sw_brcw3_gfx_manual_check_stack, livery_choice){
 
 
 switch(FEAT_TRAINS, SELF, sw_brcw3_gfx_sprstack, SPR_STACK){
-	0 : sw_brush2_gfx_manual_check ;
+	0 : sw_brcw3_gfx_manual_check ;
 	1 : sw_brcw3_gfx_manual_check_stack ;
 }
 
@@ -163,7 +163,7 @@ switch(FEAT_TRAINS, SELF, sw_brcw3_refit_text, cargo_subtype){
 	1: string(STR_LIVERY_BRGREEN_YELLOW) ;
 	2: string(STR_LIVERY_BRBLUE) ;
 	3: string(STR_LIVERY_RAILFREIGHT) ;
-	3: string(STR_LIVERY_RAILFREIGHT) ;
+	4: string(STR_LIVERY_RAILFREIGHT) ;
 	5: string(STR_LIVERY_RAILFREIGHT2) ;
 	6: string(STR_LIVERY_CIVIL_ENGINEERS) ;
 	7: string(STR_LIVERY_NSE) ;
@@ -216,7 +216,7 @@ switch(FEAT_TRAINS, SELF, sw_brcw3_col_manual, cargo_subtype){
 	7: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	8: palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	9: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	10: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) 
+	10: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN); 
 	palette_2cc(COLOUR_RED, COLOUR_RED) ;
 }
 
@@ -236,7 +236,7 @@ switch(FEAT_TRAINS, SELF , sw_brcw3_col_2cc_check, colour_scheme_1){
 
 item(FEAT_TRAINS, item_brcw3, 33){
 	property{
-		name                           : string(STR_NAME_BRCW_2) ;  
+		name                           : string(STR_NAME_BRCWTYPE3) ;  
 		climates_available             : ALL_CLIMATES ;
 		introduction_date              : date(1960,1,1) ;
 		refit_cost                     : 0 ;
@@ -289,7 +289,7 @@ item (FEAT_TRAINS, item_brcw3, 33){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_brcw3, 33){
 	property{
-		name                           : string(STR_NAME_BRCW_2_ALT) ;
+		name                           : string(STR_NAME_BRCWTYPE3_ALT) ;
 	}
 }
 }

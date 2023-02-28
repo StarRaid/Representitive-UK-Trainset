@@ -432,7 +432,7 @@ item (FEAT_TRAINS, item_376, 376) {
 		variant_group:					375;
 	}
 	graphics {
-		can_attach_wagon:					sw_375_coupling_restrictions;
+		can_attach_wagon:					sw_376_coupling_restrictions;
 		default: 							sw_375_default;
 		purchase:							sw_electrostar_purchase;
 		create_effect:						vfx_3rd_only;
@@ -448,8 +448,8 @@ item (FEAT_TRAINS, item_376, 376) {
 		default: sw_375_t_default;
 		colour_mapping:	sw_375_recolour;
 		cargo_subtype_text: sw_375_livery_decider ;
-	speed:				75 mph;
-	power:				536 hp;
+	speed:				34;
+	power:				400;
 }
 }
 
@@ -693,7 +693,7 @@ item (FEAT_TRAINS, item_377, 377) {
 	graphics {
 		can_attach_wagon:					sw_375_coupling_restrictions;
 		default: 							sw_377_default;
-		purchase:							sw_electrostar_purchase;
+		purchase:							sw_377_purchase;
 		create_effect:						vfx_3rd_only;
 		cargo_subtype_text:					sw_377_livery_decider ;
 		colour_mapping:						sw_377_recolour;
@@ -707,7 +707,7 @@ item (FEAT_TRAINS, item_377, 377) {
 		default: sw_377_t_default;
 		colour_mapping:	sw_377_recolour;
 		cargo_subtype_text: sw_377_livery_decider ;
-	speed:								100 mph;
+	speed:								45;
 	power:				580;
 }
 }
@@ -786,7 +786,7 @@ switch(FEAT_TRAINS, SELF, sw_387_t_livery_param, livery_choice){1 : sw_387_trail
 
 switch(FEAT_TRAINS, SELF, sw_387_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0: return sw_387_livery_param;
-	1: return sw_375_headlights;
+	1: return sw_electrostar_headlights;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_nd_livery_param_1, position_in_vehid_chain){
@@ -805,12 +805,12 @@ sw_387_nd_livery_param_2;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_ndf_pan_switch, position_in_vehid_chain){
-0: sw_387_pan;
+0: sw_electrostar_pan;
 gfx_blank;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_ndr_pan_switch, position_in_vehid_chain_from_end){
-0: sw_387_pan;
+0: sw_electrostar_pan;
 gfx_blank;
 }
 
@@ -901,12 +901,12 @@ item (FEAT_TRAINS, item_387, 387) {
 	}
 	graphics {
 		can_attach_wagon:					sw_375_coupling_restrictions;
-		default: 							sw_375_default;
-		purchase:							sw_electrostar_purchase;
+		default: 							sw_387_default;
+		purchase:							sw_387_purchase;
 		create_effect:						vfx_3rd_only;
-		cargo_subtype_text:					sw_375_livery_decider ;
-		colour_mapping:						sw_375_recolour;
-		purchase_colour_mapping: 			sw_375_recolour_purchase;
+		cargo_subtype_text:					sw_387_livery_decider ;
+		colour_mapping:						sw_387_recolour;
+		purchase_colour_mapping: 			sw_387_recolour_purchase;
 		running_cost_factor:				return(current_speed == 0 ? 8 : 34) ;
 		sound_effect:						sw_sfx_electric_loco_modern ;
 		purchase_running_cost_factor : 34;
@@ -916,7 +916,7 @@ item (FEAT_TRAINS, item_387, 387) {
 		default: sw_387_t_default;
 		colour_mapping:	sw_387_recolour;
 		cargo_subtype_text: sw_387_livery_decider ;
-	speed:								110 mph;
+	speed:								50;
 	power:				580;
 }
 }
