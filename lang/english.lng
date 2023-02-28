@@ -71,6 +71,7 @@ STR_LIVERY_BRBLUE_LOGO           			: British Railways Large Logo {GOLD}(Blue)
 STR_LIVERY_BRRAILFREIGHT_LOGO    			: British Railways Large Logo {GOLD}(Railfreight Grey)
 STR_LIVERY_BRBLUE_SUBTYPE		 			: British Railways Blue {STRING}
 STR_LIVERY_BRBLUE_REFURB_DMU	 			: British Railways Blue {GOLD}(Refurbished White & Blue)
+STR_LIVERY_FRAGONSET						: Fragonset
 STR_LIVERY_HITACHI							: Hitachi
 STR_LIVERY_INTERCITY			 			: Intercity
 STR_LIVERY_INTERCITY_SLEEPER				: Intercity {BLACK}(Sleeper)
@@ -384,6 +385,7 @@ STR_NAME_87					 :BREL 87 (Electric)
 STR_NAME_90					 :BREL 90 (Electric)
 STR_NAME_91					 :GEC "Intercity 225" (Electric)
 STR_NAME_92					 :Brush/ABB "92" (Dual Voltage)
+STR_NAME_BRCWTYPE3			 :BRCW Type 3 'Crompton' (Diesel Electric) 
 STR_NAME_SWTYPE1			 :Swindon Type 1 (Diesel)
 STR_NAME_GRONK				 :EE Shunter (Diesel Electric)
 STR_NAME_EETYPE1			 :EE Type 1 (Diesel Electric) 
@@ -448,6 +450,9 @@ STR_NAME_325				 :Metro-Cammel "Networker" (Dual Voltage)
 STR_NAME_365				 :Metro-Cammel "Networker Express" (Electric)
 STR_NAME_350				 :Siemens "Desiro" (Electric)
 STR_NAME_375				 :Bombardier "Electrostar" (Dual Voltage)
+STR_NAME_376				 :Bombardier "Electrostar" - Urban (Dual Voltage)
+STR_NAME_377				 :Bombardier "Electrostar" (Dual Voltage)
+STR_NAME_387				 :Bombardier "Electrostar" - Express (Dual Voltage)
 STR_NAME_357				 :Adtranz "Electrostar" (Electric)
 STR_NAME_370				 :BREL Advanced Passenger Train (Electric)
 STR_NAME_390				 :Alstom "Pendolino" (Electric)
@@ -521,6 +526,7 @@ STR_319_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or anot
 STR_321_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL AC Express (Electric)!
 STR_331_NO_COUPLE: You may only couple this train to a "Modern MU car" or another CAF "Civity" (Electric)!
 STR_375_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier "Electrostar" (Dual Voltage)!
+STR_376_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Bombardier "Electrostar" - Suburban (Dual Voltage)!
 STR_357_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Electrostar" (Electric)!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage",  BR Compartment EMU (3rd rail) or another BR Mark 1 EMU (3rd rail)!
 STR_415_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage", BR Mark 1 EMU (3rd rail) or another BR Compartment EMU (3rd rail)!
@@ -562,6 +568,7 @@ STR_NAME_87_ALT				:BR Class 87 (Electric)
 STR_NAME_90_ALT				:BR Class 90 (Electric)
 STR_NAME_91_ALT				:BR Class 91 (Electric)
 STR_NAME_92_ALT				:BR Class 92 (Dual Voltage)
+STR_NAME_BRCWTYPE3_ALT		:BR Class 33 (Diesel Electric) 
 STR_NAME_SWTYPE1_ALT		:BR Class 14 (Diesel Hydraulic)
 STR_NAME_GRONK_ALT			:BR Class 08/09/10/11/12 (Diesel Electric)
 STR_NAME_EETYPE1_ALT		:BR Class 20 (Diesel Electric) 
@@ -625,6 +632,9 @@ STR_NAME_325_ALT			:BR Class 325/365/465 (Dual Voltage)
 STR_NAME_365_ALT			:BR Class 365 (Electric)
 STR_NAME_350_ALT			:BR Class 350/360 (Electric)
 STR_NAME_375_ALT			:BR Class 375/377/379/387 (Dual Voltage)
+STR_NAME_376_ALT			:BR Class 376/378 (Dual Voltage)
+STR_NAME_377_ALT			:BR Class 375/377/379 (Dual Voltage)
+STR_NAME_387_ALT			:BR Class 387 (Dual Voltage)
 STR_NAME_357_ALT			:BR Class 357 (Electric)
 STR_NAME_370_ALT			:BR Class 370 (Electric)
 STR_NAME_390_ALT			:BR Class 390 (Electric)

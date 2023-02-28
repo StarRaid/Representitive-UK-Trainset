@@ -45,6 +45,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DIESEL_LOCO/gronk.pnml"
 //#include "src/DIESEL_LOCO/EE_Type3.pnml"
 #include "src/DIESEL_LOCO/EE_Type1.pnml"
+#include "src/DIESEL_LOCO/BRCW_Type3.pnml"
 #include "src/DIESEL_LOCO/EE_Type3_2.pnml"
 #include "src/DIESEL_LOCO/EE_Type4.pnml"
 #include "src/DIESEL_LOCO/hoover.pnml"
