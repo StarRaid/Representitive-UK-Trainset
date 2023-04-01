@@ -4,9 +4,6 @@ template template_purchase(x,y){
 	[ x, y, 79, 12, -39, -8]
 }
 
-template template_purchase_short(x,y){
-	[ x, y, 55, 12, -39, -8]
-}
 
 template template_dualhead_purchase(x,y){
 	[ x+77, y+11, 1, 1, 0, 0]
@@ -285,10 +282,53 @@ template template_8_4_2(x,y){
 }
 
 
+//Length 8 TALL
+
+//8 views
+template template_8_8_tall(x,y){
+	[ x+0	,y, 8	, 25, -3	,-11, ANIM] //North
+	[ x+10	,y, 20	, 18, -13	,-8	, ANIM] //North East
+	[ x+32	,y, 33	, 15, -17	,-9	, ANIM] //East
+	[ x+67	,y, 20	, 18, -5	,-8	, ANIM] //South East
+	[ x+89	,y, 8	, 25, -3	,-11, ANIM] //South
+	[ x+99	,y, 20	, 18, -13	,-8	, ANIM] //South West
+	[ x+121	,y, 33	, 15, -17	,-9	, ANIM] //West
+	[ x+156	,y, 20	, 18, -5	,-8	, ANIM] //North West
+}
+
+//8 views, reversed
+template template_8_8_rev_tall(x,y){
+	[ x+89	,y, 8	, 25, -3	,-11, ANIM] //South
+	[ x+99	,y, 20	, 18, -13	,-8	, ANIM] //South West
+	[ x+121	,y, 33	, 15, -17	,-9	, ANIM] //West
+	[ x+156	,y, 20	, 18, -5	,-8	, ANIM] //North West
+	[ x+0	,y, 8	, 25, -3	,-11, ANIM] //North
+	[ x+10	,y, 20	, 18, -13	,-8	, ANIM] //North East
+	[ x+32	,y, 33	, 15, -17	,-9	, ANIM] //East
+	[ x+67	,y, 20	, 18, -5	,-8	, ANIM] //South East
+}
+
+//4 views
+template template_8_4_tall(x,y){
+	[ x+0	,y, 8	, 25, -3	,-11, ANIM] //North
+	[ x+10	,y, 20	, 18, -13	,-8	, ANIM] //North East
+	[ x+32	,y, 33	, 15, -17	,-9	, ANIM] //East
+	[ x+67	,y, 20	, 18, -5	,-8	, ANIM] //South East
+}
+
+
+
+
+
 
 
 
 //Special case templates (generally outdated)
+
+
+template template_purchase_short(x,y){
+	[ x, y, 55, 12, -39, -8]
+}
 
 
 template template_8_8(x,y){

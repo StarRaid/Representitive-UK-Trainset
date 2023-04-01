@@ -136,7 +136,7 @@ item(FEAT_TRAINS, item_nelson, 1804){
 		purchase_colour_mapping			: sw_nelson_purchase_colours_2cc_check ;
 		//sound_effect					: sw_sfx_diesel_loco_ee_2 ;
 		create_effect					: vfx_steam ;
-		cargo_subtype_text				: sw_nelson_refit_text_check ;
+		//cargo_subtype_text				: sw_nelson_refit_text_check ;
 		purchase_cargo_capacity			: 0 ;
 		cargo_capacity					: return 0 ;
 		can_attach_wagon				: sw_all_but_MU90;

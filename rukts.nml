@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 99 ;
+	version: 100 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -236,9 +236,6 @@ template template_purchase(x,y){
 	[ x, y, 79, 12, -39, -8]
 }
 
-template template_purchase_short(x,y){
-	[ x, y, 55, 12, -39, -8]
-}
 
 template template_dualhead_purchase(x,y){
 	[ x+77, y+11, 1, 1, 0, 0]
@@ -517,10 +514,53 @@ template template_8_4_2(x,y){
 }
 
 
+//Length 8 TALL
+
+//8 views
+template template_8_8_tall(x,y){
+	[ x+0	,y, 8	, 25, -3	,-11, ANIM] //North
+	[ x+10	,y, 20	, 18, -13	,-8	, ANIM] //North East
+	[ x+32	,y, 33	, 15, -17	,-9	, ANIM] //East
+	[ x+67	,y, 20	, 18, -5	,-8	, ANIM] //South East
+	[ x+89	,y, 8	, 25, -3	,-11, ANIM] //South
+	[ x+99	,y, 20	, 18, -13	,-8	, ANIM] //South West
+	[ x+121	,y, 33	, 15, -17	,-9	, ANIM] //West
+	[ x+156	,y, 20	, 18, -5	,-8	, ANIM] //North West
+}
+
+//8 views, reversed
+template template_8_8_rev_tall(x,y){
+	[ x+89	,y, 8	, 25, -3	,-11, ANIM] //South
+	[ x+99	,y, 20	, 18, -13	,-8	, ANIM] //South West
+	[ x+121	,y, 33	, 15, -17	,-9	, ANIM] //West
+	[ x+156	,y, 20	, 18, -5	,-8	, ANIM] //North West
+	[ x+0	,y, 8	, 25, -3	,-11, ANIM] //North
+	[ x+10	,y, 20	, 18, -13	,-8	, ANIM] //North East
+	[ x+32	,y, 33	, 15, -17	,-9	, ANIM] //East
+	[ x+67	,y, 20	, 18, -5	,-8	, ANIM] //South East
+}
+
+//4 views
+template template_8_4_tall(x,y){
+	[ x+0	,y, 8	, 25, -3	,-11, ANIM] //North
+	[ x+10	,y, 20	, 18, -13	,-8	, ANIM] //North East
+	[ x+32	,y, 33	, 15, -17	,-9	, ANIM] //East
+	[ x+67	,y, 20	, 18, -5	,-8	, ANIM] //South East
+}
+
+
+
+
+
 
 
 
 //Special case templates (generally outdated)
+
+
+template template_purchase_short(x,y){
+	[ x, y, 55, 12, -39, -8]
+}
 
 
 template template_8_8(x,y){
@@ -8774,7 +8814,7 @@ item(FEAT_TRAINS, item_nelson, 1804){
 		purchase_colour_mapping			: sw_nelson_purchase_colours_2cc_check ;
 		//sound_effect					: sw_sfx_diesel_loco_ee_2 ;
 		create_effect					: vfx_steam ;
-		cargo_subtype_text				: sw_nelson_refit_text_check ;
+		//cargo_subtype_text				: sw_nelson_refit_text_check ;
 		purchase_cargo_capacity			: 0 ;
 		cargo_capacity					: return 0 ;
 		can_attach_wagon				: sw_all_but_MU90;
