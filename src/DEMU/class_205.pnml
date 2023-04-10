@@ -50,7 +50,7 @@ switch(FEAT_TRAINS, SELF, sw_207_brg_f, (count_veh_id(205)+1)%2){1: spriteset_20
 switch(FEAT_TRAINS, SELF, sw_207_brg_r, (count_veh_id(205)+1)%2){1: spriteset_207_dt_brg; spriteset_207_m_brg;}
 switch(FEAT_TRAINS, PARENT, sw_207_brg, vehicle_is_reversed){0: sw_207_brg_f; sw_207_brg_r;}
 
-switch(FEAT_TRAINS, SELF, sw_southern_thump_brg_select, build_year){0..1960: sw_205_brg; sw_207_brg;}
+switch(FEAT_TRAINS, SELF, sw_southern_thump_brg_select, vehicle_type_id){205: sw_205_brg; sw_207_brg;}
 	
 random_switch(FEAT_TRAINS, SELF, sw_southern_thump_brg, TRIGGER_VEHICLE_SERVICE){1: sw_southern_thump_brg_select;}
 
@@ -63,7 +63,7 @@ switch(FEAT_TRAINS, SELF, sw_207_brb_f, (count_veh_id(205)+1)%2){1: spriteset_20
 switch(FEAT_TRAINS, SELF, sw_207_brb_r, (count_veh_id(205)+1)%2){1: spriteset_207_dt_brb; spriteset_207_m_brb;}
 switch(FEAT_TRAINS, PARENT, sw_207_brb, vehicle_is_reversed){0: sw_207_brb_f; sw_207_brb_r;}
 
-switch(FEAT_TRAINS, SELF, sw_southern_thump_brb_select, build_year){0..1960: sw_205_brb; sw_207_brb;}
+switch(FEAT_TRAINS, SELF, sw_southern_thump_brb_select, vehicle_type_id){205: sw_205_brb; sw_207_brb;}
 	
 random_switch(FEAT_TRAINS, SELF, sw_southern_thump_brb, TRIGGER_VEHICLE_SERVICE){1: sw_southern_thump_brb_select;}
 
@@ -76,7 +76,7 @@ switch(FEAT_TRAINS, SELF, sw_207_bbg_f, (count_veh_id(205)+1)%2){1: spriteset_20
 switch(FEAT_TRAINS, SELF, sw_207_bbg_r, (count_veh_id(205)+1)%2){1: spriteset_207_dt_bbg; spriteset_207_m_bbg;}
 switch(FEAT_TRAINS, PARENT, sw_207_bbg, vehicle_is_reversed){0: sw_207_bbg_f; sw_207_bbg_r;}
 
-switch(FEAT_TRAINS, SELF, sw_southern_thump_bbg_select, build_year){0..1960: sw_205_bbg; sw_207_bbg;}
+switch(FEAT_TRAINS, SELF, sw_southern_thump_bbg_select, vehicle_type_id){205: sw_205_bbg; sw_207_bbg;}
 	
 random_switch(FEAT_TRAINS, SELF, sw_southern_thump_bbg, TRIGGER_VEHICLE_SERVICE){1: sw_southern_thump_bbg_select;}
 
@@ -89,7 +89,7 @@ switch(FEAT_TRAINS, SELF, sw_207_nse_f, (count_veh_id(205)+1)%2){1: spriteset_20
 switch(FEAT_TRAINS, SELF, sw_207_nse_r, (count_veh_id(205)+1)%2){1: spriteset_207_dt_nse; spriteset_207_m_nse;}
 switch(FEAT_TRAINS, PARENT, sw_207_nse, vehicle_is_reversed){0: sw_207_nse_f; sw_207_nse_r;}
 
-switch(FEAT_TRAINS, SELF, sw_southern_thump_nse_select, build_year){0..1960: sw_205_nse; sw_207_nse;}
+switch(FEAT_TRAINS, SELF, sw_southern_thump_nse_select, vehicle_type_id){205: sw_205_nse; sw_207_nse;}
 	
 random_switch(FEAT_TRAINS, SELF, sw_southern_thump_nse, TRIGGER_VEHICLE_SERVICE){1: sw_southern_thump_nse_select;}
 
@@ -102,7 +102,7 @@ switch(FEAT_TRAINS, SELF, sw_207_cnx_f, (count_veh_id(205)+1)%2){1: spriteset_20
 switch(FEAT_TRAINS, SELF, sw_207_cnx_r, (count_veh_id(205)+1)%2){1: spriteset_207_dt_cnx; spriteset_207_m_cnx;}
 switch(FEAT_TRAINS, PARENT, sw_207_cnx, vehicle_is_reversed){0: sw_207_cnx_f; sw_207_cnx_r;}
 
-switch(FEAT_TRAINS, SELF, sw_southern_thump_cnx_select, build_year){0..1960: sw_205_cnx; sw_207_cnx;}
+switch(FEAT_TRAINS, SELF, sw_southern_thump_cnx_select, vehicle_type_id){205: sw_205_cnx; sw_207_cnx;}
 random_switch(FEAT_TRAINS, SELF, sw_southern_thump_cnx, TRIGGER_VEHICLE_SERVICE){1: sw_southern_thump_cnx_select;}
 	
 
@@ -189,7 +189,7 @@ switch(FEAT_TRAINS, SELF, sw_205_headcode, position_in_consist){0: spriteset_205
 switch(FEAT_TRAINS, SELF, sw_205_headcode_2, position_in_consist_from_end){0: spriteset_205_headcode_r; sw_205_headcode;}
 switch(FEAT_TRAINS, SELF, sw_207_headcode, position_in_consist){0: spriteset_207_headcode_f; gfx_blank;}
 switch(FEAT_TRAINS, SELF, sw_207_headcode_2, position_in_consist_from_end){0: spriteset_207_headcode_r; sw_207_headcode;}
-switch(FEAT_TRAINS, SELF, sw_southern_thump_headcode, build_year){0..1960: sw_205_headcode_2; sw_207_headcode_2;}
+switch(FEAT_TRAINS, SELF, sw_southern_thump_headcode, vehicle_type_id){205: sw_205_headcode_2; sw_207_headcode_2;}
 
 
 switch(FEAT_TRAINS, SELF, sw_205_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
@@ -237,7 +237,9 @@ switch(FEAT_TRAINS, PARENT, sw_205_colour_mapping_decider, colour_scheme_1){
 
 switch(FEAT_TRAINS, SELF, sw_205_coupling_restrictions, vehicle_type_id) {
     9010: return CB_RESULT_ATTACH_ALLOW;
-	205: return CB_RESULT_ATTACH_ALLOW;
+	201: return CB_RESULT_ATTACH_ALLOW;
+	207: return CB_RESULT_ATTACH_ALLOW;
+	207: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_205_NO_COUPLE);
 }
 
@@ -303,6 +305,79 @@ if (alt_names == 1){
 item (FEAT_TRAINS, item_205, 205){
 	property{
 		name                           : string(STR_NAME_205_ALT) ;
+	}
+}
+}
+
+item (FEAT_TRAINS, item_207, 207) {
+	property {
+		name: 							string(STR_NAME_207);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1961, 1, 1);
+		model_life:						25;
+		retire_early:					1;
+		vehicle_life:					45;
+		reliability_decay:				8;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					16;
+		cost_factor:					27;
+		running_cost_factor:			15;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							75 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							500 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					55;
+		weight:							44 ton;
+		tractive_effort_coefficient:	0.05;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_DIESEL;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+		engine_class:					ENGINE_CLASS_DIESEL;
+        variant_group:					205;
+	}
+	graphics {
+		can_attach_wagon:					sw_205_coupling_restrictions;
+		default: 							sw_205_default;
+		purchase:							sw_205_purchase;
+		create_effect:						sw_205_visual_effect;
+		cargo_subtype_text:					sw_205_refit_text_decider ;
+		colour_mapping:						sw_205_colour_mapping_decider;
+		purchase_colour_mapping: 			sw_205_colour_mapping_auto;
+		sound_effect:                   	sw_sfx_diesel_loco_small;
+		running_cost_factor: 				return(current_speed == 0 ? 7 : 15) ;
+		purchase_running_cost_factor:		16;
+}
+		livery_override (9010) {
+		cargo_capacity: 65;
+		default: sw_205_default_t;
+		colour_mapping:	sw_205_colour_mapping_decider;
+		cargo_subtype_text: sw_205_refit_text_decider ;
+}
+}
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_207, 207){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_207, 207){
+	property{
+		name                           : string(STR_NAME_207_ALT) ;
 	}
 }
 }
