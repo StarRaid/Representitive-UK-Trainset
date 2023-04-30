@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 102 ;
+	version: 103 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -24779,6 +24779,7 @@ switch(FEAT_TRAINS, SELF, sw_205_purchase, current_year){
 switch(FEAT_TRAINS, PARENT, sw_205_visual_effect_f, vehicle_is_reversed){1: vfx_diesel_default; VISUAL_EFFECT_DISABLE;}
 switch(FEAT_TRAINS, PARENT, sw_205_visual_effect_r, vehicle_is_reversed){1: VISUAL_EFFECT_DISABLE; vfx_diesel_default;}
 switch(FEAT_TRAINS, SELF, sw_205_visual_effect, (count_veh_id(205)+1)%2){1: sw_205_visual_effect_r; sw_205_visual_effect_f;}
+switch(FEAT_TRAINS, SELF, sw_207_visual_effect, (count_veh_id(207)+1)%2){1: sw_205_visual_effect_r; sw_205_visual_effect_f;}
 
 //Headcodes
 switch(FEAT_TRAINS, SELF, sw_205_headcode, position_in_consist){0: spriteset_205_headcode_f; gfx_blank;}
@@ -24867,7 +24868,7 @@ item (FEAT_TRAINS, item_205, 205) {
 		default_cargo_type:				PASS;
 		cargo_capacity:					55;
 		weight:							44 ton;
-		tractive_effort_coefficient:	0.05;
+		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_DIESEL;
@@ -24931,7 +24932,7 @@ item (FEAT_TRAINS, item_207, 207) {
 		default_cargo_type:				PASS;
 		cargo_capacity:					55;
 		weight:							44 ton;
-		tractive_effort_coefficient:	0.05;
+		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.06;
 		length:							8;
 		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_DIESEL;
@@ -24945,7 +24946,7 @@ item (FEAT_TRAINS, item_207, 207) {
 		can_attach_wagon:					sw_205_coupling_restrictions;
 		default: 							sw_205_default;
 		purchase:							sw_205_purchase;
-		create_effect:						sw_205_visual_effect;
+		create_effect:						sw_207_visual_effect;
 		cargo_subtype_text:					sw_205_refit_text_decider ;
 		colour_mapping:						sw_205_colour_mapping_decider;
 		purchase_colour_mapping: 			sw_205_colour_mapping_auto;
@@ -32161,7 +32162,7 @@ switch(FEAT_TRAINS, SELF, sw_444_livery_selection_manual, cargo_subtype){
 	3: spriteset_444_swr;
 } 
 
-switch(FEAT_TRAINS, PARENT, sw_444_livery_selection_manual_t, cargo_subtype){
+switch(FEAT_TRAINS, SELF, sw_444_livery_selection_manual_t, cargo_subtype){
 	0: spriteset_450_swt_t;
 	1: spriteset_444_swt_t;
 	2: spriteset_450_swr_t;
