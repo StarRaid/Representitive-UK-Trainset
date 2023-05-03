@@ -10,19 +10,18 @@ switch (FEAT_TRAINS, SELF, vfx_diesel_default, [STORE_TEMP(create_effect(EFFECT_
     return 1;
 }
 
-switch(FEAT_TRAINS, SELF, vfx_dual_voltage, current_railtype){
-	SAA3: vfx_3rd;
+switch(FEAT_TRAINS, SELF, vfx_dual_voltage, STANDARD_GAUGE_CHECK_3RD_RAIL){
+	1: vfx_3rd;
 	vfx_ohle;
 }
 
-switch(FEAT_TRAINS, SELF, vfx_3rd_only, current_railtype){
-	SAA3: vfx_3rd;
+switch(FEAT_TRAINS, SELF, vfx_3rd_only, STANDARD_GAUGE_CHECK_3RD_RAIL){
+	1: vfx_3rd;
 	return 0;
 }
 
-switch(FEAT_TRAINS, SELF, vfx_ohle_only, current_railtype){
-	ELRL: vfx_ohle;
-	SAAZ: vfx_ohle;
+switch(FEAT_TRAINS, SELF, vfx_ohle_only, STANDARD_GAUGE_CHECK_CATENARY){
+	1: vfx_ohle;
 	return 0;
 }
 
