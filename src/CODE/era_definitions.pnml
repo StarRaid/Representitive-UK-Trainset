@@ -43,22 +43,22 @@
 
 #define STANDARD_GAUGE_CHECK_ALL STANDARD_GAUGE_CHECK_NOT_ELECTRIFIED || STANDARD_GAUGE_CHECK_EVERY_ELEC
 
-#define STANDARD_GAUGE_CHECK_NOT_ELECTRIFIED (current_railtype == railtype("RAIL")) || (current_railtype == railtype("RLOW")) || (current_railtype == railtype("RMED")) || (current_railtype == railtype("RHIG")) || (current_railtype == railtype("SAAN")) || (current_railtype == railtype("SABN")) || (current_railtype == railtype("SACN")) || (current_railtype == railtype("SBAN")) || (current_railtype == railtype("SBBN")) || (current_railtype == railtype("SBCN")) || (current_railtype == railtype("SCAN")) || (current_railtype == railtype("SCBN")) || (current_railtype == railtype("SCCN")) || (current_railtype == railtype("SDAN")) || (current_railtype == railtype("SDBN")) || (current_railtype == railtype("DBNN")) || (current_railtype == railtype("DBHN")) || (current_railtype == railtype("_040")) || (current_railtype == railtype("_080")) || (current_railtype == railtype("SEAN")) || (current_railtype == railtype("SFAN")) || (current_railtype == railtype("SGAN"))
+#define STANDARD_GAUGE_CHECK_NOT_ELECTRIFIED tile_powers_railtype("SAAN") || tile_powers_railtype("RAIL")
 
-#define STANDARD_GAUGE_CHECK_EVERY_ELEC STANDARD_GAUGE_CHECK_CATENARY || STANDARD_GAUGE_CHECK_3RD_RAIL || STANDARD_GAUGE_CHECK_4TH_RAIL || STANDARD_GAUGE_CHECK_DUAL
+#define STANDARD_GAUGE_CHECK_EVERY_ELEC STANDARD_GAUGE_CHECK_CATENARY || STANDARD_GAUGE_CHECK_3RD_RAIL || STANDARD_GAUGE_CHECK_4TH_RAIL
 
-#define STANDARD_GAUGE_CHECK_OHLE_ONLY STANDARD_GAUGE_CHECK_CATENARY || STANDARD_GAUGE_CHECK_DUAL
+#define STANDARD_GAUGE_CHECK_OHLE_ONLY STANDARD_GAUGE_CHECK_CATENARY
 
-#define STANDARD_GAUGE_CHECK_THIRD_ONLY STANDARD_GAUGE_CHECK_3RD_RAIL || STANDARD_GAUGE_CHECK_4TH_RAIL || STANDARD_GAUGE_CHECK_DUAL
+#define STANDARD_GAUGE_CHECK_THIRD_ONLY STANDARD_GAUGE_CHECK_3RD_RAIL || STANDARD_GAUGE_CHECK_4TH_RAIL
 
-#define STANDARD_GAUGE_CHECK_CATENARY (current_railtype == railtype("ELRL")) || (current_railtype == railtype("ELOW")) || (current_railtype == railtype("EMED")) || (current_railtype == railtype("EHIG")) || (current_railtype == railtype("HSTR")) || (current_railtype == railtype("SAAE")) || (current_railtype == railtype("SABE")) || (current_railtype == railtype("SACE")) || (current_railtype == railtype("SBAE")) || (current_railtype == railtype("SBBE")) || (current_railtype == railtype("SBCE")) || (current_railtype == railtype("SCAE")) || (current_railtype == railtype("SCBE")) || (current_railtype == railtype("SCCE")) || (current_railtype == railtype("SDAE")) || (current_railtype == railtype("SDBE")) || (current_railtype == railtype("SEAE")) || (current_railtype == railtype("SEBE")) || (current_railtype == railtype("DBNE")) || (current_railtype == railtype("DBHE")) || (current_railtype == railtype("DBHS")) || (current_railtype == railtype("E040")) || (current_railtype == railtype("E080")) || (current_railtype == railtype("SFAE")) || (current_railtype == railtype("SGAE")) || (current_railtype == railtype("SHAE"))
+#define STANDARD_GAUGE_CHECK_CATENARY railtype_available("SAAA") ? tile_powers_railtype("SAAA") : (tile_powers_railtype("SAAE") || tile_powers_railtype("ELRL"))
 
-#define STANDARD_GAUGE_CHECK_3RD_RAIL (current_railtype == railtype("3RDR")) || (current_railtype == railtype("3LOW")) || (current_railtype == railtype("3MED")) || (current_railtype == railtype("SAA3")) || (current_railtype == railtype("SAB3")) || (current_railtype == railtype("SAC3")) || (current_railtype == railtype("SBA3")) || (current_railtype == railtype("SBB3")) || (current_railtype == railtype("SBC3")) || (current_railtype == railtype("SCA3")) || (current_railtype == railtype("SCB3")) || (current_railtype == railtype("SCC3")) || (current_railtype == railtype("SDA3")) || (current_railtype == railtype("SEA3")) || (current_railtype == railtype("SFA3"))
+#define STANDARD_GAUGE_CHECK_3RD_RAIL tile_powers_railtype("SAA3") || tile_powers_railtype("3RDR")
 
-#define STANDARD_GAUGE_CHECK_4TH_RAIL (current_railtype == railtype("4RDR")) || (current_railtype == railtype("4LOW")) || (current_railtype == railtype("4MED")) || (current_railtype == railtype("SAA4")) || (current_railtype == railtype("SAB4")) || (current_railtype == railtype("SAC4")) || (current_railtype == railtype("SBA4")) || (current_railtype == railtype("SBB4")) || (current_railtype == railtype("SBC4")) || (current_railtype == railtype("SCA4")) || (current_railtype == railtype("SCB4")) || (current_railtype == railtype("SCC4")) || (current_railtype == railtype("MTRO")) || (current_railtype == railtype("MTRC")) || (current_railtype == railtype("MTRS")) || (current_railtype == railtype("MTRU")) || (current_railtype == railtype("MTRT")) || (current_railtype == railtype("SDA4"))
+#define STANDARD_GAUGE_CHECK_4TH_RAIL tile_powers_railtype("SAA4") || tile_powers_railtype("4RDR")
 
 
-#define STANDARD_GAUGE_CHECK_DUAL (current_railtype == railtype("3RDC")) || (current_railtype == railtype("CLOW")) || (current_railtype == railtype("CMED")) || (current_railtype == railtype("SAAZ")) || (current_railtype == railtype("SABZ")) || (current_railtype == railtype("SACZ")) || (current_railtype == railtype("SBAZ")) || (current_railtype == railtype("SBBZ")) || (current_railtype == railtype("SBCZ")) || (current_railtype == railtype("SCAZ")) || (current_railtype == railtype("SCBZ")) || (current_railtype == railtype("SCCZ")) || (current_railtype == railtype("SDAZ"))
+#define STANDARD_GAUGE_CHECK_DUAL tile_powers_railtype("SAAZ") || tile_powers_railtype("3RDC")
 	
 	
 #define NARROW_GAUGE_CHECK_ALL  NARROW_GAUGE_CHECK_NOT_ELECTRIFIED || NARROW_GAUGE_CHECK_CATENARY
