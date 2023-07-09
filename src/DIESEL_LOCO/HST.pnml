@@ -141,11 +141,6 @@ switch(FEAT_TRAINS, SELF, sw_hst_gfx_manual_check, livery_choice){
 
 //Lights deciders
 
-switch(FEAT_TRAINS, SELF, sw_gfx_hst_taillight_decider_auto, current_year){
-	gfx_hst_taillight ;
-}
-
-
 switch(FEAT_TRAINS, SELF, sw_gfx_hst_taillight_decider_manual, cargo_subtype){
 	8..9 : gfx_hst_taillight_refurb ;
 	gfx_hst_taillight ;
@@ -154,7 +149,7 @@ switch(FEAT_TRAINS, SELF, sw_gfx_hst_taillight_decider_manual, cargo_subtype){
 
 switch(FEAT_TRAINS, SELF, sw_gfx_hst_taillight_decider_manual_check, livery_choice){
 	1 : sw_gfx_hst_taillight_decider_manual ;
-	sw_gfx_hst_taillight_decider_auto ;
+	gfx_hst_taillight ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_hst_gfx_taillight_check, position_in_consist_from_end){ 0 : sw_gfx_hst_taillight_decider_manual_check ; }
@@ -284,7 +279,7 @@ item(FEAT_TRAINS, item_hst, 43){
 		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
-		climates_available             : ALL_CLIMATES ;
+		climates_available             : NO_CLIMATE ;
 		introduction_date              : date(1975,1,1) ;
 		model_life                     : 30 ;
 		vehicle_life                   : 45 ;

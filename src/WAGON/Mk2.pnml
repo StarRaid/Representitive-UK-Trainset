@@ -78,6 +78,12 @@ spriteset(gfx_mk2_fgw_fag_f_tso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_sing
 spriteset(gfx_mk2_scr_f_tso					, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,500)}
 spriteset(gfx_mk2_scr_f_tso_end				, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,525)}
 spriteset(gfx_mk2_scr_f_tso_end_reverse		, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,525)}
+spriteset(gfx_mk2_anglia_f_tso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,550)}
+spriteset(gfx_mk2_anglia_f_bso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,575)}
+spriteset(gfx_mk2_anglia_f_bso_reverse		, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,575)}
+spriteset(gfx_mk2_pullman_f_tso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_single(0,600)}
+spriteset(gfx_mk2_pullman_f_bso				, "gfx/WAGON/mark_2_2.png"){template_Mk2_double(0,625)}
+spriteset(gfx_mk2_pullman_f_bso_reverse		, "gfx/WAGON/mark_2_2.png"){template_Mk2_double_reverse(0,625)}
 
 spriteset(gfx_mk2_purchase_brblue          , "gfx/WAGON/mark_2_2.png"){template_purchase(89,50)}
 spriteset(gfx_mk2_purchase_regional        , "gfx/WAGON/mark_2_2.png"){template_purchase(89,150)}
@@ -149,6 +155,8 @@ switch(FEAT_TRAINS, SELF, sw_mk2_livery_decider, cargo_subtype){
 	11: gfx_mk2_fgw_fag_f_tso ;
 	12: sw_mk2_scr_check_front ;
 	14 : gfx_mk2_brblue_f_tso;
+	15 : gfx_mk2_anglia_f_tso;
+	16..17: gfx_mk2_pullman_f_tso ;
 	gfx_mk2_brblue_a_tso ;
 }
 
@@ -183,6 +191,9 @@ switch(FEAT_TRAINS, SELF, sw_mk2_refit_text, cargo_subtype){
 	12 : string(STR_LIVERY_SCR) ;
 	13 : string(STR_LIVER_COMP_COLOURS_A);
 	14 : string(STR_LIVER_COMP_COLOURS_F);
+	15 : string(STR_LIVERY_ANGLIA_RAIL);
+	16 : string(STR_LIVERY_PULLMAN);
+	17 : string(STR_LIVERY_BLUE_PULLMAN);
 	return CB_RESULT_NO_TEXT ;
 }
 
@@ -252,6 +263,9 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_manual, cargo_subtype){
 	11 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	12 : palette_2cc(COLOUR_RED, COLOUR_ORANGE) ;
 	13..14: palette_2cc(company_colour1, company_colour2) ;
+	15 : palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;
+	16 : palette_2cc(COLOUR_BROWN, COLOUR_WHITE) ;
+	17 : palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 

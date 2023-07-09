@@ -76,6 +76,7 @@ STR_LIVERY_HITACHI							: Hitachi
 STR_LIVERY_INTERCITY			 			: Intercity
 STR_LIVERY_INTERCITY_SLEEPER				: Intercity {BLACK}(Sleeper)
 STR_LIVERY_INTERCITY_SWL		 			: Intercity {GOLD}(Swallow)
+STR_LIVERY_INTERCITY_YELLOW		 			: Intercity {GOLD}(Yellow Front)
 STR_LIVERY_REG_RAILWAYS			 			: Regional Railways
 STR_LIVERY_REG_PROVINCIAL		 			: Regional Railways {GOLD}(Provincial)
 STR_LIVERY_NSE					 			: Network South East
@@ -230,8 +231,17 @@ STR_LIVERY_ARC								: ARC
 STR_LIVERY_MENDIP							: Mendip Rail
 STR_LIVERY_NX_SCOTRAIL						: Scotrail (National Express)
 STR_LIVERY_FIRST_SCOTRAIL					: Scotrail (First)
+STR_LIVERY_MML_TEAL							: Midland Mainline {GOLD}(Teal)
 STR_LIVERY_MML								: Midland Mainline
 STR_LIVERY_OVERGROUND						: London Overground
+STR_LIVERY_HORNBY							: Cotswold Rail {GOLD}(Hornby)
+STR_LIVERY_COTSWOLD							: Cotswold Rail {GOLD}(Grey)
+STR_LIVERY_HERITAGE_GWR						: Great Western Railway {GOLD}(43002 & 43185 Heritage Livery)
+STR_LIVERY_HERITAGE_XC						: Arriva Cross Country {GOLD}(253051 Heritage Livery)
+STR_LIVERY_HERITAGE_LNER					: LNER {GOLD}(43102 Heritage Livery)
+STR_LIVERY_GW_HOLDINGS						: Great Western Holdings
+STR_LIVERY_PULLMAN							: Pullman
+STR_LIVERY_BLUE_PULLMAN						: Blue Pullman
 
 STR_LIVERY_MIDLAND_RAILWAY					: Midland Railway {GOLD}(Green)
 STR_LIVERY_MIDLAND_RAILWAY_LATE				: Midland Railway {GOLD}(Red)
@@ -405,6 +415,7 @@ STR_NAME_BRUSH_5			 :Brush Type 5 (Diesel Electric)
 STR_NAME_BRUSH_PEAK          :Sulzer Type 4 (Diesel Electric)
 STR_NAME_EEHOOVER            :EE Hoover (Diesel Electric)
 STR_NAME_HST                 :BREL HST (Diesel Electric)
+STR_NAME_HST2                :BREL HST (Diesel Electric){GOLD}(Buffered)
 STR_NAME_BREL56				 :BREL "56" (Diesel Electric)
 STR_NAME_BREL58				 :BREL "58" (Diesel Electric)
 STR_NAME_BREL69				 :BREL "69" (Diesel Electric)
@@ -590,6 +601,7 @@ STR_NAME_BRUSH_5_ALT		:BR Class 60 (Diesel Electric)
 STR_NAME_BRUSH_PEAK_ALT		:BR Class 44/45/46 (Diesel Electric)
 STR_NAME_EEHOOVER_ALT		:BR Class 50 (Diesel Electric)
 STR_NAME_HST_ALT			:BR Class 43 (Diesel Electric)
+STR_NAME_HST2_ALT			:BR Class 43 (Diesel Electric){GOLD}(Buffered)
 STR_NAME_BREL58_ALT			:BR Class 58 (Diesel Electric)
 STR_NAME_BREL56_ALT			:BR Class 56 (Diesel Electric)
 STR_NAME_BREL69_ALT			:BR Class 69 (Diesel Electric)
