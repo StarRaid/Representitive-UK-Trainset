@@ -31,7 +31,9 @@
 26 East Midlands Railway
 27 ScotRail
 28 Network Rail
-29 Random Duo
+29 Blue Pullman
+30 Pullman (Fictional)
+31 Random Duo
 
 
 Buffered Variant:
@@ -68,6 +70,8 @@ spriteset (gfx_class_43_first_fag			, "gfx/DIESEL_LOCO/class_43_2.png"	){	templa
 spriteset (gfx_class_43_first_barbie		, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,400)}
 spriteset (gfx_class_43_first_dynamiclines	, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,425)}
 spriteset (gfx_class_43_first_blue			, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,450)}
+spriteset (gfx_class_43_gwr					, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,475)}
+spriteset (gfx_class_43_mml_teal			, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,500)}
 
 spriteset (gfx_class_43_brblue_purchase		, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_dualhead_purchase	(178,25	)}
 spriteset (gfx_class_43_ic125_purchase		, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_dualhead_purchase	(178,50	)}
@@ -127,15 +131,16 @@ switch(FEAT_TRAINS, SELF, sw_class_43_gfx_manual, cargo_subtype){
 	18	: gfx_class_43_first_barbie ;					//18 FGW Barbie
 	19	: gfx_class_43_first_dynamiclines ;				//19 FGW Dynamic Lines
 	20	: gfx_class_43_first_blue ;						//20 FGW Blue
-	//21 GWR
-	22	: sw_class_43_gfx_nostaliga_gwr_backcheck ;	//22 GWR Heritage Duo
-	//23 MML Teal
+	21	: gfx_class_43_gwr ;							//21 GWR
+	22	: sw_class_43_gfx_nostaliga_gwr_backcheck ;		//22 GWR Heritage Duo
+	23	: gfx_class_43_mml_teal	;						//23 MML Teal
 	//24 MML Rio
 	//25 East Midlands Trains
 	//26 East Midlands Railway
 	//27 ScotRail
 	28	: gfx_class_43_generic ;						//28 Network Rail
-	//29 Random Duo
+	//29..30:  ;							//29 Blue Pullman 30 Pullman (Fictional)
+	//31 Random Duo
 	gfx_class_43_virgin ;						//05 Virgin Trains
 }
 
@@ -212,7 +217,9 @@ switch(FEAT_TRAINS, SELF, sw_class_43_refit_text, cargo_subtype){
 	26	: string(STR_LIVERY_EMR) ;										//26 East Midlands Railway
 	27	: string(STR_LIVERY_SCOTRAIL_7C) ;								//27 ScotRail
 	28	: string(STR_LIVERY_NETWORK_RAIL) ;								//28 Network Rail
-	//29	: string() ;//29 Random Duo
+	29	: string(STR_LIVERY_BLUE_PULLMAN) ;								//29 Blue Pullman
+	30	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_PULLMAN)) ;		//30 Pullman (Fictional)
+	//31	: string() ;//29 Random Duo
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -273,19 +280,21 @@ switch(FEAT_TRAINS, SELF, sw_class_43_colours_manual, cargo_subtype){
 	12		: palette_2cc(COLOUR_WHITE, COLOUR_PINK) ;				//12 East Coast
 	15		: sw_class_43_colours_nostaliga_lner_backcheck ;		//15 LNER Heritage Livery
 	16		: palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;		//16 Great Western Holdings
-	17		: palette_2cc(COLOUR_PALE_GREEN, COLOUR_YELLOW) ;//17 FGW Fag
-	18		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;//18 FGW Barbie 
-	19..20	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;//19 FGW Dynamic Lines 20 FGW Blue
-	21		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;//21 GWR
+	17		: palette_2cc(COLOUR_PALE_GREEN, COLOUR_YELLOW) ;		//17 FGW Fag
+	18		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;		//18 FGW Barbie 
+	19..20	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;			//19 FGW Dynamic Lines 20 FGW Blue
+	21		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;		//21 GWR
 	22		: sw_class_43_colours_nostaliga_gwr_backcheck ;			//22 GWR Heritage Duo
-	//23		: palette_2cc(COLOUR_, COLOUR_) ;//23 MML Teal
-	24		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;//24 MML Rio
-	25		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;//25 East Midlands Trains
-	//26		: palette_2cc(COLOUR_, COLOUR_) ;//26 East Midlands Railway
-	27		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;//27 ScotRail
-	28		: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;//28 Network Rail
-	//29		: sw_class_43_colours_random ;//29 Random Duo
-	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;						//05 Virgin Trains 13 Virgin Trains East Coast 14 LNER
+	23		: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_ORANGE) ;		//23 MML Teal
+	24		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;			//24 MML Rio
+	25		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;			//25 East Midlands Trains
+	//26		: palette_2cc(COLOUR_, COLOUR_) ;					//26 East Midlands Railway
+	27		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;			//27 ScotRail
+	28		: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;			//28 Network Rail
+	29		: palette_2cc(COLOUR_BROWN, COLOUR_WHITE) ;				//29 Blue Pullman
+	30		: palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;				//30 Pullman (Fictional)
+	//31		: sw_class_43_colours_random ;						//31 Random Duo
+	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;							//05 Virgin Trains 13 Virgin Trains East Coast 14 LNER
 }
 
 
@@ -329,7 +338,7 @@ item(FEAT_TRAINS, item_hst_2, 432){
 		speed                          : 125 mph ;
 		power                          : 4500 hp ;
 		weight                         : 70 ton ;
-		tractive_effort_coefficient    : 0.1142857142857143 ;
+		tractive_effort_coefficient    : 0.12 ;
 		air_drag_coefficient           : 0.064 ;
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
 		ai_special_flag                : AI_FLAG_PASSENGER ;
