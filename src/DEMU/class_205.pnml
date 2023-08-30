@@ -239,7 +239,7 @@ switch(FEAT_TRAINS, PARENT, sw_205_colour_mapping_decider, colour_scheme_1){
 switch(FEAT_TRAINS, SELF, sw_205_coupling_restrictions, vehicle_type_id) {
     9010: return CB_RESULT_ATTACH_ALLOW;
 	201: return CB_RESULT_ATTACH_ALLOW;
-	207: return CB_RESULT_ATTACH_ALLOW;
+	205: return CB_RESULT_ATTACH_ALLOW;
 	207: return CB_RESULT_ATTACH_ALLOW;
     return string(STR_205_NO_COUPLE);
 }
