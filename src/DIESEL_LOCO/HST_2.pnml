@@ -72,6 +72,8 @@ spriteset (gfx_class_43_first_dynamiclines	, "gfx/DIESEL_LOCO/class_43_2.png"	){
 spriteset (gfx_class_43_first_blue			, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,450)}
 spriteset (gfx_class_43_gwr					, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,475)}
 spriteset (gfx_class_43_mml_teal			, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,500)}
+spriteset (gfx_class_43_mml_rio				, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,525)}
+spriteset (gfx_class_43_emt					, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_8_8_2	(0	,550)}
 
 spriteset (gfx_class_43_brblue_purchase		, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_dualhead_purchase	(178,25	)}
 spriteset (gfx_class_43_ic125_purchase		, "gfx/DIESEL_LOCO/class_43_2.png"	){	template_dualhead_purchase	(178,50	)}
@@ -134,8 +136,8 @@ switch(FEAT_TRAINS, SELF, sw_class_43_gfx_manual, cargo_subtype){
 	21	: gfx_class_43_gwr ;							//21 GWR
 	22	: sw_class_43_gfx_nostaliga_gwr_backcheck ;		//22 GWR Heritage Duo
 	23	: gfx_class_43_mml_teal	;						//23 MML Teal
-	//24 MML Rio
-	//25 East Midlands Trains
+	24	: gfx_class_43_mml_rio ;						//24 MML Rio
+	25	: gfx_class_43_emt ;							//25 East Midlands Trains
 	//26 East Midlands Railway
 	//27 ScotRail
 	28	: gfx_class_43_generic ;						//28 Network Rail
