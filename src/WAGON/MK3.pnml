@@ -53,6 +53,9 @@ spriteset(gfx_mk3_pullman             , "gfx/WAGON/mark_3.png"){ template_Mk2_si
 spriteset(gfx_mk3_mml_teal            , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,525) }
 spriteset(gfx_mk3_regional_rail       , "gfx/WAGON/mark_3.png"){ template_Mk2_single( 89,525) }
 spriteset(gfx_mk3_nse                 , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,550) }
+spriteset(gfx_mk3_scotrail            , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,575) }
+spriteset(gfx_mk3_gc                  , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,600) }
+spriteset(gfx_mk3_gc_stripe           , "gfx/WAGON/mark_3.png"){ template_Mk2_single(  0,625) }
 
 spriteset(gfx_mk3_purchase_brblue     , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89, 25) }
 spriteset(gfx_mk3_purchase_intercity  , "gfx/WAGON/mark_3.png"){ template_purchase  ( 89, 50) }
@@ -126,8 +129,10 @@ switch(FEAT_TRAINS, SELF, sw_mk3_gfx_manual, cargo_subtype){
 	25     : gfx_mk3_gwholdings ;
 	26     : gfx_mk3_nxec ;
 	27     : gfx_mk3_east_coast ;
-	//28     : string(STR_LIVERY_SCOTRAIL_7C) ;
+	28     : gfx_mk3_scotrail ;
 	29..30 : gfx_mk3_pullman ;
+	31     : gfx_mk3_gc ;
+	32     : gfx_mk3_gc_stripe ;
 	33     : gfx_mk3_nse ;
 	34     : gfx_mk3_regional_rail ;
 	gfx_mk3_virgin ;
@@ -303,6 +308,7 @@ switch(FEAT_TRAINS, SELF, sw_mk3_colours_manual, cargo_subtype){
 	28     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	29     : palette_2cc(COLOUR_BROWN, COLOUR_WHITE) ;
 	30     : palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;
+	32     : palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;
 	33     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;      //NSE
 	34     : palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;     //Regional Railways
 	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;                   //Virgin

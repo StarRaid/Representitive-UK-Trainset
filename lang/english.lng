@@ -242,6 +242,7 @@ STR_LIVERY_HERITAGE_LNER					: LNER {GOLD}(43102 Heritage Livery)
 STR_LIVERY_GW_HOLDINGS						: Great Western Holdings
 STR_LIVERY_PULLMAN							: Pullman
 STR_LIVERY_BLUE_PULLMAN						: Blue Pullman
+STR_LIVERY_RAIL_ADVENTURE					: railadventure {GOLD}(Grey)
 
 STR_LIVERY_MIDLAND_RAILWAY					: Midland Railway {GOLD}(Green)
 STR_LIVERY_MIDLAND_RAILWAY_LATE				: Midland Railway {GOLD}(Red)
@@ -312,6 +313,7 @@ STR_CONTAINER_SMALL             : 2 x Small containers
 STR_CONTAINER_LARGE             : 1 x Large container
 
 STR_RANDOM_COLOURS				: Random colours
+STR_RANDOM						: Random Livery
 
 STR_NAME_STROUDLEY				:Stroudley 6-Wheel Carriage
 STR_NAME_VICTORIAN				:Victorian Suburban Carriage
