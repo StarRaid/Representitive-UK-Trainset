@@ -254,7 +254,7 @@ item(FEAT_TRAINS, item_brcw3, 33){
 		power                          : 909 kW ;
 		weight                         : 76 ton ;
 		engine_class                   : ENGINE_CLASS_DIESEL ;
-		tractive_effort_coefficient    : 0.39 ;
+		tractive_effort_coefficient    : 0.26 ;
 		air_drag_coefficient           : 0.0888888888888889 ;
 		length                         : 7 ;
 		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
