@@ -98,6 +98,9 @@ STR_LIVERY_VIRGIN_TRAINS		 			: Virgin Trains
 STR_LIVERY_VIRGIN_TRAINS_FAKE	 			: Virgin Trains {GOLD}(Pretendolino)
 STR_LIVERY_VIRGIN_TRAINS_SILK	 			: Virgin Trains {GOLD}(Silk)
 STR_LIVERY_VIRGIN_TRAINS_BLANK	 			: Virgin Trains {GOLD}(Plain White)
+STR_LIVERY_EUROSTAR							: Eurostar{GOLD}(Original)
+STR_LIVERY_EUROSTAR_NEW						: Eurostar
+STR_LIVERY_SNCF								: SNCF
 STR_LIVERY_GNER								: Great North Eastern Railway
 STR_LIVERY_NXEC								: National Express East Coast
 STR_LIVERY_ESCS								: East Coast
@@ -464,6 +467,7 @@ STR_NAME_334				 :Alstom "Juniper" (Electric)
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Voltage)
 STR_NAME_365				 :Metro-Cammel "Networker Express" (Electric)
 STR_NAME_350				 :Siemens "Desiro" (Electric)
+STR_NAME_373				 :GEC Alstom "Eurostar" (Electric)
 STR_NAME_375				 :Bombardier "Electrostar" (Dual Voltage)
 STR_NAME_376				 :Bombardier "Electrostar" - Urban (Dual Voltage)
 STR_NAME_377				 :Bombardier "Electrostar" (Dual Voltage)
@@ -649,6 +653,7 @@ STR_NAME_334_ALT            :BR Class 334 (Electric)
 STR_NAME_325_ALT			:BR Class 325/365/465 (Dual Voltage)
 STR_NAME_365_ALT			:BR Class 365 (Electric)
 STR_NAME_350_ALT			:BR Class 350/360 (Electric)
+STR_NAME_373_ALT			:BR Class 373 (Electric)
 STR_NAME_375_ALT			:BR Class 375/377/379/387 (Dual Voltage)
 STR_NAME_376_ALT			:BR Class 376/378 (Dual Voltage)
 STR_NAME_377_ALT			:BR Class 375/377/379 (Dual Voltage)

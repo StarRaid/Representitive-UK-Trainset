@@ -1,0 +1,335 @@
+
+
+//APT
+
+//Sprites
+
+spriteset(gfx_373_front					, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,0	)}
+spriteset(gfx_373_trailer				, "gfx/EMU/class_373.png"	){	template_6_8				(0	,25	)}
+spriteset(gfx_373_trailer_rev			, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,25	)}
+spriteset(gfx_373_trailer_end			, "gfx/EMU/class_373.png"	){	template_6_8				(0	,50	)}
+spriteset(gfx_373_trailer_end_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,50	)}
+spriteset(gfx_373_middle				, "gfx/EMU/class_373.png"	){	template_6_8				(0	,75	)}
+spriteset(gfx_373_middle_rev			, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,75	)}
+spriteset(gfx_373_buffet				, "gfx/EMU/class_373.png"	){	template_6_8				(146,50	)}
+spriteset(gfx_373_buffet_rev			, "gfx/EMU/class_373.png"	){	template_6_8_rev			(146,50	)}
+
+spriteset(gfx_373_gner_front			, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,200)}
+spriteset(gfx_373_gner_trailer			, "gfx/EMU/class_373.png"	){	template_6_8				(0	,225)}
+spriteset(gfx_373_gner_trailer_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,225)}
+spriteset(gfx_373_gner_trailer_end		, "gfx/EMU/class_373.png"	){	template_6_8				(0	,250)}
+spriteset(gfx_373_gner_trailer_end_rev	, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,250)}
+spriteset(gfx_373_gner_middle			, "gfx/EMU/class_373.png"	){	template_6_8				(0	,275)}
+spriteset(gfx_373_gner_middle_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,275)}
+spriteset(gfx_373_gner_buffet			, "gfx/EMU/class_373.png"	){	template_6_8				(146,250)}
+spriteset(gfx_373_gner_buffet_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(146,250)}
+
+//Fixtures
+spriteset(gfx_373_lights_f				, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,125)}
+spriteset(gfx_373_lights_r				, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,150)}
+spriteset(gfx_373_panto_up				, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,100)}
+spriteset(gfx_373_panto_down			, "gfx/EMU/class_373.png"	){	template_8_8_2				(178,100)}
+spriteset(gfx_373_more					, "gfx/EMU/class_373.png"	){	template_6_4				(146	,75	)}
+
+//Purchase
+spriteset(gfx_373_purchase				, "gfx/EMU/class_373.png"	){	template_dualhead_purchase	(178,0	)}
+
+//Switches
+
+
+
+//Liveries
+
+switch(FEAT_TRAINS, SELF, sw_373_liveries_front, cargo_subtype){
+	1	: gfx_373_front ;	// New Eurostar
+	2	: gfx_373_front ;	// SNCF
+	3	: gfx_373_gner_front ;	// GNER
+	gfx_373_front ;		// Eurostar
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer, cargo_subtype){
+	1	: gfx_373_trailer ;	// New Eurostar
+	2	: gfx_373_trailer ;	// SNCF
+	3	: gfx_373_gner_trailer ;	// GNER
+	gfx_373_trailer ;		// Eurostar
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer_rev, cargo_subtype){
+	1	: gfx_373_trailer_rev ;	// New Eurostar
+	2	: gfx_373_trailer_rev ;	// SNCF
+	3	: gfx_373_gner_trailer_rev ;	// GNER
+	gfx_373_trailer_rev ;		// Eurostar
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer_end, cargo_subtype){
+	1	: gfx_373_trailer_end ;	// New Eurostar
+	2	: gfx_373_trailer_end ;	// SNCF
+	3	: gfx_373_gner_trailer_end ;	// GNER
+	gfx_373_trailer_end ;		// Eurostar
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer_end_rev, cargo_subtype){
+	1	: gfx_373_trailer_end_rev ;	// New Eurostar
+	2	: gfx_373_trailer_end_rev ;	// SNCF
+	3	: gfx_373_gner_trailer_end_rev ;	// GNER
+	gfx_373_trailer_end_rev ;		// Eurostar
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_liveries_middle, cargo_subtype){
+	1	: gfx_373_middle ;	// New Eurostar
+	2	: gfx_373_middle ;	// SNCF
+	3	: gfx_373_gner_middle ;	// GNER
+	gfx_373_middle ;		// Eurostar
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_liveries_middle_rev, cargo_subtype){
+	1	: gfx_373_middle_rev ;	// New Eurostar
+	2	: gfx_373_middle_rev ;	// SNCF
+	3	: gfx_373_gner_middle_rev ;	// GNER
+	gfx_373_middle_rev ;		// Eurostar
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_liveries_restaurant, cargo_subtype){
+	1	: gfx_373_buffet ;	// New Eurostar
+	2	: gfx_373_buffet ;	// SNCF
+	3	: gfx_373_gner_buffet ;	// GNER
+	gfx_373_buffet ;		// Eurostar
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_liveries_restaurant_rev, cargo_subtype){
+	1	: gfx_373_buffet_rev ;	// New Eurostar
+	2	: gfx_373_buffet_rev ;	// SNCF
+	3	: gfx_373_gner_buffet_rev ;	// GNER
+	gfx_373_buffet_rev ;		// Eurostar
+}
+
+
+
+
+
+
+
+
+//Headlights
+
+switch(FEAT_TRAINS, SELF, sw_373_headlights_1, position_in_consist){
+	0: gfx_373_lights_f;
+	gfx_blank;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_headlights, position_in_consist_from_end){
+	0: gfx_373_lights_r;
+	sw_373_headlights_1;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_panto_check, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){ 1 : gfx_373_panto_up ; gfx_373_panto_down ; }
+
+//Sprite stack
+
+
+switch(FEAT_TRAINS, PARENT, sw_373_length_check, (count_veh_id(9090) - count_veh_id(373)) < 2){
+	1: gfx_370_more;
+	0: sw_373_panto_check;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0: return sw_373_liveries_front;
+	1: return sw_373_headlights;
+	2: return sw_373_length_check;
+}
+
+
+
+
+//Trailers
+
+
+switch(FEAT_TRAINS, SELF, sw_373_t_check_half_b, (position_in_vehid_chain % 6)){
+	5 : sw_373_liveries_restaurant ;
+	sw_373_liveries_trailer_rev ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_t_check_half_a, (position_in_vehid_chain_from_end % 6)){
+	5 : sw_373_liveries_restaurant_rev ;
+	sw_373_liveries_trailer ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_t_check_mid,	(position_in_vehid_chain > (num_vehs_in_vehid_chain / 2))){
+	1 : sw_373_t_check_half_a ;
+	sw_373_t_check_half_b ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_t_check_end_2,	(position_in_vehid_chain_from_end == 0)){
+	1 : sw_373_liveries_trailer_end ;
+	sw_373_t_check_mid ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_t_check_end_1,	(position_in_vehid_chain == 0)){
+	1 : sw_373_liveries_trailer_end_rev ;
+	sw_373_t_check_end_2 ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_t_check_pos_middle_b,	(position_in_vehid_chain == (num_vehs_in_vehid_chain / 2)-1)){
+	1 : sw_373_liveries_middle_rev ;
+	sw_373_t_check_end_1 ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_t_check_pos_middle_a,	(position_in_vehid_chain == num_vehs_in_vehid_chain / 2)){
+	1 : sw_373_liveries_middle ;
+	sw_373_t_check_pos_middle_b ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_373_t_length_check, (count_veh_id(9090) - count_veh_id(373)) < 2){
+	1: gfx_373_more;
+	gfx_blank;
+}
+
+
+
+//Sprite stack
+
+switch(FEAT_TRAINS, SELF, sw_373_t_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0: return sw_373_t_check_pos_middle_a;
+	1: return sw_373_t_length_check;
+}
+
+//Panto check, then windows check
+
+
+
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_373_refit_text, cargo_subtype){
+	0: string(STR_LIVERY_EUROSTAR);
+	1: string(STR_LIVERY_EUROSTAR_NEW);
+	2: string(STR_LIVERY_SNCF);
+	3: string(STR_LIVERY_GNER);
+	return CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_livery_decider, livery_choice){
+	1: sw_373_refit_text;
+	return CB_RESULT_NO_TEXT;
+}
+
+
+
+//Colours
+
+//Manual
+
+switch(FEAT_TRAINS, SELF, sw_373_colours_manual, cargo_subtype){
+	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+	3	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_2cc(COLOUR_YELLOW, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_colours_manual_check, livery_choice){
+	1 : sw_373_colours_manual ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_colours_2cc_check, colour_scheme_1){
+	1 : sw_373_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+switch(FEAT_TRAINS, SELF, sw_373_recolour_purchase, colour_scheme_1){
+	1 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_373_coupling_restrictions, vehicle_type_id) {
+    9090: return CB_RESULT_ATTACH_ALLOW;
+	373: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
+	92 : return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_373), string(STR_NAME_MU90));
+}
+
+switch(FEAT_TRAINS, PARENT, sw_373_start_stop, (count_veh_id(9090) - count_veh_id(373)) < 2){
+1: string(STR_MORE_CARRIAGES_NEEDED_APT);
+CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_373_power, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){ 1 : return 16000 ; return 4559 ;}
+switch(FEAT_TRAINS, SELF, sw_373_speed, (STANDARD_GAUGE_CHECK_OHLE_ONLY)) { 1: 300; 160;}
+
+item (FEAT_TRAINS, item_373, 373) {
+	property {
+		name: 							string(STR_NAME_373);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1992, 1, 1);
+		model_life:						20;
+		retire_early:					1;
+		vehicle_life:					35;
+		reliability_decay:				8;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					12;
+		cost_factor:					170;
+		running_cost_factor:			85;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							187 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_TILT);
+		refit_cost:						0;
+		track_type:						SAAZ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
+		power:							16000 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					1;
+		weight:							69 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.3;
+		air_drag_coefficient:			0.05;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+	}
+	graphics {
+		can_attach_wagon:					sw_373_coupling_restrictions;
+		default: 							sw_373_default;
+		purchase:							gfx_373_purchase;
+		colour_mapping:						sw_373_colours_2cc_check;
+		cargo_subtype_text:					sw_373_livery_decider;
+		purchase_colour_mapping:			sw_373_recolour_purchase;
+		sound_effect:						sw_sfx_electric_loco_old;
+		running_cost_factor:				return(current_speed == 0 ? 30 : 85);
+		purchase_running_cost_factor:		85;
+		start_stop:							sw_373_start_stop;
+		cargo_capacity:						return 0;
+		power:								sw_373_power;
+		purchase_power:						16000 ;
+		speed:								sw_373_speed;
+}
+		livery_override (9090) {
+		cargo_capacity: 		54;
+		power:					0;
+		default: 				sw_373_t_default;
+		weight:					30;
+		colour_mapping:			sw_373_colours_2cc_check;
+		cargo_subtype_text: 	sw_373_livery_decider;
+		speed:					0;
+		length:					6;
+}
+}
+
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_373, 373){
+	property{
+		name                           : string(STR_NAME_373_ALT) ;
+	}
+}
+}
