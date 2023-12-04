@@ -263,7 +263,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_colour_mapping_manual, cargo_subtype){
 	11 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	12 : palette_2cc(COLOUR_RED, COLOUR_ORANGE) ;
 	13..14: palette_2cc(company_colour1, company_colour2) ;
-	15 : palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;
+	15 : palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_WHITE) ;
 	16 : palette_2cc(COLOUR_BROWN, COLOUR_WHITE) ;
 	17 : palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
@@ -401,7 +401,7 @@ switch(FEAT_TRAINS, SELF, sw_mk2_bso_colour_mapping_manual, cargo_subtype){
 	8..9: palette_2cc(company_colour1, company_colour2) ;
 	10: palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;
 	11: palette_2cc(COLOUR_BROWN, COLOUR_WHITE) ;
-	12: palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;
+	12: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 

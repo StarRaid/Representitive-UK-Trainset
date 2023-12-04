@@ -20,6 +20,10 @@ spriteset(gfx_al6_railexpress			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8
 spriteset(gfx_al6_railexpress_rev		, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,175)}
 spriteset(gfx_al6_ews					, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0,200)}
 spriteset(gfx_al6_ews_rev				, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,200)}
+spriteset(gfx_al6_anglia				, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0,225)}
+spriteset(gfx_al6_anglia_rev			, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,225)}
+spriteset(gfx_al6_nse					, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_2(  0,250)}
+spriteset(gfx_al6_nse_rev				, "gfx/ELECTRIC_LOCO/class_86.png"){template_8_8_rev_2(  0,250)}
 
 spriteset(gfx_al6_brblue_purchase		, "gfx/ELECTRIC_LOCO/class_86.png"){template_purchase(178,  0)}
 spriteset(gfx_al6_acblue_purchase		, "gfx/ELECTRIC_LOCO/class_86.png"){template_purchase(178, 25)}
@@ -46,6 +50,8 @@ switch(FEAT_TRAINS, PARENT, sw_al6_gfx_freightliner_reverse_check , vehicle_is_r
 switch(FEAT_TRAINS, PARENT, sw_al6_gfx_colasrail_reverse_check , vehicle_is_reversed){		1 : gfx_al6_colasrail_rev 	; gfx_al6_colasrail ;}
 switch(FEAT_TRAINS, PARENT, sw_al6_gfx_railexpress_reverse_check , vehicle_is_reversed){	1 : gfx_al6_railexpress_rev ; gfx_al6_railexpress ;}
 switch(FEAT_TRAINS, PARENT, sw_al6_gfx_ews_reverse_check , vehicle_is_reversed){			1 : gfx_al6_ews_rev 		; gfx_al6_ews ;}
+switch(FEAT_TRAINS, PARENT, sw_al6_gfx_anglia_reverse_check , vehicle_is_reversed){			1 : gfx_al6_anglia_rev 		; gfx_al6_anglia ;}
+switch(FEAT_TRAINS, PARENT, sw_al6_gfx_nse_reverse_check , vehicle_is_reversed){			1 : gfx_al6_nse_rev 		; gfx_al6_nse ;}
 
 
 //Automatic liveries
@@ -89,6 +95,8 @@ switch(FEAT_TRAINS, SELF, sw_al6_gfx_manual, cargo_subtype){
 	6 : sw_al6_gfx_freightliner_reverse_check ;
 	7 : sw_al6_gfx_colasrail_reverse_check ;
 	8 : sw_al6_gfx_ews_reverse_check ;
+	9 : sw_al6_gfx_nse_reverse_check ;
+	10: sw_al6_gfx_anglia_reverse_check ;
 	sw_al6_gfx_brblue_reverse_check ;
 }
 
@@ -139,6 +147,8 @@ switch(FEAT_TRAINS, SELF, sw_al6_refit_text, cargo_subtype){
 	6 : string(STR_LIVERY_FREIGHTLINER) ;
 	7 : string(STR_LIVERY_COLAS) ;
 	8 : string(STR_LIVERY_EWS) ;
+	9 : string(STR_LIVERY_NSE) ;
+	10: string(STR_LIVERY_ANGLIA_RAIL) ;
 	CB_RESULT_NO_TEXT ;
 }
 
@@ -191,6 +201,8 @@ switch(FEAT_TRAINS, SELF, sw_al6_colours_manual, cargo_subtype){
 	6 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	7 : palette_2cc(COLOUR_YELLOW, company_colour2) ;
 	8 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	9 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	10: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 

@@ -12,6 +12,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_brush4_gfx_manual, cargo_subtype){
 	12		: sw_brush4_gfx_first_fag_revcheck ;
 	13		: sw_brush4_gfx_drs_revcheck ;
 	14		: sw_brush4_gfx_colas_revcheck ;
+	15		: sw_brush4_gfx_anglia_revcheck ;
 	sw_brush4_gfx_brlargelogo_revcheck ;
 }
 
@@ -67,6 +68,7 @@ switch(FEAT_TRAINS, PARENT, sw_dbso_brush4_col_manual, cargo_subtype){
 	11	: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
 	12	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
 	14	: palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE) ;
+	15	: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_WHITE) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_PALE_GREEN) ;
 }
 

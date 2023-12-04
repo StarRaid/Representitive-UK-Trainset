@@ -24,6 +24,18 @@ spriteset(gfx_373_gner_middle_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev
 spriteset(gfx_373_gner_buffet			, "gfx/EMU/class_373.png"	){	template_6_8				(146,250)}
 spriteset(gfx_373_gner_buffet_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(146,250)}
 
+spriteset(gfx_373_e300_front			, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,300)}
+spriteset(gfx_373_e300_trailer			, "gfx/EMU/class_373.png"	){	template_6_8				(0	,325)}
+spriteset(gfx_373_e300_trailer_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,325)}
+spriteset(gfx_373_e300_trailer_end		, "gfx/EMU/class_373.png"	){	template_6_8				(0	,350)}
+spriteset(gfx_373_e300_trailer_end_rev	, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,350)}
+spriteset(gfx_373_e300_middle			, "gfx/EMU/class_373.png"	){	template_6_8				(0	,375)}
+spriteset(gfx_373_e300_middle_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,375)}
+spriteset(gfx_373_e300_buffet			, "gfx/EMU/class_373.png"	){	template_6_8				(146,350)}
+spriteset(gfx_373_e300_buffet_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(146,350)}
+
+spriteset(gfx_373_front_sncf			, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,400)}
+
 //Fixtures
 spriteset(gfx_373_lights_f				, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,125)}
 spriteset(gfx_373_lights_r				, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,150)}
@@ -41,66 +53,58 @@ spriteset(gfx_373_purchase				, "gfx/EMU/class_373.png"	){	template_dualhead_pur
 //Liveries
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_front, cargo_subtype){
-	1	: gfx_373_front ;	// New Eurostar
-	2	: gfx_373_front ;	// SNCF
+	1	: gfx_373_e300_front ;	// New Eurostar
+	2	: gfx_373_front_sncf ;	// SNCF
 	3	: gfx_373_gner_front ;	// GNER
 	gfx_373_front ;		// Eurostar
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer, cargo_subtype){
-	1	: gfx_373_trailer ;	// New Eurostar
-	2	: gfx_373_trailer ;	// SNCF
+	1	: gfx_373_e300_trailer ;	// New Eurostar
 	3	: gfx_373_gner_trailer ;	// GNER
-	gfx_373_trailer ;		// Eurostar
+	gfx_373_trailer ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer_rev, cargo_subtype){
-	1	: gfx_373_trailer_rev ;	// New Eurostar
-	2	: gfx_373_trailer_rev ;	// SNCF
+	1	: gfx_373_e300_trailer_rev ;	// New Eurostar
 	3	: gfx_373_gner_trailer_rev ;	// GNER
-	gfx_373_trailer_rev ;		// Eurostar
+	gfx_373_trailer_rev ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer_end, cargo_subtype){
-	1	: gfx_373_trailer_end ;	// New Eurostar
-	2	: gfx_373_trailer_end ;	// SNCF
+	1	: gfx_373_e300_trailer_end ;	// New Eurostar
 	3	: gfx_373_gner_trailer_end ;	// GNER
-	gfx_373_trailer_end ;		// Eurostar
+	gfx_373_trailer_end ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer_end_rev, cargo_subtype){
-	1	: gfx_373_trailer_end_rev ;	// New Eurostar
-	2	: gfx_373_trailer_end_rev ;	// SNCF
+	1	: gfx_373_e300_trailer_end_rev ;	// New Eurostar
 	3	: gfx_373_gner_trailer_end_rev ;	// GNER
 	gfx_373_trailer_end_rev ;		// Eurostar
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_middle, cargo_subtype){
-	1	: gfx_373_middle ;	// New Eurostar
-	2	: gfx_373_middle ;	// SNCF
+	1	: gfx_373_e300_middle ;	// New Eurostar
 	3	: gfx_373_gner_middle ;	// GNER
-	gfx_373_middle ;		// Eurostar
+	gfx_373_middle ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_middle_rev, cargo_subtype){
-	1	: gfx_373_middle_rev ;	// New Eurostar
-	2	: gfx_373_middle_rev ;	// SNCF
+	1	: gfx_373_e300_middle_rev ;	// New Eurostar
 	3	: gfx_373_gner_middle_rev ;	// GNER
-	gfx_373_middle_rev ;		// Eurostar
+	gfx_373_middle_rev ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_restaurant, cargo_subtype){
-	1	: gfx_373_buffet ;	// New Eurostar
-	2	: gfx_373_buffet ;	// SNCF
+	1	: gfx_373_e300_buffet ;	// New Eurostar
 	3	: gfx_373_gner_buffet ;	// GNER
-	gfx_373_buffet ;		// Eurostar
+	gfx_373_buffet ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_restaurant_rev, cargo_subtype){
-	1	: gfx_373_buffet_rev ;	// New Eurostar
-	2	: gfx_373_buffet_rev ;	// SNCF
+	1	: gfx_373_e300_buffet_rev ;	// New Eurostar
 	3	: gfx_373_gner_buffet_rev ;	// GNER
-	gfx_373_buffet_rev ;		// Eurostar
+	gfx_373_buffet_rev ;		// Eurostar & SNCF
 }
 
 

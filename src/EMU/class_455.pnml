@@ -45,10 +45,16 @@ spriteset(spriteset_455_swt_purchase, "gfx/EMU/class_508.png") {template_dualhea
 //Coupling
 
 switch(FEAT_TRAINS, SELF, sw_455_coupling_restrictions, vehicle_type_id) {
-    item_Mk2: return CB_RESULT_ATTACH_ALLOW;
-	item_455: return CB_RESULT_ATTACH_ALLOW;
+    9020: return CB_RESULT_ATTACH_ALLOW;
+	455: return CB_RESULT_ATTACH_ALLOW;
 	456: return CB_RESULT_ATTACH_ALLOW;
+	442: return CB_RESULT_ATTACH_ALLOW;
+	411: return CB_RESULT_ATTACH_ALLOW;
+	415: return CB_RESULT_ATTACH_ALLOW;
+	210: return CB_RESULT_ATTACH_ALLOW;
+	33 : return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
+	73 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_455), string(STR_NAME_MK2));
 }
 

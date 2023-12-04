@@ -317,9 +317,15 @@ switch(FEAT_TRAINS, PARENT, sw_411_colour_mapping_decider, colour_scheme_1){
 
 switch(FEAT_TRAINS, SELF, sw_411_coupling_restrictions, vehicle_type_id) {
     9010: return CB_RESULT_ATTACH_ALLOW;
+	455: return CB_RESULT_ATTACH_ALLOW;
+	456: return CB_RESULT_ATTACH_ALLOW;
+	442: return CB_RESULT_ATTACH_ALLOW;
 	411: return CB_RESULT_ATTACH_ALLOW;
 	415: return CB_RESULT_ATTACH_ALLOW;
+	210: return CB_RESULT_ATTACH_ALLOW;
+	33 : return CB_RESULT_ATTACH_ALLOW;
 	37 : return CB_RESULT_ATTACH_ALLOW;
+	73 : return CB_RESULT_ATTACH_ALLOW;
     return string(STR_411_NO_COUPLE);
 }
 
