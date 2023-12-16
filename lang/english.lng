@@ -169,6 +169,7 @@ STR_LIVERY_SE_BLUE				 			: Southeastern {GOLD}(Blue)
 STR_LIVERY_SE_YELLOW			 			: Southeastern {GOLD}(Yellow)
 STR_LIVERY_SE_YELLOW_GREY		 			: Southeastern {GOLD}(Yellow with Stripe)
 STR_LIVERY_SE_REFURB			 			: Southeastern {BLUE}(Refurbished)
+STR_LIVERY_SE_REFURB_STR		 			: Southeastern {BLUE}(Refurbished) {STRING}
 STR_LIVERY_WCRC					 			: West Coast Railway Company
 STR_LIVERY_CRIMSON_CREAM		 			: British Railways "Crimson"
 STR_LIVERY_CHOCOLATE_CREAM		 			: British Railways "Chocolate"
@@ -465,6 +466,7 @@ STR_NAME_321                 :BREL AC Express (Electric)
 STR_NAME_331				 :CAF "Civity" (Electric)
 STR_NAME_334				 :Alstom "Juniper" (Electric)
 STR_NAME_325				 :Metro-Cammel "Networker" (Dual Voltage)
+STR_NAME_325_2				 :ABB "325" (Dual Voltage)
 STR_NAME_365				 :Metro-Cammel "Networker Express" (Electric)
 STR_NAME_350				 :Siemens "Desiro" (Electric)
 STR_NAME_373				 :GEC Alstom "Eurostar" (Electric)
@@ -651,6 +653,7 @@ STR_NAME_321_ALT            :BR Class 320/321/322 (Electric)
 STR_NAME_331_ALT            :BR Class 331 (Electric)
 STR_NAME_334_ALT            :BR Class 334 (Electric)
 STR_NAME_325_ALT			:BR Class 325/365/465 (Dual Voltage)
+STR_NAME_325_2_ALT			:BR Class 325 (Dual Voltage)
 STR_NAME_365_ALT			:BR Class 365 (Electric)
 STR_NAME_350_ALT			:BR Class 350/360 (Electric)
 STR_NAME_373_ALT			:BR Class 373 (Electric)

@@ -14,7 +14,7 @@ spriteset (gfx_uklight_chr					, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8_
 spriteset (gfx_uklight_chr_reverse			, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8_rev_2	(0	,100)}
 spriteset (gfx_uklight_nts					, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8_2		(0	,125)}
 spriteset (gfx_uklight_nts_reverse			, "gfx/DIESEL_LOCO/class_68_2.png"){template_8_8_rev_2	(0	,125)}
-                                   
+
 spriteset (gfx_uklight_headlight   , "gfx/FIXTURES/uklight_headlight.png"){template_8_8_2(0,0)}
 spriteset (gfx_uklight_taillight   , "gfx/FIXTURES/uklight_headlight.png"){template_8_8_2(0,25)}
 

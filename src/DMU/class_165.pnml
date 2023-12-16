@@ -23,6 +23,8 @@ spriteset(spriteset_365_gtr_p_r, "gfx/EMU/networker2.png") {template_8_8_network
 
 spriteset(spriteset_365_pan_up, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker(0, 50)}
 spriteset(spriteset_365_pan_up_r, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker_reverse(0, 50)}
+spriteset(spriteset_365_pan_dn, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker(0, 75)}
+spriteset(spriteset_365_pan_dn_r, "gfx/FIXTURES/class_375_lights.png") {template_8_8_networker_reverse(0, 75)}
 
 spriteset(spriteset_465_headlights, "gfx/EMU/networker2.png") {template_8_8_networker(179, 525)}
 spriteset(spriteset_465_taillights, "gfx/EMU/networker2.png") {template_8_8_networker(179, 550)}
@@ -179,12 +181,21 @@ switch(FEAT_TRAINS, PARENT, sw_365_stack_t, vehicle_is_reversed){
 	sw_365_livery_t_r;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_365_pan_f, tile_has_catenary){
+0: spriteset_365_pan_dn;
+spriteset_365_pan_up;
+}
+switch(FEAT_TRAINS, PARENT, sw_365_pan_r, tile_has_catenary){
+0: spriteset_365_pan_dn_r;
+spriteset_365_pan_up_r;
+}
+
 switch(FEAT_TRAINS, SELF, sw_365_livery_t_p, position_in_vehid_chain){
-	0: spriteset_365_pan_up;
+	0: sw_365_pan_f;
 }
 	
 switch(FEAT_TRAINS, SELF, sw_365_livery_t_r_p, position_in_vehid_chain_from_end){
-	0: spriteset_365_pan_up_r;
+	0: sw_365_pan_r;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_365_stack_t_p, vehicle_is_reversed){
