@@ -349,3 +349,92 @@ item (FEAT_TRAINS, item_ee73, 73){
 }
 }
 }
+
+
+
+
+// 73 + 419 variant
+
+spriteset(gfx_7_temp,"gfx/EMU/class_419.png"){template_7_4_2(0,230)}
+
+spriteset(gfx_419,"gfx/EMU/class_419.png"){template_7_4(0,100)}
+spriteset(gfx_73_gatex,"gfx/EMU/class_419.png"){template_7_8(0,75)}
+spriteset(gfx_73_2_purch,"gfx/EMU/class_419.png"){template_dualhead_purchase(82,100)}
+
+
+switch(FEAT_TRAINS, SELF, sw_73_2_f, (count_veh_id(732)+1)%2){1: gfx_73_gatex; gfx_419;}
+switch(FEAT_TRAINS, SELF, sw_73_2_r, (count_veh_id(732)+1)%2){1: gfx_419; gfx_73_gatex;}
+switch(FEAT_TRAINS, PARENT, sw_73_2, vehicle_is_reversed){0: sw_73_2_f; sw_73_2_r;}
+
+switch(FEAT_TRAINS, SELF, sw_73_2_col_2cc_check, colour_scheme_1){
+	1 : palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+item(FEAT_TRAINS, item_ee732, 732){
+	property{
+		name                           : string(STR_NAME_EE73_2) ;  
+		climates_available             : NO_CLIMATE ;
+		introduction_date              : date(1984,1,1) ;
+		refit_cost                     : 0 ;
+		refittable_cargo_classes       : 0 ;
+		cargo_allow_refit              : [MAIL, GOOD] ;
+		cargo_capacity                 : 1 ;
+		model_life                     : 20 ;
+		vehicle_life                   : 30 ;
+		reliability_decay              : 23 ;
+		cost_factor                    : 45 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 170 ;
+		speed                          : 90 mph ;
+		track_type                     : SAA3 ;
+		power                          : 1570 kW ;
+		weight                         : 77 ton ;
+		engine_class                   : ENGINE_CLASS_ELECTRIC ;
+		tractive_effort_coefficient    : 0.22 ;
+		air_drag_coefficient           : 0.1 ;
+		length                         : 7 ;
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC) ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		dual_headed                    : 0 ;
+		dual_headed:					1;
+		variant_group:					73;
+	}
+	graphics{
+		default                        : sw_73_2 ;
+		colour_mapping                 : sw_73_2_col_2cc_check ;
+		purchase                       : gfx_73_2_purch ;
+		sound_effect                   : sw_sfx_electric_loco_old ;
+		create_effect                  : vfx_3rd ;
+		purchase_cargo_capacity        : 0 ;
+		cargo_capacity                 : return 0 ;
+		can_attach_wagon               : sw_all_but_MU90;
+		running_cost_factor            : return(current_speed == 0 ? 45 : 170) ;
+		effect_spawn_model_and_powered : sw_73_effect_2_check ;
+		power                          : sw_73_power_check ;
+		purchase_running_cost_factor : 170 ;
+		additional_text				: string(STR_ADD_INFO_73) ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_ee732, 732){
+	property{
+		name                           : string(STR_NAME_EE73_2_ALT) ;
+	}
+}
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_ee732, 732){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+}
+
+
+
+
