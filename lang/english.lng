@@ -224,6 +224,7 @@ STR_LIVERY_GN_STR				 			: Great Northern {STRING}
 STR_LIVERY_WYPTE				 			: West Yorkshire Passenger Transport Executive
 STR_LIVERY_NXEA								: National Express East Anglia
 STR_LIVERY_LO								: London Overground
+STR_LIVERY_LON								: London Overground (Revised Livery)
 STR_LIVERY_STANSTEAD						: Stanstead Express
 STR_LIVERY_NS_DUTCH							: Nederlandse Spoorwegen
 STR_LIVERY_HEATHROW_EXPRESS					: Heathrow Express
@@ -471,7 +472,7 @@ STR_NAME_365				 :Metro-Cammel "Networker Express" (Electric)
 STR_NAME_350				 :Siemens "Desiro" (Electric)
 STR_NAME_373				 :GEC Alstom "Eurostar" (Electric)
 STR_NAME_375				 :Bombardier "Electrostar" (Dual Voltage)
-STR_NAME_376				 :Bombardier "Electrostar" - Urban (Dual Voltage)
+STR_NAME_376				 :Bombardier "Electrostar" - High Density (Dual Voltage)
 STR_NAME_377				 :Bombardier "Electrostar" (Dual Voltage)
 STR_NAME_387				 :Bombardier "Electrostar" - Express (Dual Voltage)
 STR_NAME_357				 :Adtranz "Electrostar" (Electric)
