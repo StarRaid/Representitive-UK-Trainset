@@ -208,7 +208,7 @@ item (FEAT_TRAINS, item_grid, 56){
 }
 
 if (vehicle_selection < 2){
-item (FEAT_TRAINS, item_bone, 58){
+item (FEAT_TRAINS, item_grid, 56){
 	property{
 		climates_available             : NO_CLIMATE ;
 	}

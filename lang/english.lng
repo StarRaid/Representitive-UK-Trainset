@@ -248,6 +248,7 @@ STR_LIVERY_GW_HOLDINGS						: Great Western Holdings
 STR_LIVERY_PULLMAN							: Pullman
 STR_LIVERY_BLUE_PULLMAN						: Blue Pullman
 STR_LIVERY_RAIL_ADVENTURE					: railadventure {GOLD}(Grey)
+STR_LIVERY_BARRIER							: Barrier Coach {GOLD}(Blue)
 
 STR_LIVERY_MIDLAND_RAILWAY					: Midland Railway {GOLD}(Green)
 STR_LIVERY_MIDLAND_RAILWAY_LATE				: Midland Railway {GOLD}(Red)
@@ -329,8 +330,12 @@ STR_NAME_DBSO                   :BREL Mark 2 Driving Coach
 STR_NAME_DVT                    :BREL Driving Van Trailer
 STR_NAME_MK1					:Mark 1 Carriage
 STR_NAME_MK1_SUB				:Mark 1 Suburban Carriage
+STR_NAME_MK1_BG					:Mark 1 BG
+STR_NAME_MK1_NBA				:Mark 1 NBA
+STR_NAME_MK1_BSO				:Mark 1 Brake
+STR_NAME_MK1_RUB				:Mark 1 Restaurant Buffet
 STR_NAME_MK2					:BREL Mark 2 Carriage
-STR_NAME_MK2_BRAKE				:BREL Mark 2 Carriage (Brake)
+STR_NAME_MK2_BRAKE				:BREL Mark 2 Brake
 STR_NAME_MK2A					:{GOLD}(Mk2a)
 STR_NAME_MK2F					:{GOLD}(Mk2f)
 STR_NAME_Mk3					:BREL Mark 3 Carriage
@@ -365,7 +370,7 @@ STR_NAME_CUBE					:General Goods Van
 STR_NAME_QPV					:XP Luggage Van
 STR_NAME_RBX					:Speedlink Van
 STR_NAME_GUV					:General Utility Van
-STR_NAME_NTX					:Express Mail Coach
+STR_NAME_NTX					:Express Mail Carriage
 STR_NAME_MGR					:MGR Hopper
 STR_NAME_CDA					:MGR Covered Hopper
 STR_NAME_STEEL_TANK				:Steel Tanker
@@ -376,6 +381,7 @@ STR_NAME_POL					:Polybulk Hopper
 STR_NAME_OBA					:Log Wagon
 STR_NAME_JHA					:Aggregates Hopper
 STR_NAME_HTA					:HTA Hopper
+STR_NAME_MLV					:BR MLV (3rd rail)
 
 STR_NAME_HAA					:HAA Hopper
 STR_NAME_HDA					:HDA Hopper
@@ -570,6 +576,8 @@ STR_NAAN_NEW_TRAIN    :Looksie here! A new train built for Narrow Gauge!
 
 
 
+
+STR_NAME_MLV_ALT			:BR Class 419 (3rd rail)
 STR_NAME_DBSO_ALT			:BREL DBSO
 
 STR_NAME_MR_1377_ALT				:MR 1377 Class (Steam)

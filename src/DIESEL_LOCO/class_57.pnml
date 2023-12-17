@@ -483,7 +483,7 @@ item(FEAT_TRAINS, item_ge4, 57){
 		cargo_subtype_text             : sw_57_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
-		can_attach_wagon               : sw_all_but_MU90;
+		//can_attach_wagon               : sw_all_but_MU90;
 		running_cost_factor            : return(current_speed == 0 ? 65 : 236) ;
 		purchase_running_cost_factor : 236 ;
 	}

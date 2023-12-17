@@ -1765,19 +1765,383 @@ item (FEAT_TRAINS, item_Mk1, 9010) {
 }
 }
 
-/*item (FEAT_TRAINS, item_Mk1_mail, 9011) {
+
+
+
+
+
+
+
+
+
+
+// Mark 1 BG
+
+
+spriteset (gfx_mk1_bg_base			, "gfx/WAGON/mark_1.png")	{template_8_4_2(89,	0	)}
+spriteset (gfx_mk1_bg_2cc			, "gfx/WAGON/mark_1.png")	{template_8_4_2(89,	25	)}
+spriteset (gfx_mk1_bg_nse			, "gfx/WAGON/mark_1.png")	{template_8_4_2(89,	50	)}
+spriteset (gfx_mk1_bg_ic			, "gfx/WAGON/mark_1.png")	{template_8_4_2(89,	75	)}
+spriteset (gfx_mk1_bg_res			, "gfx/WAGON/mark_1.png")	{template_8_4_2(89,	100	)}
+spriteset (gfx_mk1_bg_royal			, "gfx/WAGON/mark_1.png")	{template_8_4_2(89,	125	)}
+spriteset (gfx_mk1_bg_nr			, "gfx/WAGON/mark_1.png")	{template_8_4_2(89,	150	)}
+spriteset (gfx_mk1_bg_barrier		, "gfx/WAGON/mark_1.png")	{template_8_4_2(89,	175	)}
+spriteset (gfx_mk1_bg_wcrc			, "gfx/WAGON/mark_1.png")	{template_8_4_2(89,	200	)}
+
+spriteset (gfx_mk1_bg_purch_base	,"gfx/WAGON/mark_1.png")	{template_purchase(623,	60	)}
+spriteset (gfx_mk1_bg_purch_2cc		,"gfx/WAGON/mark_1.png")	{template_purchase(623,	75	)}
+spriteset (gfx_mk1_bg_purch_res		,"gfx/WAGON/mark_1.png")	{template_purchase(623,	90	)}
+spriteset (gfx_mk1_bg_purch_royal	,"gfx/WAGON/mark_1.png")	{template_purchase(623,	105	)}
+
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_manual, cargo_subtype){
+	2..4: gfx_mk1_bg_base;
+	6	: gfx_mk1_bg_nse;
+	7	: gfx_mk1_bg_ic;
+	8	: gfx_mk1_bg_res;
+	9	: gfx_mk1_bg_royal;
+	11	: gfx_mk1_bg_wcrc;
+	12	: gfx_mk1_bg_nr;
+	15	: gfx_mk1_bg_barrier;
+	gfx_mk1_bg_2cc;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_auto, date_of_last_service){
+	1967 .. 1970:gfx_mk1_bg_2cc ;
+	1971 .. 1982:gfx_mk1_bg_2cc ;
+	1983 .. 1995:gfx_mk1_bg_res ;
+	1996 .. 4096:gfx_mk1_bg_royal ;
+	gfx_mk1_bg_base ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_auto_decider, livery_choice){
+	1 : sw_mk1_bg_gfx_manual;
+	sw_mk1_bg_gfx_auto;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_purch, date_of_last_service){
+	1967 .. 1970:gfx_mk1_bg_purch_2cc ;
+	1971 .. 1982:gfx_mk1_bg_purch_2cc ;
+	1983 .. 1995:gfx_mk1_bg_purch_res ;
+	1996 .. 4096:gfx_mk1_bg_purch_royal ;
+	gfx_mk1_bg_purch_base ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_manual, cargo_subtype){
+	0	: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	1	: palette_2cc(COLOUR_BROWN, COLOUR_WHITE) ;
+	2	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	3	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	6	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	7	: palette_2cc(COLOUR_GREY, COLOUR_RED);
+	8	: palette_2cc(COLOUR_RED, COLOUR_GREY);
+	9	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	10	: palette_2cc(COLOUR_GREY, COLOUR_YELLOW);
+	11	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	12	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW);
+	13	: palette_2cc(company_colour1, company_colour2) ;
+	14	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_auto, date_of_last_service){
+	1967 .. 1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1971 .. 1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1983 .. 1995:palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	1996 .. 4096:palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_manual_check, livery_choice){
+	1 : sw_mk1_bg_colours_manual ;
+	sw_mk1_bg_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_2cc_check, colour_scheme_1){
+	1 : sw_mk1_bg_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_purch_colours, colour_scheme_1){
+	1 : sw_mk1_bg_colours_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_refit_text, cargo_subtype){
+	0	: string(STR_LIVERY_CRIMSON_CREAM);
+	1	: string(STR_LIVERY_CHOCOLATE_CREAM);
+	2	: string(STR_LIVERY_MAROON);
+	3	: string(STR_LIVERY_BRGREEN);
+	4	: string(STR_LIVERY_BRBLUE);
+	5	: string(STR_LIVERY_BRBLUEGREY);
+	6	: string(STR_LIVERY_NSE);
+	7	: string(STR_LIVERY_INTERCITY);
+	8	: string(STR_LIVERY_RAIL_EXPRESS);
+	9	: string(STR_LIVERY_ROYAL_MAIL);
+	10	: string(STR_LIVERY_CIVIL_ENGINEERS);
+	11	: string(STR_LIVERY_WCRC);
+	12	: string(STR_LIVERY_NETWORK_RAIL);
+	13	: string(STR_LIVER_COMP_COLOURS);
+	14	: string(STR_LIVERY_RTC);
+	15	: string(STR_LIVERY_BARRIER);
+	return CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_refit_text_decider, livery_choice){
+	1 : sw_mk1_bg_refit_text ;
+	return CB_RESULT_NO_TEXT ;
+}
+
+//==================================================
+
+
+
+item (FEAT_TRAINS, item_mk1_bg, 9012) {
 	property {
-		name: 							string(STR_NAME_MK2_MAIL);
+		name: 							string(STR_NAME_MK1_BG);
 		climates_available: 			ALL_CLIMATES;
-		introduction_date:				date(1953, 1, 1);
-		model_life:						15;
+		introduction_date:				date(1950, 1, 1);
+		model_life:						40;
+		retire_early:					1;
+		vehicle_life:					58;
+		reliability_decay:				7;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
+		non_refittable_cargo_classes   : bitmask(CC_PIECE_GOODS) ;
+		cargo_allow_refit:				[MAIL];
+		loading_speed:					40;
+		cost_factor:					25;
+		running_cost_factor:			28;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							100 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				MAIL;
+		cargo_capacity:					80;
+		weight:							32 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		variant_group:					9010;
+	}
+	graphics {
+	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	default:							sw_mk1_bg_gfx_auto_decider;
+	colour_mapping:						sw_mk1_bg_colours_2cc_check;
+	cargo_subtype_text:					sw_mk1_bg_refit_text_decider;
+	purchase:							sw_mk1_bg_gfx_purch;
+	purchase_colour_mapping:			sw_mk1_bg_purch_colours;
+}
+}
+
+
+
+
+
+// Mark 1 SUPER BG (NBA)
+
+
+spriteset (gfx_mk1_nba_base			, "gfx/WAGON/mark_1.png")	{template_8_4_2(178,	0	)}
+spriteset (gfx_mk1_nba_2cc			, "gfx/WAGON/mark_1.png")	{template_8_4_2(178,	25	)}
+spriteset (gfx_mk1_nba_nse			, "gfx/WAGON/mark_1.png")	{template_8_4_2(178,	50	)}
+spriteset (gfx_mk1_nba_ic			, "gfx/WAGON/mark_1.png")	{template_8_4_2(178,	75	)}
+spriteset (gfx_mk1_nba_res			, "gfx/WAGON/mark_1.png")	{template_8_4_2(178,	100	)}
+spriteset (gfx_mk1_nba_royal		, "gfx/WAGON/mark_1.png")	{template_8_4_2(178,	125	)}
+spriteset (gfx_mk1_nba_barrier		, "gfx/WAGON/mark_1.png")	{template_8_4_2(178,	150	)}
+
+spriteset (gfx_mk1_nba_purch_base	,"gfx/WAGON/mark_1.png")	{template_purchase(623,	60	)}
+spriteset (gfx_mk1_nba_purch_2cc	,"gfx/WAGON/mark_1.png")	{template_purchase(623,	75	)}
+spriteset (gfx_mk1_nba_purch_res	,"gfx/WAGON/mark_1.png")	{template_purchase(623,	90	)}
+spriteset (gfx_mk1_nba_purch_royal	,"gfx/WAGON/mark_1.png")	{template_purchase(623,	105	)}
+
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_manual, cargo_subtype){
+	0	: gfx_mk1_nba_base;
+	2	: gfx_mk1_nba_nse;
+	3	: gfx_mk1_nba_ic;
+	4	: gfx_mk1_nba_res;
+	5	: gfx_mk1_nba_royal;
+	6	: gfx_mk1_nba_base;
+	9	: gfx_mk1_nba_barrier;
+	gfx_mk1_nba_2cc;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_auto, date_of_last_service){
+	1971 .. 1982:gfx_mk1_nba_2cc ;
+	1983 .. 1995:gfx_mk1_nba_res ;
+	1996 .. 4096:gfx_mk1_nba_royal ;
+	gfx_mk1_nba_base ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_auto_decider, livery_choice){
+	1 : sw_mk1_nba_gfx_manual;
+	sw_mk1_nba_gfx_auto;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_purch, date_of_last_service){
+	1967 .. 1970:gfx_mk1_nba_purch_2cc ;
+	1971 .. 1982:gfx_mk1_nba_purch_2cc ;
+	1983 .. 1995:gfx_mk1_nba_purch_res ;
+	1996 .. 4096:gfx_mk1_nba_purch_royal ;
+	gfx_mk1_nba_purch_base ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_colours_manual, cargo_subtype){
+	2	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	3	: palette_2cc(COLOUR_GREY, COLOUR_RED);
+	4	: palette_2cc(COLOUR_RED, COLOUR_GREY);
+	5	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	6	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW);
+	7	: palette_2cc(company_colour1, company_colour2) ;
+	8	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_colours_auto, date_of_last_service){
+	1967 .. 1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1971 .. 1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1983 .. 1995:palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	1996 .. 4096:palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_colours_manual_check, livery_choice){
+	1 : sw_mk1_nba_colours_manual ;
+	sw_mk1_nba_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_colours_2cc_check, colour_scheme_1){
+	1 : sw_mk1_nba_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_purch_colours, colour_scheme_1){
+	1 : sw_mk1_nba_colours_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_refit_text, cargo_subtype){
+	0	: string(STR_LIVERY_BRBLUE);
+	1	: string(STR_LIVERY_BRBLUEGREY);
+	2	: string(STR_LIVERY_NSE);
+	3	: string(STR_LIVERY_INTERCITY);
+	4	: string(STR_LIVERY_RAIL_EXPRESS);
+	5	: string(STR_LIVERY_ROYAL_MAIL);
+	6	: string(STR_LIVERY_NETWORK_RAIL);
+	7	: string(STR_LIVER_COMP_COLOURS);
+	8	: string(STR_LIVERY_RTC);
+	9	: string(STR_LIVERY_BARRIER);
+	return CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_refit_text_decider, livery_choice){
+	1 : sw_mk1_nba_refit_text ;
+	return CB_RESULT_NO_TEXT ;
+}
+
+//==================================================
+
+
+
+item (FEAT_TRAINS, item_mk1_nba, 9015) {
+	property {
+		name: 							string(STR_NAME_MK1_NBA);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1971, 1, 1);
+		model_life:						VEHICLE_NEVER_EXPIRES;
+		retire_early:					1;
+		vehicle_life:					58;
+		reliability_decay:				7;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
+		non_refittable_cargo_classes   : bitmask(CC_PIECE_GOODS) ;
+		cargo_allow_refit:				[MAIL];
+		loading_speed:					40;
+		cost_factor:					35;
+		running_cost_factor:			30;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							110 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				MAIL;
+		cargo_capacity:					70;
+		weight:							32 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		variant_group:					9010;
+	}
+	graphics {
+	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	default:							sw_mk1_nba_gfx_auto_decider;
+	colour_mapping:						sw_mk1_nba_colours_2cc_check;
+	cargo_subtype_text:					sw_mk1_nba_refit_text_decider;
+	purchase:							sw_mk1_nba_gfx_purch;
+	purchase_colour_mapping:			sw_mk1_nba_purch_colours;
+}
+}
+
+
+
+
+// Mark 1 RUB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//==================================================
+
+
+
+item (FEAT_TRAINS, item_mk1_rub, 9014) {
+	property {
+		name: 							string(STR_NAME_MK1_RUB);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1950, 1, 1);
+		model_life:						30;
 		retire_early:					1;
 		vehicle_life:					50;
 		reliability_decay:				7;
-		refittable_cargo_classes:		CC_MAIL;
-		cargo_allow_refit:				[MAIL];
-		loading_speed:					29;
-		cost_factor:					20;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS];
+		loading_speed:					10;
+		cost_factor:					30;
 		running_cost_factor:			0;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
 		speed:							100 mph;
@@ -1789,19 +2153,222 @@ item (FEAT_TRAINS, item_Mk1, 9010) {
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
 		default_cargo_type:				PASS;
-		cargo_capacity:					60;
-		weight:							35 ton;
+		cargo_capacity:					20;
+		weight:							36 ton;
 		tractive_effort_coefficient:	0.07;
 		air_drag_coefficient:			0.08;
 		length:							8;
 		bitmask_vehicle_info:			0;
 		cargo_age_period:				185;
+		variant_group:					9010;
 	}
 	graphics {
 	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
-	colour_mapping:						return 0;
+	default:							sw_Mk1_default;
+	colour_mapping:						sw_Mk1_colour_mapping;
+	cargo_subtype_text:					sw_Mk1_refit_text_decider;
+	purchase:							sw_Mk1_purchase;
 }
-}*/
+}
+
+
+
+
+// Mark 1 BSO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//==================================================
+
+
+
+item (FEAT_TRAINS, item_mk1_bso, 9013) {
+	property {
+		name: 							string(STR_NAME_MK1_BSO);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1950, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS];
+		loading_speed:					20;
+		cost_factor:					26;
+		running_cost_factor:			15;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							100 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				PASS;
+		cargo_capacity:					30;
+		weight:							33 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		variant_group:					9010;
+	}
+	graphics {
+	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	default:							sw_Mk1_default;
+	colour_mapping:						sw_Mk1_colour_mapping;
+	cargo_subtype_text:					sw_Mk1_refit_text_decider;
+	purchase:							sw_Mk1_purchase;
+}
+}
+
+
+
+
+
+
+
+
+
+// Mark 1 Suburban
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//==================================================
+
+
+
+item (FEAT_TRAINS, item_mk1_sub, 9011) {
+	property {
+		name: 							string(STR_NAME_MK1_SUB);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1950, 1, 1);
+		model_life:						15;
+		retire_early:					1;
+		vehicle_life:					30;
+		reliability_decay:				7;
+		refittable_cargo_classes:		CC_PASSENGERS;
+		cargo_allow_refit:				[PASS];
+		loading_speed:					36;
+		cost_factor:					28;
+		running_cost_factor:			0;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							75 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							0 hp;
+		running_cost_base:				RUNNING_COST_NONE;
+		dual_headed:					0;
+		default_cargo_type:				PASS;
+		cargo_capacity:					80;
+		weight:							33 ton;
+		tractive_effort_coefficient:	0.07;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		variant_group:					9010;
+	}
+	graphics {
+	can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+	default:							sw_Mk1_default;
+	colour_mapping:						sw_Mk1_colour_mapping;
+	cargo_subtype_text:					sw_Mk1_refit_text_decider;
+	purchase:							sw_Mk1_purchase;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 1 "rukts.pnml" 3
 # 1 "src/WAGON/Mk2.pnml" 1
 //Mark 2
@@ -13619,7 +14186,7 @@ item (FEAT_TRAINS, item_37_slug, 3707){
 		cargo_subtype_text             : sw_37_slug_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
-		can_attach_wagon               : sw_all_but_MU90;
+		//can_attach_wagon               : sw_all_but_MU90;
 		running_cost_factor            : return(current_speed == 0 ? 40 : 150) ;
 		purchase_running_cost_factor : 150 ;
 	}
@@ -16746,7 +17313,7 @@ item (FEAT_TRAINS, item_grid, 56){
 }
 
 if (vehicle_selection < 2){
-item (FEAT_TRAINS, item_bone, 58){
+item (FEAT_TRAINS, item_grid, 56){
 	property{
 		climates_available             : NO_CLIMATE ;
 	}
@@ -17239,7 +17806,7 @@ item(FEAT_TRAINS, item_ge4, 57){
 		cargo_subtype_text             : sw_57_refit_text_check ;
 		purchase_cargo_capacity        : 0 ;
 		cargo_capacity                 : return 0 ;
-		can_attach_wagon               : sw_all_but_MU90;
+		//can_attach_wagon               : sw_all_but_MU90;
 		running_cost_factor            : return(current_speed == 0 ? 65 : 236) ;
 		purchase_running_cost_factor : 236 ;
 	}
@@ -33065,6 +33632,157 @@ item (FEAT_TRAINS, item_415, 415){
 }
 }
 # 1 "rukts.pnml" 3
+# 1 "src/EMU/class_419.pnml" 1
+
+
+// Class 419
+
+spriteset (gfx_419_base			, "gfx/EMU/class_419.png")	{template_8_4_networker(0,	0	)}
+spriteset (gfx_419_2cc			, "gfx/EMU/class_419.png")	{template_8_4_networker(0,	25	)}
+spriteset (gfx_419_nse			, "gfx/EMU/class_419.png")	{template_8_4_networker(0,	50	)}
+
+spriteset (gfx_419_purch_base	,"gfx/EMU/class_419.png")	{template_purchase(82,	113	)}
+spriteset (gfx_419_purch_2cc	,"gfx/EMU/class_419.png")	{template_purchase(82,	127	)}
+spriteset (gfx_419_purch_nse	,"gfx/EMU/class_419.png")	{template_purchase(82,	141	)}
+
+
+switch(FEAT_TRAINS, SELF, sw_419_gfx_manual, cargo_subtype){
+	0..1: gfx_419_base;
+	3	: gfx_419_nse;
+	gfx_419_2cc;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_gfx_auto, date_of_last_service){
+	1971 .. 1982:gfx_419_2cc ;
+	1983 .. 1995:gfx_419_purch_nse ;
+	gfx_419_base ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_gfx_auto_decider, livery_choice){
+	1 : sw_419_gfx_manual;
+	sw_419_gfx_auto;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : return sw_419_gfx_auto_decider;
+	1 : return sw_415_headcode_2;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_gfx_purch, date_of_last_service){
+	1971 .. 1982:gfx_419_purch_2cc ;
+	1983 .. 1995:gfx_419_purch_nse ;
+	gfx_419_purch_base ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_colours_manual, cargo_subtype){
+	0	:  palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	3	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_colours_auto, date_of_last_service){
+	1967 .. 1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1971 .. 1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1983 .. 1995:palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_colours_manual_check, livery_choice){
+	1 : sw_419_colours_manual ;
+	sw_419_colours_auto ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_colours_2cc_check, colour_scheme_1){
+	1 : sw_419_colours_manual_check ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_purch_colours, colour_scheme_1){
+	1 : sw_419_colours_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+
+
+
+
+
+switch(FEAT_TRAINS, SELF, sw_419_refit_text, cargo_subtype){
+	0	: string(STR_LIVERY_BRGREEN);
+	1	: string(STR_LIVERY_BRBLUE);
+	2	: string(STR_LIVERY_BRBLUEGREY);
+	3	: string(STR_LIVERY_NSE);
+	return CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_419_refit_text_decider, livery_choice){
+	1 : sw_419_refit_text ;
+	return CB_RESULT_NO_TEXT ;
+}
+item (FEAT_TRAINS, item_419, 419) {
+	property {
+		name: 							string(STR_NAME_MLV);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1959, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					38;
+		reliability_decay:				12;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
+		non_refittable_cargo_classes   : bitmask(CC_PIECE_GOODS) ;
+		cargo_allow_refit:				[MAIL];
+		loading_speed:					40;
+		cost_factor:					25;
+		running_cost_factor:			28;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							90 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						RAIL;
+		ai_special_flag:				AI_FLAG_CARGO;
+		power:							500 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					0;
+		default_cargo_type:				MAIL;
+		cargo_capacity:					80;
+		weight:							46 ton;
+		tractive_effort_coefficient:	0.09;
+		air_drag_coefficient:			0.08;
+		length:							8;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+	}
+	graphics {
+		can_attach_wagon:					CB_RESULT_ATTACH_ALLOW;
+		default:							sw_419_default;
+		colour_mapping:						sw_419_colours_2cc_check;
+		cargo_subtype_text:					sw_419_refit_text_decider;
+		purchase:							sw_419_gfx_purch;
+		purchase_colour_mapping:			sw_419_purch_colours;
+		create_effect:						vfx_3rd;
+		sound_effect:						sw_sfx_emu_gec ;
+}
+}
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_419, 419){
+	property{
+		name                           : string(STR_NAME_MLV_ALT) ;
+	}
+}
+}
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_419, 419){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+# 1 "rukts.pnml" 3
 # 1 "src/EMU/class_442.pnml" 1
 //442 Driving
 spriteset(spriteset_442_d_nse, "gfx/EMU/class_442.png") {template_8_8_networker(0, 50)}
@@ -39373,6 +40091,11 @@ sort(FEAT_TRAINS,[
 9001,
 9002,
 9010,
+9014,
+9013,
+9012,
+9015,
+9011,
 9020,
 9025,
 9030,
@@ -39559,10 +40282,11 @@ sort(FEAT_TRAINS,[
 9073,
 9074,
 9010,
-9011,
-9012,
-9013,
 9014,
+9013,
+9012,
+9015,
+9011,
 9020,
 9021,
 9025,
