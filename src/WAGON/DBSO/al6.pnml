@@ -12,6 +12,7 @@ switch(FEAT_TRAINS, PARENT, sw_al6_gfx_manual_dbso, cargo_subtype){
 	8 : sw_al6_gfx_ews_reverse_check ;
 	9 : sw_al6_gfx_nse_reverse_check ;
 	10: sw_al6_gfx_anglia_reverse_check ;
+	11: sw_al6_gfx_nse_reverse_check ;
 	sw_al6_gfx_brblue_reverse_check ;
 }
 
@@ -43,6 +44,7 @@ switch(FEAT_TRAINS, PARENT, sw_al6_colours_manual_dbso, cargo_subtype){
 	8 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	9 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	10: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_WHITE) ;
+	11: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ; // Regional Railways
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 }
 
