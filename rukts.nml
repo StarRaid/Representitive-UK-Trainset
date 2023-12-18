@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 115 ;
+	version: 116 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -152,6 +152,8 @@ basecost{
 }
 # 1 "rukts.pnml" 3
 # 1 "src/CODE/era_definitions.pnml" 1
+
+
 
 
 
@@ -1807,10 +1809,10 @@ switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_manual, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_auto, date_of_last_service){
-	1967 .. 1970:gfx_mk1_bg_2cc ;
-	1971 .. 1982:gfx_mk1_bg_2cc ;
-	1983 .. 1995:gfx_mk1_bg_res ;
-	1996 .. 4096:gfx_mk1_bg_royal ;
+	date(1967,1,1) .. date(1970,1,1):gfx_mk1_bg_2cc ;
+	date(1971,1,1) .. date(1982,1,1):gfx_mk1_bg_2cc ;
+	date(1983,1,1) .. date(1995,1,1):gfx_mk1_bg_res ;
+	date(1996,1,1) .. date(4096,1,1):gfx_mk1_bg_royal ;
 	gfx_mk1_bg_base ;
 }
 
@@ -1819,7 +1821,7 @@ switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_auto_decider, livery_choice){
 	sw_mk1_bg_gfx_auto;
 }
 
-switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_purch, date_of_last_service){
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_purch, current_year){
 	1967 .. 1970:gfx_mk1_bg_purch_2cc ;
 	1971 .. 1982:gfx_mk1_bg_purch_2cc ;
 	1983 .. 1995:gfx_mk1_bg_purch_res ;
@@ -1845,10 +1847,10 @@ switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_manual, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_auto, date_of_last_service){
-	1967 .. 1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1971 .. 1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1983 .. 1995:palette_2cc(COLOUR_RED, COLOUR_GREY) ;
-	1996 .. 4096:palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	date(1967,1,1) .. date(1970,1,1):palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	date(1971,1,1) .. date(1982,1,1):palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	date(1983,1,1) .. date(1995,1,1):palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	date(1996,1,1) .. date(4096,1,1):palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
 }
 
@@ -1862,8 +1864,16 @@ switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_2cc_check, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_purch_colours_auto, current_year){
+	1967 .. 1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1971 .. 1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1983 .. 1995:palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	1996 .. 4096:palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_mk1_bg_purch_colours, colour_scheme_1){
-	1 : sw_mk1_bg_colours_auto ;
+	1 : sw_mk1_bg_purch_colours_auto ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
@@ -1989,7 +1999,7 @@ switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_auto_decider, livery_choice){
 	sw_mk1_nba_gfx_auto;
 }
 
-switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_purch, date_of_last_service){
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_purch, current_year){
 	1967 .. 1970:gfx_mk1_nba_purch_2cc ;
 	1971 .. 1982:gfx_mk1_nba_purch_2cc ;
 	1983 .. 1995:gfx_mk1_nba_purch_res ;
@@ -2026,8 +2036,16 @@ switch(FEAT_TRAINS, SELF, sw_mk1_nba_colours_2cc_check, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_purch_colours_auto, current_year){
+	1967 .. 1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1971 .. 1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1983 .. 1995:palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	1996 .. 4096:palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_mk1_nba_purch_colours, colour_scheme_1){
-	1 : sw_mk1_nba_colours_auto ;
+	1 : sw_mk1_nba_purch_colours_auto ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
@@ -33653,8 +33671,8 @@ switch(FEAT_TRAINS, SELF, sw_419_gfx_manual, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_419_gfx_auto, date_of_last_service){
-	1971 .. 1982:gfx_419_2cc ;
-	1983 .. 1995:gfx_419_purch_nse ;
+	date(1971,1,1) .. date(1982,1,1)	:gfx_419_2cc ;
+	date(1983,1,1) .. date(1995,1,1)	:gfx_419_nse ;
 	gfx_419_base ;
 }
 
@@ -33668,7 +33686,7 @@ switch(FEAT_TRAINS, SELF, sw_419_default, [STORE_TEMP((getbits(extra_callback_in
 	1 : return sw_415_headcode_2;
 }
 
-switch(FEAT_TRAINS, SELF, sw_419_gfx_purch, date_of_last_service){
+switch(FEAT_TRAINS, SELF, sw_419_gfx_purch, current_year){
 	1971 .. 1982:gfx_419_purch_2cc ;
 	1983 .. 1995:gfx_419_purch_nse ;
 	gfx_419_purch_base ;
@@ -33681,9 +33699,9 @@ switch(FEAT_TRAINS, SELF, sw_419_colours_manual, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_419_colours_auto, date_of_last_service){
-	1967 .. 1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1971 .. 1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1983 .. 1995:palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	date(1967,1,1) .. date(1970,1,1)	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	date(1971,1,1) .. date(1982,1,1)	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	date(1983,1,1) .. date(1995,1,1)	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 }
 
@@ -33697,8 +33715,15 @@ switch(FEAT_TRAINS, SELF, sw_419_colours_2cc_check, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_419_purch_colours_auto, current_year){
+	1967 .. 1970:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1971 .. 1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1983 .. 1995:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_419_purch_colours, colour_scheme_1){
-	1 : sw_419_colours_auto ;
+	1 : sw_419_purch_colours_auto ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
@@ -35697,7 +35722,7 @@ item (FEAT_TRAINS, item_387, 387) {
 
 
 if (vehicle_selection < 3){
-item (FEAT_TRAINS, item_375, 375){
+item (FEAT_TRAINS, item_387, 387){
 	property{
 		climates_available             : NO_CLIMATE ;
 	}
@@ -35706,9 +35731,9 @@ item (FEAT_TRAINS, item_375, 375){
 
 
 if (alt_names == 1){
-item (FEAT_TRAINS, item_375, 375){
+item (FEAT_TRAINS, item_387, 387){
 	property{
-		name                           : string(STR_NAME_375_ALT) ;
+		name                           : string(STR_NAME_387_ALT) ;
 	}
 }
 }

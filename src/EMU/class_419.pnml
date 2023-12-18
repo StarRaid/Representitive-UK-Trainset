@@ -18,8 +18,8 @@ switch(FEAT_TRAINS, SELF, sw_419_gfx_manual, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_419_gfx_auto, date_of_last_service){
-	ERA_BRTOPS:gfx_419_2cc ;
-	ERA_SECTORISATION:gfx_419_purch_nse ;
+	DATE_BRTOPS	:gfx_419_2cc ;
+	DATE_SECTORISATION	:gfx_419_nse ;
 	gfx_419_base ;
 }
 
@@ -33,7 +33,7 @@ switch(FEAT_TRAINS, SELF, sw_419_default, [STORE_TEMP((getbits(extra_callback_in
 	1 : return sw_415_headcode_2;
 }
 
-switch(FEAT_TRAINS, SELF, sw_419_gfx_purch, date_of_last_service){
+switch(FEAT_TRAINS, SELF, sw_419_gfx_purch, current_year){
 	ERA_BRTOPS:gfx_419_purch_2cc ;
 	ERA_SECTORISATION:gfx_419_purch_nse ;
 	gfx_419_purch_base ;
@@ -46,9 +46,9 @@ switch(FEAT_TRAINS, SELF, sw_419_colours_manual, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_419_colours_auto, date_of_last_service){
-	ERA_BRBLUE:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	ERA_BRTOPS:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	ERA_SECTORISATION:palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	DATE_BRBLUE	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	DATE_BRTOPS	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	DATE_SECTORISATION	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
 }
 
@@ -62,8 +62,15 @@ switch(FEAT_TRAINS, SELF, sw_419_colours_2cc_check, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_419_purch_colours_auto, current_year){
+	ERA_BRBLUE:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	ERA_BRTOPS:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	ERA_SECTORISATION:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_419_purch_colours, colour_scheme_1){
-	1 : sw_419_colours_auto ;
+	1 : sw_419_purch_colours_auto ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
@@ -111,7 +118,7 @@ item (FEAT_TRAINS, item_419, 419) {
 		default_cargo_type:				MAIL;
 		cargo_capacity:					80;
 		weight:							46 ton;
-		tractive_effort_coefficient:	0.09;
+		tractive_effort_coefficient:	0.16;
 		air_drag_coefficient:			0.08;
 		length:							8;
 		bitmask_vehicle_info:			0;

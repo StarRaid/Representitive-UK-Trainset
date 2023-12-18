@@ -393,10 +393,10 @@ switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_manual, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_auto, date_of_last_service){
-	ERA_BRBLUE:gfx_mk1_bg_2cc ;
-	ERA_BRTOPS:gfx_mk1_bg_2cc ;
-	ERA_SECTORISATION:gfx_mk1_bg_res ;
-	ERA_PRIVATISATION:gfx_mk1_bg_royal ;
+	DATE_BRBLUE:gfx_mk1_bg_2cc ;
+	DATE_BRTOPS:gfx_mk1_bg_2cc ;
+	DATE_SECTORISATION:gfx_mk1_bg_res ;
+	DATE_PRIVATISATION:gfx_mk1_bg_royal ;
 	gfx_mk1_bg_base ;
 }
 
@@ -405,7 +405,7 @@ switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_auto_decider, livery_choice){
 	sw_mk1_bg_gfx_auto;
 }
 
-switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_purch, date_of_last_service){
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_gfx_purch, current_year){
 	ERA_BRBLUE:gfx_mk1_bg_purch_2cc ;
 	ERA_BRTOPS:gfx_mk1_bg_purch_2cc ;
 	ERA_SECTORISATION:gfx_mk1_bg_purch_res ;
@@ -431,10 +431,10 @@ switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_manual, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_auto, date_of_last_service){
-	ERA_BRBLUE:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	ERA_BRTOPS:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	ERA_SECTORISATION:palette_2cc(COLOUR_RED, COLOUR_GREY) ;
-	ERA_PRIVATISATION:palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	DATE_BRBLUE:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	DATE_BRTOPS:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	DATE_SECTORISATION:palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	DATE_PRIVATISATION:palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
 }
 
@@ -448,8 +448,16 @@ switch(FEAT_TRAINS, SELF, sw_mk1_bg_colours_2cc_check, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_mk1_bg_purch_colours_auto, current_year){
+	ERA_BRBLUE:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	ERA_BRTOPS:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	ERA_SECTORISATION:palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	ERA_PRIVATISATION:palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_mk1_bg_purch_colours, colour_scheme_1){
-	1 : sw_mk1_bg_colours_auto ;
+	1 : sw_mk1_bg_purch_colours_auto ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
@@ -575,7 +583,7 @@ switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_auto_decider, livery_choice){
 	sw_mk1_nba_gfx_auto;
 }
 
-switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_purch, date_of_last_service){
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_gfx_purch, current_year){
 	ERA_BRBLUE:gfx_mk1_nba_purch_2cc ;
 	ERA_BRTOPS:gfx_mk1_nba_purch_2cc ;
 	ERA_SECTORISATION:gfx_mk1_nba_purch_res ;
@@ -612,8 +620,16 @@ switch(FEAT_TRAINS, SELF, sw_mk1_nba_colours_2cc_check, colour_scheme_1){
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_mk1_nba_purch_colours_auto, current_year){
+	ERA_BRBLUE:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	ERA_BRTOPS:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	ERA_SECTORISATION:palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	ERA_PRIVATISATION:palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_mk1_nba_purch_colours, colour_scheme_1){
-	1 : sw_mk1_nba_colours_auto ;
+	1 : sw_mk1_nba_purch_colours_auto ;
 	palette_2cc(company_colour1, company_colour2) ;
 }
 
