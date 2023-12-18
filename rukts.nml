@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT" ;
 	name: string(STR_GRF_NAME) ;
 	desc: string(STR_GRF_DESC) ;
-	version: 112 ;
+	version: 115 ;
 	min_compatible_version: 36 ;
 	param 0{
 		colour_scheme_1{
@@ -39960,6 +39960,7 @@ sort(FEAT_TRAINS,[
 55,
 58,
 73,
+419,
 14,
 35,
 42,
@@ -40213,6 +40214,7 @@ sort(FEAT_TRAINS,[
 390,
 395,
 415,
+419,
 411,
 442,
 444,
