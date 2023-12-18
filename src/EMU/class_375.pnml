@@ -1086,7 +1086,7 @@ item (FEAT_TRAINS, item_387, 387) {
 
 
 if (vehicle_selection < 3){
-item (FEAT_TRAINS, item_375, 375){
+item (FEAT_TRAINS, item_387, 387){
 	property{
 		climates_available             : NO_CLIMATE ;
 	}
@@ -1095,9 +1095,9 @@ item (FEAT_TRAINS, item_375, 375){
 
 
 if (alt_names == 1){
-item (FEAT_TRAINS, item_375, 375){
+item (FEAT_TRAINS, item_387, 387){
 	property{
-		name                           : string(STR_NAME_375_ALT) ;
+		name                           : string(STR_NAME_387_ALT) ;
 	}
 }
 }
