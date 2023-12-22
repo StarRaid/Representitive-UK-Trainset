@@ -67,9 +67,59 @@ The pacer is missaligned. This is evident when pairing the vehicle with other DM
 
 
 
-## 2.5
+## 2.5 Automatic Liveries
 
+The parameter for automatic liveries has had some history to itself. It originally intended to mimic the behaviour of Pikkabird's UKRS2 paramater, where trains would update their livery every time they serviced at a depot. My original knowledge with NML was lacking at the formation of this set though, so I settled for every vehicle to automatically change its livery immediately at the new year. However, this has left some of the failed code in some older code, but has been copied over to newer code as well.
 
+For example, in [dmmu.pnml](/src/DMU/dmmu.pnml "First Generation DMU code.") exists a number of redundant `random_switch` blocks, one for each set of colours.
+```random_switch(FEAT_TRAINS, SELF, sw_dmmu_green_colour_mapping, TRIGGER_VEHICLE_SERVICE){
+	1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+ }
+ 
+random_switch(FEAT_TRAINS, SELF, sw_dmmu_blue_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+}
+ 
+random_switch(FEAT_TRAINS, SELF, sw_dmmu_mail_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
+	1 : palette_2cc(COLOUR_RED, COLOUR_RED) ;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_dmmu_bg_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_dmmu_rr_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_LIGHT_BLUE);
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_dmmu_nse_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_dmmu_silverlink_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_GREEN);
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_dmmu_atw_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
+	1 : palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_WHITE);
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_dmmu_cr_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
+	1 : palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_LIGHT_BLUE);
+}```
+
+The solution has already been tested and is currently being implemented. In [class_419.pnml](/src/EMU/class_419.pnml Class 419 EMU code.") I have utilised `date_of_last_service` to test when the last time the vehicle was serviced, changing the livery and colours only when the vehicle services at a depot. 
+
+```switch(FEAT_TRAINS, SELF, sw_419_colours_auto, date_of_last_service){
+	DATE_BRBLUE	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	DATE_BRTOPS	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	DATE_SECTORISATION	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+}```
+
+By utilising standardised date ranges for certain eras, it ensures that liveries will also be changed en-masse by vehicles to update coherently in era "blocks."
+
+One issue is where a vehicle's code utilises the same automatic colour switch for the purchase sprite, it will incorrectly display the wrong colours as purchase sprites don't get serviced. This will require the separation of the purchase sprite colour mapping to a different switch using the `current_year` value, a standardisation in code that should be implemented for a more coherent code base.
 
 ## 2.6
 
