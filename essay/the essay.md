@@ -14,10 +14,9 @@ Internal development issues:
 > * 2.1 The split between Multiple Unit and Non-Multiple Unit allignments, along with their respective sprite sheets.
 > * 2.2 Length 7 allignments of Multiple Units are incoherent with other vehicles in the set.
 > * 2.3 The use of outdated alignment templates in several earlier vehicles, as well as certain later ones.
-> * 2.4 Outdated code using redundant random_switch statements in an early attempt to get vehicles to only change their livery when visiting a depot.
-> * 2.5 On the Automatic Livery mode vehicles will change their livery while outside a depot. New code has been implemented that correctly changes a vehicle's livery only when it visits a depot.
-> * 2.6 Mark 3 Buffet and Sleeper coaches are specific behaviours of a base Mark 3 vehicle, whereas the Mark 1 & 2 coaches have been split into separate variants.
-> * 2.7 The mere existence of the addon GRF.
+> * 2.4 On the Automatic Livery mode vehicles will change their livery while outside a depot. New code has been implemented that correctly changes a vehicle's livery only when it visits a depot.
+> * 2.5 Mark 3 Buffet and Sleeper coaches are specific behaviours of a base Mark 3 vehicle, whereas the Mark 1 & 2 coaches have been split into separate variants.
+> * 2.6 The mere existence of the addon GRF.
  
 External player issues:
 > * 3.1 Capacities of wagons are incoherent.
@@ -37,9 +36,9 @@ Detailed outcomes:
 > * 4.x+1 Conclusions.
 
 
-# 2 Internal development issues.
+# 2 Internal Development Issues.
 
-## 2.1 Multiple unit alignments vs Locomotive & wagon alignments
+## 2.1 Multiple Unit Alignments vs Locomotive & Wagon Alignments
 
 A prevelent issue with alignments is that there are technically two sets of sprite "types" we have conceived between myself (StarRaid) and Gwyd. This is a result of dividing our focuses two different areas of the GRF, myself with locomotives and wagson, and Gwyd with multiple units. There are exceptions to this standard, of which outlyers will be discussed appropriately. This division has caused two sets of sprite templates, and therefor their alignments, to come into practice. One set of alignments based on the Mark 2 sprite of 33 pixels in length on the horizontal view, with one pixel overlapping on the on purpose for carraige gangways and buffers, and the other set based on the original Network sprites of 32 pixels in length on the horizontal view, where no pixels overlap, creating a thicker looking carriage gangway.
 
@@ -51,7 +50,7 @@ Exceptions to these rules include the Class 33, a locomotive drawn by Gwyd, and 
 
 This disparity makes it confusing for outsiders looking at the source code, not knowing which sprites use which alignments, making these sprites harder to use in other potential GPLv2 sets.
 
-## 2.2 Issues with the pacer
+## 2.2 Issues With The Pacer
 
 The pacer is missaligned. This is evident when pairing the vehicle with other DMUs, the class 150s for example, as the pacer with either overlap with the other vehicle, or a large gap will be visible. This is most prevelent on the horizontal views.
 
@@ -63,11 +62,8 @@ The pacer is missaligned. This is evident when pairing the vehicle with other DM
 
 
 
-## 2.4
 
-
-
-## 2.5 Automatic Liveries
+## 2.4 Automatic Liveries
 
 The parameter for automatic liveries has had some history to itself. It originally intended to mimic the behaviour of Pikkabird's UKRS2 paramater, where trains would update their livery every time they serviced at a depot. My original knowledge with NML was lacking at the formation of this set though, so I settled for every vehicle to automatically change its livery immediately at the new year. However, this has left some of the failed code in some older code, but has been copied over to newer code as well.
 
@@ -106,7 +102,8 @@ random_switch(FEAT_TRAINS, SELF, sw_dmmu_atw_colour_mapping, TRIGGER_VEHICLE_SER
 
 random_switch(FEAT_TRAINS, SELF, sw_dmmu_cr_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
 	1 : palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_LIGHT_BLUE);
-}```
+}
+```
 
 The solution has already been tested and is currently being implemented. In [class_419.pnml](/src/EMU/class_419.pnml Class 419 EMU code.") I have utilised `date_of_last_service` to test when the last time the vehicle was serviced, changing the livery and colours only when the vehicle services at a depot. 
 
@@ -115,17 +112,21 @@ The solution has already been tested and is currently being implemented. In [cla
 	DATE_BRTOPS	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	DATE_SECTORISATION	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
 	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-}```
+}
+```
 
 By utilising standardised date ranges for certain eras, it ensures that liveries will also be changed en-masse by vehicles to update coherently in era "blocks."
 
 One issue is where a vehicle's code utilises the same automatic colour switch for the purchase sprite, it will incorrectly display the wrong colours as purchase sprites don't get serviced. This will require the separation of the purchase sprite colour mapping to a different switch using the `current_year` value, a standardisation in code that should be implemented for a more coherent code base.
 
-## 2.6
+## 2.5 Mark 3 Specific Features
 
+The Mark 3 coaches have some unique behaviours to them that I am proud of, but ultimately have lead to their downfall with the implementation of the variants feature. A nice little detail that I originally added was the ability for the 3rd coach in any rake to automatically be a buffet coach, so that the HST would still be realistically detailed without having to create a separate wagon (at the time.) This feature also had the advantage that if the vehicle reversed the buffet coach would remain in the same place.  
+In todays climate however we are graced with the variants feature, meaning I have the ability to split the normal, buffet, and sleeper coaches into separate vehicles, potentially even adding the guard and bycicle variants too for extra detailing options. These come with the major drawback that these would not be reversible like the previous Mark 3 features. I believe I will have to bite the bullet and just accept this reversibility drawback, as the extra Mark 3 variants will allow to declutter the current livery list of the current Mark 3, of which it contains duplicate liveries to allow access to the sleeper variant.
 
+Most of this can also be applied to the Mark 4 coach, but since this coach has seen little use outside of the Class 91 rakes or without a DVT, I believe it is justified leaving it with its current behaviour, without splitting it into variants.
 
-## 2.7 RUKTS Extension
+## 2.6 RUKTS Extension
 
 The extension GRF exists to fulfil a multitude of roles and limitations set by our original idea for the main GRF. However, due to an evolving identity and looser development restrictions, its role has dwindled over the years. I simply propose to announce its total depracation entirely.
 
@@ -141,11 +142,11 @@ Due to the codebase of the industry features provided by this set being severely
 
 # 3 External player issues
 
-## 3.1
+## 3.1 Balance Part 1 - Capacity
 
+Balance with this set is difficult and, surprisingly enough, incoherent. 
 
-
-## 3.2
+## 3.2 Balance Part 2 - Vehicle Power
 
 
 
@@ -157,13 +158,13 @@ Due to the codebase of the industry features provided by this set being severely
 
 
 
-## 3.5 Multiple unit carriages
+## 3.5 Multiple Unit Carriages
 
 It is not immediately clear for all multiple units as to which carriage is allowed to be attached in order to lengthen the unit. In the case of the Class 455, a Mark 3 based unit in real life, the Mark 2 carraige is used to lengthen the unit in the GRF.
 
 My proposal is to make all multiple units use one type of carraige to lengthen themselves. We can utilise the existing "Modern MU Car", known by MU_90 in the code, by replacing its sprite with a blank carriage with no attached identity, changing its introduction date to the year 0, and by changing its capacity to 0. By removing its capability to carry cargo the carriage is automatically useless outside of any multiple unit, as the multiple units can change its capacity with the `livery_override` function.
 
-## 3.6 Impossible mutliple units
+## 3.6 Impossible Mutliple Units
 
 Classes 317, 370, and 373 have special behaviour that display different sprites when not intermediate vehicles are present for the vehicle to properly function. This is due to the fact that units utilising overhead line equipment must contain a pantograph, and a majority of vehicles place their pantograph on intermediate carriages instead of the driving coaches. For a better player experience I propose this feature be applied to all vehicles that suffer from middle pantograph syndrome. The use of ugly sprites that the 370 and 373 utilise will also discourage impossible unit combinations that the code might also allow by accident.
 
@@ -173,7 +174,7 @@ Classes 317, 370, and 373 have special behaviour that display different sprites 
 
 
 
-# 4 Detailed outcomes
+# 4 Detailed Outcomes
 
 ## 4.1
 
@@ -187,7 +188,7 @@ Classes 317, 370, and 373 have special behaviour that display different sprites 
 
 
 
-## 4.4 The future of the Extension Set
+## 4.4 The Future Of The Extension Set
 
 To summarise, it should die.  
 But its functions should be implemented in other sets, with more detail to each feature to fully flesh out the original half-baked ideas.
