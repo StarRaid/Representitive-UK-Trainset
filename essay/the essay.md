@@ -58,7 +58,7 @@ The pacer is missaligned. This is evident when pairing the vehicle with other DM
 
 
 
-## 2.3
+## 2.3 Outdated alignments
 
 
 
@@ -68,7 +68,9 @@ The pacer is missaligned. This is evident when pairing the vehicle with other DM
 The parameter for automatic liveries has had some history to itself. It originally intended to mimic the behaviour of Pikkabird's UKRS2 paramater, where trains would update their livery every time they serviced at a depot. My original knowledge with NML was lacking at the formation of this set though, so I settled for every vehicle to automatically change its livery immediately at the new year. However, this has left some of the failed code in some older code, but has been copied over to newer code as well.
 
 For example, in [dmmu.pnml](/src/DMU/dmmu.pnml "First Generation DMU code.") exists a number of redundant `random_switch` blocks, one for each set of colours.
-```random_switch(FEAT_TRAINS, SELF, sw_dmmu_green_colour_mapping, TRIGGER_VEHICLE_SERVICE){
+
+```
+random_switch(FEAT_TRAINS, SELF, sw_dmmu_green_colour_mapping, TRIGGER_VEHICLE_SERVICE){
 	1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  }
  
@@ -107,7 +109,8 @@ random_switch(FEAT_TRAINS, SELF, sw_dmmu_cr_colour_mapping, TRIGGER_VEHICLE_SERV
 
 The solution has already been tested and is currently being implemented. In [class_419.pnml](/src/EMU/class_419.pnml Class 419 EMU code.") I have utilised `date_of_last_service` to test when the last time the vehicle was serviced, changing the livery and colours only when the vehicle services at a depot. 
 
-```switch(FEAT_TRAINS, SELF, sw_419_colours_auto, date_of_last_service){
+```
+switch(FEAT_TRAINS, SELF, sw_419_colours_auto, date_of_last_service){
 	DATE_BRBLUE	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	DATE_BRTOPS	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	DATE_SECTORISATION	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
@@ -150,12 +153,13 @@ Balance with this set is difficult and, surprisingly enough, incoherent.
 
 
 
-## 3.3
+## 3.3 Kettle Shortage
 
 
 
-## 3.4
+## 3.4 DVT & DBSO Disadvantages
 
+The DVT & DBSO have very unique behaviour when paired with a compatible locomotive, this much is known. It is also known that if placed anywhere other than at the very rear of a consist then undesirable behaviour will take place. This also includes when multiple are used in the same consist. The last thing of note is that the livery of the DVT or DBSO is entirely dependant on the livery of the parent locomotive, disallowing the player to choose the livery of the DVT or DBSO.
 
 
 ## 3.5 Multiple Unit Carriages
@@ -170,7 +174,7 @@ Classes 317, 370, and 373 have special behaviour that display different sprites 
 
 ![An example of an impossible multiple unit containing two units. The first unit has two intermediate coaches, and the second unit has none. This is allowed by the code but is still an impossible vehicle.](/essay/impossible.png "A multiple unit in violation of mother nature.")
 
-## 3.7
+## 3.7 Transforming Identity
 
 
 
