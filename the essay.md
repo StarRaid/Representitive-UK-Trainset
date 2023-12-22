@@ -47,7 +47,7 @@ A prevelent issue with alignments is that there are technically two sets of spri
 
 Exceptions to these rules include the Class 33, a locomotive drawn by Gwyd, and the Sprinter families of vehicles, multiple units that are a mix of my own work and of pikkabird's original set. Of note are also the First Generation DMUs that use the Networker alignments yet they feature the thinner gangways like in the Mark 2 based sprites. [These sprites](/gfx/DMU/dmmu.png "First Generation DMU sprite sheets.") don't overlap their gangways, but instead opt to ommit them at the east end of the sprite.
 
-![Examples of multiple units that break the afformentioned rules.](/essay evidence/alignments 2.png "Multiple units that are exceptions to the rules")
+![Examples of multiple units that break the afformentioned rules.]("/essay evidence/alignments 2.png" "Multiple units that are exceptions to the rules")
 
 This disparity makes it confusing for outsiders looking at the source code, not knowing which sprites use which alignments, making these sprites harder to use in other potential GPLv2 sets.
 
@@ -55,7 +55,7 @@ This disparity makes it confusing for outsiders looking at the source code, not 
 
 The pacer is missaligned. This is evident when pairing the vehicle with other DMUs, the class 150s for example, as the pacer with either overlap with the other vehicle, or a large gap will be visible. This is most prevelent on the horizontal views.
 
-![Examples of the pacer sprites overlapping with other vehicles.](/essay evidence/pacer alignments.png "The pacers are missaligned in some sprites")
+![Examples of the pacer sprites overlapping with other vehicles.]("/essay evidence/pacer alignments.png" "The pacers are missaligned in some sprites")
 
 
 
@@ -139,7 +139,7 @@ Classes 317, 370, and 373 have special behaviour that display different sprites 
 
 ## 4.4 The future of the Extension Set
 
-To summarise, it should die.
+To summarise, it should die.  
 But its functions should be implemented in other sets, with more detail to each feature to fully flesh out the original half-baked ideas.
 
 ## 4.x
