@@ -43,11 +43,11 @@ Detailed outcomes:
 
 A prevelent issue with alignments is that there are technically two sets of sprite "types" we have conceived between myself (StarRaid) and Gwyd. This is a result of dividing our focuses two different areas of the GRF, myself with locomotives and wagson, and Gwyd with multiple units. There are exceptions to this standard, of which outlyers will be discussed appropriately. This division has caused two sets of sprite templates, and therefor their alignments, to come into practice. One set of alignments based on the Mark 2 sprite of 33 pixels in length on the horizontal view, with one pixel overlapping on the on purpose for carraige gangways and buffers, and the other set based on the original Network sprites of 32 pixels in length on the horizontal view, where no pixels overlap, creating a thicker looking carriage gangway.
 
-![Examples of the mark 2 and networker based sprites.](/essay evidence/alignments.png "The difference in the two types of sprite found in the set")
+![Examples of the mark 2 and networker based sprites.](/essay/alignments.png "The difference in the two types of sprite found in the set")
 
 Exceptions to these rules include the Class 33, a locomotive drawn by Gwyd, and the Sprinter families of vehicles, multiple units that are a mix of my own work and of pikkabird's original set. Of note are also the First Generation DMUs that use the Networker alignments yet they feature the thinner gangways like in the Mark 2 based sprites. [These sprites](/gfx/DMU/dmmu.png "First Generation DMU sprite sheets.") don't overlap their gangways, but instead opt to ommit them at the east end of the sprite.
 
-![Examples of multiple units that break the afformentioned rules.]("/essay evidence/alignments 2.png" "Multiple units that are exceptions to the rules")
+![Examples of multiple units that break the afformentioned rules.](/essay/alignments2.png "Multiple units that are exceptions to the rules")
 
 This disparity makes it confusing for outsiders looking at the source code, not knowing which sprites use which alignments, making these sprites harder to use in other potential GPLv2 sets.
 
@@ -55,7 +55,7 @@ This disparity makes it confusing for outsiders looking at the source code, not 
 
 The pacer is missaligned. This is evident when pairing the vehicle with other DMUs, the class 150s for example, as the pacer with either overlap with the other vehicle, or a large gap will be visible. This is most prevelent on the horizontal views.
 
-![Examples of the pacer sprites overlapping with other vehicles.]("/essay evidence/pacer alignments.png" "The pacers are missaligned in some sprites")
+![Examples of the pacer sprites overlapping with other vehicles.](/essay/pacer_alignments.png "The pacers are missaligned in some sprites")
 
 
 
@@ -117,7 +117,7 @@ My proposal is to make all multiple units use one type of carraige to lengthen t
 
 Classes 317, 370, and 373 have special behaviour that display different sprites when not intermediate vehicles are present for the vehicle to properly function. This is due to the fact that units utilising overhead line equipment must contain a pantograph, and a majority of vehicles place their pantograph on intermediate carriages instead of the driving coaches. For a better player experience I propose this feature be applied to all vehicles that suffer from middle pantograph syndrome. The use of ugly sprites that the 370 and 373 utilise will also discourage impossible unit combinations that the code might also allow by accident.
 
-![An example of an impossible multiple unit containing two units. The first unit has two intermediate coaches, and the second unit has none. This is allowed by the code but is still an impossible vehicle.](/essay evidence/alignments 2.png "A multiple unit in violation of mother nature.")
+![An example of an impossible multiple unit containing two units. The first unit has two intermediate coaches, and the second unit has none. This is allowed by the code but is still an impossible vehicle.](/essay/impossible.png "A multiple unit in violation of mother nature.")
 
 ## 3.7
 
