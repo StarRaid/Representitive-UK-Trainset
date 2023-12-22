@@ -1,0 +1,119 @@
+
+1.1 Introduction
+
+The Representative UK Train Set has now in essence existed for 6 years in total. With a grand roster of locomotives and multiple units alike, it has sure become a very successful set, achieving its goal of representing a majority of the UKs operational and near-historic railway vehicles in OpenTTD.
+However, due to the implement-as-required basis of introducing new vehicles via necessity of wanting to operate certain trains in our personal games, the often forgotten but very real source code has become a hodge-podge of one off ideas, repeated code, and convoluted carriages with confusing capacities.
+In this document I will outline my outlying issues with the set, internal to the developer and external to the player, and propose plausible solutions where applicable.
+Let us begin by breaking down my initial irritations into the two afformentioned categories.
+
+1.2 Document Layout
+
+Internal development issues:
+	2.1 The split between Multiple Unit and Non-Multiple Unit allignments, along with their respective sprite sheets.
+	2.2 Length 7 allignments of Multiple Units are incoherent with other vehicles in the set.
+	2.3 The use of outdated alignment templates in several earlier vehicles, as well as certain later ones.
+	2.4 Outdated code using redundant random_switch statements in an early attempt to get vehicles to only change their livery when visiting a depot.
+	2.5 On the Automatic Livery mode vehicles will change their livery while outside a depot. New code has been implemented that correctly changes a vehicle's livery only when it visits a depot.
+	2.6 Mark 3 Buffet and Sleeper coaches are specific behaviours of a base Mark 3 vehicle, whereas the Mark 1 & 2 coaches have been split into separate variants.
+	2.7 The mere existence of the addon GRF.
+External player issues:
+	3.1 Capacities of wagons are incoherent.
+	3.2 Power of multiple units vary drastically.
+	3.3 A severe lack of steam era locomotives, multiple units, and wagons.
+	3.4 Peculiar behaviour of DVT and DBSO vehicles when used in multiple.
+	3.5 It is not immediately clear, or sometimes intuitive, as to which carriage will attach to a certain multiple unit.
+	3.6 Some multiple units are allowed to leave the depot with no intermediate carraiges, when said carraiges provide the pantograph required for the multiple unit to function.
+	3.7 Discussing the original and current identity of the set, comparing its current roster and playstyle with that which we set out to achieve in the original planning stages.
+Outcomes:
+	4.1 Complete overhaul of the statistics.
+	4.2 Codebase standardisation.
+	4.3 Achievable plan of steam era vehicles.
+	4.4 Future of the extension set.
+	4.x Miscellaneous future plans.
+	4.x+1 Conclusions.
+
+2.1 
+
+
+
+2.2
+
+
+
+2.3
+
+
+
+2.4
+
+
+
+2.5
+
+
+
+2.6
+
+
+
+2.7 RUKTS Extension
+
+The extension GRF exists to fulfil a multitude of roles and limitations set by our original idea for the main GRF. However, due to an evolving identity and looser development restrictions, its role has dwindled over the years.
+I simply propose to announce its total depracation entirely.
+The functions it served were as follows:
+	- Implement extra sounds for the base set to use.
+	- Introduce additional vehicles that did not fit roster of the base set.
+	- Allow for the transportation of the niche cargo type Nuclear Waste, allowing the base set vehicles based around the transportation of this cargo in real life to be of use in the game.
+The function to implement additional sounds has been superseeded by the fact that when I have seemingly gone over the sound limit in the base set, the compiler still allows the GRF to compile, and I have not seen issues with the playback of the additional sounds. This means the extension set should not be required to provide sound files any further, and that the existing sounds should be provided in the base set instead. This will require further testing to achive.
+A majority of the extra vehicles provided by the extension set have since been implemented fully in the main GRF, with the last remaining vehicle to recieve this treatment being the class 456. If this vehicle is introduced to the main GRF, this will further render the exension set useless.
+Due to the codebase of the industry features provided by this set being severely outdated and made with little experience prior, the two industries and two cargoes provided by the extension set have had extensive compatibility clashes with most industry focused GRFs. My proposal is to convert the existing sprites for the power station into objects in a new set I will outline later. This will render the extension set entirely useless for the future, justifying its take down from the online content downloader for new games only. The GRF shall still be provided for save files that have been created prior to the takedown, in order to not break their functionality.
+
+3.1
+
+
+
+3.2
+
+
+
+3.3
+
+
+
+3.4
+
+
+
+3.5
+
+
+
+3.6
+
+
+
+3.7
+
+
+
+4.1
+
+
+
+4.2
+
+
+
+4.3
+
+
+
+4.4
+
+
+
+4.x
+
+
+
+4.x+1
