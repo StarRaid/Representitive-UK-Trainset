@@ -69,7 +69,7 @@ The parameter for automatic liveries has had some history to itself. It original
 
 For example, in [dmmu.pnml](/src/DMU/dmmu.pnml "First Generation DMU code.") exists a number of redundant `random_switch` blocks, one for each set of colours.
 
-```
+```python
 random_switch(FEAT_TRAINS, SELF, sw_dmmu_green_colour_mapping, TRIGGER_VEHICLE_SERVICE){
 	1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
  }
@@ -109,7 +109,7 @@ random_switch(FEAT_TRAINS, SELF, sw_dmmu_cr_colour_mapping, TRIGGER_VEHICLE_SERV
 
 The solution has already been tested and is currently being implemented. In [class_419.pnml](/src/EMU/class_419.pnml Class 419 EMU code.") I have utilised `date_of_last_service` to test when the last time the vehicle was serviced, changing the livery and colours only when the vehicle services at a depot. 
 
-```
+```python
 switch(FEAT_TRAINS, SELF, sw_419_colours_auto, date_of_last_service){
 	DATE_BRBLUE	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	DATE_BRTOPS	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
@@ -134,9 +134,9 @@ Most of this can also be applied to the Mark 4 coach, but since this coach has s
 The extension GRF exists to fulfil a multitude of roles and limitations set by our original idea for the main GRF. However, due to an evolving identity and looser development restrictions, its role has dwindled over the years. I simply propose to announce its total depracation entirely.
 
 The functions it served were as follows:
-* Implement extra sounds for the base set to use.
-* Introduce additional vehicles that did not fit roster of the base set.
-* Allow for the transportation of the niche cargo type Nuclear Waste, allowing the base set vehicles based around the transportation of this cargo in real life to be of use in the game.
+> * Implement extra sounds for the base set to use.
+> * Introduce additional vehicles that did not fit roster of the base set.
+> * Allow for the transportation of the niche cargo type Nuclear Waste, allowing the base set vehicles based around the transportation of this cargo in real life to be of use in the game.
 
 The function to implement additional sounds has been superseeded by the fact that when I have seemingly gone over the sound limit in the base set, the compiler still allows the GRF to compile, and I have not seen issues with the playback of the additional sounds. This means the extension set should not be required to provide sound files any further, and that the existing sounds should be provided in the base set instead. This will require further testing to achive.
 
@@ -147,20 +147,86 @@ Due to the codebase of the industry features provided by this set being severely
 
 ## 3.1 Balance Part 1 - Capacity
 
-Balance with this set is difficult and, surprisingly enough, incoherent. 
+Balance with this set is difficult and, surprisingly enough, incoherent. High speed multiple units have extroadinarily low capacities in comparison to their locomotive hauled counterparts. Most of these capacities do not nearly resemble their real life capacities, let alone the provision for a balanced set.
+> * An 8 coach Class 700 carries 970 passengers, compared to its real life capacity of 1146. 
+> * An 8 coach Class 395 carries 476 passengers.
+> * A Class 91 with 7 Mark 4 coaches carries 616 passengers.
+
+![The statistics of the set are wildly out of balance.](/essay/statistics.png "How did this happen??")
+
+Also of note are the running costs after 2 years of running these three vehicles on an empty line. The locomotive hauled train has considerably higher running costs than the multiple units, over ten fold of the equally speedy Class 395. Though a "Meta Train" is inevitable in any circumstances, balancing the set so that there are not such obviously over powered choices is a must.
 
 ## 3.2 Balance Part 2 - Vehicle Power
 
+Referring to the screenshot in the previous section, the imbalance of pulling power and force is also disparrant. Though tractive effort is typically harder to source for multiples units, the same cannot be said of power, of which there are mixed outcomes thereof, depending on the vehicle. I will examine some individual example cases
 
+#### Case 1 - Class 158
+
+The Class 158 for example (generally) has one 350 hp engine per coach, with each coach weighing 38.5 tonnes. In game these values are represented correctly as a two coach unit (no extra vehicles), but when an extra coach is added the power value increases by an arbitrary 261 hp instead of the nominal 350 hp.  
+Provided by Eversholt Group is an acceleration value of 0.8 m/s², meaning that if we times this by the vehicles mass of 77 tonnes in a two coach unit, 77 times 0.8 equals 61.6 kN of tractive effort, a useful value to be provided with. However, the Class 158 has been arbitrarily set a value of 134 kN, over double that of its actual value. Interestingly, additional carriages are not adding extra tractive effort to the vehicle in-game, when other vehicles do.
+
+#### Case 2 - Class 101
+
+This is a particularly odd case. Firstly, Class 101 units did not have engines under their intermediate carriages (in the case of 3 and 4 coach units), meaning this vehicle does **not** need to provide a `power` value in the `livery_override` section. Most (but not all) 101 driving coaches had two 150 hp engines underneath them, meaning each unit should have 600 hp total. Instead, the vehicle only has 224 hp in total, heavily underpowering the vehicle, and in some cases this disallows it to reach its 70 mph top speed with even 1 intermediate coach.
+
+#### Case 3 - Class 115
+
+Similar to the class 101, the class 115 does not have engines under its intermediate carraiges, but had two 230 hp engines below each driving coach, totalling 920 hp. In RUKTS this vehicle only has 460 hp, exactly half of its real value.
+
+#### Case 4 - Class 165
+
+Class 165s have very similar engines to class 158s, providing the same 350 hp. The same issue happens in game though, where a two coach unit has the correct power but extra carriages only add 261 hp. What differs here though is that the extra carriages *do* provide more tractive effort for the vehicle to use. This must be investigated in order to provide a fix to the class 158 and other similarly affected vehicles.
+
+#### Case 5 - Class 195
+
+The last diesel case I will focus on. These vehicles correctly represent their 500 hp per carriage power output, including intermediate carriages, with the intermediate carriages successfuly providing tractive effort too, albiet a proportionally lower value than their leading driving coaches (20kN instead of 135 kn.)
+
+#### Case 6 - Class 319
+
+Interestingly this vehicle has 1438 hp in game compared to its real life value of 1330 hp. Intermediate carriages correctly provide no extra tractive effort.
+
+#### Case 7 - Class 700
+
+In real life this train has different power depending on the formation. An eight coach unit has 4400 hp, 550 hp per carriage. A twelve coach unit has 6700 hp, 558.3 hp per carriage. In game the two coach already has 4425 hp, with each extra carriage providing 200 hp. This makes an eight coach unit have 5624 hp and a twelve coach unit have 6424 hp, both of which are off their real values by some margin.  
+The unit has a base value of 133 kN of tractive effort, with each extra carriage adding 23 kN for whatever arbitrary reason.
+
+#### Case 8 - Class 442
+
+A real unit has 1610 hp in total, provided by three motor coaches. The formation of one of these units is Motor Coach - Trailer - Motor Coach - Trailer - Motor Coach, meaning two thirds of the power can be provided by driving coaches, and the last third can be dividedly equally between the three intermediate coaches. 
+In game the the driving coaches currently provide 1608 hp, with the intermediate carriages providing no power. This is another solution, but would render the vehicle underpowered if the player builds 6 coach units or longer. One of the purposes of not having fixed-length units is so that the player can customise their trains how they like, but if a unit is underpowered at certain lengths it removes some creative liberty for the end user.
+
+#### Case 9 - Class 395
+
+A six coach class 395 consists of 2 driving trailers and 4 intermediate motor coaches, providing 4510 hp. In game the class 395 provides 1120 hp, with each extra intermediate carriage adding 560 hp, totalling to 3360 hp for a 6 coach unit, leaving the unit underpowered. Coupled with its abysmal passenger capacity, this unit is left as a fatally poor choice compared to other units, like the class 700.  
+The driving coaches are providing 414 kN of tractive effort, with each extra coach providing an additional 31 kN to the consist. Another example of intermediary coaches providing little tractive effort relative to the leading coaches. In reality, a 285 tonne unit accelerations at 0.7m/s², giving a tractive effort of 185.5 kN.
+
+#### Case 10 - Class 802
+
+The IET gets complicated, with its varying classes and subclasses differing slightly in their power outputs. According to the class 802 page on angeltrains website, each motor producing 226 kW (303 hp). Assuming that's 4 x 303 hp per motor coach, with 5 coaches being powered in a 9 coach set, giving 6060 hp per 9 coach unit. In game, the driving coaches are providing 1876 hp, with each intermediate carriage adding 700 hp each, giving a 9 coach unit 6776 hp. If the train is on diesel, then only 4700 hp should be provided (5 x 940 hp), but this power change is not currently present in the GRF. When the vehicle recieves its new statistics I believe that code should be put in place to properly represent its power mode change, as well as implementing the speed limit change to 110 mph on diesel.  
+Citeless sources on wikipedia claim that these units either have a 1 m/s² or 0.7 m/s² acceleration. Assuming the 0.7 value is correct, with a weight of 438 tonnes these units should have a total of 306.6 kN of tractive effort.
+
+Locomotives are essentially exempt from the conundrum of power and tractive effort, as these figures are nearly always readily available due to the nature of their work.
 
 ## 3.3 Kettle Shortage
 
+The largest downside of RUKTS continues to be the roster of steam locomotives present in the set. Our sister sets of UKFS and UKRS2 both boast immense choice when it comes to the first stages of railway history, whereas our current selection is limited to 5 tank engines and 8 tender engines (4 of which are of immediately similar designs.) In practice this removes RUKTS as an option for a majority of players whose start date predates 1950.
 
+My simple solution is to just do them. It's hard to force motivation for a vehicle, but once the ball starts rolling I'm sure we can get a good workflow of kettles being produced. The most important thing to do for now is set our expectations low and achievable for the immediate future, so that if we control our ambitions then our rewards will be easier to achieve, therefor more movitating to continue with more. I will outline a detailed plan on how to do this later.
 
 ## 3.4 DVT & DBSO Disadvantages
 
 The DVT & DBSO have very unique behaviour when paired with a compatible locomotive, this much is known. It is also known that if placed anywhere other than at the very rear of a consist then undesirable behaviour will take place. This also includes when multiple are used in the same consist. The last thing of note is that the livery of the DVT or DBSO is entirely dependant on the livery of the parent locomotive, disallowing the player to choose the livery of the DVT or DBSO.
 
+The first proposal will limit when the reversal behaviour will take place. When the vehicle is reversed, instead of simply checking for the presence of a compatible cab vehicle (like the current code), instead a serious of checks will all take simultaneously using the && logic statements.  
+In order, both the front locomotive and rear carriage will check for these things:
+> * That the front locomotive is compatible.
+> * That the rear carriage is compatible.
+> * That the total number of compatible locomotives is exactly one.
+> * That there is exactly one DBSO or DVT in the consist, but not one of both.
+If these conditions are not met, then the sprites will behave like normal vehicles when the trains reverse.  
+But the inclusion of more vigorous testing will allow more consists to be possible without breaking the sprites of multiple vehicles at once. These checks will be done by adding up the counts of each individual compatible vehicle per list and checking if the total equals exactly 1.
+
+The second proposal is to repurpose Gwyd's code from the SEv2 set into the DBSO & DVT code. By utilising `[STORE_TEMP(position_in_consist_from_end-position_in_consist, 0x10F), var[0x61, 0, 0x0000FFFF, 0xF2]]` and changing the position check to `num_vehs_in_consist-1` the front locomotive will be able to check what the value of `cargo_subtype` (i.e. livery) is of the rear most vehicle, allowing the DBSO & DVT liveries to be changed manually.
 
 ## 3.5 Multiple Unit Carriages
 
