@@ -17,30 +17,30 @@ spriteset(gfx_guv_purchase_railexpress,	"gfx/WAGON/wagons.png"){template_purchas
 //Graphics
 
 switch(FEAT_TRAINS, PARENT, sw_guc_gfx_sectorised, most_common_cargo_type){
-	PASS : gfx_guv_intercity ;
-	gfx_guv_railexpress ;
+	PASS : gfx_guv_intercity;
+	gfx_guv_railexpress;
 }
 
-switch(FEAT_TRAINS, SELF, sw_guv_gfx_auto, current_year){
-	1975..1983	: gfx_guv_brblue ;
-	1984..1996	: sw_guc_gfx_sectorised ;
-	1996..2004	: gfx_guv_royalmail ;
-	gfx_guv_blue ;
+switch(FEAT_TRAINS, SELF, sw_guv_gfx_auto, date_of_last_service){
+	DATE_BRCOMBINED:	gfx_guv_brblue;
+	DATE_SECTORISATION:	sw_guc_gfx_sectorised;
+	DATE_PRIVATE_ONE:	gfx_guv_royalmail;
+	gfx_guv_blue;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_guv_gfx_manual, cargo_subtype){
-	2	: gfx_guv_brblue ;
-	3	: gfx_guv_intercity ;
-	4	: gfx_guv_railexpress ;
-	5	: gfx_guv_royalmail ;
-	6	: gfx_guv_first_fag ;
-	gfx_guv_blue ;
+	2	: gfx_guv_brblue;
+	3	: gfx_guv_intercity;
+	4	: gfx_guv_railexpress;
+	5	: gfx_guv_royalmail;
+	6	: gfx_guv_first_fag;
+	gfx_guv_blue;
 }
 
 switch(FEAT_TRAINS, SELF, sw_guv_gfx_manual_check, livery_choice){
-	1 : sw_guv_gfx_manual ;
-	sw_guv_gfx_auto ;
+	1 : sw_guv_gfx_manual;
+	sw_guv_gfx_auto;
 }
 
 
@@ -48,78 +48,78 @@ switch(FEAT_TRAINS, SELF, sw_guv_gfx_manual_check, livery_choice){
 //Purchase
 
 switch(FEAT_TRAINS, SELF, sw_guv_purchase_gfx, current_year){
-	1975..1983	: gfx_guv_purchase_brblue ;
-	1984..1996	: gfx_guv_purchase_railexpress ;
-	1996..2004	: gfx_guv_purchase_royalmail ;
-	gfx_guv_purchase_blue ;
+	1975..1983	: gfx_guv_purchase_brblue;
+	1984..1996	: gfx_guv_purchase_railexpress;
+	1996..2004	: gfx_guv_purchase_royalmail;
+	gfx_guv_purchase_blue;
 }
 
 switch(FEAT_TRAINS, SELF, sw_guv_purchase_colours, current_year){
-	1984..1996	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
-	1996..2004	: palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1984..1996	: palette_2cc(COLOUR_RED, COLOUR_GREY);
+	1996..2004	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 }
 
 switch(FEAT_TRAINS, SELF, sw_guv_purchase_colours_2cc_check, colour_scheme_1){
-	1 : sw_guv_purchase_colours ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_guv_purchase_colours;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_guv_refit_text, cargo_subtype){
-	0 : string(STR_LIVERY_BRGREEN) ;
-	1 : string(STR_LIVERY_BRBLUE) ;
-	2 : string(STR_LIVERY_BRBLUEGREY) ;
-	3 : string(STR_LIVERY_INTERCITY) ;
-	4 : string(STR_LIVERY_RAIL_EXPRESS) ;
-	5 : string(STR_LIVERY_ROYAL_MAIL) ;
-	6 : string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_MOTORAIL)) ;
-	7 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_MOTORAIL)) ;
-	8 : string(STR_LIVERY_NETWORK_RAIL) ;
-	CB_RESULT_NO_TEXT ;
+	0 : string(STR_LIVERY_BRGREEN);
+	1 : string(STR_LIVERY_BRBLUE);
+	2 : string(STR_LIVERY_BRBLUEGREY);
+	3 : string(STR_LIVERY_INTERCITY);
+	4 : string(STR_LIVERY_RAIL_EXPRESS);
+	5 : string(STR_LIVERY_ROYAL_MAIL);
+	6 : string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_MOTORAIL));
+	7 : string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_MOTORAIL));
+	8 : string(STR_LIVERY_NETWORK_RAIL);
+	CB_RESULT_NO_TEXT;
 }
 
 switch(FEAT_TRAINS, SELF, sw_guv_refit_text_check, livery_choice){
-	1 : sw_guv_refit_text ;
-	CB_RESULT_NO_TEXT ;
+	1 : sw_guv_refit_text;
+	CB_RESULT_NO_TEXT;
 }
 
 
 //Colours
 
 switch(FEAT_TRAINS, PARENT, sw_guc_col_sectorised, most_common_cargo_type){
-	PASS : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	PASS : palette_2cc(COLOUR_GREY, COLOUR_RED);
+	palette_2cc(COLOUR_RED, COLOUR_GREY);
 }
 
-switch(FEAT_TRAINS, SELF, sw_guv_col_auto, current_year){
-	0..1966		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-	1984..1996	: sw_guc_col_sectorised ;
-	1996..2004	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+switch(FEAT_TRAINS, SELF, sw_guv_col_auto, date_of_last_service){
+	DATE_BRCOMBINED:	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	DATE_SECTORISATION:	sw_guc_col_sectorised;
+	DATE_PRIVATE_ONE:	palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_guv_col_manual, cargo_subtype){
-	0	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-	3	: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	4	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	0	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	3	: palette_2cc(COLOUR_GREY, COLOUR_RED);
+	4	: palette_2cc(COLOUR_RED, COLOUR_GREY);
 	5	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
-	6	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	8 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	6	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
+	8 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 }
 
 switch(FEAT_TRAINS, SELF, sw_guv_col_manual_check, livery_choice){
-	1 : sw_guv_col_manual ;
-	sw_guv_col_auto ;
+	1 : sw_guv_col_manual;
+	sw_guv_col_auto;
 }
 
 switch(FEAT_TRAINS, SELF, sw_guv_col_2cc_check, colour_scheme_1){
-	1 : sw_guv_col_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_guv_col_manual_check;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
@@ -130,35 +130,35 @@ switch(FEAT_TRAINS, SELF, sw_guv_col_2cc_check, colour_scheme_1){
 
 item (FEAT_TRAINS, item_guv, 9001){
 	property{
-		name						   : string(STR_NAME_GUV) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT) ;
-		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
-		length                         : 8 ;
-		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1956, 1, 1) ;
-		model_life                     : VEHICLE_NEVER_EXPIRES ;
-		vehicle_life                   : 50 ;
-		cost_factor                    : 45 ;
-		running_cost_base              : RUNNING_COST_NONE ;
-		running_cost_factor            : 30 ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
-		non_refittable_cargo_classes   : bitmask(CC_PIECE_GOODS) ;
-		cargo_allow_refit              : [VEHI] ;
-		default_cargo_type			   : MAIL ;
-		cargo_capacity                 : 40 ;
-		loading_speed                  : 10 ;
-		track_type                     : RAIL ;
-		speed                          : 90 mph ;
-		power                          : 0 hp ;
-		weight                         : 30 ton ;
+		name						   : string(STR_NAME_GUV);
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
+		length                         : 8;
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1956, 1, 1);
+		model_life                     : VEHICLE_NEVER_EXPIRES;
+		vehicle_life                   : 50;
+		cost_factor                    : 45;
+		running_cost_base              : RUNNING_COST_NONE;
+		running_cost_factor            : 30;
+		refit_cost                     : 0;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS);
+		non_refittable_cargo_classes   : bitmask(CC_PIECE_GOODS);
+		cargo_allow_refit              : [VEHI];
+		default_cargo_type			   : MAIL;
+		cargo_capacity                 : 40;
+		loading_speed                  : 10;
+		track_type                     : RAIL;
+		speed                          : 90 mph;
+		power                          : 0 hp;
+		weight                         : 30 ton;
 	}
 	graphics{
-		default                 : sw_guv_gfx_manual_check ;
-		purchase                : sw_guv_purchase_gfx ;
-		purchase_colour_mapping : sw_guv_purchase_colours_2cc_check ;
-		cargo_subtype_text      : sw_guv_refit_text_check ;
-		colour_mapping          : sw_guv_col_2cc_check ;
+		default                 : sw_guv_gfx_manual_check;
+		purchase                : sw_guv_purchase_gfx;
+		purchase_colour_mapping : sw_guv_purchase_colours_2cc_check;
+		cargo_subtype_text      : sw_guv_refit_text_check;
+		colour_mapping          : sw_guv_col_2cc_check;
 	}
 }
 
@@ -186,27 +186,27 @@ spriteset(gfx_ntx_purch_royalmail,	"gfx/WAGON/wagons.png"){template_purchase(339
 //Graphics switches
 
 switch(FEAT_TRAINS, PARENT, sw_ntx_gfx_sectorised, most_common_cargo_type){
-	PASS : gfx_ntx_intericty ;
-	gfx_ntx_railexpress ;
+	PASS : gfx_ntx_intericty;
+	gfx_ntx_railexpress;
 }
 
-switch(FEAT_TRAINS, SELF, sw_ntx_gfx_auto, current_year){
-	0..1982				: gfx_ntx_brblue ;
-	ERA_SECTORISATION	: sw_ntx_gfx_sectorised ;
-	gfx_ntx_royalmail ;
+switch(FEAT_TRAINS, SELF, sw_ntx_gfx_auto, date_of_last_service){
+	DATE_BRCOMBINED:	gfx_ntx_brblue;
+	DATE_SECTORISATION:	sw_ntx_gfx_sectorised;
+	gfx_ntx_royalmail;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_ntx_gfx_manual, cargo_subtype){
-	0 : gfx_ntx_brblue ;
-	2 : gfx_ntx_intericty ;
-	3 : gfx_ntx_royalmail ;
-	gfx_ntx_railexpress ;
+	0 : gfx_ntx_brblue;
+	2 : gfx_ntx_intericty;
+	3 : gfx_ntx_royalmail;
+	gfx_ntx_railexpress;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ntx_gfx_manual_check, livery_choice){
-	1 : sw_ntx_gfx_manual ;
-	sw_ntx_gfx_auto ;
+	1 : sw_ntx_gfx_manual;
+	sw_ntx_gfx_auto;
 }
 
 
@@ -214,20 +214,20 @@ switch(FEAT_TRAINS, SELF, sw_ntx_gfx_manual_check, livery_choice){
 //Purchase sprite
 
 switch(FEAT_TRAINS, SELF, sw_ntx_purch_gfx, current_year){
-	0..1982				: gfx_ntx_purch_brblue ;
-	ERA_SECTORISATION	: gfx_ntx_purch_railexpress ;
-	gfx_ntx_purch_royalmail ;
+	0..1982				: gfx_ntx_purch_brblue;
+	ERA_SECTORISATION	: gfx_ntx_purch_railexpress;
+	gfx_ntx_purch_royalmail;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ntx_purch_col, current_year){
-	0..1982				: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	ERA_SECTORISATION	: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
-	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	0..1982				: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	ERA_SECTORISATION	: palette_2cc(COLOUR_RED, COLOUR_GREY);
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW);
 }
 
 switch(FEAT_TRAINS, SELF, sw_ntx_purch_col_2cc_check, colour_scheme_1){
-	1 : sw_ntx_purch_col ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_ntx_purch_col;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
@@ -235,16 +235,16 @@ switch(FEAT_TRAINS, SELF, sw_ntx_purch_col_2cc_check, colour_scheme_1){
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_ntx_refit_text, cargo_subtype){
-	0 : string(STR_LIVERY_BRBLUE) ;
-	1 : string(STR_LIVERY_RAIL_EXPRESS) ;
-	2 : string(STR_LIVERY_INTERCITY) ;
-	3 : string(STR_LIVERY_ROYAL_MAIL) ;
-	CB_RESULT_NO_TEXT ;
+	0 : string(STR_LIVERY_BRBLUE);
+	1 : string(STR_LIVERY_RAIL_EXPRESS);
+	2 : string(STR_LIVERY_INTERCITY);
+	3 : string(STR_LIVERY_ROYAL_MAIL);
+	CB_RESULT_NO_TEXT;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ntx_refit_text_check, livery_choice){
-	1 : sw_ntx_refit_text ;
-	CB_RESULT_NO_TEXT ;
+	1 : sw_ntx_refit_text;
+	CB_RESULT_NO_TEXT;
 }
 
 
@@ -252,32 +252,32 @@ switch(FEAT_TRAINS, SELF, sw_ntx_refit_text_check, livery_choice){
 //Colours
 
 switch(FEAT_TRAINS, PARENT, sw_ntx_col_sectorised, most_common_cargo_type){
-	PASS : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	PASS : palette_2cc(COLOUR_GREY, COLOUR_RED);
+	palette_2cc(COLOUR_RED, COLOUR_GREY);
 }
 
-switch(FEAT_TRAINS, SELF, sw_ntx_col_auto, current_year){
-	0..1982				: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	ERA_SECTORISATION	: sw_ntx_col_sectorised ;
-	palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+switch(FEAT_TRAINS, SELF, sw_ntx_col_auto, date_of_last_service){
+	DATE_BRCOMBINED:	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	DATE_SECTORISATION:	sw_ntx_col_sectorised;
+	palette_2cc(COLOUR_RED, COLOUR_YELLOW);
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_ntx_col_manual, cargo_subtype){
-	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	2 : palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	3 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
-	palette_2cc(COLOUR_RED, COLOUR_GREY) ;
+	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	2 : palette_2cc(COLOUR_GREY, COLOUR_RED);
+	3 : palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	palette_2cc(COLOUR_RED, COLOUR_GREY);
 }
 
 switch(FEAT_TRAINS, SELF, sw_ntx_col_manual_check, livery_choice){
-	1 : sw_ntx_col_manual ;
-	sw_ntx_col_auto ;
+	1 : sw_ntx_col_manual;
+	sw_ntx_col_auto;
 }
 
 switch(FEAT_TRAINS, SELF, sw_ntx_col_2cc_check, colour_scheme_1){
-	1 : sw_ntx_col_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_ntx_col_manual_check;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
@@ -286,34 +286,34 @@ switch(FEAT_TRAINS, SELF, sw_ntx_col_2cc_check, colour_scheme_1){
 
 item (FEAT_TRAINS, item_ntx, 9002){
 	property{
-		name						   : string(STR_NAME_NTX) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC) ;
-		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
-		length                         : 8 ;
-		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1966, 1, 1) ;
-		model_life                     : VEHICLE_NEVER_EXPIRES ;
-		vehicle_life                   : 45 ;
-		cost_factor                    : 60 ;
-		running_cost_base              : RUNNING_COST_NONE ;
-		running_cost_factor            : 50 ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED) ;
-		cargo_allow_refit              : [MAIL, VALU, DIAM, GOLD] ;
-		default_cargo_type			   : MAIL ;
-		cargo_capacity                 : 30 ;
-		loading_speed                  : 7 ;
-		track_type                     : RAIL ;
-		speed                          : 110 mph ;
-		power                          : 0 hp ;
-		weight                         : 38 ton ;
+		name						   : string(STR_NAME_NTX);
+		misc_flags                     : bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
+		length                         : 8;
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1966, 1, 1);
+		model_life                     : VEHICLE_NEVER_EXPIRES;
+		vehicle_life                   : 45;
+		cost_factor                    : 60;
+		running_cost_base              : RUNNING_COST_NONE;
+		running_cost_factor            : 50;
+		refit_cost                     : 0;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED);
+		cargo_allow_refit              : [MAIL, VALU, DIAM, GOLD];
+		default_cargo_type			   : MAIL;
+		cargo_capacity                 : 30;
+		loading_speed                  : 7;
+		track_type                     : RAIL;
+		speed                          : 110 mph;
+		power                          : 0 hp;
+		weight                         : 38 ton;
 	}
 	graphics{
-		default                 : sw_ntx_gfx_manual_check ;
-		purchase                : sw_ntx_purch_gfx ;
-		purchase_colour_mapping : sw_ntx_purch_col_2cc_check ;
-		cargo_subtype_text      : sw_ntx_refit_text_check ;
-		colour_mapping          : sw_ntx_col_2cc_check ;
+		default                 : sw_ntx_gfx_manual_check;
+		purchase                : sw_ntx_purch_gfx;
+		purchase_colour_mapping : sw_ntx_purch_col_2cc_check;
+		cargo_subtype_text      : sw_ntx_refit_text_check;
+		colour_mapping          : sw_ntx_col_2cc_check;
 	}
 }
 
@@ -325,13 +325,13 @@ spriteset(gfx_qpv,		"gfx/WAGON/wagons.png"){template_6_4(100,425)}
 spriteset(gfx_qpv_purch,"gfx/WAGON/wagons.png"){template_purchase(181,425)}
 
 /*switch(FEAT_TRAINS, SELF, sw_qpv_col, current_year){
-	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+	ERA_BRCREST : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE);
 }*/
 
 switch(FEAT_TRAINS, SELF, sw_qpv_col_2cc_check, colour_scheme_2){
-	1 : palette_2cc(COLOUR_BROWN, COLOUR_BROWN) ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : palette_2cc(COLOUR_BROWN, COLOUR_BROWN);
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
@@ -341,32 +341,32 @@ switch(FEAT_TRAINS, SELF, sw_qpv_col_2cc_check, colour_scheme_2){
 
 item (FEAT_TRAINS, item_qpv, 9003){
 	property{
-		name						   : string(STR_NAME_QPV) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT) ;
-		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
-		length                         : 6 ;
-		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1922, 1, 1) ;
-		model_life                     : 22 ;
-		vehicle_life                   : 35 ;
-		cost_factor                    : 27 ;
-		running_cost_base              : RUNNING_COST_NONE ;
-		running_cost_factor            : 17 ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
-		cargo_allow_refit              : [VBOD, VPTS, LVST, PLAS, JAVA, BEER] ;
-		default_cargo_type			   : MAIL ;
-		cargo_capacity                 : 28 ;
-		loading_speed                  : 6 ;
-		track_type                     : RAIL ;
-		speed                          : 60 mph ;
-		power                          : 0 hp ;
-		weight                         : 17 ton ;
+		name						   : string(STR_NAME_QPV);
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
+		length                         : 6;
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1922, 1, 1);
+		model_life                     : 22;
+		vehicle_life                   : 35;
+		cost_factor                    : 27;
+		running_cost_base              : RUNNING_COST_NONE;
+		running_cost_factor            : 17;
+		refit_cost                     : 0;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS);
+		cargo_allow_refit              : [VBOD, VPTS, LVST, PLAS, JAVA, BEER];
+		default_cargo_type			   : MAIL;
+		cargo_capacity                 : 28;
+		loading_speed                  : 6;
+		track_type                     : RAIL;
+		speed                          : 60 mph;
+		power                          : 0 hp;
+		weight                         : 17 ton;
 	}
 	graphics{
-		default                 : gfx_qpv ;
-		purchase                : gfx_qpv_purch ;
-		colour_mapping          : sw_qpv_col_2cc_check ;
+		default                 : gfx_qpv;
+		purchase                : gfx_qpv_purch;
+		colour_mapping          : sw_qpv_col_2cc_check;
 	}
 }
 
@@ -387,58 +387,58 @@ spriteset(gfx_rbx_railfreight,		"gfx/WAGON/wagons.png"){template_7_4_2(100,400)}
 spriteset(gfx_rbx_purch,			"gfx/WAGON/wagons.png"){template_purchase(181,375)}
 spriteset(gfx_rbx_purch_railfreight,"gfx/WAGON/wagons.png"){template_purchase(181,400)}
 
-switch(FEAT_TRAINS, SELF, sw_rbx_gfx_auto, current_year){
-	0..1980	: gfx_rbx ;
-	gfx_rbx_railfreight ;
+switch(FEAT_TRAINS, SELF, sw_rbx_gfx_auto, date_of_last_service){
+	DATE_BRCOMBINED:	gfx_rbx;
+	gfx_rbx_railfreight;
 }
 
 switch(FEAT_TRAINS, SELF, sw_rbx_gfx_manual, cargo_subtype){
-	0 : gfx_rbx ;
-	gfx_rbx_railfreight ;
+	0 : gfx_rbx;
+	gfx_rbx_railfreight;
 }
 
 switch(FEAT_TRAINS, SELF, sw_rbx_gfx_manual_check, livery_choice){
-	1 : sw_rbx_gfx_manual ;
-	sw_rbx_gfx_auto ;
+	1 : sw_rbx_gfx_manual;
+	sw_rbx_gfx_auto;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_rbx_refit_text, cargo_subtype){
-	0 : string(STR_LIVERY_BRBLUE) ;
-	1 : string(STR_LIVERY_RAILFREIGHT2) ;
-	CB_RESULT_NO_TEXT ;
+	0 : string(STR_LIVERY_BRBLUE);
+	1 : string(STR_LIVERY_RAILFREIGHT2);
+	CB_RESULT_NO_TEXT;
 }
 
 switch(FEAT_TRAINS, SELF, sw_rbx_refit_text_check, livery_choice){
-	1 : sw_rbx_refit_text ;
-	CB_RESULT_NO_TEXT ;
+	1 : sw_rbx_refit_text;
+	CB_RESULT_NO_TEXT;
 }
 
 
-switch(FEAT_TRAINS, SELF, sw_rbx_col_auto, current_year){
-	0..1980	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
-	palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+switch(FEAT_TRAINS, SELF, sw_rbx_col_auto, date_of_last_service){
+	DATE_BRCOMBINED:	palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE);
+	palette_2cc(COLOUR_GREY, COLOUR_RED);
 }
 
 switch(FEAT_TRAINS, SELF, sw_rbx_col_manual, cargo_subtype){
-	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
-	palette_2cc(COLOUR_GREY, COLOUR_RED) ;
+	0 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE);
+	palette_2cc(COLOUR_GREY, COLOUR_RED);
 }
 
 switch(FEAT_TRAINS, SELF, sw_rbx_col_manual_check, livery_choice){
-	1 : sw_rbx_col_manual ;
-	sw_rbx_col_auto ;
+	1 : sw_rbx_col_manual;
+	sw_rbx_col_auto;
 }
 
 switch(FEAT_TRAINS, SELF, sw_rbx_col_2cc_check, colour_scheme_2){
-	1 : sw_rbx_col_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_rbx_col_manual_check;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_rbx_purchase_gfx, current_year){
-	0..1980	: gfx_rbx_purch ;
-	gfx_rbx_purch_railfreight ;
+	0..1980	: gfx_rbx_purch;
+	gfx_rbx_purch_railfreight;
 }
 
 
@@ -449,34 +449,34 @@ switch(FEAT_TRAINS, SELF, sw_rbx_purchase_gfx, current_year){
 
 item (FEAT_TRAINS, item_rbx, 9004){
 	property{
-		name						   : string(STR_NAME_RBX) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT) ;
-		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
-		length                         : 7 ;
-		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1931, 1, 1) ;
-		model_life                     : VEHICLE_NEVER_EXPIRES ;
-		vehicle_life                   : 40 ;
-		cost_factor                    : 30 ;
-		running_cost_base              : RUNNING_COST_NONE ;
-		running_cost_factor            : 20 ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS) ;
-		cargo_allow_refit              : [VBOD, VPTS, LVST, PLAS, JAVA, BEER] ;
-		default_cargo_type			   : MAIL ;
-		cargo_capacity                 : 45 ;
-		loading_speed                  : 8 ;
-		track_type                     : RAIL ;
-		speed                          : 70 mph ;
-		power                          : 0 hp ;
-		weight                         : 26 ton ;
+		name						   : string(STR_NAME_RBX);
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
+		length                         : 7;
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1931, 1, 1);
+		model_life                     : VEHICLE_NEVER_EXPIRES;
+		vehicle_life                   : 40;
+		cost_factor                    : 30;
+		running_cost_base              : RUNNING_COST_NONE;
+		running_cost_factor            : 20;
+		refit_cost                     : 0;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS);
+		cargo_allow_refit              : [VBOD, VPTS, LVST, PLAS, JAVA, BEER];
+		default_cargo_type			   : MAIL;
+		cargo_capacity                 : 45;
+		loading_speed                  : 8;
+		track_type                     : RAIL;
+		speed                          : 70 mph;
+		power                          : 0 hp;
+		weight                         : 26 ton;
 	}
 	graphics{
-		default                 : sw_rbx_gfx_manual_check ;
-		purchase                : sw_rbx_purchase_gfx ;
-		purchase_colour_mapping	: sw_rbx_col_auto ;
-		cargo_subtype_text      : sw_rbx_refit_text_check ;
-		colour_mapping          : sw_rbx_col_2cc_check ;
+		default                 : sw_rbx_gfx_manual_check;
+		purchase                : sw_rbx_purchase_gfx;
+		purchase_colour_mapping	: sw_rbx_col_auto;
+		cargo_subtype_text      : sw_rbx_refit_text_check;
+		colour_mapping          : sw_rbx_col_2cc_check;
 	}
 }
 
@@ -507,23 +507,23 @@ spriteset(gfx_oldcube_purchase,		"gfx/WAGON/wagons.png"){template_purchase(150,6
 
 
 spritegroup sprgrp_oldcube {
-	loading	: gfx_oldcube_open ;
-	loaded	: gfx_oldcube_closed ;
+	loading	: gfx_oldcube_open;
+	loaded	: gfx_oldcube_closed;
 }
 
 spritegroup sprgrp_oldcube_2cc {
-	loading	: gfx_oldcube_2cc_open ;
-	loaded	: gfx_oldcube_2cc_closed ;
+	loading	: gfx_oldcube_2cc_open;
+	loaded	: gfx_oldcube_2cc_closed;
 }
 
 switch(FEAT_TRAINS, SELF, sw_oldcube_manual, cargo_subtype){
-	0 : sprgrp_oldcube ;
-	sprgrp_oldcube_2cc ;
+	0 : sprgrp_oldcube;
+	sprgrp_oldcube_2cc;
 }
 
 switch(FEAT_TRAINS, SELF, sw_oldcube_manual_check, livery_choice){
-	1 : sw_oldcube_manual ;
-	sprgrp_oldcube_2cc ;
+	1 : sw_oldcube_manual;
+	sprgrp_oldcube_2cc;
 }
 
 
@@ -531,14 +531,14 @@ switch(FEAT_TRAINS, SELF, sw_oldcube_manual_check, livery_choice){
 
 
 switch(FEAT_TRAINS, SELF, sw_oldcube_refit_text, cargo_subtype){
-	 0 : string(STR_COLOUR_GREY) ;
-	 1 : string(STR_LIVER_COMP_COLOURS) ;
-	 CB_RESULT_NO_TEXT ;
+	 0 : string(STR_COLOUR_GREY);
+	 1 : string(STR_LIVER_COMP_COLOURS);
+	 CB_RESULT_NO_TEXT;
 }
 
 switch(FEAT_TRAINS, SELF, sw_oldcube_refit_text_check, livery_choice){
-	1 : sw_oldcube_refit_text ;
-	CB_RESULT_NO_TEXT ;
+	1 : sw_oldcube_refit_text;
+	CB_RESULT_NO_TEXT;
 }
 
 
@@ -550,32 +550,32 @@ switch(FEAT_TRAINS, SELF, sw_oldcube_refit_text_check, livery_choice){
 
 item (FEAT_TRAINS, item_oldcube, 9005){
 	property{
-		name						   : string(STR_NAME_CUBE) ;
-		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT) ;
-		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
-		length                         : 4 ;
-		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1860, 1, 1) ;
-		model_life                     : 80 ;
-		vehicle_life                   : 30 ;
-		cost_factor                    : 10 ;
-		running_cost_base              : RUNNING_COST_NONE ;
-		running_cost_factor            : 12 ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS, CC_PIECE_GOODS) ;
-		cargo_allow_refit              : [VBOD, VPTS, LVST, PLAS, JAVA, BEER, MILK] ;
-		default_cargo_type			   : MAIL ;
-		cargo_capacity                 : 12 ;
-		loading_speed                  : 4 ;
-		track_type                     : RAIL ;
-		speed                          : 40 mph ;
-		power                          : 0 hp ;
-		weight                         : 8 ton ;
+		name						   : string(STR_NAME_CUBE);
+		misc_flags                     : bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_AUTOREFIT);
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
+		length                         : 4;
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1860, 1, 1);
+		model_life                     : 80;
+		vehicle_life                   : 30;
+		cost_factor                    : 10;
+		running_cost_base              : RUNNING_COST_NONE;
+		running_cost_factor            : 12;
+		refit_cost                     : 0;
+		refittable_cargo_classes       : bitmask(CC_MAIL, CC_ARMOURED, CC_EXPRESS, CC_PIECE_GOODS);
+		cargo_allow_refit              : [VBOD, VPTS, LVST, PLAS, JAVA, BEER, MILK];
+		default_cargo_type			   : MAIL;
+		cargo_capacity                 : 12;
+		loading_speed                  : 4;
+		track_type                     : RAIL;
+		speed                          : 40 mph;
+		power                          : 0 hp;
+		weight                         : 8 ton;
 	}
 	graphics{
-		default                 : sw_oldcube_manual_check ;
-		purchase                : gfx_oldcube_purchase ;
-		cargo_subtype_text      : sw_oldcube_refit_text_check ;
+		default                 : sw_oldcube_manual_check;
+		purchase                : gfx_oldcube_purchase;
+		cargo_subtype_text      : sw_oldcube_refit_text_check;
 	}
 }
 
@@ -603,8 +603,8 @@ spriteset(gfx_brake_ger,			"gfx/WAGON/wagons.png"){template_5_4		(175,825)}
 spriteset(gfx_brake_ger_purchase,	"gfx/WAGON/wagons.png"){template_purchase	(250,825)}
 
 switch(FEAT_TRAINS, SELF, sw_brake_ger_colours_2cc_check, colour_scheme_2){
-	1 : palette_2cc(COLOUR_BROWN, company_colour2) ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : palette_2cc(COLOUR_BROWN, company_colour2);
+	palette_2cc(company_colour1, company_colour2);
 }
 
 item (FEAT_TRAINS, item_brake_ger, 10034) {
@@ -655,8 +655,8 @@ spriteset(gfx_brake_lms,			"gfx/WAGON/wagons.png"){template_5_4		(175,850)}
 spriteset(gfx_brake_lms_purchase,	"gfx/WAGON/wagons.png"){template_purchase	(250,850)}
 
 switch(FEAT_TRAINS, SELF, sw_brake_lms_colours_2cc_check, colour_scheme_2){
-	1 : palette_2cc(COLOUR_BROWN, company_colour2) ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : palette_2cc(COLOUR_BROWN, company_colour2);
+	palette_2cc(company_colour1, company_colour2);
 }
 
 item (FEAT_TRAINS, item_brake_lms, 10035) {

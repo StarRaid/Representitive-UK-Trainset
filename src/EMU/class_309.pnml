@@ -37,7 +37,7 @@ switch(FEAT_TRAINS, PARENT, sw_309_purchase, current_year){
 } 
 //MANUAL LIVERIES
 
-switch(FEAT_TRAINS, PARENT, sw_309_pf_livery_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_pf_livery_auto, date_of_last_service){
 	0..1970 : spriteset_309_fpf_mar;
 	1971..1982: spriteset_309_fpf_brb;
 	spriteset_309_fpf_nse;
@@ -51,7 +51,7 @@ switch(FEAT_TRAINS, SELF, sw_309_pf_livery, livery_choice){
 	1: sw_309_pf_livery_manual;
 	sw_309_pf_livery_auto;
 }
-switch(FEAT_TRAINS, PARENT, sw_309_po_livery_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_po_livery_auto, date_of_last_service){
 	0..1970 : spriteset_309_fpo_mar;
 	1971..1982: spriteset_309_fpo_brb;
 	spriteset_309_fpo_nse;
@@ -65,7 +65,7 @@ switch(FEAT_TRAINS, SELF, sw_309_po_livery, livery_choice){
 	1: sw_309_po_livery_manual;
 	sw_309_po_livery_auto;
 }
-switch(FEAT_TRAINS, PARENT, sw_309_pr_livery_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_pr_livery_auto, date_of_last_service){
 	0..1970 : spriteset_309_fpr_mar;
 	1971..1982: spriteset_309_fpr_brb;
 	spriteset_309_fpr_nse;
@@ -81,7 +81,7 @@ switch(FEAT_TRAINS, SELF, sw_309_pr_livery, livery_choice){
 }
 
 
-switch(FEAT_TRAINS, PARENT, sw_309_ff_livery_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_ff_livery_auto, date_of_last_service){
 	0..1970 : spriteset_309_ftf_mar;
 	1971..1982: spriteset_309_ftf_brb;
 	spriteset_309_ftf_nse;
@@ -95,7 +95,7 @@ switch(FEAT_TRAINS, SELF, sw_309_ff_livery, livery_choice){
 	1: sw_309_ff_livery_manual;
 	sw_309_ff_livery_auto;
 }
-switch(FEAT_TRAINS, PARENT, sw_309_fo_livery_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_fo_livery_auto, date_of_last_service){
 	0..1970 : spriteset_309_fto_mar;
 	1971..1982: spriteset_309_fto_brb;
 	spriteset_309_fto_nse;
@@ -109,7 +109,7 @@ switch(FEAT_TRAINS, SELF, sw_309_fo_livery, livery_choice){
 	1: sw_309_fo_livery_manual;
 	sw_309_fo_livery_auto;
 }
-switch(FEAT_TRAINS, PARENT, sw_309_fr_livery_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_fr_livery_auto, date_of_last_service){
 	0..1970 : spriteset_309_ftr_mar;
 	1971..1982: spriteset_309_ftr_brb;
 	spriteset_309_ftr_nse;
@@ -125,7 +125,7 @@ switch(FEAT_TRAINS, SELF, sw_309_fr_livery, livery_choice){
 }
 
 
-switch(FEAT_TRAINS, PARENT, sw_309_paf_livery_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_paf_livery_auto, date_of_last_service){
 	0..1970 : spriteset_309_pf_mar;
 	1971..1982: spriteset_309_pf_brb;
 	spriteset_309_pf_nse;
@@ -139,7 +139,7 @@ switch(FEAT_TRAINS, SELF, sw_309_paf_livery, livery_choice){
 	1: sw_309_paf_livery_manual;
 	sw_309_paf_livery_auto;
 }
-switch(FEAT_TRAINS, PARENT, sw_309_par_livery_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_par_livery_auto, date_of_last_service){
 	0..1970 : spriteset_309_pr_mar;
 	1971..1982: spriteset_309_pr_brb;
 	spriteset_309_pr_nse;
@@ -155,7 +155,7 @@ switch(FEAT_TRAINS, SELF, sw_309_par_livery, livery_choice){
 }
 
 
-switch(FEAT_TRAINS, PARENT, sw_309_t_livery_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_t_livery_auto, date_of_last_service){
 	0..1970 : spriteset_309_t_mar;
 	1971..1982: spriteset_309_t_brb;
 	spriteset_309_t_nse;
@@ -266,7 +266,18 @@ switch(FEAT_TRAINS, SELF, sw_309_refit_text_decider, livery_choice){
 
 //Recolour decicsion
 
-switch(FEAT_TRAINS, PARENT, sw_309_recolour_selection_auto, current_year){
+switch(FEAT_TRAINS, PARENT, sw_309_purch_recolour_selection_auto, current_year){
+	0..1970 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
+	1971..1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+} 
+
+switch(FEAT_TRAINS, PARENT, sw_309_purch_colour_mapping, colour_scheme_1){
+	1 : sw_309_purch_recolour_selection_auto ;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_309_recolour_selection_auto, date_of_last_service){
 	0..1970 : palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
 	1971..1982:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 	palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
@@ -346,7 +357,7 @@ item (FEAT_TRAINS, item_309, 309) {
 		create_effect:						vfx_dual_voltage;
 		colour_mapping:						sw_309_colour_mapping;
 		cargo_subtype_text:					sw_309_refit_text_decider;
-		purchase_colour_mapping:			sw_309_recolour_selection_auto;
+		purchase_colour_mapping:			sw_309_purch_colour_mapping;
 		running_cost_factor:				return(current_speed == 0 ? 4 : 12) ;
 		purchase_running_cost_factor:		12;
 		sound_effect:						sw_sfx_emu_gec ;

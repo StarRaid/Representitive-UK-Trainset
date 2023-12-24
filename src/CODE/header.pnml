@@ -1,148 +1,148 @@
 grf{
-	grfid: "RUKT" ;
-	name: string(STR_GRF_NAME) ;
-	desc: string(STR_GRF_DESC) ;
-	version: 116 ;
-	min_compatible_version: 36 ;
+	grfid: "RUKT";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESC);
+	version: 116;
+	min_compatible_version: 36;
 	param 0{
 		colour_scheme_1{
-			type    : bool ;
-			name    : string(STR_PARAM_COLOURSCHEME_NAME) ;
-			desc    : string(STR_PARAM_COLOURSCHEME_DESC) ;
-			bit     : 1 ;
-			def_value : 1 ;
+			type    : bool;
+			name    : string(STR_PARAM_COLOURSCHEME_NAME);
+			desc    : string(STR_PARAM_COLOURSCHEME_DESC);
+			bit     : 1;
+			def_value : 1;
 		}
 		colour_scheme_2{
-			type : bool ;
-			name : string(STR_PARAM_WAGONCOLOURS_NAME) ;
-			desc : string(STR_PARAM_WAGONCOLOURS_DESC) ;
-			bit  : 2 ;
-			def_value : 1 ;
+			type : bool;
+			name : string(STR_PARAM_WAGONCOLOURS_NAME);
+			desc : string(STR_PARAM_WAGONCOLOURS_DESC);
+			bit  : 2;
+			def_value : 1;
 		}
 		livery_choice{
-			type : bool ;
-			name : string(STR_PARAM_LIVERY_CHOICE_NAME) ;
-			desc : string(STR_PARAM_LIVERY_CHOICE_DESC) ;
-			bit  : 3 ;
-			def_value : 1 ;
+			type : bool;
+			name : string(STR_PARAM_LIVERY_CHOICE_NAME);
+			desc : string(STR_PARAM_LIVERY_CHOICE_DESC);
+			bit  : 3;
+			def_value : 1;
 		}
 		enable_prototypes{
-			type : bool ;
-			name : string(STR_PARAM_PROTOTYPES) ;
-			desc : string(STR_PARAM_PROTOTYPES_DESC) ;
-			bit  : 4 ;
-			def_value : 1 ;
+			type : bool;
+			name : string(STR_PARAM_PROTOTYPES);
+			desc : string(STR_PARAM_PROTOTYPES_DESC);
+			bit  : 4;
+			def_value : 1;
 		}
 	}
 	param 1{
 		vehicle_selection{
-			type      : int ;
-			name      : string(STR_PARAM_VEH_SELEC_NAME) ;
-			desc      : string(STR_PARAM_VEH_SELEC_DESC) ;
-			min_value : 0 ;
-			max_value : 3 ;
-			def_value : 3 ;
+			type      : int;
+			name      : string(STR_PARAM_VEH_SELEC_NAME);
+			desc      : string(STR_PARAM_VEH_SELEC_DESC);
+			min_value : 0;
+			max_value : 3;
+			def_value : 3;
 			names     : {
-				0 : string(STR_PARAM_VEH_SELEC_CHOICE_ONE  ) ;
-				1 : string(STR_PARAM_VEH_SELEC_CHOICE_TWO  ) ;
-				2 : string(STR_PARAM_VEH_SELEC_CHOICE_THREE) ;
-				3 : string(STR_PARAM_VEH_SELEC_CHOICE_FOUR ) ;
-			} ;
+				0 : string(STR_PARAM_VEH_SELEC_CHOICE_ONE  );
+				1 : string(STR_PARAM_VEH_SELEC_CHOICE_TWO  );
+				2 : string(STR_PARAM_VEH_SELEC_CHOICE_THREE);
+				3 : string(STR_PARAM_VEH_SELEC_CHOICE_FOUR );
+			};
 		}
 	} 
 	param 2{
 		alt_names{
-			type      : bool ;
-			name      : string(STR_PARAM_ALT_NAMES_NAME) ;
-			desc      : string(STR_PARAM_ALT_NAMES_DESC) ;
-			bit		  : 1 ;
-			def_value : 1 ;
+			type      : bool;
+			name      : string(STR_PARAM_ALT_NAMES_NAME);
+			desc      : string(STR_PARAM_ALT_NAMES_DESC);
+			bit		  : 1;
+			def_value : 1;
 			}
 		}
 	param 3{
 		purchase_cost{
-			type		: int ;
-			name		: string(STR_PARAM_PURCHASE_COST) ;
-			desc		: string(STR_PARAM_PURCHASE_COST_DESC) ;
-			min_value	: 0 ;
-			max_value	: 3 ;
-			def_value	: 1 ;
+			type		: int;
+			name		: string(STR_PARAM_PURCHASE_COST);
+			desc		: string(STR_PARAM_PURCHASE_COST_DESC);
+			min_value	: 0;
+			max_value	: 3;
+			def_value	: 1;
 			names		: {
-				0	: string(STR_PARAM_LOW  ) ;
-				1	: string(STR_PARAM_MEDIUM  ) ;
-				2	: string(STR_PARAM_HIGH) ;
-				3	: string(STR_PARAM_TOOMUCH ) ;
-			} ;
+				0	: string(STR_PARAM_LOW  );
+				1	: string(STR_PARAM_MEDIUM  );
+				2	: string(STR_PARAM_HIGH);
+				3	: string(STR_PARAM_TOOMUCH );
+			};
 		}
 	}
 	param 4{
 		running_cost{
-			type		: int ;
-			name		: string(STR_PARAM_RUNNING_COST) ;
-			desc		: string(STR_PARAM_RUNNING_COST_DESC) ;
-			min_value	: 0 ;
-			max_value	: 3 ;
-			def_value	: 1 ;
+			type		: int;
+			name		: string(STR_PARAM_RUNNING_COST);
+			desc		: string(STR_PARAM_RUNNING_COST_DESC);
+			min_value	: 0;
+			max_value	: 3;
+			def_value	: 1;
 			names		: {
-				0	: string(STR_PARAM_LOW  ) ;
-				1	: string(STR_PARAM_MEDIUM  ) ;
-				2	: string(STR_PARAM_HIGH) ;
-				3	: string(STR_PARAM_TOOMUCH ) ;
-			} ;
+				0	: string(STR_PARAM_LOW  );
+				1	: string(STR_PARAM_MEDIUM  );
+				2	: string(STR_PARAM_HIGH);
+				3	: string(STR_PARAM_TOOMUCH );
+			};
 		}
 	}
 	param 5{
 		purchase_list_sort{
-			type : bool ;
-			name : string(STR_PARAM_PURCHASE_LIST_SORT_NAME) ;
-			desc : string(STR_PARAM_PURCHASE_LIST_SORT_DESC) ;
-			def_value : 1 ;
+			type : bool;
+			name : string(STR_PARAM_PURCHASE_LIST_SORT_NAME);
+			desc : string(STR_PARAM_PURCHASE_LIST_SORT_DESC);
+			def_value : 1;
 			}
 		}
 	
 	param 6{
 		sound_control{
-			type		: int ;
-			name		: string(STR_SOUND_CONTROL) ;
-			desc		: string(STR_SOUND_CONTROL_DESC) ;
-			min_value	: 0 ;
-			max_value	: 1 ;
-			def_value	: 1 ;
+			type		: int;
+			name		: string(STR_SOUND_CONTROL);
+			desc		: string(STR_SOUND_CONTROL_DESC);
+			min_value	: 0;
+			max_value	: 1;
+			def_value	: 1;
 			names		: {
-				0	: string(STR_PARAM_DEFAULT) ;
-				1	: string(STR_PARAM_CUSTOM ) ;
-			} ;
+				0	: string(STR_PARAM_DEFAULT);
+				1	: string(STR_PARAM_CUSTOM );
+			};
 		}
 	}
 	param 7{
 		steam_selection{
-			type      : int ;
-			name      : string(STR_PARAM_STEAM_SELEC_NAME) ;
-			desc      : string(STR_PARAM_STEAM_SELEC_DESC) ;
-			min_value : 0 ;
-			max_value : 3 ;
-			def_value : 3 ;
+			type      : int;
+			name      : string(STR_PARAM_STEAM_SELEC_NAME);
+			desc      : string(STR_PARAM_STEAM_SELEC_DESC);
+			min_value : 0;
+			max_value : 3;
+			def_value : 3;
 			names     : {
-				0 : string(STR_PARAM_STEAM_SELEC_CHOICE_ONE  ) ;
-				1 : string(STR_PARAM_STEAM_SELEC_CHOICE_TWO  ) ;
-				2 : string(STR_PARAM_STEAM_SELEC_CHOICE_THREE) ;
-				3 : string(STR_PARAM_STEAM_SELEC_CHOICE_FOUR ) ;
-			} ;
+				0 : string(STR_PARAM_STEAM_SELEC_CHOICE_ONE  );
+				1 : string(STR_PARAM_STEAM_SELEC_CHOICE_TWO  );
+				2 : string(STR_PARAM_STEAM_SELEC_CHOICE_THREE);
+				3 : string(STR_PARAM_STEAM_SELEC_CHOICE_FOUR );
+			};
 		}
 	} 
 }
 
 
-train_width_32_px  = 1 ;
-traininfo_y_offset = 2 ;
+train_width_32_px  = 1;
+traininfo_y_offset = 2;
 // Tractive Effort Coefficient = Actual Tractive effort / Weight / 10
 
 //Modifying base costs
 
 basecost{
-	PR_BUILD_VEHICLE_TRAIN    : (param[3] - 2) ;
-	PR_BUILD_VEHICLE_WAGON    : 3 ;
-	PR_RUNNING_TRAIN_STEAM    : param[4] ;
-	PR_RUNNING_TRAIN_DIESEL   : param[4] ;
-	PR_RUNNING_TRAIN_ELECTRIC : param[4] ;
+	PR_BUILD_VEHICLE_TRAIN    : (param[3] - 2);
+	PR_BUILD_VEHICLE_WAGON    : 3;
+	PR_RUNNING_TRAIN_STEAM    : param[4];
+	PR_RUNNING_TRAIN_DIESEL   : param[4];
+	PR_RUNNING_TRAIN_ELECTRIC : param[4];
 }

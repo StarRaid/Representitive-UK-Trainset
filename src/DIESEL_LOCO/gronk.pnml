@@ -58,13 +58,13 @@ refer to sw_XXXX_gfx_pos_check_a_YYYY when calling the specific livery in genera
 
 
 
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_YYYY,	vehicle_is_reversed){ 1 : gfx_gronk_YYYY ; gfx_gronk_YYYY_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_YYYY,	vehicle_is_reversed){ 1 : gfx_gronk_YYYY_rev ; gfx_gronk_YYYY ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_YYYY,	vehicle_is_reversed){ 1 : gfx_gronk_YYYY; gfx_gronk_YYYY_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_YYYY,	vehicle_is_reversed){ 1 : gfx_gronk_YYYY_rev; gfx_gronk_YYYY; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_YYYY,		position_in_vehid_chain){ 0 : gfx_gronk_YYYY_rev ; sw_gfx_gronk_rev_check_b_YYYY ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_YYYY,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_YYYY ; sw_gfx_gronk_pos_check_m_YYYY ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_YYYY,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_YYYY ; gfx_gronk_YYYY_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_YYYY,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_YYYY ; sw_gfx_gronk_pos_check_b_YYYY ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_YYYY,		position_in_vehid_chain){ 0 : gfx_gronk_YYYY_rev; sw_gfx_gronk_rev_check_b_YYYY;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_YYYY,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_YYYY; sw_gfx_gronk_pos_check_m_YYYY;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_YYYY,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_YYYY; gfx_gronk_YYYY_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_YYYY,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_YYYY; sw_gfx_gronk_pos_check_b_YYYY;}
 
 
 */
@@ -72,296 +72,296 @@ switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_YYYY,		position_in_consist){ 
 
 
 //BR Blue/Default - br_blue
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_br_blue,	vehicle_is_reversed){ 1 : gfx_gronk_br_blue ; gfx_gronk_br_blue_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_br_blue,	vehicle_is_reversed){ 1 : gfx_gronk_br_blue_rev ; gfx_gronk_br_blue ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_br_blue,	vehicle_is_reversed){ 1 : gfx_gronk_br_blue; gfx_gronk_br_blue_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_br_blue,	vehicle_is_reversed){ 1 : gfx_gronk_br_blue_rev; gfx_gronk_br_blue; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_br_blue,		position_in_vehid_chain){ 0 : gfx_gronk_br_blue_rev ; sw_gfx_gronk_rev_check_b_br_blue ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_br_blue,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_br_blue ; sw_gfx_gronk_pos_check_m_br_blue ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_br_blue,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_br_blue ; gfx_gronk_br_blue_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_br_blue,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_br_blue ; sw_gfx_gronk_pos_check_b_br_blue ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_br_blue,		position_in_vehid_chain){ 0 : gfx_gronk_br_blue_rev; sw_gfx_gronk_rev_check_b_br_blue;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_br_blue,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_br_blue; sw_gfx_gronk_pos_check_m_br_blue;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_br_blue,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_br_blue; gfx_gronk_br_blue_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_br_blue,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_br_blue; sw_gfx_gronk_pos_check_b_br_blue;}
 
 //Dark - dark
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_dark,	vehicle_is_reversed){ 1 : gfx_gronk_dark ; gfx_gronk_dark_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_dark,	vehicle_is_reversed){ 1 : gfx_gronk_dark_rev ; gfx_gronk_dark ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_dark,	vehicle_is_reversed){ 1 : gfx_gronk_dark; gfx_gronk_dark_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_dark,	vehicle_is_reversed){ 1 : gfx_gronk_dark_rev; gfx_gronk_dark; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_dark,		position_in_vehid_chain){ 0 : gfx_gronk_dark_rev ; sw_gfx_gronk_rev_check_b_dark ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_dark,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_dark ; sw_gfx_gronk_pos_check_m_dark ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_dark,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_dark ; gfx_gronk_dark_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_dark,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_dark ; sw_gfx_gronk_pos_check_b_dark ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_dark,		position_in_vehid_chain){ 0 : gfx_gronk_dark_rev; sw_gfx_gronk_rev_check_b_dark;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_dark,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_dark; sw_gfx_gronk_pos_check_m_dark;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_dark,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_dark; gfx_gronk_dark_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_dark,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_dark; sw_gfx_gronk_pos_check_b_dark;}
 
 //Black - black
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_black,	vehicle_is_reversed){ 1 : gfx_gronk_black ; gfx_gronk_black_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_black,	vehicle_is_reversed){ 1 : gfx_gronk_black_rev ; gfx_gronk_black ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_black,	vehicle_is_reversed){ 1 : gfx_gronk_black; gfx_gronk_black_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_black,	vehicle_is_reversed){ 1 : gfx_gronk_black_rev; gfx_gronk_black; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_black,		position_in_vehid_chain){ 0 : gfx_gronk_black_rev ; sw_gfx_gronk_rev_check_b_black ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_black,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_black ; sw_gfx_gronk_pos_check_m_black ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_black,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_black ; gfx_gronk_black_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_black,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_black ; sw_gfx_gronk_pos_check_b_black ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_black,		position_in_vehid_chain){ 0 : gfx_gronk_black_rev; sw_gfx_gronk_rev_check_b_black;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_black,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_black; sw_gfx_gronk_pos_check_m_black;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_black,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_black; gfx_gronk_black_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_black,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_black; sw_gfx_gronk_pos_check_b_black;}
 
 //BR Black - br_black
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_br_black,	vehicle_is_reversed){ 1 : gfx_gronk_br_black ; gfx_gronk_br_black_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_br_black,	vehicle_is_reversed){ 1 : gfx_gronk_br_black_rev ; gfx_gronk_br_black ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_br_black,	vehicle_is_reversed){ 1 : gfx_gronk_br_black; gfx_gronk_br_black_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_br_black,	vehicle_is_reversed){ 1 : gfx_gronk_br_black_rev; gfx_gronk_br_black; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_br_black,		position_in_vehid_chain){ 0 : gfx_gronk_br_black_rev ; sw_gfx_gronk_rev_check_b_br_black ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_br_black,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_br_black ; sw_gfx_gronk_pos_check_m_br_black ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_br_black,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_br_black ; gfx_gronk_br_black_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_br_black,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_br_black ; sw_gfx_gronk_pos_check_b_br_black ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_br_black,		position_in_vehid_chain){ 0 : gfx_gronk_br_black_rev; sw_gfx_gronk_rev_check_b_br_black;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_br_black,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_br_black; sw_gfx_gronk_pos_check_m_br_black;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_br_black,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_br_black; gfx_gronk_br_black_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_br_black,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_br_black; sw_gfx_gronk_pos_check_b_br_black;}
 
 //BR Green - br_green
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_br_green,	vehicle_is_reversed){ 1 : gfx_gronk_br_green ; gfx_gronk_br_green_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_br_green,	vehicle_is_reversed){ 1 : gfx_gronk_br_green_rev ; gfx_gronk_br_green ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_br_green,	vehicle_is_reversed){ 1 : gfx_gronk_br_green; gfx_gronk_br_green_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_br_green,	vehicle_is_reversed){ 1 : gfx_gronk_br_green_rev; gfx_gronk_br_green; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_br_green,		position_in_vehid_chain){ 0 : gfx_gronk_br_green_rev ; sw_gfx_gronk_rev_check_b_br_green ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_br_green,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_br_green ; sw_gfx_gronk_pos_check_m_br_green ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_br_green,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_br_green ; gfx_gronk_br_green_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_br_green,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_br_green ; sw_gfx_gronk_pos_check_b_br_green ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_br_green,		position_in_vehid_chain){ 0 : gfx_gronk_br_green_rev; sw_gfx_gronk_rev_check_b_br_green;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_br_green,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_br_green; sw_gfx_gronk_pos_check_m_br_green;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_br_green,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_br_green; gfx_gronk_br_green_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_br_green,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_br_green; sw_gfx_gronk_pos_check_b_br_green;}
 
 //EWS - ews
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_ews,	vehicle_is_reversed){ 1 : gfx_gronk_ews ; gfx_gronk_ews_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_ews,	vehicle_is_reversed){ 1 : gfx_gronk_ews_rev ; gfx_gronk_ews ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_ews,	vehicle_is_reversed){ 1 : gfx_gronk_ews; gfx_gronk_ews_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_ews,	vehicle_is_reversed){ 1 : gfx_gronk_ews_rev; gfx_gronk_ews; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_ews,		position_in_vehid_chain){ 0 : gfx_gronk_ews_rev ; sw_gfx_gronk_rev_check_b_ews ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_ews,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_ews ; sw_gfx_gronk_pos_check_m_ews ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_ews,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_ews ; gfx_gronk_ews_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_ews,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_ews ; sw_gfx_gronk_pos_check_b_ews ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_ews,		position_in_vehid_chain){ 0 : gfx_gronk_ews_rev; sw_gfx_gronk_rev_check_b_ews;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_ews,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_ews; sw_gfx_gronk_pos_check_m_ews;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_ews,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_ews; gfx_gronk_ews_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_ews,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_ews; sw_gfx_gronk_pos_check_b_ews;}
 
 //GBRF - gbrf
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_gbrf,	vehicle_is_reversed){ 1 : gfx_gronk_gbrf ; gfx_gronk_gbrf_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_gbrf,	vehicle_is_reversed){ 1 : gfx_gronk_gbrf_rev ; gfx_gronk_gbrf ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_gbrf,	vehicle_is_reversed){ 1 : gfx_gronk_gbrf; gfx_gronk_gbrf_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_gbrf,	vehicle_is_reversed){ 1 : gfx_gronk_gbrf_rev; gfx_gronk_gbrf; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_gbrf,		position_in_vehid_chain){ 0 : gfx_gronk_gbrf_rev ; sw_gfx_gronk_rev_check_b_gbrf ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_gbrf,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_gbrf ; sw_gfx_gronk_pos_check_m_gbrf ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_gbrf,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_gbrf ; gfx_gronk_gbrf_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_gbrf,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_gbrf ; sw_gfx_gronk_pos_check_b_gbrf ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_gbrf,		position_in_vehid_chain){ 0 : gfx_gronk_gbrf_rev; sw_gfx_gronk_rev_check_b_gbrf;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_gbrf,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_gbrf; sw_gfx_gronk_pos_check_m_gbrf;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_gbrf,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_gbrf; gfx_gronk_gbrf_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_gbrf,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_gbrf; sw_gfx_gronk_pos_check_b_gbrf;}
 
 //08645 "St Piran" - st_piran
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_st_piran,	vehicle_is_reversed){ 1 : gfx_gronk_st_piran ; gfx_gronk_st_piran_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_st_piran,	vehicle_is_reversed){ 1 : gfx_gronk_st_piran_rev ; gfx_gronk_st_piran ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_st_piran,	vehicle_is_reversed){ 1 : gfx_gronk_st_piran; gfx_gronk_st_piran_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_st_piran,	vehicle_is_reversed){ 1 : gfx_gronk_st_piran_rev; gfx_gronk_st_piran; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_st_piran,		position_in_vehid_chain){ 0 : gfx_gronk_st_piran_rev ; sw_gfx_gronk_rev_check_b_st_piran ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_st_piran,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_st_piran ; sw_gfx_gronk_pos_check_m_st_piran ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_st_piran,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_st_piran ; gfx_gronk_st_piran_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_st_piran,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_st_piran ; sw_gfx_gronk_pos_check_b_st_piran ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_st_piran,		position_in_vehid_chain){ 0 : gfx_gronk_st_piran_rev; sw_gfx_gronk_rev_check_b_st_piran;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_st_piran,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_st_piran; sw_gfx_gronk_pos_check_m_st_piran;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_st_piran,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_st_piran; gfx_gronk_st_piran_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_st_piran,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_st_piran; sw_gfx_gronk_pos_check_b_st_piran;}
 
 //Freightliner Green - freightliner
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_freightliner,	vehicle_is_reversed){ 1 : gfx_gronk_freightliner ; gfx_gronk_freightliner_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_freightliner,	vehicle_is_reversed){ 1 : gfx_gronk_freightliner_rev ; gfx_gronk_freightliner ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_freightliner,	vehicle_is_reversed){ 1 : gfx_gronk_freightliner; gfx_gronk_freightliner_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_freightliner,	vehicle_is_reversed){ 1 : gfx_gronk_freightliner_rev; gfx_gronk_freightliner; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_freightliner,		position_in_vehid_chain){ 0 : gfx_gronk_freightliner_rev ; sw_gfx_gronk_rev_check_b_freightliner ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_freightliner,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_freightliner ; sw_gfx_gronk_pos_check_m_freightliner ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_freightliner,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_freightliner ; gfx_gronk_freightliner_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_freightliner,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_freightliner ; sw_gfx_gronk_pos_check_b_freightliner ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_freightliner,		position_in_vehid_chain){ 0 : gfx_gronk_freightliner_rev; sw_gfx_gronk_rev_check_b_freightliner;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_freightliner,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_freightliner; sw_gfx_gronk_pos_check_m_freightliner;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_freightliner,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_freightliner; gfx_gronk_freightliner_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_freightliner,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_freightliner; sw_gfx_gronk_pos_check_b_freightliner;}
 
 //Railfreight Sectors - railfreight
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_railfreight,	vehicle_is_reversed){ 1 : gfx_gronk_railfreight ; gfx_gronk_railfreight_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_railfreight,	vehicle_is_reversed){ 1 : gfx_gronk_railfreight_rev ; gfx_gronk_railfreight ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_railfreight,	vehicle_is_reversed){ 1 : gfx_gronk_railfreight; gfx_gronk_railfreight_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_railfreight,	vehicle_is_reversed){ 1 : gfx_gronk_railfreight_rev; gfx_gronk_railfreight; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_railfreight,		position_in_vehid_chain){ 0 : gfx_gronk_railfreight_rev ; sw_gfx_gronk_rev_check_b_railfreight ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_railfreight,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_railfreight ; sw_gfx_gronk_pos_check_m_railfreight ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_railfreight,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_railfreight ; gfx_gronk_railfreight_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_railfreight,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_railfreight ; sw_gfx_gronk_pos_check_b_railfreight ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_railfreight,		position_in_vehid_chain){ 0 : gfx_gronk_railfreight_rev; sw_gfx_gronk_rev_check_b_railfreight;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_railfreight,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_railfreight; sw_gfx_gronk_pos_check_m_railfreight;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_railfreight,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_railfreight; gfx_gronk_railfreight_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_railfreight,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_railfreight; sw_gfx_gronk_pos_check_b_railfreight;}
 
 //First Great Western/DRS/Southern - fgw
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_fgw,	vehicle_is_reversed){ 1 : gfx_gronk_fgw ; gfx_gronk_fgw_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_fgw,	vehicle_is_reversed){ 1 : gfx_gronk_fgw_rev ; gfx_gronk_fgw ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_fgw,	vehicle_is_reversed){ 1 : gfx_gronk_fgw; gfx_gronk_fgw_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_fgw,	vehicle_is_reversed){ 1 : gfx_gronk_fgw_rev; gfx_gronk_fgw; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_fgw,		position_in_vehid_chain){ 0 : gfx_gronk_fgw_rev ; sw_gfx_gronk_rev_check_b_fgw ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_fgw,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_fgw ; sw_gfx_gronk_pos_check_m_fgw ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_fgw,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_fgw ; gfx_gronk_fgw_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_fgw,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_fgw ; sw_gfx_gronk_pos_check_b_fgw ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_fgw,		position_in_vehid_chain){ 0 : gfx_gronk_fgw_rev; sw_gfx_gronk_rev_check_b_fgw;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_fgw,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_fgw; sw_gfx_gronk_pos_check_m_fgw;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_fgw,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_fgw; gfx_gronk_fgw_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_fgw,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_fgw; sw_gfx_gronk_pos_check_b_fgw;}
 
 //Freightliner Orange - fl_orange
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_fl_orange,	vehicle_is_reversed){ 1 : gfx_gronk_fl_orange ; gfx_gronk_fl_orange_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_fl_orange,	vehicle_is_reversed){ 1 : gfx_gronk_fl_orange_rev ; gfx_gronk_fl_orange ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_fl_orange,	vehicle_is_reversed){ 1 : gfx_gronk_fl_orange; gfx_gronk_fl_orange_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_fl_orange,	vehicle_is_reversed){ 1 : gfx_gronk_fl_orange_rev; gfx_gronk_fl_orange; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_fl_orange,		position_in_vehid_chain){ 0 : gfx_gronk_fl_orange_rev ; sw_gfx_gronk_rev_check_b_fl_orange ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_fl_orange,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_fl_orange ; sw_gfx_gronk_pos_check_m_fl_orange ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_fl_orange,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_fl_orange ; gfx_gronk_fl_orange_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_fl_orange,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_fl_orange ; sw_gfx_gronk_pos_check_b_fl_orange ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_fl_orange,		position_in_vehid_chain){ 0 : gfx_gronk_fl_orange_rev; sw_gfx_gronk_rev_check_b_fl_orange;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_fl_orange,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_fl_orange; sw_gfx_gronk_pos_check_m_fl_orange;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_fl_orange,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_fl_orange; gfx_gronk_fl_orange_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_fl_orange,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_fl_orange; sw_gfx_gronk_pos_check_b_fl_orange;}
 
 //Intercity - intercity
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_intercity,	vehicle_is_reversed){ 1 : gfx_gronk_intercity ; gfx_gronk_intercity_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_intercity,	vehicle_is_reversed){ 1 : gfx_gronk_intercity_rev ; gfx_gronk_intercity ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_intercity,	vehicle_is_reversed){ 1 : gfx_gronk_intercity; gfx_gronk_intercity_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_intercity,	vehicle_is_reversed){ 1 : gfx_gronk_intercity_rev; gfx_gronk_intercity; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_intercity,		position_in_vehid_chain){ 0 : gfx_gronk_intercity_rev ; sw_gfx_gronk_rev_check_b_intercity ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_intercity,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_intercity ; sw_gfx_gronk_pos_check_m_intercity ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_intercity,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_intercity ; gfx_gronk_intercity_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_intercity,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_intercity ; sw_gfx_gronk_pos_check_b_intercity ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_intercity,		position_in_vehid_chain){ 0 : gfx_gronk_intercity_rev; sw_gfx_gronk_rev_check_b_intercity;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_intercity,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_intercity; sw_gfx_gronk_pos_check_m_intercity;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_intercity,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_intercity; gfx_gronk_intercity_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_intercity,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_intercity; sw_gfx_gronk_pos_check_b_intercity;}
 
 //Regional Railways - regional_rail
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_regional_rail,	vehicle_is_reversed){ 1 : gfx_gronk_regional_rail ; gfx_gronk_regional_rail_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_regional_rail,	vehicle_is_reversed){ 1 : gfx_gronk_regional_rail_rev ; gfx_gronk_regional_rail ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_regional_rail,	vehicle_is_reversed){ 1 : gfx_gronk_regional_rail; gfx_gronk_regional_rail_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_regional_rail,	vehicle_is_reversed){ 1 : gfx_gronk_regional_rail_rev; gfx_gronk_regional_rail; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_regional_rail,		position_in_vehid_chain){ 0 : gfx_gronk_regional_rail_rev ; sw_gfx_gronk_rev_check_b_regional_rail ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_regional_rail,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_regional_rail ; sw_gfx_gronk_pos_check_m_regional_rail ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_regional_rail,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_regional_rail ; gfx_gronk_regional_rail_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_regional_rail,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_regional_rail ; sw_gfx_gronk_pos_check_b_regional_rail ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_regional_rail,		position_in_vehid_chain){ 0 : gfx_gronk_regional_rail_rev; sw_gfx_gronk_rev_check_b_regional_rail;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_regional_rail,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_regional_rail; sw_gfx_gronk_pos_check_m_regional_rail;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_regional_rail,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_regional_rail; gfx_gronk_regional_rail_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_regional_rail,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_regional_rail; sw_gfx_gronk_pos_check_b_regional_rail;}
 
 //Network South East - nse
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_nse,	vehicle_is_reversed){ 1 : gfx_gronk_nse ; gfx_gronk_nse_rev ; }
-switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_nse,	vehicle_is_reversed){ 1 : gfx_gronk_nse_rev ; gfx_gronk_nse ; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_a_nse,	vehicle_is_reversed){ 1 : gfx_gronk_nse; gfx_gronk_nse_rev; }
+switch(FEAT_TRAINS, PARENT, sw_gfx_gronk_rev_check_b_nse,	vehicle_is_reversed){ 1 : gfx_gronk_nse_rev; gfx_gronk_nse; }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_nse,		position_in_vehid_chain){ 0 : gfx_gronk_nse_rev ; sw_gfx_gronk_rev_check_b_nse ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_nse,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_nse ; sw_gfx_gronk_pos_check_m_nse ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_nse,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_nse ; gfx_gronk_nse_rev ;}
-switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_nse,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_nse ; sw_gfx_gronk_pos_check_b_nse ;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_m_nse,		position_in_vehid_chain){ 0 : gfx_gronk_nse_rev; sw_gfx_gronk_rev_check_b_nse;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_b_nse,		position_in_vehid_chain_from_end){ 0 : gfx_gronk_nse; sw_gfx_gronk_pos_check_m_nse;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_f_nse,		num_vehs_in_vehid_chain ){ 1 : sw_gfx_gronk_rev_check_a_nse; gfx_gronk_nse_rev;}
+switch(FEAT_TRAINS, SELF, sw_gfx_gronk_pos_check_a_nse,		position_in_consist){ 0 : sw_gfx_gronk_pos_check_f_nse; sw_gfx_gronk_pos_check_b_nse;}
 
 
 
 
 //Automatic liveries
 
-switch(FEAT_TRAINS, SELF, sw_gronk_auto, current_year){
-	0..1960				: sw_gfx_gronk_pos_check_a_br_black ;
-	1961..1967			: sw_gfx_gronk_pos_check_a_br_green ;
-	ERA_SECTORISATION	: sw_gfx_gronk_pos_check_a_railfreight ;
-	ERA_PRIVATE_ONE		: sw_gfx_gronk_pos_check_a_ews ;
-	ERA_PRIVATE_TWO		: sw_gfx_gronk_pos_check_a_freightliner ;
-	sw_gfx_gronk_pos_check_a_br_blue ;
+switch(FEAT_TRAINS, SELF, sw_gronk_auto, date_of_last_service){
+	DATE_BIGFOUR:			sw_gfx_gronk_pos_check_a_br_black;
+	DATE_BRCREST:			sw_gfx_gronk_pos_check_a_br_black;
+	DATE_SECTORISATION:		sw_gfx_gronk_pos_check_a_railfreight;
+	DATE_PRIVATE_ONE:		sw_gfx_gronk_pos_check_a_ews;
+	DATE_PRIVATE_TWO: 		sw_gfx_gronk_pos_check_a_freightliner;
+	sw_gfx_gronk_pos_check_a_br_blue;
 }
 
 
 //Manual liveries
 
 switch(FEAT_TRAINS, SELF, sw_gronk_manual, cargo_subtype){
-	0		: sw_gfx_gronk_pos_check_a_br_black ;
-	1		: sw_gfx_gronk_pos_check_a_br_green ;
-	2		: sw_gfx_gronk_pos_check_a_dark ;
-	4		: sw_gfx_gronk_pos_check_a_railfreight ;
-	5		: sw_gfx_gronk_pos_check_a_nse ;
-	6		: sw_gfx_gronk_pos_check_a_intercity ;
-	8		: sw_gfx_gronk_pos_check_a_regional_rail ;
-	9		: sw_gfx_gronk_pos_check_a_ews ;
-	12		: sw_gfx_gronk_pos_check_a_gbrf ;
-	13		: sw_gfx_gronk_pos_check_a_st_piran ;
-	14		: sw_gfx_gronk_pos_check_a_fgw ;
-	15		: sw_gfx_gronk_pos_check_a_freightliner ;
-	16		: sw_gfx_gronk_pos_check_a_fl_orange ;
-	17..18	: sw_gfx_gronk_pos_check_a_fgw ;
-	19		: sw_gfx_gronk_pos_check_a_black ;
-	sw_gfx_gronk_pos_check_a_br_blue ;
+	0		: sw_gfx_gronk_pos_check_a_br_black;
+	1		: sw_gfx_gronk_pos_check_a_br_green;
+	2		: sw_gfx_gronk_pos_check_a_dark;
+	4		: sw_gfx_gronk_pos_check_a_railfreight;
+	5		: sw_gfx_gronk_pos_check_a_nse;
+	6		: sw_gfx_gronk_pos_check_a_intercity;
+	8		: sw_gfx_gronk_pos_check_a_regional_rail;
+	9		: sw_gfx_gronk_pos_check_a_ews;
+	12		: sw_gfx_gronk_pos_check_a_gbrf;
+	13		: sw_gfx_gronk_pos_check_a_st_piran;
+	14		: sw_gfx_gronk_pos_check_a_fgw;
+	15		: sw_gfx_gronk_pos_check_a_freightliner;
+	16		: sw_gfx_gronk_pos_check_a_fl_orange;
+	17..18	: sw_gfx_gronk_pos_check_a_fgw;
+	19		: sw_gfx_gronk_pos_check_a_black;
+	sw_gfx_gronk_pos_check_a_br_blue;
 }
 
 
 //Manual check
 
 switch(FEAT_TRAINS, SELF, sw_gronk_manual_check, livery_choice){
-	1 : sw_gronk_manual ;
-	sw_gronk_auto ;
+	1 : sw_gronk_manual;
+	sw_gronk_auto;
 }
 
 
 //Sprite stack
 
 switch(FEAT_TRAINS, SELF, sw_gronk_wheels, motion_counter % 2){
-	1 : gfx_gronk_wheels_1 ;
-	gfx_gronk_wheels_2 ;
+	1 : gfx_gronk_wheels_1;
+	gfx_gronk_wheels_2;
 }
 
 switch(FEAT_TRAINS, SELF, sw_gronk_spritestack, SPR_STACK){
-	0 : sw_gronk_manual_check ;
-	1 : sw_gronk_wheels ;
+	0 : sw_gronk_manual_check;
+	1 : sw_gronk_wheels;
 }
 
 
 
 switch(FEAT_TRAINS, SELF, sw_gronk_purchase, current_year){
-	0..1960				: gfx_gronk_purchase_br_black ;
-	1961..1967			: gfx_gronk_purchase_br_green ;
-	ERA_SECTORISATION	: gfx_gronk_purchase_railfreight ;
-	ERA_PRIVATE_ONE		: gfx_gronk_purchase_ews ;
-	ERA_PRIVATE_TWO		: gfx_gronk_purchase_freightliner ;
-	gfx_gronk_purchase_br_blue ;
+	0..1960				: gfx_gronk_purchase_br_black;
+	1961..1967			: gfx_gronk_purchase_br_green;
+	ERA_SECTORISATION	: gfx_gronk_purchase_railfreight;
+	ERA_PRIVATE_ONE		: gfx_gronk_purchase_ews;
+	ERA_PRIVATE_TWO		: gfx_gronk_purchase_freightliner;
+	gfx_gronk_purchase_br_blue;
 }
 
 /*Purchase switches
 
 switch(FEAT_TRAINS, SELF, sw_gronk_colours_purchase, colour_scheme_1){
-	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_RED) ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_RED);
+	palette_2cc(company_colour1, company_colour2);
 }
 */
 //Refit Text
 
 switch(FEAT_TRAINS, SELF, sw_gronk_refit_text, cargo_subtype){
-	0	: string(STR_LIVERY_BR_BLACK) ;
-	1	: string(STR_LIVERY_BRGREEN) ;
-	2	: string(STR_LIVERY_BRGREEN_YELLOW) ;
-	3	: string(STR_LIVERY_BRBLUE) ;
-	4	: string(STR_LIVERY_RAILFREIGHT) ;
-	5	: string(STR_LIVERY_NSE) ;
-	6	: string(STR_LIVERY_INTERCITY) ;
-	7	: string(STR_COLOUR_GREEN) ;
-	8	: string(STR_LIVERY_REG_RAILWAYS) ;
-	9	: string(STR_LIVERY_EWS) ;
-	10	: string(STR_LIVERY_DBSCHENKER) ;
-	11	: string(STR_LIVERY_NETWORK_RAIL) ;
-	12	: string(STR_LIVERY_GBRF) ;
-	13	: string(STR_LIVERY_ST_PIRAN) ;
-	14	: string(STR_LIVERY_DRS) ;
-	15	: string(STR_LIVERY_FREIGHTLINER) ;
-	16	: string(STR_LIVERY_FREIGHTLINER_ORANGE) ;
-	17	: string(STR_LIVERY_FIRST_FGW) ;
-	18	: string(STR_LIVERY_SOUTHERN) ;
-	19	: string(STR_COLOUR_BLACK) ;
-	20	: string(STR_LIVER_COMP_COLOURS) ;
-	CB_RESULT_NO_TEXT ;
+	0	: string(STR_LIVERY_BR_BLACK);
+	1	: string(STR_LIVERY_BRGREEN);
+	2	: string(STR_LIVERY_BRGREEN_YELLOW);
+	3	: string(STR_LIVERY_BRBLUE);
+	4	: string(STR_LIVERY_RAILFREIGHT);
+	5	: string(STR_LIVERY_NSE);
+	6	: string(STR_LIVERY_INTERCITY);
+	7	: string(STR_COLOUR_GREEN);
+	8	: string(STR_LIVERY_REG_RAILWAYS);
+	9	: string(STR_LIVERY_EWS);
+	10	: string(STR_LIVERY_DBSCHENKER);
+	11	: string(STR_LIVERY_NETWORK_RAIL);
+	12	: string(STR_LIVERY_GBRF);
+	13	: string(STR_LIVERY_ST_PIRAN);
+	14	: string(STR_LIVERY_DRS);
+	15	: string(STR_LIVERY_FREIGHTLINER);
+	16	: string(STR_LIVERY_FREIGHTLINER_ORANGE);
+	17	: string(STR_LIVERY_FIRST_FGW);
+	18	: string(STR_LIVERY_SOUTHERN);
+	19	: string(STR_COLOUR_BLACK);
+	20	: string(STR_LIVER_COMP_COLOURS);
+	CB_RESULT_NO_TEXT;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_gronk_refit_text_check, livery_choice){
-	1 : sw_gronk_refit_text ;
-	CB_RESULT_NO_TEXT ;
+	1 : sw_gronk_refit_text;
+	CB_RESULT_NO_TEXT;
 }
 
 
 //Colours
 
-switch(FEAT_TRAINS, SELF, sw_gronk_colours_auto, current_year){
-	0..1960				: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	1961..1967			: palette_2cc(COLOUR_DARK_GREEN, COLOUR_RED) ;
-	ERA_SECTORISATION	: palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
-	ERA_PRIVATE_ONE		: palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
-	ERA_PRIVATE_TWO		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+switch(FEAT_TRAINS, SELF, sw_gronk_colours_auto, date_of_last_service){
+	DATE_BIGFOUR:			palette_2cc(COLOUR_DARK_GREEN, COLOUR_RED);
+	DATE_BRCREST:			palette_2cc(COLOUR_GREY, COLOUR_RED);
+	DATE_SECTORISATION:		palette_2cc(COLOUR_GREY, COLOUR_YELLOW);
+	DATE_PRIVATE_ONE:		palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	DATE_PRIVATE_TWO: 		palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);
 }
 
 switch(FEAT_TRAINS, SELF, sw_gronk_purchase_colours_2cc_check, livery_choice){
-	1 : sw_gronk_colours_auto ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_gronk_colours_auto;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 switch(FEAT_TRAINS, SELF, sw_gronk_colours_manual, cargo_subtype){
-	0	: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	1..2: palette_2cc(COLOUR_DARK_GREEN, COLOUR_RED) ;
-	4	: palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ;
-	5	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	6	: palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
-	7	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	8	: palette_2cc(COLOUR_BLUE, COLOUR_YELLOW) ;
-	9..10: palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;
-	11	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;
-	12	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
-	13	: palette_2cc(COLOUR_GREY, COLOUR_YELLOW) ; //St Piran
-	15	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	16	: palette_2cc(COLOUR_ORANGE, COLOUR_YELLOW) ;
-	17	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	18	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
-	19	: palette_2cc(COLOUR_GREY, COLOUR_RED) ;
-	20	: palette_2cc(company_colour1, company_colour2) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
+	0	: palette_2cc(COLOUR_GREY, COLOUR_RED);
+	1..2: palette_2cc(COLOUR_DARK_GREEN, COLOUR_RED);
+	4	: palette_2cc(COLOUR_GREY, COLOUR_YELLOW);
+	5	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	6	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	7	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
+	8	: palette_2cc(COLOUR_BLUE, COLOUR_YELLOW);
+	9..10: palette_2cc(COLOUR_RED, COLOUR_YELLOW);
+	11	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW);
+	12	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE);
+	13	: palette_2cc(COLOUR_GREY, COLOUR_YELLOW); //St Piran
+	15	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
+	16	: palette_2cc(COLOUR_ORANGE, COLOUR_YELLOW);
+	17	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	18	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
+	19	: palette_2cc(COLOUR_GREY, COLOUR_RED);
+	20	: palette_2cc(company_colour1, company_colour2);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_gronk_colours_manual_check, livery_choice){
-	1 : sw_gronk_colours_manual ;
-	sw_gronk_colours_auto ;
+	1 : sw_gronk_colours_manual;
+	sw_gronk_colours_auto;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_gronk_colours_2cc_check, colour_scheme_1){
-	1 : sw_gronk_colours_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_gronk_colours_manual_check;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 //Item
@@ -369,45 +369,45 @@ switch(FEAT_TRAINS, SELF, sw_gronk_colours_2cc_check, colour_scheme_1){
 
 item(FEAT_TRAINS, item_gronk, 8){
 	property{
-		name                           : string(STR_NAME_GRONK) ;  
-		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1945,1,1) ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [MAIL, GOOD] ;
-		cargo_capacity                 : 1 ;
-		model_life                     : VEHICLE_NEVER_EXPIRES ;
-		vehicle_life                   : 55 ;
-		reliability_decay              : 8 ;
-		cost_factor                    : 20 ;
-		running_cost_base              : RUNNING_COST_DIESEL ;
-		running_cost_factor            : 40 ;
-		speed                          : 25 mph ;
-		track_type                     : RAIL ;
-		power                          : 261 kW ;
-		weight                         : 50 ton ;
-		engine_class                   : ENGINE_CLASS_DIESEL ;
-		tractive_effort_coefficient    : 0.32 ;
-		air_drag_coefficient           : 0.2 ;
-		length                         : 4 ;
-		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
-		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
-		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
-		dual_headed                    : 0 ;
+		name                           : string(STR_NAME_GRONK);  
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1945,1,1);
+		refit_cost                     : 0;
+		refittable_cargo_classes       : 0;
+		cargo_allow_refit              : [MAIL, GOOD];
+		cargo_capacity                 : 1;
+		model_life                     : VEHICLE_NEVER_EXPIRES;
+		vehicle_life                   : 55;
+		reliability_decay              : 8;
+		cost_factor                    : 20;
+		running_cost_base              : RUNNING_COST_DIESEL;
+		running_cost_factor            : 40;
+		speed                          : 25 mph;
+		track_type                     : RAIL;
+		power                          : 261 kW;
+		weight                         : 50 ton;
+		engine_class                   : ENGINE_CLASS_DIESEL;
+		tractive_effort_coefficient    : 0.32;
+		air_drag_coefficient           : 0.2;
+		length                         : 4;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
+		dual_headed                    : 0;
 	}
 	graphics{
-		default                        : sw_gronk_spritestack ;
-		colour_mapping                 : sw_gronk_colours_2cc_check ;
-		purchase_colour_mapping        : sw_gronk_purchase_colours_2cc_check ;
-		purchase                       : sw_gronk_purchase ;
-		sound_effect                   : sw_sfx_extension_08_check ;
-		create_effect                  : vfx_diesel_default ;
-		cargo_subtype_text             : sw_gronk_refit_text_check ;
-		purchase_cargo_capacity        : 0 ;
-		cargo_capacity                 : return 0 ;
+		default                        : sw_gronk_spritestack;
+		colour_mapping                 : sw_gronk_colours_2cc_check;
+		purchase_colour_mapping        : sw_gronk_purchase_colours_2cc_check;
+		purchase                       : sw_gronk_purchase;
+		sound_effect                   : sw_sfx_extension_08_check;
+		create_effect                  : vfx_diesel_default;
+		cargo_subtype_text             : sw_gronk_refit_text_check;
+		purchase_cargo_capacity        : 0;
+		cargo_capacity                 : return 0;
 		can_attach_wagon               : sw_all_but_MU90;
-		running_cost_factor            : return(current_speed == 0 ? 10 : 40) ;
-		purchase_running_cost_factor   : 40 ;
+		running_cost_factor            : return(current_speed == 0 ? 10 : 40);
+		purchase_running_cost_factor   : 40;
 	}
 }
 
@@ -415,7 +415,7 @@ item(FEAT_TRAINS, item_gronk, 8){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_gronk, 8){
 	property{
-		name                           : string(STR_NAME_GRONK_ALT) ;
+		name                           : string(STR_NAME_GRONK_ALT);
 	}
 }
 }

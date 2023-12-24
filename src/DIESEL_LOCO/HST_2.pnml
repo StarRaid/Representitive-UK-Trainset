@@ -83,7 +83,7 @@ spriteset (gfx_class_43_taillight_refurb	, "gfx/DIESEL_LOCO/class_43_2.png"	){	t
 
 switch(FEAT_TRAINS, SELF, sw_class_43_gfx_nostaliga_gwr_f, 				(count_veh_id(432)+1)%2){1: gfx_class_43_brblue; 				gfx_class_43_icswallow;}
 switch(FEAT_TRAINS, SELF, sw_class_43_gfx_nostaliga_gwr_r, 				(count_veh_id(432)+1)%2){1: gfx_class_43_icswallow; 			gfx_class_43_brblue;}
-switch(FEAT_TRAINS, PARENT, sw_class_43_gfx_nostaliga_gwr_backcheck,	vehicle_is_reversed)	{0: sw_class_43_gfx_nostaliga_gwr_f;	sw_class_43_gfx_nostaliga_gwr_r ;}
+switch(FEAT_TRAINS, PARENT, sw_class_43_gfx_nostaliga_gwr_backcheck,	vehicle_is_reversed)	{0: sw_class_43_gfx_nostaliga_gwr_f;	sw_class_43_gfx_nostaliga_gwr_r;}
 switch(FEAT_TRAINS, SELF, sw_class_43_gfx_nostaliga_xc_f,				(count_veh_id(432)+1)%2){1: gfx_class_43_ic125;					gfx_class_43_xc;}
 switch(FEAT_TRAINS, SELF, sw_class_43_gfx_nostaliga_xc_r,				(count_veh_id(432)+1)%2){1: gfx_class_43_xc;					gfx_class_43_ic125;}
 switch(FEAT_TRAINS, PARENT, sw_class_43_gfx_nostaliga_xc_backcheck,		vehicle_is_reversed)	{0: sw_class_43_gfx_nostaliga_xc_f;		sw_class_43_gfx_nostaliga_xc_r;}
@@ -92,88 +92,90 @@ switch(FEAT_TRAINS, SELF, sw_class_43_gfx_nostaliga_lner_r,				(count_veh_id(432
 switch(FEAT_TRAINS, PARENT, sw_class_43_gfx_nostaliga_lner_backcheck,	vehicle_is_reversed)	{0: sw_class_43_gfx_nostaliga_lner_f;	sw_class_43_gfx_nostaliga_lner_r;}
 
 random_switch(FEAT_TRAINS, SELF, gfx_class_43_random){
-	1	: gfx_class_43_brblue ;					//00 BR Blue
-	1	: gfx_class_43_ic125 ;					//01 BR IC125
-	1	: gfx_class_43_icswallow ;					//02 IC Swallow
-	1	: gfx_class_43_icswallow_yellowcab ;					//03 IC Swallow (Full yellow front)
-	1	: gfx_class_43_nse ;					//04 Network SouthEast (Fictional)
-	1	: gfx_class_43_virgin ;					//05 Virgin Trains
-	1	: gfx_class_43_hornby ;					//06 Hornby
-	1	: gfx_class_43_Cotswold ;					//07 Cotswold Rail
-	1	: gfx_class_43_xc ;					//08 Cross Country
-	1	: gfx_class_43_gner ;					//10 GNER
-	1	: gfx_class_43_nxec ;					//11 NXEC
-	1	: gfx_class_43_east_coast ;					//12 East Coast
-	1	: gfx_class_43_vtec ;					//13 Virgin Trains East Coast
-	1	: gfx_class_43_lner ;					//14 LNER
-	1	: gfx_class_43_first_merlin ;					//16 Great Western Holdings
-	1	: gfx_class_43_first_fag ;					//17 FGW Fag
-	1	: gfx_class_43_first_barbie ;					//18 FGW Barbie
-	1	: gfx_class_43_first_dynamiclines ;					//19 FGW Dynamic Lines
-	1	: gfx_class_43_first_blue ;					//20 FGW Blue
-	1	: gfx_class_43_gwr ;					//21 GWR
-	1	: gfx_class_43_mml_teal ;					//23 MML Teal
-	1	: gfx_class_43_mml_rio ;					//24 MML Rio
-	1	: gfx_class_43_emt ;					//25 East Midlands Trains
-	1	: gfx_class_43_emr ;					//26 East Midlands Railway
-	1	: gfx_class_43_scotrail ;					//27 ScotRail
-	1	: gfx_class_43_generic ;					//28 Network Rail
-	1	: gfx_class_43_pullman ;					//29 Blue Pullman
-	1	: gfx_class_43_pullman ;					//30 Pullman (Fictional)
+	1	: gfx_class_43_brblue;					//00 BR Blue
+	1	: gfx_class_43_ic125;					//01 BR IC125
+	1	: gfx_class_43_icswallow;					//02 IC Swallow
+	1	: gfx_class_43_icswallow_yellowcab;					//03 IC Swallow (Full yellow front)
+	1	: gfx_class_43_nse;					//04 Network SouthEast (Fictional)
+	1	: gfx_class_43_virgin;					//05 Virgin Trains
+	1	: gfx_class_43_hornby;					//06 Hornby
+	1	: gfx_class_43_Cotswold;					//07 Cotswold Rail
+	1	: gfx_class_43_xc;					//08 Cross Country
+	1	: gfx_class_43_gner;					//10 GNER
+	1	: gfx_class_43_nxec;					//11 NXEC
+	1	: gfx_class_43_east_coast;					//12 East Coast
+	1	: gfx_class_43_vtec;					//13 Virgin Trains East Coast
+	1	: gfx_class_43_lner;					//14 LNER
+	1	: gfx_class_43_first_merlin;					//16 Great Western Holdings
+	1	: gfx_class_43_first_fag;					//17 FGW Fag
+	1	: gfx_class_43_first_barbie;					//18 FGW Barbie
+	1	: gfx_class_43_first_dynamiclines;					//19 FGW Dynamic Lines
+	1	: gfx_class_43_first_blue;					//20 FGW Blue
+	1	: gfx_class_43_gwr;					//21 GWR
+	1	: gfx_class_43_mml_teal;					//23 MML Teal
+	1	: gfx_class_43_mml_rio;					//24 MML Rio
+	1	: gfx_class_43_emt;					//25 East Midlands Trains
+	1	: gfx_class_43_emr;					//26 East Midlands Railway
+	1	: gfx_class_43_scotrail;					//27 ScotRail
+	1	: gfx_class_43_generic;					//28 Network Rail
+	1	: gfx_class_43_pullman;					//29 Blue Pullman
+	1	: gfx_class_43_pullman;					//30 Pullman (Fictional)
 }
 
 //Automatic liveries
 
-switch(FEAT_TRAINS, SELF, sw_class_43_gfx_auto, current_year){
-	ERA_BRTOPS	: gfx_class_43_brblue ;
-	1983..1986	: gfx_class_43_ic125 ;
-	1987..1995	: gfx_class_43_icswallow ;
-	2007..4096	: gfx_class_43_xc ;
-	gfx_class_43_virgin ;
+switch(FEAT_TRAINS, SELF, sw_class_43_gfx_auto, date_of_last_service){
+	DATE_BRLARGELOGO:		gfx_class_43_ic125;
+	DATE_BRSECTORS:			gfx_class_43_icswallow;
+	DATE_TRANSITION:		gfx_class_43_first_merlin;
+	DATE_PRIVATE_ONE:		gfx_class_43_first_fag;
+	DATE_PRIVATE_TWO:		gfx_class_43_first_blue;
+	DATE_PRIVATE_THREE:		gfx_class_43_gwr;
+	gfx_class_43_brblue;
 }
 
 
 //Manual liveries
 
 switch(FEAT_TRAINS, SELF, sw_class_43_gfx_manual, cargo_subtype){
-	0	: gfx_class_43_brblue ;							//00 BR Blue
-	1	: gfx_class_43_ic125 ;							//01 BR IC125
-	2	: gfx_class_43_icswallow ;						//02 IC Swallow
-	3	: gfx_class_43_icswallow_yellowcab ;			//03 IC Swallow (Full yellow front)
-	4	: gfx_class_43_nse ;							//04 Network SouthEast (Fictional)
-	6	: gfx_class_43_hornby ;							//06 Hornby
-	7	: gfx_class_43_Cotswold ;						//07 Cotswold Rail
-	8	: gfx_class_43_xc ;								//08 Cross Country
-	9	: sw_class_43_gfx_nostaliga_xc_backcheck ;		//09 Cross Country Heritage Livery
-	10	: gfx_class_43_gner ;							//10 GNER
-	11	: gfx_class_43_nxec ;							//11 NXEC
-	12	: gfx_class_43_east_coast ;						//12 East Coast
-	13	: gfx_class_43_vtec ;							//13 Virgin Trains East Coast
-	14	: gfx_class_43_lner ;							//14 LNER
-	15	: sw_class_43_gfx_nostaliga_lner_backcheck ;	//15 LNER Heritage Livery
-	16	: gfx_class_43_first_merlin ;					//16 Great Western Holdings
-	17	: gfx_class_43_first_fag ;						//17 FGW Fag
-	18	: gfx_class_43_first_barbie ;					//18 FGW Barbie
-	19	: gfx_class_43_first_dynamiclines ;				//19 FGW Dynamic Lines
-	20	: gfx_class_43_first_blue ;						//20 FGW Blue
-	21	: gfx_class_43_gwr ;							//21 GWR
-	22	: sw_class_43_gfx_nostaliga_gwr_backcheck ;		//22 GWR Heritage Duo
+	0	: gfx_class_43_brblue;							//00 BR Blue
+	1	: gfx_class_43_ic125;							//01 BR IC125
+	2	: gfx_class_43_icswallow;						//02 IC Swallow
+	3	: gfx_class_43_icswallow_yellowcab;			//03 IC Swallow (Full yellow front)
+	4	: gfx_class_43_nse;							//04 Network SouthEast (Fictional)
+	6	: gfx_class_43_hornby;							//06 Hornby
+	7	: gfx_class_43_Cotswold;						//07 Cotswold Rail
+	8	: gfx_class_43_xc;								//08 Cross Country
+	9	: sw_class_43_gfx_nostaliga_xc_backcheck;		//09 Cross Country Heritage Livery
+	10	: gfx_class_43_gner;							//10 GNER
+	11	: gfx_class_43_nxec;							//11 NXEC
+	12	: gfx_class_43_east_coast;						//12 East Coast
+	13	: gfx_class_43_vtec;							//13 Virgin Trains East Coast
+	14	: gfx_class_43_lner;							//14 LNER
+	15	: sw_class_43_gfx_nostaliga_lner_backcheck;	//15 LNER Heritage Livery
+	16	: gfx_class_43_first_merlin;					//16 Great Western Holdings
+	17	: gfx_class_43_first_fag;						//17 FGW Fag
+	18	: gfx_class_43_first_barbie;					//18 FGW Barbie
+	19	: gfx_class_43_first_dynamiclines;				//19 FGW Dynamic Lines
+	20	: gfx_class_43_first_blue;						//20 FGW Blue
+	21	: gfx_class_43_gwr;							//21 GWR
+	22	: sw_class_43_gfx_nostaliga_gwr_backcheck;		//22 GWR Heritage Duo
 	23	: gfx_class_43_mml_teal	;						//23 MML Teal
-	24	: gfx_class_43_mml_rio ;						//24 MML Rio
-	25	: gfx_class_43_emt ;							//25 East Midlands Trains
-	26	: gfx_class_43_emr ;							//26 East Midlands Railway
-	27	: gfx_class_43_scotrail ;						//27 ScotRail
-	28	: gfx_class_43_generic ;						//28 Network Rail
-	29..30: gfx_class_43_pullman ;						//29 Blue Pullman 30 Pullman (Fictional)
-	31	: gfx_class_43_random ;							//31 Random Duo
-	gfx_class_43_virgin ;								//05 Virgin Trains
+	24	: gfx_class_43_mml_rio;						//24 MML Rio
+	25	: gfx_class_43_emt;							//25 East Midlands Trains
+	26	: gfx_class_43_emr;							//26 East Midlands Railway
+	27	: gfx_class_43_scotrail;						//27 ScotRail
+	28	: gfx_class_43_generic;						//28 Network Rail
+	29..30: gfx_class_43_pullman;						//29 Blue Pullman 30 Pullman (Fictional)
+	31	: gfx_class_43_random;							//31 Random Duo
+	gfx_class_43_virgin;								//05 Virgin Trains
 }
 
 //Manual check
 
 switch(FEAT_TRAINS, SELF, sw_class_43_gfx_manual_check, livery_choice){
-	1	: sw_class_43_gfx_manual ;
-	sw_class_43_gfx_auto ;
+	1	: sw_class_43_gfx_manual;
+	sw_class_43_gfx_auto;
 }
 
 
@@ -181,59 +183,61 @@ switch(FEAT_TRAINS, SELF, sw_class_43_gfx_manual_check, livery_choice){
 
 random_switch(FEAT_TRAINS, SELF, sw_gfx_class_43_taillight_decider_random){
 	dependent : gfx_class_43_random;
-	1	: gfx_class_43_taillight ;				//00 BR Blue
-	1	: gfx_class_43_taillight ;				//01 BR IC125
-	1	: gfx_class_43_taillight ;				//02 IC Swallow
-	1	: gfx_class_43_taillight ;				//03 IC Swallow (Full yellow front)
-	1	: gfx_class_43_taillight ;				//04 Network SouthEast (Fictional)
-	1	: gfx_class_43_taillight ;				//05 Virgin Trains
-	1	: gfx_class_43_taillight ;				//06 Hornby
-	1	: gfx_class_43_taillight ;				//07 Cotswold Rail
-	1	: gfx_class_43_taillight_refurb ;		//08 Cross Country
-	1	: gfx_class_43_taillight ;				//10 GNER
-	1	: gfx_class_43_taillight_refurb ;		//11 NXEC
-	1	: gfx_class_43_taillight_refurb ;		//12 East Coast
-	1	: gfx_class_43_taillight_refurb ;		//13 Virgin Trains East Coast
-	1	: gfx_class_43_taillight_refurb ;		//14 LNER
-	1	: gfx_class_43_taillight ;				//16 Great Western Holdings
-	1	: gfx_class_43_taillight ;				//17 FGW Fag
-	1	: gfx_class_43_taillight ;				//18 FGW Barbie
-	1	: gfx_class_43_taillight_refurb ;		//19 FGW Dynamic Lines
-	1	: gfx_class_43_taillight_refurb ;		//20 FGW Blue
-	1	: gfx_class_43_taillight_refurb ;		//21 GWR
-	1	: gfx_class_43_taillight ;				//23 MML Teal
-	1	: gfx_class_43_taillight ;				//24 MML Rio
-	1	: gfx_class_43_taillight ;				//25 East Midlands Trains
-	1	: gfx_class_43_taillight_refurb ;		//26 East Midlands Railway
-	1	: gfx_class_43_taillight_refurb ;		//27 ScotRail
-	1	: gfx_class_43_taillight ;				//28 Network Rail
-	1	: gfx_class_43_taillight_refurb ;		//29 Blue Pullman
-	1	: gfx_class_43_taillight_refurb ;		//30 Pullman (Fictional)
+	1	: gfx_class_43_taillight;				//00 BR Blue
+	1	: gfx_class_43_taillight;				//01 BR IC125
+	1	: gfx_class_43_taillight;				//02 IC Swallow
+	1	: gfx_class_43_taillight;				//03 IC Swallow (Full yellow front)
+	1	: gfx_class_43_taillight;				//04 Network SouthEast (Fictional)
+	1	: gfx_class_43_taillight;				//05 Virgin Trains
+	1	: gfx_class_43_taillight;				//06 Hornby
+	1	: gfx_class_43_taillight;				//07 Cotswold Rail
+	1	: gfx_class_43_taillight_refurb;		//08 Cross Country
+	1	: gfx_class_43_taillight;				//10 GNER
+	1	: gfx_class_43_taillight_refurb;		//11 NXEC
+	1	: gfx_class_43_taillight_refurb;		//12 East Coast
+	1	: gfx_class_43_taillight_refurb;		//13 Virgin Trains East Coast
+	1	: gfx_class_43_taillight_refurb;		//14 LNER
+	1	: gfx_class_43_taillight;				//16 Great Western Holdings
+	1	: gfx_class_43_taillight;				//17 FGW Fag
+	1	: gfx_class_43_taillight;				//18 FGW Barbie
+	1	: gfx_class_43_taillight_refurb;		//19 FGW Dynamic Lines
+	1	: gfx_class_43_taillight_refurb;		//20 FGW Blue
+	1	: gfx_class_43_taillight_refurb;		//21 GWR
+	1	: gfx_class_43_taillight;				//23 MML Teal
+	1	: gfx_class_43_taillight;				//24 MML Rio
+	1	: gfx_class_43_taillight;				//25 East Midlands Trains
+	1	: gfx_class_43_taillight_refurb;		//26 East Midlands Railway
+	1	: gfx_class_43_taillight_refurb;		//27 ScotRail
+	1	: gfx_class_43_taillight;				//28 Network Rail
+	1	: gfx_class_43_taillight_refurb;		//29 Blue Pullman
+	1	: gfx_class_43_taillight_refurb;		//30 Pullman (Fictional)
 }
 
-switch(FEAT_TRAINS, SELF, sw_gfx_class_43_taillight_decider_auto, current_year){
-	gfx_class_43_taillight ;
+switch(FEAT_TRAINS, SELF, sw_gfx_class_43_taillight_decider_auto, date_of_last_service){
+	DATE_PRIVATE_TWO:		gfx_class_43_taillight_refurb;
+	DATE_PRIVATE_THREE:		gfx_class_43_taillight_refurb;
+	gfx_class_43_taillight;
 }
 
 // MTU headlights change here (rear lights affected only)
 switch(FEAT_TRAINS, SELF, sw_gfx_class_43_taillight_decider_manual, cargo_subtype){
-	8..9: gfx_class_43_taillight_refurb ;
+	8..9: gfx_class_43_taillight_refurb;
 	11..15:gfx_class_43_taillight_refurb;
 	19..22:gfx_class_43_taillight_refurb;
 	26..27:gfx_class_43_taillight_refurb;
 	29..30:gfx_class_43_taillight_refurb;
 	31:sw_gfx_class_43_taillight_decider_random;
-	gfx_class_43_taillight ;
+	gfx_class_43_taillight;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_gfx_class_43_taillight_decider_manual_check, livery_choice){
-	1	: sw_gfx_class_43_taillight_decider_manual ;
-	sw_gfx_class_43_taillight_decider_auto ;
+	1	: sw_gfx_class_43_taillight_decider_manual;
+	sw_gfx_class_43_taillight_decider_auto;
 }
 
-switch(FEAT_TRAINS, SELF, sw_class_43_gfx_taillight_check, position_in_consist_from_end){ 0 : sw_gfx_class_43_taillight_decider_manual_check ; }
-switch(FEAT_TRAINS, SELF, sw_class_43_gfx_headlight_check, position_in_consist){ 0 : gfx_class_43_headlight ; sw_class_43_gfx_taillight_check ; }
+switch(FEAT_TRAINS, SELF, sw_class_43_gfx_taillight_check, position_in_consist_from_end){ 0 : sw_gfx_class_43_taillight_decider_manual_check; }
+switch(FEAT_TRAINS, SELF, sw_class_43_gfx_headlight_check, position_in_consist){ 0 : gfx_class_43_headlight; sw_class_43_gfx_taillight_check; }
 
 
 
@@ -243,115 +247,118 @@ switch(FEAT_TRAINS, SELF, sw_class_43_gfx_headlight_check, position_in_consist){
 //Sprite stack
 
 switch(FEAT_TRAINS, SELF, sw_class_43_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
-	1	: sw_class_43_gfx_manual_check ;
-	2	: sw_class_43_gfx_headlight_check ;
+	1	: sw_class_43_gfx_manual_check;
+	2	: sw_class_43_gfx_headlight_check;
 }
 
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_class_43_refit_text, cargo_subtype){
-	0	: string(STR_LIVERY_BRBLUE) ;									//00 BR Blue
-	1	: string(STR_LIVERY_INTERCITY) ;								//01 BR IC125
-	2	: string(STR_LIVERY_INTERCITY_SWL) ;							//02 IC Swallow
-	3	: string(STR_LIVERY_INTERCITY_YELLOW) ;							//03 IC Swallow (Full yellow front)
-	4	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_NSE)) ;			//04 Network SouthEast (Fictional)
-	5	: string(STR_LIVERY_VIRGIN_TRAINS) ;							//05 Virgin Trains
-	6	: string(STR_LIVERY_HORNBY) ;									//06 Hornby
-	7	: string(STR_LIVERY_COTSWOLD) ;									//07 Cotswold Rail
-	8	: string(STR_LIVERY_ARRIVA_XC) ;								//08 Cross Country
-	9	: string(STR_LIVERY_HERITAGE_XC) ;								//09 Cross Country Heritage Livery
-	10	: string(STR_LIVERY_GNER) ;										//10 GNER
-	11	: string(STR_LIVERY_NXEC) ;										//11 NXEC
-	12	: string(STR_LIVERY_ESCS) ;										//12 East Coast
-	13	: string(STR_LIVERY_VTEC) ;										//13 Virgin Trains East Coast
-	14	: string(STR_LIVERY_LNER) ;										//14 LNER
-	15	: string(STR_LIVERY_HERITAGE_LNER) ;							//15 LNER Heritage Livery
-	16	: string(STR_LIVERY_GW_HOLDINGS) ;								//16 Great Western Holdings
-	17	: string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_EMPTY)) ;		//17 FGW Fag
-	18	: string(STR_LIVERY_FIRST_BARBIE, string(STR_LIVERY_EMPTY)) ;	//18 FGW Barbie
-	19	: string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_EMPTY)) ;		//19 FGW Dynamic Lines
-	20	: string(STR_LIVERY_FIRST_PLAIN) ;								//20 FGW Blue
-	21	: string(STR_LIVERY_GWR) ;										//21 GWR
-	22	: string(STR_LIVERY_HERITAGE_GWR) ;								//22 GWR Heritage Duo
-	23	: string(STR_LIVERY_MML_TEAL) ;									//23 MML Teal
-	24	: string(STR_LIVERY_MIDLAND_MAINLINE_BLUE) ;					//24 MML Rio
-	25	: string(STR_LIVERY_EMT) ;										//25 East Midlands Trains
-	26	: string(STR_LIVERY_EMR) ;										//26 East Midlands Railway
-	27	: string(STR_LIVERY_SCOTRAIL_7C) ;								//27 ScotRail
-	28	: string(STR_LIVERY_NETWORK_RAIL) ;								//28 Network Rail
-	29	: string(STR_LIVERY_BLUE_PULLMAN) ;								//29 Blue Pullman
-	30	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_PULLMAN)) ;		//30 Pullman (Fictional)
-	31	: string(STR_RANDOM) ;													//29 Random Duo
-	CB_RESULT_NO_TEXT ;
+	0	: string(STR_LIVERY_BRBLUE);									//00 BR Blue
+	1	: string(STR_LIVERY_INTERCITY);								//01 BR IC125
+	2	: string(STR_LIVERY_INTERCITY_SWL);							//02 IC Swallow
+	3	: string(STR_LIVERY_INTERCITY_YELLOW);							//03 IC Swallow (Full yellow front)
+	4	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_NSE));			//04 Network SouthEast (Fictional)
+	5	: string(STR_LIVERY_VIRGIN_TRAINS);							//05 Virgin Trains
+	6	: string(STR_LIVERY_HORNBY);									//06 Hornby
+	7	: string(STR_LIVERY_COTSWOLD);									//07 Cotswold Rail
+	8	: string(STR_LIVERY_ARRIVA_XC);								//08 Cross Country
+	9	: string(STR_LIVERY_HERITAGE_XC);								//09 Cross Country Heritage Livery
+	10	: string(STR_LIVERY_GNER);										//10 GNER
+	11	: string(STR_LIVERY_NXEC);										//11 NXEC
+	12	: string(STR_LIVERY_ESCS);										//12 East Coast
+	13	: string(STR_LIVERY_VTEC);										//13 Virgin Trains East Coast
+	14	: string(STR_LIVERY_LNER);										//14 LNER
+	15	: string(STR_LIVERY_HERITAGE_LNER);							//15 LNER Heritage Livery
+	16	: string(STR_LIVERY_GW_HOLDINGS);								//16 Great Western Holdings
+	17	: string(STR_LIVERY_FIRST_FAG, string(STR_LIVERY_EMPTY));		//17 FGW Fag
+	18	: string(STR_LIVERY_FIRST_BARBIE, string(STR_LIVERY_EMPTY));	//18 FGW Barbie
+	19	: string(STR_LIVERY_FIRST_FGW, string(STR_LIVERY_EMPTY));		//19 FGW Dynamic Lines
+	20	: string(STR_LIVERY_FIRST_PLAIN);								//20 FGW Blue
+	21	: string(STR_LIVERY_GWR);										//21 GWR
+	22	: string(STR_LIVERY_HERITAGE_GWR);								//22 GWR Heritage Duo
+	23	: string(STR_LIVERY_MML_TEAL);									//23 MML Teal
+	24	: string(STR_LIVERY_MIDLAND_MAINLINE_BLUE);					//24 MML Rio
+	25	: string(STR_LIVERY_EMT);										//25 East Midlands Trains
+	26	: string(STR_LIVERY_EMR);										//26 East Midlands Railway
+	27	: string(STR_LIVERY_SCOTRAIL_7C);								//27 ScotRail
+	28	: string(STR_LIVERY_NETWORK_RAIL);								//28 Network Rail
+	29	: string(STR_LIVERY_BLUE_PULLMAN);								//29 Blue Pullman
+	30	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_PULLMAN));		//30 Pullman (Fictional)
+	31	: string(STR_RANDOM);													//29 Random Duo
+	CB_RESULT_NO_TEXT;
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_refit_text_check, livery_choice){
-	1 : sw_class_43_refit_text ;
-	CB_RESULT_NO_TEXT ;
+	1 : sw_class_43_refit_text;
+	CB_RESULT_NO_TEXT;
 }
 
 
 //Purchase sprite
 
 switch(FEAT_TRAINS, SELF, sw_class_43_purchase_sprite, current_year){
-	ERA_BRTOPS	: gfx_class_43_brblue_purchase ;
-	1983..1986	: gfx_class_43_ic125_purchase ;
-	1987..1995	: gfx_class_43_icswallow_purchase ;
-	2007..4096	: gfx_class_43_xc_purchase ;
-	gfx_class_43_virgin_purchase ;
+	ERA_BRTOPS	: gfx_class_43_brblue_purchase;
+	1983..1986	: gfx_class_43_ic125_purchase;
+	1987..1995	: gfx_class_43_icswallow_purchase;
+	2007..4096	: gfx_class_43_xc_purchase;
+	gfx_class_43_virgin_purchase;
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_purchase_sprite_colours, current_year){
-	ERA_BRTOPS	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;	
-	1983..1995	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
-	2007..4096	: palette_2cc(COLOUR_PINK, COLOUR_RED) ;
-	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	ERA_BRTOPS	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
+	1983..1995	: palette_2cc(COLOUR_WHITE, COLOUR_RED);
+	2007..4096	: palette_2cc(COLOUR_PINK, COLOUR_RED);
+	palette_2cc(COLOUR_RED, COLOUR_WHITE);
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_purchase_sprite_colours_2cc_check, colour_scheme_1){
-	1	: sw_class_43_purchase_sprite_colours ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1	: sw_class_43_purchase_sprite_colours;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 //Colour mapping
 
 random_switch(FEAT_TRAINS, SELF, sw_class_43_colours_random){
 	dependent : gfx_class_43_random;
-	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;			//00 BR Blue
-	1	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;				//01 BR IC125
-	1	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;				//02 IC Swallow
-	1	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;				//03 IC Swallow (Full yellow front)
+	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);			//00 BR Blue
+	1	: palette_2cc(COLOUR_WHITE, COLOUR_RED);				//01 BR IC125
+	1	: palette_2cc(COLOUR_WHITE, COLOUR_RED);				//02 IC Swallow
+	1	: palette_2cc(COLOUR_WHITE, COLOUR_RED);				//03 IC Swallow (Full yellow front)
 	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);			//04 Network SouthEast (Fictional)
-	1	: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;				//05 Virgin Trains
-	1	: palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;				//06 Hornby
-	1	: palette_2cc(COLOUR_GREY, COLOUR_GREY) ;				//07 Cotswold Rail
-	1	: palette_2cc(COLOUR_GREY, COLOUR_GREY) ;				//08 Cross Country
-	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;			//10 GNER
-	1	: palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;				//11 NXEC
-	1	: palette_2cc(COLOUR_WHITE, COLOUR_PINK) ;				//12 East Coast
-	1	: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;				//13 Virgin Trains East Coast
-	1	: palette_2cc(COLOUR_RED, COLOUR_WHITE) ;				//14 LNER
-	1	: palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;		//16 Great Western Holdings
-	1	: palette_2cc(COLOUR_PALE_GREEN, COLOUR_YELLOW) ;		//17 FGW Fag
-	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;		//18 FGW Barbie
-	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;			//19 FGW Dynamic Lines
-	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;			//20 FGW Blue
-	1	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;		//21 GWR
-	1	: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_ORANGE) ;		//23 MML Teal
-	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;			//24 MML Rio
-	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;			//25 East Midlands Trains
-	1	: palette_2cc(COLOUR_MAUVE, COLOUR_WHITE) ;				//26 East Midlands Railway
-	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;			//27 ScotRail
-	1	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;			//28 Network Rail
-	1	: palette_2cc(COLOUR_BROWN, COLOUR_WHITE) ;				//29 Blue Pullman
-	1	: palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;				//30 Pullman (Fictional)
+	1	: palette_2cc(COLOUR_RED, COLOUR_WHITE);				//05 Virgin Trains
+	1	: palette_2cc(COLOUR_RED, COLOUR_YELLOW);				//06 Hornby
+	1	: palette_2cc(COLOUR_GREY, COLOUR_GREY);				//07 Cotswold Rail
+	1	: palette_2cc(COLOUR_GREY, COLOUR_GREY);				//08 Cross Country
+	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);			//10 GNER
+	1	: palette_2cc(COLOUR_GREY, COLOUR_WHITE);				//11 NXEC
+	1	: palette_2cc(COLOUR_WHITE, COLOUR_PINK);				//12 East Coast
+	1	: palette_2cc(COLOUR_RED, COLOUR_WHITE);				//13 Virgin Trains East Coast
+	1	: palette_2cc(COLOUR_RED, COLOUR_WHITE);				//14 LNER
+	1	: palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN);			//16 Great Western Holdings
+	1	: palette_2cc(COLOUR_PALE_GREEN, COLOUR_YELLOW);		//17 FGW Fag
+	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);			//18 FGW Barbie
+	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK);			//19 FGW Dynamic Lines
+	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK);			//20 FGW Blue
+	1	: palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE);			//21 GWR
+	1	: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_ORANGE);		//23 MML Teal
+	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY);			//24 MML Rio
+	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);			//25 East Midlands Trains
+	1	: palette_2cc(COLOUR_MAUVE, COLOUR_WHITE);				//26 East Midlands Railway
+	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);			//27 ScotRail
+	1	: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW);			//28 Network Rail
+	1	: palette_2cc(COLOUR_BROWN, COLOUR_WHITE);				//29 Blue Pullman
+	1	: palette_2cc(COLOUR_BLUE, COLOUR_WHITE);				//30 Pullman (Fictional)
 }
 
-switch(FEAT_TRAINS, SELF, sw_class_43_colours_auto, current_year){
-	ERA_BRTOPS	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	1983..1995	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
-	2007..4096	: palette_2cc(COLOUR_PINK, COLOUR_RED) ;
-	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+switch(FEAT_TRAINS, SELF, sw_class_43_colours_auto, date_of_last_service){
+	DATE_BRLARGELOGO:		palette_2cc(COLOUR_WHITE, COLOUR_RED);
+	DATE_BRSECTORS:			palette_2cc(COLOUR_WHITE, COLOUR_RED);
+	DATE_TRANSITION:		palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN);
+	DATE_PRIVATE_ONE:		palette_2cc(COLOUR_PALE_GREEN, COLOUR_YELLOW);
+	DATE_PRIVATE_TWO:		palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK);
+	DATE_PRIVATE_THREE:		palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_colours_nostaliga_gwr_f,				(count_veh_id(432)+1)%2){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	palette_2cc(COLOUR_WHITE, COLOUR_RED);}
@@ -363,43 +370,43 @@ switch(FEAT_TRAINS, SELF, sw_class_43_colours_nostaliga_lner_r,				(count_veh_id
 switch(FEAT_TRAINS, PARENT, sw_class_43_colours_nostaliga_lner_backcheck,	vehicle_is_reversed)	{0: sw_class_43_colours_nostaliga_lner_f;			sw_class_43_colours_nostaliga_lner_r;}
 
 switch(FEAT_TRAINS, SELF, sw_class_43_colours_manual, cargo_subtype){
-	0		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;			//00 BR Blue
-	1..3	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;				//01 BR IC125 02 IC Swallow 03 IC Swallow (Full yellow front)
+	0		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);			//00 BR Blue
+	1..3	: palette_2cc(COLOUR_WHITE, COLOUR_RED);				//01 BR IC125 02 IC Swallow 03 IC Swallow (Full yellow front)
 	4		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);			//04 Network SouthEast (Fictional)
-	6		: palette_2cc(COLOUR_RED, COLOUR_YELLOW) ;				//06 Hornby
-	7		: palette_2cc(COLOUR_GREY, COLOUR_GREY) ;				//07 Cotswold Rail
-	9		: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;				//09 Cross Country Heritage Livery
-	10		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;			//10 GNER
-	11		: palette_2cc(COLOUR_GREY, COLOUR_WHITE) ;				//11 NXEC
-	12		: palette_2cc(COLOUR_WHITE, COLOUR_PINK) ;				//12 East Coast
-	15		: sw_class_43_colours_nostaliga_lner_backcheck ;		//15 LNER Heritage Livery
-	16		: palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN) ;		//16 Great Western Holdings
-	17		: palette_2cc(COLOUR_PALE_GREEN, COLOUR_YELLOW) ;		//17 FGW Fag
-	18		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;		//18 FGW Barbie 
-	19..20	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;			//19 FGW Dynamic Lines 20 FGW Blue
-	21		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE) ;		//21 GWR
-	22		: sw_class_43_colours_nostaliga_gwr_backcheck ;			//22 GWR Heritage Duo
-	23		: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_ORANGE) ;		//23 MML Teal
-	24		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;			//24 MML Rio
-	25		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;			//25 East Midlands Trains
-	26		: palette_2cc(COLOUR_MAUVE, COLOUR_WHITE) ;				//26 East Midlands Railway
-	27		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;			//27 ScotRail
-	28		: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;			//28 Network Rail
-	29		: palette_2cc(COLOUR_BLUE, COLOUR_WHITE) ;				//29 Blue Pullman
-	30		: palette_2cc(COLOUR_BROWN, COLOUR_WHITE) ;				//30 Pullman (Fictional)
-	31		: sw_class_43_colours_random ;							//31 Random Duo
-	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;							//05 Virgin Trains 13 Virgin Trains East Coast 14 LNER
+	6		: palette_2cc(COLOUR_RED, COLOUR_YELLOW);				//06 Hornby
+	7		: palette_2cc(COLOUR_GREY, COLOUR_GREY);				//07 Cotswold Rail
+	9		: palette_2cc(COLOUR_WHITE, COLOUR_RED);				//09 Cross Country Heritage Livery
+	10		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);			//10 GNER
+	11		: palette_2cc(COLOUR_GREY, COLOUR_WHITE);				//11 NXEC
+	12		: palette_2cc(COLOUR_WHITE, COLOUR_PINK);				//12 East Coast
+	15		: sw_class_43_colours_nostaliga_lner_backcheck;		//15 LNER Heritage Livery
+	16		: palette_2cc(COLOUR_WHITE, COLOUR_DARK_GREEN);		//16 Great Western Holdings
+	17		: palette_2cc(COLOUR_PALE_GREEN, COLOUR_YELLOW);		//17 FGW Fag
+	18		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW);		//18 FGW Barbie 
+	19..20	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK);			//19 FGW Dynamic Lines 20 FGW Blue
+	21		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_WHITE);		//21 GWR
+	22		: sw_class_43_colours_nostaliga_gwr_backcheck;			//22 GWR Heritage Duo
+	23		: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_ORANGE);		//23 MML Teal
+	24		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY);			//24 MML Rio
+	25		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);			//25 East Midlands Trains
+	26		: palette_2cc(COLOUR_MAUVE, COLOUR_WHITE);				//26 East Midlands Railway
+	27		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);			//27 ScotRail
+	28		: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW);			//28 Network Rail
+	29		: palette_2cc(COLOUR_BLUE, COLOUR_WHITE);				//29 Blue Pullman
+	30		: palette_2cc(COLOUR_BROWN, COLOUR_WHITE);				//30 Pullman (Fictional)
+	31		: sw_class_43_colours_random;							//31 Random Duo
+	palette_2cc(COLOUR_RED, COLOUR_WHITE);							//05 Virgin Trains 13 Virgin Trains East Coast 14 LNER
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_class_43_colours_manual_check, livery_choice){
-	1 : sw_class_43_colours_manual ;
-	sw_class_43_colours_auto ;
+	1 : sw_class_43_colours_manual;
+	sw_class_43_colours_auto;
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_colours_2cc_check, colour_scheme_1){
-	1 : sw_class_43_colours_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_class_43_colours_manual_check;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
@@ -411,44 +418,44 @@ switch(FEAT_TRAINS, SELF, sw_class_43_colours_2cc_check, colour_scheme_1){
 
 item(FEAT_TRAINS, item_hst_2, 432){
 	property{
-		name                           : string(STR_NAME_HST) ;
+		name                           : string(STR_NAME_HST);
 		misc_flags                     : bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
-		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
-		length                         : 8 ;
-		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1975,1,1) ;
-		model_life                     : 30 ;
-		vehicle_life                   : 45 ;
-		reliability_decay              : 6 ;
-		cost_factor                    : 65 ;
-		running_cost_base              : RUNNING_COST_DIESEL ;
-		running_cost_factor            : 240 ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [MAIL] ;
-		cargo_capacity                 : 20 ;
-		track_type                     : RAIL ;
-		engine_class                   : ENGINE_CLASS_DIESEL ;
-		speed                          : 125 mph ;
-		power                          : 4500 hp ;
-		weight                         : 70 ton ;
-		tractive_effort_coefficient    : 0.12 ;
-		air_drag_coefficient           : 0.064 ;
-		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
-		ai_special_flag                : AI_FLAG_PASSENGER ;
-		dual_headed                    : 1 ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
+		length                         : 8;
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1975,1,1);
+		model_life                     : 30;
+		vehicle_life                   : 45;
+		reliability_decay              : 6;
+		cost_factor                    : 65;
+		running_cost_base              : RUNNING_COST_DIESEL;
+		running_cost_factor            : 240;
+		refit_cost                     : 0;
+		refittable_cargo_classes       : 0;
+		cargo_allow_refit              : [MAIL];
+		cargo_capacity                 : 20;
+		track_type                     : RAIL;
+		engine_class                   : ENGINE_CLASS_DIESEL;
+		speed                          : 125 mph;
+		power                          : 4500 hp;
+		weight                         : 70 ton;
+		tractive_effort_coefficient    : 0.12;
+		air_drag_coefficient           : 0.064;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL;
+		ai_special_flag                : AI_FLAG_PASSENGER;
+		dual_headed                    : 1;
 	}
 	graphics{
-		default                 : sw_class_43_sprite_stack ;
-		purchase                : sw_class_43_purchase_sprite ;
-		sound_effect            : sw_sfx_hst ;
-		create_effect           : vfx_diesel_default ;
-		colour_mapping          : sw_class_43_colours_2cc_check ;
-		purchase_colour_mapping : sw_class_43_purchase_sprite_colours_2cc_check ;
-		cargo_subtype_text      : sw_class_43_refit_text_check ;
+		default                 : sw_class_43_sprite_stack;
+		purchase                : sw_class_43_purchase_sprite;
+		sound_effect            : sw_sfx_hst;
+		create_effect           : vfx_diesel_default;
+		colour_mapping          : sw_class_43_colours_2cc_check;
+		purchase_colour_mapping : sw_class_43_purchase_sprite_colours_2cc_check;
+		cargo_subtype_text      : sw_class_43_refit_text_check;
 		can_attach_wagon        : sw_all_but_MU90;
-		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
-		purchase_running_cost_factor : 240 ;
+		running_cost_factor     : return(current_speed == 0 ? 60 : 240);
+		purchase_running_cost_factor : 240;
 	}
 }
 
@@ -456,7 +463,7 @@ item(FEAT_TRAINS, item_hst_2, 432){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_hst_2, 432){
 	property{
-		name                           : string(STR_NAME_HST_ALT) ;
+		name                           : string(STR_NAME_HST_ALT);
 	}
 }
 }
@@ -500,32 +507,34 @@ spriteset (gfx_class_43_buff_generic_purchase		, "gfx/DIESEL_LOCO/class_43_2.png
 
 //Automatic liveries
 
-switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_auto, current_year){
-	1983..1995	: gfx_class_43_buff_icswallow ;
-	2007..4096	: gfx_class_43_buff_generic ;
-	gfx_class_43_buff_virgin ;
+switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_auto, date_of_last_service){
+	DATE_SECTORISATION:		gfx_class_43_buff_icswallow;
+	DATE_PRIVATE_TWO:		gfx_class_43_buff_gc;
+	DATE_PRIVATE_THREE:		gfx_class_43_buff_emt;
+	DATE_PRIVATE_INFINITE:	gfx_class_43_buff_rail_adventure;
+	gfx_class_43_buff_virgin;
 }
 
 
 //Manual liveries
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_manual, cargo_subtype){
-	0	: gfx_class_43_buff_icswallow ;				//00 IC Swallow
-	1	: gfx_class_43_buff_icswallow_yellowcab ;	//01 IC Swallow (Full yellow front)
-	2	: gfx_class_43_buff_nse ;					//08 Network SouthEast
-	4	: gfx_class_43_buff_gc ;					//03 Grand Central
-	5	: gfx_class_43_buff_gc_stripe ;				//04 Grand Central (Orange stripe)
-	6	: gfx_class_43_buff_emt ;					//05 East Midlands Trains
-	7	: gfx_class_43_buff_rail_adventure ;		//06 Rail Adventure
-	8	: gfx_class_43_buff_generic ;				//07 Network Rail
-	gfx_class_43_buff_virgin ;						//02 Virgin Trains
+	0	: gfx_class_43_buff_icswallow;				//00 IC Swallow
+	1	: gfx_class_43_buff_icswallow_yellowcab;	//01 IC Swallow (Full yellow front)
+	2	: gfx_class_43_buff_nse;					//08 Network SouthEast
+	4	: gfx_class_43_buff_gc;					//03 Grand Central
+	5	: gfx_class_43_buff_gc_stripe;				//04 Grand Central (Orange stripe)
+	6	: gfx_class_43_buff_emt;					//05 East Midlands Trains
+	7	: gfx_class_43_buff_rail_adventure;		//06 Rail Adventure
+	8	: gfx_class_43_buff_generic;				//07 Network Rail
+	gfx_class_43_buff_virgin;						//02 Virgin Trains
 }
 
 //Manual check
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_manual_check, livery_choice){
-	1	: sw_class_43_buff_gfx_manual ;
-	sw_class_43_buff_gfx_auto ;
+	1	: sw_class_43_buff_gfx_manual;
+	sw_class_43_buff_gfx_auto;
 }
 
 
@@ -533,18 +542,18 @@ switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_manual_check, livery_choice){
 
 // MTU headlights change here (rear lights affected only)
 switch(FEAT_TRAINS, SELF, sw_gfx_class_43_buff_taillight_decider_manual, cargo_subtype){
-	5..9: gfx_class_43_taillight_refurb ;
-	gfx_class_43_taillight ;
+	5..9: gfx_class_43_taillight_refurb;
+	gfx_class_43_taillight;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_gfx_class_43_buff_taillight_decider_manual_check, livery_choice){
-	1	: sw_gfx_class_43_buff_taillight_decider_manual ;
-	gfx_class_43_taillight ;
+	1	: sw_gfx_class_43_buff_taillight_decider_manual;
+	gfx_class_43_taillight;
 }
 
-switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_taillight_check, position_in_consist_from_end){ 0 : sw_gfx_class_43_buff_taillight_decider_manual_check ; }
-switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_headlight_check, position_in_consist){ 0 : gfx_class_43_headlight ; sw_class_43_buff_gfx_taillight_check ; }
+switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_taillight_check, position_in_consist_from_end){ 0 : sw_gfx_class_43_buff_taillight_decider_manual_check; }
+switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_headlight_check, position_in_consist){ 0 : gfx_class_43_headlight; sw_class_43_buff_gfx_taillight_check; }
 
 
 
@@ -554,59 +563,60 @@ switch(FEAT_TRAINS, SELF, sw_class_43_buff_gfx_headlight_check, position_in_cons
 //Sprite stack
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_sprite_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
-	1	: sw_class_43_buff_gfx_manual_check ;
-	2	: sw_class_43_buff_gfx_headlight_check ;
+	1	: sw_class_43_buff_gfx_manual_check;
+	2	: sw_class_43_buff_gfx_headlight_check;
 }
 
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_refit_text, cargo_subtype){
-	0	: string(STR_LIVERY_INTERCITY_SWL) ;						//00 IC Swallow
-	1	: string(STR_LIVERY_INTERCITY_YELLOW) ;						//01 IC Swallow (Full yellow front)
-	2	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_NSE)) ;		//08 Network SouthEast
-	3	: string(STR_LIVERY_VIRGIN_TRAINS) ;						//02 Virgin Trains
-	4	: string(STR_LIVERY_GC_OG) ;								//03 Grand Central
-	5	: string(STR_LIVERY_GC) ;									//04 Grand Central (Orange stripe)
-	6	: string(STR_LIVERY_EMT) ;									//05 East Midlands Trains
-	7	: string(STR_LIVERY_RAIL_ADVENTURE) ;						//06 Rail Adventure
-	8	: string(STR_LIVERY_NETWORK_RAIL) ;							//07 Network Rail
-	CB_RESULT_NO_TEXT ;
+	0	: string(STR_LIVERY_INTERCITY_SWL);						//00 IC Swallow
+	1	: string(STR_LIVERY_INTERCITY_YELLOW);						//01 IC Swallow (Full yellow front)
+	2	: string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_NSE));		//08 Network SouthEast
+	3	: string(STR_LIVERY_VIRGIN_TRAINS);						//02 Virgin Trains
+	4	: string(STR_LIVERY_GC_OG);								//03 Grand Central
+	5	: string(STR_LIVERY_GC);									//04 Grand Central (Orange stripe)
+	6	: string(STR_LIVERY_EMT);									//05 East Midlands Trains
+	7	: string(STR_LIVERY_RAIL_ADVENTURE);						//06 Rail Adventure
+	8	: string(STR_LIVERY_NETWORK_RAIL);							//07 Network Rail
+	CB_RESULT_NO_TEXT;
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_refit_text_check, livery_choice){
-	1 : sw_class_43_buff_refit_text ;
-	CB_RESULT_NO_TEXT ;
+	1 : sw_class_43_buff_refit_text;
+	CB_RESULT_NO_TEXT;
 }
 
 
 //Colour mapping
 
 
-switch(FEAT_TRAINS, SELF, sw_class_43_buff_colours_auto, current_year){
-	1983..1995	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
-	2007..4096	: palette_2cc(company_colour1, company_colour2) ;
-	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+switch(FEAT_TRAINS, SELF, sw_class_43_buff_colours_auto, date_of_last_service){
+	DATE_SECTORISATION:		palette_2cc(COLOUR_WHITE, COLOUR_RED);
+	DATE_PRIVATE_THREE:		palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	DATE_PRIVATE_INFINITE:	palette_2cc(COLOUR_WHITE, COLOUR_GREY);
+	palette_2cc(COLOUR_RED, COLOUR_WHITE);
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_colours_manual, cargo_subtype){
-	0..1	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;			//00 IC Swallow 01 IC Swallow (Full yellow front)
+	0..1	: palette_2cc(COLOUR_WHITE, COLOUR_RED);			//00 IC Swallow 01 IC Swallow (Full yellow front)
 	2		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);			//08 Network SouthEast
-	5		: palette_2cc(COLOUR_GREY, COLOUR_ORANGE) ;				//04 Grand Central (Orange stripe)
-	6		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;			//05 East Midlands Trains
-	7		: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;				//06 Rail Adventure
-	8		: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW) ;			//07 Network Rail
-	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;							//02 Virgin Trains
+	5		: palette_2cc(COLOUR_GREY, COLOUR_ORANGE);				//04 Grand Central (Orange stripe)
+	6		: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);			//05 East Midlands Trains
+	7		: palette_2cc(COLOUR_WHITE, COLOUR_GREY);				//06 Rail Adventure
+	8		: palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW);			//07 Network Rail
+	palette_2cc(COLOUR_RED, COLOUR_WHITE);							//02 Virgin Trains
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_colours_manual_check, livery_choice){
-	1 : sw_class_43_buff_colours_manual ;
-	sw_class_43_buff_colours_auto ;
+	1 : sw_class_43_buff_colours_manual;
+	sw_class_43_buff_colours_auto;
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_colours_2cc_check, colour_scheme_1){
-	1 : sw_class_43_buff_colours_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_class_43_buff_colours_manual_check;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
@@ -614,20 +624,20 @@ switch(FEAT_TRAINS, SELF, sw_class_43_buff_colours_2cc_check, colour_scheme_1){
 //Purchase sprite
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_purchase_sprite, current_year){
-	1983..1995	: gfx_class_43_buff_icswallow_purchase ;
-	2007..4096	: gfx_class_43_buff_generic_purchase ;
-	gfx_class_43_buff_virgin_purchase ;
+	1983..1995	: gfx_class_43_buff_icswallow_purchase;
+	2007..4096	: gfx_class_43_buff_generic_purchase;
+	gfx_class_43_buff_virgin_purchase;
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_purchase_sprite_colours, current_year){
-	1983..1995	: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;
-	2007..4096	: palette_2cc(company_colour1, company_colour2) ;
-	palette_2cc(COLOUR_RED, COLOUR_WHITE) ;
+	1983..1995	: palette_2cc(COLOUR_WHITE, COLOUR_RED);
+	2007..4096	: palette_2cc(company_colour1, company_colour2);
+	palette_2cc(COLOUR_RED, COLOUR_WHITE);
 }
 
 switch(FEAT_TRAINS, SELF, sw_class_43_buff_purchase_sprite_colours_2cc_check, colour_scheme_1){
-	1	: sw_class_43_buff_purchase_sprite_colours ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1	: sw_class_43_buff_purchase_sprite_colours;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
@@ -638,45 +648,45 @@ switch(FEAT_TRAINS, SELF, sw_class_43_buff_purchase_sprite_colours_2cc_check, co
 
 item(FEAT_TRAINS, item_hst_buffered, 433){
 	property{
-		name                           : string(STR_NAME_HST2) ;
+		name                           : string(STR_NAME_HST2);
 		misc_flags                     : bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
-		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
-		length                         : 8 ;
-		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1987,1,1) ;
-		model_life                     : 30 ;
-		vehicle_life                   : 45 ;
-		reliability_decay              : 6 ;
-		cost_factor                    : 65 ;
-		running_cost_base              : RUNNING_COST_DIESEL ;
-		running_cost_factor            : 240 ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [MAIL] ;
-		cargo_capacity                 : 20 ;
-		track_type                     : RAIL ;
-		engine_class                   : ENGINE_CLASS_DIESEL ;
-		speed                          : 125 mph ;
-		power                          : 4500 hp ;
-		weight                         : 70 ton ;
-		tractive_effort_coefficient    : 0.1142857142857143 ;
-		air_drag_coefficient           : 0.064 ;
-		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
-		ai_special_flag                : AI_FLAG_PASSENGER ;
-		dual_headed                    : 1 ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
+		length                         : 8;
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1987,1,1);
+		model_life                     : 30;
+		vehicle_life                   : 45;
+		reliability_decay              : 6;
+		cost_factor                    : 65;
+		running_cost_base              : RUNNING_COST_DIESEL;
+		running_cost_factor            : 240;
+		refit_cost                     : 0;
+		refittable_cargo_classes       : 0;
+		cargo_allow_refit              : [MAIL];
+		cargo_capacity                 : 20;
+		track_type                     : RAIL;
+		engine_class                   : ENGINE_CLASS_DIESEL;
+		speed                          : 125 mph;
+		power                          : 4500 hp;
+		weight                         : 70 ton;
+		tractive_effort_coefficient    : 0.1142857142857143;
+		air_drag_coefficient           : 0.064;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL;
+		ai_special_flag                : AI_FLAG_PASSENGER;
+		dual_headed                    : 1;
         variant_group:					432;
 	}
 	graphics{
-		default                 : sw_class_43_buff_sprite_stack ;
-		purchase                : sw_class_43_buff_purchase_sprite ;
-		sound_effect            : sw_sfx_hst ;
-		create_effect           : vfx_diesel_default ;
-		colour_mapping          : sw_class_43_buff_colours_2cc_check ;
-		purchase_colour_mapping : sw_class_43_buff_purchase_sprite_colours_2cc_check ;
-		cargo_subtype_text      : sw_class_43_buff_refit_text_check ;
+		default                 : sw_class_43_buff_sprite_stack;
+		purchase                : sw_class_43_buff_purchase_sprite;
+		sound_effect            : sw_sfx_hst;
+		create_effect           : vfx_diesel_default;
+		colour_mapping          : sw_class_43_buff_colours_2cc_check;
+		purchase_colour_mapping : sw_class_43_buff_purchase_sprite_colours_2cc_check;
+		cargo_subtype_text      : sw_class_43_buff_refit_text_check;
 		can_attach_wagon        : sw_all_but_MU90;
-		running_cost_factor     : return(current_speed == 0 ? 60 : 240) ;
-		purchase_running_cost_factor : 240 ;
+		running_cost_factor     : return(current_speed == 0 ? 60 : 240);
+		purchase_running_cost_factor : 240;
 	}
 }
 
@@ -684,7 +694,7 @@ item(FEAT_TRAINS, item_hst_buffered, 433){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_hst_buffered, 433){
 	property{
-		name                           : string(STR_NAME_HST2_ALT) ;
+		name                           : string(STR_NAME_HST2_ALT);
 	}
 }
 }

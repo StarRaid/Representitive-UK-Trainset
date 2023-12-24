@@ -26,13 +26,13 @@ switch(FEAT_TRAINS, PARENT, sw_210_nse, vehicle_is_reversed){0: sw_210_nse_f; sw
 
 
 //Livery Switches
-switch(FEAT_TRAINS, SELF, sw_210_passenger_livery_decider, current_year){
-	ERA_SECTORISATION: sw_210_nse;
+switch(FEAT_TRAINS, SELF, sw_210_passenger_livery_decider, date_of_last_service){
+	DATE_SECTORISATION: sw_210_nse;
 	sw_210_brb;
 }
 
-switch(FEAT_TRAINS, SELF, sw_210_passenger_livery_decider_t, current_year){
-	ERA_SECTORISATION: spriteset_210_t_nse;
+switch(FEAT_TRAINS, SELF, sw_210_passenger_livery_decider_t, date_of_last_service){
+	DATE_SECTORISATION: spriteset_210_t_nse;
 	spriteset_210_t_brb;
 }
 
@@ -48,8 +48,8 @@ switch(FEAT_TRAINS, SELF, sw_210_manual_livery_decider_t, cargo_subtype){
 	spriteset_210_t_brb;
 }
 
-switch(FEAT_TRAINS, SELF, sw_210_livery_choice_decider, livery_choice){1 : sw_210_manual_livery_decider ; sw_210_passenger_livery_decider ;}
-switch(FEAT_TRAINS, SELF, sw_210_livery_choice_decider_t, livery_choice){1 : sw_210_manual_livery_decider_t ; sw_210_passenger_livery_decider_t ;}
+switch(FEAT_TRAINS, SELF, sw_210_livery_choice_decider, livery_choice){1 : sw_210_manual_livery_decider; sw_210_passenger_livery_decider;}
+switch(FEAT_TRAINS, SELF, sw_210_livery_choice_decider_t, livery_choice){1 : sw_210_manual_livery_decider_t; sw_210_passenger_livery_decider_t;}
 
 //Refit text
 
@@ -60,8 +60,8 @@ switch(FEAT_TRAINS, SELF, sw_210_refit_text, cargo_subtype){
 }
 
 switch(FEAT_TRAINS, SELF, sw_210_refit_text_decider, livery_choice){
-	1 : sw_210_refit_text ;
-	return CB_RESULT_NO_TEXT ;
+	1 : sw_210_refit_text;
+	return CB_RESULT_NO_TEXT;
 }
 
 //Purchase sprite decider
@@ -92,25 +92,25 @@ switch(FEAT_TRAINS, SELF, sw_210_default_t, [STORE_TEMP((getbits(extra_callback_
 
 //Recolour Switches
 
-switch(FEAT_TRAINS, SELF, sw_210_colour_mapping_auto, current_year){
-	ERA_SECTORISATION: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+switch(FEAT_TRAINS, SELF, sw_210_colour_mapping_auto, date_of_last_service){
+	DATE_SECTORISATION: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 }
 
 switch(FEAT_TRAINS, SELF, sw_210_colour_mapping_manual, cargo_subtype){
-	1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 }
 
 
 switch(FEAT_TRAINS, PARENT, sw_210_colour_mapping_manual_check, livery_choice){
-	1 : sw_210_colour_mapping_manual ;
-	sw_210_colour_mapping_auto ;
+	1 : sw_210_colour_mapping_manual;
+	sw_210_colour_mapping_auto;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_210_colour_mapping_decider, colour_scheme_1){
-	1 : sw_210_colour_mapping_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_210_colour_mapping_manual_check;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 switch(FEAT_TRAINS, SELF, sw_210_coupling_restrictions, vehicle_type_id) {
@@ -163,18 +163,18 @@ item (FEAT_TRAINS, item_210, 210) {
 		default: 							sw_210_default;
 		purchase:							sw_210_purchase;
 		create_effect:						sw_210_visual_effect;
-		cargo_subtype_text:					sw_210_refit_text_decider ;
+		cargo_subtype_text:					sw_210_refit_text_decider;
 		colour_mapping:						sw_210_colour_mapping_decider;
 		purchase_colour_mapping: 			sw_210_colour_mapping_auto;
 		sound_effect:                   	sw_sfx_diesel_loco_small;
-		running_cost_factor: 				return(current_speed == 0 ? 9 : 39) ;
+		running_cost_factor: 				return(current_speed == 0 ? 9 : 39);
 		purchase_running_cost_factor:		39;
 }
 		livery_override (9030) {
 		cargo_capacity: 95;
 		default: sw_210_default_t;
 		colour_mapping:	sw_210_colour_mapping_decider;
-		cargo_subtype_text: sw_210_refit_text_decider ;
+		cargo_subtype_text: sw_210_refit_text_decider;
 }
 }
 
@@ -182,7 +182,7 @@ item (FEAT_TRAINS, item_210, 210) {
 if (alt_names == 1){
 item (FEAT_TRAINS, item_210, 210){
 	property{
-		name                           : string(STR_NAME_210_ALT) ;
+		name                           : string(STR_NAME_210_ALT);
 	}
 }
 }
@@ -190,7 +190,7 @@ item (FEAT_TRAINS, item_210, 210){
 if (enable_prototypes < 1){
 item (FEAT_TRAINS, item_210, 210){
 	property{
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE;
 	}
 }
 }

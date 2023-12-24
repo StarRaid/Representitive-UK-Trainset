@@ -71,15 +71,15 @@ For example, in [dmmu.pnml](/src/DMU/dmmu.pnml "First Generation DMU code.") exi
 
 ```python
 random_switch(FEAT_TRAINS, SELF, sw_dmmu_green_colour_mapping, TRIGGER_VEHICLE_SERVICE){
-	1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW) ;
+	1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
  }
  
 random_switch(FEAT_TRAINS, SELF, sw_dmmu_blue_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
-	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE) ;
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE);
 }
  
 random_switch(FEAT_TRAINS, SELF, sw_dmmu_mail_colour_mapping, TRIGGER_VEHICLE_SERVICE){ 
-	1 : palette_2cc(COLOUR_RED, COLOUR_RED) ;
+	1 : palette_2cc(COLOUR_RED, COLOUR_RED);
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_dmmu_bg_colour_mapping, TRIGGER_VEHICLE_SERVICE){  
@@ -111,10 +111,10 @@ The solution has already been tested and is currently being implemented. In [cla
 
 ```python
 switch(FEAT_TRAINS, SELF, sw_419_colours_auto, date_of_last_service){
-	DATE_BRBLUE	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	DATE_BRTOPS	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	DATE_SECTORISATION	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
-	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
+	DATE_BRBLUE	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	DATE_BRTOPS	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	DATE_SECTORISATION	:palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
+	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
 }
 ```
 

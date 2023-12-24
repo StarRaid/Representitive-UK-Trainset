@@ -15,45 +15,45 @@ spriteset(gfx_deltic_purch_brblue,		"gfx/DIESEL_LOCO/class_55.png"){template_pur
 //Graphics siwtches
 
 random_switch(FEAT_TRAINS, SELF, sw_deltic_gfx_brblue_random){
-	3 : gfx_deltic_brblue ;
-	1 : gfx_deltic_brblue_wcab ;
+	3 : gfx_deltic_brblue;
+	1 : gfx_deltic_brblue_wcab;
 }
 
 random_switch(FEAT_TRAINS, SELF, sw_deltic_random_private){
-	3 : gfx_deltic_brblue ;
-	2 : gfx_deltic_brgreen_yfront ;
-	1 : gfx_deltic_brblue_wcab ;
+	3 : gfx_deltic_brblue;
+	2 : gfx_deltic_brgreen_yfront;
+	1 : gfx_deltic_brblue_wcab;
 }
 
-switch(FEAT_TRAINS, SELF, sw_deltic_gfx_auto, current_year){
-	0..1967		: gfx_deltic_brgreen ;
-	1968..1986	: sw_deltic_gfx_brblue_random ;
-	sw_deltic_random_private ;
+switch(FEAT_TRAINS, SELF, sw_deltic_gfx_auto, date_of_last_service){
+	DATE_BRCREST:		gfx_deltic_brgreen;
+	DATE_BRCOMBINED:	sw_deltic_gfx_brblue_random;
+	sw_deltic_random_private;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_deltic_gfx_manual, cargo_subtype){
-	0 : gfx_deltic_brgreen ;
-	1 : gfx_deltic_brgreen_yfront ;
-	3 : gfx_deltic_brblue_wcab ;
-	gfx_deltic_brblue ;
+	0 : gfx_deltic_brgreen;
+	1 : gfx_deltic_brgreen_yfront;
+	3 : gfx_deltic_brblue_wcab;
+	gfx_deltic_brblue;
 }
 
 switch(FEAT_TRAINS, SELF, sw_deltic_gfx_manual_check, livery_choice){
-	1 : sw_deltic_gfx_manual ;
-	sw_deltic_gfx_auto ;
+	1 : sw_deltic_gfx_manual;
+	sw_deltic_gfx_auto;
 }
 
 
 //Sprite stack
 
-switch(FEAT_TRAINS, SELF, sw_deltic_gfx_check_headlight, position_in_consist){ 0 : gfx_deltic_headlights ; }
-switch(FEAT_TRAINS, SELF, sw_deltic_gfx_check_taillight, position_in_consist_from_end){ 0 : gfx_deltic_taillights ; }
+switch(FEAT_TRAINS, SELF, sw_deltic_gfx_check_headlight, position_in_consist){ 0 : gfx_deltic_headlights; }
+switch(FEAT_TRAINS, SELF, sw_deltic_gfx_check_taillight, position_in_consist_from_end){ 0 : gfx_deltic_taillights; }
 
 switch(FEAT_TRAINS, SELF, sw_deltic_gfx_spr_stack, SPR_STACK){
-	0 : sw_deltic_gfx_manual_check ;
-	1 : sw_deltic_gfx_check_headlight ;
-	2 : sw_deltic_gfx_check_taillight ;
+	0 : sw_deltic_gfx_manual_check;
+	1 : sw_deltic_gfx_check_headlight;
+	2 : sw_deltic_gfx_check_taillight;
 }
 
 
@@ -61,18 +61,18 @@ switch(FEAT_TRAINS, SELF, sw_deltic_gfx_spr_stack, SPR_STACK){
 //Purchase sprite
 
 switch(FEAT_TRAINS, SELF, sw_deltic_purch_gfx,	current_year){
-	0..1967		: gfx_deltic_purch_brgreen ;
-	gfx_deltic_purch_brblue ;
+	0..1967		: gfx_deltic_purch_brgreen;
+	gfx_deltic_purch_brblue;
 }
 
 switch(FEAT_TRAINS, SELF, sw_deltic_purch_col, current_year){
-	0..1967		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	0..1967		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 }
 
 switch(FEAT_TRAINS, SELF, sw_deltic_purch_col_2cc_check, colour_scheme_1){
-	1 : sw_deltic_purch_col ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_deltic_purch_col;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
@@ -80,16 +80,16 @@ switch(FEAT_TRAINS, SELF, sw_deltic_purch_col_2cc_check, colour_scheme_1){
 //Refit text
 
 switch(FEAT_TRAINS, SELF, sw_deltic_refit_text, cargo_subtype){
-	0 : string(STR_LIVERY_BRGREEN) ;
-	1 : string(STR_LIVERY_BRGREEN_YELLOW) ;
-	2 : string(STR_LIVERY_BRBLUE) ;
-	3 : string(STR_LIVERY_BRBLUE_SUBTYPE, string(STR_LIVERY_WHITE_CAB)) ;
-	CB_RESULT_NO_TEXT ;
+	0 : string(STR_LIVERY_BRGREEN);
+	1 : string(STR_LIVERY_BRGREEN_YELLOW);
+	2 : string(STR_LIVERY_BRBLUE);
+	3 : string(STR_LIVERY_BRBLUE_SUBTYPE, string(STR_LIVERY_WHITE_CAB));
+	CB_RESULT_NO_TEXT;
 }
 
 switch(FEAT_TRAINS, SELF, sw_deltic_refit_text_check, livery_choice){
-	1 : sw_deltic_refit_text ;
-	CB_RESULT_NO_TEXT ;
+	1 : sw_deltic_refit_text;
+	CB_RESULT_NO_TEXT;
 }
 
 
@@ -97,32 +97,32 @@ switch(FEAT_TRAINS, SELF, sw_deltic_refit_text_check, livery_choice){
 //Colours
 
 random_switch(FEAT_TRAINS, SELF, sw_deltic_random_private_col){
-	dependent : sw_deltic_random_private ;
-	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	2 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	dependent : sw_deltic_random_private;
+	3 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	2 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 }
 
-switch(FEAT_TRAINS, SELF, sw_deltic_col_auto, current_year){
-	0..1967		: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-	1968..1986	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
-	sw_deltic_random_private_col ;
+switch(FEAT_TRAINS, SELF, sw_deltic_col_auto, date_of_last_service){
+	DATE_BRCREST:		palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	DATE_BRCOMBINED:	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	sw_deltic_random_private_col;
 }
 
 
 switch(FEAT_TRAINS, SELF, sw_deltic_col_manual, cargo_subtype){
-	0..1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;
-	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
+	0..1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 }
 
 switch(FEAT_TRAINS, SELF, sw_deltic_col_manual_check, livery_choice){
-	1 : sw_deltic_col_manual ;
-	sw_deltic_col_auto ;
+	1 : sw_deltic_col_manual;
+	sw_deltic_col_auto;
 }
 
 switch(FEAT_TRAINS, SELF, sw_deltic_col_2cc_check, colour_scheme_1){
-	1 : sw_deltic_col_manual_check ;
-	palette_2cc(company_colour1, company_colour2) ;
+	1 : sw_deltic_col_manual_check;
+	palette_2cc(company_colour1, company_colour2);
 }
 
 
@@ -132,45 +132,45 @@ switch(FEAT_TRAINS, SELF, sw_deltic_col_2cc_check, colour_scheme_1){
 
 item(FEAT_TRAINS, item_deltic, 55){
 	property{
-		name                           : string(STR_NAME_DELTIC) ;  
-		climates_available             : ALL_CLIMATES ;
-		introduction_date              : date(1961,1,1) ;
-		refit_cost                     : 0 ;
-		refittable_cargo_classes       : 0 ;
-		cargo_allow_refit              : [MAIL, GOOD] ;
-		cargo_capacity                 : 1 ;
-		model_life                     : 30 ;
-		vehicle_life                   : 40 ;
-		reliability_decay              : 8 ;
-		cost_factor                    : 89 ;
-		running_cost_base              : RUNNING_COST_DIESEL ;
-		running_cost_factor            : 248 ;
-		speed                          : 100 mph ;
-		track_type                     : RAIL ;
-		power                          : 2460 kW ;
-		weight                         : 100 ton ;
-		engine_class                   : ENGINE_CLASS_DIESEL ;
-		tractive_effort_coefficient    : 0.23 ;
-		air_drag_coefficient           : 0.1 ;
-		length                         : 8 ;
-		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
-		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL ;
-		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
-		dual_headed                    : 0 ;
+		name                           : string(STR_NAME_DELTIC);  
+		climates_available             : ALL_CLIMATES;
+		introduction_date              : date(1961,1,1);
+		refit_cost                     : 0;
+		refittable_cargo_classes       : 0;
+		cargo_allow_refit              : [MAIL, GOOD];
+		cargo_capacity                 : 1;
+		model_life                     : 30;
+		vehicle_life                   : 40;
+		reliability_decay              : 8;
+		cost_factor                    : 89;
+		running_cost_base              : RUNNING_COST_DIESEL;
+		running_cost_factor            : 248;
+		speed                          : 100 mph;
+		track_type                     : RAIL;
+		power                          : 2460 kW;
+		weight                         : 100 ton;
+		engine_class                   : ENGINE_CLASS_DIESEL;
+		tractive_effort_coefficient    : 0.23;
+		air_drag_coefficient           : 0.1;
+		length                         : 8;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN;
+		dual_headed                    : 0;
 	}
 	graphics{
-		default                        : sw_deltic_gfx_spr_stack ;
-		colour_mapping                 : sw_deltic_col_2cc_check ;
-		purchase                       : sw_deltic_purch_gfx ;
-		purchase_colour_mapping        : sw_deltic_purch_col_2cc_check ;
-		sound_effect                   : sw_sfx_diesel_loco_deltic ;
-		create_effect                  : vfx_diesel_default ;
-		cargo_subtype_text             : sw_deltic_refit_text_check ;
-		purchase_cargo_capacity        : 0 ;
-		cargo_capacity                 : return 0 ;
+		default                        : sw_deltic_gfx_spr_stack;
+		colour_mapping                 : sw_deltic_col_2cc_check;
+		purchase                       : sw_deltic_purch_gfx;
+		purchase_colour_mapping        : sw_deltic_purch_col_2cc_check;
+		sound_effect                   : sw_sfx_diesel_loco_deltic;
+		create_effect                  : vfx_diesel_default;
+		cargo_subtype_text             : sw_deltic_refit_text_check;
+		purchase_cargo_capacity        : 0;
+		cargo_capacity                 : return 0;
 		can_attach_wagon               : sw_all_but_MU90;
-		running_cost_factor            : return(current_speed == 0 ? 70 : 248) ;
-		purchase_running_cost_factor : 248 ;
+		running_cost_factor            : return(current_speed == 0 ? 70 : 248);
+		purchase_running_cost_factor : 248;
 	}
 }
 
@@ -178,7 +178,7 @@ item(FEAT_TRAINS, item_deltic, 55){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_deltic, 55){
 	property{
-		name                           : string(STR_NAME_DELTIC_ALT) ;
+		name                           : string(STR_NAME_DELTIC_ALT);
 	}
 }
 }
@@ -186,7 +186,7 @@ item (FEAT_TRAINS, item_deltic, 55){
 if (vehicle_selection < 1){
 item (FEAT_TRAINS, item_deltic, 55){
 	property{
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE;
 	}
 }
 }

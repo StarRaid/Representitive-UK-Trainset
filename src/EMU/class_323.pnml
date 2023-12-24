@@ -56,8 +56,8 @@ item (FEAT_TRAINS, item_323, 323) {
 		cargo_subtype_text:					sw_323_livery_text_decider;
 		colour_mapping:						sw_323_colour_mapping_decider;
 		purchase_colour_mapping: 			sw_323_colour_mapping_auto;
-		running_cost_factor:				return(current_speed == 0 ? 6 : 27) ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		running_cost_factor:				return(current_speed == 0 ? 6 : 27);
+		sound_effect:						sw_sfx_electric_loco_modern;
 		start_stop:							sw_323_start_stop;
 }
 		livery_override (9090) {
@@ -71,7 +71,7 @@ item (FEAT_TRAINS, item_323, 323) {
 if (vehicle_selection < 3){
 item (FEAT_TRAINS, item_323, 323){
 	property{
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE;
 	}
 }
 }
@@ -81,7 +81,7 @@ item (FEAT_TRAINS, item_323, 323){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_323, 323){
 	property{
-		name                           : string(STR_NAME_323_ALT) ;
+		name                           : string(STR_NAME_323_ALT);
 	}
 }
 }

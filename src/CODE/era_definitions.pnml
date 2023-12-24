@@ -9,16 +9,22 @@
 #define ERA_PRIVATE_ONE 1996 .. 2004
 #define ERA_PRIVATE_TWO 2005 .. 4096
 
-#define DATE_EARLY date(0,1,1) .. date(1974,1,1)
-#define DATE_PREGROUPING date(1875,1,1) .. date(1922,1,1)
-#define DATE_BIGFOUR date(1923,1,1) .. date(1947,1,1)
-#define DATE_BRCREST date(1948,1,1) .. date(1966,1,1)
-#define DATE_BRBLUE date(1967,1,1) .. date(1970,1,1)
-#define DATE_BRTOPS date(1971,1,1) .. date(1982,1,1)
-#define DATE_SECTORISATION date(1983,1,1) .. date(1995,1,1)
-#define DATE_PRIVATISATION date(1996,1,1) .. date(4096,1,1)
-#define DATE_PRIVATE_ONE date(1996,1,1) .. date(2004,1,1)
-#define DATE_PRIVATE_TWO date(2005,1,1) .. date(4096,1,1)
+#define DATE_EARLY date(0,1,1) .. date(1974,12,31)
+#define DATE_PREGROUPING date(1875,1,1) .. date(1922,12,31)
+#define DATE_BIGFOUR date(1923,1,1) .. date(1947,12,31)
+#define DATE_BRCREST date(1948,1,1) .. date(1966,12,31)
+#define DATE_BRCOMBINED date(1967,1,1) .. date(1981,12,31)
+#define DATE_BRBLUE date(1967,1,1) .. date(1970,12,31)
+#define DATE_BRTOPS date(1971,1,1) .. date(1982,12,31)
+#define DATE_SECTORISATION date(1982,1,1) .. date(1997,12,31)
+#define DATE_BRLARGELOGO date(1982,1,1) .. date(1987,12,31)
+#define DATE_BRSECTORS date(1988,1,1) .. date(1995,12,31)
+#define DATE_TRANSITION date(1996,1,1) .. date(1997,12,31)
+#define DATE_PRIVATISATION date(1998,1,1) .. date(4096,12,31)
+#define DATE_PRIVATE_ONE date(1998,1,1) .. date(2005,12,31)
+#define DATE_PRIVATE_TWO date(2006,1,1) .. date(2014,12,31)
+#define DATE_PRIVATE_THREE date(2015,1,1) .. date(2023,12,31)
+#define DATE_PRIVATE_INFINITE date(2024,1,1) .. date(4096,12,31)
 
 #define SPR_STACK [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]
 #define RNING_COST_A return (speed == 0 ? 

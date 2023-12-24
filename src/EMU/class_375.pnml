@@ -70,11 +70,9 @@ spriteset(spriteset_376_sey_purchase, "gfx/EMU/leccystar3.png") {template_dualhe
 spriteset(spriteset_378_lo__purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(269, 325)}
 spriteset(spriteset_378_lon_purchase, "gfx/EMU/leccystar3.png") {template_dualhead_purchase(269, 350)}
 
-switch(FEAT_TRAINS, SELF, sw_electrostar_front_auto, current_year){
-0 .. 2000: spriteset_375_f_cnx;
-2001 .. 2003: spriteset_375_f_sxs;
-2004 .. 2009: spriteset_375_f_sgs;
-2010 .. 2016: spriteset_375_f_ser;
+switch(FEAT_TRAINS, SELF, sw_electrostar_front_auto, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_375_f_sxs;
+DATE_PRIVATE_TWO:	spriteset_375_f_ser;
 spriteset_387_f_gtr_c2c;
 }
 
@@ -143,27 +141,21 @@ switch(FEAT_TRAINS, PARENT, sw_electrostar_pan_man, vehicle_is_reversed){
 sw_electrostar_pan_man_r;
 }
 
-switch(FEAT_TRAINS, SELF, sw_electrostar_t_auto, current_year){
-0 .. 2000: spriteset_375_t_cnx;
-2001 .. 2003: spriteset_375_t_sxs;
-2004 .. 2009: spriteset_375_t_sgs;
-2010 .. 2016: spriteset_375_t_ser;
+switch(FEAT_TRAINS, SELF, sw_electrostar_t_auto, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_375_t_sxs;
+DATE_PRIVATE_TWO:	spriteset_375_t_ser;
 spriteset_387_t_gtr_c2c;
 }
 
-switch(FEAT_TRAINS, SELF, sw_electrostar_p_auto_f, current_year){
-0 .. 2000: spriteset_375_p_cnx;
-2001 .. 2003: spriteset_375_p_sxs;
-2004 .. 2009: spriteset_375_p_sgs;
-2010 .. 2016: spriteset_375_p_ser;
+switch(FEAT_TRAINS, SELF, sw_electrostar_p_auto_f, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_375_p_sxs;
+DATE_PRIVATE_TWO:	spriteset_375_p_ser;
 spriteset_387_p_gtr_c2c;
 }
 
-switch(FEAT_TRAINS, SELF, sw_electrostar_p_auto_r, current_year){
-0 .. 2000: spriteset_375_pr_cnx;
-2001 .. 2003: spriteset_375_pr_sxs;
-2004 .. 2009: spriteset_375_pr_sgs;
-2010 .. 2016: spriteset_375_pr_ser;
+switch(FEAT_TRAINS, SELF, sw_electrostar_p_auto_r, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_375_pr_sxs;
+DATE_PRIVATE_TWO:	spriteset_375_pr_ser;
 spriteset_387_pr_gtr_c2c;
 }
 
@@ -172,9 +164,9 @@ switch(FEAT_TRAINS, PARENT, sw_electrostar_p_auto, vehicle_is_reversed){
 sw_electrostar_p_auto_r;
 }
 
-switch(FEAT_TRAINS, SELF, sw_375_livery_param, livery_choice){1 : sw_electrostar_front_man ; sw_electrostar_front_auto ;}
-switch(FEAT_TRAINS, SELF, sw_375_p_livery_param, livery_choice){1 : sw_electrostar_pan_man ; sw_electrostar_p_auto ;}
-switch(FEAT_TRAINS, SELF, sw_375_t_livery_param, livery_choice){1 : sw_electrostar_trailer_man ; sw_electrostar_t_auto ;}
+switch(FEAT_TRAINS, SELF, sw_375_livery_param, livery_choice){1 : sw_electrostar_front_man; sw_electrostar_front_auto;}
+switch(FEAT_TRAINS, SELF, sw_375_p_livery_param, livery_choice){1 : sw_electrostar_pan_man; sw_electrostar_p_auto;}
+switch(FEAT_TRAINS, SELF, sw_375_t_livery_param, livery_choice){1 : sw_electrostar_trailer_man; sw_electrostar_t_auto;}
 
 switch(FEAT_TRAINS, SELF, sw_electrostar_headlights_1, position_in_consist){
 0: spriteset_375_f_lights;
@@ -262,24 +254,22 @@ switch(FEAT_TRAINS, SELF, sw_375_livery_decider, livery_choice){
 	return CB_RESULT_NO_TEXT;
 }
 
-random_switch(FEAT_TRAINS, SELF, sw_375_cnx_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_WHITE, company_colour2) ;}
-random_switch(FEAT_TRAINS, SELF, sw_377_stn_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN) ;}
-random_switch(FEAT_TRAINS, SELF, sw_375_sxs_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_YELLOW, company_colour2) ;}
-random_switch(FEAT_TRAINS, SELF, sw_375_sgs_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_YELLOW, company_colour2) ;}
-random_switch(FEAT_TRAINS, SELF, sw_375_sbs_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;}
-random_switch(FEAT_TRAINS, SELF, sw_375_ser_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE) ;}
-random_switch(FEAT_TRAINS, SELF, sw_377_fcc_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;}
-random_switch(FEAT_TRAINS, SELF, sw_387_gtr_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_GREEN, company_colour2) ;}
-random_switch(FEAT_TRAINS, SELF, sw_387_c2c_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;}
-random_switch(FEAT_TRAINS, SELF, sw_387_gwr_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREY) ;}
-random_switch(FEAT_TRAINS, SELF, sw_387_gatex_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_RED, COLOUR_GREY) ;}
-random_switch(FEAT_TRAINS, SELF, sw_379_gan_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, company_colour2) ;}
+random_switch(FEAT_TRAINS, SELF, sw_375_cnx_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_WHITE, company_colour2);}
+random_switch(FEAT_TRAINS, SELF, sw_377_stn_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);}
+random_switch(FEAT_TRAINS, SELF, sw_375_sxs_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_YELLOW, company_colour2);}
+random_switch(FEAT_TRAINS, SELF, sw_375_sgs_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_YELLOW, company_colour2);}
+random_switch(FEAT_TRAINS, SELF, sw_375_sbs_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, company_colour2);}
+random_switch(FEAT_TRAINS, SELF, sw_375_ser_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_BLUE);}
+random_switch(FEAT_TRAINS, SELF, sw_377_fcc_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK);}
+random_switch(FEAT_TRAINS, SELF, sw_387_gtr_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_GREEN, company_colour2);}
+random_switch(FEAT_TRAINS, SELF, sw_387_c2c_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, company_colour2);}
+random_switch(FEAT_TRAINS, SELF, sw_387_gwr_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_GREEN, COLOUR_GREY);}
+random_switch(FEAT_TRAINS, SELF, sw_387_gatex_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_RED, COLOUR_GREY);}
+random_switch(FEAT_TRAINS, SELF, sw_379_gan_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, company_colour2);}
 
-switch(FEAT_TRAINS, SELF, sw_electrostar_colour_auto, current_year){
-0 .. 2000: sw_375_cnx_colour_mapping;
-2001 .. 2003: sw_375_sxs_colour_mapping;
-2004 .. 2009: sw_375_sgs_colour_mapping;
-2010 .. 2016: sw_375_ser_colour_mapping;
+switch(FEAT_TRAINS, SELF, sw_electrostar_colour_auto, date_of_last_service){
+DATE_PRIVATE_ONE:	sw_375_sxs_colour_mapping;
+DATE_PRIVATE_TWO:	sw_375_ser_colour_mapping;
 sw_387_gtr_colour_mapping;
 }
 
@@ -329,8 +319,9 @@ switch(FEAT_TRAINS, SELF, sw_376_coupling_restrictions, vehicle_type_id) {
     return string(STR_376_NO_COUPLE);
 }
 
-switch(FEAT_TRAINS, SELF, sw_375_speed, current_year) {
-    0 .. 2015: 160;
+switch(FEAT_TRAINS, SELF, sw_375_speed, date_of_last_service) {
+    DATE_PRIVATE_ONE: 160;
+    DATE_PRIVATE_TWO: 160;
 	176;
 }
 
@@ -374,19 +365,19 @@ item (FEAT_TRAINS, item_375, 375) {
 		default: 							sw_375_default;
 		purchase:							sw_electrostar_purchase;
 		create_effect:						vfx_3rd_only;
-		cargo_subtype_text:					sw_375_livery_decider ;
+		cargo_subtype_text:					sw_375_livery_decider;
 		colour_mapping:						sw_375_recolour;
 		purchase_colour_mapping: 			sw_375_recolour_purchase;
 		speed:								sw_375_speed;
-		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 30);
+		sound_effect:						sw_sfx_electric_loco_modern;
 		purchase_running_cost_factor : 32;
 }
 		livery_override (9090) {
 		cargo_capacity: 95;
 		default: sw_375_t_default;
 		colour_mapping:	sw_375_recolour;
-		cargo_subtype_text: sw_375_livery_decider ;
+		cargo_subtype_text: sw_375_livery_decider;
 	speed:								sw_375_speed;
 	power:				502;
 }
@@ -396,7 +387,7 @@ item (FEAT_TRAINS, item_375, 375) {
 if (vehicle_selection != 2){
 item (FEAT_TRAINS, item_375, 375){
 	property{
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE;
 	}
 }
 }
@@ -405,14 +396,14 @@ item (FEAT_TRAINS, item_375, 375){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_375, 375){
 	property{
-		name                           : string(STR_NAME_375_ALT) ;
+		name                           : string(STR_NAME_375_ALT);
 	}
 }
 }
 
-switch(FEAT_TRAINS, SELF, sw_376_front_auto, current_year){
-0..2006: spriteset_376_f_sey;
-2007..2018: spriteset_378_f_lo;
+switch(FEAT_TRAINS, SELF, sw_376_front_auto, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_376_f_sey;
+DATE_PRIVATE_TWO:	spriteset_378_f_lo;
 spriteset_378_f_lon;
 }
 
@@ -451,21 +442,21 @@ switch(FEAT_TRAINS, PARENT, sw_376_pan_man, vehicle_is_reversed){
 sw_376_pan_man_r;
 }
 
-switch(FEAT_TRAINS, SELF, sw_376_t_auto, current_year){
-0..2006: spriteset_376_t_sey;
-2007..2018: spriteset_378_t_lo;
+switch(FEAT_TRAINS, SELF, sw_376_t_auto, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_376_t_sey;
+DATE_PRIVATE_TWO:	spriteset_378_t_lo;
 spriteset_378_t_lon;
 }
 
-switch(FEAT_TRAINS, SELF, sw_376_p_auto_f, current_year){
-0..2006: spriteset_376_p_sey;
-2007..2018: spriteset_378_p_lo;
+switch(FEAT_TRAINS, SELF, sw_376_p_auto_f, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_376_p_sey;
+DATE_PRIVATE_TWO:	spriteset_378_p_lo;
 spriteset_378_p_lon;
 }
 
-switch(FEAT_TRAINS, SELF, sw_376_p_auto_r, current_year){
-0..2006: spriteset_376_pr_sey;
-2007..2018: spriteset_378_pr_lo;
+switch(FEAT_TRAINS, SELF, sw_376_p_auto_r, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_376_pr_sey;
+DATE_PRIVATE_TWO:	spriteset_378_pr_lo;
 spriteset_378_pr_lon;
 }
 
@@ -474,9 +465,9 @@ switch(FEAT_TRAINS, PARENT, sw_376_p_auto, vehicle_is_reversed){
 sw_376_p_auto_r;
 }
 
-switch(FEAT_TRAINS, SELF, sw_376_livery_param, livery_choice){1 : sw_376_front_man ; sw_376_front_auto ;}
-switch(FEAT_TRAINS, SELF, sw_376_p_livery_param, livery_choice){1 : sw_376_pan_man ; sw_376_p_auto ;}
-switch(FEAT_TRAINS, SELF, sw_376_t_livery_param, livery_choice){1 : sw_376_trailer_man ; sw_376_t_auto ;}
+switch(FEAT_TRAINS, SELF, sw_376_livery_param, livery_choice){1 : sw_376_front_man; sw_376_front_auto;}
+switch(FEAT_TRAINS, SELF, sw_376_p_livery_param, livery_choice){1 : sw_376_pan_man; sw_376_p_auto;}
+switch(FEAT_TRAINS, SELF, sw_376_t_livery_param, livery_choice){1 : sw_376_trailer_man; sw_376_t_auto;}
 
 switch(FEAT_TRAINS, SELF, sw_376_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0: return sw_376_livery_param;
@@ -530,11 +521,11 @@ switch(FEAT_TRAINS, SELF, sw_376_livery_decider, livery_choice){
 	return CB_RESULT_NO_TEXT;
 }
 
-random_switch(FEAT_TRAINS, SELF, sw_376_sey_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_YELLOW, company_colour2) ;}
-random_switch(FEAT_TRAINS, SELF, sw_378_lo__colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;}
+random_switch(FEAT_TRAINS, SELF, sw_376_sey_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_YELLOW, company_colour2);}
+random_switch(FEAT_TRAINS, SELF, sw_378_lo__colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE);}
 
-switch(FEAT_TRAINS, SELF, sw_376_colour_auto, current_year){
-0..2006: sw_376_sey_colour_mapping;
+switch(FEAT_TRAINS, SELF, sw_376_colour_auto, date_of_last_service){
+DATE_PRIVATE_ONE:		sw_376_sey_colour_mapping;
 sw_378_lo__colour_mapping;
 }
 
@@ -599,18 +590,18 @@ item (FEAT_TRAINS, item_376, 376) {
 		default: 							sw_376_default;
 		purchase:							sw_376_purchase;
 		create_effect:						vfx_3rd_only;
-		cargo_subtype_text:					sw_376_livery_decider ;
+		cargo_subtype_text:					sw_376_livery_decider;
 		colour_mapping:						sw_376_recolour;
 		purchase_colour_mapping: 			sw_376_recolour_purchase;
-		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 30);
+		sound_effect:						sw_sfx_electric_loco_modern;
 		purchase_running_cost_factor : 32;
 }
 		livery_override (9090) {
 		cargo_capacity: 120;
 		default: sw_376_t_default;
 		colour_mapping:	sw_376_recolour;
-		cargo_subtype_text: sw_376_livery_decider ;
+		cargo_subtype_text: sw_376_livery_decider;
 	speed:				34;
 	power:				400;
 }
@@ -620,7 +611,7 @@ item (FEAT_TRAINS, item_376, 376) {
 if (vehicle_selection < 3){
 item (FEAT_TRAINS, item_376, 376){
 	property{
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE;
 	}
 }
 }
@@ -629,15 +620,14 @@ item (FEAT_TRAINS, item_376, 376){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_376, 376){
 	property{
-		name                           : string(STR_NAME_376_ALT) ;
+		name                           : string(STR_NAME_376_ALT);
 	}
 }
 }
 
-switch(FEAT_TRAINS, SELF, sw_377_front_auto, current_year){
-0 .. 2000: spriteset_375_f_cnx;
-2001 .. 2003: spriteset_375_f_sxs;
-2004 .. 2009: spriteset_375_f_sgs;
+switch(FEAT_TRAINS, SELF, sw_377_front_auto, date_of_last_service){
+DATE_PRIVATE_ONE: spriteset_375_f_sxs;
+DATE_PRIVATE_TWO: spriteset_375_f_sgs;
 spriteset_375_f_ser;
 }
 
@@ -697,24 +687,21 @@ switch(FEAT_TRAINS, PARENT, sw_377_pan_man, vehicle_is_reversed){
 sw_377_pan_man_r;
 }
 
-switch(FEAT_TRAINS, SELF, sw_377_t_auto, current_year){
-0 .. 2000: spriteset_375_t_cnx;
-2001 .. 2003: spriteset_375_t_sxs;
-2004 .. 2009: spriteset_375_t_sgs;
+switch(FEAT_TRAINS, SELF, sw_377_t_auto, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_375_t_sxs;
+DATE_PRIVATE_TWO:	spriteset_375_t_sgs;
 spriteset_375_t_ser;
 }
 
-switch(FEAT_TRAINS, SELF, sw_377_p_auto_f, current_year){
-0 .. 2000: spriteset_375_p_cnx;
-2001 .. 2003: spriteset_375_p_sxs;
-2004 .. 2009: spriteset_375_p_sgs;
+switch(FEAT_TRAINS, SELF, sw_377_p_auto_f, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_375_p_sxs;
+DATE_PRIVATE_TWO:	spriteset_375_p_sgs;
 spriteset_375_p_ser;
 }
 
-switch(FEAT_TRAINS, SELF, sw_377_p_auto_r, current_year){
-0 .. 2000: spriteset_375_pr_cnx;
-2001 .. 2003: spriteset_375_pr_sxs;
-2004 .. 2009: spriteset_375_pr_sgs;
+switch(FEAT_TRAINS, SELF, sw_377_p_auto_r, date_of_last_service){
+DATE_PRIVATE_ONE:	spriteset_375_pr_sxs;
+DATE_PRIVATE_TWO:	spriteset_375_pr_sgs;
 spriteset_375_pr_ser;
 }
 
@@ -723,9 +710,9 @@ switch(FEAT_TRAINS, PARENT, sw_377_p_auto, vehicle_is_reversed){
 sw_377_p_auto_r;
 }
 
-switch(FEAT_TRAINS, SELF, sw_377_livery_param, livery_choice){1 : sw_377_front_man ; sw_377_front_auto ;}
-switch(FEAT_TRAINS, SELF, sw_377_p_livery_param, livery_choice){1 : sw_377_pan_man ; sw_377_p_auto ;}
-switch(FEAT_TRAINS, SELF, sw_377_t_livery_param, livery_choice){1 : sw_377_trailer_man ; sw_377_t_auto ;}
+switch(FEAT_TRAINS, SELF, sw_377_livery_param, livery_choice){1 : sw_377_front_man; sw_377_front_auto;}
+switch(FEAT_TRAINS, SELF, sw_377_p_livery_param, livery_choice){1 : sw_377_pan_man; sw_377_p_auto;}
+switch(FEAT_TRAINS, SELF, sw_377_t_livery_param, livery_choice){1 : sw_377_trailer_man; sw_377_t_auto;}
 
 switch(FEAT_TRAINS, SELF, sw_377_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0: return sw_377_livery_param;
@@ -784,10 +771,9 @@ switch(FEAT_TRAINS, SELF, sw_377_livery_decider, livery_choice){
 	return CB_RESULT_NO_TEXT;
 }
 
-switch(FEAT_TRAINS, SELF, sw_377_colour_auto, current_year){
-0 .. 2000: sw_375_cnx_colour_mapping;
-2001 .. 2003: sw_375_sxs_colour_mapping;
-2004 .. 2009: sw_375_sgs_colour_mapping;
+switch(FEAT_TRAINS, SELF, sw_377_colour_auto, date_of_last_service){
+DATE_PRIVATE_ONE:	sw_375_sxs_colour_mapping;
+DATE_PRIVATE_TWO:	sw_375_sgs_colour_mapping;
 sw_375_ser_colour_mapping;
 }
 
@@ -858,18 +844,18 @@ item (FEAT_TRAINS, item_377, 377) {
 		default: 							sw_377_default;
 		purchase:							sw_377_purchase;
 		create_effect:						vfx_3rd_only;
-		cargo_subtype_text:					sw_377_livery_decider ;
+		cargo_subtype_text:					sw_377_livery_decider;
 		colour_mapping:						sw_377_recolour;
 		purchase_colour_mapping: 			sw_377_recolour_purchase;
-		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 30);
+		sound_effect:						sw_sfx_electric_loco_modern;
 		purchase_running_cost_factor : 32;
 }
 		livery_override (9090) {
 		cargo_capacity: 95;
 		default: sw_377_t_default;
 		colour_mapping:	sw_377_recolour;
-		cargo_subtype_text: sw_377_livery_decider ;
+		cargo_subtype_text: sw_377_livery_decider;
 	speed:								45;
 	power:				580;
 }
@@ -879,7 +865,7 @@ item (FEAT_TRAINS, item_377, 377) {
 if (vehicle_selection < 3){
 item (FEAT_TRAINS, item_377, 377){
 	property{
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE;
 	}
 }
 }
@@ -888,12 +874,12 @@ item (FEAT_TRAINS, item_377, 377){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_377, 377){
 	property{
-		name                           : string(STR_NAME_377_ALT) ;
+		name                           : string(STR_NAME_377_ALT);
 	}
 }
 }
 
-switch(FEAT_TRAINS, SELF, sw_387_front_auto, current_year){
+switch(FEAT_TRAINS, SELF, sw_387_front_auto, date_of_last_service){
 spriteset_387_f_gtr_c2c;
 }
 
@@ -926,15 +912,15 @@ switch(FEAT_TRAINS, PARENT, sw_387_pan_man, vehicle_is_reversed){
 sw_387_pan_man_r;
 }
 
-switch(FEAT_TRAINS, SELF, sw_387_t_auto, current_year){
+switch(FEAT_TRAINS, SELF, sw_387_t_auto, date_of_last_service){
 spriteset_387_t_gtr_c2c;
 }
 
-switch(FEAT_TRAINS, SELF, sw_387_p_auto_f, current_year){
+switch(FEAT_TRAINS, SELF, sw_387_p_auto_f, date_of_last_service){
 spriteset_387_p_gtr_c2c;
 }
 
-switch(FEAT_TRAINS, SELF, sw_387_p_auto_r, current_year){
+switch(FEAT_TRAINS, SELF, sw_387_p_auto_r, date_of_last_service){
 spriteset_387_pr_gtr_c2c;
 }
 
@@ -943,9 +929,9 @@ switch(FEAT_TRAINS, PARENT, sw_387_p_auto, vehicle_is_reversed){
 sw_387_p_auto_r;
 }
 
-switch(FEAT_TRAINS, SELF, sw_387_livery_param, livery_choice){1 : sw_387_front_man ; sw_387_front_auto ;}
-switch(FEAT_TRAINS, SELF, sw_387_p_livery_param, livery_choice){1 : sw_387_pan_man ; sw_387_p_auto ;}
-switch(FEAT_TRAINS, SELF, sw_387_t_livery_param, livery_choice){1 : sw_387_trailer_man ; sw_387_t_auto ;}
+switch(FEAT_TRAINS, SELF, sw_387_livery_param, livery_choice){1 : sw_387_front_man; sw_387_front_auto;}
+switch(FEAT_TRAINS, SELF, sw_387_p_livery_param, livery_choice){1 : sw_387_pan_man; sw_387_p_auto;}
+switch(FEAT_TRAINS, SELF, sw_387_t_livery_param, livery_choice){1 : sw_387_trailer_man; sw_387_t_auto;}
 
 switch(FEAT_TRAINS, SELF, sw_387_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
 	0: return sw_387_livery_param;
@@ -1000,7 +986,7 @@ switch(FEAT_TRAINS, SELF, sw_387_livery_decider, livery_choice){
 	return CB_RESULT_NO_TEXT;
 }
 
-switch(FEAT_TRAINS, SELF, sw_387_colour_auto, current_year){
+switch(FEAT_TRAINS, SELF, sw_387_colour_auto, date_of_last_service){
 sw_387_gtr_colour_mapping;
 }
 
@@ -1041,7 +1027,7 @@ item (FEAT_TRAINS, item_387, 387) {
 		cost_factor:					55;
 		running_cost_factor:			34;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							100 mph;
+		speed:							110 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						SAAZ;
@@ -1067,18 +1053,18 @@ item (FEAT_TRAINS, item_387, 387) {
 		default: 							sw_387_default;
 		purchase:							sw_387_purchase;
 		create_effect:						vfx_3rd_only;
-		cargo_subtype_text:					sw_387_livery_decider ;
+		cargo_subtype_text:					sw_387_livery_decider;
 		colour_mapping:						sw_387_recolour;
 		purchase_colour_mapping: 			sw_387_recolour_purchase;
-		running_cost_factor:				return(current_speed == 0 ? 8 : 34) ;
-		sound_effect:						sw_sfx_electric_loco_modern ;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 34);
+		sound_effect:						sw_sfx_electric_loco_modern;
 		purchase_running_cost_factor : 34;
 }
 		livery_override (9090) {
 		cargo_capacity: 95;
 		default: sw_387_t_default;
 		colour_mapping:	sw_387_recolour;
-		cargo_subtype_text: sw_387_livery_decider ;
+		cargo_subtype_text: sw_387_livery_decider;
 	speed:								50;
 	power:				580;
 }
@@ -1088,7 +1074,7 @@ item (FEAT_TRAINS, item_387, 387) {
 if (vehicle_selection < 3){
 item (FEAT_TRAINS, item_387, 387){
 	property{
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE;
 	}
 }
 }
@@ -1097,7 +1083,7 @@ item (FEAT_TRAINS, item_387, 387){
 if (alt_names == 1){
 item (FEAT_TRAINS, item_387, 387){
 	property{
-		name                           : string(STR_NAME_387_ALT) ;
+		name                           : string(STR_NAME_387_ALT);
 	}
 }
 }
