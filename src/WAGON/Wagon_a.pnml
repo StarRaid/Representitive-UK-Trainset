@@ -32,7 +32,7 @@ switch(FEAT_TRAINS, SELF, sw_wagon_a_spritestack, [STORE_TEMP((getbits(extra_cal
 item (FEAT_TRAINS, item_WAGON_A, 10000) {
 	property {
 		name: 							string(STR_NAME_WAGON_A);
-		climates_available: 			NO_CLIMATE;
+		climates_available: 			NO_CLIMATE; //Deprecated - not available for purchase
 		introduction_date:				date(1950, 1, 1);
 		model_life:						30;
 		retire_early:					1;

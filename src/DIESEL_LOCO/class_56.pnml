@@ -1,26 +1,26 @@
 //Class 56
 
-spriteset(gfx_56_brblue,				"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(0,0)}
-spriteset(gfx_56_brblue_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double_reverse(0,0)}
-spriteset(gfx_56_brlarge,				"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(0,25)}
-spriteset(gfx_56_brlarge_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double_reverse(0,25)}
-spriteset(gfx_56_railfreight,			"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(0,50)}
-spriteset(gfx_56_railfreight_rev,		"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double_reverse(0,50)}
-spriteset(gfx_56_ews,					"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(0,75)}
-spriteset(gfx_56_ews_rev,				"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double_reverse(0,75)}
-spriteset(gfx_56_colas,					"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(0,100)}
-spriteset(gfx_56_colas_rev,				"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double_reverse(0,100)}
-spriteset(gfx_56_loadhaul,				"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(0,125)}
-spriteset(gfx_56_loadhaul_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double_reverse(0,125)}
-spriteset(gfx_56_fastline,				"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(0,150)}
-spriteset(gfx_56_fastline_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double_reverse(0,150)}
-spriteset(gfx_56_dcrgrey,				"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(0,175)}
-spriteset(gfx_56_dcrgrey_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double_reverse(0,175)}
-spriteset(gfx_56_dcrgreen,				"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(0,200)}
-spriteset(gfx_56_dcrgreen_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double_reverse(0,200)}
+spriteset(gfx_56_brblue,				"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(0,0)}
+spriteset(gfx_56_brblue_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_8_8_rev_2(0,0)}
+spriteset(gfx_56_brlarge,				"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(0,25)}
+spriteset(gfx_56_brlarge_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_8_8_rev_2(0,25)}
+spriteset(gfx_56_railfreight,			"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(0,50)}
+spriteset(gfx_56_railfreight_rev,		"gfx/DIESEL_LOCO/class_56.png"){template_8_8_rev_2(0,50)}
+spriteset(gfx_56_ews,					"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(0,75)}
+spriteset(gfx_56_ews_rev,				"gfx/DIESEL_LOCO/class_56.png"){template_8_8_rev_2(0,75)}
+spriteset(gfx_56_colas,					"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(0,100)}
+spriteset(gfx_56_colas_rev,				"gfx/DIESEL_LOCO/class_56.png"){template_8_8_rev_2(0,100)}
+spriteset(gfx_56_loadhaul,				"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(0,125)}
+spriteset(gfx_56_loadhaul_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_8_8_rev_2(0,125)}
+spriteset(gfx_56_fastline,				"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(0,150)}
+spriteset(gfx_56_fastline_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_8_8_rev_2(0,150)}
+spriteset(gfx_56_dcrgrey,				"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(0,175)}
+spriteset(gfx_56_dcrgrey_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_8_8_rev_2(0,175)}
+spriteset(gfx_56_dcrgreen,				"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(0,200)}
+spriteset(gfx_56_dcrgreen_rev,			"gfx/DIESEL_LOCO/class_56.png"){template_8_8_rev_2(0,200)}
 
-spriteset(gfx_56_lights_back,			"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(235,0)}
-spriteset(gfx_56_lights_front,			"gfx/DIESEL_LOCO/class_56.png"){template_Mk2_double(235,25)}
+spriteset(gfx_56_lights_back,			"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(235,0)}
+spriteset(gfx_56_lights_front,			"gfx/DIESEL_LOCO/class_56.png"){template_8_8_2(235,25)}
 
 spriteset(gfx_56_purch_brblue,			"gfx/DIESEL_LOCO/class_56.png"){template_purchase(178,150)}
 spriteset(gfx_56_purch_brlarge,			"gfx/DIESEL_LOCO/class_56.png"){template_purchase(178,175)}

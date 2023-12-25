@@ -2,16 +2,16 @@
 
 //Spritesets
 
-spriteset(ee50_brblue_pre			, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double        (  0,  0) }
-spriteset(ee50_brblue_pre_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double_reverse(  0,  0) }
-spriteset(ee50_brblue_llg			, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double        (  0, 25) }
-spriteset(ee50_brblue_llg_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double_reverse(  0, 25) }
-spriteset(ee50_brblue_nse_o			, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double        (  0, 50) }
-spriteset(ee50_brblue_nse_o_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double_reverse(  0, 50) }
-spriteset(ee50_brblue_nse_r			, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double        (  0, 75) }
-spriteset(ee50_brblue_nse_r_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double_reverse(  0, 75) }
-spriteset(ee50_brblue_gbrf			, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double        (  0,100) }
-spriteset(ee50_brblue_gbrf_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double_reverse(  0,100) }
+spriteset(ee50_brblue_pre			, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_2        (  0,  0) }
+spriteset(ee50_brblue_pre_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_rev_2(  0,  0) }
+spriteset(ee50_brblue_llg			, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_2        (  0, 25) }
+spriteset(ee50_brblue_llg_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_rev_2(  0, 25) }
+spriteset(ee50_brblue_nse_o			, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_2        (  0, 50) }
+spriteset(ee50_brblue_nse_o_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_rev_2(  0, 50) }
+spriteset(ee50_brblue_nse_r			, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_2        (  0, 75) }
+spriteset(ee50_brblue_nse_r_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_rev_2(  0, 75) }
+spriteset(ee50_brblue_gbrf			, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_2        (  0,100) }
+spriteset(ee50_brblue_gbrf_rev		, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_rev_2(  0,100) }
 
 spriteset(ee50_purchase_brblue	, "gfx/DIESEL_LOCO/class_50.png"){ template_purchase(178, 50) }
 spriteset(ee50_purchase_brllg	, "gfx/DIESEL_LOCO/class_50.png"){ template_purchase(178, 75) }
@@ -19,8 +19,8 @@ spriteset(ee50_purchase_nse_o	, "gfx/DIESEL_LOCO/class_50.png"){ template_purcha
 spriteset(ee50_purchase_nse_r	, "gfx/DIESEL_LOCO/class_50.png"){ template_purchase(178,125) }
 spriteset(ee50_purchase_gbrf	, "gfx/DIESEL_LOCO/class_50.png"){ template_purchase(178,150) }
 
-spriteset(ee50_headlights		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double( 178,  0) }
-spriteset(ee50_taillights		, "gfx/DIESEL_LOCO/class_50.png"){ template_Mk2_double( 178, 25) }
+spriteset(ee50_headlights		, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_2( 178,  0) }
+spriteset(ee50_taillights		, "gfx/DIESEL_LOCO/class_50.png"){ template_8_8_2( 178, 25) }
 
 
 

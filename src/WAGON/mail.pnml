@@ -1,11 +1,11 @@
 //GUV
 
-spriteset(gfx_guv_blue,					"gfx/WAGON/wagons.png"){template_Mk2_single(250,25)}
-spriteset(gfx_guv_brblue,				"gfx/WAGON/wagons.png"){template_Mk2_single(250,50)}
-spriteset(gfx_guv_royalmail,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,75)}
-spriteset(gfx_guv_railexpress,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,100)}
-spriteset(gfx_guv_intercity,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,125)}
-spriteset(gfx_guv_first_fag,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,150)}
+spriteset(gfx_guv_blue,					"gfx/WAGON/wagons.png"){template_8_4_2(250,25)}
+spriteset(gfx_guv_brblue,				"gfx/WAGON/wagons.png"){template_8_4_2(250,50)}
+spriteset(gfx_guv_royalmail,			"gfx/WAGON/wagons.png"){template_8_4_2(250,75)}
+spriteset(gfx_guv_railexpress,			"gfx/WAGON/wagons.png"){template_8_4_2(250,100)}
+spriteset(gfx_guv_intercity,			"gfx/WAGON/wagons.png"){template_8_4_2(250,125)}
+spriteset(gfx_guv_first_fag,			"gfx/WAGON/wagons.png"){template_8_4_2(250,150)}
 
 spriteset(gfx_guv_purchase_blue,		"gfx/WAGON/wagons.png"){template_purchase(339,25)}
 spriteset(gfx_guv_purchase_brblue,		"gfx/WAGON/wagons.png"){template_purchase(339,50)}
@@ -172,10 +172,10 @@ item (FEAT_TRAINS, item_guv, 9001){
 
 //NTX
 
-spriteset(gfx_ntx_brblue,			"gfx/WAGON/wagons.png"){template_Mk2_single(250,225)}
-spriteset(gfx_ntx_railexpress,		"gfx/WAGON/wagons.png"){template_Mk2_single(250,250)}
-spriteset(gfx_ntx_intericty,		"gfx/WAGON/wagons.png"){template_Mk2_single(250,275)}
-spriteset(gfx_ntx_royalmail,		"gfx/WAGON/wagons.png"){template_Mk2_single(250,300)}
+spriteset(gfx_ntx_brblue,			"gfx/WAGON/wagons.png"){template_8_4_2(250,225)}
+spriteset(gfx_ntx_railexpress,		"gfx/WAGON/wagons.png"){template_8_4_2(250,250)}
+spriteset(gfx_ntx_intericty,		"gfx/WAGON/wagons.png"){template_8_4_2(250,275)}
+spriteset(gfx_ntx_royalmail,		"gfx/WAGON/wagons.png"){template_8_4_2(250,300)}
 
 spriteset(gfx_ntx_purch_brblue,		"gfx/WAGON/wagons.png"){template_purchase(339,225)}
 spriteset(gfx_ntx_purch_railexpress,"gfx/WAGON/wagons.png"){template_purchase(339,250)}

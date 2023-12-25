@@ -1,0 +1,47 @@
+
+/*Updated DBSO/DVT reversal logic
+
+Replace <SELF_ID> with the ID of the locomotive.
+Replace <SELF_NAME> with the short name of the locomotive, i.e. hst.
+
+Replace <TYPE> with the property the switch is modifiying (GFX for graphics, COL for colours, EFF for particle effects)
+
+*/
+
+//Definitions
+
+//Check ID for vehicle at the opposite end of the consist.
+#define DEF_CHECK_VEHID_OPPOSITE [STORE_TEMP(position_in_consist_from_end-position_in_consist, 0x10F), var[0x61, 0, 0x0000FFFF, 0xC6]]
+//Check cargo_subtype for vehicle at the opposite end of the consist.
+#define DEF_CHECK_LIVERY_OPPOSITE [STORE_TEMP(position_in_consist_from_end-position_in_consist, 0x10F), var[0x61, 0, 0x0000FFFF, 0xF2]]
+
+//Ultimate ID check. Checks that there is one DBSO or DVT, but not both. Checks that only one compatible locomotive is present. Checks that the vehicle is at the front.
+
+//Check for front vehicles to use
+#define DEF_CHECK_REVERSAL_LOCO_IDS	( ((count_veh_id(9025) == 1) ^ (count_veh_id(9035) == 1)) && ((position_in_consist == 0) && ((DEF_CHECK_VEHID_OPPOSITE == 9025) | (DEF_CHECK_VEHID_OPPOSITE == 9035))) )
+//Check for rear vehicles to use
+#define DEF_CHECK_REVERSAL_LOCO_IDS	( ((count_veh_id(9025) == 1) ^ (count_veh_id(9035) == 1)) && ((position_in_consist_from_end == 0) && ((DEF_CHECK_VEHID_OPPOSITE == 9025) | (DEF_CHECK_VEHID_OPPOSITE == 9035))) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Check the ID of the rear most vehicle
+
+
+
+// Checking vehicle IDs to make sure the consist is valid for reversal behaviour
+
+
+switch(FEAT_TRAINS, SELF, SW_<SELF_ID>_<TYPE>_DVT_CHECK, DEF_CHECK_REVERSAL_IDS){
+	1:	SW_REVERSAL_ID_CHECK;
+	SW_<SELF_NAME>_GFX_SPRITESTACK;
+}

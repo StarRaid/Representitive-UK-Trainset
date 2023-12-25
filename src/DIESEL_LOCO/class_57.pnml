@@ -1,30 +1,30 @@
 //Class 57
 
-spriteset(gfx_57_base,				"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(0,0)}
-spriteset(gfx_57_base_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double_reverse(0,0)}
-spriteset(gfx_57_drs,				"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(0,25)}
-spriteset(gfx_57_drs_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double_reverse(0,25)}
-spriteset(gfx_57_fliner,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(0,50)}
-spriteset(gfx_57_fliner_rev,		"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double_reverse(0,50)}
-spriteset(gfx_57_atw,				"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(0,75)}
-spriteset(gfx_57_atw_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double_reverse(0,75)}
-spriteset(gfx_57_fag,				"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(0,100)}
-spriteset(gfx_57_fag_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double_reverse(0,100)}
-spriteset(gfx_57_fgw,				"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(0,125)}
-spriteset(gfx_57_fgw_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double_reverse(0,125)}
-spriteset(gfx_57_gwr,				"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(0,150)}
-spriteset(gfx_57_gwr_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double_reverse(0,150)}
-spriteset(gfx_57_virgin,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(0,175)}
-spriteset(gfx_57_virgin_rev,		"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double_reverse(0,175)}
+spriteset(gfx_57_base,				"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(0,0)}
+spriteset(gfx_57_base_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_8_8_rev_2(0,0)}
+spriteset(gfx_57_drs,				"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(0,25)}
+spriteset(gfx_57_drs_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_8_8_rev_2(0,25)}
+spriteset(gfx_57_fliner,			"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(0,50)}
+spriteset(gfx_57_fliner_rev,		"gfx/DIESEL_LOCO/class_57.png"){template_8_8_rev_2(0,50)}
+spriteset(gfx_57_atw,				"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(0,75)}
+spriteset(gfx_57_atw_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_8_8_rev_2(0,75)}
+spriteset(gfx_57_fag,				"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(0,100)}
+spriteset(gfx_57_fag_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_8_8_rev_2(0,100)}
+spriteset(gfx_57_fgw,				"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(0,125)}
+spriteset(gfx_57_fgw_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_8_8_rev_2(0,125)}
+spriteset(gfx_57_gwr,				"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(0,150)}
+spriteset(gfx_57_gwr_rev,			"gfx/DIESEL_LOCO/class_57.png"){template_8_8_rev_2(0,150)}
+spriteset(gfx_57_virgin,			"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(0,175)}
+spriteset(gfx_57_virgin_rev,		"gfx/DIESEL_LOCO/class_57.png"){template_8_8_rev_2(0,175)}
 
-spriteset(gfx_57_cab_old,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_single(235,50)}
-spriteset(gfx_57_cab_new,			"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_single(235,75)}
-spriteset(gfx_57_cab_dellner,		"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_single(324,75)}
+spriteset(gfx_57_cab_old,			"gfx/DIESEL_LOCO/class_57.png"){template_8_4_2(235,50)}
+spriteset(gfx_57_cab_new,			"gfx/DIESEL_LOCO/class_57.png"){template_8_4_2(235,75)}
+spriteset(gfx_57_cab_dellner,		"gfx/DIESEL_LOCO/class_57.png"){template_8_4_2(324,75)}
 
-spriteset(gfx_57_lights_old_back,	"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(235,0)}
-spriteset(gfx_57_lights_old_front,	"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(235,25)}
-spriteset(gfx_57_lights_new_back,	"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(235,100)}
-spriteset(gfx_57_lights_new_front,	"gfx/DIESEL_LOCO/class_57.png"){template_Mk2_double(235,125)}
+spriteset(gfx_57_lights_old_back,	"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(235,0)}
+spriteset(gfx_57_lights_old_front,	"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(235,25)}
+spriteset(gfx_57_lights_new_back,	"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(235,100)}
+spriteset(gfx_57_lights_new_front,	"gfx/DIESEL_LOCO/class_57.png"){template_8_8_2(235,125)}
 
 spriteset(gfx_57_purch_drs,			"gfx/DIESEL_LOCO/class_57.png"){template_purchase(178,150)}
 spriteset(gfx_57_purch_fliner,		"gfx/DIESEL_LOCO/class_57.png"){template_purchase(178,175)}

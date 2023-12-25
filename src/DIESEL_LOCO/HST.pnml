@@ -279,7 +279,7 @@ item(FEAT_TRAINS, item_hst, 43){
 		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE ;//Deprecated - not available for purchase
 		introduction_date              : date(1975,1,1) ;
 		model_life                     : 30 ;
 		vehicle_life                   : 45 ;

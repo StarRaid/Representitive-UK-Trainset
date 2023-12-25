@@ -1,14 +1,14 @@
 //Class 58
 
-spriteset(gfx_bone_rfreight_red,		"gfx/DIESEL_LOCO/class_58.png"){template_Mk2_double(0,0)}
-spriteset(gfx_bone_rfreight_red_rev,	"gfx/DIESEL_LOCO/class_58.png"){template_Mk2_double_reverse(0,0)}
-spriteset(gfx_bone_rfreight_grey,		"gfx/DIESEL_LOCO/class_58.png"){template_Mk2_double(0,25)}
-spriteset(gfx_bone_rfreight_grey_rev,	"gfx/DIESEL_LOCO/class_58.png"){template_Mk2_double_reverse(0,25)}
-spriteset(gfx_bone_ews,					"gfx/DIESEL_LOCO/class_58.png"){template_Mk2_double(0,50)}
-spriteset(gfx_bone_ews_rev,				"gfx/DIESEL_LOCO/class_58.png"){template_Mk2_double_reverse(0,50)}
+spriteset(gfx_bone_rfreight_red,		"gfx/DIESEL_LOCO/class_58.png"){template_8_8_2(0,0)}
+spriteset(gfx_bone_rfreight_red_rev,	"gfx/DIESEL_LOCO/class_58.png"){template_8_8_rev_2(0,0)}
+spriteset(gfx_bone_rfreight_grey,		"gfx/DIESEL_LOCO/class_58.png"){template_8_8_2(0,25)}
+spriteset(gfx_bone_rfreight_grey_rev,	"gfx/DIESEL_LOCO/class_58.png"){template_8_8_rev_2(0,25)}
+spriteset(gfx_bone_ews,					"gfx/DIESEL_LOCO/class_58.png"){template_8_8_2(0,50)}
+spriteset(gfx_bone_ews_rev,				"gfx/DIESEL_LOCO/class_58.png"){template_8_8_rev_2(0,50)}
 
-spriteset(gfx_bone_taillights,			"gfx/DIESEL_LOCO/class_58.png"){template_Mk2_double(0,75)}
-spriteset(gfx_bone_headlights,			"gfx/DIESEL_LOCO/class_58.png"){template_Mk2_double(0,100)}
+spriteset(gfx_bone_taillights,			"gfx/DIESEL_LOCO/class_58.png"){template_8_8_2(0,75)}
+spriteset(gfx_bone_headlights,			"gfx/DIESEL_LOCO/class_58.png"){template_8_8_2(0,100)}
 
 spriteset(gfx_bone_purch_rfreight_red,	"gfx/DIESEL_LOCO/class_58.png"){template_purchase(178,0)}
 spriteset(gfx_bone_purch_rfreight_grey,	"gfx/DIESEL_LOCO/class_58.png"){template_purchase(178,25)}

@@ -2,18 +2,18 @@
 
 //Spritesets
 
-spriteset(gfx_bshpeak_brgreen         , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_double(  0,  0) }
-spriteset(gfx_bshpeak_brgreen_rev     , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_double_reverse(  0,  0) }
-spriteset(gfx_bshpeak_brblue          , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_double(  0, 25) }
-spriteset(gfx_bshpeak_brblue_rev      , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_double_reverse(  0, 25) }
+spriteset(gfx_bshpeak_brgreen         , "gfx/DIESEL_LOCO/class_46.png"){ template_8_8_2(  0,  0) }
+spriteset(gfx_bshpeak_brgreen_rev     , "gfx/DIESEL_LOCO/class_46.png"){ template_8_8_rev_2(  0,  0) }
+spriteset(gfx_bshpeak_brblue          , "gfx/DIESEL_LOCO/class_46.png"){ template_8_8_2(  0, 25) }
+spriteset(gfx_bshpeak_brblue_rev      , "gfx/DIESEL_LOCO/class_46.png"){ template_8_8_rev_2(  0, 25) }
 
-spriteset(gfx_bshpeak_headlight       , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_double(  0, 75) }
-spriteset(gfx_bshpeak_taillight       , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_double(  0, 50) }
-spriteset(gfx_bshpeak_headlight_split , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_double(235, 75) }
+spriteset(gfx_bshpeak_headlight       , "gfx/DIESEL_LOCO/class_46.png"){ template_8_8_2(  0, 75) }
+spriteset(gfx_bshpeak_taillight       , "gfx/DIESEL_LOCO/class_46.png"){ template_8_8_2(  0, 50) }
+spriteset(gfx_bshpeak_headlight_split , "gfx/DIESEL_LOCO/class_46.png"){ template_8_8_2(235, 75) }
 
-spriteset(gfx_bshpeak_hc_split_brgreen, "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_single(235,  0) }
-spriteset(gfx_bshpeak_hc_split_brblue , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_single(235, 25) }
-spriteset(gfx_bshpeak_hc_centre       , "gfx/DIESEL_LOCO/class_46.png"){ template_Mk2_single(235, 50) }
+spriteset(gfx_bshpeak_hc_split_brgreen, "gfx/DIESEL_LOCO/class_46.png"){ template_8_4_2(235,  0) }
+spriteset(gfx_bshpeak_hc_split_brblue , "gfx/DIESEL_LOCO/class_46.png"){ template_8_4_2(235, 25) }
+spriteset(gfx_bshpeak_hc_centre       , "gfx/DIESEL_LOCO/class_46.png"){ template_8_4_2(235, 50) }
 
 spriteset(gfx_bshpeak_purchase_brgreen, "gfx/DIESEL_LOCO/class_46.png"){ template_purchase(324,  0) }
 spriteset(gfx_bshpeak_purchase_brblue , "gfx/DIESEL_LOCO/class_46.png"){ template_purchase(324, 25) }

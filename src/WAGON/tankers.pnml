@@ -292,7 +292,7 @@ switch(FEAT_TRAINS, SELF, sw_tea_refit_text_check, livery_choice){
 item (FEAT_TRAINS, item_tea, 10021) {
 	property {
 		name: 							string(STR_NAME_TEA);
-		climates_available: 			NO_CLIMATE;
+		climates_available: 			NO_CLIMATE;//Deprecated - not available for purchase
 		introduction_date:				date(1970, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		retire_early:					1;

@@ -28,48 +28,37 @@ Virgin East Coast
 
 //Spritesets
 
-spriteset(gfx_dvt_generic			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,  0) }
-spriteset(gfx_dvt_generic_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,  0) }
-spriteset(gfx_dvt_intercity			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0, 25) }
-spriteset(gfx_dvt_intercity_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0, 25) }
-spriteset(gfx_dvt_virgin			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0, 50) }
-spriteset(gfx_dvt_virgin_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0, 50) }
-spriteset(gfx_dvt_atw_exec			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0, 75) }
-spriteset(gfx_dvt_atw_exec_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0, 75) }
-spriteset(gfx_dvt_chiltern			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,100) }
-spriteset(gfx_dvt_chiltern_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,100) }
-spriteset(gfx_dvt_anglia			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,125) }
-spriteset(gfx_dvt_anglia_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,125) }
-spriteset(gfx_dvt_virgin_p			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(259, 75) }
-spriteset(gfx_dvt_virgin_p_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(259, 75) }
+spriteset(gfx_dvt_generic			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0,  0) }
+spriteset(gfx_dvt_generic_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0,  0) }
+spriteset(gfx_dvt_intercity			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0, 25) }
+spriteset(gfx_dvt_intercity_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0, 25) }
+spriteset(gfx_dvt_virgin			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0, 50) }
+spriteset(gfx_dvt_virgin_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0, 50) }
+spriteset(gfx_dvt_atw_exec			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0, 75) }
+spriteset(gfx_dvt_atw_exec_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0, 75) }
+spriteset(gfx_dvt_chiltern			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0,100) }
+spriteset(gfx_dvt_chiltern_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0,100) }
+spriteset(gfx_dvt_anglia			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0,125) }
+spriteset(gfx_dvt_anglia_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0,125) }
+spriteset(gfx_dvt_virgin_p			, "gfx/WAGON/dvt.png"){ template_8_8_2			(259, 75) }
+spriteset(gfx_dvt_virgin_p_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(259, 75) }
 
-spriteset(gfx_dvt_mk4_intercity		, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,175) }
-spriteset(gfx_dvt_mk4_intercity_rev	, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,175) }
-spriteset(gfx_dvt_mk4_gner			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,200) }
-spriteset(gfx_dvt_mk4_gner_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,200) }
-spriteset(gfx_dvt_mk4_nxec			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,225) }
-spriteset(gfx_dvt_mk4_nxec_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,225) }
-spriteset(gfx_dvt_mk4_east_coast	, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,250) }
-spriteset(gfx_dvt_mk4_east_coast_rev, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,250) }
-spriteset(gfx_dvt_mk4_vtec			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,275) }
-spriteset(gfx_dvt_mk4_vtec_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,275) }
-spriteset(gfx_dvt_mk4_gc			, "gfx/WAGON/dvt.png"){ template_Mk2_double			(  0,300) }
-spriteset(gfx_dvt_mk4_gc_rev		, "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse	(  0,300) }
+spriteset(gfx_dvt_mk4_intercity		, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0,175) }
+spriteset(gfx_dvt_mk4_intercity_rev	, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0,175) }
+spriteset(gfx_dvt_mk4_gner			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0,200) }
+spriteset(gfx_dvt_mk4_gner_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0,200) }
+spriteset(gfx_dvt_mk4_nxec			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0,225) }
+spriteset(gfx_dvt_mk4_nxec_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0,225) }
+spriteset(gfx_dvt_mk4_east_coast	, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0,250) }
+spriteset(gfx_dvt_mk4_east_coast_rev, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0,250) }
+spriteset(gfx_dvt_mk4_vtec			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0,275) }
+spriteset(gfx_dvt_mk4_vtec_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0,275) }
+spriteset(gfx_dvt_mk4_gc			, "gfx/WAGON/dvt.png"){ template_8_8_2			(  0,300) }
+spriteset(gfx_dvt_mk4_gc_rev		, "gfx/WAGON/dvt.png"){ template_8_8_rev_2		(  0,300) }
 
-/*
-spriteset(gfx_dvt_7_intercity		, "gfx/WAGON/dvt.png"){	template_7_8_2(	348,	75)		}
-spriteset(gfx_dvt_7_intercity_rev	, "gfx/WAGON/dvt.png"){	template_7_8_rev_2(	348,	75)	}
-spriteset(gfx_dvt_7_virgin			, "gfx/WAGON/dvt.png"){	template_7_8_2(	348,	100)	}
-spriteset(gfx_dvt_7_virgin_rev		, "gfx/WAGON/dvt.png"){	template_7_8_rev_2(	348,	100)}
-spriteset(gfx_dvt_7_anglia			, "gfx/WAGON/dvt.png"){	template_7_8_2(	348,	125)	}
-spriteset(gfx_dvt_7_anglia_rev		, "gfx/WAGON/dvt.png"){	template_7_8_rev_2(	348,	125)}
-*/
 
-spriteset(gfx_dvt_7_taillights		, "gfx/WAGON/dvt.png"){	template_7_8_2(	348,	150)	}
-spriteset(gfx_dvt_7_headlights		, "gfx/WAGON/dvt.png"){	template_7_8_rev_2(	348,	175)}
-
-spriteset(gfx_dvt_taillights    , "gfx/WAGON/dvt.png"){ template_Mk2_double(259,  0)         }
-spriteset(gfx_dvt_headlights    , "gfx/WAGON/dvt.png"){ template_Mk2_double_reverse(259, 25) }
+spriteset(gfx_dvt_taillights    , "gfx/WAGON/dvt.png"){ template_8_8_2(259,  0)         }
+spriteset(gfx_dvt_headlights    , "gfx/WAGON/dvt.png"){ template_8_8_rev_2(259, 25) }
 
 
 
@@ -93,12 +82,6 @@ switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_nxec_rev_check, DVT_REVERSE_CHECK){ 1 : g
 switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_east_coast_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_mk4_east_coast_rev ; gfx_dvt_mk4_east_coast ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_vtec_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_mk4_vtec_rev ; gfx_dvt_mk4_vtec ; }
 switch(FEAT_TRAINS, PARENT, sw_dvt_mk4_gc_rev_check, DVT_REVERSE_CHECK){ 1 : gfx_dvt_mk4_gc_rev ; gfx_dvt_mk4_gc ; }
-
-/*
-switch(FEAT_TRAINS, PARENT, sw_dvt_intercity_rev_check_7, DVT_REVERSE_CHECK){ 1 : gfx_dvt_7_intercity_rev ; gfx_dvt_7_intercity ; }
-switch(FEAT_TRAINS, PARENT, sw_dvt_virgin_rev_check_7, DVT_REVERSE_CHECK){ 1 : gfx_dvt_7_virgin_rev ; gfx_dvt_7_virgin ; }
-switch(FEAT_TRAINS, PARENT, sw_dvt_anglia_rev_check_7, DVT_REVERSE_CHECK){ 1 : gfx_dvt_7_anglia_rev ; gfx_dvt_7_anglia ; }
-*/
 
 //Automatix GFX
 
@@ -235,42 +218,6 @@ switch(FEAT_TRAINS, SELF, sw_dvt_sprite_stack, SPR_STACK){
 }
 
 
-/*Length 7 gfx
-
-switch(FEAT_TRAINS, PARENT, sw_dvt_auto_7, current_year){
-	ERA_SECTORISATION : sw_dvt_intercity_rev_check_7 ;
-	2004..4096 : sw_dvt_anglia_rev_check_7 ;
-	sw_dvt_virgin_rev_check_7 ;
-}
-
-switch(FEAT_TRAINS, PARENT, sw_dvt_manual_7, cargo_subtype){
-	0..2: sw_dvt_intercity_rev_check_7 ;
-	4..5: sw_dvt_anglia_rev_check_7 ;
-	8..9: sw_dvt_anglia_rev_check_7 ;
-	sw_dvt_virgin_rev_check_7 ;
-}
-
-switch(FEAT_TRAINS, SELF, sw_dvt_manual_check_7, livery_choice){
-	1 : sw_dvt_manual_7 ;
-	sw_dvt_auto_7 ;
-}
-
-switch(FEAT_TRAINS, SELF,  sw_dvt_taillight_check_7, position_in_consist_from_end){ 0 : gfx_dvt_7_taillights ; }
-switch(FEAT_TRAINS, SELF,  sw_dvt_headlight_check_7, position_in_consist){ 0 : gfx_dvt_7_headlights ; sw_dvt_taillight_check_7 ; }
-
-switch(FEAT_TRAINS, SELF, sw_dvt_sprite_stack_7, SPR_STACK){
-	0 : sw_dvt_manual_check_7 ;
-	1 : sw_dvt_headlight_check_7 ;
-	2 : sw_dvt_taillight_check_7 ;
-}
-
-
-switch(FEAT_TRAINS, PARENT, sw_dvt_length_check, vehicle_type_id == 90){
-	1 : sw_dvt_sprite_stack_7 ;
-	sw_dvt_sprite_stack ;
-}
-
-*/
 
 //Colour mapping
 

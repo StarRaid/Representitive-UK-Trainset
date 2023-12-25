@@ -151,7 +151,7 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		misc_flags                     : bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE ;//Deprecated - not available for purchase
 		introduction_date              : date( 1985, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 40 ;

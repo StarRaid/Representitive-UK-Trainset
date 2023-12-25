@@ -5,7 +5,7 @@
 item (FEAT_TRAINS, item_tender, 2000) {
 	property {
 		name: 							string(STR_GRF_NAME);
-		climates_available: 			NO_CLIMATE;
+		climates_available: 			NO_CLIMATE;//Articulated part, not available for purchase by itself.
 		introduction_date:				date(1, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		loading_speed:					0;
@@ -99,7 +99,7 @@ switch(FEAT_TRAINS, SELF, sw_cube_refit_text, cargo_subtype){
 item (FEAT_TRAINS, item_cube, 9999) {
 	property {
 		name: 							string(STR_GRF_NAME);
-		climates_available: 			NO_CLIMATE;
+		climates_available: 			NO_CLIMATE;//Test vehicle, not available for purchase.
 		introduction_date:				date(1, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		loading_speed:					0;

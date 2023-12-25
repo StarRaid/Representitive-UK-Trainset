@@ -1,12 +1,12 @@
 //DELTIC
 
-spriteset(gfx_deltic_brgreen,			"gfx/DIESEL_LOCO/class_55.png"){template_Mk2_single(0,25)}
-spriteset(gfx_deltic_brgreen_yfront,	"gfx/DIESEL_LOCO/class_55.png"){template_Mk2_single(89,25)}
-spriteset(gfx_deltic_brblue,			"gfx/DIESEL_LOCO/class_55.png"){template_Mk2_single(0,50)}
-spriteset(gfx_deltic_brblue_wcab,		"gfx/DIESEL_LOCO/class_55.png"){template_Mk2_single(89,50)}
+spriteset(gfx_deltic_brgreen,			"gfx/DIESEL_LOCO/class_55.png"){template_8_4_2(0,25)}
+spriteset(gfx_deltic_brgreen_yfront,	"gfx/DIESEL_LOCO/class_55.png"){template_8_4_2(89,25)}
+spriteset(gfx_deltic_brblue,			"gfx/DIESEL_LOCO/class_55.png"){template_8_4_2(0,50)}
+spriteset(gfx_deltic_brblue_wcab,		"gfx/DIESEL_LOCO/class_55.png"){template_8_4_2(89,50)}
 
-spriteset(gfx_deltic_taillights,		"gfx/DIESEL_LOCO/class_55.png"){template_Mk2_double(0,75)}
-spriteset(gfx_deltic_headlights,		"gfx/DIESEL_LOCO/class_55.png"){template_Mk2_double(0,100)}
+spriteset(gfx_deltic_taillights,		"gfx/DIESEL_LOCO/class_55.png"){template_8_8_2(0,75)}
+spriteset(gfx_deltic_headlights,		"gfx/DIESEL_LOCO/class_55.png"){template_8_8_2(0,100)}
 
 spriteset(gfx_deltic_purch_brgreen,		"gfx/DIESEL_LOCO/class_55.png"){template_purchase(178,25)}
 spriteset(gfx_deltic_purch_brblue,		"gfx/DIESEL_LOCO/class_55.png"){template_purchase(178,50)}

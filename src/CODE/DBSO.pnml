@@ -3,23 +3,24 @@
 #define DBSO_CHECK vehicle_is_reversed && (count_veh_id(9025) > 0)
 #define DBSO_REVERSE_CHECK vehicle_is_reversed && (vehicle_type_id == 37 | vehicle_type_id == 40 | vehicle_type_id == 47 | vehicle_type_id == 57 | vehicle_type_id == 68 | vehicle_type_id == 86 | vehicle_type_id == 87 | vehicle_type_id == 88 | vehicle_type_id == 92)
 
+
 //Spritesets
 
-spriteset(gfx_dbso_scotrail          , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double(0,0)           }
-spriteset(gfx_dbso_scotrail_rev      , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double_reverse(0,0)   }
-spriteset(gfx_dbso_intercity         , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double(0,25)          }
-spriteset(gfx_dbso_intercity_rev     , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double_reverse(0,25)  }
-spriteset(gfx_dbso_directrail        , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double(0,50)          }
-spriteset(gfx_dbso_directrail_rev    , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double_reverse(0,50)  }
-spriteset(gfx_dbso_generic           , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double(0,75)          }
-spriteset(gfx_dbso_generic_rev       , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double_reverse(0,75)  }
-spriteset(gfx_dbso_brblue            , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double(0,100)         }
-spriteset(gfx_dbso_brblue_rev        , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double_reverse(0,100) }
-spriteset(gfx_dbso_anglia            , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double(0,125)         }
-spriteset(gfx_dbso_anglia_rev        , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double_reverse(0,125) }
+spriteset(gfx_dbso_scotrail          , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_2(0,0)           }
+spriteset(gfx_dbso_scotrail_rev      , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_rev_2(0,0)   }
+spriteset(gfx_dbso_intercity         , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_2(0,25)          }
+spriteset(gfx_dbso_intercity_rev     , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_rev_2(0,25)  }
+spriteset(gfx_dbso_directrail        , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_2(0,50)          }
+spriteset(gfx_dbso_directrail_rev    , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_rev_2(0,50)  }
+spriteset(gfx_dbso_generic           , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_2(0,75)          }
+spriteset(gfx_dbso_generic_rev       , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_rev_2(0,75)  }
+spriteset(gfx_dbso_brblue            , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_2(0,100)         }
+spriteset(gfx_dbso_brblue_rev        , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_rev_2(0,100) }
+spriteset(gfx_dbso_anglia            , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_2(0,125)         }
+spriteset(gfx_dbso_anglia_rev        , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_rev_2(0,125) }
 
-spriteset(gfx_dbso_headlight         , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double(178,25)       }
-spriteset(gfx_dbso_taillight         , "gfx/WAGON/mark_2_dbso.png"){ template_Mk2_double(178,0)        }
+spriteset(gfx_dbso_headlight         , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_2(178,25)       }
+spriteset(gfx_dbso_taillight         , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_2(178,0)        }
 
 
 //Switches
