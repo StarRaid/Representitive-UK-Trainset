@@ -18,9 +18,9 @@ Replace <TYPE> with the property the switch is modifiying (GFX for graphics, COL
 //Ultimate ID check. Checks that there is one DBSO or DVT, but not both. Checks that only one compatible locomotive is present. Checks that the vehicle is at the front.
 
 //Check for front vehicles to use
-#define DEF_CHECK_REVERSAL_LOCO_IDS	( ((count_veh_id(9025) == 1) ^ (count_veh_id(9035) == 1)) && ((position_in_consist == 0) && ((DEF_CHECK_VEHID_OPPOSITE == 9025) | (DEF_CHECK_VEHID_OPPOSITE == 9035))) )
+#define DEF_CHECK_PUSHPULL_FRONT_IDS	( ((count_veh_id(9025) == 1) ^ (count_veh_id(9035) == 1)) && ((position_in_consist == 0) && ((DEF_CHECK_VEHID_OPPOSITE == 9025) | (DEF_CHECK_VEHID_OPPOSITE == 9035))) )
 //Check for rear vehicles to use
-#define DEF_CHECK_REVERSAL_LOCO_IDS	( ((count_veh_id(9025) == 1) ^ (count_veh_id(9035) == 1)) && ((position_in_consist_from_end == 0) && ((DEF_CHECK_VEHID_OPPOSITE == 9025) | (DEF_CHECK_VEHID_OPPOSITE == 9035))) 
+#define DEF_CHECK_PUSHPULL_REAR_IDS	( ((count_veh_id(9025) == 1) ^ (count_veh_id(9035) == 1)) && ((position_in_consist_from_end == 0) && ((DEF_CHECK_VEHID_OPPOSITE == 9025) | (DEF_CHECK_VEHID_OPPOSITE == 9035))) 
 
 
 
@@ -41,7 +41,7 @@ Replace <TYPE> with the property the switch is modifiying (GFX for graphics, COL
 // Checking vehicle IDs to make sure the consist is valid for reversal behaviour
 
 
-switch(FEAT_TRAINS, SELF, SW_<SELF_ID>_<TYPE>_DVT_CHECK, DEF_CHECK_REVERSAL_IDS){
-	1:	SW_REVERSAL_ID_CHECK;
+switch(FEAT_TRAINS, SELF, SW_<SELF_ID>_<TYPE>_PUSHPULL_CHECK, DEF_CHECK_PUSHPULL_FRONT_IDS){
+	1:	SW_PUSHPULL_ID_CHECK;
 	SW_<SELF_NAME>_GFX_SPRITESTACK;
 }

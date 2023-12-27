@@ -60,8 +60,7 @@ The pacer is missaligned. This is evident when pairing the vehicle with other DM
 
 ## 2.3 Outdated alignments
 
-
-
+Some older vehicles are still using the outdated and unclear `template_Mk2_single` and associated templates. This has been superseed by the standard `template_8_4_2` and associated templates. This a simple find and replace task, as the two templates are identical in sprite sizes and alignments.
 
 ## 2.4 Automatic Liveries
 
@@ -129,6 +128,8 @@ In todays climate however we are graced with the variants feature, meaning I hav
 
 Most of this can also be applied to the Mark 4 coach, but since this coach has seen little use outside of the Class 91 rakes or without a DVT, I believe it is justified leaving it with its current behaviour, without splitting it into variants.
 
+Another choice could be to split the Mark 2 coach into its subclasses of A, C, and F, including brake variants and DBSO.
+
 ## 2.6 RUKTS Extension
 
 The extension GRF exists to fulfil a multitude of roles and limitations set by our original idea for the main GRF. However, due to an evolving identity and looser development restrictions, its role has dwindled over the years. I simply propose to announce its total depracation entirely.
@@ -163,7 +164,7 @@ Referring to the screenshot in the previous section, the imbalance of pulling po
 #### Case 1 - Class 158
 
 The Class 158 for example (generally) has one 350 hp engine per coach, with each coach weighing 38.5 tonnes. In game these values are represented correctly as a two coach unit (no extra vehicles), but when an extra coach is added the power value increases by an arbitrary 261 hp instead of the nominal 350 hp.  
-Provided by Eversholt Group is an acceleration value of 0.8 m/s², meaning that if we times this by the vehicles mass of 77 tonnes in a two coach unit, 77 times 0.8 equals 61.6 kN of tractive effort, a useful value to be provided with. However, the Class 158 has been arbitrarily set a value of 134 kN, over double that of its actual value. Interestingly, additional carriages are not adding extra tractive effort to the vehicle in-game, when other vehicles do.
+Provided by Eversholt Group is an acceleration value of 0.8 m/s², meaning that if we times this by the vehicles mass of 77 tonnes in a two coach unit, 77 times 0.8 equals 61.6 kN of tractive effort, a useful value to be provided with. However, the Class 158 has been arbitrarily set a value of 134 kN, over double that of its actual value. Interestingly, additional carriages are not adding extra tractive effort to the vehicle in-game, a feature that other vehicles have.
 
 #### Case 2 - Class 101
 
@@ -223,6 +224,7 @@ In order, both the front locomotive and rear carriage will check for these thing
 > * That the rear carriage is compatible.
 > * That the total number of compatible locomotives is exactly one.
 > * That there is exactly one DBSO or DVT in the consist, but not one of both.
+
 If these conditions are not met, then the sprites will behave like normal vehicles when the trains reverse.  
 But the inclusion of more vigorous testing will allow more consists to be possible without breaking the sprites of multiple vehicles at once. These checks will be done by adding up the counts of each individual compatible vehicle per list and checking if the total equals exactly 1.
 
@@ -252,11 +254,90 @@ Classes 317, 370, and 373 have special behaviour that display different sprites 
 
 ## 4.2
 
+What needs to be created is a CSV specifically for the statistics of every vehicle in the set. What we can do is manually write in every value currently in the set into the CSV, then take steps to balance the set.
 
+Step 1 would be to research real life values where available and overwrite existing values in the CSV with the realistic values.  
+Some values that can be taken literally are power, tractive effort, passenger capacity, and weight.
+
+Step 2 is to interpret real life reports on reliability and model life into the game by looking at reports on how vehicles performed throughout their life time. We can balance these accordingly against other vehicles as we go along.  
+Values like loading speed can be taken into account by examining door width and placement on a carriage, and by examining loading and unloading methods for wagons. For example, some open stone wagons are loaded manually with a excavator like vehicle, a method much slower compared to the HAA's unloading and loading which takes place in motion, without the train stopping.  
+Cargo decay can be calculated by taking into account reports of comfort for passenger vehicles, but this feature can be skipped for freight wagons.
+
+Step 3 is to examine what values we aren't able to interpret from reality and balance accordingly with vehicles that have their real life values listed. We can do this by breaking down vehicles into categories by function, and examining a system for progression within each respective category. One of the current failings of the set is that higher speed vehicles are punished by having comparitively miniscule capacities for cargo. Instead I believe this should be balanced out with noticably higher running and build costs, as a unit like the pacer should be cheap with a medium capacity, but should be easily outclassed in capacity and speed by the HST, justifying a much higher running and build cost.
 
 ## 4.3
 
+Due to the nature of simply how *many* changes are needed to each individual vehicle, all in different ways, I propose a soft rewrite of the set.  
+By writing a complete template for a wagon, locomotive and multiple unit, these can essentially be copy-pasted for each vehicle, with minor adjustments to specific behaviours unique to certain vehicles. These unique features will however be accounted for in the template, leaving commented-out sections of code ready to be used where necessary.
 
+### Templates
+
+A default template should be created for wagons, locomotives, and multiple units respectively. Locomotives would need checks to see if they need to display a reversed graphic (special behaviour applied for locomitives with a single cab), multiple units would need to check for pantograph coach placement (which will result in a standardised behaviour, useful for when players lengthen vehicles beyond their realistic lengths), and wagons will require a unique sprite stack for when they are either loading and unloading, or for when their cargo is visible in transit.
+
+The statistics for each vehicle can be loaded from a CSV, as well as feature defining flags like tilting. A python script will read this CSV and write all the values as custom definitions in a pnml file. These definitions will be referenced easily inside the `item` definitions of the vehicle.  
+Because we're using a script to read a CSV we can even use it to write the strings for each vehicles name and alternative name.
+
+Example code:
+
+```python
+// Statistics generated by the python script, read from the CSV
+#define STAT_0037_POWER 1650 hp
+#define STAT_0037_WEIGHT 105 tonnes
+
+//Item from class_37.pnml
+item(FEAT_TRAINS, ITEM_0037, 37){
+	property{
+		power:		STAT_0037_POWER;
+		weight:		STAT_0037_WEIGHT;
+	}
+}
+
+```
+
+Statistic that could be loaded from the CSV include:
+
+> * Weight
+> * Tractive Effort (automatically calculate the coefficient by using this value and the vehicle's weight)
+> * Maximum speed
+> * Running cost
+> * Purchse cost
+> * Reliability decay
+> * Introduction year
+> * Vehicle length
+> * Railtype
+> * Cargo classes
+> * Model life
+> * Vehicle life
+> * 
+
+Other things that we could track in the CSV but not necessarily need to automatically extract via script could include:
+
+> * Reversal compatibility (a value used to flag if a locomotive is compatible with a DBSO, DVT, or GLV)
+> * List of liveries
+
+### Colours
+
+One of my first proposals is to standardise the colours used for each company. A new pnml file can be created to define these custom definitions that return `palette_2cc` combinations. We can simplify this process by assigning each livery a three letter code.  
+For example:
+
+```python
+#define PALETTE_NSE	palette_2cc(COLOUR_RED,			COLOUR_DARK_BLUE)
+#define PALETTE_BRB	palette_2cc(COLOUR_DARK_BLUE,	COLOUR_WHITE)
+#define PALETTE_VIR	palette_2cc(COLOUR_RED,			COLOUR_WHITE)
+```
+
+### Refit text
+
+A new feature we could also borrow from SEv2 is locking new liveries behind introduction years.  
+For example:
+
+```python
+switch	(FEAT_TRAINS, SELF, SW_LIVERY_BRB, current_year > 1964){1: return string(STR_BRB);	return CB_RESULT_NO_TEXT;}
+switch	(FEAT_TRAINS, SELF, SW_LIVERY_NSE, current_year > 1985){1: return string(STR_NSE);	return CB_RESULT_NO_TEXT;}
+switch	(FEAT_TRAINS, SELF, SW_LIVERY_VIR, current_year > 1997){1: return string(STR_VIR);	return CB_RESULT_NO_TEXT;}
+```
+
+The creation of the strings, palette definitions, and year switches could be all automated by a python script exctracting these values from a CSV to easily add new liveries and names. Then we can use the same three letter codes to set which liveries will be available in the vehicles CSV, automating the creation for the switches of these features.
 
 ## 4.4 The Future Of The Extension Set
 
@@ -265,7 +346,7 @@ But its functions should be implemented in other sets, with more detail to each 
 
 ## 4.x
 
-
+https://www.google.co.uk/maps/@55.8701934,-4.2299993,196a,35y,327.38h,44.41t/data=!3m1!1e3?entry=ttu
 
 ## 4.x+1
 
