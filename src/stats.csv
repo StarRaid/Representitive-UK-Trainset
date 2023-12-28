@@ -1,0 +1,40 @@
+vehicle_type_id,name,alt_name,dual_headed,speed (mph),power (hp),weight (tonnes),tractive_effort (kN),cargo_capacity,track_type,introduction_date,vehicle_life,model_life,reliability_decay,cost_factor,running_cost_factor,loading_speed,refittable_cargo_classes,variant_group,misc_flags,propulsion_type,length,start_stop,tender
+86,EE AL6 (Electric),BR Class 86 (Electric),null,,,,,,,,,,,,,,,,,DIESEL,,,0
+87,BREL 87 (Electric),BR Class 87 (Electric),null,,,,,,,,,,,,,,,,,STEAM,,,0
+90,BREL 90 (Electric),BR Class 90 (Electric),null,,,,,,,,,,,,,,,,,ELECTRIC,,,0
+91,"GEC ""Intercity 225"" (Electric)",BR Class 91 (Electric),null,,,,,,,,,,,,,,,,,,,,0
+92,"Brush/ABB ""92"" (Dual Voltage)",BR Class 92 (Dual Voltage),null,,,,,,,,,,,,,,,,,,,,0
+33,BRCW Type 3 'Crompton' (Diesel Electric),BR Class 33 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+14,Swindon Type 1 (Diesel),BR Class 14 (Diesel Hydraulic),null,,,,,,,,,,,,,,,,,,,,0
+8,EE Shunter (Diesel Electric),BR Class 08/09/10/11/12 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+20,EE Type 1 (Diesel Electric),BR Class 20 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+37,EE Type 3 (Diesel Electric),BR Class 37 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+3700,EE Type 3 (Diesel Electric){GOLD}(Phase 1),BR Class 37 (Diesel Electric){GOLD}(Phase 1),null,,,,,,,,,,,,,,,,,,,,0
+3701,EE Type 3 (Diesel Electric){GOLD}(Phase 2),BR Class 37 (Diesel Electric){GOLD}(Phase 2),null,,,,,,,,,,,,,,,,,,,,0
+3704,EE Type 3 (Diesel Electric){GOLD}(Subclass /4),BR Class 37 (Diesel Electric){GOLD}(Subclass /4),null,,,,,,,,,,,,,,,,,,,,0
+3705,EE Type 3 (Diesel Electric){GOLD}(Subclass /5),BR Class 37 (Diesel Electric){GOLD}(Subclass /5),null,,,,,,,,,,,,,,,,,,,,0
+3706,EE Type 3 (Diesel Electric){GOLD}(Subclass /6),BR Class 37 (Diesel Electric){GOLD}(Subclass /6),null,,,,,,,,,,,,,,,,,,,,0
+3707,EE Type 3 (Diesel Electric){GOLD}(Subclass /7),BR Class 37 (Diesel Electric){GOLD}(Subclass /7),null,,,,,,,,,,,,,,,,,,,,0
+40,EE Whistler (Diesel Electric),BR Class 40 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+55,EE Deltic (Diesel Electric),BR Class 55 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+31,Brush Type 2 (Diesel Electric),BR Class 31 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+47,Brush Type 4 (Diesel Electric),BR Class 47 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+57,"Brush ""57"" (Diesel Electric)",BR Class 57 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+60,Brush Type 5 (Diesel Electric),BR Class 60 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+46,Sulzer Type 4 (Diesel Electric),BR Class 44/45/46 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+50,EE Hoover (Diesel Electric),BR Class 50 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+432,BREL HST (Diesel Electric),BR Class 43 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+433,BREL HST (Diesel Electric){GOLD}(Buffered),BR Class 43 (Diesel Electric){GOLD}(Buffered),null,,,,,,,,,,,,,,,,,,,,0
+56,"BREL ""56"" (Diesel Electric)",BR Class 58 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+58,"BREL ""58"" (Diesel Electric)",BR Class 56 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+69,"BREL ""69"" (Diesel Electric)",BR Class 69 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+66,"EMD ""Shed"" (Diesel Electric)",BR Class 66 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+67,"EMD ""Skip"" (Diesel Electric)",BR Class 67 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+59,"EMD ""Yeoman"" (Diesel Electric)",BR Class 59 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+70,GE Powerhaul (Diesel Electric),BR Class 70 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+68,Stadler UK Light (Diesel Electric),BR Class 68 (Diesel Electric),null,,,,,,,,,,,,,,,,,,,,0
+88,Stadler Euro Dual (Dual Mode),BR Class 88 (Dual Mode),null,,,,,,,,,,,,,,,,,,,,0
+73,"English Electric ""JB"" (Dual Mode)",BR Class 73 (Dual Mode),null,,,,,,,,,,,,,,,,,,,,0
+52,Swindon Western (Diesel Hydraulic),BR CLass 52 (Diesel Hydraulic),null,,,,,,,,,,,,,,,,,,,,0
+168,Bombardier Turbostar (Diesel),BR Class 168/170/171/172 (Diesel),1,100,,,,,,,,,,,,,,,,,,,0
+10037,Monster Box {GOLD}(JNA),null,null,60,,,,,,,,,,,,,,,,,,,0
