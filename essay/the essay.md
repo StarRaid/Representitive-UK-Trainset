@@ -11,7 +11,7 @@ Let us begin by breaking down my initial irritations into the two afformentioned
 ## 1.1 Document Layout
 
 Internal development issues:
-- [2.1 The split between Multiple Unit and Non-Multiple Unit allignments, along with their respective sprite sheets.](#21-multiple-unit-alignments-vs-locomotive-&-wagon-alignments)
+- [2.1 The split between Multiple Unit and Non-Multiple Unit allignments, along with their respective sprite sheets.](#21-multiple-unit-alignments-vs-locomotive--wagon-alignments)
 - [2.2 Length 7 allignments of Multiple Units are incoherent with other vehicles in the set.](#22-issues-with-the-pacer)
 - [2.3 The use of outdated alignment templates in several earlier vehicles, as well as certain later ones.](#23-outdated-alignments)
 - [2.4 On the Automatic Livery mode vehicles will change their livery while outside a depot. New code has been implemented that correctly changes a vehicle's livery only when it visits a depot.](#24-automatic-liveries)
@@ -52,17 +52,21 @@ Exceptions to these rules include the Class 33, a locomotive drawn by Gwyd, and 
 
 This disparity makes it confusing for outsiders looking at the source code, not knowing which sprites use which alignments, making these sprites harder to use in other potential GPLv2 sets.
 
+[Top of document.](#1-introduction)
+
 ## 2.2 Issues With The Pacer
 
 The pacer is missaligned. This is evident when pairing the vehicle with other DMUs, the class 150s for example, as the pacer with either overlap with the other vehicle, or a large gap will be visible. This is most prevelent on the horizontal views.
 
 ![Examples of the pacer sprites overlapping with other vehicles.](/essay/pacer_alignments.png "The pacers are missaligned in some sprites")
 
-
+[Top of document.](#1-introduction)
 
 ## 2.3 Outdated alignments
 
 Some older vehicles are still using the outdated and unclear `template_Mk2_single` and associated templates. This has been superseed by the standard `template_8_4_2` and associated templates. This a simple find and replace task, as the two templates are identical in sprite sizes and alignments.
+
+[Top of document.](#1-introduction)
 
 ## 2.4 Automatic Liveries
 
@@ -123,6 +127,8 @@ By utilising standardised date ranges for certain eras, it ensures that liveries
 
 One issue is where a vehicle's code utilises the same automatic colour switch for the purchase sprite, it will incorrectly display the wrong colours as purchase sprites don't get serviced. This will require the separation of the purchase sprite colour mapping to a different switch using the `current_year` value, a standardisation in code that should be implemented for a more coherent code base.
 
+[Top of document.](#1-introduction)
+
 ## 2.5 Mark 3 Specific Features
 
 The Mark 3 coaches have some unique behaviours to them that I am proud of, but ultimately have lead to their downfall with the implementation of the variants feature. A nice little detail that I originally added was the ability for the 3rd coach in any rake to automatically be a buffet coach, so that the HST would still be realistically detailed without having to create a separate wagon (at the time.) This feature also had the advantage that if the vehicle reversed the buffet coach would remain in the same place.  
@@ -131,6 +137,8 @@ In todays climate however we are graced with the variants feature, meaning I hav
 Most of this can also be applied to the Mark 4 coach, but since this coach has seen little use outside of the Class 91 rakes or without a DVT, I believe it is justified leaving it with its current behaviour, without splitting it into variants.
 
 Another choice could be to split the Mark 2 coach into its subclasses of A, C, and F, including brake variants and DBSO.
+
+[Top of document.](#1-introduction)
 
 ## 2.6 RUKTS Extension
 
@@ -146,6 +154,8 @@ The function to implement additional sounds has been superseeded by the fact tha
 A majority of the extra vehicles provided by the extension set have since been implemented fully in the main GRF, with the last remaining vehicle to recieve this treatment being the class 456. If this vehicle is introduced to the main GRF, this will further render the exension set useless.
 Due to the codebase of the industry features provided by this set being severely outdated and made with little experience prior, the two industries and two cargoes provided by the extension set have had extensive compatibility clashes with most industry focused GRFs. My proposal is to convert the existing sprites for the power station into objects in a new set I will outline later. This will render the extension set entirely useless for the future, justifying its take down from the online content downloader for new games only. The GRF shall still be provided for save files that have been created prior to the takedown, in order to not break their functionality.
 
+[Top of document.](#1-introduction)
+
 # 3 External player issues
 
 ## 3.1 Balance Part 1: Capacity
@@ -158,6 +168,8 @@ Balance with this set is difficult and, surprisingly enough, incoherent. High sp
 ![The statistics of the set are wildly out of balance.](/essay/statistics.png "How did this happen??")
 
 Also of note are the running costs after 2 years of running these three vehicles on an empty line. The locomotive hauled train has considerably higher running costs than the multiple units, over ten fold of the equally speedy Class 395. Though a "Meta Train" is inevitable in any circumstances, balancing the set so that there are not such obviously over powered choices is a must.
+
+[Top of document.](#1-introduction)
 
 ## 3.2 Balance Part 2: Vehicle Power
 
@@ -210,11 +222,15 @@ Citeless sources on wikipedia claim that these units either have a 1 m/s² or 0.
 
 Locomotives are essentially exempt from the conundrum of power and tractive effort, as these figures are nearly always readily available due to the nature of their work.
 
+[Top of document.](#1-introduction)
+
 ## 3.3 Kettle Shortage
 
 The largest downside of RUKTS continues to be the roster of steam locomotives present in the set. Our sister sets of UKFS and UKRS2 both boast immense choice when it comes to the first stages of railway history, whereas our current selection is limited to 5 tank engines and 8 tender engines (4 of which are of immediately similar designs.) In practice this removes RUKTS as an option for a majority of players whose start date predates 1950.
 
 My simple solution is to just do them. It's hard to force motivation for a vehicle, but once the ball starts rolling I'm sure we can get a good workflow of kettles being produced. The most important thing to do for now is set our expectations low and achievable for the immediate future, so that if we control our ambitions then our rewards will be easier to achieve, therefor more movitating to continue with more. I will outline a detailed plan on how to do this later.
+
+[Top of document.](#1-introduction)
 
 ## 3.4 DVT & DBSO Disadvantages
 
@@ -232,21 +248,29 @@ But the inclusion of more vigorous testing will allow more consists to be possib
 
 The second proposal is to repurpose Gwyd's code from the SEv2 set into the DBSO & DVT code. By utilising `[STORE_TEMP(position_in_consist_from_end-position_in_consist, 0x10F), var[0x61, 0, 0x0000FFFF, 0xF2]]` and changing the position check to `num_vehs_in_consist-1` the front locomotive will be able to check what the value of `cargo_subtype` (i.e. livery) is of the rear most vehicle, allowing the DBSO & DVT liveries to be changed manually.
 
+[Top of document.](#1-introduction)
+
 ## 3.5 Multiple Unit Carriages
 
 It is not immediately clear for all multiple units as to which carriage is allowed to be attached in order to lengthen the unit. In the case of the Class 455, a Mark 3 based unit in real life, the Mark 2 carraige is used to lengthen the unit in the GRF.
 
 My proposal is to make all multiple units use one type of carraige to lengthen themselves. We can utilise the existing "Modern MU Car", known by MU_90 in the code, by replacing its sprite with a blank carriage with no attached identity, changing its introduction date to the year 0, and by changing its capacity to 0. By removing its capability to carry cargo the carriage is automatically useless outside of any multiple unit, as the multiple units can change its capacity with the `livery_override` function.
 
-## 3.6 Impossible Mutliple Units
+[Top of document.](#1-introduction)
+
+## 3.6 Impossible Multiple Units
 
 Classes 317, 370, and 373 have special behaviour that display different sprites when not intermediate vehicles are present for the vehicle to properly function. This is due to the fact that units utilising overhead line equipment must contain a pantograph, and a majority of vehicles place their pantograph on intermediate carriages instead of the driving coaches. For a better player experience I propose this feature be applied to all vehicles that suffer from middle pantograph syndrome. The use of ugly sprites that the 370 and 373 utilise will also discourage impossible unit combinations that the code might also allow by accident.
 
 ![An example of an impossible multiple unit containing two units. The first unit has two intermediate coaches, and the second unit has none. This is allowed by the code but is still an impossible vehicle.](/essay/impossible.png "A multiple unit in violation of mother nature.")
 
+[Top of document.](#1-introduction)
+
 ## 3.7 Transforming Identity
 
 
+
+[Top of document.](#1-introduction)
 
 # 4 Detailed Outcomes
 
@@ -262,6 +286,8 @@ Values like loading speed can be taken into account by examining door width and 
 Cargo decay can be calculated by taking into account reports of comfort for passenger vehicles, but this feature can be skipped for freight wagons.
 
 Step 3 is to examine what values we aren't able to interpret from reality and balance accordingly with vehicles that have their real life values listed. We can do this by breaking down vehicles into categories by function, and examining a system for progression within each respective category. One of the current failings of the set is that higher speed vehicles are punished by having comparitively miniscule capacities for cargo. Instead I believe this should be balanced out with noticably higher running and build costs, as a unit like the pacer should be cheap with a medium capacity, but should be easily outclassed in capacity and speed by the HST, justifying a much higher running and build cost.
+
+[Top of document.](#1-introduction)
 
 ## 4.2 Codebase Standardisation
 
@@ -336,28 +362,42 @@ switch	(FEAT_TRAINS, SELF, SW_LIVERY_VIR, current_year > 1997){1: return string(
 
 The creation of the strings, palette definitions, and year switches could be all automated by a python script exctracting these values from a CSV to easily add new liveries and names. Then we can use the same three letter codes to set which liveries will be available in the vehicles CSV, automating the creation for the switches of these features.
 
-## 4.3 Kettles
+[Top of document.](#1-introduction)
+
+## 4.3 Kettles For The Near Future
 
 
+
+[Top of document.](#1-introduction)
 
 ## 4.4 The Future Of The Extension Set
 
 To summarise, it should die.  
 But its functions should be implemented in other sets, with more detail to each feature to fully flesh out the original half-baked ideas.
 
-## 4.5 Station
+[Top of document.](#1-introduction)
+
+## 4.5 Stations
 
 https://www.google.co.uk/maps/@55.8701934,-4.2299993,196a,35y,327.38h,44.41t/data=!3m1!1e3?entry=ttu
+
+[Top of document.](#1-introduction)
 
 ## 4.6 Objects
 
 
 
+[Top of document.](#1-introduction)
+
 ## 4.7 Other plans
 
 
 
+[Top of document.](#1-introduction)
+
 ## 4.8 Conclusion
 
 
+
+[Top of document.](#1-introduction)
 
