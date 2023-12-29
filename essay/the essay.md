@@ -11,31 +11,31 @@ Let us begin by breaking down my initial irritations into the two afformentioned
 ## 1.1 Document Layout
 
 Internal development issues:
-- [2.1 The split between Multiple Unit and Non-Multiple Unit allignments, along with their respective sprite sheets.](#2.1-multiple-unit-alignments-vs-locomotive-&-wagon-alignments)
-- [2.2 Length 7 allignments of Multiple Units are incoherent with other vehicles in the set.](#2.2-issues-with-the-pacer)
-- [2.3 The use of outdated alignment templates in several earlier vehicles, as well as certain later ones.](#2.3-outdated-alignments)
-- [2.4 On the Automatic Livery mode vehicles will change their livery while outside a depot. New code has been implemented that correctly changes a vehicle's livery only when it visits a depot.](#2.4-automatic-liveries)
-- [2.5 Mark 3 Buffet and Sleeper coaches are specific behaviours of a base Mark 3 vehicle, whereas the Mark 1 & 2 coaches have been split into separate variants.](#2.5-mark-3-specific-features)
-- [2.6 The mere existence of the addon GRF.](#2.6-rukts-extension)
+- [2.1 The split between Multiple Unit and Non-Multiple Unit allignments, along with their respective sprite sheets.](#21-multiple-unit-alignments-vs-locomotive-&-wagon-alignments)
+- [2.2 Length 7 allignments of Multiple Units are incoherent with other vehicles in the set.](#22-issues-with-the-pacer)
+- [2.3 The use of outdated alignment templates in several earlier vehicles, as well as certain later ones.](#23-outdated-alignments)
+- [2.4 On the Automatic Livery mode vehicles will change their livery while outside a depot. New code has been implemented that correctly changes a vehicle's livery only when it visits a depot.](#24-automatic-liveries)
+- [2.5 Mark 3 Buffet and Sleeper coaches are specific behaviours of a base Mark 3 vehicle, whereas the Mark 1 & 2 coaches have been split into separate variants.](#25-mark-3-specific-features)
+- [2.6 The mere existence of the addon GRF.](#26-rukts-extension)
  
 External player issues:
-- [3.1 Capacities of wagons are incoherent.](#3.1-balance-part-1:-capacity)
-- [3.2 Power of multiple units vary drastically.](#3.2-balance-part-2:-vehicle-power)
-- [3.3 A severe lack of steam era locomotives, multiple units, and wagons.](#3.3-kettle-shortage)
-- [3.4 Peculiar behaviour of DVT and DBSO vehicles when used in multiple.](#3.4-dvt-&-dbso-disadvantages)
-- [3.5 It is not immediately clear, or sometimes intuitive, as to which carriage will attach to a certain multiple unit.](#3.5-multiple-unit-carriages)
-- [3.6 Some multiple units are allowed to leave the depot with no intermediate carraiges, when said carraiges provide the pantograph required for the multiple unit to function.](#3.6-impossible-multiple-units)
-- [3.7 Discussing the original and current identity of the set, comparing its current roster and playstyle with that which we set out to achieve in the original planning stages.](#3.7-transforming-identity)
+- [3.1 Capacities of wagons are incoherent.](#31-balance-part-1-capacity)
+- [3.2 Power of multiple units vary drastically.](#32-balance-part-2-vehicle-power)
+- [3.3 A severe lack of steam era locomotives, multiple units, and wagons.](#33-kettle-shortage)
+- [3.4 Peculiar behaviour of DVT and DBSO vehicles when used in multiple.](#34-dvt--dbso-disadvantages)
+- [3.5 It is not immediately clear, or sometimes intuitive, as to which carriage will attach to a certain multiple unit.](#35-multiple-unit-carriages)
+- [3.6 Some multiple units are allowed to leave the depot with no intermediate carraiges, when said carraiges provide the pantograph required for the multiple unit to function.](#36-impossible-multiple-units)
+- [3.7 Discussing the original and current identity of the set, comparing its current roster and playstyle with that which we set out to achieve in the original planning stages.](#37-transforming-identity)
  
 Detailed outcomes:
-- [4.1 Complete overhaul of the statistics.](#4.1-statistical-overhaul)
-- [4.2 Codebase standardisation.](#4.2-codebase-standardisation)
-- [4.3 Achievable plan of steam era vehicles.](#4.3-kettles-for-the-near-future)
-- [4.4 Future of the extension set.](#4.4-the-future-of-the-extension-set)
-- [4.5 Stations.](#4.5-stations)
-- [4.6 Objects.](#4.6-objects)
-- [4.7 Miscellaneous future plans.](#4.7-other-plans)
-- [4.8 Conclusions.](#4.8-conclusion)
+- [4.1 Complete overhaul of the statistics.](#41-statistical-overhaul)
+- [4.2 Codebase standardisation.](#42-codebase-standardisation)
+- [4.3 Achievable plan of steam era vehicles.](#43-kettles-for-the-near-future)
+- [4.4 Future of the extension set.](#44-the-future-of-the-extension-set)
+- [4.5 Stations.](#45-stations)
+- [4.6 Objects.](#46-objects)
+- [4.7 Miscellaneous future plans.](#47-other-plans)
+- [4.8 Conclusions.](#48-conclusion)
 
 
 # 2 Internal Development Issues.
