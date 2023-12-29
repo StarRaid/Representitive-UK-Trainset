@@ -11,29 +11,31 @@ Let us begin by breaking down my initial irritations into the two afformentioned
 ## 1.1 Document Layout
 
 Internal development issues:
-> * 2.1 The split between Multiple Unit and Non-Multiple Unit allignments, along with their respective sprite sheets.
-> * 2.2 Length 7 allignments of Multiple Units are incoherent with other vehicles in the set.
-> * 2.3 The use of outdated alignment templates in several earlier vehicles, as well as certain later ones.
-> * 2.4 On the Automatic Livery mode vehicles will change their livery while outside a depot. New code has been implemented that correctly changes a vehicle's livery only when it visits a depot.
-> * 2.5 Mark 3 Buffet and Sleeper coaches are specific behaviours of a base Mark 3 vehicle, whereas the Mark 1 & 2 coaches have been split into separate variants.
-> * 2.6 The mere existence of the addon GRF.
+- [2.1 The split between Multiple Unit and Non-Multiple Unit allignments, along with their respective sprite sheets.](#2.1-multiple-unit-alignments-vs-locomotive-&-wagon-alignments)
+- [2.2 Length 7 allignments of Multiple Units are incoherent with other vehicles in the set.](#2.2-issues-with-the-pacer)
+- [2.3 The use of outdated alignment templates in several earlier vehicles, as well as certain later ones.](#2.3-outdated-alignments)
+- [2.4 On the Automatic Livery mode vehicles will change their livery while outside a depot. New code has been implemented that correctly changes a vehicle's livery only when it visits a depot.](#2.4-automatic-liveries)
+- [2.5 Mark 3 Buffet and Sleeper coaches are specific behaviours of a base Mark 3 vehicle, whereas the Mark 1 & 2 coaches have been split into separate variants.](#2.5-mark-3-specific-features)
+- [2.6 The mere existence of the addon GRF.](#2.6-rukts-extension)
  
 External player issues:
-> * 3.1 Capacities of wagons are incoherent.
-> * 3.2 Power of multiple units vary drastically.
-> * 3.3 A severe lack of steam era locomotives, multiple units, and wagons.
-> * 3.4 Peculiar behaviour of DVT and DBSO vehicles when used in multiple.
-> * 3.5 It is not immediately clear, or sometimes intuitive, as to which carriage will attach to a certain multiple unit.
-> * 3.6 Some multiple units are allowed to leave the depot with no intermediate carraiges, when said carraiges provide the pantograph required for the multiple unit to function.
-> * 3.7 Discussing the original and current identity of the set, comparing its current roster and playstyle with that which we set out to achieve in the original planning stages.
+- [3.1 Capacities of wagons are incoherent.](#3.1-balance-part-1:-capacity)
+- [3.2 Power of multiple units vary drastically.](#3.2-balance-part-2:-vehicle-power)
+- [3.3 A severe lack of steam era locomotives, multiple units, and wagons.](#3.3-kettle-shortage)
+- [3.4 Peculiar behaviour of DVT and DBSO vehicles when used in multiple.](#3.4-dvt-&-dbso-disadvantages)
+- [3.5 It is not immediately clear, or sometimes intuitive, as to which carriage will attach to a certain multiple unit.](#3.5-multiple-unit-carriages)
+- [3.6 Some multiple units are allowed to leave the depot with no intermediate carraiges, when said carraiges provide the pantograph required for the multiple unit to function.](#3.6-impossible-multiple-units)
+- [3.7 Discussing the original and current identity of the set, comparing its current roster and playstyle with that which we set out to achieve in the original planning stages.](#3.7-transforming-identity)
  
 Detailed outcomes:
-> * 4.1 Complete overhaul of the statistics.
-> * 4.2 Codebase standardisation.
-> * 4.3 Achievable plan of steam era vehicles.
-> * 4.4 Future of the extension set.
-> * 4.x Miscellaneous future plans.
-> * 4.x+1 Conclusions.
+- [4.1 Complete overhaul of the statistics.](#4.1-statistical-overhaul)
+- [4.2 Codebase standardisation.](#4.2-codebase-standardisation)
+- [4.3 Achievable plan of steam era vehicles.](#4.3-kettles-for-the-near-future)
+- [4.4 Future of the extension set.](#4.4-the-future-of-the-extension-set)
+- [4.5 Stations.](#4.5-stations)
+- [4.6 Objects.](#4.6-objects)
+- [4.7 Miscellaneous future plans.](#4.7-other-plans)
+- [4.8 Conclusions.](#4.8-conclusion)
 
 
 # 2 Internal Development Issues.
@@ -146,7 +148,7 @@ Due to the codebase of the industry features provided by this set being severely
 
 # 3 External player issues
 
-## 3.1 Balance Part 1 - Capacity
+## 3.1 Balance Part 1: Capacity
 
 Balance with this set is difficult and, surprisingly enough, incoherent. High speed multiple units have extroadinarily low capacities in comparison to their locomotive hauled counterparts. Most of these capacities do not nearly resemble their real life capacities, let alone the provision for a balanced set.
 > * An 8 coach Class 700 carries 970 passengers, compared to its real life capacity of 1146. 
@@ -157,7 +159,7 @@ Balance with this set is difficult and, surprisingly enough, incoherent. High sp
 
 Also of note are the running costs after 2 years of running these three vehicles on an empty line. The locomotive hauled train has considerably higher running costs than the multiple units, over ten fold of the equally speedy Class 395. Though a "Meta Train" is inevitable in any circumstances, balancing the set so that there are not such obviously over powered choices is a must.
 
-## 3.2 Balance Part 2 - Vehicle Power
+## 3.2 Balance Part 2: Vehicle Power
 
 Referring to the screenshot in the previous section, the imbalance of pulling power and force is also disparrant. Though tractive effort is typically harder to source for multiples units, the same cannot be said of power, of which there are mixed outcomes thereof, depending on the vehicle. I will examine some individual example cases
 
@@ -248,11 +250,7 @@ Classes 317, 370, and 373 have special behaviour that display different sprites 
 
 # 4 Detailed Outcomes
 
-## 4.1
-
-
-
-## 4.2
+## 4.1 Statistical Overhaul
 
 What needs to be created is a CSV specifically for the statistics of every vehicle in the set. What we can do is manually write in every value currently in the set into the CSV, then take steps to balance the set.
 
@@ -265,7 +263,7 @@ Cargo decay can be calculated by taking into account reports of comfort for pass
 
 Step 3 is to examine what values we aren't able to interpret from reality and balance accordingly with vehicles that have their real life values listed. We can do this by breaking down vehicles into categories by function, and examining a system for progression within each respective category. One of the current failings of the set is that higher speed vehicles are punished by having comparitively miniscule capacities for cargo. Instead I believe this should be balanced out with noticably higher running and build costs, as a unit like the pacer should be cheap with a medium capacity, but should be easily outclassed in capacity and speed by the HST, justifying a much higher running and build cost.
 
-## 4.3
+## 4.2 Codebase Standardisation
 
 Due to the nature of simply how *many* changes are needed to each individual vehicle, all in different ways, I propose a soft rewrite of the set.  
 By writing a complete template for a wagon, locomotive and multiple unit, these can essentially be copy-pasted for each vehicle, with minor adjustments to specific behaviours unique to certain vehicles. These unique features will however be accounted for in the template, leaving commented-out sections of code ready to be used where necessary.
@@ -296,24 +294,23 @@ item(FEAT_TRAINS, ITEM_0037, 37){
 
 Statistic that could be loaded from the CSV include:
 
-> * Weight
-> * Tractive Effort (automatically calculate the coefficient by using this value and the vehicle's weight)
-> * Maximum speed
-> * Running cost
-> * Purchse cost
-> * Reliability decay
-> * Introduction year
-> * Vehicle length
-> * Railtype
-> * Cargo classes
-> * Model life
-> * Vehicle life
-> * 
+- Weight
+- Tractive Effort (automatically calculate the coefficient by using this value and the vehicle's weight)
+- Maximum speed
+- Running cost
+- Purchse cost
+- Reliability decay
+- Introduction year
+- Vehicle length
+- Railtype
+- Cargo classes
+- Model life
+- Vehicle life
 
 Other things that we could track in the CSV but not necessarily need to automatically extract via script could include:
 
-> * Reversal compatibility (a value used to flag if a locomotive is compatible with a DBSO, DVT, or GLV)
-> * List of liveries
+- Reversal compatibility (a value used to flag if a locomotive is compatible with a DBSO, DVT, or GLV)
+- List of liveries
 
 ### Colours
 
@@ -339,16 +336,28 @@ switch	(FEAT_TRAINS, SELF, SW_LIVERY_VIR, current_year > 1997){1: return string(
 
 The creation of the strings, palette definitions, and year switches could be all automated by a python script exctracting these values from a CSV to easily add new liveries and names. Then we can use the same three letter codes to set which liveries will be available in the vehicles CSV, automating the creation for the switches of these features.
 
+## 4.3 Kettles
+
+
+
 ## 4.4 The Future Of The Extension Set
 
 To summarise, it should die.  
 But its functions should be implemented in other sets, with more detail to each feature to fully flesh out the original half-baked ideas.
 
-## 4.x
+## 4.5 Station
 
 https://www.google.co.uk/maps/@55.8701934,-4.2299993,196a,35y,327.38h,44.41t/data=!3m1!1e3?entry=ttu
 
-## 4.x+1
+## 4.6 Objects
+
+
+
+## 4.7 Other plans
+
+
+
+## 4.8 Conclusion
 
 
 
