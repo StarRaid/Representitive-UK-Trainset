@@ -1,0 +1,319 @@
+
+/*For each of the following lines, search and replace the terms to quickly fill in some details:
+VEHICLE_ID
+SPRITES_FILE_PATH
+*.
+
+//Livery xxx
+spriteset(spriteset_VEHICLE_ID_f_xxx, "gfx/SPRITES_FILE_PATH") {template_8_8(X, X)} //Driving car
+spriteset(spriteset_VEHICLE_ID_t_xxx, "gfx/SPRITES_FILE_PATH") {template_8_4(X, X)} //Trailer car
+spriteset(spriteset_VEHICLE_ID_p_xxx, "gfx/SPRITES_FILE_PATH") {template_8_8(X, X)} //Pantograph/Alt car
+spriteset(spriteset_VEHICLE_ID_pr_xxx, "gfx/SPRITES_FILE_PATH") {template_8_8(X, X)} //Pantograph/Alt car reverse
+
+//Repeat this block for each livery
+
+//Headlights
+spriteset(spriteset_VEHICLE_ID_hl, "gfx/SPRITES_FILE_PATH") {template_8_8(X, X)}
+spriteset(spriteset_VEHICLE_ID_rl, "gfx/SPRITES_FILE_PATH") {template_8_8(X, X)}
+
+//Purchase Sprite
+spriteset(spriteset_VEHICLE_ID_purchase_xxx, "gfx/SPRITES_FILE_PATH") {template_dualhead_purchase(X, X)}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_purchase, date_of_last_service){
+DATE_BRTOPS: spriteset_VEHICLE_ID_purchase_xxx;
+spriteset_VEHICLE_ID_purchase_xxx;
+}
+
+//Auto livery selection
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_f_auto, date_of_last_service){
+DATE_BRTOPS: spriteset_VEHICLE_ID_f_xxx;
+spriteset_VEHICLE_ID_f_xxx;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_t_auto, date_of_last_service){
+DATE_BRTOPS: spriteset_VEHICLE_ID_t_xxx;
+spriteset_VEHICLE_ID_t_xxx;
+}
+//PAN CODE
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_pf_auto, date_of_last_service){
+DATE_BRTOPS: spriteset_VEHICLE_ID_p_xxx;
+spriteset_VEHICLE_ID_p_xxx;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_pr_auto, date_of_last_service){
+DATE_BRTOPS: spriteset_VEHICLE_ID_pr_xxx;
+spriteset_VEHICLE_ID_pr_xxx;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_VEHICLE_ID_p_auto, vehicle_is_reversed){
+0: sw_VEHICLE_ID_pf_auto;
+sw_VEHICLE_ID_pr_auto;
+}
+//END PAN CODE
+//Manual livery selection
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_f_man, cargo_subtype){
+DATE_BRTOPS: spriteset_VEHICLE_ID_f_xxx;
+spriteset_VEHICLE_ID_f_xxx;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_t_man, cargo_subtype){
+DATE_BRTOPS: spriteset_VEHICLE_ID_t_xxx;
+spriteset_VEHICLE_ID_t_xxx;
+}
+//PAN CODE
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_pf_man, cargo_subtype){
+DATE_BRTOPS: spriteset_VEHICLE_ID_p_xxx;
+spriteset_VEHICLE_ID_p_xxx;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_pr_man, cargo_subtype){
+DATE_BRTOPS: spriteset_VEHICLE_ID_pr_xxx;
+spriteset_VEHICLE_ID_pr_xxx;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_VEHICLE_ID_p_man, vehicle_is_reversed){
+0: sw_VEHICLE_ID_pf_man;
+sw_VEHICLE_ID_pr_man;
+}
+//END PAN CODE
+//Livery selection mode
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_f, livery_choice){
+	1: sw_VEHICLE_ID_f_man; 
+	sw_VEHICLE_ID_f_auto;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_t, livery_choice){
+	1: sw_VEHICLE_ID_t_man; 
+	sw_VEHICLE_ID_t_auto;
+}
+//PAN CODE
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_p, livery_choice){
+	1: sw_VEHICLE_ID_p_man; 
+	sw_VEHICLE_ID_p_auto;
+}
+//END PAN CODE
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_tl, position_in_consist_from_end){
+0: spriteset_VEHICLE_ID_rl;
+gfx_blank;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_hl, position_in_consist){
+0: spriteset_VEHICLE_ID_hl;
+sw_VEHICLE_ID_tl;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0: return sw_VEHICLE_ID_f;
+	1: return sw_VEHICLE_ID_hl;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_VEHICLE_ID_pan_f, STANDARD_GAUGE_CHECK_OHLE_ONLY){
+1: spriteset_375_pan_up;
+spriteset_375_pan_down;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_VEHICLE_ID_pan_r, STANDARD_GAUGE_CHECK_OHLE_ONLY){
+1: spriteset_375_pan_up_r;
+spriteset_375_pan_down_r;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_VEHICLE_ID_pan, vehicle_is_reversed){
+0: sw_VEHICLE_ID_pan_f;
+sw_VEHICLE_ID_pan_r;
+}
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_tf, pan_check(X,Y)){
+0: sw_317_p_livery_param;
+sw_317_t_livery_param;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_tr, position_in_vehid_chain_from_end){
+0: sw_317_p_livery_param;
+sw_317_t_livery_param;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_VEHICLE_ID_t, vehicle_is_reversed){
+0: sw_VEHICLE_ID_tf;
+sw_VEHICLE_ID_tr;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_pan, position_in_vehid_chain){
+0: sw_317_pan;
+gfx_blank;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_ndr_pan_switch, position_in_vehid_chain_from_end){
+0: sw_317_pan;
+gfx_blank;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_317_nd_pan_switch, vehicle_is_reversed){
+0: sw_317_ndf_pan_switch;
+sw_317_ndr_pan_switch;
+}
+
+switch(FEAT_TRAINS, SELF, sw_VEHICLE_ID_t_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0: return sw_317_nd_livery_param;
+	1: return sw_317_nd_pan_switch;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_refit_text, cargo_subtype){
+	0: string(STR_LIVERY_BRBLUEGREY);
+	1: string(STR_LIVERY_NSE);
+	2: string(STR_LIVERY_WAGN);
+	3: string(STR_LIVERY_ONE_ANGLIA);
+	4: string(STR_LIVERY_GREATER_ANGLIA);
+	5: string(STR_LIVERY_NXEA);
+	6: string(STR_LIVERY_ABELLIO_GREATER_ANGLIA);
+	7: string(STR_LIVERY_LO);
+	8: string(STR_LIVERY_FCC);
+	9: string(STR_LIVERY_SPT_ORANGE);
+	10: string(STR_LIVERY_SPT_CARMINE_CREAM);
+	11: string(STR_LIVERY_SPT_CARMINE_CREAM);
+	12: string(STR_LIVERY_SCOTRAIL);
+	return CB_RESULT_NO_TEXT;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_livery_decider, livery_choice){
+	1: sw_317_refit_text;
+	CB_RESULT_NO_TEXT;
+}
+
+random_switch(FEAT_TRAINS, SELF, sw_317_brb_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_nse_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_wgn_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_MAUVE, COLOUR_WHITE) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_one_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_LIGHT_BLUE) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_gan_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_LIGHT_BLUE, COLOUR_BLUE) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_nxe_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_WHITE, COLOUR_GREY) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_aga_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_WHITE, COLOUR_RED) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_lo__colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_fcc_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_spt_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_cac_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_RED, COLOUR_BROWN) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_car_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_RED, COLOUR_BROWN) ;}
+random_switch(FEAT_TRAINS, SELF, sw_317_sct_colour_mapping, TRIGGER_VEHICLE_SERVICE){1: palette_2cc(COLOUR_DARK_BLUE, COLOUR_GREY) ;}
+
+switch(FEAT_TRAINS, SELF, sw_317_colour_auto, current_year){
+ERA_BRTOPS: sw_317_brb_colour_mapping;
+ERA_SECTORISATION: sw_317_nse_colour_mapping;
+ERA_PRIVATE_ONE: sw_317_wgn_colour_mapping;
+2005 .. 2008: sw_317_nxe_colour_mapping;
+sw_317_aga_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_colour_man, cargo_subtype){
+	0: sw_317_brb_colour_mapping;
+	1: sw_317_nse_colour_mapping;
+	2: sw_317_wgn_colour_mapping;
+	3: sw_317_one_colour_mapping;
+	4: sw_317_gan_colour_mapping;
+	5: sw_317_nxe_colour_mapping;
+	6: sw_317_aga_colour_mapping;
+	7: sw_317_lo__colour_mapping;
+	8: sw_317_fcc_colour_mapping;
+	9: sw_317_spt_colour_mapping;
+	10: sw_317_cac_colour_mapping;
+	11: sw_317_car_colour_mapping;
+	12: sw_317_sct_colour_mapping;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_colour_livery_decider, livery_choice){
+	1: sw_317_colour_man;
+	sw_317_colour_auto;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_colour_livery_decider_2, num_vehs_in_consist){
+0..2: sw_317_brb_colour_mapping;
+sw_317_colour_livery_decider;
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_recolour, colour_scheme_1){
+	1: sw_317_colour_livery_decider_2;
+	palette_2cc(company_colour1, company_colour2);
+}
+
+switch(FEAT_TRAINS, SELF, sw_317_coupling_restrictions, vehicle_type_id) {
+	321: return CB_RESULT_ATTACH_ALLOW;
+	319: return CB_RESULT_ATTACH_ALLOW;
+	317: return CB_RESULT_ATTACH_ALLOW;
+	9030: return CB_RESULT_ATTACH_ALLOW;
+	37 : return CB_RESULT_ATTACH_ALLOW;
+    return string(STR_317_NO_COUPLE);
+}
+
+switch(FEAT_TRAINS, PARENT, sw_317_start_stop, count_veh_id(317)-num_vehs_in_consist){
+0: string(STR_MORE_CARRIAGES_NEEDED);
+CB_RESULT_NO_TEXT;
+}
+
+item (FEAT_TRAINS, item_VEHICLE_ID, VEHICLE_ID) {
+	property {
+		name: 							string(STR_NAME_317);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1981, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					26;
+		cost_factor:					55;
+		running_cost_factor:			34;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							100 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
+		refit_cost:						0;
+		track_type:						ELRL;
+		ai_special_flag:				AI_FLAG_PASSENGER;
+		power:							1450 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					85;
+		weight:							40 ton;
+		tractive_effort_coefficient:	0.16;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+	}
+	graphics {
+		can_attach_wagon:					sw_317_coupling_restrictions;
+		default: 							sw_VEHICLE_ID_default;
+		purchase:							sw_VEHICLE_ID_purchase;
+		cargo_subtype_text:					sw_317_livery_decider;
+		colour_mapping:						sw_317_recolour;
+		purchase_colour_mapping: 			sw_317_colour_auto;
+		running_cost_factor:				return(current_speed == 0 ? 8 : 30) ;
+		sound_effect:						sw_sfx_emu_gec ;
+		start_stop:							sw_317_start_stop;
+		purchase_running_cost_factor : 32;
+}
+		livery_override (9030) {
+		cargo_capacity: 95;
+		default: sw_VEHICLE_ID_t_default;
+		colour_mapping:	sw_317_recolour;
+		cargo_subtype_text: sw_317_livery_decider ;
+}
+}
+
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_VEHICLE_ID, VEHICLE_ID){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_VEHICLE_ID, VEHICLE_ID){
+	property{
+		name                           : string(STR_NAME_317_ALT) ;
+	}
+}
+}
