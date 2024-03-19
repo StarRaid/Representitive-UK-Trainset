@@ -4326,7 +4326,7 @@ switch(FEAT_TRAINS, SELF, sw_wagon_a_spritestack, [STORE_TEMP((getbits(extra_cal
 item (FEAT_TRAINS, item_WAGON_A, 10000) {
 	property {
 		name: 							string(STR_NAME_WAGON_A);
-		climates_available: 			NO_CLIMATE;
+		climates_available: 			NO_CLIMATE; //Deprecated - not available for purchase
 		introduction_date:				date(1950, 1, 1);
 		model_life:						30;
 		retire_early:					1;
@@ -5805,7 +5805,7 @@ switch(FEAT_TRAINS, SELF, sw_tea_refit_text_check, livery_choice){
 item (FEAT_TRAINS, item_tea, 10021) {
 	property {
 		name: 							string(STR_NAME_TEA);
-		climates_available: 			NO_CLIMATE;
+		climates_available: 			NO_CLIMATE;//Deprecated - not available for purchase
 		introduction_date:				date(1970, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		retire_early:					1;
@@ -6904,7 +6904,7 @@ item(FEAT_TRAINS, item_mbox, 10005){
 		misc_flags                     : bitmask(TRAIN_FLAG_AUTOREFIT, TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK) ;
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 7 ;
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE ;//Deprecated - not available for purchase
 		introduction_date              : date( 1985, 1, 1) ;
 		model_life                     : VEHICLE_NEVER_EXPIRES ;
 		vehicle_life                   : 40 ;
@@ -8103,6 +8103,7 @@ item (FEAT_TRAINS, item_lulcoach, 600) {
 //DBSO Source
 
 
+
 //Spritesets
 
 spriteset(gfx_dbso_scotrail          , "gfx/WAGON/mark_2_dbso.png"){ template_8_8_2(0,0)           }
@@ -8667,7 +8668,7 @@ switch(FEAT_TRAINS, SELF, sw_dvt_colours_2cc_check, colour_scheme_1){
 item (FEAT_TRAINS, item_tender, 2000) {
 	property {
 		name: 							string(STR_GRF_NAME);
-		climates_available: 			NO_CLIMATE;
+		climates_available: 			NO_CLIMATE;//Articulated part, not available for purchase by itself.
 		introduction_date:				date(1, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		loading_speed:					0;
@@ -8761,7 +8762,7 @@ switch(FEAT_TRAINS, SELF, sw_cube_refit_text, cargo_subtype){
 item (FEAT_TRAINS, item_cube, 9999) {
 	property {
 		name: 							string(STR_GRF_NAME);
-		climates_available: 			NO_CLIMATE;
+		climates_available: 			NO_CLIMATE;//Test vehicle, not available for purchase.
 		introduction_date:				date(1, 1, 1);
 		model_life:						VEHICLE_NEVER_EXPIRES;
 		loading_speed:					0;
@@ -16197,7 +16198,7 @@ item(FEAT_TRAINS, item_hst, 43){
 		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
 		length                         : 8 ;
-		climates_available             : NO_CLIMATE ;
+		climates_available             : NO_CLIMATE ;//Deprecated - not available for purchase
 		introduction_date              : date(1975,1,1) ;
 		model_life                     : 30 ;
 		vehicle_life                   : 45 ;
@@ -17968,7 +17969,7 @@ item(FEAT_TRAINS, item_bone, 58){
 		colour_mapping                 : sw_bone_col_2cc_check;
 		purchase                       : sw_bone_purch_gfx;
 		purchase_colour_mapping        : sw_bone_col_auto;
-		sound_effect                   : sw_sfx_diesel_loco_ee_2;
+		sound_effect                   : sw_sfx_extension_60_check;
 		create_effect                  : vfx_diesel_default;
 		cargo_subtype_text             : sw_bone_refit_text_check;
 		purchase_cargo_capacity        : 0;
@@ -31474,7 +31475,7 @@ switch(FEAT_TRAINS, PARENT, sw_325_colour_mapping_decider, colour_scheme_1){
 item (FEAT_TRAINS, item_325, 325) {
 	property {
 		name: 							string(STR_NAME_325);
-		climates_available: 			NO_CLIMATE;
+		climates_available: 			NO_CLIMATE;//Deprecated - not available for purchase
 		introduction_date:				date(1990, 1, 1);
 		model_life:						30;
 		retire_early:					1;
@@ -34334,6 +34335,18 @@ spriteset(spriteset_360_heax_t_p, "gfx/EMU/class_360.png") {
 	template_8_8_networker(537, 50)
 }
 
+spriteset(spriteset_360_emr, "gfx/EMU/class_360.png") {
+	template_8_8_networker(716, 0)
+}
+
+spriteset(spriteset_360_emr_t, "gfx/EMU/class_360.png") {
+	template_8_4_networker(716, 25)
+}
+
+spriteset(spriteset_360_emr_t_p, "gfx/EMU/class_360.png") {
+	template_8_8_networker(716, 50)
+}
+
 spriteset(spriteset_350_purchase_slv, "gfx/EMU/class_450.png") {
 	template_dualhead_purchase(718, 50)
 }
@@ -34455,6 +34468,21 @@ switch(FEAT_TRAINS, PARENT, sw_360_t_panto_decider_heax, vehicle_is_reversed){
 	sw_360_t_panto_decider_heax_f ;
 }
 
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_emr_f, position_in_vehid_chain){
+	0 : spriteset_360_emr_t_p ;
+	spriteset_360_emr_t ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_360_t_panto_decider_emr_b, position_in_vehid_chain_from_end){
+	0 : spriteset_360_emr_t_p ;
+	spriteset_360_emr_t ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_360_t_panto_decider_emr, vehicle_is_reversed){
+	1 : sw_360_t_panto_decider_emr_b ;
+	sw_360_t_panto_decider_emr_f ;
+}
+
 //How the livery is selected
 
 switch(FEAT_TRAINS, SELF, sw_350_livery_selection_auto, current_year){
@@ -34478,6 +34506,7 @@ switch(FEAT_TRAINS, SELF, sw_350_livery_selection_manual, cargo_subtype){
 	3: spriteset_360_ga  ;
 	4: spriteset_360_nxea;
 	5: spriteset_360_fge ;
+	7: spriteset_360_emr ;
 	spriteset_360_heax   ;
 } 
 
@@ -34488,6 +34517,7 @@ switch(FEAT_TRAINS, PARENT, sw_350_livery_selection_manual_t, cargo_subtype){
 	3: sw_360_t_panto_decider_ga  ;
 	4: sw_360_t_panto_decider_nxea;
 	5: sw_360_t_panto_decider_fge ;
+	7: sw_360_t_panto_decider_emr ;
 	sw_360_t_panto_decider_heax   ;
 } 
 
@@ -34520,6 +34550,7 @@ switch(FEAT_TRAINS, SELF, sw_350_refit_text, cargo_subtype){
 	4: string(STR_LIVERY_NXEA);
 	5: string(STR_LIVERY_FGE);
 	6: string(STR_LIVERY_HEATHROW_EXPRESS);
+	7: string(STR_LIVERY_HEATHROW_EMR);
 	return CB_RESULT_NO_TEXT;
 }
 
@@ -34543,6 +34574,7 @@ switch(FEAT_TRAINS, SELF, sw_350_recolour_selection_manual, cargo_subtype){
 	3: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE) ;
 	4: palette_2cc(COLOUR_GREY, COLOUR_GREY) ;
 	5: palette_2cc(COLOUR_DARK_BLUE, COLOUR_PINK) ;
+	7: palette_2cc(COLOUR_RED, COLOUR_GREY) ;
 	 palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE) ;
 }
 
