@@ -280,13 +280,34 @@ switch(FEAT_TRAINS, SELF, sw_701_lights, position_in_consist){
 sw_701_lights_r;
 }
 
+switch(FEAT_TRAINS, PARENT, sw_701_half_unit_f, vehicle_is_reversed){
+0: spriteset_710_t_swr;
+spriteset_710_f_swr;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_701_half_unit_r, vehicle_is_reversed){
+1: spriteset_710_t_swr;
+spriteset_710_f_swr;
+}
+
+switch(FEAT_TRAINS, SELF, sw_701_half_unit, count_veh_id(701)%2){
+0: sw_701_half_unit_f;
+sw_701_half_unit_r;
+}
+
+switch(FEAT_TRAINS, SELF, sw_701_f, cargo_subtype){
+0: spriteset_710_f_swr;
+sw_701_half_unit;
+}
+
 switch(FEAT_TRAINS, SELF, sw_701_default, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
-	0: return spriteset_710_f_swr;
+	0: return sw_701_f;
 	1: return sw_701_lights;
 }
 
 switch(FEAT_TRAINS, SELF, sw_701_refit_text, cargo_subtype){
 	0: string(STR_LIVERY_SWR);
+	1: string(STR_LIVERY_SWR_STR, string(STR_HALF_UNIT));
 	return CB_RESULT_NO_TEXT;
 }
 
@@ -303,6 +324,7 @@ sw_701_swr_colour_mapping;
 
 switch(FEAT_TRAINS, SELF, sw_701_colour_man, cargo_subtype){
 	0: sw_701_swr_colour_mapping;
+	1: sw_701_swr_colour_mapping;
 }
 
 switch(FEAT_TRAINS, SELF, sw_701_colour_livery_decider, livery_choice){
