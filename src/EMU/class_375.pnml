@@ -969,26 +969,26 @@ sw_387_hex_rear;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_front_man, cargo_subtype){
-0..2: spriteset_387_f_gtr_c2c;
-3..4: spriteset_387_f_gax_gwr;
+0..1: spriteset_387_f_gtr_c2c;
+2..4: spriteset_387_f_gax_gwr;
 sw_387_f_hex;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_trailer_man, cargo_subtype){
-0..2: spriteset_387_t_gtr_c2c;
-3..4: spriteset_387_t_gax_gwr;
+0..1: spriteset_387_t_gtr_c2c;
+2..4: spriteset_387_t_gax_gwr;
 spriteset_387_t_hex;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_pan_man_f, cargo_subtype){
-0..2: spriteset_387_p_gtr_c2c;
-3..4: spriteset_387_p_gax_gwr;
+0..1: spriteset_387_p_gtr_c2c;
+2..4: spriteset_387_p_gax_gwr;
 spriteset_387_p_hex;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_pan_man_r, cargo_subtype){
-0..2: spriteset_387_pr_gtr_c2c;
-3..4: spriteset_387_pr_gax_gwr;
+0..1: spriteset_387_pr_gtr_c2c;
+2..4: spriteset_387_pr_gax_gwr;
 spriteset_387_pr_hex;
 }
 
