@@ -21697,14 +21697,10 @@ switch(FEAT_TRAINS, PARENT, sw_ee40_colours_2cc_check_dbso, colour_scheme_1){
 }
 # 1 "src/WAGON/DBSO.pnml" 6
 # 1 "src/WAGON/DBSO/uklight.pnml" 1
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_passenger_check_dbso, most_common_cargo_type){
-	PASS : sw_uklight_gfx_tpe_reverse_check ;
-	sw_uklight_gfx_drs_reverse_check ;
-}
 
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_auto_dbso, current_year){
-	2013 : sw_uklight_gfx_drs_reverse_check ;
-	2014..2018 : sw_uklight_gfx_passenger_check ;
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_auto_dbso, date_of_last_service){
+	date(2006,1,1) .. date(2014,12,31):	sw_uklight_gfx_drs_reverse_check;
+	date(2015,1,1) .. date(2023,12,31):	sw_uklight_gfx_passenger_check;
 	sw_uklight_gfx_passenger_check_2 ;
 }
 
@@ -21729,7 +21725,7 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_manual_check_dbso, livery_choice){
 //Spritestacking
 
 switch(FEAT_TRAINS, PARENT, sw_uklight_spritestack_dbso, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
-	0 : sw_uklight_gfx_manual_check ;
+	0 : sw_uklight_gfx_manual_check_dbso ;
 	1 : sw_uklight_gfx_headlights ;
 	2 : sw_uklight_gfx_taillights ;
 }
@@ -35652,26 +35648,26 @@ sw_387_hex_rear;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_front_man, cargo_subtype){
-0..2: spriteset_387_f_gtr_c2c;
-3..4: spriteset_387_f_gax_gwr;
+0..1: spriteset_387_f_gtr_c2c;
+2..4: spriteset_387_f_gax_gwr;
 sw_387_f_hex;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_trailer_man, cargo_subtype){
-0..2: spriteset_387_t_gtr_c2c;
-3..4: spriteset_387_t_gax_gwr;
+0..1: spriteset_387_t_gtr_c2c;
+2..4: spriteset_387_t_gax_gwr;
 spriteset_387_t_hex;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_pan_man_f, cargo_subtype){
-0..2: spriteset_387_p_gtr_c2c;
-3..4: spriteset_387_p_gax_gwr;
+0..1: spriteset_387_p_gtr_c2c;
+2..4: spriteset_387_p_gax_gwr;
 spriteset_387_p_hex;
 }
 
 switch(FEAT_TRAINS, SELF, sw_387_pan_man_r, cargo_subtype){
-0..2: spriteset_387_pr_gtr_c2c;
-3..4: spriteset_387_pr_gax_gwr;
+0..1: spriteset_387_pr_gtr_c2c;
+2..4: spriteset_387_pr_gax_gwr;
 spriteset_387_pr_hex;
 }
 

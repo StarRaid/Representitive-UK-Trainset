@@ -1,11 +1,7 @@
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_passenger_check_dbso, most_common_cargo_type){
-	PASS : sw_uklight_gfx_tpe_reverse_check ;
-	sw_uklight_gfx_drs_reverse_check ;
-}
 
-switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_auto_dbso, current_year){
-	2013 : sw_uklight_gfx_drs_reverse_check ;
-	2014..2018 : sw_uklight_gfx_passenger_check ;
+switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_auto_dbso, date_of_last_service){
+	DATE_PRIVATE_TWO:	sw_uklight_gfx_drs_reverse_check;
+	DATE_PRIVATE_THREE:	sw_uklight_gfx_passenger_check;
 	sw_uklight_gfx_passenger_check_2 ;
 }
 
@@ -30,7 +26,7 @@ switch(FEAT_TRAINS, PARENT, sw_uklight_gfx_manual_check_dbso, livery_choice){
 //Spritestacking
 
 switch(FEAT_TRAINS, PARENT, sw_uklight_spritestack_dbso, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
-	0 : sw_uklight_gfx_manual_check ;
+	0 : sw_uklight_gfx_manual_check_dbso ;
 	1 : sw_uklight_gfx_headlights ;
 	2 : sw_uklight_gfx_taillights ;
 }
