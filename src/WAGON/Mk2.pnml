@@ -311,6 +311,7 @@ item (FEAT_TRAINS, item_Mk2, 9020){
 		running_cost_factor            : 38 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
+		ai_special_flag                : AI_FLAG_PASSENGER;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 60 ;
 		loading_speed                  : 16 ;
@@ -455,6 +456,7 @@ item (FEAT_TRAINS, item_Mk2_brake, 9021){
 		running_cost_factor            : 34 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
+		ai_special_flag				   : AI_FLAG_PASSENGER;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 50 ;
 		loading_speed                  : 10 ;

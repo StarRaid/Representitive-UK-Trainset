@@ -195,6 +195,7 @@ item(FEAT_TRAINS, item_dbso, 9025){
 		running_cost_factor            : 58 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 30 ;
 		loading_speed                  : 8 ;

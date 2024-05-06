@@ -36,7 +36,7 @@ item (FEAT_TRAINS, item_lulcoach, 600) {
 		misc_flags:						bitmask(TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAA4;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;

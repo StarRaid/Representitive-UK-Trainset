@@ -144,6 +144,7 @@ item(FEAT_TRAINS, item_deltic, 55){
 		reliability_decay              : 8;
 		cost_factor                    : 89;
 		running_cost_base              : RUNNING_COST_DIESEL;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		running_cost_factor            : 248;
 		speed                          : 100 mph;
 		track_type                     : RAIL;

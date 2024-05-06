@@ -140,6 +140,7 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		vehicle_life                   : 45 ;
 		cost_factor                    : 115 ;
 		running_cost_base              : RUNNING_COST_NONE ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		running_cost_factor            : 64 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;

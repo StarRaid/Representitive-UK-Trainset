@@ -309,6 +309,7 @@ item(FEAT_TRAINS, item_brush4, 47){
 		reliability_decay              : 10;
 		cost_factor                    : 68;
 		running_cost_base              : RUNNING_COST_DIESEL;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		running_cost_factor            : 242;
 		speed                          : 95 mph;
 		track_type                     : RAIL;

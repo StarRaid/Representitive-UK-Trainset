@@ -98,6 +98,7 @@ item(FEAT_TRAINS, item_western, 52){
 		reliability_decay              : 19;
 		cost_factor                    : 78;
 		running_cost_base              : RUNNING_COST_DIESEL;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		running_cost_factor            : 253;
 		speed                          : 90 mph;
 		track_type                     : RAIL;

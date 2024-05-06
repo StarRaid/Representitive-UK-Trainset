@@ -1292,6 +1292,7 @@ item (FEAT_TRAINS, item_stroudley, 9070){
 		running_cost_factor            : 20 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 20 ;
 		loading_speed                  : 10 ;
@@ -1386,6 +1387,7 @@ item (FEAT_TRAINS, item_vicsub, 9071){
 		running_cost_factor            : 30 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 40 ;
 		loading_speed                  : 24 ;
@@ -1744,7 +1746,7 @@ item (FEAT_TRAINS, item_Mk1, 9010) {
 		misc_flags:						bitmask(TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
@@ -2492,7 +2494,7 @@ item (FEAT_TRAINS, item_mk1_sub, 9011) {
 		misc_flags:						bitmask(TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
@@ -2830,6 +2832,7 @@ item (FEAT_TRAINS, item_Mk2, 9020){
 		running_cost_factor            : 38 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
+		ai_special_flag                : AI_FLAG_PASSENGER;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 60 ;
 		loading_speed                  : 16 ;
@@ -2974,6 +2977,7 @@ item (FEAT_TRAINS, item_Mk2_brake, 9021){
 		running_cost_factor            : 34 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
+		ai_special_flag				   : AI_FLAG_PASSENGER;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 50 ;
 		loading_speed                  : 10 ;
@@ -3350,7 +3354,7 @@ item (FEAT_TRAINS, item_mk3, 9030) {
 		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
@@ -3612,7 +3616,7 @@ item (FEAT_TRAINS, item_mk4, 9040) {
 		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
@@ -3701,7 +3705,7 @@ item (FEAT_TRAINS, item_MU90, 9090) {
 		misc_flags:						bitmask(TRAIN_FLAG_2CC, TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_TILT);
 		refit_cost:						0;
 		track_type:						RAIL;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
@@ -8204,7 +8208,7 @@ item (FEAT_TRAINS, item_lulcoach, 600) {
 		misc_flags:						bitmask(TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAA4;
-		ai_special_flag:				AI_FLAG_CARGO;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		power:							0 hp;
 		running_cost_base:				RUNNING_COST_NONE;
 		dual_headed:					0;
@@ -22606,6 +22610,7 @@ item(FEAT_TRAINS, item_dbso, 9025){
 		running_cost_factor            : 58 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : CC_PASSENGERS ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		cargo_allow_refit              : [PASS, TOUR] ;
 		cargo_capacity                 : 30 ;
 		loading_speed                  : 8 ;
@@ -22791,6 +22796,7 @@ item(FEAT_TRAINS, item_dvt, 9035){
 		vehicle_life                   : 45 ;
 		cost_factor                    : 115 ;
 		running_cost_base              : RUNNING_COST_NONE ;
+		ai_special_flag:				AI_FLAG_PASSENGER;
 		running_cost_factor            : 64 ;
 		refit_cost                     : 0 ;
 		refittable_cargo_classes       : 0 ;

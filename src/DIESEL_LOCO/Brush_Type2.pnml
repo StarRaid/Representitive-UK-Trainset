@@ -270,6 +270,7 @@ item(FEAT_TRAINS, item_brush2, 31){
 		reliability_decay              : 13;
 		cost_factor                    : 45;
 		running_cost_base              : RUNNING_COST_DIESEL;
+		ai_special_flag:				AI_FLAG_PASSENGER ;
 		running_cost_factor            : 150;
 		speed                          : 80 mph;
 		track_type                     : RAIL;
