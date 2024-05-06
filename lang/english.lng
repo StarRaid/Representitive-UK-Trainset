@@ -193,6 +193,7 @@ STR_LIVERY_LONDON_MIDLAND		 			: London Midland
 STR_LIVERY_LONDON_MIDLAND_STRING 			: London Midland {STRING}
 STR_LIVERY_LTS					 			: LTS Rail
 STR_LIVERY_MAROON				 			: British Railways Maroon
+STR_LIVERY_MAROON_LINED			 			: British Railways Maroon {GOLD}(Lined)
 STR_LIVERY_MENDIP							: Mendip Rail
 STR_LIVERY_MERSEYRAIL			 			: Merseyrail
 STR_LIVERY_MERSEYRAIL_REFERB	 			: Merseyrail {GOLD}(Refurbished)
