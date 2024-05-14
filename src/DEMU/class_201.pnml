@@ -1,0 +1,101 @@
+//Class 201 will contain the code for all Mk1 related units
+//201 - Hastings DEMU (201/202/203)
+//205 - Hampshire DEMU (204/205)
+//207 - East Sussex DEMU (207)
+//304 - BREL Outer Suburban EMU (304/305/308)
+//411 - BREL Express EMU (Early) (411/412)
+//414 - BREL Outer Suburban EMU (413/414/418)*
+//415 - SR/BR Suburban EMU (415/416)
+//419 - BREL Motor Luggage Van (419)
+//421 - BREL Express EMU (Late) (421/422)
+//423 - BREL High Density EMU (423)
+//432 - BREL High Powered Express EMU (432)
+//504 - BREL Local EMU (504)
+//9011 - TC set
+
+/*Inputs:
+	-Cargo subtype
+	-Date of last service/current date (if in purchase menu)
+	-Livery choice
+	-Real colours
+
+Start date..end date
+
+Outputs:
+	-Recolour
+	-Sprite
+	-Cargo subtype text
+	
+We need to have a date check, and decide what we're looking for, recolour or sprite
+And also a subcargo type check
+
+livey_mode = livery_choice + 2*real_colour
+output: 0: sprite, 1: recolour, 2: cargo subtype text, 3: purchase sprite
+
+output mode: 0
+livery mode: 0; 2
+result: 4*subcargo_type
+
+output mode: 0
+livery mode: 1; 3
+result: 4*date_mapping
+
+output mode: 1
+livery mode: 0
+result: 4*subcargo_type + 1
+
+output mode: 1
+livery mode: 1
+result: 4*date_mapping + 1
+
+output mode: 1
+livery mode: 2; 3
+result: 254 (4*64+1)
+
+output mode: 2
+livery mode: 0; 2
+result: 4*subcargo_type + 2
+
+output mode: 2
+livery mode: 1; 3
+result: 254 (4*64+2)
+
+switch(FEAT_TRAINS, SELF, livery_uniselection, output_mode, date_mapping,output_mode+ 4 *
+(output_mode%3==0) * ((livery_mode())%2 * date_mapping(date_mode) + (livery_mode() + 1)%2 * subcargo_type) +
+(output_mode==1) * (((livery_mode())%2 * date_mapping(date_mode) + (livery_mode() + 1)%2 * subcargo_type)*(livery_mode() < 2) +
+	64*(livery_mode() > 1)) +
+(output_mode==2) * ((livery_mode() + 1)%2 * subcargo_type + 64*(livery_mode())%2))
+{return;}
+
+switch (FEAT_TRAINS, SELF, sw_201, output_mode, date_mapping, livery_uniselection(output_mode, date_mapping)){
+	0 : spriteset_201_brg;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
+	2 : string(STR_BR_GREEN);
+	3 : spriteset_201_brg_purchase;
+	
+	4 : spriteset_201_bgy;
+	5 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
+	6 : string(STR_BR_GREEN_YELLOW);
+	7 : spriteset_201_bgy_purchase;
+	
+	8 : spriteset_201_brb;
+	9 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE);
+	10: string(STR_BR_BLUE);
+	11: spriteset_201_brb_purchase;
+	
+	12: spriteset_201_bg;
+	13: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
+	14: string(STR_BR_BLUE_GREY);
+	15: spriteset_201_bg_purchase;
+	
+	253: CB_RESULT_NO_TEXT;
+	palette_2cc(company_colour1, company_colour2) ;
+}
+
+switch (FEAT_TRAINS, SELF, sw_201_date_map, date_mode, (1-date_mode)*date_of_last_service + date_mode*current_date){
+	date(0,1,1)..date(1958,12,31):0;
+	date(1959,1,1)..date(1960,12,31):1;
+	date(1961,12,31)..date(1965,12,13):2;
+	4;
+}
+*/
