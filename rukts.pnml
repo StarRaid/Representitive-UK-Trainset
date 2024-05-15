@@ -8,6 +8,7 @@ disable_item(FEAT_TRAINS);
 #include "src/CODE/visual_effects.pnml"
 #include "src/CODE/sound_effects.pnml"
 #include "src/CODE/coupling_restrictions.pnml"
+#include "src/CODE/procedures.pnml"
 
 //#include "src/TRACKS/narrow_gauge.pnml"
 
@@ -86,6 +87,7 @@ disable_item(FEAT_TRAINS);
 #include "src/DMU/class_195.pnml"
 
 #include "src/DEMU/ner_petrol.pnml"
+#include "src/DEMU/class_201.pnml"
 #include "src/DEMU/class_205.pnml"
 #include "src/DEMU/class_210.pnml"
 #include "src/DEMU/voyager.pnml"

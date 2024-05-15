@@ -30,11 +30,17 @@ We need to have a date check, and decide what we're looking for, recolour or spr
 And also a subcargo type check
 
 livey_mode = livery_choice + 2*real_colour
-output: 0: sprite, 1: recolour, 2: cargo subtype text, 3: purchase sprite
+output: 
+0: sprite
+1: recolour
+2: cargo subtype text
+3: purchase sprite
+	(4: unusued)
+5: purchase recolour
 
 output mode: 0
 livery mode: 0; 2
-result: 4*subcargo_type
+result: 4*cargo_subtype
 
 output mode: 0
 livery mode: 1; 3
@@ -42,7 +48,7 @@ result: 4*date_mapping
 
 output mode: 1
 livery mode: 0
-result: 4*subcargo_type + 1
+result: 4*cargo_subtype + 1
 
 output mode: 1
 livery mode: 1
@@ -54,48 +60,112 @@ result: 254 (4*64+1)
 
 output mode: 2
 livery mode: 0; 2
-result: 4*subcargo_type + 2
+result: 4*cargo_subtype + 2
 
 output mode: 2
 livery mode: 1; 3
 result: 254 (4*64+2)
 
-switch(FEAT_TRAINS, SELF, livery_uniselection, output_mode, date_mapping,output_mode+ 4 *
-(output_mode%3==0) * ((livery_mode())%2 * date_mapping(date_mode) + (livery_mode() + 1)%2 * subcargo_type) +
-(output_mode==1) * (((livery_mode())%2 * date_mapping(date_mode) + (livery_mode() + 1)%2 * subcargo_type)*(livery_mode() < 2) +
-	64*(livery_mode() > 1)) +
-(output_mode==2) * ((livery_mode() + 1)%2 * subcargo_type + 64*(livery_mode())%2))
-{return;}
-
-switch (FEAT_TRAINS, SELF, sw_201, output_mode, date_mapping, livery_uniselection(output_mode, date_mapping)){
-	0 : spriteset_201_brg;
-	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
-	2 : string(STR_BR_GREEN);
-	3 : spriteset_201_brg_purchase;
-	
-	4 : spriteset_201_bgy;
-	5 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
-	6 : string(STR_BR_GREEN_YELLOW);
-	7 : spriteset_201_bgy_purchase;
-	
-	8 : spriteset_201_brb;
-	9 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE);
-	10: string(STR_BR_BLUE);
-	11: spriteset_201_brb_purchase;
-	
-	12: spriteset_201_bg;
-	13: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
-	14: string(STR_BR_BLUE_GREY);
-	15: spriteset_201_bg_purchase;
-	
-	253: CB_RESULT_NO_TEXT;
-	palette_2cc(company_colour1, company_colour2) ;
-}
-
-switch (FEAT_TRAINS, SELF, sw_201_date_map, date_mode, (1-date_mode)*date_of_last_service + date_mode*current_date){
-	date(0,1,1)..date(1958,12,31):0;
-	date(1959,1,1)..date(1960,12,31):1;
-	date(1961,12,31)..date(1965,12,13):2;
-	4;
-}
+In short, modes 0, 2, and 3 only care about livery_choice
+Modes 1 and 5 only care about colour_scheme_1
 */
+
+spriteset(spriteset_304_base, "gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(885, 140)}
+
+switch (FEAT_TRAINS, SELF, sw_304, output_mode, date_map, livery_uniselection(output_mode, date_map)){
+	0 : spriteset_304_base;
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
+	2 : string(STR_LIVERY_BRGREEN);
+	3 : spriteset_304_base;
+	
+	4 : spriteset_304_base;
+	5 : palette_2cc(COLOUR_YELLOW, COLOUR_YELLOW);
+	6 : string(STR_LIVERY_BRGREEN_YELLOW);
+	7 : spriteset_304_base;
+	
+	8 : spriteset_304_base;
+	9 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE);
+	10: string(STR_LIVERY_BRBLUE);
+	11: spriteset_304_base;
+	
+	12: spriteset_304_base;
+	13: palette_2cc(COLOUR_WHITE, COLOUR_WHITE);
+	14: string(STR_LIVERY_BRBLUEGREY);
+	15: spriteset_304_base;
+	
+	253: palette_2cc(company_colour1, company_colour2) ;
+	return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_TRAINS, SELF, sw_304_date_map, date_of_last_service){
+	date(0,1,1)..date(1958,12,31):return 0;
+	date(1959,1,1)..date(1960,12,31):return 1;
+	date(1961,1,1)..date(1965,12,13):return 2;
+	return 3;
+}
+
+switch (FEAT_TRAINS, SELF, sw_date_map_2, cargo_subtype) {return;}
+
+switch (FEAT_TRAINS, SELF, sw_304_2, cargo_subtype*4 + 2){
+	2 : string(STR_LIVERY_BRGREEN);
+	6 : string(STR_LIVERY_BRGREEN_YELLOW);
+	10: string(STR_LIVERY_BRBLUE);
+	14: string(STR_LIVERY_BRBLUEGREY);
+	13: palette_2cc(company_colour1, company_colour2) ;
+	1: palette_2cc(company_colour1, company_colour2) ;
+	return CB_RESULT_NO_TEXT;
+}
+
+item (FEAT_TRAINS, item_304, 304) {
+	property {
+		name: 							string(STR_NAME_TC);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1956, 1, 1);
+		model_life:						30;
+		retire_early:					1;
+		vehicle_life:					50;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					15;
+		cost_factor:					35;
+		running_cost_factor:			20;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							90 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						ELRL;
+		ai_special_flag:				AI_FLAG_PASSENGER;
+		power:							1000 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					55;
+		weight:							30 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.06;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+	}
+	graphics {
+		default: 							sw_304(0, sw_304_date_map());
+		colour_mapping:						sw_304(1, sw_304_date_map());
+		cargo_subtype_text:					sw_304(2, sw_304_date_map());
+		purchase:							sw_304(3, sw_304_date_map());
+		purchase_colour_mapping: 			sw_304(5, sw_304_date_map());
+		create_effect:						vfx_ohle_only;
+		running_cost_factor:				return(current_speed == 0 ? 5 : 20) ;
+		purchase_running_cost_factor:		20;
+		sound_effect:						sw_sfx_emu_gec ;
+}
+		livery_override (9011) {
+		cargo_capacity: 70;
+		default:							sw_mk1_sub_default;
+		colour_mapping:						sw_304(1, sw_304_date_map());
+		cargo_subtype_text:					sw_304(2, sw_304_date_map());
+}
+}

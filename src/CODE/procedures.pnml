@@ -1,0 +1,8 @@
+
+switch(FEAT_TRAINS, SELF, livery_uniselection, output_mode, date_map,4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4
+- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - 253) * !colour_scheme_1 * ((output_mode) == 1))		//Case for setting recolour to comp cols when colour_scheme_1 is 0
+- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - 254) * !livery_choice * ((output_mode%4) == 2))		//Case for removing livery refit list when livery_choice is 0
+- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - (4 * date_map + output_mode%4)) * ((output_mode%4) == 3))		//Case for purchase sprites (always using date based selection)
+- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - (4 * date_map + output_mode%4)) * ((output_mode) == 5))		//Case for purchase recolour (always using date based selection)
+)
+{return;}
