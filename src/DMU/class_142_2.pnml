@@ -35,7 +35,6 @@ spriteset(spriteset_143_taillight,		"gfx/DMU/pacer2.png")	{template_7_8(407,	75)
 
 spriteset(spriteset_142_purchase_rr_, "gfx/DMU/pacer2.png") {template_dualhead_purchase(244, 200)}
 spriteset(spriteset_142_purchase_nts, "gfx/DMU/pacer2.png") {template_dualhead_purchase(324, 213)}
-spriteset(spriteset_142_purchase_atn, "gfx/DMU/pacer2.png") {template_dualhead_purchase(244, 213)}
 spriteset(spriteset_142_purchase_ntr, "gfx/DMU/pacer2.png") {template_dualhead_purchase(244, 226)}
 
 random_switch(FEAT_TRAINS, PARENT, sw_142_gfx_random_br)	{ 2 : spriteset_142_rr_	; 1 : spriteset_142_brp	; }

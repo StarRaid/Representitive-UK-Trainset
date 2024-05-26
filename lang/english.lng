@@ -83,7 +83,9 @@ STR_LIVERY_BARRIER							: Barrier Coach {GOLD}(Blue)
 STR_LIVERY_BLUE_PULLMAN						: Blue Pullman
 STR_LIVERY_BOURNEMOUTH						: 73235 SWR Blue "71B"
 STR_LIVERY_BRBLUE				 			: British Railways {GOLD}(Blue)
+STR_LIVERY_BRBLUE_HALF_YELLOW				: British Railways {GOLD}(Blue with Small Yellow Panel)
 STR_LIVERY_BRBLUEGREY			 			: British Railways {GOLD}(Blue and Grey)
+STR_LIVERY_BRBLUEGREY_REFURB	 			: British Railways {GOLD}(Refurbished Blue and Grey)
 STR_LIVERY_BRBLUE_LOGO           			: British Railways Large Logo {GOLD}(Blue)
 STR_LIVERY_BRBLUE_REFURB_DMU	 			: British Railways Blue {GOLD}(Refurbished White & Blue)
 STR_LIVERY_BRBLUE_SPT			 			: British Railways Strathclyde Partnership for Transport
@@ -91,6 +93,7 @@ STR_LIVERY_BRBLUE_SUBTYPE		 			: British Railways Blue {STRING}
 STR_LIVERY_BRELECTRIC            			: British Railways {GOLD}(Electric Blue)
 STR_LIVERY_BRGREEN               			: British Railways {GOLD}(Green)
 STR_LIVERY_BRGREEN_YELLOW        			: British Railways {GOLD}(Green with Yellow Panel)
+STR_LIVERY_BRGREEN_HALF_YELLOW        		: British Railways {GOLD}(Green with Small Yellow Panel)
 STR_LIVERY_BRRAILFREIGHT_LOGO    			: British Railways Large Logo {GOLD}(Railfreight Grey)
 STR_LIVERY_BR_BLACK							: British Railways {GOLD}(Black)
 STR_LIVERY_BR_BRUNSWICK						: British Railways {GOLD}(Brunswick Green)
@@ -191,6 +194,7 @@ STR_LIVERY_LOADHAUL							: Loadhaul
 STR_LIVERY_LON								: London Overground (Revised Livery)
 STR_LIVERY_LONDON_MIDLAND		 			: London Midland
 STR_LIVERY_LONDON_MIDLAND_STRING 			: London Midland {STRING}
+STR_LIVERY_JAFFA_CAKE			 			: London & South East {GOLD}"Jaffa Cake"
 STR_LIVERY_LTS					 			: LTS Rail
 STR_LIVERY_MAROON				 			: British Railways Maroon
 STR_LIVERY_MAROON_LINED			 			: British Railways Maroon {GOLD}(Lined)
@@ -250,6 +254,7 @@ STR_LIVERY_ST_PIRAN							: 08645 "St Piran"
 STR_LIVERY_SWR					 			: South Western Railway
 STR_LIVERY_SWR_STR				 			: South Western Railway {STRING}
 STR_LIVERY_SWT					 			: South West Trains
+STR_LIVERY_EX_SWT					 		: Connex {GOLD}(Ex-South West Trains)
 STR_LIVERY_SWT_HERITAGE			 			: South West Trains {GOLD}(Heritage)
 STR_LIVERY_SWT_REFURB			 			: South West Trains (Refurbished)
 STR_LIVERY_SWT_STR				 			: South West Trains {STRING}
@@ -688,7 +693,7 @@ STR_NAME_357_ALT			:BR Class 357 (Electric)
 STR_NAME_370_ALT			:BR Class 370 (Electric)
 STR_NAME_390_ALT			:BR Class 390 (Electric)
 STR_NAME_395_ALT			:BR Class 395 (Dual Voltage)
-STR_NAME_411_ALT			:BR Class 421 (3rd rail)
+STR_NAME_411_ALT			:BR Class 411 (3rd rail)
 STR_NAME_415_ALT			:BR Class 415 (3rd rail)
 STR_NAME_442_ALT			:BR Class 442 (3rd rail)
 STR_NAME_444_ALT			:BR Class 444/450 (3rd rail)

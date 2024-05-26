@@ -1,8 +1,63 @@
+/*Inputs:
+	-Cargo subtype
+	-Date of last service/current date (if in purchase menu)
+	-Livery choice
+	-Real colours
 
+Start date..end date
+
+Outputs:
+	-Recolour
+	-Sprite
+	-Cargo subtype text
+	
+We need to have a date check, and decide what we're looking for, recolour or sprite
+And also a subcargo type check
+
+livey_mode = livery_choice + 2*real_colour
+output: 
+0: sprite
+1: recolour
+2: cargo subtype text
+3: purchase sprite
+	(4: unusued)
+5: purchase recolour
+
+output mode: 0
+livery mode: 0; 2
+result: 4*cargo_subtype
+
+output mode: 0
+livery mode: 1; 3
+result: 4*date_mapping
+
+output mode: 1
+livery mode: 0
+result: 4*cargo_subtype + 1
+
+output mode: 1
+livery mode: 1
+result: 4*date_mapping + 1
+
+output mode: 1
+livery mode: 2; 3
+result: 254 (4*64+1)
+
+output mode: 2
+livery mode: 0; 2
+result: 4*cargo_subtype + 2
+
+output mode: 2
+livery mode: 1; 3
+result: 254 (4*64+2)
+
+In short, modes 0, 2, and 3 only care about livery_choice
+Modes 1 and 5 only care about colour_scheme_1
+*/
 switch(FEAT_TRAINS, SELF, livery_uniselection, output_mode, date_map,4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4
-- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - 253) * !colour_scheme_1 * ((output_mode) == 1))		//Case for setting recolour to comp cols when colour_scheme_1 is 0
-- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - 254) * !livery_choice * ((output_mode%4) == 2))		//Case for removing livery refit list when livery_choice is 0
-- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - (4 * date_map + output_mode%4)) * ((output_mode%4) == 3))		//Case for purchase sprites (always using date based selection)
+- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - 253) * !colour_scheme_1 * ((output_mode) == 1))				//Case for setting recolour to comp cols when colour_scheme_1 is 0
+- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - 254) * !livery_choice * ((output_mode%4) == 2))				//Case for removing livery refit list when livery_choice is 0
+- ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - (4 * date_map + output_mode%4)) * ((output_mode%4) == 3))	//Case for purchase sprites (always using date based selection)
 - ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - (4 * date_map + output_mode%4)) * ((output_mode) == 5))		//Case for purchase recolour (always using date based selection)
 )
 {return;}

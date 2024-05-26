@@ -11,6 +11,12 @@ spriteset(gfx_mk1_brblue,	"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	50	)}
 spriteset(gfx_mk1_nse,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	75	)}
 spriteset(gfx_mk1_ic,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	100	)}
 spriteset(gfx_mk1_rr,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	125	)}
+spriteset(gfx_mk1_grn,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	175	)}
+//Some of these are defined for Mk1 MUs
+spriteset(gfx_mk1_lse,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	150	)}
+spriteset(gfx_mk1_cnx,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	200	)}
+spriteset(gfx_mk1_swt,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	225	)}
+spriteset(gfx_mk1_stn,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	250	)}
 //Purchase sprites
 
 spriteset(gfx_mk1_base_purchase,	"gfx/WAGON/mark_1.png")	{template_purchase(623,	0)}
@@ -69,6 +75,8 @@ switch(FEAT_TRAINS, SELF, sw_Mk1_manual_livery_decider, cargo_subtype){
 	0	: gfx_mk1_brblue;
 	1	: gfx_mk1_brblue;
 	2	: gfx_mk1_lined;
+	3	: gfx_mk1_grn;
+	4	: gfx_mk1_grn;
 	5	: gfx_mk1_brblue;
 	6	: gfx_mk1_nse;
 	7	: gfx_mk1_rr;
