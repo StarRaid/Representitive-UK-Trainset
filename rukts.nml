@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT";
 	name: string(STR_GRF_NAME);
 	desc: string(STR_GRF_DESC);
-	version: 117;
+	version: 120;
 	min_compatible_version: 36;
 	param 0{
 		colour_scheme_1{
@@ -1294,6 +1294,16 @@ switch(FEAT_TRAINS, SELF, livery_uniselection, output_mode, date_map,4 * cargo_s
 - ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - (4 * date_map + output_mode%4)) * ((output_mode) == 5))		//Case for purchase recolour (always using date based selection)
 )
 {return;}
+
+
+switch (FEAT_TRAINS, SELF, sw_411_date_map, date_of_last_service){
+	date(0,1,1)..date(1964,12,31):return 0;
+	date(1965,1,1)..date(1966,12,31):return 1;
+	date(1967,1,1)..date(1973,12,31):return 4;
+	date(1974,1,1)..date(1987,12,31):return 6;
+	date(1988,1,1)..date(1995,12,31):return 8;
+	return 9;
+}
 # 1 "rukts.pnml" 3
 
 //#include "src/TRACKS/narrow_gauge.pnml"
@@ -26327,14 +26337,6 @@ switch (FEAT_TRAINS, SELF, sw_411_tbc, output_mode, date_map, livery_uniselectio
 	return CB_RESULT_NO_TEXT;
 }
 
-switch (FEAT_TRAINS, SELF, sw_411_date_map, date_of_last_service){
-	date(0,1,1)..date(1964,12,31):return 0;
-	date(1965,1,1)..date(1966,12,31):return 1;
-	date(1967,1,1)..date(1973,12,31):return 4;
-	date(1974,1,1)..date(1987,12,31):return 6;
-	date(1988,1,1)..date(1995,12,31):return 8;
-	return 9;
-}
 
 switch (FEAT_TRAINS, SELF, sw_411_t, output_mode, date_map, position_in_vehid_chain%3){
 	1: sw_411_tbc(output_mode, date_map);

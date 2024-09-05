@@ -61,3 +61,4 @@ switch(FEAT_TRAINS, SELF, livery_uniselection, output_mode, date_map,4 * cargo_s
 - ((4 * cargo_subtype * livery_choice + 4 * date_map * !livery_choice + output_mode%4 - (4 * date_map + output_mode%4)) * ((output_mode) == 5))		//Case for purchase recolour (always using date based selection)
 )
 {return;}
+
