@@ -11,6 +11,10 @@ spriteset (gfx_powerhaul_colas				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template
 spriteset (gfx_powerhaul_colas_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2		(0	,0	)}
 spriteset (gfx_powerhaul_2cc				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,50	)}
 spriteset (gfx_powerhaul_2cc_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2		(0	,50	)}
+spriteset (gfx_powerhaul_gwy				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(178,75	)}
+spriteset (gfx_powerhaul_gwy_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2		(178,75	)}
+spriteset (gfx_powerhaul_gwg				, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(178,100)}
+spriteset (gfx_powerhaul_gwg_reverse		, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_rev_2		(178,100)}
 
 spriteset (gfx_powerhaul_headlights			, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,100)}
 spriteset (gfx_powerhaul_taillights			, "gfx/DIESEL_LOCO/class_70_2.png"	){	template_8_8_2			(0	,125)}
@@ -24,6 +28,8 @@ spriteset (gfx_powerhaul_colas_purchase		, "gfx/DIESEL_LOCO/class_70_2.png"	){	t
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_fliner_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_fliner_reverse ; gfx_powerhaul_fliner; }
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_colas_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_colas_reverse; gfx_powerhaul_colas; }
 switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_2cc_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_2cc_reverse; gfx_powerhaul_2cc; }
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_gwy_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_gwy_reverse; gfx_powerhaul_gwy; }
+switch(FEAT_TRAINS, PARENT, sw_powerhaul_gfx_gwg_reverse_check, vehicle_is_reversed){ 1 : gfx_powerhaul_gwg_reverse; gfx_powerhaul_gwg; }
 
 //Automatic
 
@@ -44,8 +50,10 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_auto, date_of_last_service){
 //Manual
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_gfx_manual, cargo_subtype){
-	0 : sw_powerhaul_gfx_fliner_reverse_check;
-	2 : sw_powerhaul_gfx_2cc_reverse_check;
+	0	: sw_powerhaul_gfx_fliner_reverse_check;
+	2	: sw_powerhaul_gfx_gwy_reverse_check;
+	3	: sw_powerhaul_gfx_gwg_reverse_check;
+	4..5: sw_powerhaul_gfx_2cc_reverse_check;
 	sw_powerhaul_gfx_colas_reverse_check;
 }
 
@@ -73,7 +81,10 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_spritestack, [STORE_TEMP((getbits(extra_c
 switch(FEAT_TRAINS, SELF, sw_powerhaul_refit_text, cargo_subtype){
 	0 : string(STR_LIVERY_FREIGHTLINER_POWERHAUL);
 	1 : string(STR_LIVERY_COLAS);
-	2 : string(STR_LIVER_COMP_COLOURS);
+	2 : string(STR_LIVERY_FREIGHTLINER_ORANGE);
+	3 : string(STR_LIVERY_FREIGHTLINER_RETRO);
+	4 : string(STR_LIVERY_FICTIONAL,string(STR_LIVERY_GBRF));
+	5 : string(STR_LIVER_COMP_COLOURS);
 	CB_RESULT_NO_TEXT;
 }
 
@@ -119,7 +130,9 @@ switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_auto, date_of_last_service){
 
 switch(FEAT_TRAINS, SELF, sw_powerhaul_colours_manual, cargo_subtype){
 	0 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
-	2 : palette_2cc(company_colour1, company_colour2);
+	3 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);
+	4 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE);
+	5 : palette_2cc(company_colour1, company_colour2);
 	palette_2cc(COLOUR_YELLOW, COLOUR_ORANGE);
 }
 
