@@ -220,24 +220,19 @@ switch(FEAT_TRAINS, SELF, sw_321_t_man, cargo_subtype){
 spriteset_321_t_nse;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_321_p_man, vehicle_is_reversed){
-1: sw_321_t_man;
-sw_321_pf2_man;
+switch(FEAT_TRAINS, SELF, sw_321_tp_man, (position_in_vehid_chain + 1) % 4){
+1: sw_321_pf2_man;
+sw_321_t_man;
 }
 
-switch(FEAT_TRAINS, PARENT, sw_321_pr_man, vehicle_is_reversed){
+switch(FEAT_TRAINS, SELF, sw_321_tpr_man, (position_in_vehid_chain_from_end + 1) % 4){
 1: sw_321_pr2_man;
 sw_321_t_man;
 }
 
-switch(FEAT_TRAINS, SELF, sw_321_tb2_man, position_in_vehid_chain){
-0: sw_321_p_man;
-sw_321_t_man;
-}
-
-switch(FEAT_TRAINS, SELF, sw_321_tb_man, position_in_vehid_chain_from_end){
-0: sw_321_pr_man;
-sw_321_tb2_man;
+switch(FEAT_TRAINS, PARENT, sw_321_tr_man, vehicle_is_reversed){
+0: sw_321_tp_man;
+sw_321_tpr_man;
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_hl_1, position_in_consist){
@@ -256,7 +251,7 @@ switch(FEAT_TRAINS, SELF, sw_321_f, livery_choice){
 }
 
 switch(FEAT_TRAINS, SELF, sw_321_t_default, livery_choice){
-	1: sw_321_tb_man;
+	1: sw_321_tr_man;
 	sw_321_tp_auto2;
 }
 
