@@ -6,7 +6,7 @@ grf{
 	grfid: "RUKT";
 	name: string(STR_GRF_NAME);
 	desc: string(STR_GRF_DESC);
-	version: 124;
+	version: 125;
 	min_compatible_version: 36;
 	param 0{
 		colour_scheme_1{
@@ -21858,6 +21858,311 @@ item (FEAT_TRAINS, item_eurodual, 88){
 	}
 }
 }
+
+
+
+
+
+
+
+
+
+
+// Class 93
+
+
+//Sprites
+
+spriteset	(gfx_cl93_lights_front,	"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_2			(178,	100	)}
+spriteset	(gfx_cl93_lights_back,	"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_2			(178,	125	)}
+
+spriteset	(gfx_cl93_base,			"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_2			(0,		100	)}
+spriteset	(gfx_cl93_base_rev,		"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_rev_2		(0,		100	)}
+spriteset	(gfx_cl93_rog,			"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_2			(0,		150	)}
+spriteset	(gfx_cl93_rog_rev,		"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_rev_2		(0,		150	)}
+
+spriteset	(gfx_cl93_rog_pch,		"gfx/ELECTRIC_LOCO/class_88.png"){	template_purchase		(178,	150	)}
+
+// Gfx
+
+switch(FEAT_TRAINS, PARENT, sw_cl93_gfx_base_revcheck, vehicle_is_reversed){ 1 : gfx_cl93_base_rev ; gfx_cl93_base; }
+switch(FEAT_TRAINS, PARENT, sw_cl93_gfx_rog_revcheck, vehicle_is_reversed){ 1 : gfx_cl93_rog_rev ; gfx_cl93_rog; }
+
+switch(FEAT_TRAINS, SELF, sw_cl93_gfx_man, cargo_subtype){
+	1 : sw_cl93_gfx_base_revcheck ;
+	sw_cl93_gfx_rog_revcheck ;
+}
+
+switch(FEAT_TRAINS,SELF, sw_cl93_gfx_man_check, livery_choice){
+	1 : sw_cl93_gfx_man ;
+	sw_cl93_gfx_rog_revcheck ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_93_gfx_light_check_back, position_in_consist_from_end){0:gfx_cl93_lights_back;}
+switch(FEAT_TRAINS, SELF, sw_93_gfx_light_check_front, position_in_consist){0:gfx_cl93_lights_front;sw_93_gfx_light_check_back;}
+
+switch(FEAT_TRAINS, SELF, sw_93_gfx_spr_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_cl93_gfx_man_check ;
+	1 : sw_eurodual_gfx_panto ;
+	2 : sw_93_gfx_light_check_front ;
+}
+
+
+// Colours
+
+
+switch(FEAT_TRAINS, SELF, sw_cl93_colours_manual, cargo_subtype){
+	1 : palette_2cc(company_colour1, company_colour2);
+	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl93_colours_manual_check, livery_choice){
+	1 : sw_cl93_colours_manual;
+	palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl93_colours_2cc_check, colour_scheme_1){
+	1 : sw_cl93_colours_manual_check;
+	palette_2cc(company_colour1, company_colour2);
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl93_colours_2cc_check_purchase, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_DARK_GREEN);
+	palette_2cc(company_colour1, company_colour2);
+}
+
+
+
+
+
+// Item
+
+
+switch(FEAT_TRAINS, SELF, sw_cl93_power_decider, (railtype_available("SAAA") ? tile_powers_railtype("SAAA") : (tile_powers_railtype("SAAE") || tile_powers_railtype("ELRL")))){
+	1   : 6168 ;
+	//"3RDC" : 5364 ;
+	1206 ;	
+}
+switch(FEAT_TRAINS, SELF, sw_cl93_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_ROG) ;
+	 1 : string(STR_LIVER_COMP_COLOURS) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl93_refit_text_check, livery_choice){
+	1 : sw_cl93_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+
+
+item(FEAT_TRAINS, item_stadler93, 93){
+	property{
+		name                           : string(STR_NAME_93) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(2022, 1, 1) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 35 ;
+		reliability_decay              : 9 ;
+		cost_factor                    : 46 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 250 ;
+		refit_cost                     : 0 ; 
+		refittable_cargo_classes       : 0 ; 
+		cargo_allow_refit              : [MAIL, GOOD]  ;
+		cargo_capacity                 : 1 ;
+		track_type                     : RAIL ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		speed                          : 110 mph ;
+		power                          : 4600 kW ;
+		weight                         : 86 ton ;
+		tractive_effort_coefficient    : 0.364 ;
+		air_drag_coefficient           : 0.08 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default:						sw_93_gfx_spr_stack ;
+		purchase:						gfx_cl93_rog_pch ;
+		purchase_colour_mapping:		sw_cl93_colours_2cc_check_purchase ;
+		colour_mapping:					sw_cl93_colours_2cc_check ;
+		sound_effect:					sw_eurodual_sfx_decider ;
+		create_effect:					sw_eurodual_effect_decider ;
+		purchase_cargo_capacity:		0 ;
+		cargo_capacity:					return 0 ;
+		power:							sw_cl93_power_decider;
+		can_attach_wagon:				sw_all_but_MU90;
+		running_cost_factor:			return(current_speed == 0 ? 60 : 250) ;
+		purchase_running_cost_factor:	250 ;
+		additional_text:				string(STR_ADD_INFO_99) ;
+		effect_spawn_model_and_powered:	sw_eurodual_effect_model ;
+		cargo_subtype_text:				sw_cl93_refit_text_check ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_stadler93, 93){
+	property{
+		name                           : string(STR_NAME_93_ALT);
+	}
+}
+}
+
+
+
+
+
+
+// Class 99
+
+
+//Sprites
+
+
+spriteset	(gfx_cl99_base,			"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_2			(0,		125	)}
+spriteset	(gfx_cl99_base_rev,		"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_rev_2		(0,		125	)}
+spriteset	(gfx_cl99_gbrf,			"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_2			(0,		175	)}
+spriteset	(gfx_cl99_gbrf_rev,		"gfx/ELECTRIC_LOCO/class_88.png"){	template_8_8_rev_2		(0,		175	)}
+
+spriteset	(gfx_cl99_gbrf_pch,		"gfx/ELECTRIC_LOCO/class_88.png"){	template_purchase		(178,	175	)}
+
+// Gfx
+
+switch(FEAT_TRAINS, PARENT, sw_cl99_gfx_base_revcheck, vehicle_is_reversed){ 1 : gfx_cl99_base_rev ; gfx_cl99_base; }
+switch(FEAT_TRAINS, PARENT, sw_cl99_gfx_gbrf_revcheck, vehicle_is_reversed){ 1 : gfx_cl99_gbrf_rev ; gfx_cl99_gbrf; }
+
+switch(FEAT_TRAINS, SELF, sw_cl99_gfx_man, cargo_subtype){
+	1 : sw_cl99_gfx_base_revcheck ;
+	sw_cl99_gfx_gbrf_revcheck ;
+}
+
+switch(FEAT_TRAINS,SELF, sw_cl99_gfx_man_check, livery_choice){
+	1 : sw_cl99_gfx_man ;
+	sw_cl99_gfx_gbrf_revcheck ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_99_gfx_spr_stack, [STORE_TEMP((getbits(extra_callback_info1, 8, 8) < 2 ? CB_FLAG_MORE_SPRITES : 0) | PALETTE_USE_DEFAULT, 0x100), getbits(extra_callback_info1, 8, 8)]){
+	0 : sw_cl99_gfx_man_check ;
+	1 : sw_eurodual_gfx_panto ;
+	2 : sw_93_gfx_light_check_front ;
+}
+
+
+// Colours
+
+
+switch(FEAT_TRAINS, SELF, sw_cl99_colours_manual, cargo_subtype){
+	1 : palette_2cc(company_colour1, company_colour2);
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE);
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl99_colours_manual_check, livery_choice){
+	1 : sw_cl99_colours_manual;
+	palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE);
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl99_colours_2cc_check, colour_scheme_1){
+	1 : sw_cl99_colours_manual_check;
+	palette_2cc(company_colour1, company_colour2);
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl99_colours_2cc_check_purchase, colour_scheme_1){
+	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_ORANGE);
+	palette_2cc(company_colour1, company_colour2);
+}
+
+
+
+
+
+// Item
+
+
+switch(FEAT_TRAINS, SELF, sw_cl99_power_decider, (railtype_available("SAAA") ? tile_powers_railtype("SAAA") : (tile_powers_railtype("SAAE") || tile_powers_railtype("ELRL")))){
+	1   : 8274 ;
+	//"3RDC" : 5364 ;
+	2400 ;	
+}
+switch(FEAT_TRAINS, SELF, sw_cl99_refit_text, cargo_subtype){
+	 0 : string(STR_LIVERY_GBRF) ;
+	 1 : string(STR_LIVER_COMP_COLOURS) ;
+	 CB_RESULT_NO_TEXT ;
+}
+
+switch(FEAT_TRAINS, SELF, sw_cl99_refit_text_check, livery_choice){
+	1 : sw_cl99_refit_text ;
+	CB_RESULT_NO_TEXT ;
+}
+
+
+item(FEAT_TRAINS, item_stadler99, 99){
+	property{
+		name                           : string(STR_NAME_99) ;
+		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC) ;
+		sprite_id                      : SPRITE_ID_NEW_TRAIN ;
+		length                         : 8 ;
+		climates_available             : ALL_CLIMATES ;
+		introduction_date              : date(2025, 1, 1) ;
+		model_life                     : VEHICLE_NEVER_EXPIRES ;
+		vehicle_life                   : 35 ;
+		reliability_decay              : 9 ;
+		cost_factor                    : 46 ;
+		running_cost_base              : RUNNING_COST_ELECTRIC ;
+		running_cost_factor            : 250 ;
+		refit_cost                     : 0 ; 
+		refittable_cargo_classes       : 0 ; 
+		cargo_allow_refit              : [MAIL, GOOD]  ;
+		cargo_capacity                 : 1 ;
+		track_type                     : RAIL ;
+		engine_class                   : ENGINE_CLASS_DIESEL ;
+		speed                          : 75 mph ;
+		power                          : 4000 kW ;
+		weight                         : 110 ton ;
+		tractive_effort_coefficient    : 0.45 ;
+		air_drag_coefficient           : 0.08 ;
+		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_ELECTRIC ;
+		dual_headed                    : 0 ;
+	}
+	graphics{
+		default:						sw_99_gfx_spr_stack ;
+		purchase:						gfx_cl99_gbrf_pch ;
+		purchase_colour_mapping:		sw_cl99_colours_2cc_check_purchase ;
+		colour_mapping:					sw_cl99_colours_2cc_check ;
+		sound_effect:					sw_eurodual_sfx_decider ;
+		create_effect:					sw_eurodual_effect_decider ;
+		purchase_cargo_capacity:		0 ;
+		cargo_capacity:					return 0 ;
+		power:							sw_cl99_power_decider;
+		can_attach_wagon:				sw_all_but_MU90;
+		running_cost_factor:			return(current_speed == 0 ? 60 : 250) ;
+		purchase_running_cost_factor:	250 ;
+		additional_text:				string(STR_ADD_INFO_99) ;
+		effect_spawn_model_and_powered:	sw_eurodual_effect_model ;
+		cargo_subtype_text:				sw_cl99_refit_text_check ;
+	}
+}
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_stadler99, 99){
+	property{
+		name                           : string(STR_NAME_99_ALT);
+	}
+}
+}
+
+
+
+
+
+
+
+
 
 # 1 "rukts.pnml" 3
 
