@@ -879,6 +879,10 @@ spriteset (gfx_mk1_suburb_base_purchase	,"gfx/WAGON/mark_1.png")	{template_purch
 spriteset (gfx_mk1_suburb_dark_purchase	,"gfx/WAGON/mark_1.png")	{template_purchase(623,	195	)}
 spriteset (gfx_mk1_suburb_lined_purchase,"gfx/WAGON/mark_1.png")	{template_purchase(623,	210	)}
 
+spriteset(gfx_mk1_suburb_brbg,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	321	)}
+spriteset(gfx_mk1_suburb_nse,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	369	)}
+spriteset(gfx_mk1_suburb_cnx,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	393	)}
+
 //Livery history
 //1954-1955 Carmine (red)
 //1957-1966 Maroon

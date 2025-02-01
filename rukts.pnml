@@ -88,7 +88,7 @@ disable_item(FEAT_TRAINS);
 
 #include "src/DEMU/ner_petrol.pnml"
 #include "src/DEMU/class_201.pnml"
-#include "src/DEMU/class_205.pnml"
+//#include "src/DEMU/class_205.pnml" NOTE THIS HAS BEEN EXCLUDED FOR THE NEW MK1 DEMUS!!! THIS MAY BREAK SAVE GAME COMPATIBILITY
 #include "src/DEMU/class_210.pnml"
 #include "src/DEMU/voyager.pnml"
 #include "src/DEMU/class_769.pnml"
@@ -105,9 +105,9 @@ disable_item(FEAT_TRAINS);
 #include "src/EMU/class_370.pnml"
 #include "src/EMU/class_373.pnml"
 #include "src/EMU/class_390.pnml"
-#include "src/EMU/class_411.pnml"
-#include "src/EMU/class_415.pnml"
-#include "src/EMU/class_419.pnml"
+//#include "src/EMU/class_411.pnml" NOTE THIS HAS BEEN EXCLUDED FOR THE NEW MK1 EMUS!!! THIS MAY BREAK SAVE GAME COMPATIBILITY
+//#include "src/EMU/class_415.pnml" NOTE THIS HAS BEEN EXCLUDED FOR THE NEW MK1 EMUS!!! THIS MAY BREAK SAVE GAME COMPATIBILITY
+//#include "src/EMU/class_419.pnml" NOTE THIS HAS BEEN EXCLUDED FOR THE NEW MK1 EMUS!!! THIS MAY BREAK SAVE GAME COMPATIBILITY
 #include "src/EMU/class_442.pnml"
 #include "src/EMU/class_450.pnml"
 #include "src/EMU/class_350.pnml"

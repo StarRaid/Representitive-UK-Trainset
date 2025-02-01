@@ -347,7 +347,7 @@ STR_NAME_MK1_BG					:Mark 1 BG
 STR_NAME_MK1_NBA				:Mark 1 NBA
 STR_NAME_MK1_BSO				:Mark 1 Brake
 STR_NAME_MK1_RUB				:Mark 1 Restaurant Buffet
-STR_NAME_TC						:Trailer Corridor Set
+STR_NAME_TC						:BR Trailer Corridor Set
 STR_NAME_MK2					:BREL Mark 2 Carriage
 STR_NAME_MK2_BRAKE				:BREL Mark 2 Brake
 STR_NAME_MK2A					:{GOLD}(Mk2a)
@@ -480,6 +480,7 @@ STR_NAME_VOYAGER             :Bombardier Voyager (Diesel Electric)
 STR_NAME_769         	     :Brush Flex (Dual Mode)
 
 STR_NAME_PEP				 :PEP 1972 Design EMU (Dual Voltage)
+STR_NAME_304				 :BREL Eastern Region Outer Suburan EMU (Electric)
 STR_NAME_307				 :BREL Eastern Region Suburan EMU (Electric)
 STR_NAME_309				 :BR Mark 1 EMU (Electric)
 STR_NAME_313				 :BREL Second Generation EMU (Dual Voltage)
@@ -503,13 +504,19 @@ STR_NAME_357				 :Adtranz "Electrostar" (Electric)
 STR_NAME_370				 :BREL Advanced Passenger Train (Electric)
 STR_NAME_390				 :Alstom "Pendolino" (Electric)
 STR_NAME_395				 :Hitachi High Speed "A-Train" (Dual Voltage)
-STR_NAME_411				 :BR Mark 1 EMU (3rd rail)
-STR_NAME_415				 :BR Compartment EMU (3rd rail)
+STR_NAME_411				 :BR Southern Region Mark 1 EMU (3rd rail)				//BR Corridor EMU
+STR_NAME_414				 :BR Southern Region Outer Suburban EMU (3rd rail)		//BR Outer Suburban EMU
+STR_NAME_415				 :BR Southern Region Compartment EMU (3rd rail)			//BR Suburban EMU
+STR_NAME_419				 :BR Southern Region MLV (3rd rail)						//BR MLV
+STR_NAME_421				 :BR Southern Region Late Mark 1 EMU (3rd rail)			//BR "Brighton" EMU
+STR_NAME_423				 :BR Southern Region Late Outer Suburban EMU (3rd rail)	//BR "Vestibule" EMU
+STR_NAME_432				 :BR Southern Region High Power EMU (3rd rail)			//BR "Bournemouth" EMU
 STR_NAME_442				 :BREL "Wessex Express" (3rd rail)
 STR_NAME_444				 :Siemens "Desiro" (3rd rail)
 STR_NAME_455				 :BREL Suburban EMU (3rd rail)
 STR_NAME_458				 :Alstom "Juniper" (3rd rail)
 STR_NAME_465				 :Metro-Cammel "Networker" (3rd rail)
+STR_NAME_504				 :BR Bury EMU (3rd rail)
 STR_NAME_700				 :Siemens "Desiro City" (Dual Voltage)
 STR_NAME_701				 :Bombardier "Aventra" (Third Rail)
 STR_NAME_710				 :Bombardier "Aventra" (Electric)
@@ -579,6 +586,7 @@ STR_376_NO_COUPLE: You may only couple this train to a "Modern MU car" or anothe
 STR_357_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Electrostar" (Electric)!
 STR_411_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage",  BR Compartment EMU (3rd rail) or another BR Mark 1 EMU (3rd rail)!
 STR_415_NO_COUPLE: You may only couple this train to a "Mark 1 Carriage", BR Mark 1 EMU (3rd rail) or another BR Compartment EMU (3rd rail)!
+STR_COACH_TYPE_NO_COUPLE: You may only couple a "Mark 1 Carriage" of a different type within this multiple unit!
 STR_442_NO_COUPLE: You may only couple this train to a "Mark 3 Carriage" or another BREL "Wessex Express"!
 STR_350_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Siemens "Desiro" (Dual Voltage)!
 STR_325_NO_COUPLE: You may only couple this train to a "Modern MU car" or another Adtranz "Networker"!
@@ -676,6 +684,7 @@ STR_NAME_VOYAGER_ALT			:BR Class 220/221/222 (Diesel Electric)
 STR_NAME_769_ALT       	     	:BR Class 769 (Dual Mode)
 
 STR_NAME_PEP_ALT			:PEP 1972 Design EMU (Dual Voltage)
+STR_NAME_304_ALT			:BR Class 304/305/308 (Electric)
 STR_NAME_307_ALT			:BR Class 307 (Electric)
 STR_NAME_309_ALT			:BR Class 309 (Electric)
 STR_NAME_313_ALT			:BR Class 313/507/508 (Dual Voltage)
@@ -699,13 +708,19 @@ STR_NAME_357_ALT			:BR Class 357 (Electric)
 STR_NAME_370_ALT			:BR Class 370 (Electric)
 STR_NAME_390_ALT			:BR Class 390 (Electric)
 STR_NAME_395_ALT			:BR Class 395 (Dual Voltage)
-STR_NAME_411_ALT			:BR Class 411 (3rd rail)
-STR_NAME_415_ALT			:BR Class 415 (3rd rail)
+STR_NAME_411_ALT			:BR Class 411/412 (3rd rail)
+STR_NAME_414_ALT			:BR Class 414 (3rd rail)
+STR_NAME_415_ALT			:BR Class 415/416 (3rd rail)
+STR_NAME_419_ALT			:BR Class 419 (3rd rail)
+STR_NAME_421_ALT			:BR Class 421/422 (3rd rail)
+STR_NAME_423_ALT			:BR Class 423 (3rd rail)
+STR_NAME_432_ALT			:BR Class 432 (3rd rail)
 STR_NAME_442_ALT			:BR Class 442 (3rd rail)
 STR_NAME_444_ALT			:BR Class 444/450 (3rd rail)
 STR_NAME_455_ALT			:BR Class 455 (3rd rail)
 STR_NAME_458_ALT			:BR Class 458/460 (3rd rail)
 STR_NAME_465_ALT			:BR Class 465/466 (3rd rail)
+STR_NAME_504_ALT			:BR Class 504 (3rd rail)
 STR_NAME_700_ALT			:BR Class 700/707/717 (Dual Voltage)
 STR_NAME_701_ALT			:BR Class 701 (Third Rail)
 STR_NAME_710_ALT			:BR Class 710/720/730 (Electric)
