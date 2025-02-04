@@ -16,7 +16,7 @@ spriteset(gfx_mk1_grn,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	175	)}
 spriteset(gfx_mk1_lse,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	150	)}
 spriteset(gfx_mk1_cnx,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	200	)}
 spriteset(gfx_mk1_swt,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	225	)}
-spriteset(gfx_mk1_stn,		"gfx/WAGON/mark_1.png")	{template_8_4_2(0,	250	)}
+spriteset(gfx_mk1_stn,		"gfx/WAGON/mark_1.png")	{template_8_4_2(89,	225	)}
 //Purchase sprites
 
 spriteset(gfx_mk1_base_purchase,	"gfx/WAGON/mark_1.png")	{template_purchase(623,	0)}
