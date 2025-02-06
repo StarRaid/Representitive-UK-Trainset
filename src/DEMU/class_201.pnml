@@ -84,18 +84,18 @@ Model life: 5 years
 Vehicle life: 30 years
 Max speed: 75 mph
 
-Graphics have not actually been drawn yet
+Graphics have not actually been drawn yet*/
 
-spriteset(spriteset_201_dmso_grn,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 140)}
-spriteset(spriteset_201_t_grn, 		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 260)}
-spriteset(spriteset_201_dmso_gry,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 140)}
-spriteset(spriteset_201_t_gry,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 356)}
+spriteset(spriteset_201_dmso_grn,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 260)}
+spriteset(spriteset_201_t_grn, 		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_4_2(708, 164)}
+spriteset(spriteset_201_tf_grn, 	"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 164)}
+spriteset(spriteset_201_dmso_gry,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 284)}
 spriteset(spriteset_201_dmso_brb,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 140)}
-spriteset(spriteset_201_t_brb,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 452)}
-spriteset(spriteset_201_dmso_brbg,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 140)}
-spriteset(spriteset_201_t_brbg,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 548)}
-spriteset(spriteset_201_grn_purchase,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_dualhead_purchase(708, 0)}
-spriteset(spriteset_201_brbg_purchase,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_dualhead_purchase(708, 13)}
+spriteset(spriteset_201_dmso_brbg,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 308)}
+spriteset(spriteset_201_t_brbg,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_4_2(708, 332)}
+spriteset(spriteset_201_tf_brbg,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(708, 332)}
+spriteset(spriteset_201_grn_purchase,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_dualhead_purchase(805, 0)}
+spriteset(spriteset_201_brbg_purchase,	"gfx/UNUSED & MIXED/mk1_emu.png") {template_dualhead_purchase(805, 13)}
 
 switch (FEAT_TRAINS, SELF, sw_201_date_map, date_of_last_service){
 	date(0,1,1)..date(1964,12,31):return 0;
@@ -111,39 +111,47 @@ switch (FEAT_TRAINS, SELF, sw_201, output_mode, livery_uniselection(output_mode,
 	
 	4 : spriteset_201_dmso_gry;		
 	5 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);	
-	6 : string(STR_LIVERY_BRGREEN_YELLOW);		
+	6 : string(STR_LIVERY_BRGREEN_HALF_YELLOW);		
 	7 : spriteset_201_grn_purchase;
 	
-	8 : spriteset_201_dmso_gry;		
+	8 : spriteset_201_dmso_brb;		
 	9 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);	
 	10: string(STR_LIVERY_BRGREEN_YELLOW);		
 	11: spriteset_201_grn_purchase;
 	
-	12: spriteset_201_dmso_gry;		
-	13 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
-	14: string(STR_LIVERY_BRBLUE_HALF_YELLOW);	
+	12: spriteset_201_dmso_brb;		
+	13: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
+	14: string(STR_LIVERY_BRBLUE);	
 	15: spriteset_201_grn_purchase;
 	
-	16: spriteset_201_dmso_brb;		
-	17 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
-	18: string(STR_LIVERY_BRBLUE);				
+	16: spriteset_201_dmso_brbg;		
+	17: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
+	18: string(STR_LIVERY_BRBLUEGREY);				
 	19: spriteset_201_grn_purchase;
-	
-	20: spriteset_201_dmso_brbg;	
-	21: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
-	22: string(STR_LIVERY_BRBLUEGREY);			
-	23: spriteset_201_brbg_purchase;
 	
 	253: palette_2cc(company_colour1, company_colour2) ;
 	return CB_RESULT_NO_TEXT;
 }
 
 switch (FEAT_TRAINS, SELF, sw_201_t, output_mode, livery_uniselection(output_mode, sw_201_date_map())){
-	0..16 : spriteset_201_t_grn;
-	20: spriteset_201_t_brbg;
+	0..15 : spriteset_201_t_grn;
+	16: spriteset_201_t_brbg;
 	
 	253: palette_2cc(company_colour1, company_colour2) ;
 	return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_TRAINS, SELF, sw_201_tf, output_mode, livery_uniselection(output_mode, sw_201_date_map())){
+	0..15 : spriteset_201_tf_grn;
+	16: spriteset_201_tf_brbg;
+	
+	253: palette_2cc(company_colour1, company_colour2) ;
+	return CB_RESULT_NO_TEXT;
+}
+
+switch (FEAT_TRAINS, SELF, sw_201_t_decide, output_mode, position_in_vehid_chain_from_end-position_in_vehid_chain){
+	0..1: sw_201_tf(output_mode);
+	sw_201_t(output_mode);
 }
 
 item (FEAT_TRAINS, item_201, 201) {
@@ -194,7 +202,7 @@ item (FEAT_TRAINS, item_201, 201) {
 }
 		livery_override (9010) {
 		cargo_capacity: 60;
-		default:							sw_201_t(0);
+		default:							sw_201_t_decide(0);
 		colour_mapping:						sw_201(1);
 		cargo_subtype_text:					sw_201(2);
 		weight:								30;
@@ -215,7 +223,7 @@ item (FEAT_TRAINS, item_201, 201){
 		name                           : string(STR_NAME_201_ALT) ;
 	}
 }
-}*/
+}
 
 
 
