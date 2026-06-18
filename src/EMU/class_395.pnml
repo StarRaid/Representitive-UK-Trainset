@@ -311,14 +311,19 @@ switch(FEAT_TRAINS, SELF, sw_iet_coupling_restrictions, vehicle_type_id) {
     return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_800), string(STR_NAME_MU90));
 }
 
+
+//A note about IET power: The diesel engines are rated at 960hp each, but they're only fitted to
+//~60% of carriages, this the diesel power is 576 (60% of 960) per carriage. Electric power isn't
+//clearly stated anywhere, but I've used the 960hp per carriage value as it seems right.
+
 switch(FEAT_TRAINS, PARENT, sw_iet_power, STANDARD_GAUGE_CHECK_OHLE_ONLY){
-	1 : 1877 ;
-	1126 ;
+	1 : 1920 ;
+	1152 ;
 }
 
 switch(FEAT_TRAINS, PARENT, sw_iet_car_power, STANDARD_GAUGE_CHECK_OHLE_ONLY){
-	1 : 939 ;
-	563 ;
+	1 : 960 ;
+	576 ;
 }
 
 switch(FEAT_TRAINS, SELF, sw_iet_speed, (STANDARD_GAUGE_CHECK_OHLE_ONLY)) {
