@@ -157,8 +157,8 @@ item (FEAT_TRAINS, item_395, 395) {
 		purchase_colour_mapping:			sw_395_recolour ;
 		sound_effect:						sw_sfx_electric_loco_modern ;
 		speed:								sw_395_speed;
-		running_cost_factor:				return(current_speed == 0 ? 8 : 35) ;
-		purchase_running_cost_factor : 35;
+		running_cost_factor:				return(current_speed == 0 ? 10 : 40) ;
+		purchase_running_cost_factor : 40;
 		start_stop:							sw_395_start_stop;
 }
 		livery_override (item_MU90) {
@@ -311,6 +311,16 @@ switch(FEAT_TRAINS, SELF, sw_iet_coupling_restrictions, vehicle_type_id) {
     return string(STR_UNIQUE_NO_COUPLE, string(STR_NAME_800), string(STR_NAME_MU90));
 }
 
+switch(FEAT_TRAINS, PARENT, sw_iet_power, STANDARD_GAUGE_CHECK_OHLE_ONLY){
+	1 : 1877 ;
+	1126 ;
+}
+
+switch(FEAT_TRAINS, PARENT, sw_iet_car_power, STANDARD_GAUGE_CHECK_OHLE_ONLY){
+	1 : 939 ;
+	563 ;
+}
+
 switch(FEAT_TRAINS, SELF, sw_iet_speed, (STANDARD_GAUGE_CHECK_OHLE_ONLY)) {
     1: 225;
 	200;
@@ -334,6 +344,13 @@ switch(FEAT_TRAINS, SELF, sw_iet_t_create_effect, (STANDARD_GAUGE_CHECK_OHLE_ONL
 switch(FEAT_TRAINS, SELF, sw_iet_sfx_decider, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
 	1: sw_sfx_electric_loco_modern ;
 	sw_sfx_dmu_two ;
+}
+
+//Running cost
+
+switch(FEAT_TRAINS, SELF, sw_iet_elec_running_check, STANDARD_GAUGE_CHECK_OHLE_ONLY){
+	1: 10;
+	25 ;
 }
 
 /* switch(FEAT_TRAINS, SELF, sw_iet_te, (STANDARD_GAUGE_CHECK_OHLE_ONLY)){
@@ -386,11 +403,12 @@ item (FEAT_TRAINS, item_800, 800) {
 		purchase_colour_mapping:			sw_iet_recolour ;
 		sound_effect:						sw_iet_sfx_decider ;
 		speed:								sw_iet_speed;
-		running_cost_factor:				return(current_speed == 0 ? 8 : 35) ;
-		purchase_running_cost_factor : 35;
+		running_cost_factor:				return((current_speed == 0 ? 30 : 60) * sw_iet_elec_running_check()) / 10;
+		purchase_running_cost_factor : 		45;
 		start_stop:							sw_iet_start_stop;
 		create_effect:						sw_iet_create_effect;
 		effect_spawn_model_and_powered:		sw_iet_effect_model;
+		power:								sw_iet_power;
 		// tractive_effort_coefficient:	sw_iet_te;
 }
 		livery_override (item_MU90) {
@@ -399,8 +417,8 @@ item (FEAT_TRAINS, item_800, 800) {
 		colour_mapping:	sw_iet_recolour;
 		cargo_subtype_text: sw_iet_livery_decider ;
 		weight:							45;
-		power:							700;
-		create_effect:						sw_iet_t_create_effect;
+		power:							sw_iet_car_power;
+		create_effect:					sw_iet_t_create_effect;
 }
 }
 

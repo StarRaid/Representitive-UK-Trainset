@@ -202,7 +202,7 @@ item(FEAT_TRAINS, item_hoover, 50){
 		weight                         : 115 ton;
 		engine_class                   : ENGINE_CLASS_DIESEL;
 		tractive_effort_coefficient    : 0.2;
-		air_drag_coefficient           : 0.2;
+		air_drag_coefficient           : 0.1;
 		length                         : 8;
 		misc_flags                     : bitmask(TRAIN_FLAG_SPRITE_STACK, TRAIN_FLAG_2CC);
 		effect_spawn_model_and_powered : EFFECT_SPAWN_MODEL_DIESEL;
