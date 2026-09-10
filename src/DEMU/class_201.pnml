@@ -100,7 +100,7 @@ spriteset(spriteset_201_brbg_purchase,	"gfx/UNUSED & MIXED/mk1_emu.png") {templa
 switch (FEAT_TRAINS, SELF, sw_201_date_map, date_of_last_service){
 	date(0,1,1)..date(1964,12,31):return 0;
 	date(1965,1,1)..date(1968,12,31):return 1;
-	return 5;
+	return 2;
 }
 
 switch (FEAT_TRAINS, SELF, sw_201, output_mode, livery_uniselection(output_mode, sw_201_date_map())){
@@ -122,12 +122,12 @@ switch (FEAT_TRAINS, SELF, sw_201, output_mode, livery_uniselection(output_mode,
 	12: spriteset_201_dmso_brb;		
 	13: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
 	14: string(STR_LIVERY_BRBLUE);	
-	15: spriteset_201_grn_purchase;
+	15: spriteset_201_brbg_purchase;
 	
 	16: spriteset_201_dmso_brbg;		
 	17: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
 	18: string(STR_LIVERY_BRBLUEGREY);				
-	19: spriteset_201_grn_purchase;
+	19: spriteset_201_brbg_purchase;
 	
 	253: palette_2cc(company_colour1, company_colour2) ;
 	return CB_RESULT_NO_TEXT;
@@ -1006,6 +1006,8 @@ Model life: 8 years
 Vehicle life: 45 years
 Max speed: 75 mph
 */
+
+/*
 spriteset(spriteset_415_dmbs_b_grn,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(0, 236)}
 spriteset(spriteset_414_dtcl_b_grn,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(0, 236)}
 spriteset(spriteset_415_dmbs_b_gry,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(0, 260)}
@@ -1035,65 +1037,58 @@ switch (FEAT_TRAINS, SELF, sw_415_date_map, date_of_last_service){
 	return 9;
 }
 
-switch (FEAT_TRAINS, SELF, sw_415, output_mode, livery_uniselection(output_mode, sw_411_date_map())){
+switch (FEAT_TRAINS, SELF, sw_415, output_mode, livery_uniselection(output_mode, sw_415_date_map())){
 	0 : spriteset_415_dmbs_b_grn;		
 	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);	
 	2 : string(STR_LIVERY_BRGREEN);				
-	3 : spriteset_411_grn_purchase;
+	3 : spriteset_415_grn_purchase;
 	
 	4 : spriteset_415_dmbs_b_gry;		
 	5 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);	
 	6 : string(STR_LIVERY_BRGREEN_HALF_YELLOW);	
-	7 : spriteset_411_grn_purchase;		
-	19: spriteset_411_grn_purchase;
+	7 : spriteset_415_grn_purchase;		
 	
 	8 : spriteset_415_dmbs_b_brb;		
 	9 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);	
 	10: string(STR_LIVERY_BRGREEN_YELLOW);				
-	19: spriteset_411_grn_purchase;
+	11: spriteset_415_grn_purchase;
 	
 	12: spriteset_415_dmbs_b_brbg;		
 	13: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
 	14: string(STR_LIVERY_BRBLUE_HALF_YELLOW);		
-	19: spriteset_411_grn_purchase;
+	15: spriteset_415_brbg_purchase;
 	
 	
 	16: spriteset_415_dmso_b_lse;		
-	17: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
+	17: palette_2cc(COLOUR_ORANGE, COLOUR_ORANGE);	
 	18: string(STR_LIVERY_BRBLUE);				
-	19: spriteset_411_grn_purchase;
+	19: spriteset_415_nse_purchase;
 	
 	20: spriteset_415_dmso_b_nse;	
-	21: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
+	21: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);	
 	22: string(STR_LIVERY_BRBLUEGREY);			
-	19: spriteset_411_grn_purchase;		
+	23: spriteset_415_nse_purchase;		
 	
 	
 	253: palette_2cc(company_colour1, company_colour2) ;
 	return CB_RESULT_NO_TEXT;
 }
 
-switch (FEAT_TRAINS, SELF, sw_415_t, output_mode, livery_uniselection(output_mode, sw_411_date_map())){	
+switch (FEAT_TRAINS, SELF, sw_415_t, output_mode, livery_uniselection(output_mode, sw_415_date_map())){	
 	0 : gfx_mk1_grn;
 	4 : gfx_mk1_grn;
 	8 : gfx_mk1_grn;
-	12: gfx_mk1_grn;
-	16: gfx_mk1_grn;
-	20: gfx_mk1_brblue;
-	24: spriteset_411_ts_brbg;
-	28: spriteset_411_ts_lse;
-	32: spriteset_411_ts_nse;
-	36: spriteset_411_ts_swt;
-	40: spriteset_411_ts_cnx;
-	44: spriteset_411_ts_xsw;
+	12: spriteset_411_ts_brbg;
+	16: spriteset_411_ts_lse;
+	20: spriteset_411_ts_nse;
 	
 	253: palette_2cc(company_colour1, company_colour2) ;
 	return CB_RESULT_NO_TEXT;
 }
-/*
-item (FEAT_TRAINS, item_412, 412) {
+
+item (FEAT_TRAINS, item_415, 415) {
 	property {
-		name: 							string(STR_NAME_411);
+		name: 							string(STR_NAME_415);
 		climates_available: 			ALL_CLIMATES;
 		introduction_date:				date(1956, 1, 1);
 		model_life:						7;
@@ -1126,11 +1121,11 @@ item (FEAT_TRAINS, item_412, 412) {
 		default_cargo_type:				PASS;
 	}
 	graphics {
-		default: 							sw_411(0);
-		colour_mapping:						sw_411(1);
-		cargo_subtype_text:					sw_411(2);
-		purchase:							sw_411(3);
-		purchase_colour_mapping: 			sw_411(5);
+		default: 							sw_415(0);
+		colour_mapping:						sw_415(1);
+		cargo_subtype_text:					sw_415(2);
+		purchase:							sw_415(3);
+		purchase_colour_mapping: 			sw_415(5);
 		create_effect:						vfx_3rd;
 		running_cost_factor:				return(current_speed == 0 ? 5 : 20) ;
 		purchase_running_cost_factor:		20;
@@ -1139,14 +1134,14 @@ item (FEAT_TRAINS, item_412, 412) {
 }
 		livery_override (9010) {
 		cargo_capacity: 70;
-		default:							sw_411_t(0);
-		colour_mapping:						sw_411(1);
-		cargo_subtype_text:					sw_411(2);
+		default:							sw_415_t(0);
+		colour_mapping:						sw_415(1);
+		cargo_subtype_text:					sw_415(2);
 }
 }
 
 if (vehicle_selection < 1){
-item (FEAT_TRAINS, item_412, 412){
+item (FEAT_TRAINS, item_415, 415){
 	property{
 		climates_available             : NO_CLIMATE ;
 	}
@@ -1156,14 +1151,14 @@ item (FEAT_TRAINS, item_412, 412){
 
 
 if (alt_names == 1){
-item (FEAT_TRAINS, item_412, 412){
+item (FEAT_TRAINS, item_415, 415){
 	property{
-		name                           : string(STR_NAME_411_ALT) ;
+		name                           : string(STR_NAME_415_ALT) ;
 	}
 }
 }
-
 */
+
 
 //419
 
@@ -1343,7 +1338,7 @@ item (FEAT_TRAINS, item_421, 421) {
 }
 
 if (vehicle_selection < 1){
-item (FEAT_TRAINS, item_411, 411){
+item (FEAT_TRAINS, item_421, 421){
 	property{
 		climates_available             : NO_CLIMATE ;
 	}
@@ -1351,9 +1346,9 @@ item (FEAT_TRAINS, item_411, 411){
 }
 
 if (alt_names == 1){
-item (FEAT_TRAINS, item_411, 411){
+item (FEAT_TRAINS, item_421, 421){
 	property{
-		name                           : string(STR_NAME_411_ALT) ;
+		name                           : string(STR_NAME_421_ALT) ;
 	}
 }
 }
@@ -1381,17 +1376,17 @@ switch (FEAT_TRAINS, SELF, sw_438, output_mode, livery_uniselection(output_mode,
 	0 : spriteset_438_blue;
 	1 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_DARK_BLUE);
 	2 : string(STR_LIVERY_BRBLUE_HALF_YELLOW);
-	3 : spriteset_438_blue;
+	3 : spriteset_421_brbg_purchase;
 	
 	4 : spriteset_421_dtcl_brbg;
 	5 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);
 	6 : string(STR_LIVERY_BRBLUEGREY);
-	7 : spriteset_421_dtcl_brbg;
+	7 : spriteset_421_brbg_purchase;
 	
 	8 : spriteset_421_dtcl_nse;
 	9 : palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);
 	10: string(STR_LIVERY_NSE);
-	11: spriteset_421_dtcl_nse;
+	11: spriteset_421_nse_purchase;
 	
 	253: palette_2cc(company_colour1, company_colour2) ;
 	return CB_RESULT_NO_TEXT;
