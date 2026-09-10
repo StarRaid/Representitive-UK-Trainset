@@ -23,7 +23,7 @@ spriteset(gfx_373_gner_middle			, "gfx/EMU/class_373.png"	){	template_6_8				(0	
 spriteset(gfx_373_gner_middle_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,275)}
 spriteset(gfx_373_gner_buffet			, "gfx/EMU/class_373.png"	){	template_6_8				(146,250)}
 spriteset(gfx_373_gner_buffet_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(146,250)}
-
+/*
 spriteset(gfx_373_e300_front			, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,300)}
 spriteset(gfx_373_e300_trailer			, "gfx/EMU/class_373.png"	){	template_6_8				(0	,325)}
 spriteset(gfx_373_e300_trailer_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,325)}
@@ -33,7 +33,7 @@ spriteset(gfx_373_e300_middle			, "gfx/EMU/class_373.png"	){	template_6_8				(0	
 spriteset(gfx_373_e300_middle_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(0	,375)}
 spriteset(gfx_373_e300_buffet			, "gfx/EMU/class_373.png"	){	template_6_8				(146,350)}
 spriteset(gfx_373_e300_buffet_rev		, "gfx/EMU/class_373.png"	){	template_6_8_rev			(146,350)}
-
+*/
 spriteset(gfx_373_front_sncf			, "gfx/EMU/class_373.png"	){	template_8_8_2				(0	,400)}
 
 //Fixtures
@@ -53,57 +53,57 @@ spriteset(gfx_373_purchase				, "gfx/EMU/class_373.png"	){	template_dualhead_pur
 //Liveries
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_front, cargo_subtype){
-	1	: gfx_373_e300_front ;	// New Eurostar
-	2	: gfx_373_front_sncf ;	// SNCF
-	3	: gfx_373_gner_front ;	// GNER
+	1	: gfx_373_front_sncf ;	// SNCF
+	2	: gfx_373_gner_front ;	// GNER
+	//3	: gfx_373_e300_front ;	// New Eurostar
 	gfx_373_front ;		// Eurostar
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer, cargo_subtype){
-	1	: gfx_373_e300_trailer ;	// New Eurostar
-	3	: gfx_373_gner_trailer ;	// GNER
+	2	: gfx_373_gner_trailer ;	// GNER
+	//3	: gfx_373_e300_trailer ;	// New Eurostar
 	gfx_373_trailer ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer_rev, cargo_subtype){
-	1	: gfx_373_e300_trailer_rev ;	// New Eurostar
-	3	: gfx_373_gner_trailer_rev ;	// GNER
+	2	: gfx_373_gner_trailer_rev ;	// GNER
+	//3	: gfx_373_e300_trailer_rev ;	// New Eurostar
 	gfx_373_trailer_rev ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer_end, cargo_subtype){
-	1	: gfx_373_e300_trailer_end ;	// New Eurostar
-	3	: gfx_373_gner_trailer_end ;	// GNER
+	2	: gfx_373_gner_trailer_end ;	// GNER
+	//3	: gfx_373_e300_trailer_end ;	// New Eurostar
 	gfx_373_trailer_end ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_trailer_end_rev, cargo_subtype){
-	1	: gfx_373_e300_trailer_end_rev ;	// New Eurostar
-	3	: gfx_373_gner_trailer_end_rev ;	// GNER
+	2	: gfx_373_gner_trailer_end_rev ;	// GNER
+	//3	: gfx_373_e300_trailer_end_rev ;	// New Eurostar
 	gfx_373_trailer_end_rev ;		// Eurostar
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_middle, cargo_subtype){
-	1	: gfx_373_e300_middle ;	// New Eurostar
-	3	: gfx_373_gner_middle ;	// GNER
+	2	: gfx_373_gner_middle ;	// GNER
+	//3	: gfx_373_e300_middle ;	// New Eurostar
 	gfx_373_middle ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_middle_rev, cargo_subtype){
-	1	: gfx_373_e300_middle_rev ;	// New Eurostar
-	3	: gfx_373_gner_middle_rev ;	// GNER
+	2	: gfx_373_gner_middle_rev ;	// GNER
+	//3	: gfx_373_e300_middle_rev ;	// New Eurostar
 	gfx_373_middle_rev ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_restaurant, cargo_subtype){
-	1	: gfx_373_e300_buffet ;	// New Eurostar
-	3	: gfx_373_gner_buffet ;	// GNER
+	2	: gfx_373_gner_buffet ;	// GNER
+	//3	: gfx_373_e300_buffet ;	// New Eurostar
 	gfx_373_buffet ;		// Eurostar & SNCF
 }
 
 switch(FEAT_TRAINS, SELF, sw_373_liveries_restaurant_rev, cargo_subtype){
-	1	: gfx_373_e300_buffet_rev ;	// New Eurostar
-	3	: gfx_373_gner_buffet_rev ;	// GNER
+	2	: gfx_373_gner_buffet_rev ;	// GNER
+	//3	: gfx_373_e300_buffet_rev ;	// New Eurostar
 	gfx_373_buffet_rev ;		// Eurostar & SNCF
 }
 
@@ -208,9 +208,9 @@ switch(FEAT_TRAINS, SELF, sw_373_t_default, [STORE_TEMP((getbits(extra_callback_
 
 switch(FEAT_TRAINS, SELF, sw_373_refit_text, cargo_subtype){
 	0: string(STR_LIVERY_EUROSTAR);
-	1: string(STR_LIVERY_EUROSTAR_NEW);
-	2: string(STR_LIVERY_SNCF);
-	3: string(STR_LIVERY_GNER);
+	1: string(STR_LIVERY_SNCF);
+	2: string(STR_LIVERY_GNER);
+	//3: string(STR_LIVERY_EUROSTAR_NEW);
 	return CB_RESULT_NO_TEXT;
 }
 
@@ -226,8 +226,8 @@ switch(FEAT_TRAINS, SELF, sw_373_livery_decider, livery_choice){
 //Manual
 
 switch(FEAT_TRAINS, SELF, sw_373_colours_manual, cargo_subtype){
-	1	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
-	3	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	2	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED) ;
+	//3	: palette_2cc(COLOUR_DARK_BLUE, COLOUR_YELLOW) ;
 	palette_2cc(COLOUR_YELLOW, COLOUR_WHITE) ;
 }
 
