@@ -2,7 +2,37 @@
 
 This is the source for the RUKTS GRF for OpenTTD.
 
-### Overview
+## Compiling
+
+### Windows
+
+Python 3 and NMLC are required to compile RUKTS. Make sure Python is in to your environment variables/PATH when you install it.
+
+NMLC has to be installed from a command line using PyPI. To do so run:
+```bat
+pip install nml
+```
+
+To compile the grf you can then run the following file either from a command line or directly from your file explorer:
+```bat
+pybuild.bat
+```
+
+### Linux
+
+Python 3 and NMLC are required to compile RUKTS. It is recommended to install NMLC from PyPI instead of from your system package manager. NMLC versions provided by your distribution may be out of date.
+
+Install NMLC to your PATH with the following command:
+```bash
+pip install nml
+```
+
+To compile the grf open the folder in a terminal and execute:
+```bash
+./pybuild.sh
+```
+
+## Overview
 
 Representative UK Train Set (RUKTS) is a GRF for OpenTTD designed to give a variety of British railway traction in any customisable format. The main feature of RUKTS is the freedom that the parameters give to the user. Given the parameters, the graphics will change in 4 combinations. The parameters are either 2cc liveries or the ability to choose liveries. If 2cc is on, then the colours of the liveries will appear in game as the 2 company colours decided by the user in their in-game company. If turned off, then they will use the real life colours of the used liveries. When Manual Liveries is turned on, the user has the choice to manually choose the livery used by each train/locomotive (like BR trains), whereas if it is turned off then the livery will change depending on what year the train/locomotive is built.
 
