@@ -1007,7 +1007,7 @@ Vehicle life: 45 years
 Max speed: 75 mph
 */
 
-/*
+
 spriteset(spriteset_415_dmbs_b_grn,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(0, 236)}
 spriteset(spriteset_414_dtcl_b_grn,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(0, 236)}
 spriteset(spriteset_415_dmbs_b_gry,		"gfx/UNUSED & MIXED/mk1_emu.png") {template_8_8_2(0, 260)}
@@ -1032,9 +1032,9 @@ switch (FEAT_TRAINS, SELF, sw_415_date_map, date_of_last_service){
 	date(0,1,1)..date(1964,12,31):return 0;
 	date(1965,1,1)..date(1966,12,31):return 1;
 	date(1967,1,1)..date(1973,12,31):return 4;
-	date(1974,1,1)..date(1987,12,31):return 6;
-	date(1988,1,1)..date(1995,12,31):return 8;
-	return 9;
+	date(1974,1,1)..date(1987,12,31):return 5;
+	date(1988,1,1)..date(1995,12,31):return 7;
+	return 1;
 }
 
 switch (FEAT_TRAINS, SELF, sw_415, output_mode, livery_uniselection(output_mode, sw_415_date_map())){
@@ -1050,24 +1050,32 @@ switch (FEAT_TRAINS, SELF, sw_415, output_mode, livery_uniselection(output_mode,
 	
 	8 : spriteset_415_dmbs_b_brb;		
 	9 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);	
-	10: string(STR_LIVERY_BRGREEN_YELLOW);				
-	11: spriteset_415_grn_purchase;
+	10: string(STR_LIVERY_BRGREEN_YELLOW);			
 	
-	12: spriteset_415_dmbs_b_brbg;		
+	12: spriteset_415_dmbs_b_gry;		
 	13: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
-	14: string(STR_LIVERY_BRBLUE_HALF_YELLOW);		
-	15: spriteset_415_brbg_purchase;
+	14: string(STR_LIVERY_BRBLUE_HALF_YELLOW);
 	
 	
-	16: spriteset_415_dmso_b_lse;		
-	17: palette_2cc(COLOUR_ORANGE, COLOUR_ORANGE);	
+	16: spriteset_415_dmbs_b_brb;		
+	17: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
 	18: string(STR_LIVERY_BRBLUE);				
-	19: spriteset_415_nse_purchase;
+	19: spriteset_415_grn_purchase;
 	
-	20: spriteset_415_dmso_b_nse;	
-	21: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);	
+	20: spriteset_415_dmbs_b_brbg;	
+	21: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
 	22: string(STR_LIVERY_BRBLUEGREY);			
-	23: spriteset_415_nse_purchase;		
+	23: spriteset_415_brbg_purchase;	
+	
+	
+	24: spriteset_415_dmso_b_lse;		
+	25: palette_2cc(COLOUR_ORANGE, COLOUR_ORANGE);	
+	26: string(STR_LIVERY_JAFFA_CAKE);				
+	
+	28: spriteset_415_dmso_b_nse;	
+	29: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);	
+	30: string(STR_LIVERY_NSE);			
+	31: spriteset_415_nse_purchase;		
 	
 	
 	253: palette_2cc(company_colour1, company_colour2) ;
@@ -1078,9 +1086,11 @@ switch (FEAT_TRAINS, SELF, sw_415_t, output_mode, livery_uniselection(output_mod
 	0 : gfx_mk1_grn;
 	4 : gfx_mk1_grn;
 	8 : gfx_mk1_grn;
-	12: spriteset_411_ts_brbg;
-	16: spriteset_411_ts_lse;
-	20: spriteset_411_ts_nse;
+	12: gfx_mk1_grn;
+	16: gfx_mk1_grn;
+	20: spriteset_411_ts_brbg;
+	24: spriteset_411_ts_lse;
+	28: spriteset_411_ts_nse;
 	
 	253: palette_2cc(company_colour1, company_colour2) ;
 	return CB_RESULT_NO_TEXT;
@@ -1100,7 +1110,7 @@ item (FEAT_TRAINS, item_415, 415) {
 		cost_factor:					35;
 		running_cost_factor:			20;
 		sprite_id:						SPRITE_ID_NEW_TRAIN;
-		speed:							90 mph;
+		speed:							75 mph;
 		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
 		refit_cost:						0;
 		track_type:						SAA3;
@@ -1157,7 +1167,154 @@ item (FEAT_TRAINS, item_415, 415){
 	}
 }
 }
-*/
+
+
+switch (FEAT_TRAINS, SELF, sw_414_grn_f, (count_veh_id(414)+1)%2){ 0:spriteset_414_dtcl_b_grn; spriteset_415_dmbs_b_grn; }
+switch (FEAT_TRAINS, SELF, sw_414_grn_r, (count_veh_id(414)+1)%2){ 1:spriteset_414_dtcl_b_grn; spriteset_415_dmbs_b_grn; }
+switch (FEAT_TRAINS, PARENT, sw_414_grn, vehicle_is_reversed){ 0:sw_414_grn_f; sw_414_grn_r; }
+
+switch (FEAT_TRAINS, SELF, sw_414_gry_f, (count_veh_id(414)+1)%2){ 0:spriteset_414_dtcl_b_gry; spriteset_415_dmbs_b_gry; }
+switch (FEAT_TRAINS, SELF, sw_414_gry_r, (count_veh_id(414)+1)%2){ 1:spriteset_414_dtcl_b_gry; spriteset_415_dmbs_b_gry; }
+switch (FEAT_TRAINS, PARENT, sw_414_gry, vehicle_is_reversed){ 0:sw_414_gry_f; sw_414_gry_f; }
+
+switch (FEAT_TRAINS, SELF, sw_414_brb_f, (count_veh_id(414)+1)%2){ 0:spriteset_414_dtcl_b_brb; spriteset_415_dmbs_b_brb; }
+switch (FEAT_TRAINS, SELF, sw_414_brb_r, (count_veh_id(414)+1)%2){ 1:spriteset_414_dtcl_b_brb; spriteset_415_dmbs_b_brb; }
+switch (FEAT_TRAINS, PARENT, sw_414_brb, vehicle_is_reversed){ 0:sw_414_brb_f; sw_414_brb_r; }
+
+switch (FEAT_TRAINS, SELF, sw_414_brbg_f, (count_veh_id(414)+1)%2){ 0:spriteset_414_dtcl_b_brbg; spriteset_415_dmbs_b_brbg; }
+switch (FEAT_TRAINS, SELF, sw_414_brbg_r, (count_veh_id(414)+1)%2){ 1:spriteset_414_dtcl_b_brbg; spriteset_415_dmbs_b_brbg; }
+switch (FEAT_TRAINS, PARENT, sw_414_brbg, vehicle_is_reversed){ 0:sw_414_brbg_f; sw_414_brbg_r; }
+
+switch (FEAT_TRAINS, SELF, sw_414_lse_f, (count_veh_id(414)+1)%2){ 0:spriteset_414_dtcl_b_lse; spriteset_415_dmso_b_lse; }
+switch (FEAT_TRAINS, SELF, sw_414_lse_r, (count_veh_id(414)+1)%2){ 1:spriteset_414_dtcl_b_lse; spriteset_415_dmso_b_lse; }
+switch (FEAT_TRAINS, PARENT, sw_414_lse, vehicle_is_reversed){ 0:sw_414_lse_f; sw_414_lse_r; }
+
+switch (FEAT_TRAINS, SELF, sw_414_nse_f, (count_veh_id(414)+1)%2){ 0:spriteset_414_dtcl_b_nse; spriteset_415_dmso_b_nse; }
+switch (FEAT_TRAINS, SELF, sw_414_nse_r, (count_veh_id(414)+1)%2){ 1:spriteset_414_dtcl_b_nse; spriteset_415_dmso_b_nse; }
+switch (FEAT_TRAINS, PARENT, sw_414_nse, vehicle_is_reversed){ 0:sw_414_nse_f; sw_414_nse_r; }
+
+
+
+
+
+
+switch (FEAT_TRAINS, SELF, sw_414, output_mode, livery_uniselection(output_mode, sw_415_date_map())){
+	0 : sw_414_grn;		
+	1 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);	
+	2 : string(STR_LIVERY_BRGREEN);				
+	3 : spriteset_414_grn_purchase;
+	
+	4 : sw_414_gry;		
+	5 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);	
+	6 : string(STR_LIVERY_BRGREEN_HALF_YELLOW);	
+	7 : spriteset_414_grn_purchase;		
+	
+	8 : sw_414_brb;		
+	9 : palette_2cc(COLOUR_DARK_GREEN, COLOUR_YELLOW);	
+	10: string(STR_LIVERY_BRGREEN_YELLOW);			
+	
+	12: sw_414_gry;		
+	13: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
+	14: string(STR_LIVERY_BRBLUE_HALF_YELLOW);
+	
+	
+	16: sw_414_brb;		
+	17: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
+	18: string(STR_LIVERY_BRBLUE);				
+	19: spriteset_414_grn_purchase;
+	
+	20: sw_414_brbg;	
+	21: palette_2cc(COLOUR_DARK_BLUE, COLOUR_WHITE);	
+	22: string(STR_LIVERY_BRBLUEGREY);			
+	23: spriteset_414_brbg_purchase;	
+	
+	
+	24: sw_414_lse;		
+	25: palette_2cc(COLOUR_ORANGE, COLOUR_ORANGE);	
+	26: string(STR_LIVERY_JAFFA_CAKE);				
+	
+	28: sw_414_nse;	
+	29: palette_2cc(COLOUR_DARK_BLUE, COLOUR_RED);	
+	30: string(STR_LIVERY_NSE);			
+	31: spriteset_414_nse_purchase;		
+	
+	
+	253: palette_2cc(company_colour1, company_colour2) ;
+	return CB_RESULT_NO_TEXT;
+}
+
+item (FEAT_TRAINS, item_414, 414) {
+	property {
+		name: 							string(STR_NAME_414);
+		climates_available: 			ALL_CLIMATES;
+		introduction_date:				date(1956, 1, 1);
+		model_life:						7;
+		vehicle_life:					45;
+		reliability_decay:				7;
+		refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+		cargo_allow_refit:				[PASS, TOUR];
+		loading_speed:					15;
+		cost_factor:					35;
+		running_cost_factor:			20;
+		sprite_id:						SPRITE_ID_NEW_TRAIN;
+		speed:							90 mph;
+		misc_flags:						bitmask(TRAIN_FLAG_MU, TRAIN_FLAG_2CC);
+		refit_cost:						0;
+		track_type:						SAA3;
+		ai_special_flag:				AI_FLAG_PASSENGER;
+		power:							1000 hp;
+		running_cost_base:				RUNNING_COST_ELECTRIC;
+		dual_headed:					1;
+		default_cargo_type:				PASS;
+		cargo_capacity:					55;
+		weight:							30 ton;
+		engine_class:					ENGINE_CLASS_ELECTRIC;
+		tractive_effort_coefficient:	0.06;
+		air_drag_coefficient:			0.06;
+		length:							8;
+		effect_spawn_model_and_powered:	EFFECT_SPAWN_MODEL_ELECTRIC;
+		bitmask_vehicle_info:			0;
+		cargo_age_period:				185;
+		default_cargo_type:				PASS;
+	}
+	graphics {
+		default: 							sw_414(0);
+		colour_mapping:						sw_414(1);
+		cargo_subtype_text:					sw_414(2);
+		purchase:							sw_414(3);
+		purchase_colour_mapping: 			sw_414(5);
+		create_effect:						vfx_3rd;
+		running_cost_factor:				return(current_speed == 0 ? 5 : 20) ;
+		purchase_running_cost_factor:		20;
+		sound_effect:						sw_sfx_emu_gec ;
+		can_attach_wagon:					sw_sr_electric_coupling_restrictions;
+}
+		livery_override (9010) {
+		cargo_capacity: 70;
+		default:							sw_415_t(0);
+		colour_mapping:						sw_414(1);
+		cargo_subtype_text:					sw_414(2);
+}
+}
+
+if (vehicle_selection < 3){
+item (FEAT_TRAINS, item_414, 414){
+	property{
+		climates_available             : NO_CLIMATE ;
+	}
+}
+}
+
+
+
+if (alt_names == 1){
+item (FEAT_TRAINS, item_414, 414){
+	property{
+		name                           : string(STR_NAME_414_ALT) ;
+	}
+}
+}
+
 
 
 //419
